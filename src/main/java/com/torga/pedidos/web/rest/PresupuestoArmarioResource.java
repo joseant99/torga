@@ -96,6 +96,19 @@ public class PresupuestoArmarioResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
     
+    /**
+     * GET  /presupuesto-armarios : get all the presupuestoArmarios.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoArmarios in body
+     */
+    @GetMapping("/presupuesto-armarios123")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoArmario>> getAllPresupuestoArmarios1() {
+        Collection<PresupuestoArmario> page = presupuestoArmarioRepository.findultimaid();
+        return ResponseEntity.ok().body(page);
+    }
+    
     
     
     /**

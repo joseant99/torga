@@ -5090,782 +5090,850 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var puerta3 = sesion[1]['puertas'][2];
                             var puerta6 = sesion[1]['puertas'][5];
                             var puerta7 = sesion[1]['puertas'][6];
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 300px;margin-top: 110px;float: left;"></div>'
-                            );
-                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>');
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 300px;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
+                                );
 
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:2;margin-top: -13px;margin-left: 119px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                    interior2['nombre'] +
-                                    '.png">'
-                            );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:2;margin-top: -13px;margin-left: 119px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
 
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 3;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior1['nombre'] +
-                                    '.png">'
-                            );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 3;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
 
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 1;margin-left:217px;margin-top:-47px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior3['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 0;margin-left:362PX;margin-top:-77px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior4['nombre'] +
-                                    '.png">'
-                            );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 1;margin-left:217px;margin-top:-47px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 0;margin-left:362PX;margin-top:-77px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
+                            }
+                            if (screen.width < 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: -82px !important;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;margin-left:-82px !important;"></div>'
+                                );
 
-                            if (puerta3 != undefined) {
-                                if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;opacity:0.4;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:2;margin-top: -8px;margin-left: 68px;z-index: 2;width: 270px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 3;width: 280px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 1;margin-left: 126px !important;width: 280px !important;margin-top: -26px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index: 0;margin-left: 210px !important;width: 280px !important;margin-top: -44px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
+                            }
+                            if (screen.width >= 800) {
+                                if (puerta3 != undefined) {
+                                    if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;opacity:0.4;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;opacity:0.4;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
 
-                                if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;opacity:0.4;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
+                                if (puerta2 != undefined) {
+                                    if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
 
-                                if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+                                if (puerta1 != undefined) {
+                                    if (puerta1['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta1['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta1['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta1['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta1['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+
+                                if (puerta5 != undefined) {
+                                    if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+
+                                if (puerta4 != undefined) {
+                                    if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:5;margin-top: -13px;margin-left: 119px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+
+                                if (puerta7 != undefined) {
+                                    if (puerta7['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
+
+                                if (puerta6 != undefined) {
+                                    if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
                             }
 
-                            if (puerta2 != undefined) {
-                                if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="armarioCalculadora" style="width:465px;position:absolute;margin-top: -13px;margin-left: 119px;z-index:2;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
 
-                                if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:3;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:1;margin-left:217px;margin-top:-47px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:0;margin-left:362px;margin-top:-77px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
                             }
+                            if (screen.width < 800) {
+                                this.mainComponent.puertas7Asi(puerta1, puerta2, puerta3, puerta4, puerta5, puerta6, puerta7, i);
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="armarioCalculadora" style="width:465px;position:absolute;z-index:2;margin-top: -8px;margin-left: 68px;width: 270px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
 
-                            if (puerta1 != undefined) {
-                                if (puerta1['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta1['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta1['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta1['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta1['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:3;width: 280px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:1;margin-left: 126px !important;width: 280px !important;margin-top: -26px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:0;margin-left: 210px !important;width: 280px !important;margin-top: -44px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
                             }
-
-                            if (puerta5 != undefined) {
-                                if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta4 != undefined) {
-                                if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:217px;margin-top:-47px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta7 != undefined) {
-                                if (puerta7['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta6 != undefined) {
-                                if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left:362px;margin-top:-77px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="armarioCalculadora" style="width:465px;position:absolute;margin-top: -13px;margin-left: 119px;z-index:2;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                    interior2['nombre'] +
-                                    '.png">'
-                            );
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:3;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior1['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:1;margin-left:217px;margin-top:-47px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior3['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:0;margin-left:362px;margin-top:-77px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior4['nombre'] +
-                                    '.png">'
-                            );
                         }
 
                         if (nombreArmario == '5 PUERTAS IZQUIERDA') {
@@ -10241,933 +10309,993 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var puerta7 = sesion[1]['puertas'][5];
                             var puerta8 = sesion[1]['puertas'][6];
                             var puerta9 = sesion[1]['puertas'][7];
-                            $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 200px;margin-top: 110px;float: left;"></div>'
-                            );
-                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>');
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 200px;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
+                                );
 
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior3['nombre'] +
-                                    '.png">'
-                            );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
 
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior1['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior2['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior4['nombre'] +
-                                    '.png">'
-                            );
-
-                            if (puerta2 != undefined) {
-                                if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
                             }
 
-                            if (puerta3 != undefined) {
-                                if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
+                            if (screen.width < 800) {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-top: 110px;float: left;margin-left: -85px !important;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;margin-left: -85px !important;"></div>'
+                                );
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;width:260px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;width: 260px !important;margin-left: 77px !important;margin-top: -16px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;width: 260px !important;margin-left: 154px !important;margin-top: -32px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;width: 260px !important;margin-left: 232px !important;margin-top: -48px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
+                            }
+                            if (screen.width >= 800) {
+                                if (puerta2 != undefined) {
+                                    if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
 
-                                if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
+                                if (puerta3 != undefined) {
+                                    if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta3['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta3['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
 
-                                if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta3['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta3['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+                                if (puerta4 != undefined) {
+                                    if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
 
-                                if (puerta3['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+                                if (puerta5 != undefined) {
+                                    if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
-                                if (puerta3['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 98px;margin-top: -33px;" src="' +
-                                            src +
-                                            '">'
-                                    );
+
+                                if (puerta6 != undefined) {
+                                    if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
+
+                                if (puerta7 != undefined) {
+                                    if (puerta7['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta7['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
+
+                                if (puerta8 != undefined) {
+                                    if (puerta8['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta8['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta8['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta8['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta8['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
+
+                                if (puerta9 != undefined) {
+                                    if (puerta9['nombre'] == 'Puerta Aluminio Transparente') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta9['nombre'] == 'Puerta Aluminio Gris') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                        var src1 =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src1 +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta9['nombre'] == 'Puerta Batiente sin tirador') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == 'Puerta Batiente tirador TIM') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == 'Puerta Batiente tirador NYE') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == 'Puerta Batiente tirador DRAW') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == '2 Puertas Fuelle TIM Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puerta9['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puerta9['nombre'] == '2 Puertas Fuelle NYE Derecha') {
+                                        var src =
+                                            '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
                                 }
                             }
-
-                            if (puerta4 != undefined) {
-                                if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
                             }
 
-                            if (puerta5 != undefined) {
-                                if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 243px;margin-top: -63px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
+                            if (screen.width < 800) {
+                                this.mainComponent.puestas8Fun(puerta2, puerta3, puerta4, puerta5, puerta6, puerta7, puerta8, puerta9, i);
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;width:260px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;width: 260px !important;margin-left: 77px !important;margin-top: -16px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;width: 260px !important;margin-left: 154px !important;margin-top: -32px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior3['nombre'] +
+                                        '.png">'
+                                );
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;width: 260px !important;margin-left: 232px !important;margin-top: -48px !important;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        interior4['nombre'] +
+                                        '.png">'
+                                );
                             }
-
-                            if (puerta6 != undefined) {
-                                if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta7 != undefined) {
-                                if (puerta7['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta7['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 388px;margin-top: -93px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta8 != undefined) {
-                                if (puerta8['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta8['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta8['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta8['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta8['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            if (puerta9 != undefined) {
-                                if (puerta9['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta9['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;opacity:0.4;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                    var src1 =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src1 +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta9['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-
-                                if (puerta9['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                                if (puerta9['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src =
-                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
-                                    $('#cuerpo' + i + ' #derecha').append(
-                                        '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;margin-left: 535px;margin-top: -122px;" src="' +
-                                            src +
-                                            '">'
-                                    );
-                                }
-                            }
-
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 98px;z-index: 3;margin-top: -33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior1['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 243px;z-index: 2;margin-top: -63px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior2['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 388px;z-index: 1;margin-top: -93px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior3['nombre'] +
-                                    '.png">'
-                            );
-                            $('#cuerpo' + i + ' #izquierda').append(
-                                '<img class="puertas3Izquierda"  style="width:485px;position:absolute;margin-left: 533px;z-index: 0;margin-top: -123px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                    interior4['nombre'] +
-                                    '.png">'
-                            );
                         }
 
                         $('#modalCesta .modal-body').append(
@@ -12953,78 +13081,32 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var m = this.mGuardar;
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        this.presupuestoArmarioService
-            .query({
-                size: 10000000
-            })
-            .subscribe(data => {
-                var idArmario = 0;
-                for (let v = 0; v < data.body.length; v++) {
-                    if (data.body[v]['id'] > idArmario) {
-                        idArmario = data.body[v]['id'];
-                    }
-                }
-                presupuestoArmario['id'] = idArmario;
-                if (prodCarr[m][1]['interiores'] != undefined) {
-                    for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
-                        var interiores;
-                        if (screen.width >= 800) {
-                            for (let ve = 0; ve <= 10000500; ve++) {
-                                if (ve == 10000500) {
-                                    if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                        interiores = {
-                                            precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                            orden: x
-                                        };
-                                    } else {
-                                        interiores = {
-                                            precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                            orden: x,
-                                            mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                        };
-                                    }
-                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                }
-                            }
-                        }
-
-                        if (screen.width < 800) {
-                            for (let ve = 0; ve <= 100005; ve++) {
-                                if (ve == 100005) {
-                                    if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                        interiores = {
-                                            precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                            orden: x
-                                        };
-                                    } else {
-                                        interiores = {
-                                            precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                            orden: x,
-                                            mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                        };
-                                    }
-                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                }
-                            }
-                        }
-                    }
-                } else {
+        this.presupuestoArmarioService.query1234().subscribe(data => {
+            var idArmario;
+            idArmario = data.body[0];
+            presupuestoArmario['id'] = idArmario;
+            if (prodCarr[m][1]['interiores'] != undefined) {
+                for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
                     var interiores;
                     if (screen.width >= 800) {
                         for (let ve = 0; ve <= 10000500; ve++) {
                             if (ve == 10000500) {
-                                interiores = {
-                                    presupuestoArmario: presupuestoArmario
-                                };
-
+                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x
+                                    };
+                                } else {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x,
+                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                    };
+                                }
                                 this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                             }
                         }
@@ -13033,134 +13115,172 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     if (screen.width < 800) {
                         for (let ve = 0; ve <= 100005; ve++) {
                             if (ve == 100005) {
-                                interiores = {
-                                    presupuestoArmario: presupuestoArmario
-                                };
-
+                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x
+                                    };
+                                } else {
+                                    interiores = {
+                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                        orden: x,
+                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                    };
+                                }
                                 this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                             }
                         }
                     }
                 }
-                if (prodCarr[m][1]['puertas'] != undefined) {
-                    for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
-                        var puertas;
-                        if (
-                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
-                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
-                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
-                        ) {
-                            if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 10000500; ve++) {
-                                    if (ve == 10000500) {
-                                        puertas = {
-                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                            orden: x
-                                        };
+            } else {
+                var interiores;
+                if (screen.width >= 800) {
+                    for (let ve = 0; ve <= 10000500; ve++) {
+                        if (ve == 10000500) {
+                            interiores = {
+                                presupuestoArmario: presupuestoArmario
+                            };
 
-                                        this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                    }
-                                }
-                            }
+                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                        }
+                    }
+                }
 
-                            if (screen.width < 800) {
-                                for (let ve = 0; ve <= 100005; ve++) {
-                                    if (ve == 100005) {
-                                        puertas = {
-                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                            orden: x
-                                        };
+                if (screen.width < 800) {
+                    for (let ve = 0; ve <= 100005; ve++) {
+                        if (ve == 100005) {
+                            interiores = {
+                                presupuestoArmario: presupuestoArmario
+                            };
 
-                                        this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                    }
-                                }
-                            }
-                        } else {
+                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                        }
+                    }
+                }
+            }
+            if (prodCarr[m][1]['puertas'] != undefined) {
+                for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
+                    var puertas;
+                    if (
+                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
+                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
+                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
+                    ) {
+                        if (screen.width >= 800) {
                             for (let ve = 0; ve <= 10000500; ve++) {
                                 if (ve == 10000500) {
-                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
-                                        puertas = {
-                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                            orden: x
-                                        };
-                                    }
-
-                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
-                                        puertas = {
-                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                            acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                            orden: x
-                                        };
-                                    }
-
-                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
-                                        puertas = {
-                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                            presupuestoArmario: presupuestoArmario,
-                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                            acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                            acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                            acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
-                                            acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
-                                            orden: x
-                                        };
-                                    }
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        orden: x
+                                    };
 
                                     this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                                 }
                             }
                         }
+
+                        if (screen.width < 800) {
+                            for (let ve = 0; ve <= 100005; ve++) {
+                                if (ve == 100005) {
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        orden: x
+                                    };
+
+                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                }
+                            }
+                        }
+                    } else {
+                        for (let ve = 0; ve <= 10000500; ve++) {
+                            if (ve == 10000500) {
+                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                        orden: x
+                                    };
+                                }
+
+                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                        orden: x
+                                    };
+                                }
+
+                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
+                                    puertas = {
+                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                        presupuestoArmario: presupuestoArmario,
+                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                        acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
+                                        acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
+                                        orden: x
+                                    };
+                                }
+
+                                this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                            }
+                        }
                     }
                 }
+            }
 
-                for (let h = 0; h < data.body.length; h++) {
-                    if (h == 0) {
-                        var prod = data.body[h];
-                    }
-
-                    if (prod['id'] <= data.body[h]['id']) {
-                        prod = data.body[h];
-                    }
+            for (let h = 0; h < data.body.length; h++) {
+                if (h == 0) {
+                    var prod = data.body[h];
                 }
-                this.presupuestoPedidoService.query1().subscribe(data => {
-                    var id = data.body;
-                    sessionStorage.setItem('presupuesto', '' + id);
-                    sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                    $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                    $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                    $('#todometerFondo').css({ display: 'none' });
-                    this.productosDormitorioService.numeroCesta = 0;
-                    for (let i = 1; i <= 100; i++) {
-                        sessionStorage.removeItem('prod' + i);
-                    }
 
-                    alert('enviado');
-                    if (item == 'A') {
-                        this.router.navigate(['/presupuesto-producto']);
-                    }
-                    if (item == 'B') {
-                        this.router.navigate(['/presupuesto-precios']);
-                    }
-                    if (item == 'C') {
-                        this.router.navigate(['/presupuesto-puntos']);
-                    }
-                });
+                if (prod['id'] <= data.body[h]['id']) {
+                    prod = data.body[h];
+                }
+            }
+            this.presupuestoPedidoService.query1().subscribe(data => {
+                var id = data.body;
+                sessionStorage.setItem('presupuesto', '' + id);
+                sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
+                $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+                $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+                $('#todometerFondo').css({ display: 'none' });
+                this.productosDormitorioService.numeroCesta = 0;
+                for (let i = 1; i <= 100; i++) {
+                    sessionStorage.removeItem('prod' + i);
+                }
+
+                alert('enviado');
+                if (item == 'A') {
+                    this.router.navigate(['/presupuesto-producto']);
+                }
+                if (item == 'B') {
+                    this.router.navigate(['/presupuesto-precios']);
+                }
+                if (item == 'C') {
+                    this.router.navigate(['/presupuesto-puntos']);
+                }
             });
+        });
     }
 
     protected onSaveSuccess4() {
@@ -13204,11 +13324,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             for (let m = 0; m < prodCarr.length; m++) {
                 if (prodCarr[m][1]['especial'] != 0) {
                     if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                        for (let k = 0; k < numeroProductos.length; k++) {
-                            if (idProdCar < numeroProductos[k]['id']) {
-                                idProdCar = numeroProductos[k]['id'];
-                            }
-                        }
+                        idProdCar = numeroProductos[0];
                         prodPrePed = {
                             productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                             presupuestoPedido: prueba1

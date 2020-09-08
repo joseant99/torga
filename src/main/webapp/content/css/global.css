@@ -9448,6 +9448,31 @@ ui bootstrap tweaks
         margin-top: -57px !important;
     }
 
+    .armario7asi1Int {
+        margin-top: -42px !important;
+        margin-left: -96px !important;
+        max-width: 300px !important;
+        max-height: 365px !important;
+    }
+    .armario7asi2Int {
+        max-width: 300px !important;
+        max-height: 350px !important;
+        margin-top: -52px !important;
+        margin-left: -28px !important;
+    }
+    .armario7asi3Int {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-left: 39px !important;
+        margin-top: -76px !important;
+    }
+    .armario7asi4Int {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-left: 128px !important;
+        margin-top: -99px !important;
+    }
+
     .armario8casco1 {
         max-width: 100px;
         max-height: 275px;
