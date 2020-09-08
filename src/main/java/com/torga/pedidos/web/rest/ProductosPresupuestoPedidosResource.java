@@ -102,6 +102,19 @@ public class ProductosPresupuestoPedidosResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of productosPresupuestoPedidos in body
      */
+    @GetMapping("/productos-presupuesto-pedidos1")
+    @Timed
+    public ResponseEntity<Collection<ProductosPresupuestoPedidos>> getAllProductosPresupuestoPedidos1() {
+        Collection<ProductosPresupuestoPedidos> page = productosPresupuestoPedidosRepository.findByProd1();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /productos-presupuesto-pedidos : get all the productosPresupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of productosPresupuestoPedidos in body
+     */
     @GetMapping("/productos-presupuesto-pedidos-id/{id}")
     @Timed
     public ResponseEntity<Collection<ProductosPresupuestoPedidos>> getAllProductosPresupuestoPedidosId(@PathVariable Long id) {

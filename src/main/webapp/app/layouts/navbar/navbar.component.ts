@@ -298,59 +298,77 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             puntos = JSON.parse(sessionStorage.getItem(item));
         }
         var numeroProductos = [];
-        this.productosPresupuestoPedidosService
-            .query({
-                size: 100000,
-                sort: this.sort()
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    numeroProductos[i] = data.body[i];
-                }
-                this.acaProdPed = numeroProductos;
-                if (numeroProductos.length != 0) {
-                    var prodCarr = [];
-                    var todoCarr;
-                    var contProd = 0;
-                    for (let i = 1; i < 100; i++) {
-                        todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
-                        if (todoCarr != undefined) {
-                            if (todoCarr[1].length == undefined) {
-                                prodCarr[contProd] = todoCarr;
+        this.productosPresupuestoPedidosService.query12().subscribe(data => {
+            for (let i = 0; i < data.body.length; i++) {
+                numeroProductos[i] = data.body[0];
+            }
+            this.acaProdPed = numeroProductos;
+            if (numeroProductos.length != 0) {
+                var prodCarr = [];
+                var todoCarr;
+                var contProd = 0;
+                for (let i = 1; i < 100; i++) {
+                    todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
+                    if (todoCarr != undefined) {
+                        if (todoCarr[1].length == undefined) {
+                            prodCarr[contProd] = todoCarr;
+                            contProd++;
+                        } else {
+                            for (let v = 0; v < todoCarr[1].length; v++) {
+                                var arrayAux = [];
+                                arrayAux[1] = todoCarr[1][v];
+                                prodCarr[contProd] = arrayAux;
                                 contProd++;
-                            } else {
-                                for (let v = 0; v < todoCarr[1].length; v++) {
-                                    var arrayAux = [];
-                                    arrayAux[1] = todoCarr[1][v];
-                                    prodCarr[contProd] = arrayAux;
-                                    contProd++;
-                                }
                             }
                         }
                     }
+                }
 
-                    this.productoPresupuesto = prodCarr;
-                    var numeroAcaProd = [];
-                    var aux = [];
-                    var acab = [];
-                    var prodAca = [];
-                    var prodIlu = [];
-                    var dimensionEspecialBien = [];
-                    var contAcab = 0;
-                    for (let j = 0; j < prodCarr.length; j++) {
-                        for (let i = 0; i < 15; i++) {
-                            if (prodCarr[j][1]['acabado' + (i + 1)] != undefined) {
-                                acab[contAcab] = prodCarr[j][1]['acabado' + (i + 1)];
-                                contAcab++;
+                this.productoPresupuesto = prodCarr;
+                var numeroAcaProd = [];
+                var aux = [];
+                var acab = [];
+                var prodAca = [];
+                var prodIlu = [];
+                var dimensionEspecialBien = [];
+                var contAcab = 0;
+                for (let j = 0; j < prodCarr.length; j++) {
+                    for (let i = 0; i < 15; i++) {
+                        if (prodCarr[j][1]['acabado' + (i + 1)] != undefined) {
+                            acab[contAcab] = prodCarr[j][1]['acabado' + (i + 1)];
+                            contAcab++;
+                        }
+                    }
+                    contAcab = 0;
+                    numeroAcaProd[j] = acab;
+                    acab = [];
+                }
+                this.acabadosPresupuesto = numeroAcaProd;
+                var account = this.accountService.userIdentity;
+                if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                    this.isSaving = true;
+                    var usuarios = this.user;
+                    var usuario;
+                    var idUsu = account['id'];
+                    for (let i = 0; i < usuarios.length; i++) {
+                        if (usuarios[i]['id'] == idUsu) {
+                            usuario = usuarios[i];
+                        }
+                    }
+                } else {
+                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                        var idTienda = $('#selectTienda').val();
+                        var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                        var usuario = tiendaUsuarioAdmin['user'];
+                        var usuarios = this.user;
+                        var usuarioCreado;
+                        var idUsu = account['id'];
+                        for (let i = 0; i < usuarios.length; i++) {
+                            if (usuarios[i]['id'] == idUsu) {
+                                usuarioCreado = usuarios[i];
                             }
                         }
-                        contAcab = 0;
-                        numeroAcaProd[j] = acab;
-                        acab = [];
-                    }
-                    this.acabadosPresupuesto = numeroAcaProd;
-                    var account = this.accountService.userIdentity;
-                    if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                    } else {
                         this.isSaving = true;
                         var usuarios = this.user;
                         var usuario;
@@ -360,82 +378,59 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 usuario = usuarios[i];
                             }
                         }
-                    } else {
-                        if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
-                            var idTienda = $('#selectTienda').val();
-                            var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-                            var usuario = tiendaUsuarioAdmin['user'];
-                            var usuarios = this.user;
-                            var usuarioCreado;
-                            var idUsu = account['id'];
-                            for (let i = 0; i < usuarios.length; i++) {
-                                if (usuarios[i]['id'] == idUsu) {
-                                    usuarioCreado = usuarios[i];
-                                }
-                            }
-                        } else {
-                            this.isSaving = true;
-                            var usuarios = this.user;
-                            var usuario;
-                            var idUsu = account['id'];
-                            for (let i = 0; i < usuarios.length; i++) {
-                                if (usuarios[i]['id'] == idUsu) {
-                                    usuario = usuarios[i];
-                                }
-                            }
-                        }
                     }
-                    var d = new Date();
-
-                    var month = d.getMonth() + 1;
-                    var day = d.getDate();
-                    var prueba;
-                    var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
-                        prueba = {
-                            codigo: 'PR-' + usuario['id'],
-                            pedido: 0,
-                            user: usuario,
-                            puntos: puntos,
-                            fecha_presupuesto: output,
-                            usuarioCreadoPre: usuarioCreado
-                        };
-                    } else {
-                        prueba = {
-                            codigo: 'PR-' + usuario['id'],
-                            pedido: 0,
-                            puntos: puntos,
-                            user: usuario,
-                            fecha_presupuesto: output
-                        };
-                    }
-                    var tiendaElegida = $('#selectTiendas').val();
-                    var referenciaCliente = $('#referenciaCliente').val();
-                    var todasTiendaBuenas = this.todasLasTiendas;
-                    if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
-                        for (let q = 0; q < todasTiendaBuenas.length; q++) {
-                            if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
-                                var usuGG = todasTiendaBuenas[q]['user'];
-                            }
-                        }
-                        prueba['user'] = usuGG;
-                        prueba['codigo'] = referenciaCliente;
-                    }
-                    if (referenciaCliente != null && referenciaCliente != '') {
-                        prueba['codigo'] = referenciaCliente;
-                    }
-                    if (memo.length != 0) {
-                        if (memo[1]['checked'] == true) {
-                            prueba['pedido'] = 1;
-                            prueba['fecha_pedido'] = output;
-                        }
-                    }
-                    console.log(prueba);
-                    this.presupuestoPedido = prueba;
-
-                    this.subscribeToSaveResponse4(this.presupuestoPedidoService.create(this.presupuestoPedido));
                 }
-            });
+                var d = new Date();
+
+                var month = d.getMonth() + 1;
+                var day = d.getDate();
+                var prueba;
+                var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+                if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                    prueba = {
+                        codigo: 'PR-' + usuario['id'],
+                        pedido: 0,
+                        user: usuario,
+                        puntos: puntos,
+                        fecha_presupuesto: output,
+                        usuarioCreadoPre: usuarioCreado
+                    };
+                } else {
+                    prueba = {
+                        codigo: 'PR-' + usuario['id'],
+                        pedido: 0,
+                        puntos: puntos,
+                        user: usuario,
+                        fecha_presupuesto: output
+                    };
+                }
+                var tiendaElegida = $('#selectTiendas').val();
+                var referenciaCliente = $('#referenciaCliente').val();
+                var todasTiendaBuenas = this.todasLasTiendas;
+                if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
+                    for (let q = 0; q < todasTiendaBuenas.length; q++) {
+                        if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
+                            var usuGG = todasTiendaBuenas[q]['user'];
+                        }
+                    }
+                    prueba['user'] = usuGG;
+                    prueba['codigo'] = referenciaCliente;
+                }
+                if (referenciaCliente != null && referenciaCliente != '') {
+                    prueba['codigo'] = referenciaCliente;
+                }
+                if (memo.length != 0) {
+                    if (memo[1]['checked'] == true) {
+                        prueba['pedido'] = 1;
+                        prueba['fecha_pedido'] = output;
+                    }
+                }
+                console.log(prueba);
+                this.presupuestoPedido = prueba;
+
+                this.subscribeToSaveResponse4(this.presupuestoPedidoService.create(this.presupuestoPedido));
+            }
+        });
         this.productosDormitorioService.numeroCesta = 0;
     }
     sort() {
@@ -13182,409 +13177,401 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }
         var armario;
-        this.presupuestoPedidoService
-            .query({
-                size: 1000000
-            })
-            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
-                var presupuesto = this.presupuesto;
-                var id = localStorage.getItem('ultimoPresupuesto');
-                var id1 = parseFloat(id);
-                id1 = id1;
-                localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
-                var idDefinitiva;
+        this.presupuestoPedidoService.query1().subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+            var presupuesto = this.presupuesto;
+            var id = localStorage.getItem('ultimoPresupuesto');
+            var id1 = parseFloat(id);
+            id1 = id1;
+            localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
+            var idDefinitiva;
 
-                var numeroAcaProd = this.acabadosPresupuesto;
-                var aux = [];
-                var prodAca = [];
-                var prodIlu = [];
-                var dimensionEspecialBien = [];
-                var numeroProductos = this.acaProdPed;
-                for (let w = 0; w < res.body.length; w++) {
-                    if (aux.length == 0 || aux[0]['id'] < res.body[w]['id']) {
-                        aux[0] = res.body[w];
-                    }
-                }
-                var idAux = parseFloat(aux[0]['id']);
-                idDefinitiva = idAux;
-                const prueba1 = {
-                    id: idDefinitiva,
-                    codigo: 'PR-' + idDefinitiva,
-                    pedido: 0
-                };
-                var prodPrePed;
-                var idProdCar = 0;
-                for (let m = 0; m < prodCarr.length; m++) {
-                    if (prodCarr[m][1]['especial'] != 0) {
-                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                            for (let k = 0; k < numeroProductos.length; k++) {
-                                if (idProdCar < numeroProductos[k]['id']) {
-                                    idProdCar = numeroProductos[k]['id'];
-                                }
+            var numeroAcaProd = this.acabadosPresupuesto;
+            var aux = [];
+            var prodAca = [];
+            var prodIlu = [];
+            var dimensionEspecialBien = [];
+            var numeroProductos = this.acaProdPed;
+
+            var idAux = res.body[0];
+            idDefinitiva = idAux;
+            const prueba1 = {
+                id: idDefinitiva,
+                codigo: 'PR-' + idDefinitiva,
+                pedido: 0
+            };
+            var prodPrePed;
+            var idProdCar = 0;
+            for (let m = 0; m < prodCarr.length; m++) {
+                if (prodCarr[m][1]['especial'] != 0) {
+                    if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                        for (let k = 0; k < numeroProductos.length; k++) {
+                            if (idProdCar < numeroProductos[k]['id']) {
+                                idProdCar = numeroProductos[k]['id'];
                             }
-                            prodPrePed = {
-                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                presupuestoPedido: prueba1
-                            };
+                        }
+                        prodPrePed = {
+                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                            presupuestoPedido: prueba1
+                        };
 
-                            this.productosPresupuestoPedidos = prodPrePed;
-                            this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-                            prodPrePed['id'] = idProdCar + 1;
-                            var armario;
-                            armario = {
+                        this.productosPresupuestoPedidos = prodPrePed;
+                        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
+                        prodPrePed['id'] = idProdCar + 1;
+                        var armario;
+                        armario = {
+                            id: prodCarr[m][1]['id'],
+                            anchoMax: prodCarr[m][1]['anchoMax'],
+                            anchoMin: prodCarr[m][1]['anchoMin'],
+                            imagen: prodCarr[m][1]['imagen'],
+                            imagenContentType: prodCarr[m][1]['imagenContentType'],
+                            mensaje: prodCarr[m][1]['mensaje'],
+                            numCostado: prodCarr[m][1]['numCostado'],
+                            numeroPuertas: prodCarr[m][1]['numeroPuertas'],
+                            productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                        };
+
+                        var presupuestoArmario;
+
+                        if (prodCarr[m][1]['niveladores'] == undefined) {
+                            var arrayNive = {
+                                id: 25000
+                            };
+                            prodCarr[m][1]['niveladores'] = arrayNive;
+                        }
+                        if (prodCarr[m][1]['enmarcado'] == undefined) {
+                            var arrayEnmar = {
+                                id: 25000
+                            };
+                            prodCarr[m][1]['enmarcado'] = arrayEnmar;
+                        }
+                        if (prodCarr[m][1]['cajeado'] == undefined) {
+                            var arrayCaje = {
+                                id: 25000
+                            };
+                            prodCarr[m][1]['cajeado'] = arrayCaje;
+                        }
+                        presupuestoArmario = {
+                            productosPresupuestoPedidos: prodPrePed,
+                            acabadosInterior: prodCarr[m][1]['acabadoInterior'],
+                            acabados: prodCarr[m][1]['acabadoTrasera'],
+                            acabadosCasco: prodCarr[m][1]['acabadoCasco'],
+                            acabadosTirador: prodCarr[m][1]['acabadoTirador'],
+                            niveladores: prodCarr[m][1]['niveladores'],
+                            enmarcados: prodCarr[m][1]['enmarcado'],
+                            cajeado: prodCarr[m][1]['cajeado'],
+                            medACaj: 0,
+                            medBCaj: 0,
+                            medCCaj: 0,
+                            medAEnm: 0,
+                            medBEnm: 0,
+                            medCEnm: 0,
+                            armario: armario,
+                            precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
+                            cascoPrecio: prodCarr[m][1]['precioCasco'],
+                            fondo: prodCarr[m][1]['fondo'],
+                            alto: prodCarr[m][1]['alto'],
+                            ancho: prodCarr[m][1]['ancho']
+                        };
+                        if (prodCarr[m][1]['enmarcado'] != undefined) {
+                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
+                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                            }
+                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
+                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                            }
+                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
+                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
+                            }
+                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
+                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
+                                presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
+                            }
+                        }
+
+                        if (prodCarr[m][1]['cajeado'] != undefined) {
+                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
+                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                            }
+                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
+                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                            }
+                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
+                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
+                            }
+                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
+                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
+                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                            }
+                        }
+
+                        this.presupuestoArmarioTodoLOL = presupuestoArmario;
+                        this.mGuardar = m;
+                        this.subscribeToSaveResponse6(this.presupuestoArmarioService.create(presupuestoArmario));
+                    } else {
+                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 2) {
+                            var dimen = {
                                 id: prodCarr[m][1]['id'],
-                                anchoMax: prodCarr[m][1]['anchoMax'],
-                                anchoMin: prodCarr[m][1]['anchoMin'],
+                                nombre: prodCarr[m][1]['nombre'],
+                                anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                fondo: prodCarr[m][1]['fondo'],
+                                alto: prodCarr[m][1]['alto'],
+                                ancho: prodCarr[m][1]['ancho'],
                                 imagen: prodCarr[m][1]['imagen'],
                                 imagenContentType: prodCarr[m][1]['imagenContentType'],
                                 mensaje: prodCarr[m][1]['mensaje'],
-                                numCostado: prodCarr[m][1]['numCostado'],
-                                numeroPuertas: prodCarr[m][1]['numeroPuertas'],
+                                precio: prodCarr[m][1]['precio'],
                                 productosDormitorio: prodCarr[m][1]['productosDormitorio']
                             };
-
-                            var presupuestoArmario;
-
-                            if (prodCarr[m][1]['niveladores'] == undefined) {
-                                var arrayNive = {
-                                    id: 25000
+                            var dimensionesFinal = dimen;
+                            if (dimen['mensaje'] == 'Medidas Especiales') {
+                                var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
+                                anchoEspecial = anchoEspecial.split(' ')[1];
+                                var altoEspecial = dimensionesFinal['alto'].split(':')[1];
+                                altoEspecial = altoEspecial.split(' ')[1];
+                                var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
+                                fondoEspecial = fondoEspecial.split(' ')[1];
+                                dimen['ancho'] = parseFloat(anchoEspecial);
+                                dimen['alto'] = parseFloat(altoEspecial);
+                                dimen['fondo'] = parseFloat(fondoEspecial);
+                            }
+                            if (prodCarr[m][1]['apoyo'] == undefined) {
+                                prodPrePed = {
+                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                    presupuestoPedido: prueba1,
+                                    dimensionesProductoTipo: dimen,
+                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
-                                prodCarr[m][1]['niveladores'] = arrayNive;
-                            }
-                            if (prodCarr[m][1]['enmarcado'] == undefined) {
-                                var arrayEnmar = {
-                                    id: 25000
-                                };
-                                prodCarr[m][1]['enmarcado'] = arrayEnmar;
-                            }
-                            if (prodCarr[m][1]['cajeado'] == undefined) {
-                                var arrayCaje = {
-                                    id: 25000
-                                };
-                                prodCarr[m][1]['cajeado'] = arrayCaje;
-                            }
-                            presupuestoArmario = {
-                                productosPresupuestoPedidos: prodPrePed,
-                                acabadosInterior: prodCarr[m][1]['acabadoInterior'],
-                                acabados: prodCarr[m][1]['acabadoTrasera'],
-                                acabadosCasco: prodCarr[m][1]['acabadoCasco'],
-                                acabadosTirador: prodCarr[m][1]['acabadoTirador'],
-                                niveladores: prodCarr[m][1]['niveladores'],
-                                enmarcados: prodCarr[m][1]['enmarcado'],
-                                cajeado: prodCarr[m][1]['cajeado'],
-                                medACaj: 0,
-                                medBCaj: 0,
-                                medCCaj: 0,
-                                medAEnm: 0,
-                                medBEnm: 0,
-                                medCEnm: 0,
-                                armario: armario,
-                                precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                cascoPrecio: prodCarr[m][1]['precioCasco'],
-                                fondo: prodCarr[m][1]['fondo'],
-                                alto: prodCarr[m][1]['alto'],
-                                ancho: prodCarr[m][1]['ancho']
-                            };
-                            if (prodCarr[m][1]['enmarcado'] != undefined) {
-                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
-                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                }
-                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
-                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                }
-                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
-                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                    presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                                }
-                                if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
-                                    presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                    presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                                    presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
-                                }
-                            }
-
-                            if (prodCarr[m][1]['cajeado'] != undefined) {
-                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
-                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                }
-                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
-                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                }
-                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
-                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                    presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
-                                }
-                                if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
-                                    presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                    presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                }
-                            }
-
-                            this.presupuestoArmarioTodoLOL = presupuestoArmario;
-                            this.mGuardar = m;
-                            this.subscribeToSaveResponse6(this.presupuestoArmarioService.create(presupuestoArmario));
-                        } else {
-                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 2) {
-                                var dimen = {
-                                    id: prodCarr[m][1]['id'],
-                                    nombre: prodCarr[m][1]['nombre'],
-                                    anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
-                                    fondo: prodCarr[m][1]['fondo'],
-                                    alto: prodCarr[m][1]['alto'],
-                                    ancho: prodCarr[m][1]['ancho'],
-                                    imagen: prodCarr[m][1]['imagen'],
-                                    imagenContentType: prodCarr[m][1]['imagenContentType'],
-                                    mensaje: prodCarr[m][1]['mensaje'],
-                                    precio: prodCarr[m][1]['precio'],
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                                };
-                                var dimensionesFinal = dimen;
-                                if (dimen['mensaje'] == 'Medidas Especiales') {
-                                    var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
-                                    anchoEspecial = anchoEspecial.split(' ')[1];
-                                    var altoEspecial = dimensionesFinal['alto'].split(':')[1];
-                                    altoEspecial = altoEspecial.split(' ')[1];
-                                    var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
-                                    fondoEspecial = fondoEspecial.split(' ')[1];
-                                    dimen['ancho'] = parseFloat(anchoEspecial);
-                                    dimen['alto'] = parseFloat(altoEspecial);
-                                    dimen['fondo'] = parseFloat(fondoEspecial);
-                                }
-                                if (prodCarr[m][1]['apoyo'] == undefined) {
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                } else {
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                }
-                                if (prodCarr[m][1]['usb'] != undefined) {
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        usb: prodCarr[m][1]['usb'],
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                }
-                                if (prodCarr[m][1]['iluminacion'] != undefined) {
-                                    prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
-                                }
-                                numeroAcaProd[m]['prod'] = prodPrePed;
-                                prodAca[m] = prodPrePed;
-                                prodIlu[m] = prodPrePed;
-                                dimensionEspecialBien[m] = prodPrePed;
-                                this.productosPresupuestoPedidos = prodPrePed;
-                                if (screen.width >= 800) {
-                                    for (let ve = 0; ve <= 10050000; ve++) {
-                                        if (ve == 10050000) {
-                                            this.subscribeToSaveResponse1(
-                                                this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                            );
-                                        }
-                                    }
-                                }
-
-                                if (screen.width < 800) {
-                                    for (let ve = 0; ve <= 1005; ve++) {
-                                        if (ve == 1005) {
-                                            this.subscribeToSaveResponse1(
-                                                this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                            );
-                                        }
-                                    }
-                                }
-
-                                if (numeroAcaProd[m].length != 0) {
-                                    var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                    prodAca[m]['id'] = acaPedProd['id'] + m + 1;
-                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                        if (screen.width >= 800) {
-                                            for (let ve = 0; ve <= 1000050000; ve++) {
-                                                if (ve == 1000050000) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-
-                                        if (screen.width < 800) {
-                                            for (let ve = 0; ve <= 100005; ve++) {
-                                                if (ve == 100005) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
-                                    var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                    dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-
-                                    const medEsp = {
-                                        productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                        ancho: anchoEspecial,
-                                        fondo: fondoEspecial,
-                                        alto: altoEspecial,
-                                        precio: dimensionesFinal['precio']
-                                    };
-                                    this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-                                }
                             } else {
                                 prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
+                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     presupuestoPedido: prueba1,
+                                    dimensionesProductoTipo: dimen,
                                     tiposApoyo: prodCarr[m][1]['apoyo'],
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
-                                numeroAcaProd[m]['prod'] = prodPrePed;
-                                prodAca[m] = prodPrePed;
-                                prodIlu[m] = prodPrePed;
-                                dimensionEspecialBien[m] = prodPrePed;
-                                this.productosPresupuestoPedidos = prodPrePed;
-                                if (screen.width >= 800) {
-                                    for (let ve = 0; ve <= 10050000; ve++) {
-                                        if (ve == 10050000) {
-                                            this.subscribeToSaveResponse1(
-                                                this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                            );
-                                        }
+                            }
+                            if (prodCarr[m][1]['usb'] != undefined) {
+                                prodPrePed = {
+                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                    presupuestoPedido: prueba1,
+                                    dimensionesProductoTipo: dimen,
+                                    tiposApoyo: prodCarr[m][1]['apoyo'],
+                                    usb: prodCarr[m][1]['usb'],
+                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                };
+                            }
+                            if (prodCarr[m][1]['iluminacion'] != undefined) {
+                                prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                            }
+                            numeroAcaProd[m]['prod'] = prodPrePed;
+                            prodAca[m] = prodPrePed;
+                            prodIlu[m] = prodPrePed;
+                            dimensionEspecialBien[m] = prodPrePed;
+                            this.productosPresupuestoPedidos = prodPrePed;
+                            if (screen.width >= 800) {
+                                for (let ve = 0; ve <= 10050000; ve++) {
+                                    if (ve == 10050000) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
                                     }
                                 }
+                            }
 
-                                if (screen.width < 800) {
-                                    for (let ve = 0; ve <= 1005; ve++) {
-                                        if (ve == 1005) {
-                                            this.subscribeToSaveResponse1(
-                                                this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                            );
-                                        }
+                            if (screen.width < 800) {
+                                for (let ve = 0; ve <= 1005; ve++) {
+                                    if (ve == 1005) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
                                     }
                                 }
+                            }
 
-                                if (numeroAcaProd[m].length != 0) {
-                                    var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                    prodAca[m]['id'] = acaPedProd['id'] + m + 1;
-                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                        if (screen.width >= 800) {
-                                            for (let ve = 0; ve <= 1000050000; ve++) {
-                                                if (ve == 1000050000) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
+                            if (numeroAcaProd[m].length != 0) {
+                                var acaPedProd = this.acaProdPed.length;
+                                acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                prodAca[m]['id'] = acaPedProd + m + 1;
+                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                    if (screen.width >= 800) {
+                                        for (let ve = 0; ve <= 1000050000; ve++) {
+                                            if (ve == 1000050000) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse2(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
                                             }
                                         }
+                                    }
 
-                                        if (screen.width < 800) {
-                                            for (let ve = 0; ve <= 100005; ve++) {
-                                                if (ve == 100005) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
+                                    if (screen.width < 800) {
+                                        for (let ve = 0; ve <= 100005; ve++) {
+                                            if (ve == 100005) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse2(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
                                             }
                                         }
                                     }
                                 }
                             }
-                        }
-                    } else {
-                        if (prodCarr[m][1]['precio'] != 'No definido') {
-                            prodPrePed = {
-                                presupuestoPedido: prueba1,
-                                precioTotal: prodCarr[m][1]['precio'],
-                                nombreArchivo: prodCarr[m][1]['imagen'],
-                                textoEspecial: prodCarr[m][1]['texto']
-                            };
+
+                            if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
+                                var acaPedProd = this.acaProdPed.length;
+                                acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
+
+                                const medEsp = {
+                                    productosPresupuestoPedidos: dimensionEspecialBien[m],
+                                    ancho: anchoEspecial,
+                                    fondo: fondoEspecial,
+                                    alto: altoEspecial,
+                                    precio: dimensionesFinal['precio']
+                                };
+                                this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
+                            }
                         } else {
                             prodPrePed = {
+                                productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
                                 presupuestoPedido: prueba1,
-                                nombreArchivo: prodCarr[m][1]['imagen'],
-                                textoEspecial: prodCarr[m][1]['texto']
+                                tiposApoyo: prodCarr[m][1]['apoyo'],
+                                precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                             };
-                        }
-                        if (screen.width >= 800) {
-                            for (let ve = 0; ve <= 10050000; ve++) {
-                                if (ve == 10050000) {
-                                    this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
+                            numeroAcaProd[m]['prod'] = prodPrePed;
+                            prodAca[m] = prodPrePed;
+                            prodIlu[m] = prodPrePed;
+                            dimensionEspecialBien[m] = prodPrePed;
+                            this.productosPresupuestoPedidos = prodPrePed;
+                            if (screen.width >= 800) {
+                                for (let ve = 0; ve <= 10050000; ve++) {
+                                    if (ve == 10050000) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                    }
                                 }
                             }
-                        }
 
-                        if (screen.width < 800) {
-                            for (let ve = 0; ve <= 100500; ve++) {
-                                if (ve == 100500) {
-                                    this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
+                            if (screen.width < 800) {
+                                for (let ve = 0; ve <= 1005; ve++) {
+                                    if (ve == 1005) {
+                                        this.subscribeToSaveResponse1(
+                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
+                                        );
+                                    }
+                                }
+                            }
+
+                            if (numeroAcaProd[m].length != 0) {
+                                var acaPedProd = this.acaProdPed.length;
+                                acaPedProd = this.acaProdPed[acaPedProd - 1];
+                                prodAca[m]['id'] = acaPedProd + m + 1;
+                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                    if (screen.width >= 800) {
+                                        for (let ve = 0; ve <= 1000050000; ve++) {
+                                            if (ve == 1000050000) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
+                                        }
+                                    }
+
+                                    if (screen.width < 800) {
+                                        for (let ve = 0; ve <= 100005; ve++) {
+                                            if (ve == 100005) {
+                                                const acabados1 = {
+                                                    acabados: numeroAcaProd[m][b],
+                                                    productosPresupuestoPedidos: prodAca[m],
+                                                    orden: b + 1
+                                                };
+                                                this.subscribeToSaveResponse(
+                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                );
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                if (esArmario != 1) {
-                    this.presupuestoPedidoService.query1().subscribe(data => {
-                        var id = data.body;
-                        sessionStorage.setItem('presupuesto', '' + id);
-                        sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                        $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                        $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                        $('#todometerFondo').css({ display: 'none' });
-                        this.productosDormitorioService.numeroCesta = 0;
-                        for (let i = 1; i <= 100; i++) {
-                            sessionStorage.removeItem('prod' + i);
+                } else {
+                    if (prodCarr[m][1]['precio'] != 'No definido') {
+                        prodPrePed = {
+                            presupuestoPedido: prueba1,
+                            precioTotal: prodCarr[m][1]['precio'],
+                            nombreArchivo: prodCarr[m][1]['imagen'],
+                            textoEspecial: prodCarr[m][1]['texto']
+                        };
+                    } else {
+                        prodPrePed = {
+                            presupuestoPedido: prueba1,
+                            nombreArchivo: prodCarr[m][1]['imagen'],
+                            textoEspecial: prodCarr[m][1]['texto']
+                        };
+                    }
+                    if (screen.width >= 800) {
+                        for (let ve = 0; ve <= 10050000; ve++) {
+                            if (ve == 10050000) {
+                                this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
+                            }
                         }
+                    }
 
-                        if (item == 'A') {
-                            this.router.navigate(['/presupuesto-producto']);
+                    if (screen.width < 800) {
+                        for (let ve = 0; ve <= 100500; ve++) {
+                            if (ve == 100500) {
+                                this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
+                            }
                         }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
-                    });
+                    }
                 }
-            });
+            }
+            if (esArmario != 1) {
+                this.presupuestoPedidoService.query1().subscribe(data => {
+                    var id = data.body;
+                    sessionStorage.setItem('presupuesto', '' + id);
+                    sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
+                    $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+                    $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+                    $('#todometerFondo').css({ display: 'none' });
+                    this.productosDormitorioService.numeroCesta = 0;
+                    for (let i = 1; i <= 100; i++) {
+                        sessionStorage.removeItem('prod' + i);
+                    }
+
+                    if (item == 'A') {
+                        this.router.navigate(['/presupuesto-producto']);
+                    }
+                    if (item == 'B') {
+                        this.router.navigate(['/presupuesto-precios']);
+                    }
+                    if (item == 'C') {
+                        this.router.navigate(['/presupuesto-puntos']);
+                    }
+                });
+            }
+        });
     }
 
     previousState() {

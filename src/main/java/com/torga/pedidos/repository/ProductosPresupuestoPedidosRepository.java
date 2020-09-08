@@ -18,4 +18,7 @@ public interface ProductosPresupuestoPedidosRepository extends JpaRepository<Pro
 
 	@Query("Select u from ProductosPresupuestoPedidos u where u.presupuestoPedido.id = ?1 order by u.id")
 	Collection<ProductosPresupuestoPedidos> findByProd(Long id);
+	
+	@Query("Select MAX(u.id) from ProductosPresupuestoPedidos u")
+	Collection<ProductosPresupuestoPedidos> findByProd1();
 }

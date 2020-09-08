@@ -9868,7 +9868,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var src1 =
                                                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
                                                             src1 +
                                                             '">'
                                                     );
