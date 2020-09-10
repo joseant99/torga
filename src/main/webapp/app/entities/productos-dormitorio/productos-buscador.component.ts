@@ -6766,25 +6766,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.catalogoDormi = 0;
+        this.catalogoCome = 0;
+        this.precioTiendaProductosService.todos = 0;
+        this.precioTiendaProductosService.apoyo = 0;
+        this.loadAll();
 
-        this.precioTiendaService.findBus1(tienda.id, 2).subscribe(data => {
-            this.catalogoDormi = data.body;
-            console.log(data.body);
-        });
-        this.precioTiendaService.findBus1(tienda.id, 1).subscribe(data => {
-            this.catalogoCome = data.body;
-            console.log(data.body);
-        });
-        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
-            this.precioTiendaProductosService.todos = data.body;
-        });
-        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
-            this.precioTiendaProductosService.apoyo = data.body;
-        });
-
-        this.ivaProductoTiendaService.bus(tienda['id']).subscribe(data => {
-            this.loadAll();
-        });
         this.iva = JSON.parse(sessionStorage.getItem('IVA'));
 
         this.precioTienda = sessionStorage.getItem('precioTienda');
