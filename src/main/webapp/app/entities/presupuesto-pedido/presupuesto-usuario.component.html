@@ -4,20 +4,22 @@
         
     </h2>
     <br/>
-    <div class="table-responsive" *ngIf="presupuestoPedidos" id="presupuestoPedidos">
+    
     	<p style="text-align:center;font-size: 28PX;margin-bottom: 40PX;">BUSCADOR</p>
     	<p style="text-align:center;"><select style="height: 50px;width: 300px;" id="filtroos" (change)="filtrosBuscados()">
     		<option>TODOS</option>
     		<option>FECHA PRESUPUESTO</option>
     		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">CODIGO CLIENTE</option>
     		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">NOMBRE FISCAL</option>
+    		<option *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'">NOMBRE FISCAL</option>
     		<option>REFERENCIA CLIENTE</option>
     	</select></p>
     	<p style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
+    	<p style="text-align:center;display: none" id="nombreFiscalSelectFiltros" ><select style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalSelect" ><option></option></select></p>
     	<p style="text-align:center;display: none" id="fechaFiltrado" ><input style="height: 50px;width: 300px;" type="date" id="fechaBus"></p>
         <p style="text-align:center;"><button style="width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="buscarPresu()">BUSCAR</button></p>
-
-        <table class="table table-striped">
+		<div class="table-responsive" *ngIf="presupuestoPedidos" id="presupuestoPedidos">
+        <table class="table table-striped" id="presupuestoPedidosTabla">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -25,6 +27,9 @@
             
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
+                    <span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon>
+			</th>
             <th></th>
             </tr>
             </thead>
@@ -38,6 +43,9 @@
                 </td>
                 
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
+                </td>
+                <td *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
                 </td>
                 
@@ -69,11 +77,11 @@
                         </button>           
                     </div>
                      -->
-                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 1;right: 10px;">
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;POSITION: absolute;z-index: 1;right: 10px;">
                         <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
                                 [routerLink]="['/presupuesto-producto' ]"
                                 class="btn btn-info btn-sm">
-                            <span class="d-none d-md-inline">VER PRESUPUESTO</span>
+                            <span class=" d-md-inline">VER PRESUPUESTO</span>
                         </button>           
                     </div>
                     

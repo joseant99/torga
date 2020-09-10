@@ -39,6 +39,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     previousPage: any;
     isSaving: boolean;
     reverse: any;
+    todosdatosusuarios: any;
     presuped1: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
@@ -103,7 +104,11 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
 
     public filtrosBuscados() {
         var filtro = $('#filtroos').val();
+
         $('#fechaFiltrado').css({ display: 'none' });
+        var arrayBueno = [];
+        arrayBueno[83] = 3;
+        arrayBueno[85] = 42;
         $('#textoDemasFiltros').css({ display: 'none' });
         if (filtro == 'FECHA PRESUPUESTO') {
             $('#fechaFiltrado').css({ display: 'block' });
@@ -114,11 +119,32 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         if (filtro == 'NOMBRE FISCAL') {
             $('#textoDemasFiltros').css({ display: 'block' });
             $('#presupuestoPedidos').append('<datalist id="listaBuena"></datalist>');
-            this.datosUsuarioService.findCoger1().subscribe(data => {
-                for (let i = 0; i < data.body['length']; i++) {
-                    $('#listaBuena').append('<option value="' + data.body[i] + '">' + data.body[i] + '</option>');
-                }
-            });
+            if (this.currentAccount.authorities[0] != 'ROLE_REPRESENTATE') {
+                this.datosUsuarioService.findCoger1().subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        $('#listaBuena').append('<option value="' + data.body[i][0] + '">' + data.body[i][0] + '</option>');
+                        $('#nombreFiscalSelect').append('<option value="' + data.body[i][0] + '">' + data.body[i][0] + '</option>');
+                    }
+                    this.todosdatosusuarios = data.body;
+                });
+            } else {
+                this.datosUsuarioService.query12(arrayBueno[this.currentAccount.id]).subscribe(data => {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        $('#listaBuena').append(
+                            '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
+                        );
+                        $('#nombreFiscalSelect').append(
+                            '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
+                        );
+                    }
+                    this.todosdatosusuarios = data.body;
+                });
+            }
+
+            if (screen.width < 800) {
+                $('#nombreFiscalSelectFiltros').css({ display: 'block' });
+                $('#textoDemasFiltros').css({ display: 'none' });
+            }
         }
         if (filtro == 'REFERENCIA CLIENTE') {
             $('#textoDemasFiltros').css({ display: 'block' });
@@ -129,6 +155,9 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     public buscarPresu() {
         var filtro = $('#filtroos').val();
         var texto = $('#inputFiltro').val();
+        if (screen.width < 800) {
+            var texto = $('#nombreFiscalSelect').val();
+        }
         var fechaBus = $('#fechaBus')
             .val()
             .toString();
@@ -136,12 +165,13 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         var pedidos = this.presuped1;
         var cont = 0;
         var array = [];
+        var datosUsuariosTiendas = this.todosdatosusuarios;
         if (filtro == 'NOMBRE FISCAL') {
-            this.datosUsuarioService.query({ size: 1000000 }).subscribe(data => {
-                for (let i = 0; i < data.body['length']; i++) {
-                    if (data.body[i]['nombreFiscal'] == texto) {
+            if (this.currentAccount.authorities[0] != 'ROLE_REPRESENTATE') {
+                for (let i = 0; i < datosUsuariosTiendas['length']; i++) {
+                    if (datosUsuariosTiendas[i]['0'] == texto) {
                         for (let u = 0; u < pedidos.length; u++) {
-                            if (pedidos[u]['user']['id'] == data.body[i]['user']['id']) {
+                            if (pedidos[u]['user']['id'] == datosUsuariosTiendas[i][1]['id']) {
                                 array[cont] = pedidos[u];
                                 cont++;
                             }
@@ -149,7 +179,19 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                         this.presupuestoPedidos = array;
                     }
                 }
-            });
+            } else {
+                for (let i = 0; i < datosUsuariosTiendas['length']; i++) {
+                    if (datosUsuariosTiendas[i]['nombreFiscal'] == texto) {
+                        for (let u = 0; u < pedidos.length; u++) {
+                            if (pedidos[u]['user']['id'] == datosUsuariosTiendas[i]['user']['id']) {
+                                array[cont] = pedidos[u];
+                                cont++;
+                            }
+                        }
+                        this.presupuestoPedidos = array;
+                    }
+                }
+            }
         }
 
         if (filtro == 'FECHA PRESUPUESTO') {
@@ -181,6 +223,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         var cogidos = [];
         var account = this.accountService['userIdentity'];
         var contador = 0;
+        $('#page-heading').css({ 'margin-left': '2%' });
         var todos = this.representanteTiendaService.todos;
         this.presupuestoPedidoService
             .query({
@@ -297,6 +340,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     ngOnInit() {
         var arrayBueno = [];
         arrayBueno[83] = 3;
+        arrayBueno[85] = 42;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {

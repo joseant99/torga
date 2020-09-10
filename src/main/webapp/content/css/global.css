@@ -9984,5 +9984,15 @@ ui bootstrap tweaks
         right: 0 !important;
         border: 0 !important;
     }
+    #presupuestoPedidosTabla {
+        width: 150% !important;
+    }
+
+    #divBotonPedidoBueno {
+        margin-left: 20px;
+        position: relative !important;
+        z-index: 1;
+        right: 0px !important;
+    }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

@@ -131,6 +131,13 @@ public class DatosUsuarioResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/datos-usuarios-id12/{id}")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId12(@PathVariable Long id) {
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquing12(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
     @GetMapping("/datos-usuarios-id1")
     @Timed
     public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId1() {

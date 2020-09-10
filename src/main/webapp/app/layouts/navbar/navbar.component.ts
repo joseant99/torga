@@ -134,11 +134,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }, 10);
     }
-
+    public estoesunaprueba() {
+        var account = this.accountService.userIdentity;
+        if (account.authorities[0] == 'ROLE_REPRESENTATE') {
+            $('#divsiesrepresentante').css({ display: 'none' });
+        }
+    }
     cargarTodasTiendas() {
         var account = this.accountService.userIdentity;
         var arrayBueno = [];
         arrayBueno[83] = 3;
+        arrayBueno[85] = 42;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -418,6 +424,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 }
                 if (referenciaCliente != null && referenciaCliente != '') {
                     prueba['codigo'] = referenciaCliente;
+                }
+                if (tiendaElegida != null && tiendaElegida != '') {
+                    for (let q = 0; q < todasTiendaBuenas.length; q++) {
+                        if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
+                            var usuGG = todasTiendaBuenas[q]['user'];
+                        }
+                    }
+                    prueba['user'] = usuGG;
                 }
                 if (memo.length != 0) {
                     if (memo[1]['checked'] == true) {
@@ -13089,8 +13103,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
                     var interiores;
                     if (screen.width >= 800) {
-                        for (let ve = 0; ve <= 10000500; ve++) {
-                            if (ve == 10000500) {
+                        for (let ve = 0; ve <= 100005; ve++) {
+                            if (ve == 100005) {
                                 if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
                                     interiores = {
                                         precio: prodCarr[m][1]['interiores'][x]['precio'],
@@ -13139,8 +13153,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             } else {
                 var interiores;
                 if (screen.width >= 800) {
-                    for (let ve = 0; ve <= 10000500; ve++) {
-                        if (ve == 10000500) {
+                    for (let ve = 0; ve <= 100005; ve++) {
+                        if (ve == 100005) {
                             interiores = {
                                 presupuestoArmario: presupuestoArmario
                             };
@@ -13171,8 +13185,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
                     ) {
                         if (screen.width >= 800) {
-                            for (let ve = 0; ve <= 10000500; ve++) {
-                                if (ve == 10000500) {
+                            for (let ve = 0; ve <= 100005; ve++) {
+                                if (ve == 100005) {
                                     puertas = {
                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                         presupuestoArmario: presupuestoArmario,
@@ -13202,8 +13216,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
                     } else {
-                        for (let ve = 0; ve <= 10000500; ve++) {
-                            if (ve == 10000500) {
+                        for (let ve = 0; ve <= 100005; ve++) {
+                            if (ve == 100005) {
                                 if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
                                     puertas = {
                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
@@ -13491,8 +13505,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             dimensionEspecialBien[m] = prodPrePed;
                             this.productosPresupuestoPedidos = prodPrePed;
                             if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 10050000; ve++) {
-                                    if (ve == 10050000) {
+                                for (let ve = 0; ve <= 1005; ve++) {
+                                    if (ve == 1005) {
                                         this.subscribeToSaveResponse1(
                                             this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                         );
@@ -13516,8 +13530,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodAca[m]['id'] = acaPedProd + m + 1;
                                 for (let b = 0; b < numeroAcaProd[m].length; b++) {
                                     if (screen.width >= 800) {
-                                        for (let ve = 0; ve <= 1000050000; ve++) {
-                                            if (ve == 1000050000) {
+                                        for (let ve = 0; ve <= 100005; ve++) {
+                                            if (ve == 100005) {
                                                 const acabados1 = {
                                                     acabados: numeroAcaProd[m][b],
                                                     productosPresupuestoPedidos: prodAca[m],
@@ -13574,8 +13588,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             dimensionEspecialBien[m] = prodPrePed;
                             this.productosPresupuestoPedidos = prodPrePed;
                             if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 10050000; ve++) {
-                                    if (ve == 10050000) {
+                                for (let ve = 0; ve <= 1005; ve++) {
+                                    if (ve == 1005) {
                                         this.subscribeToSaveResponse1(
                                             this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
                                         );
@@ -13599,8 +13613,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodAca[m]['id'] = acaPedProd + m + 1;
                                 for (let b = 0; b < numeroAcaProd[m].length; b++) {
                                     if (screen.width >= 800) {
-                                        for (let ve = 0; ve <= 1000050000; ve++) {
-                                            if (ve == 1000050000) {
+                                        for (let ve = 0; ve <= 100005; ve++) {
+                                            if (ve == 100005) {
                                                 const acabados1 = {
                                                     acabados: numeroAcaProd[m][b],
                                                     productosPresupuestoPedidos: prodAca[m],
@@ -13647,7 +13661,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         };
                     }
                     if (screen.width >= 800) {
-                        for (let ve = 0; ve <= 10050000; ve++) {
+                        for (let ve = 0; ve <= 1005; ve++) {
                             if (ve == 10050000) {
                                 this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
                             }

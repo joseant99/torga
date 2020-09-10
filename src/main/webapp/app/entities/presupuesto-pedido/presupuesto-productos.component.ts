@@ -290,15 +290,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     loadAll() {
         var medidasEspeciales;
-        this.medEspProductoPedidoPresuService
-            .query({
-                size: 10000000
-            })
-            .subscribe(data => {
-                medidasEspeciales = data['body'];
-                this.medEspProductoPedidoPresuService.todo = medidasEspeciales;
-            });
-
         var productosPresupuesto = [];
         var acabados1 = [];
         var precioTienda = this.precioTienda;
@@ -307,7 +298,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var precioMulti = JSON.parse(sessionStorage.getItem(item));
         var presu;
         presu = sessionStorage.getItem('presupuesto');
-        var todaTienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var todaTienda = this.datosUsuarioService.tiendaCargadaPresu;
         this.tiendaNombre = todaTienda['nombreComercial'];
         this.numero = todaTienda['telefono'];
         var acabados = [];
@@ -12920,22 +12911,6 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             location.reload();
         }
 
-        this.precioTiendaProductosService.findProdId(8, tienda.id).subscribe(data => {
-            this.modulosBajos = data.body;
-        });
-
-        this.precioTiendaProductosService.findProdId(11, tienda.id).subscribe(data => {
-            this.aparadores = data.body;
-        });
-        this.precioTiendaProductosService.findProdId(13, tienda.id).subscribe(data => {
-            this.singulares = data.body;
-        });
-        this.precioTiendaProductosService.findProdId(12, tienda.id).subscribe(data => {
-            this.vitrinas = data.body;
-        });
-        this.precioTiendaProductosService.findProdId(2, tienda.id).subscribe(data => {
-            this.apoyoPrecios = data.body;
-        });
         this.presupuestoArmarioInterioresService.todos = undefined;
         this.precioTienda = sessionStorage.getItem('precioTienda');
         $('body').removeAttr('class');
@@ -12949,81 +12924,30 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         this.registerChangeInProductosPresupuestoPedidos();
 
         this.idPresu = idPresu;
-        this.contactoFabricaService
-            .query({
-                size: 1000000
-            })
-            .subscribe(
-                (res: HttpResponse<IContactoFabrica[]>) => {
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i] != undefined) {
-                            if (res.body[i]['user']['id'] == this.currentAccount['id']) {
-                                if (res.body[i]['presupuestoPedido'] != null) {
-                                    if (res.body[i]['presupuestoPedido']['id'] == parseFloat(idPresu)) {
-                                        saber = 1;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    if (saber == 1) {
-                        $('#contacto1').remove();
-                    } else {
-                        $('#contacto2').remove();
-                    }
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+
         var municipios = [];
         var provincias = [];
         this.accountService.identity().then(account => {
             this.account = account;
         });
 
-        this.municipiosService.query1({}).subscribe(data => {
-            for (let i = 0; i < data['body'].length; i++) {
-                municipios[i] = data['body'][i];
-            }
-        });
-        this.municipios = municipios;
-
-        this.provinciasService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    provincias[i] = data['body'][i];
-                }
-            });
-        this.provincias = provincias;
-
         this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
             this.productosPresupuestoPedidosService.todos = data.body;
         });
         this.presupuestoPedidoService.find(idPresu).subscribe(data => {
             var usuario = data.body.user;
-            this.datosUsuarioService
-                .query({
-                    size: 1000000
-                })
-                .subscribe(data => {
-                    for (let b = 0; b < data.body.length; b++) {
-                        if (data.body[b]['user'] != null) {
-                            if (data.body[b]['user']['id'] == usuario['id']) {
-                                tienda = data.body[b];
-                                this.datosUsuarioService.tiendaCargadaPresu = tienda;
-                                this.precioTiendaService.findBus(this.datosUsuarioService.tiendaCargadaPresu.id).subscribe(data => {
-                                    this.precioPunto = data.body;
-                                    this.precioTiendaService.findBus1(this.datosUsuarioService.tiendaCargadaPresu.id, 1).subscribe(data => {
-                                        this.precioTiendaService.precioTienda = data.body;
-                                        this.soloMedBuen();
-                                    });
-                                });
-                            }
-                        }
+            this.datosUsuarioService.findCoger12(usuario['id']).subscribe(data => {
+                if (data.body[0]['user'] != null) {
+                    if (data.body[0]['user']['id'] == usuario['id']) {
+                        tienda = data.body[0];
+                        this.datosUsuarioService.tiendaCargadaPresu = tienda;
+                        JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                        this.precioPunto = 0;
+                        this.precioTiendaService.precioTienda = 0;
+                        this.soloMedBuen();
                     }
-                });
+                }
+            });
         });
 
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));

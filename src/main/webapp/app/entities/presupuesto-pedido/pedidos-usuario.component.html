@@ -1,48 +1,104 @@
-<div>
+<div style="margin-top: 50px;">
     <h2 id="page-heading">
         <span >Pedidos</span>
         
     </h2>
     <br/>
-    <div class="table-responsive" *ngIf="presupuestoPedidos" id="presupuestoPedidos">
+   
     	<p style="text-align:center;font-size: 28PX;margin-bottom: 40PX;">BUSCADOR</p>
     	<p style="text-align:center;"><select style="height: 50px;width: 300px;" id="filtroos" (change)="filtrosBuscados()">
     		<option>TODOS</option>
     		<option>FECHA PEDIDO</option>
-    		<option>CODIGO CLIENTE</option>
-    		<option>NOMBRE FISCAL</option>
+    		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">CODIGO CLIENTE</option>
+    		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">NOMBRE FISCAL</option>
+    		<option *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'">NOMBRE FISCAL</option>
     		<option>REFERENCIA CLIENTE</option>
     	</select></p>
     	<p style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
+    	<p style="text-align:center;display: none" id="nombreFiscalSelectFiltros" ><select style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalSelect" ><option></option></select></p>
     	<p style="text-align:center;display: none" id="fechaFiltrado" ><input style="height: 50px;width: 300px;" type="date" id="fechaBus"></p>
-    	<p style="text-align:center" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'">TIENDAS: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select id="tiendaSelect" (change)="sacarPresupuestos()" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'"><option></option><option *ngFor="let tienda of tiendas" value="{{tienda.user.id}}">{{tienda.nombreComercial}}</option></select></p>
         <p style="text-align:center;"><button style="width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="buscarPresu()">BUSCAR</button></p>
-    	
-        <table class="table table-striped">
+		 <div class="table-responsive" *ngIf="presupuestoPedidos" >
+        <table class="table table-striped" id="presupuestoPedidosTabla">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="codigo" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span >Referencia</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="user.login"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="fecha_presupuesto"><span >Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            
+            <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
+                    <span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon>
+			</th>
             <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let presupuestoPedido of presupuestoPedidos ;">
-                <td *jhiHasAnyAuthority="'ROLE_ADMIN'"><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
-                <td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_presupuesto}}</td>
-                <td *ngIf="presupuestoPedido != undefined">
-                    {{presupuestoPedido.user?.login}}
+            <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
+            	<td *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_pedido}}</td>
+                <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
+                
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.login}}</i>
                 </td>
+                
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
+                </td>
+                <td *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
+                </td>
+                
                 <td *ngIf="presupuestoPedido != undefined" class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
-                                [routerLink]="['/pedidos-producto' ]"
+                   
+                    
+                    
+                    <!-- 
+                     <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
+                        <button *ngIf="presupuestoPedido.puntos != 'NULL'" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-puntos' ]"
                                 class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" >VER PEDIDO</span>
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> TIENDA</span>
+                        </button>
+                        
+                        <button *ngIf="presupuestoPedido.puntos == 'NULL'" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                data-toggle="modal" data-target="#modalPasar"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> TIENDA</span>
+                        </button>   
+                                   
+                    </div>
+                    
+                    <div class="btn-group flex-btn-group-container" style="float: right;margin-left:20px">
+                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-precios' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline" >PRESUPUESTO <br>EN PRECIO <BR> FABRICA</span>
                         </button>           
                     </div>
+                     -->
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;POSITION: absolute;z-index: 1;right: 10px;">
+                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-producto' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-md-inline">VER PEDIDO</span>
+                        </button>           
+                    </div>
+                    
+                    <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 2;right: 10px;">
+                        <button *ngIf="presupuestoPedido.visto == 0" style="background-color:red" (click)="cogerIdPresupuesto1(presupuestoPedido.id)" type="submit"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline">VER PEDIDO</span>
+                        </button>  
+                        <button *ngIf="presupuestoPedido.visto == 1" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                                [routerLink]="['/presupuesto-producto' ]"
+                                class="btn btn-info btn-sm">
+                            <span class="d-none d-md-inline">VER PEDIDO</span>
+                        </button>         
+                    </div>
+                    
+                    
+                    
                 </td>
             </tr>
             <tr></tr>
@@ -57,4 +113,23 @@
             <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
+    
+    <div class="modal fade" id="modalPasar" role="dialog" style="margin-top: 100px;">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+	        	<p style="text-align:center">No se ha establecido un <br>valor de punto para este <br>pedido/presupuesto</p>
+				<p style="text-align:center"><label>Valor del punto</label><input type="number" id="inputPunto"></p>
+	         <p style="float:left"> <button style="width:100px;background-color:#9FF781" (click)="anadirValorPunto()" data-dismiss="modal" >Confirmar</button></p>
+	         <p style="float:right"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">Cancelar</button></p>
+	        </div>
+	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
 </div>
+
+

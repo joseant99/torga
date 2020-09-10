@@ -1,5 +1,5 @@
 <div id="menuFijoArriba">
-	<a id="botonEsconder" onclick="apareceMenu()"><img style="max-width:30%;" id="rayasNavegador" src="../../../content/images/LINEAS-min.png"></a>
+	<a id="botonEsconder" onclick="apareceMenu()" (click)="estoesunaprueba()"><img style="max-width:30%;" id="rayasNavegador" src="../../../content/images/LINEAS-min.png"></a>
 
 <a  class="navbar-brand logo" (click)="open('inicio',false,myModel)" (click)="collapseNavbar()" id="imagenLogoCuenta">
 	                <span class="logo-img"><img id="logoImagen" src="../../../content/images/LOGOHD.png" ></span>
@@ -706,29 +706,29 @@
 			</ul>
 			
 		-->	
-
 			
-			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase1">
-                        <span>
-                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">GESTION DE TIENDA</span>
-                        </span>
-					</a>
-					
-				</li>
-			</ul>
-			<ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase2">
-                        <span>
-                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CAMBIAR CONTRASE&Ntilde;A</span>
-                        </span>
-					</a>
-					
-				</li>
-			</ul>
-			
+			<div id="divsiesrepresentante">
+				<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+	       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase1">
+	                        <span>
+	                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">GESTION DE TIENDA</span>
+	                        </span>
+						</a>
+						
+					</li>
+				</ul>
+				<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+	       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+	                    <a (click)="contacto()" id="cntacto"  data-toggle="modal" data-target="#modalContrase2">
+	                        <span>
+	                            <span id="textoContactoFabrica" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">CAMBIAR CONTRASE&Ntilde;A</span>
+	                        </span>
+						</a>
+						
+					</li>
+				</ul>
+			</div>
 			<!--  
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo5" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -852,7 +852,7 @@
      
     
     
-    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:350px;POSITION:FIXED">
+    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:400px;POSITION:FIXED">
       
         <ul class="navbar-nav ml-auto" style=" display: block;">
             
@@ -1520,8 +1520,10 @@
 		        	<input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" /><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
 		        	<br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"><input type="text" id="referenciaCliente"> <label  style="margin-left:10px" >Referencia Cliente</label><br>
 		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p><br>
-		        	 <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="radio" name="estado" id="Activo" value="Activo" checked> <span *jhiHasAnyAuthority="'ROLE_ADMIN'">Presupuesto</span>
-     				 <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="radio" name="estado" id="Inactivo" value="Inactivo"> <span *jhiHasAnyAuthority="'ROLE_ADMIN'">Pedido</span>
+		        	<div id="divinputenviarcarrito">
+		        	 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Activo" value="Activo" checked> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Presupuesto</span>
+     				 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Inactivo" value="Inactivo"> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Pedido</span>
+		        	</div>
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>
 		        </div>
