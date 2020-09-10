@@ -8398,6 +8398,11 @@ ui bootstrap tweaks
         margin-left: 15% !important;
         margin-top: 15px;
     }
+    #artFor15 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 30 !important;
+    }
     #artFor1 {
         margin-left: 15% !important;
         margin-top: 15px;
@@ -8443,12 +8448,12 @@ ui bootstrap tweaks
     #artFor9 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 38%;
+        width: 40%;
     }
     #artFor10 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 34%;
+        width: 36%;
     }
 
     #estFor {

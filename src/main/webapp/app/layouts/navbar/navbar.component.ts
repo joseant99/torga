@@ -154,6 +154,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     this.todasLasTiendas = data.body;
                     for (let o = 0; o < data.body['length']; o++) {
                         $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
+                        if (screen.width < 800) {
+                            $('#selectTiendaDelNav').append(
+                                '<option class="' +
+                                    data.body[o]['id'] +
+                                    '" id="' +
+                                    data.body[o]['nombreFiscal'] +
+                                    '">' +
+                                    data.body[o]['nombreFiscal'] +
+                                    '</option>'
+                            );
+                            $('#selectTiendaDelNav').css({ display: 'initial' });
+                            $('#selectTiendas').css({ display: 'none' });
+                        }
                         $('#listaTiendas').append(
                             '<option class="' +
                                 data.body[o]['id'] +
@@ -171,6 +184,20 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 this.todasLasTiendas = data.body;
                 for (let o = 0; o < data.body['length']; o++) {
                     $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
+                    if (screen.width < 800) {
+                        $('#selectTiendaDelNav').append(
+                            '<option class="' +
+                                data.body[o]['id'] +
+                                '" id="' +
+                                data.body[o]['nombreFiscal'] +
+                                '">' +
+                                data.body[o]['nombreFiscal'] +
+                                '</option>'
+                        );
+                        $('#selectTiendaDelNav').css({ display: 'initial' });
+                        $('#selectTiendas').css({ display: 'none' });
+                    }
+
                     $('#listaTiendas').append(
                         '<option class="' +
                             data.body[o]['id'] +
@@ -411,6 +438,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     };
                 }
                 var tiendaElegida = $('#selectTiendas').val();
+                if (screen.width < 800) {
+                    var tiendaElegida = $('#selectTiendaDelNav').val();
+                }
                 var referenciaCliente = $('#referenciaCliente').val();
                 var todasTiendaBuenas = this.todasLasTiendas;
                 if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
