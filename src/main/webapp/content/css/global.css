@@ -8560,9 +8560,17 @@ ui bootstrap tweaks
         max-width: 140px;
     }
     #botonDerechaPresupuesto {
-        margin-right: 28px;
-        margin-top: 0px;
-        margin-bottom: -15px;
+        margin-right: 60px !important;
+        margin-top: 0px !important;
+        margin-bottom: -15px !important;
+        bottom: 40px !important;
+        position: absolute !important;
+    }
+    #precioCestaFinalBueno {
+        float: right !important;
+        margin-top: 15px !important;
+        margin-bottom: 72px !important;
+        margin-right: 65px !important;
     }
     #imagenApoyo2 {
         max-height: 80px;

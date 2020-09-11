@@ -791,15 +791,6 @@
 						  </div>
       	 </ul>
       	 -->
-      	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
-       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                    <a id="comercial">
-                        <span>
-                            <span (click)="open('mis-tiendas',false,myModel)" style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">MIS TIENDAS</span>
-                        </span>
-					</a>
-				</li>	
-      	 </ul>
       	 
       	 <!-- 
       	 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
@@ -1292,7 +1283,7 @@
 		        </div>
 		       <div class="modal-footer">
 			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
-			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" >TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> pp</span>
+			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px"></span> pp</span>
 			       
 			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">GENERAR PRESUPUESTO</button></p>
 		        </div>

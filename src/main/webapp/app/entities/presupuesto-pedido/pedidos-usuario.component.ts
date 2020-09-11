@@ -110,6 +110,54 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[83] = 3;
         arrayBueno[85] = 42;
         $('#textoDemasFiltros').css({ display: 'none' });
+        $('#nombreFiscalSelectFiltros').css({ display: 'none' });
+        if (filtro == 'TODOS') {
+            var idUsu = this.accountService['userIdentity']['id'];
+            var auto = this.accountService['userIdentity']['authorities'][1];
+            var cogidos = [];
+            var account = this.accountService['userIdentity'];
+            var contador = 0;
+            $('#page-heading').css({ 'margin-left': '2%' });
+            var todos = this.representanteTiendaService.todos;
+            this.presupuestoPedidoService
+                .query({
+                    size: 10000000
+                })
+                .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+                    $.each(res['body'], function(index, value) {
+                        if (auto == 'ROLE_ADMIN') {
+                            if (value['pedido'] == 1) {
+                                cogidos[contador] = value;
+                                contador++;
+                            }
+                        } else {
+                            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                                for (let k = 0; k < todos.length; k++) {
+                                    if (todos[k]['user'] != null) {
+                                        if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                            cogidos[contador] = value;
+                                            contador++;
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (value['user']['id'] == idUsu && value['pedido'] == 1) {
+                                    cogidos[contador] = value;
+                                    contador++;
+                                }
+                            }
+                        }
+                    });
+                    if (res['body']['0'] != 'undefined') {
+                        this.tamano = contador;
+                        this.todos = cogidos;
+                        this.presuped1 = cogidos;
+                        this.paginatePresupuestoPedidos(cogidos, res.headers);
+                    }
+
+                    (res: HttpErrorResponse) => this.onError(res.message);
+                });
+        }
         if (filtro == 'FECHA PEDIDO') {
             $('#fechaFiltrado').css({ display: 'block' });
         }
