@@ -706,7 +706,7 @@
 			</ul>
 			
 		-->	
-			
+			<!-- 
 			<div id="divsiesrepresentante">
 				<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -728,7 +728,7 @@
 						
 					</li>
 				</ul>
-			</div>
+			</div> -->
 			<!--  
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo5" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -843,7 +843,7 @@
      
     
     
-    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:400px;POSITION:FIXED">
+    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:500px;POSITION:FIXED">
       
         <ul class="navbar-nav ml-auto" style=" display: block;">
             
@@ -1512,8 +1512,8 @@
 		        	<br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"><input type="text" id="referenciaCliente"> <label  style="margin-left:10px" >Referencia Cliente</label><br>
 		        	<p>Vas a generar un presupuesto &#191;Estas seguro?</p><br>
 		        	<div id="divinputenviarcarrito">
-		        	 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Activo" value="Activo" checked> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Presupuesto</span>
-     				 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Inactivo" value="Inactivo"> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Pedido</span>
+		        	 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Activo" (click)="hacerclickcambiartexto(1)" value="Activo" checked> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Presupuesto</span>
+     				 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Inactivo" (click)="hacerclickcambiartexto(2)" value="Inactivo"> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Pedido</span>
 		        	</div>
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 			        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>

@@ -353,6 +353,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
 
     public abrirArmariosTodos() {
         var coger = $('#inputCodigoVes').val();
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2650px' });
+        }
         var bueno = 0;
         for (let t = 0; t < 505; t++) {
             if (t < 10 && bueno != 1) {
@@ -385,9 +388,11 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.armarioService.todo = array;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
                     $('#listaAnchosVes').append('<option value="' + i + '">' + i + '</option>');
+                    $('.classanchoArmarioVes').append('<option value="' + i + '">' + i + '</option>');
                 }
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAlturaVes').append('<option value="' + i + '">' + i + '</option>');
+                    $('.classaltoArmarioVes').append('<option value="' + i + '">' + i + '</option>');
                 }
             });
             $('.armariosDivTodo3').css({ display: 'block' });
@@ -871,7 +876,9 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.armarioCogido = armariosTodos[j];
             }
         }
-        $('#productosPrincipal').css({ height: '2650px' });
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2850px' });
+        }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });

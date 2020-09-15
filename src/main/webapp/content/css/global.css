@@ -9668,13 +9668,13 @@ ui bootstrap tweaks
     }
 
     .armariosOcultaDivInputCodigo {
-        margin-top: 500px;
+        margin-top: 250px;
     }
     .armariosVistaDivInputCodigo {
-        margin-top: 500px;
+        margin-top: 250px;
     }
     .vestidoresDivInputCodigo {
-        margin-top: 500px;
+        margin-top: 250px;
     }
 
     #imagenNoDisponible {
@@ -10006,6 +10006,9 @@ ui bootstrap tweaks
         position: relative !important;
         z-index: 1;
         right: 0px !important;
+    }
+    #formcomebus {
+        margin-bottom: 90% !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

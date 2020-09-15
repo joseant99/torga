@@ -652,9 +652,11 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 this.armarioService.todo = array;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
                     $('#listaAnchosVista').append('<option value="' + i + '">' + i + '</option>');
+                    $('.classanchoArmarioVis').append('<option value="' + i + '">' + i + '</option>');
                 }
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAlturaVista').append('<option value="' + i + '">' + i + '</option>');
+                    $('.classaltoArmarioVis').append('<option value="' + i + '">' + i + '</option>');
                 }
             });
             $('.armariosDivTodo2').css({ display: 'block' });
@@ -1032,7 +1034,9 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             armariosTodos[j]['fondo'] = 61;
             this.armarioCogido = armariosTodos[j];
         }
-        $('#productosPrincipal').css({ height: '2650px' });
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2850px' });
+        }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });

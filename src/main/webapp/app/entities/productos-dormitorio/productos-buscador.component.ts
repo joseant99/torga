@@ -682,7 +682,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#calcuVesti').css({ display: 'block' });
             $('#modalesVesti').css({ display: 'block' });
             if (screen.width < 800) {
-                $('#productosPrincipal').css({ height: '2050px' });
+                $('#productosPrincipal').css({ height: '2350px' });
             }
         }
 
@@ -1032,7 +1032,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2050px' });
+            $('#productosPrincipal').css({ height: '2150px' });
         }
         $('.dimensionesColor1').css({ 'background-color': 'white' });
         $('#imagenAcabado').remove();
@@ -1777,7 +1777,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 284 &&
                     idProd != 285 &&
                     idProd != 229 &&
-                    idProd != 5
+                    idProd != 5 &&
+                    idProd != 376
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -1901,7 +1902,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 284 &&
                 idProd != 285 &&
                 idProd != 229 &&
-                idProd != 5
+                idProd != 5 &&
+                idProd != 376
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     for (let w = 0; w < data.body['length']; w++) {
@@ -3081,7 +3083,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 $('.prodDiv' + contador).append(
                                     '<img class="producto" id="imagenProd" src="data:image/gif;base64,' +
                                         imagen +
-                                        '" id="imagenProd" width="500px" height="333px"  style=" opacity: 0.7">'
+                                        '" id="imagenProd" width="500px" height="333px"  style="">'
                                 );
                                 $('#prod' + contador).css({ border: '1px solid #dfdddc' });
                                 contador++;
@@ -4134,7 +4136,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     $('#acabados #imagenAcabadoPrincipal').append(
                                         '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                             imagen +
-                                            '" id="imagenDimensiones" width="500px" height="333px" style=" opacity: 0.7;margin-left:150px;max-height: 333px;max-width: 500px;">'
+                                            '" id="imagenDimensiones" width="500px" height="333px" style="margin-left:150px;max-height: 333px;max-width: 500px;">'
                                     );
                                 }
 
@@ -4148,7 +4150,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             i +
                                             '" class="' +
                                             value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                            '" height="160px" width="280px" style="">'
                                     );
                                     $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                         '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -4171,7 +4173,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</button>'
                                 );
                                 $('#aca1' + u).append(
-                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" margin-left:20px;"/>'
                                 );
                                 u++;
                                 i = 0;
@@ -4257,7 +4259,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     $('#acabados #imagenAcabadoPrincipal').append(
                                         '<img id="imagenAcabado" src="data:image/gif;base64,' +
                                             imagen +
-                                            '" id="imagenDimensiones" style=" opacity: 0.7;margin-left:150px;max-height: 400px;max-width: 400px;">'
+                                            '" id="imagenDimensiones" style=" margin-left:150px;max-height: 400px;max-width: 400px;">'
                                     );
                                 }
 
@@ -4271,7 +4273,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                             i +
                                             '" class="' +
                                             value['acabados'][m]['id'] +
-                                            '" height="160px" width="280px" style=" opacity: 0.7;">'
+                                            '" height="160px" width="280px" style="">'
                                     );
                                     $('#myModalColores' + u + ' .modal-body #acabadoImagen' + i).append(
                                         '<strong><p style="color:white;position: absolute;margin-top: -105px;font-size: 30px;margin-left: 80px;">' +
@@ -4294,7 +4296,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '</button>'
                                 );
                                 $('#aca1' + u).append(
-                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style=" opacity: 0.7;margin-left:20px;"/>'
+                                    '<img id="imagenAcabadoPrincipal1" src"../../../content/images/blanco.jpg" height="60px" border="0" width="200px" style="margin-left:20px;"/>'
                                 );
                                 u++;
                                 i = 0;
@@ -6756,6 +6758,21 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('.classaltoArmarioBat').css({ display: 'block' });
             $('.inputfondoArmBatientes').remove();
             $('.selectfondoArmBatientes').css({ display: 'block' });
+
+            $('.classinputanchoArmarioOcu').remove();
+            $('.classanchoArmarioOcu').css({ display: 'block' });
+            $('.classinputaltoArmarioOcu').remove();
+            $('.classaltoArmarioOcu').css({ display: 'block' });
+
+            $('.classinputanchoArmarioVis').remove();
+            $('.classanchoArmarioVis').css({ display: 'block' });
+            $('.classinputaltoArmarioVis').remove();
+            $('.classaltoArmarioVis').css({ display: 'block' });
+
+            $('.classinputanchoArmarioVes').remove();
+            $('.classanchoArmarioVes').css({ display: 'block' });
+            $('.classinputaltoArmarioVes').remove();
+            $('.classaltoArmarioVes').css({ display: 'block' });
         }
         this.pruebaCargar();
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));

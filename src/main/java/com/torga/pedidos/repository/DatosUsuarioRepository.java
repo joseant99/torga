@@ -22,7 +22,7 @@ public interface DatosUsuarioRepository extends JpaRepository<DatosUsuario, Long
     @Query("Select u.nombreFiscal,u.user from DatosUsuario u")
 	Collection<DatosUsuario> busquing();
     
-    @Query("Select u from DatosUsuario u where u.repreGCompra.id = ?1")
+    @Query("Select u from DatosUsuario u where u.repreGCompra.id = ?1 order by u.nombreFiscal")
 	Collection<DatosUsuario> busquing1(Long id);
     
     @Query("Select u from DatosUsuario u where u.user.id = ?1")

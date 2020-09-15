@@ -140,6 +140,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#divsiesrepresentante').css({ display: 'none' });
         }
     }
+    public hacerclickcambiartexto(id) {
+        if (id == 1) {
+            $('#todometerFondo #textoRueda').text('Se esta generando el presupuesto, un momento.');
+        }
+        if (id == 2) {
+            $('#todometerFondo #textoRueda').text('Se esta generando el pedido, un momento.');
+        }
+    }
     cargarTodasTiendas() {
         var account = this.accountService.userIdentity;
         var arrayBueno = [];
@@ -323,6 +331,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public generarPresupuesto() {
+        $('#todometerFondo').css({ display: 'block' });
+        $('#modalCesta').css({ display: 'none' });
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
@@ -418,7 +428,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 var month = d.getMonth() + 1;
                 var day = d.getDate();
                 var prueba;
-                var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
+                var output = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + d.getFullYear();
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     prueba = {
                         codigo: 'PR-' + usuario['id'],
@@ -463,6 +473,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     }
                     prueba['user'] = usuGG;
                 }
+
                 if (memo.length != 0) {
                     if (memo[1]['checked'] == true) {
                         prueba['pedido'] = 1;
@@ -11624,23 +11635,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
                             $('#textoCesta' + i).append(
-                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong>' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '<i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '">' +
+                                    '"><strong>' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</span> pp </i></p>'
+                                    '</strong></span><strong> pp </strong></i></p>'
                             );
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong>' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '<i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '">' +
+                                    '"><strong>' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</span> pp </i></p>'
+                                    '</strong></span><strong> pp </strong></i></p>'
                             );
                         }
 
@@ -13314,14 +13325,31 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 }
 
                 alert('enviado');
-                if (item == 'A') {
-                    this.router.navigate(['/presupuesto-producto']);
-                }
-                if (item == 'B') {
-                    this.router.navigate(['/presupuesto-precios']);
-                }
-                if (item == 'C') {
-                    this.router.navigate(['/presupuesto-puntos']);
+                var memo = document.getElementsByName('estado');
+                if (memo.length != 0) {
+                    if (memo[0]['checked'] == true) {
+                        if (item == 'A') {
+                            this.router.navigate(['/presupuesto-producto']);
+                        }
+                        if (item == 'B') {
+                            this.router.navigate(['/presupuesto-precios']);
+                        }
+                        if (item == 'C') {
+                            this.router.navigate(['/presupuesto-puntos']);
+                        }
+                    }
+
+                    if (memo[1]['checked'] == true) {
+                        if (item == 'A') {
+                            this.router.navigate(['/pedidos-producto']);
+                        }
+                        if (item == 'B') {
+                            this.router.navigate(['/presupuesto-precios']);
+                        }
+                        if (item == 'C') {
+                            this.router.navigate(['/presupuesto-puntos']);
+                        }
+                    }
                 }
             });
         });
@@ -13719,15 +13747,31 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     for (let i = 1; i <= 100; i++) {
                         sessionStorage.removeItem('prod' + i);
                     }
+                    var memo = document.getElementsByName('estado');
+                    if (memo.length != 0) {
+                        if (memo[0]['checked'] == true) {
+                            if (item == 'A') {
+                                this.router.navigate(['/presupuesto-producto']);
+                            }
+                            if (item == 'B') {
+                                this.router.navigate(['/presupuesto-precios']);
+                            }
+                            if (item == 'C') {
+                                this.router.navigate(['/presupuesto-puntos']);
+                            }
+                        }
 
-                    if (item == 'A') {
-                        this.router.navigate(['/presupuesto-producto']);
-                    }
-                    if (item == 'B') {
-                        this.router.navigate(['/presupuesto-precios']);
-                    }
-                    if (item == 'C') {
-                        this.router.navigate(['/presupuesto-puntos']);
+                        if (memo[1]['checked'] == true) {
+                            if (item == 'A') {
+                                this.router.navigate(['/pedidos-producto']);
+                            }
+                            if (item == 'B') {
+                                this.router.navigate(['/presupuesto-precios']);
+                            }
+                            if (item == 'C') {
+                                this.router.navigate(['/presupuesto-puntos']);
+                            }
+                        }
                     }
                 });
             }

@@ -890,7 +890,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         }
         var id = 0;
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '3000px' });
+            $('#productosPrincipal').css({ height: '3200px' });
         }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         var ancho = $('#anchosSelect4').val();

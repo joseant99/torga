@@ -1850,9 +1850,9 @@
 	    </div>
 	  </div>
     <h2 style="text-align:center" id="page-heading">
-        <span ><strong>BUSCADOR</strong></span>
+        <span ><strong>NATIV COMEDORES</strong></span>
         
-        <form style="margin-top:5%;">
+        <form style="margin-top:5%;margin-bottom:2%;" id="formcomebus">
 								  
 								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">M&Oacute;DULOS BAJOS</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(8)"><br>
@@ -1895,7 +1895,9 @@
 								  
 								  <label for="cajeA" id="artFor7" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">MESAS</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(20)"><br>
-								  
+						</form>
+								  <span style="margin-top:3%"><strong>NATIV DORMITORIOS</strong></span>
+								  <form style="margin-top:5%;">
 								  <label for="cajeA" id="artFor8" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">CAMAS</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(21)"><br>
 								  
@@ -2102,8 +2104,8 @@
     
     <div id="producto" class="armariosDivTodo1" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.anchoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosOcu" step="10" id="anchosSelect2" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.altoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAlturaOcu" id="alturaSelect2" name="anchos" type="number"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.anchoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosOcu" class="classinputanchoArmarioOcu" step="10" id="anchosSelect2" name="anchos" type="number"/><select class="classanchoArmarioOcu" id="anchosSelect2" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioOcultaComponent.altoMin}} Y {{this.armariosDormitorioOcultaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAlturaOcu" id="alturaSelect2" class="classinputaltoArmarioOcu" name="anchos" type="number"/><select class="classaltoArmarioOcu" id="alturaSelect2" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
 		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.carcarCascosInterioresPuertas()">Buscar</button></p>
 		   
@@ -2145,8 +2147,8 @@
     
     <div id="producto" class="armariosDivTodo2" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.anchoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVista" step="10" id="anchosSelect3" name="anchos" type="number"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.altoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAlturaVista" id="alturaSelect3" name="anchos" type="number"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.anchoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVista" step="10" class="classinputanchoArmarioVis" id="anchosSelect3" name="anchos" type="number"/><select class="classanchoArmarioVis" id="anchosSelect3" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.altoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" class="classinputaltoArmarioVis" list="listaAlturaVista" id="alturaSelect3" name="anchos" type="number"/><select class="classaltoArmarioVis" id="alturaSelect3" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="61" type="number" disabled/></p>
 		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas()">Buscar</button></p>
 		   
@@ -2183,8 +2185,8 @@
     
     <div id="producto" class="armariosDivTodo3" style="display:none;margin-left:0%;width:100%">
     <h2 style="text-align:center;letter-spacing:3px">MEDIDAS</h2><BR><BR>
-    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.anchoMin}} Y {{this.vestidoresDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVes" step="10" id="anchosSelect" name="anchos" type="number" (change)="this.vestidoresDormitorioComponent.comproAncho()"/></p>
-		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.altoMin}} Y {{this.vestidoresDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAlturaVes" id="alturaSelect" name="anchos" type="number" (change)="this.vestidoresDormitorioComponent.comproAlto()"/></p>
+    	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.anchoMin}} Y {{this.vestidoresDormitorioComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVes" step="10" id="anchosSelect" name="anchos" class="classinputanchoArmarioVes" type="number" (change)="this.vestidoresDormitorioComponent.comproAncho()"/><select class="classanchoArmarioVes" id="anchosSelect" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
+		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM &nbsp;&nbsp;[ENTRE {{this.vestidoresDormitorioComponent.altoMin}} Y {{this.vestidoresDormitorioComponent.altoMax}}]</label><input style="text-align:center" list="listaAlturaVes" id="alturaSelect" name="anchos" class="classinputaltoArmarioVes" type="number" (change)="this.vestidoresDormitorioComponent.comproAlto()"/><select class="classaltoArmarioVes" id="alturaSelect" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input list="listaFondoBat" data-toggle="modal" data-target="#modalFondoCm" id="inputFondoBatientes" style="text-align:center;background-color:#F0F0F0" value="61" type="number" readonly="readonly"/></p>
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.vestidoresDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
@@ -2332,7 +2334,7 @@
 
 			<div id="divDentroCalcu">
 				<div style="width:100%;height:7%;color:black;top:0;letter-spacing:2px;font-family:'Lato';font-weight:300" id="div1calcutodo">		
-					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita"></p><p id="nombreMesitaArma" style="display:none"></p></strong><p id="textprecioCalculadoraazul" style="float:right;display:none;"><strong id="precioDimension" style="float:left"></strong><span style="display:none;float:left" id="euroCalculadora">&euro;</span><span style="display:none;float:left" id="ppCalculadora"> pp</span></p >
+					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita" style="font-weight: 600;"></p><p id="nombreMesitaArma" style="display:none"></p></strong><p id="textprecioCalculadoraazul" style="float:right;display:none;"><strong id="precioDimension" style="float:left;font-weight: 600;"></strong><span style="display:none;float:left" id="euroCalculadora">&euro;</span><span style="display:none;float:left" id="ppCalculadora"> <span style="font-weight: 600;">pp</span></span></p >
 				</div>
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
