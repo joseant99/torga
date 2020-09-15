@@ -36,11 +36,11 @@ export class VistaAdminService {
         return this.http.request(req);
     }
 
-    pushFileToStorageExcel1(file: File): Observable<HttpEvent<{}>> {
+    pushFileToStorageExcel1(file: File, correo: any): Observable<HttpEvent<{}>> {
         const formdata: FormData = new FormData();
 
         formdata.append('file', file);
-
+        formdata.append('correo', correo);
         const req = new HttpRequest('POST', this.resourceUrlUploadExcel1, formdata, {
             reportProgress: true,
             responseType: 'text'

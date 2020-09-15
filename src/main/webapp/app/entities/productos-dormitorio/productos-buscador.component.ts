@@ -6321,6 +6321,27 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#productoCarrito' + j + ' #precios' + j).empty();
             $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
         }
+        $('#artFor').prop('checked', false);
+        $('#artFor1').prop('checked', false);
+        $('#artFor2').prop('checked', false);
+        $('#artFor3').prop('checked', false);
+        $('#artFor4').prop('checked', false);
+        $('#artFor5').prop('checked', false);
+        $('#artFor6').prop('checked', false);
+        $('#artFor7').prop('checked', false);
+        $('#artFor8').prop('checked', false);
+        $('#artFor9').prop('checked', false);
+        $('#artFor10').prop('checked', false);
+        $('#artFor11').prop('checked', false);
+        $('#artFor12').prop('checked', false);
+        $('#artFor13').prop('checked', false);
+        $('#artFor14').prop('checked', false);
+        $('#artFor15').prop('checked', false);
+        $('#artFor16').prop('checked', false);
+        $('#artFor17').prop('checked', false);
+        $('#artFor18').prop('checked', false);
+        $('#artFor19').prop('checked', false);
+
         var contador = 1;
         var todosAcabados = this.todosAcabados;
         var acabados1 = this.acabados1;

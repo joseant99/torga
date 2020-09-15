@@ -30,11 +30,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
 import javax.activation.DataHandler;
+import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.BodyPart;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -149,7 +151,7 @@ public class FileController {
 	    }
 	    
 	    @PostMapping("/uploadFile1")
-	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file) throws MessagingException {
+	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException {
 	        String fileName = fileStorageService.storeFile(file);
 
 	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -157,56 +159,49 @@ public class FileController {
 	                .path(fileName)
 	                .toUriString();
 	        
-	        String correo = "jose45335@gmail.com";
-	        String mail = "prueba";
-	        SimpleMailMessage msg = new SimpleMailMessage();
-	        msg.setTo(correo);
-
-	        msg.setSubject("Error en gestion de tienda");
-	        msg.setText(mail);
 	        
+	        
+	        final String username = "elmuebledigitalprueba@gmail.com";
+	        final String password = "elMuebleDigital2019";
 	        Properties props = new Properties();
-            props.put("mail.smtp.host", "smtp.gmail.com");
-            props.setProperty("mail.smtp.starttls.enable", "true");
-            props.setProperty("mail.smtp.port", "587");
-            props.setProperty("mail.smtp.user", "elmuebledigitalprueba@gmail.com");
-            props.setProperty("mail.smtp.auth", "true");
+	        props.put("mail.smtp.auth", "true");
+	        props.put("mail.smtp.starttls.enable", "true");
+	        props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.port", "587");
+	        Session session = Session.getInstance(props,
+	          new javax.mail.Authenticator() {
+	          protected PasswordAuthentication getPasswordAuthentication() {
+	            return new PasswordAuthentication(username, password);
+	          }
+	          });
+	        try {
+	          Message message = new MimeMessage(session);
+	          message.setFrom(new InternetAddress(correo));
+	          message.setRecipients(Message.RecipientType.TO,
+	            InternetAddress.parse(correo));
+	          message.setSubject("Presupuesto");
+	          message.setText("Estimado cliente,"
+	            + "\n\n Le damos la bienvenida mediante TLS!");
+	          
+	          Multipart multipart = new MimeMultipart();
+	          MimeBodyPart messageBodyPart = new MimeBodyPart();
+	          messageBodyPart = new MimeBodyPart();
+	         
+	          DataSource source = new FileDataSource("src/main/webapp/content/images/imagenesSubidas/presupdf.pdf");
+	          messageBodyPart.setDataHandler(new DataHandler(source));
+	          messageBodyPart.setFileName("presupesto");
+	          multipart.addBodyPart(messageBodyPart);
 
-            Session session = Session.getDefaultInstance(props, null);
-            // session.setDebug(true);
+	          message.setContent(multipart);
 
-            // Se compone la parte del texto
-            BodyPart texto = new MimeBodyPart();
-            texto.setText("Texto del mensaje");
-
-            // Se compone el adjunto con la imagen
-            BodyPart adjunto = new MimeBodyPart();
-            adjunto.setDataHandler(
-                new DataHandler(new FileDataSource("src/main/webapp/content/images/imagenesSubidas/pruebapdf.pdf")));
-            adjunto.setFileName("src/main/webapp/content/images/imagenesSubidas/pruebapdf.pdf");
-
-            // Una MultiParte para agrupar texto e imagen.
-            MimeMultipart multiParte = new MimeMultipart();
-            multiParte.addBodyPart(texto);
-            multiParte.addBodyPart(adjunto);
-
-            // Se compone el correo, dando to, from, subject y el
-            // contenido.
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("jose45335@gmail.com"));
-            message.addRecipient(
-                Message.RecipientType.TO,
-                new InternetAddress("elmuebledigitalprueba@gmail.com"));
-            message.setSubject("Prueba");
-            message.setContent(multiParte);
-
-            // Se envia el correo.
-            Transport t = session.getTransport("smtp");
-            t.connect("elmuebledigitalprueba@gmail.com", "elMuebleDigital2019");
-            t.sendMessage(message, message.getAllRecipients());
-            t.close();
-
-	        javaMailSender.send(msg);
+	          
+	          Transport.send(message);
+	          System.out.println("Correcto!");
+	        } catch (MessagingException e) {
+	          throw new RuntimeException(e);
+	        }
+	        
+	        
 	        return new UploadFileResponse(fileName, fileDownloadUri,
 	                file.getContentType(), file.getSize());
 	    }
