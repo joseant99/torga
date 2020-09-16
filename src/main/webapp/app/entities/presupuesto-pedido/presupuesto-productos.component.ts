@@ -314,6 +314,10 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                         var precioPunto = this.precioPunto[0];
                     }
                     if (res.body[i]['presupuestoPedido'] != null) {
+                        $('#textoObservaciones').css({ display: 'block' });
+                        if (res.body[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
+                            $('#textoObservaciones').append('<p>' + res.body[i]['presupuestoPedido']['observaciones'] + '</p>');
+                        }
                         if (parseFloat(presu) == res.body[i]['presupuestoPedido']['id']) {
                             if (res.body[i]['productosDormitorio'] != null) {
                                 if (res.body[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
@@ -13106,6 +13110,31 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     protected onSaveError2() {
         this.isSaving = false;
     }
+
+    public textoObservacionesFuncion() {
+        $('#textoObservaciones').css({ display: 'block' });
+        var texto = $('#textAreaObs').val();
+        $('#textAreaObs').empty();
+        $('#textoObservaciones').empty();
+        $('#textoObservaciones').append('<p>' + texto + '</p>');
+        $('#textAreaObs').val('');
+        var presu = this.productos[0]['presupuestoPedido'];
+        presu['observaciones'] = texto;
+        this.subscribeToSaveResponse5(this.presupuestoPedidoService.update(presu));
+    }
+
+    protected subscribeToSaveResponse5(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess5(), (res: HttpErrorResponse) => this.onSaveError5());
+    }
+
+    protected onSaveSuccess5() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError5() {
+        this.isSaving = false;
+    }
+
     public generopdfgg() {
         var doc = new jsPDF('p', 'mm', 'letter');
         var correo = '';

@@ -39,6 +39,9 @@ public class PresupuestoPedido implements Serializable {
 
     @Column(name = "fecha_pedido")
     private String fecha_pedido;
+    
+    @Column(name = "observaciones")
+    private String observaciones;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -119,6 +122,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setFecha_presupuesto(String fecha_presupuesto) {
         this.fecha_presupuesto = fecha_presupuesto;
+    }
+    
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public PresupuestoPedido observaciones(String observaciones) {
+        this.observaciones = observaciones;
+        return this;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 
     public String getFecha_pedido() {

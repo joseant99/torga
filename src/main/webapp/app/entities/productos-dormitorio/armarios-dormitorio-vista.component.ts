@@ -7646,7 +7646,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         $('#calcuVista #3acaPuerta' + id).css({ display: 'none' });
         $('#calcuVista #4acaPuerta' + id).css({ display: 'none' });
         $('#calcuVista #5acaPuerta' + id).css({ display: 'none' });
-
+        $('#calcuVista #divPuerta' + id + ' #inputs').css({ display: 'block' });
         if (nombre == 'Puerta Lisa') {
             var idPuerta = 392;
         }

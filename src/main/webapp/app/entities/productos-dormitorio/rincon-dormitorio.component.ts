@@ -829,6 +829,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         if (cogerSeccion == 'C') {
             var precioPuntosBuenos = JSON.parse(sessionStorage.getItem('C'));
         }
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
         var id = 0;
         var ancho = $('#anchosSelect12').val();
         $('#inputFondoBatientes').removeAttr('data-target');
@@ -1205,9 +1206,18 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 for (let j = 0; j < puertas - 1; j++) {
                     array[j] = j;
                 }
+                if (screen.width < 800) {
+                    $('#productosPrincipal').css({ height: '3250px' });
+                }
                 arrayPuertas[0] = '1';
                 arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
+                $('.armariosDivTodoRincon #imagenesArmario1').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
+                $('.armariosDivTodoRincon #imagenesArmario2').append(
+                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                );
                 this.arraySaberHuecos = array;
                 $('#acabadosTodo').removeAttr('class');
                 $('#acabadosTodo').removeAttr('class');
@@ -3898,6 +3908,9 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
     public abrirArmariosTodos() {
         var coger = $('#inputCodigoRincon').val();
         var bueno = 0;
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2650px' });
+        }
         for (let t = 277; t < 325; t++) {
             if (t >= 100 && bueno != 1) {
                 if (coger == 'NB' + t) {
@@ -3906,6 +3919,8 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             }
         }
         if (bueno == 1) {
+            $('.classinputaltoArmarioRin').remove();
+            $('.classaltoArmarioRin').css({ display: 'block' });
             this.cascoService.findBus1(coger).subscribe(data => {
                 this.anchoMin = data.body[0].anchoMin;
                 this.anchoMax = data.body[0].anchoMax;
@@ -3923,6 +3938,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 }
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAltura12').append('<option value="' + i + '">' + i + '</option>');
+                    $('.classaltoArmarioRin').append('<option value="' + i + '">' + i + '</option>');
                 }
             });
             $('.armariosDivTodoRincon').css({ display: 'block' });

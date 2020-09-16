@@ -1899,7 +1899,6 @@ nput[type='radio'] {
     }
 
     .imagenAcabadoPrincipalImg {
-        opacity: 0.7;
         max-height: 183px;
         max-width: 300px;
         margin-left: 18px;
@@ -8962,7 +8961,7 @@ ui bootstrap tweaks
         left: -345px;
     }
     .armariosDivInputCodigo {
-        margin-top: 125% !important;
+        margin-top: 250px !important;
     }
     #labelFondoArmario {
         margin-right: 23% !important;
@@ -10009,6 +10008,37 @@ ui bootstrap tweaks
     }
     #formcomebus {
         margin-bottom: 90% !important;
+    }
+    .armariosRinconDivInputCodigo {
+        margin-top: 250px;
+    }
+    #imagenEspecial {
+        z-index: 99 !important;
+        max-width: 330px !important;
+        max-height: 230px !important;
+        position: absolute !important;
+        top: 0px !important;
+        margin-left: -253px !important;
+        text-align: center !important;
+    }
+    #articulosEspeciales {
+        margin-top: 250px !important;
+    }
+    #textoAntesDescribe {
+        width: 70% !important;
+        margin-left: 8% !important;
+    }
+    #textArticulo {
+        margin-left: 10% !important;
+        width: 80% !important;
+    }
+    #textoInsertarImagen {
+        width: 85% !important;
+        margin-left: 8% !important;
+    }
+    #puntosSuponeArticulo {
+        width: 80% !important;
+        margin-left: 8% !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

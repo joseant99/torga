@@ -12378,7 +12378,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
 
                             $('#cuerpo' + i).append(
-                                '<img style="z-index:' +
+                                '<img id="imagenEspecial" style="z-index:' +
                                     (100 - i) +
                                     ';max-width:400px;max-height:400px;;max-width:400px;max-height:250px;position:absolute;top:0px;margin-left:270px" width="1000px" height="1000px" src="../../../content/images/especial.png">'
                             );
@@ -12388,31 +12388,65 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                             if (saberlo != 'A') {
-                                $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                                        i +
-                                        '">' +
-                                        sesion[1]['precio'] +
-                                        '</span> &euro; </i></p>'
-                                );
+                                if (screen.width >= 800) {
+                                    $('#textoCesta' + i).append(
+                                        '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                            i +
+                                            '">' +
+                                            sesion[1]['precio'] +
+                                            '</span> &euro; </i></p>'
+                                    );
+                                }
+                                if (screen.width < 800) {
+                                    $('#textoCesta' + i).append(
+                                        '<p style="letter-spacing: 1px;font-weight: 300;text-align:center">Articulo Especial<i style="float:right;margin-right:20%"><span id="precioTodoProd' +
+                                            i +
+                                            '">' +
+                                            sesion[1]['precio'] +
+                                            '</span> &euro; </i></p>'
+                                    );
+                                }
                             } else {
+                                if (screen.width >= 800) {
+                                    $('#textoCesta' + i).append(
+                                        '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                            i +
+                                            '">' +
+                                            sesion[1]['precio'] +
+                                            '</span> PP </i></p>'
+                                    );
+                                }
+                                if (screen.width < 800) {
+                                    $('#textoCesta' + i).append(
+                                        '<p style="letter-spacing: 1px;font-weight: 300;text-align:center">Articulo Especial<i style="float:right;margin-right:20%"><span id="precioTodoProd' +
+                                            i +
+                                            '">' +
+                                            sesion[1]['precio'] +
+                                            '</span> PP </i></p>'
+                                    );
+                                }
+                            }
+                            if (screen.width < 800) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">Articulo Especial<i style="float:right;margin-right:40%"><span id="precioTodoProd' +
-                                        i +
-                                        '">' +
-                                        sesion[1]['precio'] +
-                                        '</span> PP </i></p>'
+                                    '<p style="letter-spacing: 1px;font-weight: 300;">' + sesion[1]['texto'] + '</p>'
+                                );
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;"><a download href="../../../content/images/imagenesSubidas/' +
+                                        sesion[1]['imagen'] +
+                                        '">Descargar Archivo</a></p>'
+                                );
+                                $('#textoCesta' + i).css({ 'text-align': 'center' });
+                            }
+                            if (screen.width >= 800) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['texto'] + '</p>'
+                                );
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><a download href="../../../content/images/imagenesSubidas/' +
+                                        sesion[1]['imagen'] +
+                                        '">Descargar Archivo</a></p>'
                                 );
                             }
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['texto'] + '</p>'
-                            );
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><a download href="../../../content/images/imagenesSubidas/' +
-                                    sesion[1]['imagen'] +
-                                    '">Descargar Archivo</a></p>'
-                            );
-
                             var precioTotalCesta;
                             precioTotalCesta = $('#cestaTotal').text();
                             if (precioTotalCesta != '') {
@@ -12428,12 +12462,20 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#cestaTotal').text(cogerPrecio);
                                 }
                             }
-
-                            $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
-                                    i +
-                                    ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
-                            );
+                            if (screen.width < 800) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                        i +
+                                        ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
+                                );
+                            }
+                            if (screen.width >= 800) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                        i +
+                                        ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
+                                );
+                            }
 
                             $('#textoCesta' + i).append('<hr style="100%"></hr>');
                         }

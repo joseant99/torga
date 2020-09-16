@@ -34,7 +34,10 @@
 		    </div>
 		    <div style="float:right;width:25%;text-align:center;display:none;position: absolute;right: 0;margin-top: 24.8%;" id="datosAnadirEstanteria"></div>
 		    <div id="meterEspeciales" style="display:none"></div>
+		    	    <span style="float: left;margin-top: 75px;margin-left: 26%;">OBSERVACIONES: </span><div id="textoObservaciones" style="display:none;float: left;margin-top: 3%;margin-left: 5%;width: 26%;border: 1px solid;height: 80px;">
+		    
 	    </div>
+	    
     <hr id="idLineaDiv" style="width:100%;background-color:black;float:left;height:0px"></hr>
   	 <div style="float:left;width:100%"></div>
 
@@ -99,7 +102,13 @@
 			<div style="float:right;margin-right:25%" id="precioCalculadoIva"></div>
 		</div>
 		<hr style="width:100%;background-color:black;float:left;height:0px" id="hrUltimo"></hr>
+		
+		
 </div>
+<div style="float:left;width:100%;margin-bottom:60px;">
+			<textarea style="margin-left: 38%;"  rows="4" cols="50" id="textAreaObs">Observaciones...</textarea>
+			<button style="margin-top: 110px;position: absolute;" (click)="textoObservacionesFuncion()">Guardar</button>
+		</div>
 </div>
 		<div style="float:left;width:100%">
 		

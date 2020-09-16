@@ -7646,6 +7646,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#3acaPuerta' + id).css({ display: 'none' });
         $('#4acaPuerta' + id).css({ display: 'none' });
         $('#5acaPuerta' + id).css({ display: 'none' });
+        $('#calcuOculta #divPuerta' + id + ' #inputs').css({ display: 'block' });
 
         if (nombre == 'Puerta Lisa') {
             var idPuerta = 392;

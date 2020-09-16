@@ -688,11 +688,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         if (id == 6) {
             $('#articulosEspeciales').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2650px' });
+            }
         }
         if (id == 7) {
             $('.armariosRinconDivInputCodigo').css({ display: 'block' });
             $('#calcuRincon').css({ display: 'block' });
             $('#modalesRincon').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('#productosPrincipal').css({ height: '2350px' });
+            }
         }
 
         if (id == 8) {
