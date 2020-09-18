@@ -3909,7 +3909,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         var coger = $('#inputCodigoRincon').val();
         var bueno = 0;
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2650px' });
+            $('#productosPrincipal').css({ height: '2450px' });
         }
         for (let t = 277; t < 325; t++) {
             if (t >= 100 && bueno != 1) {

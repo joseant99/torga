@@ -8409,8 +8409,8 @@ ui bootstrap tweaks
     }
 
     #artFor2 {
-        margin-left: 13% !important;
-        width: 61%;
+        margin-left: 15% !important;
+        width: 58%;
     }
 
     #artFor3 {
@@ -8422,7 +8422,7 @@ ui bootstrap tweaks
     #artFor4 {
         margin-left: 15% !important;
         margin-top: 15px;
-        width: 59%;
+        width: 60%;
     }
     #artFor5 {
         margin-left: 15% !important;
@@ -8569,7 +8569,8 @@ ui bootstrap tweaks
         float: right !important;
         margin-top: 15px !important;
         margin-bottom: 72px !important;
-        margin-right: 65px !important;
+        margin-right: 27% !important;
+        font-weight: 600;
     }
     #imagenApoyo2 {
         max-height: 80px;
@@ -8625,7 +8626,7 @@ ui bootstrap tweaks
         margin-left: 0px;
         margin-top: 25px;
         padding-left: 0px;
-        height: 1750px;
+        height: 1850px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -8784,9 +8785,9 @@ ui bootstrap tweaks
     }
 
     #modalcontenidoCss {
-        height: 750px !important;
+        height: 654px !important;
         margin-top: 50px !important;
-        width: 360px !important;
+        width: 368px !important;
         overflow-y: scroll !important;
     }
     .pietra {
@@ -8961,7 +8962,7 @@ ui bootstrap tweaks
         left: -345px;
     }
     .armariosDivInputCodigo {
-        margin-top: 250px !important;
+        margin-top: 175px !important;
     }
     #labelFondoArmario {
         margin-right: 23% !important;
@@ -9607,19 +9608,19 @@ ui bootstrap tweaks
         max-height: 310px !important;
     }
     #anchoCesta {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #altoCesta {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #fondoCesta {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #acabadoCesta {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #apoyoCesta {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #apoyoPrecioCesta {
         margin-right: 15% !important;
@@ -9627,10 +9628,10 @@ ui bootstrap tweaks
     }
 
     #nombreMueble {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
     #precioMueble {
-        margin-right: 15% !important;
+        margin-right: 8% !important;
     }
 
     .cuerpoArmario {
@@ -9667,13 +9668,13 @@ ui bootstrap tweaks
     }
 
     .armariosOcultaDivInputCodigo {
-        margin-top: 250px;
+        margin-top: 175px;
     }
     .armariosVistaDivInputCodigo {
-        margin-top: 250px;
+        margin-top: 175px;
     }
     .vestidoresDivInputCodigo {
-        margin-top: 250px;
+        margin-top: 175px;
     }
 
     #imagenNoDisponible {
@@ -9709,6 +9710,8 @@ ui bootstrap tweaks
     #datosMeter0 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen1 {
         margin-left: 3% !important;
@@ -9718,6 +9721,8 @@ ui bootstrap tweaks
     #datosMeter1 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen2 {
         margin-left: 3% !important;
@@ -9727,6 +9732,8 @@ ui bootstrap tweaks
     #datosMeter2 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen3 {
         margin-left: 3% !important;
@@ -9736,6 +9743,8 @@ ui bootstrap tweaks
     #datosMeter3 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen4 {
         margin-left: 3% !important;
@@ -9745,6 +9754,8 @@ ui bootstrap tweaks
     #datosMeter4 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen5 {
         margin-left: 3% !important;
@@ -9754,6 +9765,8 @@ ui bootstrap tweaks
     #datosMeter5 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen6 {
         margin-left: 3% !important;
@@ -9763,6 +9776,8 @@ ui bootstrap tweaks
     #datosMeter6 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen7 {
         margin-left: 3% !important;
@@ -9772,6 +9787,8 @@ ui bootstrap tweaks
     #datosMeter7 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen8 {
         margin-left: 3% !important;
@@ -9781,6 +9798,8 @@ ui bootstrap tweaks
     #datosMeter8 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen9 {
         margin-left: 3% !important;
@@ -9790,6 +9809,8 @@ ui bootstrap tweaks
     #datosMeter9 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen10 {
         margin-left: 3% !important;
@@ -9799,6 +9820,8 @@ ui bootstrap tweaks
     #datosMeter10 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen11 {
         margin-left: 3% !important;
@@ -9808,6 +9831,8 @@ ui bootstrap tweaks
     #datosMeter11 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen12 {
         margin-left: 3% !important;
@@ -9817,6 +9842,8 @@ ui bootstrap tweaks
     #datosMeter12 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen13 {
         margin-left: 3% !important;
@@ -9826,6 +9853,8 @@ ui bootstrap tweaks
     #datosMeter13 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen14 {
         margin-left: 3% !important;
@@ -9835,6 +9864,8 @@ ui bootstrap tweaks
     #datosMeter14 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen15 {
         margin-left: 3% !important;
@@ -9844,6 +9875,8 @@ ui bootstrap tweaks
     #datosMeter15 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen16 {
         margin-left: 3% !important;
@@ -9853,6 +9886,8 @@ ui bootstrap tweaks
     #datosMeter16 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen17 {
         margin-left: 3% !important;
@@ -9862,6 +9897,8 @@ ui bootstrap tweaks
     #datosMeter17 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagen18 {
         margin-left: 3% !important;
@@ -9871,6 +9908,8 @@ ui bootstrap tweaks
     #datosMeter18 {
         width: 100% !important;
         font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
     }
     #imagenPresupues {
         max-width: 350px !important;
@@ -10010,7 +10049,7 @@ ui bootstrap tweaks
         margin-bottom: 90% !important;
     }
     .armariosRinconDivInputCodigo {
-        margin-top: 250px;
+        margin-top: 175px;
     }
     #imagenEspecial {
         z-index: 99 !important;
@@ -10039,6 +10078,38 @@ ui bootstrap tweaks
     #puntosSuponeArticulo {
         width: 80% !important;
         margin-left: 8% !important;
+    }
+    #divObserPoner {
+        float: left !important;
+        width: 100% !important;
+        margin-bottom: 60px !important;
+    }
+    #textAreaObs {
+        margin-left: 5% !important;
+        width: 90% !important;
+    }
+
+    #botonGuardarobser {
+        margin-top: 110px;
+        position: absolute;
+        right: 17px;
+    }
+    #spanobser {
+        float: left !important;
+        margin-top: 35px !important;
+        margin-left: 0% !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    #textoObservaciones {
+        display: block !important;
+        float: left !important;
+        margin-top: 3% !important;
+        margin-left: 5% !important;
+        width: 88% !important;
+        border: 1px solid !important;
+        height: 80px !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

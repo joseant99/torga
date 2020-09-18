@@ -11656,8 +11656,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Ancho: ' +
+                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
                                 sesion[1]['ancho'] +
+                                '</p>'
+                        );
+
+                        $('#textoCesta' + i).append(
+                            '<p id="codigoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Codigo:</span> ' +
+                                sesion[1]['mensaje'] +
                                 '</p>'
                         );
 
@@ -12234,29 +12240,2231 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#cestaTotal').text(cogerPrecio);
                         }
                         $('#textoCesta' + i).append(
-                            '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Alto: ' +
+                            '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Alto:</span> ' +
                                 sesion[1]['alto'] +
                                 '</p>'
                         );
                         $('#textoCesta' + i).append(
-                            '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Fondo: ' +
+                            '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
                                 sesion[1]['fondo'] +
                                 '</p>'
                         );
 
                         for (let o = 0; o < acabados.length; o++) {
-                            $('#textoCesta' + i).append(
-                                '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
-                                    (o + 1) +
-                                    ': ' +
-                                    acabados[o] +
-                                    '</p>'
-                            );
+                            if (sesion[1]['productosDormitorio']['id'] == 315) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' TAPA :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' CASCO :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' PUERTA SUP IZQ :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' PUERTA SUP DER :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' CUBO :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 5) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' PUERTA CEN :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 6) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' CAJON INF :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            var idProd = sesion[1]['productosDormitorio']['id'];
+                            if (idProd == 107) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 108) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Suplemento :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 109) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 295) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Cen :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 296) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta 1 :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta 2 :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta 3 :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 5) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta 4 :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 111) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 110) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 113) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 112) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 114) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 116) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 115) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 298) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            '  Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 5) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 297) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 5) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 118) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 117) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 119) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 299) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 301) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 300) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 302) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Costados y suelo :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 171) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cristal :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 172) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cristal :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 173) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cristal :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 174) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Cen :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 5) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 6) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 175) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Abatible :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Interior :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 176) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' C ajon Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 177) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Trasera :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 178) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 179) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 159) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 158) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 161) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 160) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 163) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 162) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 331) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 330) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 165) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 164) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Izq :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 167) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 166) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 169) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 168) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 170) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cruceta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Sup :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Cen :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta Inf :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 180) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Estantes :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Trasera :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 181) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Estantes :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Trasera :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 183) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Estantes :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Trasera :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 182) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Estantes :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Trasera :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 3) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Puerta :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 204) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 332) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 205) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 333) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 206) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 207) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 208) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 209) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 210) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 211) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 213) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 214) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 21) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 216) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 217) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (idProd == 218) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 219) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cubo :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 220) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cubo :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 221) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 222) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 223) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+
+                            if (
+                                idProd != 107 &&
+                                idProd != 315 &&
+                                idProd != 108 &&
+                                idProd != 109 &&
+                                idProd != 295 &&
+                                idProd != 296 &&
+                                idProd != 111 &&
+                                idProd != 110 &&
+                                idProd != 113 &&
+                                idProd != 112 &&
+                                idProd != 114 &&
+                                idProd != 116 &&
+                                idProd != 115 &&
+                                idProd != 298 &&
+                                idProd != 297 &&
+                                idProd != 118 &&
+                                idProd != 117 &&
+                                idProd != 119 &&
+                                idProd != 299 &&
+                                idProd != 301 &&
+                                idProd != 300 &&
+                                idProd != 302 &&
+                                idProd != 171 &&
+                                idProd != 172 &&
+                                idProd != 173 &&
+                                idProd != 174 &&
+                                idProd != 175 &&
+                                idProd != 176 &&
+                                idProd != 177 &&
+                                idProd != 178 &&
+                                idProd != 179 &&
+                                idProd != 159 &&
+                                idProd != 158 &&
+                                idProd != 161 &&
+                                idProd != 160 &&
+                                idProd != 163 &&
+                                idProd != 162 &&
+                                idProd != 331 &&
+                                idProd != 330 &&
+                                idProd != 165 &&
+                                idProd != 164 &&
+                                idProd != 167 &&
+                                idProd != 166 &&
+                                idProd != 169 &&
+                                idProd != 168 &&
+                                idProd != 170 &&
+                                idProd != 180 &&
+                                idProd != 181 &&
+                                idProd != 183 &&
+                                idProd != 182 &&
+                                idProd != 204 &&
+                                idProd != 332 &&
+                                idProd != 205 &&
+                                idProd != 333 &&
+                                idProd != 206 &&
+                                idProd != 207 &&
+                                idProd != 208 &&
+                                idProd != 209 &&
+                                idProd != 210 &&
+                                idProd != 211 &&
+                                idProd != 213 &&
+                                idProd != 214 &&
+                                idProd != 215 &&
+                                idProd != 216 &&
+                                idProd != 217 &&
+                                idProd != 218 &&
+                                idProd != 219 &&
+                                idProd != 220 &&
+                                idProd != 221 &&
+                                idProd != 222 &&
+                                idProd != 223
+                            ) {
+                                $('#textoCesta' + i).append(
+                                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
+                                        (o + 1) +
+                                        ': ' +
+                                        acabados[o] +
+                                        '</p>'
+                                );
+                            }
                         }
                         if (saberlo != 'A') {
                             if (sesion[1]['apoyo'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
                                         sesion[1]['apoyo']['productoApoyo']['nombre'] +
                                         '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['apoyo']['precio'] +
@@ -12265,7 +14473,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['iluminacion']['precio'] +
                                         ' &euro;</i></p>'
                                 );
@@ -12273,9 +14481,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (sesion[1]['usb'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">' +
                                         sesion[1]['usb']['mensaje'] +
-                                        ': <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        ': <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['usb']['precio'] +
                                         ' &euro;</i></p>'
                                 );
@@ -12283,7 +14491,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         } else {
                             if (sesion[1]['apoyo'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Apoyo: ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
                                         sesion[1]['apoyo']['productoApoyo']['nombre'] +
                                         '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['apoyo']['precio'] +
@@ -12292,16 +14500,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Iluminacion: <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['iluminacion']['precio'] +
                                         ' PP</i></p>'
                                 );
                             }
                             if (sesion[1]['usb'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">' +
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">' +
                                         sesion[1]['usb']['mensaje'] +
-                                        ': <i style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                        ': <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['usb']['precio'] +
                                         ' PP</i></p>'
                                 );

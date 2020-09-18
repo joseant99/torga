@@ -11835,6 +11835,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                         }
                     }
                 }
+                for (let x = 0; x < productosPresupuesto.length; x++) {
+                    if (productosPresupuesto[x]['dimensionesProductoTipo'] != null) {
+                        productosPresupuesto[x]['dimensionesProductoTipo']['precio'] = productosPresupuesto[x]['dimensionesProductoTipo'][
+                            'precio'
+                        ].toFixed(0);
+                    }
+                }
                 this.productosPresupuestoPedidos = productosPresupuesto;
 
                 this.productos = productosPresupuesto;
@@ -11907,20 +11914,101 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                                 var contador = 1;
                                                 apoyo = undefined;
+
                                                 for (let k = 0; k < acabados.length; k++) {
-                                                    $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p >Acabado ' +
-                                                            contador +
-                                                            '&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                                                            contador +
-                                                            '">' +
-                                                            acabados[k]['acabados']['nombre'] +
-                                                            '</span></p>'
-                                                    );
-                                                    var prodNombre =
-                                                        acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
                                                     var idProdNombre =
                                                         acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
+                                                    if (idProdNombre == 315) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' TAPA :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' CASCO :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' PUERTA SUP IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' PUERTA SUP DER :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' CUBO :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 5) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' PUERTA CEN :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 6) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' CAJON INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    } else {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p >Acabado ' +
+                                                                contador +
+                                                                '&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                contador +
+                                                                '">' +
+                                                                acabados[k]['acabados']['nombre'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                    var prodNombre =
+                                                        acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['nombre'];
 
                                                     var nombreCargarImagen;
                                                     if (idProdNombre == 277) {
@@ -12524,19 +12612,19 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         productos[w - 1]['productosDormitorio'] != undefined
                                                     ) {
                                                         $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
-                                                            precioTotProd.toFixed(2)
+                                                            precioTotProd.toFixed(0)
                                                         );
                                                     } else {
                                                         $('.' + productos[i]['id'] + 'Datos #precioTotal' + (i - 1)).text(
-                                                            precioTotProd.toFixed(2)
+                                                            precioTotProd.toFixed(0)
                                                         );
                                                     }
                                                 } else {
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(2));
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                                 }
 
-                                                $('#precioSubtotal').text(subTotal.toFixed(2));
-                                                $('#totalDescuentoTexto').text(subTotal.toFixed(2));
+                                                $('#precioSubtotal').text(subTotal.toFixed(0));
+                                                $('#totalDescuentoTexto').text(subTotal.toFixed(0));
 
                                                 if (productos[w]['tiposApoyo'] != null) {
                                                     apoyo = productos[w]['tiposApoyo'];
@@ -12569,7 +12657,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var subTotal = parseFloat($('#precioSubtotal').text());
                                                     subTotal = subTotal + precioFloat;
 
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(2));
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                                 }
 
                                                 if (usb != undefined) {
@@ -12591,7 +12679,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     var subTotal = parseFloat($('#precioSubtotal').text());
                                                     subTotal = subTotal + precioFloat;
 
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(2));
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                                 }
 
                                                 if (apoyo != undefined) {
@@ -12662,11 +12750,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                                     var iva = subTotal * 0.21;
                                                     $('#ivaPrecioQuitar').remove();
-                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(2) + ' €</p>');
+                                                    $('#ivaQuitar').append('<p id="ivaPrecioQuitar">' + iva.toFixed(0) + ' €</p>');
                                                     iva = subTotal + iva;
                                                     $('#precioIvaSumado').remove();
                                                     $('#precioCalculadoIva').append(
-                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(2) + ' €</p>'
+                                                        '<p id="precioIvaSumado" style="font-size:25px">' + iva.toFixed(0) + ' €</p>'
                                                     );
                                                     var total;
                                                     total = precioFloat * precioTienda;
@@ -13144,6 +13232,13 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var contador = 0;
         var contadorMeterImagenYTodo = 0;
         doc.setFontSize(20);
+        doc.addFont('ArialMS', 'Arial', 'normal');
+        doc.setFont('Arial');
+        doc.setFontSize(12);
+
+        var logo = new Image();
+        logo.src = '../../../content/images/Logo.jpg';
+        doc.addImage(logo, 'JPG', 10, 5, 18, 18);
 
         var productos = this.productosPresupuestoPedidosService.todos;
         console.log(productos);
@@ -13164,7 +13259,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 doc.text('Fondo: ' + productos[w]['dimensionesProductoTipo']['fondo'], 165, 108);
                 var cont = 0;
                 for (let h = 0; h < productos[w]['acabados'].length; h++) {
-                    doc.text('Acabado ' + (h + 1) + ': ' + productos[w]['acabados'][h]['acabados']['nombre'], 165, 116 + cont);
+                    doc.text('Acabado ' + (h + 1) + ': ' + productos[w]['acabados'][h]['acabados']['nombre'], 165, 113 + cont);
                     cont = cont + 5;
                 }
             }
@@ -13732,12 +13827,14 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             contador++;
             contadorMeterImagenYTodo++;
         }
+        doc.save('prueba.pdf');
+        /**
         var blob = doc.output('blob');
         console.log(blob);
         var file = new File([blob], 'presupdf.pdf');
         console.log(file);
         this.vistaadminService.pushFileToStorageExcel1(file, correo).subscribe(event => {
             console.log(event);
-        });
+        });**/
     }
 }

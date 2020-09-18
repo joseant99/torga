@@ -1331,7 +1331,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1350,7 +1350,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un Acabado para la Puerta 1</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1370,7 +1370,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un acabado</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1389,7 +1389,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un acabado</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1408,7 +1408,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un acabado</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1429,13 +1429,13 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un interior</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of this.vestidoresDormitorioComponent.productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.vestidoresDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
+			          <div *ngFor="let aca of this.vestidoresDormitorioComponent.productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{aca.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.vestidoresDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1448,7 +1448,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un interior</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1468,7 +1468,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge un Interior</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1488,7 +1488,7 @@
 			    <div class="modal-dialog modal-lg">
 			    
 			      <!-- Modal content-->
-			      <div class="modal-content">
+			      <div class="modal-content" id="modalcontenidoCss">
 			        <div class="modal-header">
 			          <h4 class="modal-title">Escoge una puerta</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1854,89 +1854,89 @@
         
         <form style="margin-top:5%;margin-bottom:2%;" id="formcomebus">
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">M&Oacute;DULOS BAJOS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(8)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">M&Oacute;DULOS BAJOS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(8)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">APARADORES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(9)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">APARADORES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(9)"></p><br>
 								  
-								  <label for="cajeA" id="artFor1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VITRINAS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(10)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VITRINAS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(10)"></p><br>
 								  
-								  <label for="cajeA" id="artFor15" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">SINGULARES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(11)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor15" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">SINGULARES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(11)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESCRITORIOS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(12)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESCRITORIOS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(12)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">SISTEMAS DE APOYO</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(13)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">SISTEMAS DE APOYO</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(13)"></p><br>
 								  
-								  <label for="cajeA" id="artFor2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 25%;">ESTANTER&#205;AS COLGANTES Y ESTANTES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(14)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 25%;">ESTANTER&#205;AS COLGANTES Y ESTANTES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(14)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">COLGANTES VERTICALES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(15)"><br>
+								 <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">COLGANTES VERTICALES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(15)"></p><br>
 								  
-								  <label for="cajeA" id="artFor3" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 25%;">COLGANTES VERTICALES ESTANTER&#205;A</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(16)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor3" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 25%;">COLGANTES VERTICALES ESTANTER&#205;A</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(16)"></p><br>
 								  
-								  <label for="cajeA" id="artFor4" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 30%;">COLGANTES HORIZONTALES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(17)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor4" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 30%;">COLGANTES HORIZONTALES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(17)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(18)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(18)"></p><br>
 								  
-								  <label for="cajeA" id="artFor5" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 30%;">SUPLEMENTO TV - PANELES TV</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(19)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor5" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 30%;">SUPLEMENTO TV - PANELES TV</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(19)"></p><br>
 								  
-								  <label for="cajeA" id="artFor6" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">PANELES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(27)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">PANELES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(27)"></p><br>
 								  
-								  <label for="cajeA" id="artFor7" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">MESAS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(20)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">MESAS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(20)"></p><br>
 						</form>
 								  <span style="margin-top:3%"><strong>NATIV DORMITORIOS</strong></span>
 								  <form style="margin-top:5%;">
-								  <label for="cajeA" id="artFor8" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">CAMAS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(21)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">CAMAS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(21)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">BA&Ntilde;ERA Y CANAPES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(22)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">BA&Ntilde;ERA Y CANAPES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(22)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">MESITAS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(23)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">MESITAS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(23)"></p><br>
 								  
-								  <label for="cajeA" id="artFor9" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">CHINFONIERES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(24)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">CHINFONIERES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(24)"></p><br>
 								  
-								  <label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">COMODAS</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(25)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">COMODAS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(25)"></p><br>
 								  
-								  <label for="cajeA" id="artFor10" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">AUXILIARES</label>
-								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(26)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">AUXILIARES</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(26)"></p><br>
 								  
 								  <!--  
 								  <label for="cajeB" id="estFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS A MEDIDA</label>
 								  <input type="radio" class="estInputFor" id="cajeB" name="cajeado" value="cajeB" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(1)"><br>
 								  -->
-								  <label for="cajeC" id="armFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS BATIENTES</label>
-								  <input type="radio" class="armInputFor" id="cajeC" name="cajeado" value="cajeC" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(2)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeC" id="armFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS BATIENTES</label>
+								  <input type="radio" class="armInputFor" id="cajeC" name="cajeado" value="cajeC" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(2)"></p><br>
 								  
-								  <label for="cajeD" id="ocuFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA OCULTA</label>
-								  <input type="radio" class="ocuInputFor" id="cajeD" name="cajeado" value="cajeE" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(3)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeD" id="ocuFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA OCULTA</label>
+								  <input type="radio" class="ocuInputFor" id="cajeD" name="cajeado" value="cajeE" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(3)"></p><br>
 								  
-								  <label for="cajeF" id="visFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA VISTA</label>
-								  <input type="radio" class="visInputFor" id="cajeF" name="cajeado" value="cajeF" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(4)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeF" id="visFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS GUIA VISTA</label>
+								  <input type="radio" class="visInputFor" id="cajeF" name="cajeado" value="cajeF" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(4)"></p><br>
 								  
-								  <label for="cajeG" id="vesFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VESTIDORES</label>
-								  <input type="radio" class="vesInputFor" id="cajeG" name="cajeado" value="cajeG" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(5)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeG" id="vesFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">VESTIDORES</label>
+								  <input type="radio" class="vesInputFor" id="cajeG" name="cajeado" value="cajeG" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(5)"></p><br>
 								 
-								  <label for="cajeH" id="espFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARTICULOS ESPECIALES</label>
-								  <input type="radio" class="espInputFor" id="cajeH" name="cajeado" value="cajeH" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(6)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeH" id="espFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARTICULOS ESPECIALES</label>
+								  <input type="radio" class="espInputFor" id="cajeH" name="cajeado" value="cajeH" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(6)"></p><br>
 							
-								  <label for="cajeI" id="rinFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS RINCON</label>
-								  <input type="radio" class="rinInputFor" id="cajeI" name="cajeado" value="cajeI" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(7)"><br>
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeI" id="rinFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ARMARIOS RINCON</label>
+								  <input type="radio" class="rinInputFor" id="cajeI" name="cajeado" value="cajeI" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(7)"></p><br>
 								  
 								
 		</form>
@@ -3020,10 +3020,10 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;color: black;font-family: 'Lato', sans-serif;font-weight: 400;">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
-								<a href="#imagenesArmario1" id="traseraVestidor"><p style="float: left;margin-top: 15px;color: black;font-family: 'Lato', sans-serif;font-weight: 400;">TRASERA :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"></p> </div></a>
-		    					<label style="float: left;margin-right:20px;margin-top: 15px;">INTERIORES :</label>
-		    					<a href="#imagenesArmario1"><div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados1"> </div></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados"> </div></p></a>
+								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVestidor #modalTraseraAcabados"> </div></p></a>
+		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 60px;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVestidor #modalInterioresAcabados1"> </div></p></a>
+								
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">

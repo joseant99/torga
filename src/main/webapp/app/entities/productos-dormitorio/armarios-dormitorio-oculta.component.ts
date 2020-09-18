@@ -452,6 +452,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 }
             }
         }
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2450px' });
+        }
         if (bueno == 1) {
             this.cascoService.findBus1(coger).subscribe(data => {
                 this.anchoMin = data.body[0].anchoMin;

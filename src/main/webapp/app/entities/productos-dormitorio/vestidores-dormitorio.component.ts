@@ -354,7 +354,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
     public abrirArmariosTodos() {
         var coger = $('#inputCodigoVes').val();
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2650px' });
+            $('#productosPrincipal').css({ height: '2450px' });
         }
         var bueno = 0;
         for (let t = 0; t < 505; t++) {
