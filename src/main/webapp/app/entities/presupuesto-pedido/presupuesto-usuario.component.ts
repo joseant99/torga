@@ -388,6 +388,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     ngOnInit() {
         var arrayBueno = [];
         arrayBueno[83] = 3;
+        arrayBueno[84] = 4;
         arrayBueno[85] = 42;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
