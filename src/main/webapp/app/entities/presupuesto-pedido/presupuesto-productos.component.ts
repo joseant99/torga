@@ -34,7 +34,9 @@ import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-pres
 import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 import { VistaAdminService } from '../vista-admin/vista-admin.service';
+import { JhiMainComponent } from '../../layouts/main/main.component';
 @Component({
+    providers: [JhiMainComponent],
     selector: 'jhi-presupuesto-productos',
     templateUrl: './presupuesto-productos.component.html'
 })
@@ -96,6 +98,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         protected vistaadminService: VistaAdminService,
         public datosUsuarioService: DatosUsuarioService,
         protected pagosTiendaService: PagosTiendaService,
+        protected mainComponent: JhiMainComponent,
         protected presupuestoArmarioService: PresupuestoArmarioService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected accountService: AccountService,
@@ -11918,6 +11921,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 for (let k = 0; k < acabados.length; k++) {
                                                     var idProdNombre =
                                                         acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
+                                                    var idProd = idProdNombre;
                                                     if (idProdNombre == 315) {
                                                         if (k == 0) {
                                                             $('.' + productos[i]['id'] + 'Datos').append(
@@ -11996,7 +12000,2690 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                                     '</span></p>'
                                                             );
                                                         }
-                                                    } else {
+                                                    }
+
+                                                    if (idProd == 107) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 108) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Suplemento :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 109) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 295) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 296) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 5) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 111) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 110) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 113) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 112) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 114) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 116) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 115) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 298) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 5) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 297) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 5) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 118) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 117) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 119) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 299) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 301) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 300) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 302) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Costados y suelo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 171) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 172) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 173) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 174) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 5) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 6) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 175) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 176) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 177) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 178) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 179) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 159) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 158) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 161) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 160) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 163) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 162) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 331) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 330) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 165) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 164) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 167) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 166) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 169) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 168) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 170) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cruceta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 4) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 180) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 181) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 183) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 182) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 3) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 204) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 332) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 205) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 333) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 206) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 207) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 208) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 209) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 210) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 211) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 213) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 214) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 21) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 216) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 217) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 2) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    if (idProd == 218) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 219) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 220) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 221) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 222) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+                                                    if (idProd == 223) {
+                                                        if (k == 0) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                        if (k == 1) {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p ><span style="font-weight:600">' +
+                                                                    (k + 1) +
+                                                                    ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                    contador +
+                                                                    '">' +
+                                                                    acabados[k]['acabados']['nombre'] +
+                                                                    '</span></p>'
+                                                            );
+                                                        }
+                                                    }
+
+                                                    this.mainComponent.presuSaberAca(idProd, acabados, k, productos, i, contador);
+
+                                                    if (
+                                                        idProd != 107 &&
+                                                        idProd != 315 &&
+                                                        idProd != 108 &&
+                                                        idProd != 109 &&
+                                                        idProd != 295 &&
+                                                        idProd != 296 &&
+                                                        idProd != 111 &&
+                                                        idProd != 110 &&
+                                                        idProd != 113 &&
+                                                        idProd != 112 &&
+                                                        idProd != 114 &&
+                                                        idProd != 116 &&
+                                                        idProd != 115 &&
+                                                        idProd != 298 &&
+                                                        idProd != 297 &&
+                                                        idProd != 118 &&
+                                                        idProd != 117 &&
+                                                        idProd != 119 &&
+                                                        idProd != 299 &&
+                                                        idProd != 301 &&
+                                                        idProd != 300 &&
+                                                        idProd != 302 &&
+                                                        idProd != 171 &&
+                                                        idProd != 172 &&
+                                                        idProd != 173 &&
+                                                        idProd != 174 &&
+                                                        idProd != 175 &&
+                                                        idProd != 176 &&
+                                                        idProd != 177 &&
+                                                        idProd != 178 &&
+                                                        idProd != 179 &&
+                                                        idProd != 159 &&
+                                                        idProd != 158 &&
+                                                        idProd != 161 &&
+                                                        idProd != 160 &&
+                                                        idProd != 163 &&
+                                                        idProd != 162 &&
+                                                        idProd != 331 &&
+                                                        idProd != 330 &&
+                                                        idProd != 165 &&
+                                                        idProd != 164 &&
+                                                        idProd != 167 &&
+                                                        idProd != 166 &&
+                                                        idProd != 169 &&
+                                                        idProd != 168 &&
+                                                        idProd != 170 &&
+                                                        idProd != 180 &&
+                                                        idProd != 181 &&
+                                                        idProd != 183 &&
+                                                        idProd != 182 &&
+                                                        idProd != 204 &&
+                                                        idProd != 332 &&
+                                                        idProd != 205 &&
+                                                        idProd != 333 &&
+                                                        idProd != 206 &&
+                                                        idProd != 207 &&
+                                                        idProd != 208 &&
+                                                        idProd != 209 &&
+                                                        idProd != 210 &&
+                                                        idProd != 211 &&
+                                                        idProd != 213 &&
+                                                        idProd != 214 &&
+                                                        idProd != 215 &&
+                                                        idProd != 216 &&
+                                                        idProd != 217 &&
+                                                        idProd != 218 &&
+                                                        idProd != 219 &&
+                                                        idProd != 220 &&
+                                                        idProd != 221 &&
+                                                        idProd != 222 &&
+                                                        idProd != 223 &&
+                                                        idProd != 334 &&
+                                                        idProd != 303 &&
+                                                        idProd != 14 &&
+                                                        idProd != 304 &&
+                                                        idProd != 53 &&
+                                                        idProd != 305 &&
+                                                        idProd != 62 &&
+                                                        idProd != 306 &&
+                                                        idProd != 63 &&
+                                                        idProd != 307 &&
+                                                        idProd != 64 &&
+                                                        idProd != 308 &&
+                                                        idProd != 65 &&
+                                                        idProd != 309 &&
+                                                        idProd != 66 &&
+                                                        idProd != 310 &&
+                                                        idProd != 67 &&
+                                                        idProd != 311 &&
+                                                        idProd != 68 &&
+                                                        idProd != 312 &&
+                                                        idProd != 69 &&
+                                                        idProd != 336 &&
+                                                        idProd != 335 &&
+                                                        idProd != 338 &&
+                                                        idProd != 337 &&
+                                                        idProd != 184 &&
+                                                        idProd != 185 &&
+                                                        idProd != 186 &&
+                                                        idProd != 188 &&
+                                                        idProd != 187 &&
+                                                        idProd != 189 &&
+                                                        idProd != 194 &&
+                                                        idProd != 190 &&
+                                                        idProd != 195 &&
+                                                        idProd != 191 &&
+                                                        idProd != 196 &&
+                                                        idProd != 200 &&
+                                                        idProd != 192 &&
+                                                        idProd != 198 &&
+                                                        idProd != 197 &&
+                                                        idProd != 201 &&
+                                                        idProd != 202 &&
+                                                        idProd != 203 &&
+                                                        idProd != 193 &&
+                                                        idProd != 199 &&
+                                                        idProd != 275 &&
+                                                        idProd != 276 &&
+                                                        idProd != 73 &&
+                                                        idProd != 72 &&
+                                                        idProd != 75 &&
+                                                        idProd != 74 &&
+                                                        idProd != 87 &&
+                                                        idProd != 86 &&
+                                                        idProd != 77 &&
+                                                        idProd != 76 &&
+                                                        idProd != 313 &&
+                                                        idProd != 78 &&
+                                                        idProd != 314 &&
+                                                        idProd != 79 &&
+                                                        idProd != 92 &&
+                                                        idProd != 319 &&
+                                                        idProd != 84 &&
+                                                        idProd != 320 &&
+                                                        idProd != 85 &&
+                                                        idProd != 325 &&
+                                                        idProd != 324 &&
+                                                        idProd != 327 &&
+                                                        idProd != 326 &&
+                                                        idProd != 317 &&
+                                                        idProd != 82 &&
+                                                        idProd != 318 &&
+                                                        idProd != 83 &&
+                                                        idProd != 321 &&
+                                                        idProd != 90 &&
+                                                        idProd != 329 &&
+                                                        idProd != 328 &&
+                                                        idProd != 330 &&
+                                                        idProd != 331 &&
+                                                        idProd != 89 &&
+                                                        idProd != 88 &&
+                                                        idProd != 322 &&
+                                                        idProd != 91 &&
+                                                        idProd != 80 &&
+                                                        idProd != 277 &&
+                                                        idProd != 278 &&
+                                                        idProd != 279 &&
+                                                        idProd != 280 &&
+                                                        idProd != 281 &&
+                                                        idProd != 282 &&
+                                                        idProd != 246 &&
+                                                        idProd != 283 &&
+                                                        idProd != 284 &&
+                                                        idProd != 285 &&
+                                                        idProd != 1 &&
+                                                        idProd != 2 &&
+                                                        idProd != 3 &&
+                                                        idProd != 4 &&
+                                                        idProd != 5 &&
+                                                        idProd != 6 &&
+                                                        idProd != 7 &&
+                                                        idProd != 8 &&
+                                                        idProd != 9 &&
+                                                        idProd != 10 &&
+                                                        idProd != 11 &&
+                                                        idProd != 12 &&
+                                                        idProd != 13 &&
+                                                        idProd != 376 &&
+                                                        idProd != 238 &&
+                                                        idProd != 239 &&
+                                                        idProd != 240 &&
+                                                        idProd != 241 &&
+                                                        idProd != 242 &&
+                                                        idProd != 243 &&
+                                                        idProd != 244 &&
+                                                        idProd != 245 &&
+                                                        idProd != 230 &&
+                                                        idProd != 231 &&
+                                                        idProd != 232 &&
+                                                        idProd != 233 &&
+                                                        idProd != 234 &&
+                                                        idProd != 235
+                                                    ) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p >Acabado ' +
                                                                 contador +
@@ -12684,9 +15371,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                                 if (apoyo != undefined) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p>' +
+                                                        '<p><span style="font-weight:600">' +
                                                             apoyo['productoApoyo']['nombre'] +
-                                                            '&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                            '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
                                                             i +
                                                             '">' +
                                                             apoyo['precio'] +

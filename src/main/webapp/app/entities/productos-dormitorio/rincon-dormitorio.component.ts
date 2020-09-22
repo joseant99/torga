@@ -35336,6 +35336,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
     }
+
     ngAfterViewInit() {
         var todasDimensiones = [];
         var apoyo = [];
