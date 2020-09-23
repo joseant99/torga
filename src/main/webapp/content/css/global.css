@@ -8551,12 +8551,12 @@ ui bootstrap tweaks
         margin-bottom: 23px;
     }
     #imagenApoyo0 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo1 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #botonDerechaPresupuesto {
         margin-right: 60px !important;
@@ -8573,28 +8573,28 @@ ui bootstrap tweaks
         font-weight: 600;
     }
     #imagenApoyo2 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo3 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo4 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo5 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo6 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
     #imagenApoyo7 {
-        max-height: 80px;
-        max-width: 140px;
+        max-height: 145px;
+        max-width: 160px;
     }
 
     #botonEsconder {
@@ -9021,20 +9021,20 @@ ui bootstrap tweaks
 
     #tirador012 {
         float: left !important;
-        width: 90px !important;
-        height: 200px !important;
         margin-left: 10px !important;
         margin-top: 30px !important;
+        width: 140px !important;
+        height: 200px !important;
         margin-bottom: 30px !important;
     }
 
     #tirador013 {
         float: left !important;
-        width: 130px !important;
-        height: 230px !important;
         margin-left: 10px !important;
         margin-top: 30px !important;
-        margin-bottom: 70px !important;
+        width: 145px !important;
+        height: 230px !important;
+        margin-bottom: 125px !important;
     }
 
     #puertaColorMarco0 {
@@ -9643,11 +9643,14 @@ ui bootstrap tweaks
     }
 
     #texto1Arm {
-        margin-left: 15% !important;
+        margin-left: 2% !important;
     }
 
     #precioArm {
-        margin-right: 15% !important;
+        margin-right: 6% !important;
+    }
+    #precioTdoLoOtro {
+        margin-right: 6% !important;
     }
 
     .puertas3Izquierda {
@@ -9969,7 +9972,7 @@ ui bootstrap tweaks
         padding-top: 15px !important;
     }
     #div1calcutodo {
-        height: 18% !important;
+        height: 22% !important;
     }
     #botonCalculadoraBatientes {
         width: 50% !important;
@@ -10110,6 +10113,9 @@ ui bootstrap tweaks
         width: 88% !important;
         border: 1px solid !important;
         height: 80px !important;
+    }
+    #codigoCesta {
+        margin-left: 2% !important;
     }
 }
 /* jhipster-needle-css-add-main JHipster will add new css style */

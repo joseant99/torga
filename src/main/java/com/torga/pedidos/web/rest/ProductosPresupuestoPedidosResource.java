@@ -1,7 +1,9 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.torga.pedidos.domain.AcabadosProductosPresupuestoPedido;
 import com.torga.pedidos.domain.ProductosPresupuestoPedidos;
+import com.torga.pedidos.repository.AcabadosProductosPresupuestoPedidoRepository;
 import com.torga.pedidos.repository.ProductosPresupuestoPedidosRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
 import com.torga.pedidos.web.rest.util.HeaderUtil;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -34,9 +37,12 @@ public class ProductosPresupuestoPedidosResource {
     private static final String ENTITY_NAME = "productosPresupuestoPedidos";
 
     private final ProductosPresupuestoPedidosRepository productosPresupuestoPedidosRepository;
+    
+    private final AcabadosProductosPresupuestoPedidoRepository acabadosProductosPresupuestoPedidoRepository;
 
-    public ProductosPresupuestoPedidosResource(ProductosPresupuestoPedidosRepository productosPresupuestoPedidosRepository) {
+    public ProductosPresupuestoPedidosResource(ProductosPresupuestoPedidosRepository productosPresupuestoPedidosRepository,AcabadosProductosPresupuestoPedidoRepository acabadosProductosPresupuestoPedidoRepository) {
         this.productosPresupuestoPedidosRepository = productosPresupuestoPedidosRepository;
+        this.acabadosProductosPresupuestoPedidoRepository = acabadosProductosPresupuestoPedidoRepository;
     }
 
     /**
@@ -117,10 +123,32 @@ public class ProductosPresupuestoPedidosResource {
      */
     @GetMapping("/productos-presupuesto-pedidos-id/{id}")
     @Timed
-    public ResponseEntity<Collection<ProductosPresupuestoPedidos>> getAllProductosPresupuestoPedidosId(@PathVariable Long id) {
+    public ResponseEntity<ArrayList<Object>> getAllProductosPresupuestoPedidosId(@PathVariable Long id) {
         log.debug("REST request to get a page of ProductosPresupuestoPedidos");
         Collection<ProductosPresupuestoPedidos> page = productosPresupuestoPedidosRepository.findByProd(id);
-        return ResponseEntity.ok().body(page);
+        Object[] hola = page.toArray();
+        ArrayList<Object> lista = new ArrayList();
+        for(int i = 0; i< hola.length;i++) {
+        	lista.add(i, hola[i]);
+        }
+        int contador = 0;
+        for(int i = 0; i< hola.length;i++) {
+          System.out.println(((ProductosPresupuestoPedidos) hola[i]).getId());
+          System.out.println("MIERDAAAAAAAAAAAAAAAAAAAAAAA");
+          
+	          Collection<AcabadosProductosPresupuestoPedido> page1 = acabadosProductosPresupuestoPedidoRepository.findByCategoriaDormi(((ProductosPresupuestoPedidos) hola[i]).getId());
+	          Object[] hola1 = page1.toArray();
+	          
+	          for(int h = 0;h<hola1.length;h++) {
+	        	  System.out.println(((AcabadosProductosPresupuestoPedido) hola1[h]).getAcabados().getNombre());
+	        	  lista.add((hola.length+contador), hola1[h]);
+	        	  System.out.println(lista);
+	        	  contador++;
+	          }
+          
+        }
+		return ResponseEntity.ok().body(lista);
+        
     }
 
     /**

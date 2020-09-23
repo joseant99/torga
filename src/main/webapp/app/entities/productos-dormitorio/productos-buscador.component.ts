@@ -1061,6 +1061,22 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.acabados = acabados;
         this.acabados1 = acabados;
         $('#textprecioCalculadoraazul').css({ display: 'block' });
+        for (let w = 0; w <= 15; w++) {
+            $('#myModalColores1 #acabadoImagen' + w).empty();
+            $('#myModalColores2 #acabadoImagen' + w).empty();
+            $('#myModalColores3 #acabadoImagen' + w).empty();
+            $('#myModalColores4 #acabadoImagen' + w).empty();
+            $('#myModalColores5 #acabadoImagen' + w).empty();
+            $('#myModalColores6 #acabadoImagen' + w).empty();
+            $('#myModalColores7 #acabadoImagen' + w).empty();
+            $('#myModalColores8 #acabadoImagen' + w).empty();
+            $('#myModalColores9 #acabadoImagen' + w).empty();
+            $('#myModalColores10 #acabadoImagen' + w).empty();
+            $('#myModalColores11 #acabadoImagen' + w).empty();
+            $('#myModalColores12 #acabadoImagen' + w).empty();
+            $('#myModalColores13 #acabadoImagen' + w).empty();
+            $('#myModalColores14 #acabadoImagen' + w).empty();
+        }
         $('.productosColor').css({ 'background-color': 'white' });
         $('#nombreApoyoTitulo').css({ display: 'none' });
         $('#dimensionesInput1').css({ 'background-color': 'white' });
@@ -6618,21 +6634,61 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         data.body[w]['id'] +
                                         '" height="160px" width="280px" style=" ">'
                                 );
-                                $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                                $('#modalApoyo #apoyoModal' + w).append(
+                                    '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                );
                             }
                         } else {
-                            $('#modalApoyo #apoyoModal' + w).empty();
-                            console.log(productoTocho);
-                            $('#modalApoyo #apoyoModal' + w).append(
-                                '<img  src="data:image/gif;base64,' +
-                                    data.body[w]['imagen'] +
-                                    '" id="imagenApoyo' +
-                                    w +
-                                    '" class="' +
-                                    data.body[w]['id'] +
-                                    '" height="160px" width="280px" style=" ">'
-                            );
-                            $('#modalApoyo #apoyoModal' + w).append('<strong><p>' + data.body[w]['nombre'] + '</strong></p>');
+                            if (data.body[w]['nombre'] == 'Zocalo') {
+                                if (
+                                    idProd != 1 &&
+                                    idProd != 2 &&
+                                    idProd != 3 &&
+                                    idProd != 4 &&
+                                    idProd != 5 &&
+                                    idProd != 6 &&
+                                    idProd != 7 &&
+                                    idProd != 8 &&
+                                    idProd != 9 &&
+                                    idProd != 10 &&
+                                    idProd != 11 &&
+                                    idProd != 12 &&
+                                    idProd != 13 &&
+                                    idProd != 229 &&
+                                    idProd != 238 &&
+                                    idProd != 239 &&
+                                    idProd != 240
+                                ) {
+                                    $('#modalApoyo #apoyoModal' + w).empty();
+                                    $('#modalApoyo #apoyoModal' + w).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            w +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + w).append(
+                                        '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                    );
+                                }
+                            } else {
+                                $('#modalApoyo #apoyoModal' + w).empty();
+                                console.log(productoTocho);
+                                $('#modalApoyo #apoyoModal' + w).append(
+                                    '<img  src="data:image/gif;base64,' +
+                                        data.body[w]['imagen'] +
+                                        '" id="imagenApoyo' +
+                                        w +
+                                        '" class="' +
+                                        data.body[w]['id'] +
+                                        '" height="160px" width="280px" style=" ">'
+                                );
+                                $('#modalApoyo #apoyoModal' + w).append(
+                                    '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                );
+                            }
                         }
                     }
                 });
