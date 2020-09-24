@@ -317,7 +317,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 console.log(res.body);
                 var toma = [];
                 for (let f = 0; f < res.body.length; f++) {
-                    if (res.body[f]['precioTotal'] != null && res.body[f]['precioTotal'] != '' && res.body[f]['precioTotal'] != undefined) {
+                    if (
+                        res.body[f]['productosDormitorio'] != null &&
+                        res.body[f]['productosDormitorio'] != '' &&
+                        res.body[f]['productosDormitorio'] != undefined
+                    ) {
                         toma[contToma] = res.body[f];
                         contToma++;
                     }
@@ -15735,7 +15739,11 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             var toma = [];
             var contToma = 0;
             for (let f = 0; f < data.body.length; f++) {
-                if (data.body[f]['precioTotal'] != null && data.body[f]['precioTotal'] != '' && data.body[f]['precioTotal'] != undefined) {
+                if (
+                    data.body[f]['productosDormitorio'] != null &&
+                    data.body[f]['productosDormitorio'] != '' &&
+                    data.body[f]['productosDormitorio'] != undefined
+                ) {
                     toma[contToma] = data.body[f];
                     contToma++;
                 }

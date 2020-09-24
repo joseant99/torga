@@ -10967,35 +10967,22 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 });
             });
         }
-        if (contadorApoyo == cont - 1) {
-            var iluminacion = this.iluminacion;
-            var texto = 0;
-            $('#botonCalculadora').removeAttr('class');
-            for (let k = 0; k < iluminacion.length; k++) {
-                if (iluminacion[k]['productosDormitorio']['id'] == idProd) {
-                    $('#iluminacion').removeAttr('style');
-                    $('#iluminacion').attr('style');
-                    $('#iluminacion').css({ width: '100%' });
-                    $('#iluminacion').css({ float: 'left' });
-                    $('#ilu1').attr('class', iluminacion[k]['id']);
-                    texto = 0;
+        var bien = 0;
+        for (let y = 0; y <= 15; y++) {
+            var yeah = $('#datos1 #acabado' + y).html();
+            if (yeah != undefined) {
+                var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
+                if (nombreAcabado != '') {
+                    bien = 1;
                 } else {
-                    texto = 1;
+                    bien = 0;
                 }
             }
-            if (texto == 1) {
-                $('#textoFinal').removeAttr('style');
-                $('#textoFinal').attr('style');
-                $('#textoFinal').css({ width: '100%' });
-                $('#textoFinal').css({ float: 'left' });
-                $('#botonCalculadora').removeAttr('class');
-            }
-            $('#terminarConfiguracion').removeAttr('style');
-            $('#terminarConfiguracion').attr('style');
-            $('#terminarConfiguracion').css({ float: 'left' });
-            $('#terminarConfiguracion').css({ width: '100%' });
         }
-        $('#botonCalculadora').removeAttr('class');
+
+        if (bien == 1) {
+            $('#botonCalculadora').removeAttr('class');
+        }
     }
 
     public ilumina(id) {
