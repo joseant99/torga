@@ -375,7 +375,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             incremento: undefined,
                                             ancho: data.body[0]['ancho'],
                                             alto: data.body[0]['alto'],
-                                            fondo: data.body[0]['fondo']
+                                            fondo: data.body[0]['fondo'],
+                                            codigo: data.body[0]['codigo']
                                         };
                                         var todo = {
                                             productosDormitorio: uno,
@@ -384,8 +385,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         };
 
                                         productosPresupuesto[cont] = todo;
+                                        this.productosPresupuestoPedidos = productosPresupuesto;
                                         cont++;
-
                                         this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
                                             this.presupuestoArmarioInterioresService.todos = data.body;
                                             var datosInteriores = data.body;
@@ -397,94 +398,106 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
                                                 'nombre'
                                             ].toLowerCase();
-                                            $('#datosMeter' + (cont - 1)).append(
-                                                '<p>Acabado Casco: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + casco + '</p>'
+                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                '<p><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                    casco +
+                                                    '</p>'
                                             );
                                             if (data.body[0]['presupuestoArmario']['acabados'] != undefined) {
-                                                $('#datosMeter' + (cont - 1)).append(
-                                                    '<p>Acabado trasera: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + trasera + '</p>'
+                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                    '<p><span style="font-weight:600">Acabado trasera</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        trasera +
+                                                        '</p>'
                                                 );
                                             }
-                                            $('#datosMeter' + (cont - 1)).append(
-                                                '<p>Acabado Interiores: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + interiorAca + '</p>'
+                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                '<p><span style="font-weight:600">Acabado Interiores</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                    interiorAca +
+                                                    '</p>'
                                             );
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             var precioTodo1 = 0;
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 if (p == 0) {
-                                                    $('#datosMeter' + (cont - 1)).append(
-                                                        '<p>Casco  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>+ ' +
+                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                        '<p><span style="font-weight:600">Casco</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>+ ' +
                                                             datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
                                                             ' pp</span></p>'
                                                     );
                                                     if (data.body[0]['presupuestoArmario']['niveladores']['id'] != 25000) {
-                                                        $('#datosMeter' + (cont - 1)).append(
-                                                            '<p>Niveladores : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Niveladores</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['niveladores']['precio'] +
                                                                 '</p>'
                                                         );
                                                     } else {
-                                                        $('#datosMeter' + (cont - 1)).append('<p>Niveladores : Sin niveladores</p>');
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Niveladores</span> : Sin niveladores</p>'
+                                                        );
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['cajeado']['id'] != 25000) {
-                                                        $('#datosMeter' + (cont - 1)).append(
-                                                            '<p>Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['cajeado']['precio'] +
                                                                 '</p>'
                                                         );
                                                         if (data.body[0]['presupuestoArmario']['medACaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida A Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida A Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medACaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medBCaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida B Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida B Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medBCaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medCCaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida C Cajeado : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida C Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medCCaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                     } else {
-                                                        $('#datosMeter' + (cont - 1)).append('<p>Cajeado : Sin Cajeado</p>');
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Cajeado</span> : Sin Cajeado</p>'
+                                                        );
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['enmarcados']['id'] != 25000) {
-                                                        $('#datosMeter' + (cont - 1)).append(
-                                                            '<p>Enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['enmarcados']['precio'] +
                                                                 '</p>'
                                                         );
                                                         if (data.body[0]['presupuestoArmario']['medAEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida A enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida A enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medAEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medBEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida B enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida B enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medBEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medCEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1)).append(
-                                                                '<p>Medida C enmarcados : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                                '<p><span style="font-weight:600">Medida C enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medCEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                     } else {
-                                                        $('#datosMeter' + (cont - 1)).append('<p>Enmarcados : Sin Enmarcados</p>');
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p><span style="font-weight:600">Enmarcados</span> : Sin Enmarcados</p>'
+                                                        );
                                                     }
                                                     $('#precioTotal' + (cont - 1)).text(
                                                         datosInteriores[p]['presupuestoArmario']['precioTotal']
@@ -501,7 +514,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
                                                 if (datosInteriores[p]['mensajeLuz'] != null) {
-                                                    $('#datosMeter' + (cont - 1)).append(
+                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
                                                         '<p><strong>Interior ' +
                                                             datosInteriores[p]['productosDormitorio']['nombre'] +
                                                             '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
@@ -511,7 +524,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             ' pp</span></p>'
                                                     );
                                                 } else {
-                                                    $('#datosMeter' + (cont - 1)).append(
+                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
                                                         '<p><strong>Interior ' +
                                                             datosInteriores[p]['productosDormitorio']['nombre'] +
                                                             '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
@@ -1763,7 +1776,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var precioTodo1 = 0;
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             for (let p = 0; p < datosInteriores.length; p++) {
-                                                $('#datosMeter' + (cont - 1)).append(
+                                                $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
                                                     '<p><strong>Puerta ' +
                                                         (p + 1) +
                                                         ' ' +
@@ -1775,7 +1788,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 for (let j = 0; j < 5; j++) {
                                                     if (j == 0) {
                                                         if (datosInteriores[p]['acabados'] != undefined) {
-                                                            $('#datosMeter' + (cont - 1)).append(
+                                                            $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
                                                                 '<p>Acabado ' +
                                                                     (j + 1) +
                                                                     ' Puerta ' +
@@ -1787,7 +1800,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         }
                                                     } else {
                                                         if (datosInteriores[p]['acabados' + j] != undefined) {
-                                                            $('#datosMeter' + (cont - 1)).append(
+                                                            $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
                                                                 '<p>Acabado ' +
                                                                     (j + 1) +
                                                                     ' Puerta ' +
@@ -11876,7 +11889,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         ].toFixed(0);
                     }
                 }
-                this.productosPresupuestoPedidos = productosPresupuesto;
 
                 this.productos = productosPresupuesto;
 
@@ -15734,22 +15746,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             this.account = account;
         });
 
-        this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
-            this.productosPresupuestoPedidosService.todos = data.body;
-            var toma = [];
-            var contToma = 0;
-            for (let f = 0; f < data.body.length; f++) {
-                if (
-                    data.body[f]['productosDormitorio'] != null &&
-                    data.body[f]['productosDormitorio'] != '' &&
-                    data.body[f]['productosDormitorio'] != undefined
-                ) {
-                    toma[contToma] = data.body[f];
-                    contToma++;
-                }
-            }
-            this.productosPresupuestoPedidos = toma;
-        });
         this.presupuestoPedidoService.find(idPresu).subscribe(data => {
             var usuario = data.body.user;
             this.datosUsuarioService.findCoger12(usuario['id']).subscribe(data => {
@@ -15760,7 +15756,23 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         JSON.parse(sessionStorage.getItem('tiendaUsuario'));
                         this.precioPunto = 0;
                         this.precioTiendaService.precioTienda = 0;
-                        this.soloMedBuen();
+                        this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
+                            this.productosPresupuestoPedidosService.todos = data.body;
+                            var toma = [];
+                            var contToma = 0;
+                            for (let f = 0; f < data.body.length; f++) {
+                                if (
+                                    data.body[f]['productosDormitorio'] != null &&
+                                    data.body[f]['productosDormitorio'] != '' &&
+                                    data.body[f]['productosDormitorio'] != undefined
+                                ) {
+                                    toma[contToma] = data.body[f];
+                                    contToma++;
+                                }
+                            }
+                            this.productosPresupuestoPedidos = toma;
+                            this.soloMedBuen();
+                        });
                     }
                 }
             });

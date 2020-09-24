@@ -15830,7 +15830,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             cascoPrecio: prodCarr[m][1]['precioCasco'],
                             fondo: prodCarr[m][1]['fondo'],
                             alto: prodCarr[m][1]['alto'],
-                            ancho: prodCarr[m][1]['ancho']
+                            ancho: prodCarr[m][1]['ancho'],
+                            codigo: prodCarr[m][1]['codigo']
                         };
                         if (prodCarr[m][1]['enmarcado'] != undefined) {
                             if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
