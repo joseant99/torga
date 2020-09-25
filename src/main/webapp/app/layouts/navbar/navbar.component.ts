@@ -11529,7 +11529,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             );
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores: Sin niveladores</span></p>'
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: Sin niveladores</p>'
                             );
                         }
                         if (sesion[1]['cajeado'] != undefined) {
@@ -11636,35 +11636,35 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
                             $('#textoCesta' + i).append(
-                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong>' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight: 600;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
                                     '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '"><strong>' +
+                                    '"><strong style="font-weight: 600;">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</strong></span><strong> pp </strong></i></p>'
+                                    '</strong></span><strong style="font-weight: 600;"> pp </strong></i></p>'
                             );
                         } else {
                             $('#textoCesta' + i).append(
-                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong>' +
+                                '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight: 600;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
                                     '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '"><strong>' +
+                                    '"><strong style="font-weight: 600;">' +
                                     sesion[1]['todoSumadoPrecio'] +
                                     '</strong></span><strong> pp </strong></i></p>'
                             );
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
-                                sesion[1]['ancho'] +
+                            '<p id="codigoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Codigo:</span> ' +
+                                sesion[1]['mensaje'] +
                                 '</p>'
                         );
 
                         $('#textoCesta' + i).append(
-                            '<p id="codigoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Codigo:</span> ' +
-                                sesion[1]['mensaje'] +
+                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
+                                sesion[1]['ancho'] +
                                 '</p>'
                         );
 
@@ -11794,10 +11794,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             nombreCargarImagen = 'NT333-NT350';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 1) {
-                            nombreCargarImagen = 'NX009-NX012';
+                            nombreCargarImagen = 'NX001-NX004';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 2) {
-                            nombreCargarImagen = 'NX009-NX012';
+                            nombreCargarImagen = 'NX005-NX008';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 3) {
                             nombreCargarImagen = 'NX009-NX012';
@@ -12007,8 +12007,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 313) {
                             nombreCargarImagen = 'NH149';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 78) {
+                            nombreCargarImagen = 'NH150';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 314) {
+                            nombreCargarImagen = 'NH151';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 79) {
                             nombreCargarImagen = 'NH152';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 92) {
+                            nombreCargarImagen = 'NH153';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 319) {
                             nombreCargarImagen = 'NH154';
@@ -12016,17 +12025,83 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 320) {
                             nombreCargarImagen = 'NH156';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 85) {
+                            nombreCargarImagen = 'NH157';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 325) {
                             nombreCargarImagen = 'NH168';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 324) {
+                            nombreCargarImagen = 'NH169';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 327) {
+                            nombreCargarImagen = 'NH170';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 326) {
+                            nombreCargarImagen = 'NH171';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 317) {
+                            nombreCargarImagen = 'NH172';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 82) {
+                            nombreCargarImagen = 'NH173';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 318) {
+                            nombreCargarImagen = 'NH174';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 83) {
+                            nombreCargarImagen = 'NH175';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 321) {
+                            nombreCargarImagen = 'NH176';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 90) {
+                            nombreCargarImagen = 'NH177';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 92) {
+                            nombreCargarImagen = 'NH178';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 320) {
                             nombreCargarImagen = 'NH179';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 85) {
+                            nombreCargarImagen = 'NH180';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 329) {
+                            nombreCargarImagen = 'NH181';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 328) {
+                            nombreCargarImagen = 'NH182';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 340) {
+                            nombreCargarImagen = 'NH183';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 339) {
+                            nombreCargarImagen = 'NH184';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 73) {
+                            nombreCargarImagen = 'NH185';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 72) {
+                            nombreCargarImagen = 'NH186';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 77) {
+                            nombreCargarImagen = 'NH187';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 76) {
+                            nombreCargarImagen = 'NH188';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 89) {
                             nombreCargarImagen = 'NH189';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 88) {
                             nombreCargarImagen = 'NH190';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 91) {
+                            nombreCargarImagen = 'NH192';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 315) {
+                            nombreCargarImagen = 'NH193';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 322) {
                             nombreCargarImagen = 'NH191';
@@ -12045,6 +12120,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 175) {
                             nombreCargarImagen = 'NH198';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 176) {
+                            nombreCargarImagen = 'NH199';
                         }
 
                         if (sesion[1]['productosDormitorio']['id'] == 177) {
@@ -12074,11 +12152,41 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 162) {
                             nombreCargarImagen = 'NH251';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 159) {
+                            nombreCargarImagen = 'NH252';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 158) {
+                            nombreCargarImagen = 'NH253';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 331) {
+                            nombreCargarImagen = 'NH254';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 330) {
+                            nombreCargarImagen = 'NH255';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 161) {
+                            nombreCargarImagen = 'NH256';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 160) {
+                            nombreCargarImagen = 'NH257';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 165) {
                             nombreCargarImagen = 'NH258';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 164) {
                             nombreCargarImagen = 'NH259';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 159) {
+                            nombreCargarImagen = 'NH260-NH262';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 158) {
+                            nombreCargarImagen = 'NH263-NH265';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 331) {
+                            nombreCargarImagen = 'NH266';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 330) {
+                            nombreCargarImagen = 'NH267';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 167) {
                             nombreCargarImagen = 'NH268';
@@ -12168,6 +12276,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 204) {
                             nombreCargarImagen = 'NH455-NH458';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 332) {
+                            nombreCargarImagen = 'NH459';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 205) {
+                            nombreCargarImagen = 'NH460';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 333) {
                             nombreCargarImagen = 'NH461';
                         }
@@ -12216,7 +12330,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 221) {
                             nombreCargarImagen = 'NH506';
                         }
-
+                        if (sesion[1]['productosDormitorio']['id'] == 223) {
+                            nombreCargarImagen = 'NH511';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 222) {
                             nombreCargarImagen = 'NH507-NH510';
                         }

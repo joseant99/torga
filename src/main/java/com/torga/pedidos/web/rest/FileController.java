@@ -1,6 +1,9 @@
 package com.torga.pedidos.web.rest;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -52,6 +55,8 @@ import io.github.jhipster.config.JHipsterProperties;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+
+import com.itextpdf.html2pdf.HtmlConverter;
 
 /**
  * REST controller for managing Files.
@@ -151,16 +156,13 @@ public class FileController {
 	    }
 	    
 	    @PostMapping("/uploadFile1")
-	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException {
+	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException, FileNotFoundException, IOException {
 	        String fileName = fileStorageService.storeFile(file);
 
 	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
 	                .path("/downloadFile/")
 	                .path(fileName)
 	                .toUriString();
-	        
-	        
-	        
 	        final String username = "elmuebledigitalprueba@gmail.com";
 	        final String password = "elMuebleDigital2019";
 	        Properties props = new Properties();

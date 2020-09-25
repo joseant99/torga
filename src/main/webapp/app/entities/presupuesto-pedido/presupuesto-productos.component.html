@@ -16,10 +16,11 @@
 		    	</div>
 		    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
 		    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+		    		<p><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
 		    		<p><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
 		    		<p><span style="font-weight:600">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
 		    		<p><span style="font-weight:600">Fondo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
-		    		<p><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
+		    		
 		    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
 		    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} PP</p>
 		    		</div>
@@ -59,10 +60,10 @@
 			<div style="float:right;margin-right:25%;display:none" id="subtotalPago"><p style="font-size:25px" id="precioSubtotal">0</p></div>
 		</div>
 		<div id="divTotalPuntosParaTodo" style="float:left;width:100%;margin-bottom:15px;">
-			<div id="totalPuntosParaCss" style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">TOTAL PUNTOS</p>
+			<div id="totalPuntosParaCss" style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;font-weight:600" id="bajarFontSize">TOTAL PUNTOS</p>
 			
 			</div>
-			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px">0</span><span style="font-size:25px" id="euro"> pp</span></div>
+			<div style="float:right;margin-right:25%" id="totalDescuento"><span id="totalDescuentoTexto" style="font-size:25px;font-weight:600">0</span><span style="font-size:25px;font-weight:600" id="euro"> pp</span></div>
 		</div>
 		<div style="float:left;width:100%;margin-bottom:15px;display:none">
 			<div style="float:left;margin-left:25%;font-size:25px"><p style="letter-spacing: 2px;" id="bajarFontSize">PRECIO TOTAL SIN IVA</p>

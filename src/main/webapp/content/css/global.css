@@ -50,6 +50,66 @@ Browser Upgrade Prompt
 #acabadoTiradorProbar2 {
     display: none;
 }
+#perfil1 {
+    display: none;
+}
+#perfil2 {
+    display: none;
+}
+#perfil3 {
+    display: none;
+}
+#perfil4 {
+    display: none;
+}
+#perfil5 {
+    display: none;
+}
+#perfil6 {
+    display: none;
+}
+#perfil7 {
+    display: none;
+}
+#perfil8 {
+    display: none;
+}
+#perfil14 {
+    display: none;
+}
+#perfil10 {
+    display: none;
+}
+#perfil11 {
+    display: none;
+}
+#perfil13 {
+    display: none;
+}
+#perfil15 {
+    display: none;
+}
+#perfil16 {
+    display: none;
+}
+#perfil17 {
+    display: none;
+}
+#perfil18 {
+    display: none;
+}
+#perfil19 {
+    display: none;
+}
+#perfil20 {
+    display: none;
+}
+#perfil21 {
+    display: none;
+}
+#perfil22 {
+    display: none;
+}
 #acabadoTiradorProbar3 {
     display: none;
 }
@@ -7487,7 +7547,7 @@ ui bootstrap tweaks
         height: 260px !important;
     }
     .primerDivPresu {
-        margin-bottom: 15px !important;
+        margin-bottom: 75px !important;
         margin-top: 0px !important;
     }
     #bajarFontSize {
@@ -8526,8 +8586,8 @@ ui bootstrap tweaks
         margin-top: 15px;
     }
     #anchosSelect1 {
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 46px;
+        margin-bottom: 25px;
     }
 
     #botonCalculadora {
@@ -8626,7 +8686,11 @@ ui bootstrap tweaks
         margin-left: 0px;
         margin-top: 25px;
         padding-left: 0px;
-        height: 2050px;
+        height: 2075px;
+    }
+    #inputBusca {
+        float: left;
+        width: 100%;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -8764,7 +8828,7 @@ ui bootstrap tweaks
     }
 
     .imagenAcabadoPrincipalImg {
-        margin-top: -100px;
+        margin-top: -25px;
         max-width: 370px !important;
         max-height: 370px !important;
         margin-left: -4% !important;
@@ -9919,6 +9983,7 @@ ui bootstrap tweaks
     }
     #pNombreProd {
         font-size: 25px !important;
+        width: 95%;
     }
     #codigopedidoP {
         font-size: 26px !important;
@@ -10105,6 +10170,13 @@ ui bootstrap tweaks
     }
     #codigoCesta {
         margin-left: 2% !important;
+    }
+    #textoInteriorModal {
+        font-size: 14px !important;
+        margin-top: -15px;
+    }
+    #textoPuertaModal {
+        font-size: 14px !important;
     }
 }
 

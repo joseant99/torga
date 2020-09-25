@@ -4911,44 +4911,6 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
-        if (idProd == 6) {
-            if (o == 0) {
-                $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                        (o + 1) +
-                        ' Casco :</span> ' +
-                        acabados[o] +
-                        '</p>'
-                );
-            }
-            if (o == 1) {
-                $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                        (o + 1) +
-                        ' Tapa :</span> ' +
-                        acabados[o] +
-                        '</p>'
-                );
-            }
-            if (o == 2) {
-                $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                        (o + 1) +
-                        ' Cajon 1 :</span> ' +
-                        acabados[o] +
-                        '</p>'
-                );
-            }
-            if (o == 3) {
-                $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                        (o + 1) +
-                        ' Cajon 2 :</span> ' +
-                        acabados[o] +
-                        '</p>'
-                );
-            }
-        }
         if (idProd == 7) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
@@ -11889,52 +11851,7 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
-        if (idProd == 6) {
-            if (k == 0) {
-                $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p ><span style="font-weight:600">' +
-                        (k + 1) +
-                        ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                        contador +
-                        '">' +
-                        acabados[k]['acabados']['nombre'] +
-                        '</span></p>'
-                );
-            }
-            if (k == 1) {
-                $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p ><span style="font-weight:600">' +
-                        (k + 1) +
-                        ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                        contador +
-                        '">' +
-                        acabados[k]['acabados']['nombre'] +
-                        '</span></p>'
-                );
-            }
-            if (k == 2) {
-                $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p ><span style="font-weight:600">' +
-                        (k + 1) +
-                        ' Cajon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                        contador +
-                        '">' +
-                        acabados[k]['acabados']['nombre'] +
-                        '</span></p>'
-                );
-            }
-            if (k == 3) {
-                $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p ><span style="font-weight:600">' +
-                        (k + 1) +
-                        ' Cajon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                        contador +
-                        '">' +
-                        acabados[k]['acabados']['nombre'] +
-                        '</span></p>'
-                );
-            }
-        }
+
         if (idProd == 7) {
             if (k == 0) {
                 $('.' + productos[i]['id'] + 'Datos').append(
@@ -18691,60 +18608,7 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
-        if (idProd == 6) {
-            if (u == 1) {
-                $('#datos1').append(
-                    '<p style="width:100%" id="acabado' +
-                        u +
-                        '"><span style="font-weight:600">' +
-                        u +
-                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                        u +
-                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                        u +
-                        '" style="margin-left:10px"></span></p>'
-                );
-            }
-            if (u == 2) {
-                $('#datos1').append(
-                    '<p style="width:100%" id="acabado' +
-                        u +
-                        '"><span style="font-weight:600">' +
-                        u +
-                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                        u +
-                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                        u +
-                        '" style="margin-left:10px"></span></p>'
-                );
-            }
-            if (u == 3) {
-                $('#datos1').append(
-                    '<p style="width:100%" id="acabado' +
-                        u +
-                        '"><span style="font-weight:600">' +
-                        u +
-                        ' Cajon 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                        u +
-                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                        u +
-                        '" style="margin-left:10px"></span></p>'
-                );
-            }
-            if (u == 4) {
-                $('#datos1').append(
-                    '<p style="width:100%" id="acabado' +
-                        u +
-                        '"><span style="font-weight:600">' +
-                        u +
-                        ' Cajon 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                        u +
-                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                        u +
-                        '" style="margin-left:10px"></span></p>'
-                );
-            }
-        }
+
         if (idProd == 7) {
             if (u == 1) {
                 $('#datos1').append(

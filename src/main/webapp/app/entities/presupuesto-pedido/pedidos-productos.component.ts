@@ -14863,10 +14863,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NT333-NT350';
                                                 }
                                                 if (idProdNombre == 1) {
-                                                    nombreCargarImagen = 'NX009-NX012';
+                                                    nombreCargarImagen = 'NX001-NX004';
                                                 }
                                                 if (idProdNombre == 2) {
-                                                    nombreCargarImagen = 'NX009-NX012';
+                                                    nombreCargarImagen = 'NX005-NX008';
                                                 }
                                                 if (idProdNombre == 3) {
                                                     nombreCargarImagen = 'NX009-NX012';
@@ -15076,8 +15076,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 313) {
                                                     nombreCargarImagen = 'NH149';
                                                 }
+                                                if (idProdNombre == 78) {
+                                                    nombreCargarImagen = 'NH150';
+                                                }
+                                                if (idProdNombre == 314) {
+                                                    nombreCargarImagen = 'NH151';
+                                                }
                                                 if (idProdNombre == 79) {
                                                     nombreCargarImagen = 'NH152';
+                                                }
+                                                if (idProdNombre == 92) {
+                                                    nombreCargarImagen = 'NH153';
                                                 }
                                                 if (idProdNombre == 319) {
                                                     nombreCargarImagen = 'NH154';
@@ -15085,17 +15094,83 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 320) {
                                                     nombreCargarImagen = 'NH156';
                                                 }
+                                                if (idProdNombre == 85) {
+                                                    nombreCargarImagen = 'NH157';
+                                                }
                                                 if (idProdNombre == 325) {
                                                     nombreCargarImagen = 'NH168';
                                                 }
+                                                if (idProdNombre == 324) {
+                                                    nombreCargarImagen = 'NH169';
+                                                }
+                                                if (idProdNombre == 327) {
+                                                    nombreCargarImagen = 'NH170';
+                                                }
+                                                if (idProdNombre == 326) {
+                                                    nombreCargarImagen = 'NH171';
+                                                }
+                                                if (idProdNombre == 317) {
+                                                    nombreCargarImagen = 'NH172';
+                                                }
+                                                if (idProdNombre == 82) {
+                                                    nombreCargarImagen = 'NH173';
+                                                }
+                                                if (idProdNombre == 318) {
+                                                    nombreCargarImagen = 'NH174';
+                                                }
+                                                if (idProdNombre == 83) {
+                                                    nombreCargarImagen = 'NH175';
+                                                }
+                                                if (idProdNombre == 321) {
+                                                    nombreCargarImagen = 'NH176';
+                                                }
+                                                if (idProdNombre == 90) {
+                                                    nombreCargarImagen = 'NH177';
+                                                }
+                                                if (idProdNombre == 92) {
+                                                    nombreCargarImagen = 'NH178';
+                                                }
                                                 if (idProdNombre == 320) {
                                                     nombreCargarImagen = 'NH179';
+                                                }
+                                                if (idProdNombre == 85) {
+                                                    nombreCargarImagen = 'NH180';
+                                                }
+                                                if (idProdNombre == 329) {
+                                                    nombreCargarImagen = 'NH181';
+                                                }
+                                                if (idProdNombre == 328) {
+                                                    nombreCargarImagen = 'NH182';
+                                                }
+                                                if (idProdNombre == 340) {
+                                                    nombreCargarImagen = 'NH183';
+                                                }
+                                                if (idProdNombre == 339) {
+                                                    nombreCargarImagen = 'NH184';
+                                                }
+                                                if (idProdNombre == 73) {
+                                                    nombreCargarImagen = 'NH185';
+                                                }
+                                                if (idProdNombre == 72) {
+                                                    nombreCargarImagen = 'NH186';
+                                                }
+                                                if (idProdNombre == 77) {
+                                                    nombreCargarImagen = 'NH187';
+                                                }
+                                                if (idProdNombre == 76) {
+                                                    nombreCargarImagen = 'NH188';
                                                 }
                                                 if (idProdNombre == 89) {
                                                     nombreCargarImagen = 'NH189';
                                                 }
                                                 if (idProdNombre == 88) {
                                                     nombreCargarImagen = 'NH190';
+                                                }
+                                                if (idProdNombre == 91) {
+                                                    nombreCargarImagen = 'NH192';
+                                                }
+                                                if (idProdNombre == 315) {
+                                                    nombreCargarImagen = 'NH193';
                                                 }
                                                 if (idProdNombre == 322) {
                                                     nombreCargarImagen = 'NH191';
@@ -15114,6 +15189,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
                                                 if (idProdNombre == 175) {
                                                     nombreCargarImagen = 'NH198';
+                                                }
+                                                if (idProdNombre == 176) {
+                                                    nombreCargarImagen = 'NH199';
                                                 }
 
                                                 if (idProdNombre == 177) {
@@ -15143,11 +15221,41 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 162) {
                                                     nombreCargarImagen = 'NH251';
                                                 }
+                                                if (idProdNombre == 159) {
+                                                    nombreCargarImagen = 'NH252';
+                                                }
+                                                if (idProdNombre == 158) {
+                                                    nombreCargarImagen = 'NH253';
+                                                }
+                                                if (idProdNombre == 331) {
+                                                    nombreCargarImagen = 'NH254';
+                                                }
+                                                if (idProdNombre == 330) {
+                                                    nombreCargarImagen = 'NH255';
+                                                }
+                                                if (idProdNombre == 161) {
+                                                    nombreCargarImagen = 'NH256';
+                                                }
+                                                if (idProdNombre == 160) {
+                                                    nombreCargarImagen = 'NH257';
+                                                }
                                                 if (idProdNombre == 165) {
                                                     nombreCargarImagen = 'NH258';
                                                 }
                                                 if (idProdNombre == 164) {
                                                     nombreCargarImagen = 'NH259';
+                                                }
+                                                if (idProdNombre == 159) {
+                                                    nombreCargarImagen = 'NH260-NH262';
+                                                }
+                                                if (idProdNombre == 158) {
+                                                    nombreCargarImagen = 'NH263-NH265';
+                                                }
+                                                if (idProdNombre == 331) {
+                                                    nombreCargarImagen = 'NH266';
+                                                }
+                                                if (idProdNombre == 330) {
+                                                    nombreCargarImagen = 'NH267';
                                                 }
                                                 if (idProdNombre == 167) {
                                                     nombreCargarImagen = 'NH268';
@@ -15237,6 +15345,12 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 204) {
                                                     nombreCargarImagen = 'NH455-NH458';
                                                 }
+                                                if (idProdNombre == 332) {
+                                                    nombreCargarImagen = 'NH459';
+                                                }
+                                                if (idProdNombre == 205) {
+                                                    nombreCargarImagen = 'NH460';
+                                                }
                                                 if (idProdNombre == 333) {
                                                     nombreCargarImagen = 'NH461';
                                                 }
@@ -15285,7 +15399,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 221) {
                                                     nombreCargarImagen = 'NH506';
                                                 }
-
+                                                if (idProdNombre == 223) {
+                                                    nombreCargarImagen = 'NH511';
+                                                }
                                                 if (idProdNombre == 222) {
                                                     nombreCargarImagen = 'NH507-NH510';
                                                 }

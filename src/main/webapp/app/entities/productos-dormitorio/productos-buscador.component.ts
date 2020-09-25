@@ -1170,7 +1170,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 } else {
                     $('#ppCalculadora').css({ display: 'block' });
                 }
-
+                $('#datos1').append(
+                    '<p style="width:100%"><span style="font-weight:600">Código : </span><span id="codigoMensajeDatos">' +
+                        datos['mensaje'] +
+                        '</span></p>'
+                );
                 $('#datos1').append(
                     '<p style="width:100%"><span style="font-weight:600">Ancho : </span><span class="' +
                         datos['id'] +
@@ -1185,11 +1189,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#datos1').append(
                     '<p style="width:100%"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
                         datos['fondo'] +
-                        '</span></p>'
-                );
-                $('#datos1').append(
-                    '<p style="width:100%"><span style="font-weight:600">Código : </span><span id="codigoMensajeDatos">' +
-                        datos['mensaje'] +
                         '</span></p>'
                 );
             }
@@ -6734,7 +6733,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 $('#precioDimension').text(precioDimen - this.usbCogido['precio'] * precioPunto);
                             }
                             this.usbCogido = data.body[x];
-                            $('#precioUSB').text(data.body[x]['precio'] * precioPunto);
+                            $('#precioUSB').text('+ ' + data.body[x]['precio'] * precioPunto);
                             $('#precioUSB').css({ display: 'block' });
                             var precioDimen = parseFloat($('#precioDimension').text());
                             $('#precioDimension').text(precioDimen + data.body[x]['precio'] * precioPunto);
@@ -7217,7 +7216,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     this.estaEsLaLUZ = data.body[0];
                     var precioDimen = parseFloat($('#precioDimension').text());
                     var precioLuz = data.body[0]['precio'] * precioPunto;
-                    $('#precioDeLaLuz').text(precioLuz);
+                    $('#precioDeLaLuz').text('+ ' + precioLuz);
                     $('#precioDimension').text(precioDimen + precioLuz);
                 }
             });
@@ -10101,14 +10100,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         if (idApoyo == 18) {
             if (parseFloat(h) <= 100.5) {
                 if (
-                    parseFloat(idProd) == 2 ||
-                    parseFloat(idProd) == 3 ||
-                    parseFloat(idProd) == 4 ||
-                    parseFloat(idProd) == 5 ||
-                    parseFloat(idProd) == 6 ||
-                    parseFloat(idProd) == 7 ||
-                    parseFloat(idProd) == 8 ||
-                    parseFloat(idProd) == 9 ||
                     parseFloat(idProd) == 10 ||
                     parseFloat(idProd) == 11 ||
                     parseFloat(idProd) == 12 ||
@@ -10208,7 +10199,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             this.tiposApoyoService.findBus(idApoyo).subscribe(data => {
                 datos = data['body'];
                 $.each(datos, function(index, value) {
-                    if (idApoyo == 15 || idApoyo == 16 || idApoyo == 376) {
+                    if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {
                             if (h < 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
@@ -10287,7 +10278,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             }
                         }
 
-                        if (idApoyo == 376) {
+                        if (idApoyo == 403) {
                             if (h < 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
                                     var precio = parseFloat(value['precio']);
