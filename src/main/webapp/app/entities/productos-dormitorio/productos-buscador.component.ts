@@ -1040,7 +1040,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2250px' });
+            $('#productosPrincipal').css({ height: '2350px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });
         }
         $('.dimensionesColor1').css({ 'background-color': 'white' });
@@ -1057,9 +1057,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 for (let i = 0; i < data.body.length; i++) {
                     acabados[i] = data.body[i];
                 }
+                this.acabadosService.todos = acabados;
             });
         this.acabados = acabados;
         this.acabados1 = acabados;
+        console.log(this.acabados1);
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         for (let w = 0; w <= 15; w++) {
             $('#myModalColores1 #acabadoImagen' + w).empty();
@@ -11113,7 +11115,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {
                     var id1 = parseFloat(acabadoCogido);
-                    for (let k = 0; k < 16; k++) {
+                    console.log(acabados);
+                    var acabados = this.acabadosService.todos;
+                    for (let k = 0; k < acabados.length; k++) {
                         if (acabados[k]['id'] == id1) {
                             aca[j] = acabados[k];
                         }

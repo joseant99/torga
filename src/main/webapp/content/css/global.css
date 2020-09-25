@@ -8490,39 +8490,39 @@ ui bootstrap tweaks
     }
 
     .artInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .artInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .estInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .armInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .ocuInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .visInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .vesInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .espInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     .rinInputFor {
-        margin-right: 15% !important;
+        margin-right: 12% !important;
         margin-top: 15px;
     }
     #anchosSelect1 {
@@ -8626,7 +8626,7 @@ ui bootstrap tweaks
         margin-left: 0px;
         margin-top: 25px;
         padding-left: 0px;
-        height: 1850px;
+        height: 2050px;
     }
     #ProductosCargados1 {
         margin-left: 27%;
@@ -10107,4 +10107,5 @@ ui bootstrap tweaks
         margin-left: 2% !important;
     }
 }
+
 /* jhipster-needle-css-add-main JHipster will add new css style */

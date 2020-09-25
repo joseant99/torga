@@ -11897,6 +11897,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 console.log(this.productos);
                 var precioModulosBajos = this.modulosBajos;
                 var productos = toma;
+                this.productosPresupuestoPedidosService.todos = toma;
                 var ilu = [];
                 this.iluminacionProdPrePedService
                     .query({
@@ -15932,14 +15933,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         var contador = 0;
         var contadorMeterImagenYTodo = 0;
         doc.setFontSize(20);
-        doc.addFont('ArialMS', 'Arial', 'normal');
-        doc.setFont('Arial');
         doc.setFontSize(12);
 
         var logo = new Image();
         logo.src = '../../../content/images/Logo.jpg';
         doc.addImage(logo, 'JPG', 10, 5, 18, 18);
-
+        console.log(doc);
         var productos = this.productosPresupuestoPedidosService.todos;
         console.log(productos);
         for (let w = 0; w < productos.length; w++) {
@@ -15949,7 +15948,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             doc.setFontSize(16);
             doc.text('Tienda', 100, 50);
             doc.text(this.datosUsuarioService.tiendaCargadaPresu.nombreComercial, 60, 60);
-            doc.text(this.datosUsuarioService.tiendaCargadaPresu.telefono, 80, 70);
+            //doc.text(this.datosUsuarioService.tiendaCargadaPresu.telefono, 80, 70);
             doc.setFontSize(14);
             if (w == 0) {
                 doc.text(productos[w]['productosDormitorio']['nombre'] + ' ' + productos[w]['precioTotal'] + ' PP', 155, 90);
@@ -15963,6 +15962,20 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                     cont = cont + 5;
                 }
             }
+
+            if (w == 1) {
+                doc.text(productos[w]['productosDormitorio']['nombre'] + ' ' + productos[w]['precioTotal'] + ' PP', 155, 200);
+                doc.setFontSize(12);
+                doc.text('Ancho: ' + productos[w]['dimensionesProductoTipo']['ancho'], 165, 208);
+                doc.text('Alto: ' + productos[w]['dimensionesProductoTipo']['alto'], 165, 213);
+                doc.text('Fondo: ' + productos[w]['dimensionesProductoTipo']['fondo'], 165, 218);
+                var cont = 0;
+                for (let h = 0; h < productos[w]['acabados'].length; h++) {
+                    doc.text('Acabado ' + (h + 1) + ': ' + productos[w]['acabados'][h]['acabados']['nombre'], 165, 223 + cont);
+                    cont = cont + 5;
+                }
+            }
+
             var prodNombre = productos[w]['productosDormitorio']['nombre'];
             var idProdNombre = productos[w]['productosDormitorio']['id'];
 
@@ -16522,6 +16535,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             logo.src = '../../../content/images/1- PARA WEB/DORMITORIO/' + nombreCargarImagen + '.jpg';
             if (w == 0) {
                 doc.addImage(logo, 'JPEG', 15, 80, 80, 80);
+            }
+            if (w == 1) {
+                doc.addImage(logo, 'JPEG', 15, 190, 80, 80);
             }
 
             contador++;

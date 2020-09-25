@@ -12,6 +12,7 @@ type EntityArrayResponseType = HttpResponse<IAcabados[]>;
 @Injectable({ providedIn: 'root' })
 export class AcabadosService {
     public resourceUrl = SERVER_API_URL + 'api/acabados';
+    public todos;
 
     constructor(protected http: HttpClient) {}
 
