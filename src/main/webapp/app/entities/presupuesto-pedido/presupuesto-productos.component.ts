@@ -14762,9 +14762,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     idProd != 235
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p >Acabado ' +
+                                                        '<p ><span style="font-weight:600">Acabado ' +
                                                             contador +
-                                                            '&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                             contador +
                                                             '">' +
                                                             acabados[k]['acabados']['nombre'] +

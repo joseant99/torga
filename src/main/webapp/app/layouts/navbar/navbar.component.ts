@@ -154,7 +154,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[83] = 3;
         arrayBueno[84] = 4;
         arrayBueno[85] = 42;
-        arrayBueno[305] = 22;
+        arrayBueno[310] = 22;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -14833,9 +14833,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 235
                             ) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;">Acabado ' +
+                                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
                                         (o + 1) +
-                                        ': ' +
+                                        '</span>: ' +
                                         acabados[o] +
                                         '</p>'
                                 );

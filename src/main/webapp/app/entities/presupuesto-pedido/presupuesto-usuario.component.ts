@@ -415,7 +415,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[83] = 3;
         arrayBueno[84] = 4;
         arrayBueno[85] = 42;
-        arrayBueno[305] = 22;
+        arrayBueno[310] = 22;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
