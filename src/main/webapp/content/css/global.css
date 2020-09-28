@@ -1852,8 +1852,9 @@ nput[type='radio'] {
 #imagenCesta {
     float: right;
     top: 0;
-    width: 10%;
+    width: 13%;
     right: 11px;
+    height: 34px;
 }
 
 #imagenLogoCuenta {
@@ -8664,7 +8665,7 @@ ui bootstrap tweaks
     }
     #posicion0 {
         position: absolute;
-        right: 8px;
+        right: 4px;
         top: 11px;
         color: white;
     }
@@ -8734,6 +8735,7 @@ ui bootstrap tweaks
         width: 10%;
         right: 11px;
         margin-top: 5px;
+        float: right;
     }
 
     .productosColor33 {
@@ -8834,7 +8836,7 @@ ui bootstrap tweaks
         margin-left: -4% !important;
     }
     .imagenAcabadoPrincipalImgSin {
-        margin-top: -100px;
+        margin-top: -10px;
         max-width: 370px !important;
         max-height: 370px !important;
         margin-left: -4% !important;
@@ -9043,7 +9045,7 @@ ui bootstrap tweaks
         width: 87% !important;
         float: left !important;
         margin-top: -10% !important;
-        padding-top: 35px !important;
+        padding-top: 60px !important;
         height: 550px !important;
     }
 
@@ -9768,6 +9770,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen1 {
         margin-left: 3% !important;
@@ -9779,6 +9782,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen2 {
         margin-left: 3% !important;
@@ -9790,6 +9794,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen3 {
         margin-left: 3% !important;
@@ -9801,6 +9806,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen4 {
         margin-left: 3% !important;
@@ -9812,6 +9818,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen5 {
         margin-left: 3% !important;
@@ -9823,6 +9830,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen6 {
         margin-left: 3% !important;
@@ -9834,6 +9842,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen7 {
         margin-left: 3% !important;
@@ -9845,6 +9854,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen8 {
         margin-left: 3% !important;
@@ -9856,6 +9866,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen9 {
         margin-left: 3% !important;
@@ -9867,6 +9878,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen10 {
         margin-left: 3% !important;
@@ -9878,6 +9890,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen11 {
         margin-left: 3% !important;
@@ -9889,6 +9902,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen12 {
         margin-left: 3% !important;
@@ -9900,6 +9914,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen13 {
         margin-left: 3% !important;
@@ -9911,6 +9926,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen14 {
         margin-left: 3% !important;
@@ -9922,6 +9938,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen15 {
         margin-left: 3% !important;
@@ -9933,6 +9950,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen16 {
         margin-left: 3% !important;
@@ -9944,6 +9962,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen17 {
         margin-left: 3% !important;
@@ -9955,6 +9974,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagen18 {
         margin-left: 3% !important;
@@ -9966,6 +9986,7 @@ ui bootstrap tweaks
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
+        padding-left: 0%;
     }
     #imagenPresupues {
         max-width: 350px !important;
@@ -10177,6 +10198,13 @@ ui bootstrap tweaks
     }
     #textoPuertaModal {
         font-size: 14px !important;
+    }
+    #tenerLuz {
+        float: left !important;
+        margin-left: 5px !important;
+        width: 100% !important;
+        font-size: 14px !important;
+        display: block !important;
     }
 }
 

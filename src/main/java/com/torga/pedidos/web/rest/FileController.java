@@ -56,7 +56,12 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
+import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+
+
 
 /**
  * REST controller for managing Files.
@@ -158,7 +163,16 @@ public class FileController {
 	    @PostMapping("/uploadFile1")
 	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException, FileNotFoundException, IOException {
 	        String fileName = fileStorageService.storeFile(file);
-
+	        
+	        // IO
+	         // pdfHTML specific code
+	        	//HtmlConverter.convertToPdf(
+	              //  "<img id=\"imagenPresupues\" style=\"z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;\" width=\"1000px\" height=\"1000px\" src=\"C:/Users/jose/Desktop/prueba/torgaPedidos2Bueno/src/main/webapp/content/images/1- PARA WEB/DORMITORIO2/NH033-NH036.jpeg\">",       // html to be converted
+	                //new PdfWriter(
+	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
+	               // )
+	            //);
+	        
 	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
 	                .path("/downloadFile/")
 	                .path(fileName)

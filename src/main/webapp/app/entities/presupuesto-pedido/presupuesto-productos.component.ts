@@ -551,6 +551,24 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     }
                                                 }
                                             }
+                                            if ('Armario rincon' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
+                                            }
                                             if ('1 CUERPO TIPO 2' == nombre) {
                                                 if (screen.width >= 800) {
                                                     $('#imagen' + (cont - 1)).append(
@@ -1813,6 +1831,24 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                     }
                                                 }
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
+                                            }
+                                            if ('Armario Rincon' == nombre) {
+                                                if (screen.width >= 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                }
+                                                if (screen.width < 800) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                    );
+                                                    if (screen.width < 800) {
+                                                        var elem1 = $('#datosMeter' + (cont - 1));
+                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
+                                                    }
+                                                }
                                             }
                                             if ('3 PUERTAS IZQUIERDA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
@@ -12954,7 +12990,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -14742,6 +14778,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (idProdNombre == 277) {
                                                     nombreCargarImagen = 'NT007-NT022';
                                                 }
+                                                if (idProdNombre == 277) {
+                                                    nombreCargarImagen = 'NT007-NT022';
+                                                }
                                                 if (idProdNombre == 275) {
                                                     nombreCargarImagen = 'NT001-NT004';
                                                 }
@@ -15041,6 +15080,24 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (idProdNombre == 68) {
                                                     nombreCargarImagen = 'NH125-NH127';
                                                 }
+                                                if (idProdNombre == 312) {
+                                                    nombreCargarImagen = 'NH128';
+                                                }
+                                                if (idProdNombre == 69) {
+                                                    nombreCargarImagen = 'NH129';
+                                                }
+                                                if (idProdNombre == 336) {
+                                                    nombreCargarImagen = 'NH130-NH131';
+                                                }
+                                                if (idProdNombre == 335) {
+                                                    nombreCargarImagen = 'NH132-NH133';
+                                                }
+                                                if (idProdNombre == 338) {
+                                                    nombreCargarImagen = 'NH134';
+                                                }
+                                                if (idProdNombre == 337) {
+                                                    nombreCargarImagen = 'NH135';
+                                                }
                                                 if (idProdNombre == 171) {
                                                     nombreCargarImagen = 'NH136';
                                                 }
@@ -15097,6 +15154,30 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                                 if (idProdNombre == 85) {
                                                     nombreCargarImagen = 'NH157';
+                                                }
+                                                if (idProdNombre == 73) {
+                                                    nombreCargarImagen = 'NH158-NH159';
+                                                }
+                                                if (idProdNombre == 72) {
+                                                    nombreCargarImagen = 'NH160-NH161';
+                                                }
+                                                if (idProdNombre == 75) {
+                                                    nombreCargarImagen = 'NH162';
+                                                }
+                                                if (idProdNombre == 74) {
+                                                    nombreCargarImagen = 'NH163';
+                                                }
+                                                if (idProdNombre == 87) {
+                                                    nombreCargarImagen = 'NH164';
+                                                }
+                                                if (idProdNombre == 86) {
+                                                    nombreCargarImagen = 'NH165';
+                                                }
+                                                if (idProdNombre == 77) {
+                                                    nombreCargarImagen = 'NH166';
+                                                }
+                                                if (idProdNombre == 76) {
+                                                    nombreCargarImagen = 'NH167';
                                                 }
                                                 if (idProdNombre == 325) {
                                                     nombreCargarImagen = 'NH168';
@@ -15166,6 +15247,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                                 if (idProdNombre == 88) {
                                                     nombreCargarImagen = 'NH190';
+                                                }
+                                                if (idProdNombre == 322) {
+                                                    nombreCargarImagen = 'NH191';
                                                 }
                                                 if (idProdNombre == 91) {
                                                     nombreCargarImagen = 'NH192';
@@ -15273,6 +15357,24 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (idProdNombre == 170) {
                                                     nombreCargarImagen = 'NH272';
                                                 }
+                                                if (idProdNombre == 167) {
+                                                    nombreCargarImagen = 'NH273';
+                                                }
+                                                if (idProdNombre == 166) {
+                                                    nombreCargarImagen = 'NH274';
+                                                }
+                                                if (idProdNombre == 159) {
+                                                    nombreCargarImagen = 'NH275';
+                                                }
+                                                if (idProdNombre == 158) {
+                                                    nombreCargarImagen = 'NH276';
+                                                }
+                                                if (idProdNombre == 331) {
+                                                    nombreCargarImagen = 'NH277';
+                                                }
+                                                if (idProdNombre == 330) {
+                                                    nombreCargarImagen = 'NH278';
+                                                }
                                                 if (idProdNombre == 180) {
                                                     nombreCargarImagen = 'NH279-NH280';
                                                 }
@@ -15284,6 +15386,15 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                                 if (idProdNombre == 183) {
                                                     nombreCargarImagen = 'NH284';
+                                                }
+                                                if (idProdNombre == 181) {
+                                                    nombreCargarImagen = 'NH285-NH286';
+                                                }
+                                                if (idProdNombre == 183) {
+                                                    nombreCargarImagen = 'NH287';
+                                                }
+                                                if (idProdNombre == 182) {
+                                                    nombreCargarImagen = 'NH288';
                                                 }
                                                 if (idProdNombre == 184) {
                                                     nombreCargarImagen = 'NH289-NH293';
@@ -15339,6 +15450,60 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 }
                                                 if (idProdNombre == 199) {
                                                     nombreCargarImagen = 'NH362-NH366';
+                                                }
+                                                if (idProdNombre == 202) {
+                                                    nombreCargarImagen = 'NH367-NH371';
+                                                }
+                                                if (idProdNombre == 203) {
+                                                    nombreCargarImagen = 'NH372-NH373';
+                                                }
+                                                if (idProdNombre == 360) {
+                                                    nombreCargarImagen = 'NH374-NH376';
+                                                }
+                                                if (idProdNombre == 361) {
+                                                    nombreCargarImagen = 'NH377-NH379';
+                                                }
+                                                if (idProdNombre == 362) {
+                                                    nombreCargarImagen = 'NH380-NH382';
+                                                }
+                                                if (idProdNombre == 363) {
+                                                    nombreCargarImagen = 'NH383-NH385';
+                                                }
+                                                if (idProdNombre == 364) {
+                                                    nombreCargarImagen = 'NH386-NH388';
+                                                }
+                                                if (idProdNombre == 365) {
+                                                    nombreCargarImagen = 'NH389-NH391';
+                                                }
+                                                if (idProdNombre == 366) {
+                                                    nombreCargarImagen = 'NH392-NH394';
+                                                }
+                                                if (idProdNombre == 367) {
+                                                    nombreCargarImagen = 'NH395-NH397';
+                                                }
+                                                if (idProdNombre == 368) {
+                                                    nombreCargarImagen = 'NH398-NH400';
+                                                }
+                                                if (idProdNombre == 369) {
+                                                    nombreCargarImagen = 'NH401-NH403';
+                                                }
+                                                if (idProdNombre == 370) {
+                                                    nombreCargarImagen = 'NH404-NH406';
+                                                }
+                                                if (idProdNombre == 371) {
+                                                    nombreCargarImagen = 'NH407-NH409';
+                                                }
+                                                if (idProdNombre == 372) {
+                                                    nombreCargarImagen = 'NH410-NH412';
+                                                }
+                                                if (idProdNombre == 373) {
+                                                    nombreCargarImagen = 'NH413-NH415';
+                                                }
+                                                if (idProdNombre == 374) {
+                                                    nombreCargarImagen = 'NH416-NH418';
+                                                }
+                                                if (idProdNombre == 375) {
+                                                    nombreCargarImagen = 'NH419-NH421';
                                                 }
                                                 if (idProdNombre == 203) {
                                                     nombreCargarImagen = 'NH372-NH373';
@@ -15482,7 +15647,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if (luz != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>Luz: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
+                                                    '<p><span style="font-weight:600">Luz</span>: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
                                                         i +
                                                         '">' +
                                                         luz['precio'] +
@@ -15504,9 +15669,9 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
                                             if (usb != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p>' +
+                                                    '<p><span style="font-weight:600">' +
                                                         usb['mensaje'] +
-                                                        ': &nbsp;&nbsp;&nbsp; <span id="precioUsb' +
+                                                        '</span>: &nbsp;&nbsp;&nbsp; <span id="precioUsb' +
                                                         i +
                                                         '">' +
                                                         usb['precio'] +
@@ -16648,7 +16813,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                 nombreCargarImagen = 'NH507-NH510';
             }
             var logo = new Image();
-            logo.src = '../../../content/images/1- PARA WEB/DORMITORIO/' + nombreCargarImagen + '.jpg';
+            logo.src = '../../../content/images/1- PARA WEB/DORMITORIO/' + nombreCargarImagen + '.jpeg';
             if (w == 0) {
                 doc.addImage(logo, 'JPEG', 15, 80, 80, 80);
             }

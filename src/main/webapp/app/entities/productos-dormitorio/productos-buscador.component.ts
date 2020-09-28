@@ -2853,7 +2853,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Cajon Interior</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -4784,100 +4784,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             }
                         }
 
-                        if (idProd == 334) {
-                            if (u == 1) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 2) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 3) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 4) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 5) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 6) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Cajon SUP</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 7) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                        }
-
                         if (idProd == 14) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -6588,6 +6494,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 376
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
+                    console.log(data.body);
                     for (let w = 0; w < data.body['length']; w++) {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
@@ -6625,17 +6532,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 idProd == 12 ||
                                 idProd == 13
                             ) {
-                                $('#modalApoyo #apoyoModal' + w).empty();
-                                $('#modalApoyo #apoyoModal' + w).append(
+                                $('#modalApoyo #apoyoModal' + 4).empty();
+                                $('#modalApoyo #apoyoModal' + 4).append(
                                     '<img  src="data:image/gif;base64,' +
                                         data.body[w]['imagen'] +
                                         '" id="imagenApoyo' +
-                                        w +
+                                        4 +
                                         '" class="' +
                                         data.body[w]['id'] +
                                         '" height="160px" width="280px" style=" ">'
                                 );
-                                $('#modalApoyo #apoyoModal' + w).append(
+                                $('#modalApoyo #apoyoModal' + 4).append(
                                     '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
                                 );
                             }
@@ -6660,35 +6567,101 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     idProd != 239 &&
                                     idProd != 240
                                 ) {
-                                    $('#modalApoyo #apoyoModal' + w).empty();
-                                    $('#modalApoyo #apoyoModal' + w).append(
+                                    $('#modalApoyo #apoyoModal' + 2).empty();
+                                    $('#modalApoyo #apoyoModal' + 2).append(
                                         '<img  src="data:image/gif;base64,' +
                                             data.body[w]['imagen'] +
                                             '" id="imagenApoyo' +
-                                            w +
+                                            2 +
                                             '" class="' +
                                             data.body[w]['id'] +
                                             '" height="160px" width="280px" style=" ">'
                                     );
-                                    $('#modalApoyo #apoyoModal' + w).append(
+                                    $('#modalApoyo #apoyoModal' + 2).append(
                                         '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
                                     );
                                 }
                             } else {
-                                $('#modalApoyo #apoyoModal' + w).empty();
-                                console.log(productoTocho);
-                                $('#modalApoyo #apoyoModal' + w).append(
-                                    '<img  src="data:image/gif;base64,' +
-                                        data.body[w]['imagen'] +
-                                        '" id="imagenApoyo' +
-                                        w +
-                                        '" class="' +
-                                        data.body[w]['id'] +
-                                        '" height="160px" width="280px" style=" ">'
-                                );
-                                $('#modalApoyo #apoyoModal' + w).append(
-                                    '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
-                                );
+                                if (data.body[w]['id'] == 15) {
+                                    $('#modalApoyo #apoyoModal' + 1).empty();
+                                    console.log(productoTocho);
+                                    $('#modalApoyo #apoyoModal' + 1).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            1 +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + 1).append(
+                                        '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                    );
+                                }
+                                if (data.body[w]['id'] == 16) {
+                                    $('#modalApoyo #apoyoModal' + 5).empty();
+                                    console.log(productoTocho);
+                                    $('#modalApoyo #apoyoModal' + 5).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            5 +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + 5).append(
+                                        '<strong><p style="text-align:center">Metalicas Grafeno</strong></p>'
+                                    );
+                                }
+                                if (data.body[w]['id'] == 18) {
+                                    $('#modalApoyo #apoyoModal' + 3).empty();
+                                    console.log(productoTocho);
+                                    $('#modalApoyo #apoyoModal' + 3).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            3 +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + 3).append(
+                                        '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                    );
+                                }
+                                if (data.body[w]['id'] == 32) {
+                                    $('#modalApoyo #apoyoModal' + 0).empty();
+                                    console.log(productoTocho);
+                                    $('#modalApoyo #apoyoModal' + 0).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            0 +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + 0).append(
+                                        '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                    );
+                                }
+                                if (data.body[w]['id'] == 403) {
+                                    $('#modalApoyo #apoyoModal' + 6).empty();
+                                    console.log(productoTocho);
+                                    $('#modalApoyo #apoyoModal' + 6).append(
+                                        '<img  src="data:image/gif;base64,' +
+                                            data.body[w]['imagen'] +
+                                            '" id="imagenApoyo' +
+                                            6 +
+                                            '" class="' +
+                                            data.body[w]['id'] +
+                                            '" height="160px" width="280px" style=" ">'
+                                    );
+                                    $('#modalApoyo #apoyoModal' + 6).append(
+                                        '<strong><p style="text-align:center">Metalicas blancas</strong></p>'
+                                    );
+                                }
                             }
                         }
                     }
@@ -6755,6 +6728,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     public cargarComposicion() {}
     public borrarProdCalculadora() {
         $('#medidasEspecialesTexto').css({ display: 'none' });
+        $('.divBuscadorArticulos').css({ display: 'none' });
         $('#medidasEspeciales').css({ display: 'none' });
         $('#anchosSelect1').val('');
         $('#medidasAncho').css({ display: 'none' });
@@ -10482,6 +10456,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         value['productoApoyo']['nombre'] +
                                         '</p>'
                                 );
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        0 +
+                                        '&euro;</span></p>'
+                                );
                                 var totalfloat = parseFloat(total);
                                 $('#total').text(totalfloat);
                             }
@@ -10632,7 +10615,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             this.tiposApoyoService.findBus1(idApoyo).subscribe(data => {
                 datos = data['body'];
                 $.each(datos, function(index, value) {
-                    if (idApoyo == 15 || idApoyo == 16 || idApoyo == 376) {
+                    if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {
                             if (h < 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
@@ -10711,7 +10694,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             }
                         }
 
-                        if (idApoyo == 376) {
+                        if (idApoyo == 403) {
                             if (h < 175) {
                                 if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == h) {
                                     var precio = parseFloat(value['precio']);
@@ -10914,6 +10897,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     '<p id="nombreApoyoCajon" style="color:black;margin-left: 180px;margin-top: -42px;position:absolute" >' +
                                         value['productoApoyo']['nombre'] +
                                         '</p>'
+                                );
+                                $('#datos1').append(
+                                    '<p id="apoyoDatosTexto" style="width:100%;display:none"><span id="nombreApoyo">Apoyo : ' +
+                                        value['productoApoyo']['nombre'] +
+                                        '</span><span style="float:right" id="apoyo1" class="' +
+                                        value['id'] +
+                                        '">+' +
+                                        0 +
+                                        '&euro;</span></p>'
                                 );
                                 var totalfloat = parseFloat(total);
                                 $('#total').text(totalfloat);
@@ -11151,6 +11143,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
                 this.productosDormitorioService.numeroCesta = i;
+                $('#posicion0').text(i);
                 console.log(sessionStorage);
             }
         }
@@ -11641,9 +11634,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
         this.tiposApoyoService
             .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
+                size: 10000
             })
             .subscribe(data => {
                 for (let i = 0; i < data.body.length; i++) {

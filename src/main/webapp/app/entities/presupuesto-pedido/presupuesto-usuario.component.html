@@ -19,7 +19,7 @@
         <table class="table table-striped" id="presupuestoPedidosTabla">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="fecha_presupuesto"><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th><span jhiTranslate="torgaPedidosApp.presupuestoPedido.fecha_presupuesto" (click)="ordenarPorFecha()">Fecha Presupuesto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>

@@ -154,6 +154,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[83] = 3;
         arrayBueno[84] = 4;
         arrayBueno[85] = 42;
+        arrayBueno[305] = 22;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -338,6 +339,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         var puntos = null;
+
         if (item == 'C') {
             puntos = JSON.parse(sessionStorage.getItem(item));
         }
@@ -1381,6 +1383,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (screen.width >= 800) {
                                 $('#cuerpo' + i).append(
                                     '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                                );
+                            }
+                        }
+                        if (nombreArmario == 'Armario Rincon') {
+                            if (screen.width < 800) {
+                                $('#cuerpo' + i).append(
+                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                );
+                            }
+
+                            if (screen.width >= 800) {
+                                $('#cuerpo' + i).append(
+                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 25%; margin-top: 140px;" src="../../../content/images/nodisponible.png">'
                                 );
                             }
                         }
@@ -11360,7 +11375,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#textoCesta' + i).append(
                             '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;margin-left:28%;"><span style="font-weight:600">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '</span><i id="precioArm" style="float:right;margin-right:40%">' +
+                                '</span><i id="precioArm" style="float:right;margin-right:40%;font-weight:600">' +
                                 sesion[1]['todoSumadoPrecio'] +
                                 ' pp</i></p>'
                         );
@@ -11410,6 +11425,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             $('#textoCesta' + i).css({ 'margin-top': '20%' });
                         }
                         $('#textoCesta' + i).append(
+                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Codigo</span>: ' +
+                                sesion[1]['codigo'] +
+                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
+                                sesion[1]['precioCasco'] +
+                                ' pp</i></p>'
+                        );
+                        $('#textoCesta' + i).append(
                             '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Ancho:</span> ' +
                                 sesion[1]['ancho'] +
                                 '</p>'
@@ -11424,13 +11446,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 sesion[1]['fondo'] +
                                 '</p>'
                         );
-                        $('#textoCesta' + i).append(
-                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Codigo</span>: ' +
-                                sesion[1]['codigo'] +
-                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                sesion[1]['precioCasco'] +
-                                ' pp</i></p>'
-                        );
+
                         if (sesion[1]['niveladores'] != undefined) {
                             $('#textoCesta' + i).append(
                                 '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: <i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
@@ -11652,7 +11668,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     i +
                                     '"><strong style="font-weight: 600;">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</strong></span><strong> pp </strong></i></p>'
+                                    '</strong></span><strong style="font-weight:600"> pp </strong></i></p>'
                             );
                         }
 
@@ -11971,6 +11987,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 68) {
                             nombreCargarImagen = 'NH125-NH127';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 312) {
+                            nombreCargarImagen = 'NH128';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 69) {
+                            nombreCargarImagen = 'NH129';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 336) {
+                            nombreCargarImagen = 'NH130-NH131';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 335) {
+                            nombreCargarImagen = 'NH132-NH133';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 338) {
+                            nombreCargarImagen = 'NH134';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 337) {
+                            nombreCargarImagen = 'NH135';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 171) {
                             nombreCargarImagen = 'NH136';
                         }
@@ -12027,6 +12061,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 85) {
                             nombreCargarImagen = 'NH157';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 73) {
+                            nombreCargarImagen = 'NH158-NH159';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 72) {
+                            nombreCargarImagen = 'NH160-NH161';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 75) {
+                            nombreCargarImagen = 'NH162';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 74) {
+                            nombreCargarImagen = 'NH163';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 87) {
+                            nombreCargarImagen = 'NH164';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 86) {
+                            nombreCargarImagen = 'NH165';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 77) {
+                            nombreCargarImagen = 'NH166';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 76) {
+                            nombreCargarImagen = 'NH167';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 325) {
                             nombreCargarImagen = 'NH168';
@@ -12096,6 +12154,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 88) {
                             nombreCargarImagen = 'NH190';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 322) {
+                            nombreCargarImagen = 'NH191';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 91) {
                             nombreCargarImagen = 'NH192';
@@ -12203,6 +12264,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 170) {
                             nombreCargarImagen = 'NH272';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 167) {
+                            nombreCargarImagen = 'NH273';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 166) {
+                            nombreCargarImagen = 'NH274';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 159) {
+                            nombreCargarImagen = 'NH275';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 158) {
+                            nombreCargarImagen = 'NH276';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 331) {
+                            nombreCargarImagen = 'NH277';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 330) {
+                            nombreCargarImagen = 'NH278';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 180) {
                             nombreCargarImagen = 'NH279-NH280';
                         }
@@ -12214,6 +12293,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 183) {
                             nombreCargarImagen = 'NH284';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 181) {
+                            nombreCargarImagen = 'NH285-NH286';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 183) {
+                            nombreCargarImagen = 'NH287';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 182) {
+                            nombreCargarImagen = 'NH288';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 184) {
                             nombreCargarImagen = 'NH289-NH293';
@@ -12269,6 +12357,60 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 199) {
                             nombreCargarImagen = 'NH362-NH366';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 202) {
+                            nombreCargarImagen = 'NH367-NH371';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 203) {
+                            nombreCargarImagen = 'NH372-NH373';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 360) {
+                            nombreCargarImagen = 'NH374-NH376';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 361) {
+                            nombreCargarImagen = 'NH377-NH379';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 362) {
+                            nombreCargarImagen = 'NH380-NH382';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 363) {
+                            nombreCargarImagen = 'NH383-NH385';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 364) {
+                            nombreCargarImagen = 'NH386-NH388';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 365) {
+                            nombreCargarImagen = 'NH389-NH391';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 366) {
+                            nombreCargarImagen = 'NH392-NH394';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 367) {
+                            nombreCargarImagen = 'NH395-NH397';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 368) {
+                            nombreCargarImagen = 'NH398-NH400';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 369) {
+                            nombreCargarImagen = 'NH401-NH403';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 370) {
+                            nombreCargarImagen = 'NH404-NH406';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 371) {
+                            nombreCargarImagen = 'NH407-NH409';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 372) {
+                            nombreCargarImagen = 'NH410-NH412';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 373) {
+                            nombreCargarImagen = 'NH413-NH415';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 374) {
+                            nombreCargarImagen = 'NH416-NH418';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 375) {
+                            nombreCargarImagen = 'NH419-NH421';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 203) {
                             nombreCargarImagen = 'NH372-NH373';
@@ -13187,7 +13329,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Inf :</span> ' +
+                                            ' Cajon Interior :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -14755,7 +14897,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );

@@ -31,11 +31,14 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     todos: any;
     tiendas: any;
     links: any;
+    ordenarFecha: any;
+    ordenarFecha1: any;
     totalItems: any;
     queryCount: any;
     itemsPerPage: any;
     page: any;
     predicate: any;
+    headres: any;
     previousPage: any;
     isSaving: boolean;
     reverse: any;
@@ -306,6 +309,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                     this.tamano = contador;
                     this.todos = cogidos;
                     this.presuped1 = cogidos;
+                    this.headres = res.headers;
                     this.paginatePresupuestoPedidos(cogidos, res.headers);
                 }
 
@@ -384,12 +388,36 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         ]);
         this.loadAll();
     }
+    public ordenarPorFecha() {
+        var cogidos = this.presuped1;
+        var res = this.headres;
+        var ordenar = this.ordenarFecha;
+        var ole = [];
+        var cont = 0;
+        if (ordenar == 0) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                ole[cont] = cogidos[i];
+                cont++;
+                this.ordenarFecha = 1;
+            }
+        } else {
+            for (let i = 0 - 1; i < cogidos.length; i++) {
+                ole[cont] = cogidos[i];
+                cont++;
+                this.ordenarFecha = 0;
+            }
+        }
+        this.presupuestoPedidos = ole;
+    }
 
     ngOnInit() {
         var arrayBueno = [];
         arrayBueno[83] = 3;
         arrayBueno[84] = 4;
+        this.ordenarFecha = 0;
+        this.ordenarFecha = 1;
         arrayBueno[85] = 42;
+        arrayBueno[305] = 22;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {

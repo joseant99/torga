@@ -35,8 +35,10 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
     queryCount: any;
     itemsPerPage: any;
     page: any;
+    headres: any;
     predicate: any;
     previousPage: any;
+    ordenarFecha: any;
     isSaving: boolean;
     reverse: any;
     todosdatosusuarios: any;
@@ -306,6 +308,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
                     this.tamano = contador;
                     this.todos = cogidos;
                     this.presuped1 = cogidos;
+                    this.headres = res.headers;
                     this.paginatePresupuestoPedidos(cogidos, res.headers);
                 }
 
@@ -317,6 +320,27 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         sessionStorage.setItem('presupuesto', id);
     }
 
+    public ordenarPorFecha() {
+        var cogidos = this.presuped1;
+        var res = this.headres;
+        var ordenar = this.ordenarFecha;
+        var ole = [];
+        var cont = 0;
+        if (ordenar == 0) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                ole[cont] = cogidos[i];
+                cont++;
+                this.ordenarFecha = 1;
+            }
+        } else {
+            for (let i = 0 - 1; i < cogidos.length; i++) {
+                ole[cont] = cogidos[i];
+                cont++;
+                this.ordenarFecha = 0;
+            }
+        }
+        this.presupuestoPedidos = ole;
+    }
     public cogerIdPresupuesto1(id) {
         sessionStorage.setItem('presupuesto', id);
         this.presupuestoPedidoService
@@ -387,9 +411,11 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         var arrayBueno = [];
+        this.ordenarFecha = 0;
         arrayBueno[83] = 3;
         arrayBueno[84] = 4;
         arrayBueno[85] = 42;
+        arrayBueno[305] = 22;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
