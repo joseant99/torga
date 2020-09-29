@@ -6396,7 +6396,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 285 &&
                     idProd != 229 &&
                     idProd != 5 &&
-                    idProd != 376
+                    idProd != 376 &&
+                    idProd != 15 &&
+                    idProd != 16 &&
+                    idProd != 17 &&
+                    idProd != 18 &&
+                    idProd != 404 &&
+                    idProd != 405 &&
+                    idProd != 406 &&
+                    idProd != 407
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -6416,6 +6424,22 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             });
             for (let h = 0; h < 14; h++) {
                 $('#modalApoyo #apoyoModal' + h).empty();
+            }
+            if (idProd == 406) {
+                $('#botonCalculadora').removeAttr('class');
+                $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
+                $('#acabados #imagenAcabadoPrincipalSin').css({ display: 'none' });
+                $('#acabados #imagenAcabadoPrincipal').append(
+                    '<img id="imagenAcabado" src="../../../content/images/1- PARA WEB/DORMITORIO2/NH232.jpeg" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+                );
+            }
+            if (idProd == 407) {
+                $('#botonCalculadora').removeAttr('class');
+                $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
+                $('#acabados #imagenAcabadoPrincipalSin').css({ display: 'none' });
+                $('#acabados #imagenAcabadoPrincipal').append(
+                    '<img id="imagenAcabado" src="../../../content/images/1- PARA WEB/DORMITORIO2/NH233.jpeg" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+                );
             }
             if (
                 idProd != 175 &&
@@ -6523,7 +6547,15 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 285 &&
                 idProd != 229 &&
                 idProd != 5 &&
-                idProd != 376
+                idProd != 376 &&
+                idProd != 15 &&
+                idProd != 16 &&
+                idProd != 17 &&
+                idProd != 18 &&
+                idProd != 404 &&
+                idProd != 405 &&
+                idProd != 406 &&
+                idProd != 407
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -9870,7 +9902,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             idProd != '282' &&
             idProd != '283' &&
             idProd != '284' &&
-            idProd != '285'
+            idProd != '285' &&
+            idProd != '229' &&
+            idProd != '5' &&
+            idProd != '376' &&
+            idProd != '17' &&
+            idProd != '18' &&
+            idProd != '404' &&
+            idProd != '405' &&
+            idProd != '406' &&
+            idProd != '407'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;

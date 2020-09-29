@@ -155,6 +155,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[84] = 4;
         arrayBueno[85] = 42;
         arrayBueno[310] = 22;
+        arrayBueno[386] = 15;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -12185,6 +12186,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 176) {
                             nombreCargarImagen = 'NH199';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 18) {
+                            nombreCargarImagen = 'NH200-NH210';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 17) {
+                            nombreCargarImagen = 'NH211-NH229';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 404) {
+                            nombreCargarImagen = 'NH230';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 405) {
+                            nombreCargarImagen = 'NH231';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 406) {
+                            nombreCargarImagen = 'NH232';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 407) {
+                            nombreCargarImagen = 'NH233';
+                        }
 
                         if (sesion[1]['productosDormitorio']['id'] == 177) {
                             nombreCargarImagen = 'NH234-NH235';
@@ -16265,10 +16284,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
                             }
                         } else {
+                            var dimen = {
+                                id: prodCarr[m][1]['id'],
+                                nombre: prodCarr[m][1]['nombre'],
+                                anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
+                                fondo: prodCarr[m][1]['fondo'],
+                                alto: prodCarr[m][1]['alto'],
+                                ancho: prodCarr[m][1]['ancho'],
+                                imagen: prodCarr[m][1]['imagen'],
+                                imagenContentType: prodCarr[m][1]['imagenContentType'],
+                                mensaje: prodCarr[m][1]['mensaje'],
+                                precio: prodCarr[m][1]['precio'],
+                                productosDormitorio: prodCarr[m][1]['productosDormitorio']
+                            };
                             prodPrePed = {
-                                productosDormitorio: prodCarr[m][1]['apoyo']['productoApoyo'],
+                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                 presupuestoPedido: prueba1,
-                                tiposApoyo: prodCarr[m][1]['apoyo'],
+                                dimensionesProductoTipo: dimen,
                                 precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                             };
                             numeroAcaProd[m]['prod'] = prodPrePed;
