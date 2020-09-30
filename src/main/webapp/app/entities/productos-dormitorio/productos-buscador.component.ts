@@ -603,6 +603,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#botonCalculadoraEstanteria').css({ display: 'none' });
         $("input[name=altura][value='0']").prop('checked', true);
         $('#datos1').empty();
+        $('#tenerLUZ').css({ display: 'none' });
+        this.usb = undefined;
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
         $('#articulosEspeciales').css({ display: 'none' });
@@ -639,6 +641,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.armariosRinconDivInputCodigo').css({ display: 'none' });
         $('#ppCalculadora').css({ display: 'block' });
         $('.selectbuscaarticulos').empty();
+        $('#elegirLado').css({ display: 'none' });
         $('.selectbuscaarticulos').append('<option></option>');
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
@@ -1039,6 +1042,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
+        $('#elegirLado').css({ display: 'none' });
+        this.usb = undefined;
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '2350px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });
@@ -1543,12 +1548,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             });
             var arrayUsb = [];
             var contUsb = 0;
+            if (idProd == 281 || idProd == 282 || idProd == 246) {
+                $('#elegirLado').css({ display: 'block' });
+            }
             if (
                 idProd == 277 ||
                 idProd == 278 ||
                 idProd == 279 ||
                 idProd == 280 ||
                 idProd == 281 ||
+                idProd == 282 ||
                 idProd == 292 ||
                 idProd == 246 ||
                 idProd == 249 ||
@@ -5472,6 +5481,101 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 );
                             }
                         }
+
+                        if (idProd == 303) {
+                            if (u == 1) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 2) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 3) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 4) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 5) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 6) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cajon SUP</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 7) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                        }
+
                         if (idProd == 307) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -5545,34 +5649,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         '"><span style="font-weight:600">' +
                                         u +
                                         ' Pieza Derecha</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                        }
-                        if (idProd == 307) {
-                            if (u == 1) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                            if (u == 2) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -6796,6 +6872,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#medidasEspeciales').css({ display: 'none' });
         $('#anchosSelect1').val('');
         $('#medidasAncho').css({ display: 'none' });
+        $('#elegirLado').css({ display: 'none' });
         $('#medidasFondo').css({ display: 'none' });
         $('#medidasAlto').css({ display: 'none' });
         $('#especiales').css({ display: 'none' });
@@ -11149,6 +11226,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             const prods = this.apoyo;
             const apoyoBueno = [];
             const iluBuena = [];
+
             const sistemasApoyo = this.sistemasApoyo;
             for (let k = 0; k < sistemasApoyo.length; k++) {
                 if (sistemasApoyo[k]['id'] == idApoyo) {
@@ -11187,11 +11265,35 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                         value['acabado' + w] = aca[w];
                         value['acabado' + w]['imagenFondo'] = '';
                     }
+
+                    var direccion;
+                    if (
+                        value['productosDormitorio']['id'] == '281' ||
+                        value['productosDormitorio']['id'] == '246' ||
+                        value['productosDormitorio']['id'] == '282'
+                    ) {
+                        if ($('#lado1').is(':checked')) {
+                            direccion = 'A la derecha';
+                            console.log('gg');
+                            console.log(direccion);
+                        } else {
+                            direccion = 'A la izquierda';
+                            console.log('gg');
+                            console.log(direccion);
+                        }
+                    }
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;
                         value['alto'] = alto;
                         value['fondo'] = fondo;
                         value['precio'] = precio;
+                    }
+                    if (
+                        value['productosDormitorio']['id'] == '281' ||
+                        value['productosDormitorio']['id'] == '246' ||
+                        value['productosDormitorio']['id'] == '282'
+                    ) {
+                        value['direccion'] = direccion;
                     }
                     value['apoyo'] = apoyoBueno[1];
                     value['iluminacion'] = iluBuena[1];
@@ -11200,6 +11302,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     }
                     prod[1] = value;
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
+
                     prod[1]['imagen'] = '';
                     prod[1]['productosDormitorio']['imagen'] = '';
                     if (prod[1]['apoyo'] != undefined) {

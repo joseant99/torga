@@ -36,6 +36,8 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "texto_especial")
     private String textoEspecial;
     
+    @Column(name = "direccion")
+    private String direccion;
     
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -107,6 +109,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setNombreArchivo(String nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
+    }
+    
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public ProductosPresupuestoPedidos direccion(String direccion) {
+        this.direccion = direccion;
+        return this;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
     public String getTextoEspecial() {

@@ -156,6 +156,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[85] = 42;
         arrayBueno[310] = 22;
         arrayBueno[386] = 15;
+        arrayBueno[541] = 47;
+
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -12528,6 +12530,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '</p>'
                         );
 
+                        if (sesion[1]['direccion'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Posicion plafones:</span> ' +
+                                    sesion[1]['direccion'] +
+                                    '</p>'
+                            );
+                        }
+
                         for (let o = 0; o < acabados.length; o++) {
                             if (sesion[1]['productosDormitorio']['id'] == 315) {
                                 if (o == 0) {
@@ -16194,6 +16204,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                             }
+
                             if (prodCarr[m][1]['usb'] != undefined) {
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
@@ -16206,6 +16217,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (prodCarr[m][1]['iluminacion'] != undefined) {
                                 prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                            }
+                            if (prodCarr[m][1]['direccion'] != undefined) {
+                                prodPrePed['direccion'] = prodCarr[m][1]['direccion'];
                             }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;
