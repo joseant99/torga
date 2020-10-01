@@ -43,7 +43,9 @@ Browser Upgrade Prompt
 .hidetext {
     -webkit-text-security: disc; /* Default */
 }
-
+#textoPuertaModal {
+    font-size: 18px !important;
+}
 #acabadoTiradorProbar1 {
     display: none;
 }

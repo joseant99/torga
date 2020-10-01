@@ -13738,7 +13738,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' C ajon Dch :</span> ' +
+                                            ' Cajon Dch :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 4) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Patas :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -14859,7 +14868,44 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 232 &&
                                 idProd != 233 &&
                                 idProd != 234 &&
-                                idProd != 235
+                                idProd != 235 &&
+                                idProd != 246 &&
+                                idProd != 247 &&
+                                idProd != 248 &&
+                                idProd != 249 &&
+                                idProd != 250 &&
+                                idProd != 251 &&
+                                idProd != 252 &&
+                                idProd != 253 &&
+                                idProd != 254 &&
+                                idProd != 255 &&
+                                idProd != 256 &&
+                                idProd != 257 &&
+                                idProd != 258 &&
+                                idProd != 259 &&
+                                idProd != 260 &&
+                                idProd != 261 &&
+                                idProd != 262 &&
+                                idProd != 263 &&
+                                idProd != 264 &&
+                                idProd != 265 &&
+                                idProd != 266 &&
+                                idProd != 267 &&
+                                idProd != 268 &&
+                                idProd != 269 &&
+                                idProd != 270 &&
+                                idProd != 271 &&
+                                idProd != 272 &&
+                                idProd != 273 &&
+                                idProd != 274 &&
+                                idProd != 275 &&
+                                idProd != 276 &&
+                                idProd != 277 &&
+                                idProd != 278 &&
+                                idProd != 279 &&
+                                idProd != 280 &&
+                                idProd != 281 &&
+                                idProd != 282
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +

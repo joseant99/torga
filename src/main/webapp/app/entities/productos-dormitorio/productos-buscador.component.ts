@@ -3402,7 +3402,20 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Dajon DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Cajon DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 5) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -6344,7 +6357,44 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             idProd != 232 &&
                             idProd != 233 &&
                             idProd != 234 &&
-                            idProd != 235
+                            idProd != 235 &&
+                            idProd != 246 &&
+                            idProd != 247 &&
+                            idProd != 248 &&
+                            idProd != 249 &&
+                            idProd != 250 &&
+                            idProd != 251 &&
+                            idProd != 252 &&
+                            idProd != 253 &&
+                            idProd != 254 &&
+                            idProd != 255 &&
+                            idProd != 256 &&
+                            idProd != 257 &&
+                            idProd != 258 &&
+                            idProd != 259 &&
+                            idProd != 260 &&
+                            idProd != 261 &&
+                            idProd != 262 &&
+                            idProd != 263 &&
+                            idProd != 264 &&
+                            idProd != 265 &&
+                            idProd != 266 &&
+                            idProd != 267 &&
+                            idProd != 268 &&
+                            idProd != 269 &&
+                            idProd != 270 &&
+                            idProd != 271 &&
+                            idProd != 272 &&
+                            idProd != 273 &&
+                            idProd != 274 &&
+                            idProd != 275 &&
+                            idProd != 276 &&
+                            idProd != 277 &&
+                            idProd != 278 &&
+                            idProd != 279 &&
+                            idProd != 280 &&
+                            idProd != 281 &&
+                            idProd != 282
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
