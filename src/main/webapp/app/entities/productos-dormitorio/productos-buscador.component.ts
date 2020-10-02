@@ -870,6 +870,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             }
         }
 
+        if (id == 30) {
+            $('.divConfiguracionestant').css({ display: 'block' });
+        }
+
         if (id == 20) {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
@@ -1036,6 +1040,81 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#calcuVesti #enmarcadoCalcu').css({ display: 'none' });
             $('#calcuVesti #botonesAcabadosCuerpo').css({ display: 'block' });
         }
+    }
+
+    public meterAnchoCalculadora() {
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2375px' });
+        }
+        var ancho = $('#cogerAnchoestanlibre').val();
+        $('#nombreMesita').text('Tablero a Medida');
+        $('#datos1').append('<p style="width:100%"><span style="font-weight:600">Grosor : </span>' + ancho + '</p>');
+        $('#h4canteado').css({ display: 'block' });
+        $('#pcanteado').css({ display: 'block' });
+
+        if (ancho == '12 mm') {
+            for (let i = 10; i <= 260; i++) {
+                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+            }
+        } else {
+            for (let i = 10; i <= 280; i++) {
+                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+            }
+        }
+    }
+
+    public meterCanteadoCalculadora() {
+        var ancho = $('#cogerCANTEADO').val();
+        $('#datos1').append('<p style="width:100%"><span style="font-weight:600">Canteado : </span>' + ancho + '</p>');
+        $('#h4ancho').css({ display: 'block' });
+        $('#pAnchoEstant').css({ display: 'block' });
+    }
+
+    public meterAnchoEstantCalculadora() {
+        var ancho = $('#cogerAnchoEstant').val();
+        $('#datos1').append(
+            '<p style="width:100%"><span style="font-weight:600">Ancho : </span><span id="anchoTableCalcu">' + ancho + '</span></p>'
+        );
+
+        $('#h4alto').css({ display: 'block' });
+        $('#pAltoEstant').css({ display: 'block' });
+        for (let i = 10; i <= 200; i++) {
+            $('#cogerAltoEstant').append('<option>' + i + '</option>');
+        }
+    }
+
+    public meterAltoEstantCalculadora() {
+        var ancho = $('#cogerAltoEstant').val();
+        $('#datos1').append(
+            '<p style="width:100%"><span style="font-weight:600">Alto : </span><span id="altoTableCalcu">' + ancho + '</span></p>'
+        );
+        var ancho1 = $('#cogerAnchoEstant').val();
+        var caje = $('#cogerCANTEADO').val();
+        var grosor = $('#cogerAnchoestanlibre').val();
+
+        var prueba = parseFloat($('#altoTableCalcu').text());
+        var prueba1 = parseFloat($('#anchoTableCalcu').text());
+
+        var cuenta;
+        var aux = 0;
+        aux = prueba * prueba1;
+        aux = aux / 10000;
+        if (grosor == '30 mm') {
+            if (caje == 'SI') {
+                aux = aux * 85;
+            } else {
+                aux = aux * 80;
+            }
+        } else {
+            if (caje == 'SI') {
+                aux = aux * 55;
+            } else {
+                aux = aux * 51;
+            }
+        }
+
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
+        $('#precioDimension').text(aux);
     }
 
     public cargarDimen() {
@@ -6755,7 +6834,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     idProd != 229 &&
                                     idProd != 238 &&
                                     idProd != 239 &&
-                                    idProd != 240
+                                    idProd != 240 &&
+                                    idProd != 241 &&
+                                    idProd != 242 &&
+                                    idProd != 243 &&
+                                    idProd != 244 &&
+                                    idProd != 245
                                 ) {
                                     $('#modalApoyo #apoyoModal' + 2).empty();
                                     $('#modalApoyo #apoyoModal' + 2).append(

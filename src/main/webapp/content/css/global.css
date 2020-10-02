@@ -10208,6 +10208,10 @@ ui bootstrap tweaks
         font-size: 14px !important;
         display: block !important;
     }
+    .divConfiguracionestant {
+        margin-top: 15% !important;
+        width: 100% !important;
+    }
 }
 
 /* jhipster-needle-css-add-main JHipster will add new css style */

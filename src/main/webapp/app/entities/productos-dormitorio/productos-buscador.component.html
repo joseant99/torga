@@ -1887,6 +1887,9 @@
 								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(18)"></p><br>
 								  
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">TABLERO A MEDIDA</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(30)"></p><br>
+								  
 								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor5" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 30%;">SUPLEMENTO TV - PANELES TV</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(19)"></p><br>
 								  
@@ -2220,7 +2223,20 @@
     </div>
     
     
+    <div style="width:90%;display:none;margin-bottom:50px;float:left;margin-top:50px;" id="producto" class="divConfiguracionestant">
+    	<h4 style="text-align:center">GROSOR DEL TABLERO</h4>	
+    		<p style="text-align:center;width:100%;"><select style="width:200px;margin-top:3%;margin-bottom:3%;height: 35px;" id="cogerAnchoestanlibre" (change)="meterAnchoCalculadora()"><option></option><option>12 mm</option><option>19 mm</option><option>30 mm</option></select></p>
     
+    	<h4 id="h4canteado" style="text-align:center;display:none">CANTEADO</h4>	
+    		<p id="pcanteado" style="text-align:center;width:100%;display:none"><select style="width:200px;margin-top:3%;margin-bottom:3%;height: 35px;" id="cogerCANTEADO" (change)="meterCanteadoCalculadora()"><option></option><option>SI</option><option>NO</option></select></p>
+
+		<h4 id="h4ancho" style="text-align:center;display:none">ANCHO</h4>	
+    		<p id="pAnchoEstant" style="text-align:center;width:100%;display:none"><select style="width:200px;margin-top:3%;margin-bottom:3%;height: 35px;" id="cogerAnchoEstant" (change)="meterAnchoEstantCalculadora()"><option></option></select></p>
+		    	
+		<h4 id="h4alto" style="text-align:center;display:none">ALTO</h4>	
+    		<p id="pAltoEstant" style="text-align:center;width:100%;display:none"><select style="width:200px;margin-top:3%;margin-bottom:3%;height: 35px;" id="cogerAltoEstant" (change)="meterAltoEstantCalculadora()"><option></option></select></p>
+		    	
+    </div>
     
     
     <div style="width:100%;display:none" id="producto" class="divBuscadorArticulos">
