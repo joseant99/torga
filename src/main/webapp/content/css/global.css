@@ -1803,7 +1803,12 @@ nput[type='radio'] {
     height: 400px;
     margin-bottom: 6%;
 }
-
+#imagenAcabadoPrincipal123 {
+    float: left;
+    width: 85%;
+    height: 400px;
+    margin-bottom: 6%;
+}
 #apoyoStyle {
     float: left;
     margin-left: 10%;
@@ -3050,6 +3055,16 @@ ui bootstrap tweaks
     max-height: 100%;
 }
 #botonCalculadora {
+    width: 86%;
+    height: 7%;
+    bottom: 60px;
+    position: absolute;
+    font-size: 16px;
+    background-color: black;
+    left: 25px;
+    color: black;
+}
+#botonCalculadoraTablero {
     width: 86%;
     height: 7%;
     bottom: 60px;
@@ -8460,6 +8475,11 @@ ui bootstrap tweaks
         margin-left: 15% !important;
         margin-top: 15px;
     }
+    #artFor16 {
+        margin-left: 20% !important;
+        width: 50%;
+        margin-top: 15px;
+    }
     #artFor15 {
         margin-left: 15% !important;
         margin-top: 15px;
@@ -9049,6 +9069,14 @@ ui bootstrap tweaks
         margin-top: -10% !important;
         padding-top: 60px !important;
         height: 550px !important;
+    }
+    #acabadosTable {
+        width: 87% !important;
+        float: left !important;
+        margin-top: -10% !important;
+        padding-top: 60px !important;
+        height: 550px !important;
+        margin-left: 15px !important;
     }
 
     #inputAcabadoInterior {
@@ -10018,6 +10046,18 @@ ui bootstrap tweaks
         font-size: 23px !important;
     }
     #botonCalculadora {
+        width: 50%;
+        height: 55px !important;
+        bottom: 0;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: auto;
+        color: white;
+        right: 0;
+        border: 0;
+    }
+    #botonCalculadoraTablero {
         width: 50%;
         height: 55px !important;
         bottom: 0;

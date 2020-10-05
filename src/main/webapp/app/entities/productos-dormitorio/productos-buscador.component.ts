@@ -583,6 +583,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
 
     public elegirBusqueda(id) {
+        $('.divConfiguracionestant').css({ display: 'none' });
+        $('#botonCalculadoraTablero').attr('class', 'displayBoton');
+        $('#imagenAcabadoPrincipal123').empty();
         $('.armariosDivTodo').css({ display: 'none' });
         $('#inputBusca').css({ display: 'none' });
         $('#calcuBatientes').css({ display: 'none' });
@@ -743,6 +746,18 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
             for (let i = 136; i < 139; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                }
+            }
+        }
+
+        if (id == 31) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 422; i < 455; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1048,15 +1063,18 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         }
         var ancho = $('#cogerAnchoestanlibre').val();
         $('#nombreMesita').text('Tablero a Medida');
-        $('#datos1').append('<p style="width:100%"><span style="font-weight:600">Grosor : </span>' + ancho + '</p>');
+        $('#grosorTableCalcu').text(ancho.toString());
         $('#h4canteado').css({ display: 'block' });
         $('#pcanteado').css({ display: 'block' });
-
+        $('#pgrosorcalcu').css({ display: 'block' });
+        $('#cogerAnchoEstant').empty();
         if (ancho == '12 mm') {
+            $('#cogerAnchoEstant').append('<option></option>');
             for (let i = 10; i <= 260; i++) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
             }
         } else {
+            $('#cogerAnchoEstant').append('<option></option>');
             for (let i = 10; i <= 280; i++) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
             }
@@ -1065,19 +1083,20 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
     public meterCanteadoCalculadora() {
         var ancho = $('#cogerCANTEADO').val();
-        $('#datos1').append('<p style="width:100%"><span style="font-weight:600">Canteado : </span>' + ancho + '</p>');
+        $('#canteadoTableCalcu').text(ancho.toString());
         $('#h4ancho').css({ display: 'block' });
         $('#pAnchoEstant').css({ display: 'block' });
+        $('#pcanteadocalcu').css({ display: 'block' });
     }
 
     public meterAnchoEstantCalculadora() {
         var ancho = $('#cogerAnchoEstant').val();
-        $('#datos1').append(
-            '<p style="width:100%"><span style="font-weight:600">Ancho : </span><span id="anchoTableCalcu">' + ancho + '</span></p>'
-        );
-
+        $('#panchocalcu').css({ display: 'block' });
+        $('#anchoTableCalcu').text(ancho.toString());
         $('#h4alto').css({ display: 'block' });
         $('#pAltoEstant').css({ display: 'block' });
+        $('#cogerAltoEstant').empty();
+        $('#cogerAltoEstant').append('<option></option>');
         for (let i = 10; i <= 200; i++) {
             $('#cogerAltoEstant').append('<option>' + i + '</option>');
         }
@@ -1085,16 +1104,28 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
     public meterAltoEstantCalculadora() {
         var ancho = $('#cogerAltoEstant').val();
-        $('#datos1').append(
-            '<p style="width:100%"><span style="font-weight:600">Alto : </span><span id="altoTableCalcu">' + ancho + '</span></p>'
-        );
+        $('#paltocalcu').css({ display: 'block' });
+        $('#nombreMesita').attr('class', 408);
+        $('#altoTableCalcu').text(ancho.toString());
         var ancho1 = $('#cogerAnchoEstant').val();
         var caje = $('#cogerCANTEADO').val();
         var grosor = $('#cogerAnchoestanlibre').val();
 
         var prueba = parseFloat($('#altoTableCalcu').text());
         var prueba1 = parseFloat($('#anchoTableCalcu').text());
-
+        var acabados = [];
+        this.acabadosService
+            .query({
+                size: 1000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+                this.acabadosService.todos = acabados;
+            });
+        this.acabados = acabados;
+        this.acabados1 = acabados;
         var cuenta;
         var aux = 0;
         aux = prueba * prueba1;
@@ -1112,9 +1143,57 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 aux = aux * 51;
             }
         }
-
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2675' });
+        }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
-        $('#precioDimension').text(aux);
+        $('#precioDimension').text(Math.ceil(aux));
+
+        this.acaProdService.findAca(408).subscribe(data => {
+            this.estanteria = data.body[0]['productosDormitorio'];
+            var imagen;
+            imagen = data.body[0]['imagen'];
+            $('#datos1Tablero').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+            $('#datos1Tablero').append(
+                '<p style="width:100%" id="acabado' +
+                    1 +
+                    '"><span style="font-weight:600">' +
+                    1 +
+                    ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                    1 +
+                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                    1 +
+                    '" style="margin-left:10px"></span></p>'
+            );
+
+            $('#acabadosTable #imagenAcabadoPrincipal123').css({ display: 'block' });
+            $('#acabadosTable #imagenAcabadoPrincipal123').append(
+                '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                    imagen +
+                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+            );
+            var i = 0;
+
+            for (let m = 0; m < data.body[0]['acabados'].length; m++) {
+                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
+                    '<img  src="data:image/gif;base64,' +
+                        data.body[0]['acabados'][m]['imagenFondo'] +
+                        '" id="imagenAcabado' +
+                        i +
+                        '" class="' +
+                        data.body[0]['acabados'][m]['id'] +
+                        '" height="250px" width="130px" style="">'
+                );
+                this.acaProdService.todos = data.body[0]['acabados'][m];
+                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
+                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
+                        data.body[0]['acabados'][m]['nombre'] +
+                        '</strong></p>'
+                );
+
+                i++;
+            }
+        });
     }
 
     public cargarDimen() {
@@ -1692,6 +1771,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             var llamada = this.mainComponent;
             this.acaProdService.findAca(idProd).subscribe(data => {
                 this.acaProdService.todos = data.body;
+                console.log(this.acaProdService.todos);
                 $.each(this.acaProdService.todos, function(index, value) {
                     if (value['productosDormitorio']['id'] == idProd) {
                         imagen = value['imagen'];
@@ -6609,7 +6689,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 404 &&
                     idProd != 405 &&
                     idProd != 406 &&
-                    idProd != 407
+                    idProd != 407 &&
+                    idProd != 402 &&
+                    idProd != 352 &&
+                    idProd != 353 &&
+                    idProd != 354 &&
+                    idProd != 355 &&
+                    idProd != 356 &&
+                    idProd != 357 &&
+                    idProd != 358 &&
+                    idProd != 359
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -6760,7 +6849,16 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 404 &&
                 idProd != 405 &&
                 idProd != 406 &&
-                idProd != 407
+                idProd != 407 &&
+                idProd != 402 &&
+                idProd != 352 &&
+                idProd != 353 &&
+                idProd != 354 &&
+                idProd != 355 &&
+                idProd != 356 &&
+                idProd != 357 &&
+                idProd != 358 &&
+                idProd != 359
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -7080,6 +7178,35 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#aca1' + i).empty();
         }
         $('#botonEliminar').attr('class', 'displayBoton');
+
+        $('#botonCalculadoraTablero').attr('class', 'displayBoton');
+        $('#h4canteado').css({ display: 'none' });
+        $('#pcanteado').css({ display: 'none' });
+        $('#h4ancho').css({ display: 'none' });
+        $('#pAnchoEstant').css({ display: 'none' });
+        $('#h4alto').css({ display: 'none' });
+        $('#pAltoEstant').css({ display: 'none' });
+        $('#imagenAcabadoPrincipal123').empty();
+        $('.divConfiguracionestant').css({ display: 'none' });
+        $('#datos1Tablero').empty();
+        $('#datos1Tablero').append(
+            '<p style="width:100%;display:none;" id="pgrosorcalcu"><span style="font-weight:600">Grosor : </span><span id="grosorTableCalcu"></span></p>'
+        );
+        $('#datos1Tablero').append(
+            '<p style="width:100%;display:none;" id="pcanteadocalcu"><span style="font-weight:600">Canteado : </span><span id="canteadoTableCalcu"></span></p>'
+        );
+        $('#datos1Tablero').append(
+            '<p style="width:100%;display:none;" id="panchocalcu"><span style="font-weight:600">Ancho : </span><span id="anchoTableCalcu"></span></p>'
+        );
+        $('#datos1Tablero').append(
+            '<p style="width:100%;display:none;" id="paltocalcu"><span style="font-weight:600">Alto : </span><span id="altoTableCalcu"></span></p>'
+        );
+        $('#cogerAnchoestanlibre')
+            .val('')
+            .change();
+        $('#cogerCANTEADO')
+            .val('')
+            .change();
     }
 
     public open(producto, productoNombre) {
@@ -9600,6 +9727,13 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 var src = 'data:image/gif;base64,' + value['imagenFondo'];
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
                 $('#datos1 #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
+
+                $('#datos1Tablero #nombreAcaCalcu' + id1).text(value['nombre']);
+
+                var src = 'data:image/gif;base64,' + value['imagenFondo'];
+                $('#datos1Tablero #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('src', src);
+                $('#datos1Tablero #acabado' + id1 + ' #imagenAcabadoPrincipal1').attr('class', value['id']);
+
                 /**
                 if (
                     idProd == '72' ||
@@ -10122,7 +10256,17 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             idProd != '404' &&
             idProd != '405' &&
             idProd != '406' &&
-            idProd != '407'
+            idProd != '407' &&
+            idProd != '408' &&
+            idProd != '402' &&
+            idProd != '352' &&
+            idProd != '353' &&
+            idProd != '354' &&
+            idProd != '355' &&
+            idProd != '356' &&
+            idProd != '357' &&
+            idProd != '358' &&
+            idProd != '359'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;
@@ -10155,6 +10299,19 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
 
                 if (texto == 1) {
                     $('#botonCalculadora').removeAttr('class');
+                }
+                $('#terminarConfiguracion').removeAttr('style');
+                $('#terminarConfiguracion').attr('style');
+                $('#terminarConfiguracion').css({ float: 'left' });
+                $('#terminarConfiguracion').css({ width: '100%' });
+            }
+            if (idProd == '408') {
+                var iluminacion = this.iluminacion;
+                var texto = 0;
+                texto = 1;
+
+                if (texto == 1) {
+                    $('#botonCalculadoraTablero').removeAttr('class');
                 }
                 $('#terminarConfiguracion').removeAttr('style');
                 $('#terminarConfiguracion').attr('style');
@@ -11456,6 +11613,115 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#posicion0').text(i);
                 console.log(sessionStorage);
             }
+        }
+        this.borrarProdCalculadora();
+    }
+
+    public enviarCarritoTablero() {
+        $('#artFor').prop('checked', false);
+        $('#artFor1').prop('checked', false);
+        $('#artFor2').prop('checked', false);
+        $('#artFor3').prop('checked', false);
+        $('#artFor4').prop('checked', false);
+        $('#artFor5').prop('checked', false);
+        $('#artFor6').prop('checked', false);
+        $('#artFor7').prop('checked', false);
+        $('#artFor8').prop('checked', false);
+        $('#artFor9').prop('checked', false);
+        $('#artFor10').prop('checked', false);
+        $('#artFor11').prop('checked', false);
+        $('#artFor12').prop('checked', false);
+        $('#artFor13').prop('checked', false);
+        $('#artFor14').prop('checked', false);
+        $('#artFor15').prop('checked', false);
+        $('#artFor16').prop('checked', false);
+        $('#artFor17').prop('checked', false);
+        $('#artFor18').prop('checked', false);
+        $('#artFor19').prop('checked', false);
+
+        var contador = 1;
+        var todosAcabados = this.todosAcabados;
+        var acabados1 = this.acabados1;
+        var acabados = acabados1;
+        var usb = this.usbCogido;
+        console.log(usb);
+        var iluminacion = this.iluminacion;
+        $('#textoFinal').removeAttr('style');
+        $('#textoFinal').attr('style');
+        $('#textoFinal').css({ display: 'none' });
+        $('#iluminacion').removeAttr('style');
+        $('#iluminacion').attr('style');
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
+        $('#iluminacion').css({ display: 'none' });
+        var conta = 0;
+        for (let k = 1; k < sessionStorage.length; k++) {
+            if (sessionStorage['prod' + k] != null) {
+                contador++;
+            }
+        }
+
+        $('#anchosSelect1').val('');
+        var contadorProd = contador;
+        var contadorDimen = contador;
+        var contAca = 0;
+
+        const idProd = $('#nombreMesita').attr('class');
+        const grosor = $('#productoCalculadora1 #datos1Tablero #grosorTableCalcu').text();
+        const ancho = $('#productoCalculadora1 #datos1Tablero #anchoTableCalcu').text();
+        const alto = $('#productoCalculadora1 #datos1Tablero #altoTableCalcu').text();
+        const canteado = $('#productoCalculadora1 #datos1Tablero #canteadoTableCalcu').text();
+        const todoSumadoPrecio = $('#precioDimension').text();
+        console.log(sessionStorage);
+        const aca = [];
+        var acabadoCogido;
+        for (let j = 1; j <= 1; j++) {
+            acabadoCogido = $('#productoCalculadora1 #datos1Tablero #acabado1 #imagenAcabadoPrincipal1').attr('class');
+            if (acabadoCogido != undefined) {
+                var id1 = parseFloat(acabadoCogido);
+                console.log(acabados);
+                var acabados = this.acabadosService.todos;
+                for (let k = 0; k < acabados.length; k++) {
+                    if (acabados[k]['id'] == id1) {
+                        aca[j] = acabados[k];
+                    }
+                }
+            }
+        }
+
+        var prod = [];
+
+        var bien;
+        for (let w = 1; w < aca.length; w++) {
+            bien = aca[w];
+            bien['imagenFondo'] = '';
+        }
+        const prueba = {
+            acabado1: bien,
+            productosDormitorio: this.estanteria,
+            ancho: ancho,
+            alto: alto,
+            grosor: grosor,
+            canteado: canteado,
+            todoSumadoPrecio: todoSumadoPrecio
+        };
+        prod[1] = prueba;
+        console.log(prod);
+        sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+        contadorDimen++;
+
+        this.usb = undefined;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            if (sesion != null) {
+                this.productosDormitorioService.numeroCesta = i;
+                $('#posicion0').text(i);
+                console.log(sessionStorage);
+            }
+        }
+        for (let j = 1; j <= 10; j++) {
+            $('#productoCarrito' + j + ' #datos' + j).empty();
+            $('#productoCarrito' + j + ' #precios' + j).empty();
+            $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
         }
         this.borrarProdCalculadora();
     }

@@ -1887,6 +1887,10 @@
 								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">ESTANTER&#205;AS</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(18)"></p><br>
 								  
+								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor16" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 25%;">CONFIGURACI&#211;N LIBRE ESTANTER&#205;AS</label>
+								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(31)"></p><br>
+								  
+								  
 								  <p style="float: left;width: 100%;margin-bottom: 0;"><label for="cajeA" id="artFor" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float: left;margin-left: 35%;">TABLERO A MEDIDA</label>
 								  <input type="radio" class="artInputFor" id="cajeA" name="cajeado" value="cajeA" style="float: right;margin-right: 45%;" (click)="elegirBusqueda(30)"></p><br>
 								  
@@ -2235,7 +2239,12 @@
 		    	
 		<h4 id="h4alto" style="text-align:center;display:none">ALTO</h4>	
     		<p id="pAltoEstant" style="text-align:center;width:100%;display:none"><select style="width:200px;margin-top:3%;margin-bottom:3%;height: 35px;" id="cogerAltoEstant" (change)="meterAltoEstantCalculadora()"><option></option></select></p>
-		    	
+		<div id="acabadosTable"style="width:90%;float:left;margin-top:-10%;">
+
+			<!--  <h2 id="acabado" style='margin-left:40%;float:left;display:none'><strong style="letter-spacing: 3px">ACABADOS Y APOYO</strong></h2>-->
+			<div id="imagenAcabadoPrincipal123"></div>
+
+		</div>  	
     </div>
     
     
@@ -2356,6 +2365,12 @@
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
 								
+						</div>
+						<div id="datos1Tablero" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
+							<p style="width:100%;display:none;" id="pgrosorcalcu"><span style="font-weight:600">Grosor : </span><span id="grosorTableCalcu"></span></p>	
+							<p style="width:100%;display:none;" id="pcanteadocalcu"><span style="font-weight:600">Canteado : </span><span id="canteadoTableCalcu"></span></p>	
+							<p style="width:100%;display:none;" id="panchocalcu"><span style="font-weight:600">Ancho : </span><span id="anchoTableCalcu"></span></p>	
+							<p style="width:100%;display:none;" id="paltocalcu"><span style="font-weight:600">Alto : </span><span id="altoTableCalcu"></span></p>
 						</div>
 						<div style="float:left;display:none;width:100%;" id=elegirLado>
 						<p style="width:100%"><strong>PLAFONES POSTERIORES</strong></p>
@@ -3125,6 +3140,7 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
+				<button  id="botonCalculadoraTablero"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarritoTablero()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
 				<button id="botonEnviarEspecial" style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none" data-toggle="modal" data-target="#modalEnviadoCarrito1" (click)="enviarCarritoEspecial()">Enviar al carrito</button>
 				
 			</div>

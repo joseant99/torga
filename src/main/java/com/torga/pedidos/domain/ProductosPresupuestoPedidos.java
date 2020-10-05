@@ -55,6 +55,18 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @JsonIgnoreProperties("")
     private TiposApoyo tiposApoyo;
     
+    @Column(name = "grosor")
+    private String grosor;
+    
+    @Column(name = "alto")
+    private String alto;
+    
+    @Column(name = "ancho")
+    private String ancho;
+    
+    @Column(name = "canteado")
+    private String canteado;
+    
     @ManyToOne
     @JsonIgnoreProperties("")
     private Usb usb;
@@ -70,6 +82,58 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getGrosor() {
+        return grosor;
+    }
+
+    public ProductosPresupuestoPedidos grosor(String grosor) {
+        this.grosor = grosor;
+        return this;
+    }
+
+    public void setGrosor(String grosor) {
+        this.grosor = grosor;
+    }
+    
+    public String getAlto() {
+        return alto;
+    }
+
+    public ProductosPresupuestoPedidos alto(String alto) {
+        this.alto = alto;
+        return this;
+    }
+
+    public void setAlto(String alto) {
+        this.alto = alto;
+    }
+    
+    public String getAncho() {
+        return ancho;
+    }
+
+    public ProductosPresupuestoPedidos ancho(String ancho) {
+        this.ancho = ancho;
+        return this;
+    }
+
+    public void setAncho(String ancho) {
+        this.ancho = ancho;
+    }
+    
+    public String getCanteado() {
+        return canteado;
+    }
+
+    public ProductosPresupuestoPedidos canteado(String canteado) {
+        this.canteado = canteado;
+        return this;
+    }
+
+    public void setCanteado(String canteado) {
+        this.canteado = canteado;
     }
 
     public ProductosDormitorio getProductosDormitorio() {

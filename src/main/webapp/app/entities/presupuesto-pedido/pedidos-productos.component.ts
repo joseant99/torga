@@ -11964,10 +11964,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                 productos[w]['productosDormitorio'] != '' &&
                                 productos[w]['productosDormitorio'] != undefined
                             ) {
-                                if (
-                                    productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9 &&
-                                    productos[w]['productosDormitorio']['categoriasDormi']['id'] != 28
-                                ) {
+                                if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] == 4) {
                                         $('#datosMeter' + w).append(
                                             '<p><span style="font-weight:600">Posicion plafones</span> &nbsp;&nbsp;&nbsp;' +
@@ -14947,6 +14944,33 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 260) {
                                                     nombreCargarImagen = 'NT220-NT227';
                                                 }
+                                                if (idProdNombre == 352) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 353) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 354) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 355) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 356) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 357) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 358) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 359) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
+                                                if (idProdNombre == 402) {
+                                                    nombreCargarImagen = productos[w]['dimensionesProductoTipo']['mensaje'];
+                                                }
 
                                                 if (idProdNombre == 263) {
                                                     nombreCargarImagen = 'NT228-NT229';
@@ -15373,6 +15397,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NH199';
                                                 }
                                                 if (idProdNombre == 18) {
+                                                    nombreCargarImagen = 'NH200-NH210';
+                                                }
+                                                if (idProdNombre == 408) {
                                                     nombreCargarImagen = 'NH200-NH210';
                                                 }
                                                 if (idProdNombre == 17) {
@@ -15837,41 +15864,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
                                         }
                                         acaComprobar = 1;
-                                    }
-                                } else {
-                                    if (productos[w]['productosDormitorio']['categoriasDormi']['id'] == 28) {
-                                        var prodGG = this.productosPresupuestoPedidos;
-                                        var contmeter = 0;
-
-                                        if (prodGG[w] != undefined) {
-                                            var nombreProd = {
-                                                nombre: 'Estanteria a medida'
-                                            };
-                                            var ancho = productos[w]['dimensionesProductoTipo']['ancho'];
-                                            $('#datosAnadirEstanteria').append(
-                                                '<p><strong>' + productos[w]['productosDormitorio']['nombre'] + '</strong></p>'
-                                            );
-                                            $('#datosAnadirEstanteria').css({ display: 'block' });
-                                            prodGG[contmeter];
-                                            var dimensionesProductoTipo = {
-                                                precio: productos[w]['precioTotal'],
-                                                ancho: ancho,
-                                                alto: productos[1]['dimensionesProductoTipo']['alto'],
-                                                fondo: 44
-                                            };
-                                            if (prodGG[w]['id'] == productos[w]['id']) {
-                                                prodGG[w] = undefined;
-                                            }
-
-                                            var prod987 = {
-                                                productosDormitorio: nombreProd,
-                                                id: 1,
-                                                dimensionesProductoTipo: dimensionesProductoTipo
-                                            };
-                                            prodGG[contmeter] = prod987;
-                                            prodGG[1] = {};
-                                            this.productosPresupuestoPedidos = prodGG;
-                                        }
                                     }
                                 }
                             } else {
