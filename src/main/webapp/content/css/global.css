@@ -11468,6 +11468,7 @@ ui bootstrap tweaks
         width: 100%;
         position: fixed;
         z-index: 999990 !important;
+        top: 0;
     }
     .puerta1 {
         margin-left: 45%;
