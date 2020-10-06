@@ -843,7 +843,7 @@
      
     
     
-    <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:500px;POSITION:FIXED">
+    <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:500px;POSITION:FIXED">
       
         <ul class="navbar-nav ml-auto" style=" display: block;">
             

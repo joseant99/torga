@@ -420,6 +420,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[541] = 47;
         arrayBueno[873] = 45;
         arrayBueno[934] = 29;
+        arrayBueno[1073] = 25;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {

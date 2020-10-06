@@ -1203,7 +1203,11 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('#elegirLado').css({ display: 'none' });
         this.usb = undefined;
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2350px' });
+            $('#productosPrincipal').css({ height: '2550px' });
+            $('#page-heading').css({ 'margin-bottom': '10%' });
+        }
+        if (screen.width < 1100) {
+            $('#productosPrincipal').css({ height: '3150px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });
         }
         $('.dimensionesColor1').css({ 'background-color': 'white' });
