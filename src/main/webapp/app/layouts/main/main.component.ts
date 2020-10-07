@@ -5061,7 +5061,7 @@ export class JhiMainComponent implements OnInit {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                         (o + 1) +
-                        ' Cajon 1 :</span> ' +
+                        ' Cajon :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
@@ -5070,7 +5070,16 @@ export class JhiMainComponent implements OnInit {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                         (o + 1) +
-                        ' Cajon 2 :</span> ' +
+                        ' Cajon :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Cajon :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
@@ -12820,7 +12829,7 @@ export class JhiMainComponent implements OnInit {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p ><span style="font-weight:600">' +
                         (k + 1) +
-                        ' Cajon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -12831,7 +12840,18 @@ export class JhiMainComponent implements OnInit {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p ><span style="font-weight:600">' +
                         (k + 1) +
-                        ' Cajon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p ><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -21207,7 +21227,7 @@ export class JhiMainComponent implements OnInit {
                         u +
                         '"><span style="font-weight:600">' +
                         u +
-                        ' Cajon 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +
@@ -21220,7 +21240,20 @@ export class JhiMainComponent implements OnInit {
                         u +
                         '"><span style="font-weight:600">' +
                         u +
-                        ' Cajon 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

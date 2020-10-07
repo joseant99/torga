@@ -11718,7 +11718,7 @@ ui bootstrap tweaks
     }
 
     #botonEsconder {
-        max-width: 25%;
+        max-width: 25% !important;
         margin-left: 5px;
         margin-top: 5px;
         width: 160px;
@@ -13275,7 +13275,7 @@ ui bootstrap tweaks
         width: 100% !important;
     }
     #datos1 {
-        font-size: inherit;
+        font-size: 14px;
     }
     .apoyoModal {
         font-size: inherit;

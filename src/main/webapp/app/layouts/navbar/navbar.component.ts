@@ -15493,7 +15493,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     ngOnInit() {
         this.predicate = 'id';
-
         this.reverse = true;
         this.languageHelper.getAll().then(languages => {
             this.languages = languages;

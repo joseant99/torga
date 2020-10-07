@@ -65,7 +65,6 @@ export class inicioComponent implements OnInit, AfterViewInit {
         this.accountService.identity().then(account => {
             this.currentAccount = account;
         });
-
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
 
         $('#modalCambiar1A').css({ 'background-color': 'black' });

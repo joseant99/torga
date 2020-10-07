@@ -1202,12 +1202,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         $('.divBuscadorArticulos').css({ display: 'block' });
         $('#elegirLado').css({ display: 'none' });
         this.usb = undefined;
-        if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2550px' });
-            $('#page-heading').css({ 'margin-bottom': '10%' });
-        }
         if (screen.width < 1100) {
             $('#productosPrincipal').css({ height: '3150px' });
+            $('#page-heading').css({ 'margin-bottom': '10%' });
+        }
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2550px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });
         }
         $('.dimensionesColor1').css({ 'background-color': 'white' });
@@ -11617,6 +11617,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 $('#posicion0').text(i);
                 console.log(sessionStorage);
             }
+        }
+        if (screen.width < 700) {
+            $('#calculadoraCarrito').css({ position: 'inherit' });
         }
         this.borrarProdCalculadora();
     }
