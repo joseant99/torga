@@ -1206,6 +1206,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             $('#productosPrincipal').css({ height: '3150px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });
         }
+        if (screen.width < 900) {
+            $('#productosPrincipal').css({ height: '2750px' });
+            $('#page-heading').css({ 'margin-bottom': '10%' });
+        }
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '2550px' });
             $('#page-heading').css({ 'margin-bottom': '10%' });

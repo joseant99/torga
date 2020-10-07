@@ -115,6 +115,9 @@ Browser Upgrade Prompt
 #perfil22 {
     display: none;
 }
+.modal-backdrop.show {
+    z-index: 100001;
+}
 #acabadoTiradorProbar3 {
     display: none;
 }
@@ -2602,7 +2605,7 @@ nput[type='radio'] {
         right: 5px;
     }
     #calculadoraCarrito {
-        width: 25%;
+        width: 26%;
         background-color: #f5f5f5;
         height: 91%;
         position: fixed;
@@ -4142,7 +4145,7 @@ ui bootstrap tweaks
         height: 280px;
     }
     #calculadoraCarrito {
-        width: 24%;
+        width: 26%;
         background-color: #f5f5f5;
         height: 100%;
         position: fixed;
@@ -5010,7 +5013,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 60px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -9562,12 +9565,67 @@ ui bootstrap tweaks
         margin-left: 2%;
     }
 }
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1400px) {
     .puerta2nombre1 {
         margin-left: 34px !important;
         margin-top: 180px !important;
         font-size: 14px !important;
+    }
+    #cestaImagen {
+        right: 10px !important;
+        position: fixed;
+        margin-top: -5px;
+    }
+    #cuerpo1 {
+        height: 400px !important;
+    }
+    #cuerpo2 {
+        height: 400px !important;
+    }
+    #cuerpo3 {
+        height: 400px !important;
+    }
+    #cuerpo4 {
+        height: 400px !important;
+    }
+    #cuerpo5 {
+        height: 400px !important;
+    }
+    #cuerpo6 {
+        height: 400px !important;
+    }
+    #cuerpo7 {
+        height: 400px !important;
+    }
+    #cuerpo8 {
+        height: 400px !important;
+    }
+    #cuerpo9 {
+        height: 400px !important;
+    }
+    #cuerpo10 {
+        height: 400px !important;
+    }
+    #cuerpo11 {
+        height: 400px !important;
+    }
+    #cuerpo12 {
+        height: 400px !important;
+    }
+    #cuerpo13 {
+        height: 400px !important;
+    }
+    #cuerpo14 {
+        height: 400px !important;
+    }
+    #cuerpo15 {
+        height: 400px !important;
+    }
+    #cuerpo16 {
+        height: 400px !important;
+    }
+    #cuerpo17 {
+        height: 400px !important;
     }
     .puerta2nombre2 {
         margin-left: 94px !important;
@@ -9601,7 +9659,7 @@ ui bootstrap tweaks
         z-index: 1000000;
         width: 100%;
         top: 0;
-        height: 40px;
+        height: 55px;
         background-color: black;
     }
     #menuPrincipal {
@@ -9628,20 +9686,19 @@ ui bootstrap tweaks
         overflow-x: hidden;
     }
     #artFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #artFor16 {
-        margin-left: 20% !important;
-        width: 50%;
+        margin-left: 23% !important;
+        width: 40%;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #artFor15 {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
-        width: 30 !important;
         font-size: 14px !important;
     }
     #artFor1 {
@@ -9652,29 +9709,29 @@ ui bootstrap tweaks
     }
 
     #artFor2 {
-        margin-left: 15% !important;
-        width: 58%;
+        margin-left: 23% !important;
+        width: 32%;
         font-size: 14px !important;
     }
 
     #artFor3 {
-        margin-left: 14% !important;
         margin-top: 15px;
-        width: 60%;
+        width: 43%;
         font-size: 14px !important;
+        margin-left: 22% !important;
     }
 
     #artFor4 {
-        margin-left: 15% !important;
         margin-top: 15px;
-        width: 60%;
+        width: 43%;
         font-size: 14px !important;
+        margin-left: 18% !important;
     }
     #artFor5 {
-        margin-left: 15% !important;
+        margin-left: 11% !important;
         margin-top: 15px;
-        width: 59%;
         font-size: 14px !important;
+        width: 59%;
     }
     #artFor6 {
         margin-left: 15% !important;
@@ -9708,81 +9765,81 @@ ui bootstrap tweaks
     }
 
     #estFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #armFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #ocuFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #visFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #vesFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #espFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
     #rinFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
 
     #artFor {
-        margin-left: 15% !important;
+        margin-left: 27% !important;
         margin-top: 15px;
         font-size: 14px !important;
     }
 
     .artInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .artInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .estInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .armInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .ocuInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .visInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .vesInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .espInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     .rinInputFor {
-        margin-right: 12% !important;
+        margin-right: 22% !important;
         margin-top: 15px;
     }
     #anchosSelect1 {
@@ -9805,18 +9862,18 @@ ui bootstrap tweaks
     }
     .acabadosModal {
         float: left;
-        width: 75px;
-        height: 85px;
-        margin-left: 23px;
-        margin-bottom: 23px;
+        width: 125px;
+        height: 220px;
+        margin-left: 40px;
+        margin-bottom: 48px;
     }
     #imagenApoyo0 {
         max-height: 145px;
         max-width: 160px;
     }
     #imagenApoyo1 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #botonDerechaPresupuesto {
         margin-right: 60px !important;
@@ -9829,48 +9886,55 @@ ui bootstrap tweaks
         float: right !important;
         margin-top: 15px !important;
         margin-bottom: 72px !important;
-        margin-right: 27% !important;
+        margin-right: 40% !important;
         font-weight: 600;
     }
     #imagenApoyo2 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #imagenApoyo3 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #imagenApoyo4 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #imagenApoyo5 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #imagenApoyo6 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
     #imagenApoyo7 {
-        max-height: 145px;
-        max-width: 160px;
+        max-height: 180px;
+        max-width: 210px;
     }
 
     #botonEsconder {
-        max-width: 25%;
+        max-width: 25% !important;
         margin-left: 5px;
         margin-top: 5px;
         width: 160px;
         height: 30px;
     }
-
+    #imagenLogoCuenta {
+        margin-left: 5%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 185px;
+        height: 44px;
+    }
     #productosPrincipal {
-        width: 100%;
+        width: 74%;
         margin-left: 0px;
-        margin-top: 25px;
+        margin-top: 50px;
         padding-left: 0px;
-        height: 2075px;
+        height: 2275px;
     }
     #inputBusca {
         float: left;
@@ -9915,10 +9979,21 @@ ui bootstrap tweaks
     #imagenCesta {
         float: right;
         top: 0;
-        width: 10%;
+        width: 18%;
         right: 11px;
         margin-top: 5px;
         float: right;
+        height: 45px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 9px;
+        top: 15px;
+        color: #fff;
+        font-size: x-large;
+    }
+    #noticiasClass {
+        margin-top: 0px !important;
     }
 
     .productosColor33 {
@@ -10014,15 +10089,15 @@ ui bootstrap tweaks
 
     .imagenAcabadoPrincipalImg {
         margin-top: -25px;
-        max-width: 370px !important;
-        max-height: 370px !important;
-        margin-left: -4% !important;
+        max-width: 535px !important;
+        max-height: 535px !important;
+        margin-left: 27% !important;
     }
     .imagenAcabadoPrincipalImgSin {
-        margin-top: -10px;
-        max-width: 370px !important;
-        max-height: 370px !important;
-        margin-left: -4% !important;
+        margin-top: -25px;
+        max-width: 535px !important;
+        max-height: 535px !important;
+        margin-left: 27% !important;
     }
 
     .acabadoPartes {
@@ -10034,9 +10109,9 @@ ui bootstrap tweaks
     }
 
     #modalcontenidoCss {
-        height: 654px !important;
-        margin-top: 50px !important;
-        width: 368px !important;
+        height: 892px !important;
+        margin-top: 75px !important;
+        width: 1100px !important;
         overflow-y: scroll !important;
     }
     .pietra {
@@ -10161,17 +10236,6 @@ ui bootstrap tweaks
         height: 236px;
         height: 190px;
     }
-    #calculadoraCarrito {
-        width: 100%;
-        background-color: #f5f5f5;
-        height: 45%;
-        position: fixed;
-        right: 0;
-        bottom: 0px;
-        display: block;
-        z-index: 100001;
-        top: auto;
-    }
 
     #imagenesArmario2 {
         margin-top: 360px !important;
@@ -10203,13 +10267,6 @@ ui bootstrap tweaks
         overflow-x: hidden;
     }
 
-    #imagenFOndoMueble {
-        height: 104%;
-        /* position: fixed; */
-        width: 240%;
-        /* top: -10px; */
-        left: -345px;
-    }
     .armariosDivInputCodigo {
         margin-top: 175px !important;
     }
@@ -10218,7 +10275,7 @@ ui bootstrap tweaks
         margin-left: 22% !important;
     }
     .marginIzquierda {
-        margin-left: 0px;
+        margin-left: 58%;
     }
     #modalCesta {
         margin-top: -15px;
@@ -10850,8 +10907,1930 @@ ui bootstrap tweaks
         margin-left: 147px !important;
     }
     #mueblesTodos {
-        max-width: 310px !important;
-        max-height: 310px !important;
+        max-width: 450px !important;
+        max-height: 450px !important;
+    }
+    #anchoCesta {
+        margin-left: 2% !important;
+    }
+    #altoCesta {
+        margin-left: 2% !important;
+    }
+    #fondoCesta {
+        margin-left: 2% !important;
+    }
+    #acabadoCesta {
+        margin-left: 2% !important;
+    }
+    #apoyoCesta {
+        margin-left: 2% !important;
+    }
+    #apoyoPrecioCesta {
+        margin-right: 15% !important;
+        font-size: 12px !important;
+    }
+
+    #nombreMueble {
+        margin-left: 2% !important;
+    }
+    #precioMueble {
+        margin-right: 8% !important;
+    }
+
+    .cuerpoArmario {
+        height: 455px !important;
+    }
+
+    .armarioCalculadora {
+        width: 300px !important;
+    }
+
+    #texto1Arm {
+        margin-left: 2% !important;
+    }
+
+    #precioArm {
+        margin-right: 6% !important;
+    }
+    #precioTdoLoOtro {
+        margin-right: 6% !important;
+    }
+
+    .puertas3Izquierda {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+        width: 300px !important;
+    }
+
+    .puertas3Izquierda1 {
+        margin-left: 63px !important;
+        margin-top: -22px !important;
+        width: 315px !important;
+    }
+
+    #puertasArmario2puertas {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .armariosOcultaDivInputCodigo {
+        margin-top: 175px;
+    }
+    .armariosVistaDivInputCodigo {
+        margin-top: 175px;
+    }
+    .vestidoresDivInputCodigo {
+        margin-top: 175px;
+    }
+
+    #imagenNoDisponible {
+        width: 335px !important;
+        float: left !important;
+        left: 0 !important;
+        margin-left: 5% !important;
+    }
+    #modalConfirmarCreacionPresu {
+        padding-top: 150px !important;
+        z-index: 1000000 !important;
+        background: rgb(60 64 60 / 50%) !important;
+        margin-top: 0px !important;
+    }
+    #divRueda {
+        margin-left: 7px !important;
+    }
+    #textoRueda {
+        font-size: 17px !important;
+    }
+    #imagenRueda {
+        width: 360px;
+    }
+    #pfilasalir {
+        margin-top: -82px !important;
+        margin-left: 39% !important;
+    }
+    #imagen0 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter0 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen1 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter1 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen2 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter2 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen3 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter3 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen4 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter4 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen5 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter5 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen6 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter6 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen7 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter7 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen8 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter8 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen9 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter9 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen10 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter10 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen11 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter11 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen12 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter12 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen13 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter13 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen14 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter14 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen15 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter15 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen16 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter16 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen17 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter17 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagen18 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #datosMeter18 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #imagenPresupues {
+        max-width: 400px !important;
+        max-height: 400px !important;
+    }
+    #totalDescuento {
+        margin-right: 10% !important;
+    }
+    #totalPuntosParaCss {
+        margin-left: 10% !important;
+        font-size: 25px !important;
+    }
+    #divTotalPuntosParaTodo {
+        margin-bottom: -15px !important;
+    }
+    #pNombreProd {
+        font-size: 25px !important;
+        width: 95%;
+    }
+    #codigopedidoP {
+        font-size: 26px !important;
+    }
+    #fechapresupuestop {
+        font-size: 23px !important;
+    }
+    #fechapedidop {
+        font-size: 23px !important;
+    }
+    #botonCalculadora {
+        width: 50%;
+        height: 55px !important;
+        bottom: 38px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: auto;
+        color: white;
+        right: 0;
+        border: 0;
+    }
+    #botonCalculadoraTablero {
+        width: 50%;
+        height: 55px !important;
+        bottom: 0;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: auto;
+        color: white;
+        right: 0;
+        border: 0;
+    }
+    #textprecioCalculadoraazul {
+        float: right !important;
+        position: absolute !important;
+        bottom: 38px !important;
+        background-color: #addaf1 !important;
+        width: 50% !important;
+        height: 55px !important;
+        left: 0 !important;
+        text-align: center !important;
+        margin-bottom: 0 !important;
+    }
+    #precioDimension {
+        float: left !important;
+        padding-top: 15px !important;
+        padding-left: 28% !important;
+    }
+    #ppCalculadora {
+        padding-top: 15px !important;
+    }
+    #div1calcutodo {
+        font-size: 21px;
+    }
+    #botonCalculadoraBatientes {
+        width: 50% !important;
+        height: 55px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraRincon {
+        width: 50% !important;
+        height: 55px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraOculta {
+        width: 50% !important;
+        height: 55px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraVista {
+        width: 50% !important;
+        height: 55px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+
+    #botonCalculadoraVestidor {
+        width: 50% !important;
+        height: 55px !important;
+        bottom: 0 !important;
+        position: absolute !important;
+        font-size: 16px !important;
+        background-color: black !important;
+        left: auto !important;
+        color: white !important;
+        right: 0 !important;
+        border: 0 !important;
+    }
+    #presupuestoPedidosTabla {
+        width: 150% !important;
+    }
+
+    #divBotonPedidoBueno {
+        margin-left: 20px;
+        position: relative !important;
+        z-index: 1;
+        right: 0px !important;
+    }
+    .armariosRinconDivInputCodigo {
+        margin-top: 175px;
+    }
+    #imagenEspecial {
+        z-index: 99 !important;
+        max-width: 330px !important;
+        max-height: 230px !important;
+        position: absolute !important;
+        top: 0px !important;
+        margin-left: -253px !important;
+        text-align: center !important;
+    }
+    #articulosEspeciales {
+        margin-top: 250px !important;
+    }
+    #textoAntesDescribe {
+        width: 70% !important;
+        margin-left: 8% !important;
+    }
+    #textArticulo {
+        margin-left: 10% !important;
+        width: 80% !important;
+    }
+    #textoInsertarImagen {
+        width: 85% !important;
+        margin-left: 8% !important;
+    }
+    #puntosSuponeArticulo {
+        width: 80% !important;
+        margin-left: 8% !important;
+    }
+    #divObserPoner {
+        float: left !important;
+        width: 100% !important;
+        margin-bottom: 60px !important;
+    }
+    #textAreaObs {
+        margin-left: 5% !important;
+        width: 90% !important;
+    }
+
+    #botonGuardarobser {
+        margin-top: 110px;
+        position: absolute;
+        right: 17px;
+    }
+    #spanobser {
+        float: left !important;
+        margin-top: 35px !important;
+        margin-left: 0% !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    #textoObservaciones {
+        display: block !important;
+        float: left !important;
+        margin-top: 3% !important;
+        margin-left: 5% !important;
+        width: 88% !important;
+        border: 1px solid !important;
+        height: 80px !important;
+    }
+    #codigoCesta {
+        margin-left: 2% !important;
+    }
+    #textoInteriorModal {
+        font-size: 14px !important;
+        margin-top: -15px;
+    }
+    #textoPuertaModal {
+        font-size: 14px !important;
+    }
+    #tenerLuz {
+        float: left !important;
+        margin-left: 5px !important;
+        width: 100% !important;
+        font-size: 14px !important;
+        display: block !important;
+    }
+    .divConfiguracionestant {
+        margin-top: 15% !important;
+        width: 100% !important;
+    }
+    #datos1 {
+        font-size: inherit;
+    }
+    .apoyoModal {
+        font-size: inherit;
+    }
+}
+@media screen and (max-width: 800px) {
+    .puerta2nombre1 {
+        margin-left: 34px !important;
+        margin-top: 180px !important;
+        font-size: 14px !important;
+    }
+    #cuerpo1 {
+        height: 330px !important;
+    }
+    #cuerpo2 {
+        height: 330px !important;
+    }
+    #cuerpo3 {
+        height: 330px !important;
+    }
+    #cuerpo4 {
+        height: 330px !important;
+    }
+    #cuerpo5 {
+        height: 330px !important;
+    }
+    #cuerpo6 {
+        height: 330px !important;
+    }
+    #cuerpo7 {
+        height: 330px !important;
+    }
+    #cuerpo8 {
+        height: 330px !important;
+    }
+    #cuerpo9 {
+        height: 330px !important;
+    }
+    #cuerpo10 {
+        height: 330px !important;
+    }
+    #cuerpo11 {
+        height: 330px !important;
+    }
+    #cuerpo12 {
+        height: 330px !important;
+    }
+    #cuerpo13 {
+        height: 330px !important;
+    }
+    #cuerpo14 {
+        height: 330px !important;
+    }
+    #cuerpo15 {
+        height: 330px !important;
+    }
+    #cuerpo16 {
+        height: 330px !important;
+    }
+    #cuerpo17 {
+        height: 330px !important;
+    }
+    .puerta2nombre2 {
+        margin-left: 94px !important;
+        margin-top: 168px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre1 {
+        margin-left: 32px !important;
+        margin-top: 180px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre2 {
+        margin-left: 94px !important;
+        margin-top: 165px !important;
+        font-size: 14px !important;
+    }
+    .puerta3nombre3 {
+        margin-left: 158px !important;
+        margin-top: 150px !important;
+        font-size: 14px !important;
+    }
+    #page-heading {
+        margin-left: -5%;
+        margin-right: 2%;
+    }
+    #acabado {
+        margin-left: 20%;
+    }
+    #menuFijoArriba {
+        position: fixed;
+        z-index: 1000000;
+        width: 100%;
+        top: 0;
+        height: 55px;
+        background-color: black;
+    }
+    #menuPrincipal {
+        float: left;
+        width: 100%;
+        position: fixed;
+        z-index: 999990 !important;
+    }
+    .puerta1 {
+        margin-left: 45%;
+    }
+    #productosFiltrados {
+        margin-top: 4%;
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 26%;
+    }
+    #divDentroCalcu {
+        width: 95%;
+        height: 76%;
+        margin-left: 10px;
+        margin-top: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #artFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #artFor16 {
+        margin-left: 18% !important;
+        width: 40%;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #artFor15 {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #artFor1 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 29%;
+        font-size: 14px !important;
+    }
+
+    #artFor2 {
+        margin-left: 24% !important;
+        width: 33%;
+        font-size: 14px !important;
+    }
+
+    #artFor3 {
+        margin-top: 15px;
+        width: 43%;
+        font-size: 14px !important;
+        margin-left: 24% !important;
+    }
+
+    #artFor4 {
+        margin-top: 15px;
+        width: 43%;
+        font-size: 14px !important;
+        margin-left: 19% !important;
+    }
+    #artFor5 {
+        margin-left: 12% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+        width: 59%;
+    }
+    #artFor6 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 26%;
+        font-size: 14px !important;
+    }
+    #artFor7 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 32%;
+        font-size: 14px !important;
+    }
+    #artFor8 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 26%;
+        font-size: 14px !important;
+    }
+    #artFor9 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 40%;
+        font-size: 14px !important;
+    }
+    #artFor10 {
+        margin-left: 15% !important;
+        margin-top: 15px;
+        width: 36%;
+        font-size: 14px !important;
+    }
+
+    #estFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #armFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #ocuFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #visFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #vesFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #espFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+    #rinFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+
+    #artFor {
+        margin-left: 25% !important;
+        margin-top: 15px;
+        font-size: 14px !important;
+    }
+
+    .artInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .artInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .estInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .armInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .ocuInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .visInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .vesInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .espInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    .rinInputFor {
+        margin-right: 22% !important;
+        margin-top: 15px;
+    }
+    #anchosSelect1 {
+        margin-top: 46px;
+        margin-bottom: 25px;
+    }
+
+    #botonCalculadora {
+        width: 86%;
+        height: 15%;
+        bottom: 13px;
+        position: absolute;
+        font-size: 16px;
+        background-color: black;
+        left: 15px;
+        color: black;
+    }
+    #imagenAcabadoPrincipal1 {
+        max-width: 100px;
+    }
+    .acabadosModal {
+        float: left;
+        width: 110px;
+        height: 183px;
+        margin-left: 27px;
+        margin-bottom: 41px;
+    }
+    #imagenApoyo0 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo1 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #botonDerechaPresupuesto {
+        margin-right: 60px !important;
+        margin-top: 0px !important;
+        margin-bottom: -15px !important;
+        bottom: 40px !important;
+        position: absolute !important;
+    }
+    #precioCestaFinalBueno {
+        float: right !important;
+        margin-top: 15px !important;
+        margin-bottom: 72px !important;
+        margin-right: 40% !important;
+        font-weight: 600;
+    }
+    #imagenApoyo2 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo3 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo4 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo5 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo6 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo7 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+
+    #botonEsconder {
+        max-width: 25% !important;
+        margin-left: 5px;
+        margin-top: 5px;
+        width: 160px;
+        height: 30px;
+    }
+    #imagenLogoCuenta {
+        margin-left: 34%;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 185px;
+        height: 44px;
+    }
+    #productosPrincipal {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 25px;
+        padding-left: 0px;
+        height: 2275px;
+    }
+    #inputBusca {
+        float: left;
+        width: 100%;
+    }
+    #ProductosCargados1 {
+        margin-left: 27%;
+    }
+    #ProductosCargados {
+        margin-left: 27%;
+    }
+    .producto {
+        max-height: 100px;
+        max-width: 180px;
+    }
+    .productoApa {
+        max-height: 100px;
+        max-width: 180px;
+    }
+    #dimensiones {
+        width: 70%;
+        float: left;
+        margin-left: 180px;
+    }
+    #tablaFiltro {
+        margin-top: 2%;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        border-collapse: separate;
+        border-spacing: 5px;
+        margin-left: 24%;
+    }
+    #productosDormitorioCargados {
+        margin-left: 20px;
+        margin-bottom: 18px;
+        margin-right: 20px;
+        margin-top: 50px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        font-size: 11px;
+    }
+    #imagenCesta {
+        float: right;
+        top: 0;
+        width: 18%;
+        right: 11px;
+        margin-top: 5px;
+        float: right;
+        height: 45px;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 9px;
+        top: 15px;
+        color: #fff;
+        font-size: x-large;
+    }
+    #noticiasClass {
+        margin-top: 0px !important;
+    }
+
+    .productosColor33 {
+        font-size: 12px;
+    }
+    .productosColor14 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor62 {
+        font-size: 12px;
+    }
+    .productosColor63 {
+        font-size: 12px;
+    }
+    .productosColor64 {
+        font-size: 12px;
+    }
+    .productosColor65 {
+        font-size: 12px;
+    }
+    .productosColor66 {
+        font-size: 12px;
+    }
+    .productosColor67 {
+        font-size: 12px;
+    }
+    .productosColor68 {
+        font-size: 12px;
+    }
+    .productosColor69 {
+        font-size: 12px;
+    }
+    .productosColor53 {
+        font-size: 12px;
+    }
+    .productosColor107 {
+        font-size: 12px;
+    }
+    .productosColor108 {
+        font-size: 12px;
+    }
+    .productosColor109 {
+        font-size: 12px;
+    }
+    .productosColor119 {
+        font-size: 12px;
+    }
+    .productosColor114 {
+        font-size: 12px;
+    }
+    .productosColor110 {
+        font-size: 12px;
+    }
+    .productosColor111 {
+        font-size: 12px;
+    }
+    .productosColor112 {
+        font-size: 12px;
+    }
+    .productosColor113 {
+        font-size: 12px;
+    }
+    .productosColor115 {
+        font-size: 12px;
+    }
+    .productosColor116 {
+        font-size: 12px;
+    }
+    .productosColor117 {
+        font-size: 12px;
+    }
+    .productosColor118 {
+        font-size: 12px;
+    }
+    .productosColor15 {
+        font-size: 12px;
+    }
+
+    .productosColor16 {
+        font-size: 12px;
+    }
+
+    .productosColor17 {
+        font-size: 12px;
+    }
+
+    .productosColor18 {
+        font-size: 12px;
+    }
+
+    .imagenAcabadoPrincipalImg {
+        margin-top: -25px;
+        max-width: 450px !important;
+        max-height: 450px !important;
+        margin-left: 19% !important;
+    }
+    .imagenAcabadoPrincipalImgSin {
+        margin-top: -10px;
+        max-width: 450px !important;
+        max-height: 450px !important;
+        margin-left: 19% !important;
+    }
+
+    .acabadoPartes {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        margin-top: -183px;
+    }
+
+    #modalcontenidoCss {
+        height: 1070px !important;
+        margin-top: 75px !important;
+        width: 635px !important;
+        overflow-y: scroll !important;
+    }
+    .pietra {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(125%);
+    }
+    .norway {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .bronce {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+    }
+    .transparente {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+    }
+    .noce {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .nature {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .tabak {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .kobe {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .blanco {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .beige {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(140%);
+    }
+    .latte {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    .grafeno {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(150%);
+    }
+    .lago {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(130%);
+    }
+    .mare {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(130%);
+    }
+    .marmolblanco {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    .marmolnegro {
+        position: absolute;
+        max-width: 450px;
+        max-height: 290px;
+        margin-left: -450px;
+        filter: brightness(190%);
+    }
+    #imagenDimensiones {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        max-width: 230px;
+        max-height: 149px;
+    }
+    #dimensionesColorStyle {
+        float: left;
+        height: 236px;
+        height: 190px;
+    }
+    #calculadoraCarrito {
+        width: 100%;
+        background-color: #f5f5f5;
+        height: 45%;
+        position: fixed;
+        right: 0;
+        bottom: 0px;
+        display: block;
+        z-index: 100001;
+        top: auto;
+    }
+
+    #imagenesArmario2 {
+        margin-top: 360px !important;
+        margin-bottom: 45px;
+    }
+
+    .puertas3izquierda1 {
+        margin-top: -42px !important;
+        margin-left: -122px !important;
+        max-width: 396px;
+        max-height: 424px;
+    }
+
+    .puertas2izquierda1 {
+        margin-top: -52px !important;
+        margin-left: -127px !important;
+        max-width: 405px !important;
+        max-height: 445px !important;
+    }
+
+    .puertas3izquierda2 {
+        max-width: 405px;
+        max-height: 444px;
+        margin-left: -37px !important;
+        margin-top: -73px !important;
+    }
+
+    .container-fluid {
+        overflow-x: hidden;
+    }
+
+    #imagenFOndoMueble {
+        height: 104%;
+        /* position: fixed; */
+        width: 240%;
+        /* top: -10px; */
+        left: -345px;
+    }
+    .armariosDivInputCodigo {
+        margin-top: 175px !important;
+    }
+    #labelFondoArmario {
+        margin-right: 23% !important;
+        margin-left: 22% !important;
+    }
+    .marginIzquierda {
+        margin-left: 18%;
+    }
+    #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #acabados {
+        width: 87% !important;
+        float: left !important;
+        margin-top: -10% !important;
+        padding-top: 60px !important;
+        height: 550px !important;
+    }
+    #acabadosTable {
+        width: 87% !important;
+        float: left !important;
+        margin-top: -10% !important;
+        padding-top: 60px !important;
+        height: 550px !important;
+        margin-left: 15px !important;
+    }
+
+    #inputAcabadoInterior {
+        width: 110px !important;
+        margin-left: -4% !important;
+        margin-top: -50px !important;
+    }
+    #inputAcabadoTrasera {
+        width: 110px !important;
+        margin-top: -50px !important;
+    }
+    #inputAcabadoTirador {
+        width: 110px !important;
+        margin-top: -50px !important;
+    }
+
+    #batPCasco {
+        float: inherit !important;
+    }
+    #batPTrasera {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+    #batPInterior {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+    #batPTirador {
+        float: inherit !important;
+        margin-top: 80px !important;
+    }
+
+    #inputAcabadoCasco {
+        width: 110px !important;
+        margin-left: 20% !important;
+        margin-top: -50px;
+    }
+
+    #tirador012 {
+        float: left !important;
+        margin-left: 10px !important;
+        margin-top: 30px !important;
+        width: 140px !important;
+        height: 200px !important;
+        margin-bottom: 30px !important;
+    }
+
+    #tirador013 {
+        float: left !important;
+        margin-left: 10px !important;
+        margin-top: 30px !important;
+        width: 145px !important;
+        height: 230px !important;
+        margin-bottom: 125px !important;
+    }
+
+    #puertaColorMarco0 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 424px !important;
+        position: absolute !important;
+        z-index: 101 !important;
+        margin-top: -42px !important;
+        margin-left: -122px !important;
+    }
+    #puertaColorMarco1 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
+        z-index: 101 !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
+    }
+    #puertaColorMarco2 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
+        z-index: 101 !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
+    }
+    .puertas3Izq1 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 424px !important;
+        position: absolute !important;
+        z-index: 101 !important;
+        margin-top: -42px !important;
+        margin-left: -122px !important;
+    }
+    .puertas3Izq2 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
+        z-index: 101 !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
+    }
+    .puertas3Izq3 {
+        position: absolute !important;
+        max-width: 396px !important;
+        max-height: 444px !important;
+        z-index: 101 !important;
+        margin-top: -72px !important;
+        margin-left: -31px !important;
+    }
+
+    #puertaColor1 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+
+    #puertaColor2 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+    #puertaColor3 {
+        max-width: 150px;
+        max-height: 340px;
+        margin-left: 120px;
+        margin-top: -28px;
+    }
+
+    #botonCalculadoraBatientes {
+        height: 12% !important;
+        bottom: 15px !important;
+    }
+    .puertas2 {
+        margin-left: 45%;
+    }
+    .puertaColor2puertas {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+    .puertaColor3puertas2 {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .puertas3derecha1 {
+        margin-top: -52px !important;
+        margin-left: -129px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertas3derecha12 {
+        margin-top: -50px !important;
+        margin-left: -129px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertas3derecha2 {
+        margin-top: -65px !important;
+        margin-left: -36px !important;
+        max-width: 412px !important;
+        max-height: 428px !important;
+    }
+
+    .puertas3derecha3 {
+        margin-top: -62px !important;
+        margin-left: -28px !important;
+        max-width: 396px !important;
+        max-height: 427px !important;
+    }
+    .casco4Puertas {
+        max-width: 150px !important;
+        max-height: 340px;
+        margin-left: 180px !important;
+        margin-top: -42px !important;
+    }
+    #casco1 {
+        max-width: 150px;
+        max-height: 340px;
+        margin-left: 90px !important;
+        margin-top: -21px !important;
+    }
+    #trasera1 {
+        max-width: 150px;
+        max-height: 340px;
+        margin-left: 90px !important;
+        margin-top: -21px !important;
+    }
+    .puerta4Color2 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+    .puerta4Color3 {
+        max-width: 150px;
+        max-height: 400px;
+        margin-left: 122px !important;
+        margin-top: -32px !important;
+    }
+    .interior14puertas {
+        margin-top: -50px !important;
+        margin-left: -131px !important;
+        max-width: 412px !important;
+        max-height: 440px !important;
+    }
+
+    .interior24puertas {
+        margin-top: -78px !important;
+        margin-left: -7px !important;
+        max-width: 412px !important;
+        max-height: 440px !important;
+    }
+    .puerta14puertas {
+        max-width: 412px !important;
+        max-height: 440px !important;
+        margin-top: -45px !important;
+        margin-left: -131px !important;
+    }
+    .puerta24puertas {
+        max-width: 412px !important;
+        max-height: 440px !important;
+        margin-top: -45px !important;
+        margin-left: -131px !important;
+    }
+    .puerta34puertas {
+        max-width: 412px !important;
+        max-height: 440px !important;
+        margin-top: -76px !important;
+        margin-left: -7px !important;
+    }
+    .puerta44puertas {
+        max-width: 412px !important;
+        max-height: 440px !important;
+        margin-top: -76px !important;
+        margin-left: -7px !important;
+    }
+
+    .puertas4 {
+        margin-left: 20% !important;
+    }
+
+    #nombrePuerta1 {
+        margin-left: 63px !important;
+        margin-top: 205px !important;
+        font-size: 14px !important;
+    }
+    #nombrePuerta2 {
+        margin-left: 122px !important;
+        margin-top: 190px !important;
+        font-size: 14px !important;
+    }
+    .puertaAsi41 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+    .puertaAsi42 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 90px;
+        margin-top: -22px;
+    }
+    .puertaAsi43 {
+        max-width: 150px;
+        max-height: 343px;
+        margin-left: 180px;
+        margin-top: -42px;
+    }
+    .interior14puertasAsi {
+        margin-top: -42px !important;
+        margin-left: -131px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .interior24puertasAsi {
+        max-width: 412px !important;
+        margin-left: -37px !important;
+        margin-top: -72px !important;
+        max-height: 440px !important;
+    }
+    .interior34puertasAsi {
+        margin-top: -85px !important;
+        margin-left: 56px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .puertaAsi41 {
+        margin-left: 93px !important;
+        margin-top: -23px !important;
+    }
+    .puertaAsi42 {
+        margin-left: 93px !important;
+        margin-top: -23px !important;
+    }
+    .puertaAsi43 {
+        margin-left: 186px !important;
+        margin-top: -43px !important;
+    }
+    .puertaAsiBue40 {
+        margin-left: -132px !important;
+        margin-top: -40px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .puertaAsiBue41 {
+        margin-left: -37px !important;
+        margin-top: -71px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertaAsiBue42 {
+        margin-left: 93px !important;
+        margin-left: -37px !important;
+        margin-top: -71px !important;
+        max-width: 412px !important;
+        max-height: 444px !important;
+    }
+    .puertaAsiBue43 {
+        margin-left: 56px !important;
+        margin-top: -84px !important;
+        max-width: 412px !important;
+        max-height: 424px !important;
+    }
+    .casco5Central0 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+
+    #casco5Central1 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 74px !important;
+        margin-top: -18px !important;
+    }
+
+    #casco5Central2 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 148px !important;
+        margin-top: -35px !important;
+    }
+
+    .armario5centralint1 {
+        margin-top: -46px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    .armario5centralint2 {
+        margin-top: -56px !important;
+        margin-left: -15px !important;
+        max-width: 305px !important;
+        max-height: 375px !important;
+    }
+    .armario5centralint3 {
+        margin-top: -82px !important;
+        margin-left: 41px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    #casco5Izq0 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    #casco5Izq2 {
+        max-width: 125px;
+        max-height: 300px;
+        margin-left: 173px !important;
+        margin-top: -41px !important;
+    }
+
+    .armario5izqint3 {
+        margin-top: -88px !important;
+        margin-left: 68px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5izqint2 {
+        margin-top: -63px !important;
+        margin-left: -35px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5izqint1 {
+        margin-top: -37px !important;
+        margin-left: -96px !important;
+        max-width: 315px !important;
+        max-height: 375px !important;
+    }
+
+    #casco5Der0 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    .casco5Der1 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    #casco5Der2 {
+        max-width: 125px !important;
+        max-height: 300px !important;
+    }
+    .armario5der1 {
+        margin-top: -45px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5der2 {
+        margin-top: -69px !important;
+        margin-left: -5px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario5der3 {
+        margin-top: -80px !important;
+        margin-left: 84px !important;
+        max-width: 315px !important;
+        max-height: 375px !important;
+    }
+    .armario6simint1 {
+        margin-top: -45px !important;
+        margin-left: -107px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+
+    .armario6simint2 {
+        margin-top: -70px !important;
+        margin-left: -6px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario6simint3 {
+        margin-top: -94px !important;
+        margin-left: 96px !important;
+        max-width: 340px !important;
+        max-height: 390px !important;
+    }
+    .armario7asi1 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+    }
+    .armario7asi2 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-top: -17px !important;
+        margin-left: 67px !important;
+        max-width: 110px !important;
+        max-height: 280px !important;
+    }
+    .armario7asi3 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 133px !important;
+        margin-top: -34px !important;
+    }
+    .armario7asi4 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 222px !important;
+        margin-top: -57px !important;
+    }
+
+    .armario7asi1Int {
+        margin-top: -42px !important;
+        margin-left: -96px !important;
+        max-width: 300px !important;
+        max-height: 365px !important;
+    }
+    .armario7asi2Int {
+        max-width: 300px !important;
+        max-height: 350px !important;
+        margin-top: -52px !important;
+        margin-left: -28px !important;
+    }
+    .armario7asi3Int {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-left: 39px !important;
+        margin-top: -76px !important;
+    }
+    .armario7asi4Int {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-left: 128px !important;
+        margin-top: -99px !important;
+    }
+
+    .armario8casco1 {
+        max-width: 100px;
+        max-height: 275px;
+    }
+    .armario8casco2 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 81px !important;
+        margin-top: -22px !important;
+    }
+    .armario8casco3 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 162px !important;
+        margin-top: -44px !important;
+    }
+    .armario8casco4 {
+        max-width: 100px;
+        max-height: 275px;
+        margin-left: 243px !important;
+        margin-top: -66px !important;
+    }
+    .armario8Int1 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: -85px !important;
+        margin-top: -42px !important;
+    }
+    .armario8Int2 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: -3px !important;
+        margin-top: -65px !important;
+    }
+    .armario8Int3 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: 78px !important;
+        margin-top: -87px !important;
+    }
+    .armario8Int4 {
+        max-width: 270px !important;
+        max-height: 358px !important;
+        margin-left: 159px !important;
+        margin-top: -109px !important;
+    }
+    .class6interior1 {
+        width: 320px !important;
+        height: 375px !important;
+        margin-top: -37px !important;
+        margin-left: -98px !important;
+    }
+    .class6interior2 {
+        width: 335px !important;
+        height: 390px !important;
+        margin-top: -63px !important;
+        margin-left: -31px !important;
+    }
+    .class6interior3 {
+        width: 335px !important;
+        height: 390px !important;
+        margin-top: -88px !important;
+        margin-left: 70px !important;
+    }
+    .class6interior4 {
+        width: 320px !important;
+        height: 375px !important;
+        margin-top: -99px !important;
+        margin-left: 153px !important;
+    }
+
+    .armario7izq1 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+    }
+    .armario7izq2 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 66px !important;
+        margin-top: -17px !important;
+    }
+    .armario7izq3 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 133px !important;
+        margin-top: -34px !important;
+    }
+    .armario7izq4 {
+        max-width: 110px !important;
+        max-height: 280px !important;
+        margin-left: 222px !important;
+        margin-top: -57px !important;
+    }
+    .class7Izqinterior1 {
+        max-width: 280px !important;
+        max-height: 350px !important;
+        margin-top: -35px !important;
+        margin-left: -86px !important;
+    }
+    .class7Izqinterior2 {
+        max-width: 290px !important;
+        max-height: 365px !important;
+        margin-top: -60px !important;
+        margin-left: -25px !important;
+    }
+    .class7Izqinterior3 {
+        max-width: 290px !important;
+        max-height: 365px !important;
+        margin-top: -83px !important;
+        margin-left: 63px !important;
+    }
+    .class7Izqinterior4 {
+        max-width: 300px !important;
+        max-height: 365px !important;
+        margin-top: -106px !important;
+        margin-left: 147px !important;
+    }
+    #mueblesTodos {
+        max-width: 400px !important;
+        max-height: 400px !important;
     }
     #anchoCesta {
         margin-left: 2% !important;
@@ -10949,15 +12928,15 @@ ui bootstrap tweaks
     }
     #pfilasalir {
         margin-top: -66px !important;
-        margin-left: 23.4% !important;
+        margin-left: 37.4% !important;
     }
     #imagen0 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter0 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -10965,11 +12944,11 @@ ui bootstrap tweaks
     }
     #imagen1 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter1 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -10977,11 +12956,11 @@ ui bootstrap tweaks
     }
     #imagen2 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter2 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -10989,11 +12968,11 @@ ui bootstrap tweaks
     }
     #imagen3 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter3 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11001,11 +12980,11 @@ ui bootstrap tweaks
     }
     #imagen4 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter4 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11013,11 +12992,11 @@ ui bootstrap tweaks
     }
     #imagen5 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter5 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11025,11 +13004,11 @@ ui bootstrap tweaks
     }
     #imagen6 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter6 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11037,11 +13016,11 @@ ui bootstrap tweaks
     }
     #imagen7 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter7 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11049,11 +13028,11 @@ ui bootstrap tweaks
     }
     #imagen8 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter8 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11061,11 +13040,11 @@ ui bootstrap tweaks
     }
     #imagen9 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter9 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11073,11 +13052,11 @@ ui bootstrap tweaks
     }
     #imagen10 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter10 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11085,11 +13064,11 @@ ui bootstrap tweaks
     }
     #imagen11 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter11 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11097,11 +13076,11 @@ ui bootstrap tweaks
     }
     #imagen12 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter12 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11109,11 +13088,11 @@ ui bootstrap tweaks
     }
     #imagen13 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter13 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11121,11 +13100,11 @@ ui bootstrap tweaks
     }
     #imagen14 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter14 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11133,11 +13112,11 @@ ui bootstrap tweaks
     }
     #imagen15 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter15 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11145,11 +13124,11 @@ ui bootstrap tweaks
     }
     #imagen16 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter16 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11157,11 +13136,11 @@ ui bootstrap tweaks
     }
     #imagen17 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter17 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11169,11 +13148,11 @@ ui bootstrap tweaks
     }
     #imagen18 {
         margin-left: 3% !important;
-        margin-top: -5% !important;
+        margin-top: 4% !important;
         height: 350px !important;
     }
     #datosMeter18 {
-        width: 100% !important;
+        width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
         text-align: initial !important;
@@ -11326,9 +13305,6 @@ ui bootstrap tweaks
         position: relative !important;
         z-index: 1;
         right: 0px !important;
-    }
-    #formcomebus {
-        margin-bottom: 90% !important;
     }
     .armariosRinconDivInputCodigo {
         margin-top: 175px;
@@ -11779,6 +13755,7 @@ ui bootstrap tweaks
         right: 11px;
         margin-top: 5px;
         float: right;
+        height: 32px;
     }
 
     .productosColor33 {
@@ -13279,6 +15256,75 @@ ui bootstrap tweaks
     }
     .apoyoModal {
         font-size: inherit;
+    }
+    #logoImagen {
+        position: absolute;
+        width: 120px;
+        height: 25px;
+    }
+    #imagenLogoCuenta {
+        margin-left: 30%;
+    }
+    #posicion0 {
+        position: absolute;
+        right: 4px;
+        top: 11px;
+        color: #fff;
+        font-size: medium;
+    }
+    #noticiasClass {
+        margin-top: 20px !important;
+    }
+    #cuerpo1 {
+        height: 300px !important;
+    }
+    #cuerpo2 {
+        height: 300px !important;
+    }
+    #cuerpo3 {
+        height: 300px !important;
+    }
+    #cuerpo4 {
+        height: 300px !important;
+    }
+    #cuerpo5 {
+        height: 300px !important;
+    }
+    #cuerpo6 {
+        height: 300px !important;
+    }
+    #cuerpo7 {
+        height: 300px !important;
+    }
+    #cuerpo8 {
+        height: 300px !important;
+    }
+    #cuerpo9 {
+        height: 300px !important;
+    }
+    #cuerpo10 {
+        height: 300px !important;
+    }
+    #cuerpo11 {
+        height: 300px !important;
+    }
+    #cuerpo12 {
+        height: 300px !important;
+    }
+    #cuerpo13 {
+        height: 300px !important;
+    }
+    #cuerpo14 {
+        height: 300px !important;
+    }
+    #cuerpo15 {
+        height: 300px !important;
+    }
+    #cuerpo16 {
+        height: 300px !important;
+    }
+    #cuerpo17 {
+        height: 300px !important;
     }
 }
 
