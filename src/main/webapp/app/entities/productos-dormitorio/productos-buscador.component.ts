@@ -11622,9 +11622,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 console.log(sessionStorage);
             }
         }
-        if (screen.width < 700) {
-            $('#calculadoraCarrito').css({ position: 'inherit' });
-        }
+
         this.borrarProdCalculadora();
     }
 
