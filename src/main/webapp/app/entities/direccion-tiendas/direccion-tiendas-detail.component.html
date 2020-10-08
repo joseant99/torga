@@ -20,13 +20,11 @@
                 <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.provincias">Provincias</span></dt>
                 <dd>
                     <div *ngIf="direccionTiendas.provincias">
-                        <a [routerLink]="['/provincias', direccionTiendas.provincias?.id, 'view']">{{direccionTiendas.provincias}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.municipios">Municipios</span></dt>
                 <dd>
                     <div *ngIf="direccionTiendas.municipios">
-                        <a [routerLink]="['/municipios', direccionTiendas.municipios?.id, 'view']">{{direccionTiendas.municipios}}</a>
                     </div>
                 </dd>
                 <dt><span jhiTranslate="torgaPedidosApp.direccionTiendas.datosUsuario">Datos Usuario</span></dt>
