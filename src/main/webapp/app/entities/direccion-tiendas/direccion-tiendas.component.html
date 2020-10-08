@@ -30,16 +30,7 @@
                 <td>{{direccionTiendas.numero}}</td>
                 <td>{{direccionTiendas.codPostal}}</td>
                 <td>{{direccionTiendas.direccion}}</td>
-                <td>
-                    <div *ngIf="direccionTiendas.provincias">
-                        <a [routerLink]="['../provincias', direccionTiendas.provincias?.id, 'view' ]" >{{direccionTiendas.provincias?.id}}</a>
-                    </div>
-                </td>
-                <td>
-                    <div *ngIf="direccionTiendas.municipios">
-                        <a [routerLink]="['../municipios', direccionTiendas.municipios?.id, 'view' ]" >{{direccionTiendas.municipios?.id}}</a>
-                    </div>
-                </td>
+                
                 <td>
                     <div *ngIf="direccionTiendas.datosUsuario">
                         <a [routerLink]="['../datos-usuario', direccionTiendas.datosUsuario?.id, 'view' ]" >{{direccionTiendas.datosUsuario?.id}}</a>
