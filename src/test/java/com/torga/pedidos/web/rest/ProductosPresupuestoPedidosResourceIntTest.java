@@ -65,7 +65,7 @@ public class ProductosPresupuestoPedidosResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        final ProductosPresupuestoPedidosResource productosPresupuestoPedidosResource = new ProductosPresupuestoPedidosResource(productosPresupuestoPedidosRepository);
+        final ProductosPresupuestoPedidosResource productosPresupuestoPedidosResource = new ProductosPresupuestoPedidosResource(productosPresupuestoPedidosRepository, null);
         this.restProductosPresupuestoPedidosMockMvc = MockMvcBuilders.standaloneSetup(productosPresupuestoPedidosResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
