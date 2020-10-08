@@ -163,7 +163,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     }
     public cargarDireccion() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        this.direccionTiendasService.query1(tienda.id).subscribe(data => {
+        this.direccionTiendasService.query1(this.datosUsuarioService.tiendaCargadaPresu.id).subscribe(data => {
             console.log(data.body);
             var datos = data.body;
             this.direccionTiendasService.todos = data.body;
@@ -205,12 +205,12 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
         console.log(cogerPrecioProds);
         var output = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + d.getFullYear();
         var direccion;
-        //var idDireccion = $('#direccion').val();
-        //for (let m = 0; m < todasDirecciones.length; m++) {
-        //if (todasDirecciones[m]['id'] == idDireccion) {
-        //var direccion = todasDirecciones[m];
-        //}
-        //}
+        var idDireccion = $('#direccion').val();
+        for (let m = 0; m < todasDirecciones.length; m++) {
+            if (todasDirecciones[m]['id'] == idDireccion) {
+                var direccion = todasDirecciones[m];
+            }
+        }
         actualizar['presupuestoPedido']['pedido'] = 1;
         actualizar['presupuestoPedido']['fecha_pedido'] = output;
         var presupuestoActualizado = actualizar['presupuestoPedido'];

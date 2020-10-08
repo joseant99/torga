@@ -161,6 +161,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[934] = 29;
         arrayBueno[1073] = 25;
         arrayBueno[1187] = 18;
+        arrayBueno[1188] = 34;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -336,6 +337,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#botonEsconder').attr('onclick', 'apareceMenu()');
             $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
         }
+    }
+
+    public cambiardirecParaPedido() {
+        var tiendaElegida = $('#selectTiendaDelNav').val();
+        var todasTiendaBuenas = this.todasLasTiendas;
     }
 
     public generarPresupuesto() {
