@@ -391,6 +391,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             if (sesion != null) {
                 this.productosDormitorioService.numeroCesta = i;
+                $('#posicion0').text(i);
+                console.log(sessionStorage);
             }
         }
     }

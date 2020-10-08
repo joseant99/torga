@@ -43,8 +43,8 @@ public class DireccionTiendasResourceIntTest {
     private static final Float DEFAULT_NUMERO = 1F;
     private static final Float UPDATED_NUMERO = 2F;
 
-    private static final Float DEFAULT_COD_POSTAL = 1F;
-    private static final Float UPDATED_COD_POSTAL = 2F;
+    private static final String DEFAULT_COD_POSTAL = "";
+    private static final String UPDATED_COD_POSTAL = "";
 
     private static final String DEFAULT_DIRECCION = "AAAAAAAAAA";
     private static final String UPDATED_DIRECCION = "BBBBBBBBBB";
@@ -153,7 +153,7 @@ public class DireccionTiendasResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(direccionTiendas.getId().intValue())))
             .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO.doubleValue())))
-            .andExpect(jsonPath("$.[*].codPostal").value(hasItem(DEFAULT_COD_POSTAL.doubleValue())))
+            .andExpect(jsonPath("$.[*].codPostal").value(hasItem(DEFAULT_COD_POSTAL)))
             .andExpect(jsonPath("$.[*].direccion").value(hasItem(DEFAULT_DIRECCION.toString())));
     }
     
@@ -169,7 +169,7 @@ public class DireccionTiendasResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(direccionTiendas.getId().intValue()))
             .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO.doubleValue()))
-            .andExpect(jsonPath("$.codPostal").value(DEFAULT_COD_POSTAL.doubleValue()))
+            .andExpect(jsonPath("$.codPostal").value(DEFAULT_COD_POSTAL))
             .andExpect(jsonPath("$.direccion").value(DEFAULT_DIRECCION.toString()));
     }
 

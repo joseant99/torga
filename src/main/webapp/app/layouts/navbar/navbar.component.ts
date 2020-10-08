@@ -11453,31 +11453,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '</p>'
                         );
 
-                        if (sesion[1]['niveladores'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: <i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['niveladores']['precio'] +
-                                    ' pp</i></p>'
-                            );
-                        }
-                        if (sesion[1]['cajeado'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Cajeado</span>: ' +
-                                    sesion[1]['cajeado']['tipo'] +
-                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['cajeado']['precio'] +
-                                    ' pp</i></p>'
-                            );
-                        }
-                        if (sesion[1]['enmarcado'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado</span>: ' +
-                                    sesion[1]['enmarcado']['codigo'] +
-                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['enmarcado']['precio'] +
-                                    ' pp</i></p>'
-                            );
-                        }
                         $('#textoCesta' + i).append(
                             '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Acabado Casco</span>: ' +
                                 sesion[1]['acabadoCasco']['nombre'] +
@@ -11530,9 +11505,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 for (let k = 0; k < 5; k++) {
                                     if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Acabado ' +
-                                                (k + 1) +
-                                                ' Puerta ' +
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Acabado Puerta ' +
                                                 (w + 1) +
                                                 '</span>: ' +
                                                 sesion[1]['puertas'][w]['acabado' + k]['nombre'] +
@@ -11545,7 +11518,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                         if (sesion[1]['niveladores'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: Con niveladores <i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
+                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: SI <i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
                                     sesion[1]['niveladores']['precio'] +
                                     ' pp</i></p>'
                             );
@@ -11865,6 +11838,42 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 241) {
                             nombreCargarImagen = 'NX066-NX069';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 242) {
+                            nombreCargarImagen = 'NX070';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 243) {
+                            nombreCargarImagen = 'NX071';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 244) {
+                            nombreCargarImagen = 'NX072';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 245) {
+                            nombreCargarImagen = 'NX073';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 230) {
+                            nombreCargarImagen = 'NX074';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 231) {
+                            nombreCargarImagen = 'NX075';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 232) {
+                            nombreCargarImagen = 'NX076';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 233) {
+                            nombreCargarImagen = 'NX077';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 234) {
+                            nombreCargarImagen = 'NX078';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 235) {
+                            nombreCargarImagen = 'NX079';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 236) {
+                            nombreCargarImagen = 'NX080';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 237) {
+                            nombreCargarImagen = 'NX081';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 107) {
                             nombreCargarImagen = 'NH001-NH006';
@@ -12537,11 +12546,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         $('#cuerpo' + i + ' #izquierda').append(
                             '<img id="mueblesTodos" style="z-index:' +
                                 (100 - i) +
-                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:350px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
                                 nombreCargarImagen +
                                 '.jpeg">'
                         );
-                        $('#textoCesta' + i).css({ 'margin-top': '50px' });
+                        $('#textoCesta' + i).css({ 'margin-top': '110px' });
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();
                         if (precioTotalCesta != '') {

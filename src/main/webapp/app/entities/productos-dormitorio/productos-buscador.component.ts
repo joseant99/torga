@@ -1197,6 +1197,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     }
 
     public cargarDimen() {
+        $('#botonbuscarcargardimen').attr('disabled', 'disabled');
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
@@ -4654,6 +4655,36 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                 );
                             }
                         }
+
+                        if (idProd == 215) {
+                            if (u == 1) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 2) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                        }
+
                         if (idProd == 216) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -6706,7 +6737,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                     idProd != 356 &&
                     idProd != 357 &&
                     idProd != 358 &&
-                    idProd != 359
+                    idProd != 359 &&
+                    idProd != 230 &&
+                    idProd != 231 &&
+                    idProd != 232 &&
+                    idProd != 234 &&
+                    idProd != 235
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -6866,7 +6902,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 idProd != 356 &&
                 idProd != 357 &&
                 idProd != 358 &&
-                idProd != 359
+                idProd != 359 &&
+                idProd != 230 &&
+                idProd != 231 &&
+                idProd != 232 &&
+                idProd != 234 &&
+                idProd != 235
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -6945,7 +6986,10 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     idProd != 242 &&
                                     idProd != 243 &&
                                     idProd != 244 &&
-                                    idProd != 245
+                                    idProd != 245 &&
+                                    idProd != 233 &&
+                                    idProd != 236 &&
+                                    idProd != 237
                                 ) {
                                     $('#modalApoyo #apoyoModal' + 2).empty();
                                     $('#modalApoyo #apoyoModal' + 2).append(
@@ -6979,20 +7023,22 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     );
                                 }
                                 if (data.body[w]['id'] == 16) {
-                                    $('#modalApoyo #apoyoModal' + 5).empty();
-                                    console.log(productoTocho);
-                                    $('#modalApoyo #apoyoModal' + 5).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            data.body[w]['imagen'] +
-                                            '" id="imagenApoyo' +
-                                            5 +
-                                            '" class="' +
-                                            data.body[w]['id'] +
-                                            '" height="160px" width="280px" style=" ">'
-                                    );
-                                    $('#modalApoyo #apoyoModal' + 5).append(
-                                        '<strong><p style="text-align:center">Metalicas Grafeno</strong></p>'
-                                    );
+                                    if (idProd != 233) {
+                                        $('#modalApoyo #apoyoModal' + 5).empty();
+                                        console.log(productoTocho);
+                                        $('#modalApoyo #apoyoModal' + 5).append(
+                                            '<img  src="data:image/gif;base64,' +
+                                                data.body[w]['imagen'] +
+                                                '" id="imagenApoyo' +
+                                                5 +
+                                                '" class="' +
+                                                data.body[w]['id'] +
+                                                '" height="160px" width="280px" style=" ">'
+                                        );
+                                        $('#modalApoyo #apoyoModal' + 5).append(
+                                            '<strong><p style="text-align:center">Metalicas Grafeno</strong></p>'
+                                        );
+                                    }
                                 }
                                 if (data.body[w]['id'] == 18) {
                                     $('#modalApoyo #apoyoModal' + 3).empty();
@@ -7027,20 +7073,22 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                                     );
                                 }
                                 if (data.body[w]['id'] == 403) {
-                                    $('#modalApoyo #apoyoModal' + 6).empty();
-                                    console.log(productoTocho);
-                                    $('#modalApoyo #apoyoModal' + 6).append(
-                                        '<img  src="data:image/gif;base64,' +
-                                            data.body[w]['imagen'] +
-                                            '" id="imagenApoyo' +
-                                            6 +
-                                            '" class="' +
-                                            data.body[w]['id'] +
-                                            '" height="160px" width="280px" style=" ">'
-                                    );
-                                    $('#modalApoyo #apoyoModal' + 6).append(
-                                        '<strong><p style="text-align:center">Metalicas blancas</strong></p>'
-                                    );
+                                    if (idProd != 233) {
+                                        $('#modalApoyo #apoyoModal' + 6).empty();
+                                        console.log(productoTocho);
+                                        $('#modalApoyo #apoyoModal' + 6).append(
+                                            '<img  src="data:image/gif;base64,' +
+                                                data.body[w]['imagen'] +
+                                                '" id="imagenApoyo' +
+                                                6 +
+                                                '" class="' +
+                                                data.body[w]['id'] +
+                                                '" height="160px" width="280px" style=" ">'
+                                        );
+                                        $('#modalApoyo #apoyoModal' + 6).append(
+                                            '<strong><p style="text-align:center">Metalicas blancas</strong></p>'
+                                        );
+                                    }
                                 }
                             }
                         }
@@ -7068,6 +7116,9 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         this.modulosBajos = undefined;
         this.aparadores = undefined;
         this.singulares = undefined;
+        setTimeout(function() {
+            $('#botonbuscarcargardimen').removeAttr('disabled');
+        }, 5000);
     }
     public formularioSubirImagen() {}
     public cogidoUsb(id) {
@@ -7109,7 +7160,6 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
     public borrarProdCalculadora() {
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('.divBuscadorArticulos').css({ display: 'none' });
-        $('#medidasEspeciales').css({ display: 'none' });
         $('#anchosSelect1').val('');
         $('#medidasAncho').css({ display: 'none' });
         $('#elegirLado').css({ display: 'none' });
@@ -10274,7 +10324,12 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
             idProd != '356' &&
             idProd != '357' &&
             idProd != '358' &&
-            idProd != '359'
+            idProd != '359' &&
+            idProd != '230' &&
+            idProd != '231' &&
+            idProd != '232' &&
+            idProd != '234' &&
+            idProd != '235'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;

@@ -52,6 +52,32 @@ Browser Upgrade Prompt
 #acabadoTiradorProbar2 {
     display: none;
 }
+
+#imagenApoyo0 {
+    height: 280px;
+}
+#imagenApoyo1 {
+    height: 280px;
+}
+#imagenApoyo2 {
+    height: 280px;
+}
+#imagenApoyo3 {
+    height: 280px;
+}
+#imagenApoyo4 {
+    height: 280px;
+}
+#imagenApoyo5 {
+    height: 280px;
+}
+#imagenApoyo6 {
+    height: 280px;
+}
+#imagenApoyo7 {
+    height: 280px;
+}
+
 #datos1 {
     font-size: 14px;
 }
@@ -12913,7 +12939,7 @@ ui bootstrap tweaks
     }
     #modalConfirmarCreacionPresu {
         padding-top: 150px !important;
-        z-index: 1000000 !important;
+        z-index: 10000000000 !important;
         background: rgb(60 64 60 / 50%) !important;
         margin-top: 0px !important;
     }
@@ -14771,7 +14797,7 @@ ui bootstrap tweaks
     }
     #modalConfirmarCreacionPresu {
         padding-top: 150px !important;
-        z-index: 1000000 !important;
+        z-index: 10000000000 !important;
         background: rgb(60 64 60 / 50%) !important;
         margin-top: 0px !important;
     }
@@ -15325,6 +15351,54 @@ ui bootstrap tweaks
     }
     #cuerpo17 {
         height: 300px !important;
+    }
+    #textoCesta1 {
+        margin-top: 0px !important;
+    }
+    #textoCesta2 {
+        margin-top: 0px !important;
+    }
+    #textoCesta3 {
+        margin-top: 0px !important;
+    }
+    #textoCesta4 {
+        margin-top: 0px !important;
+    }
+    #textoCesta5 {
+        margin-top: 0px !important;
+    }
+    #textoCesta6 {
+        margin-top: 0px !important;
+    }
+    #textoCesta7 {
+        margin-top: 0px !important;
+    }
+    #textoCesta8 {
+        margin-top: 0px !important;
+    }
+    #textoCesta9 {
+        margin-top: 0px !important;
+    }
+    #textoCesta10 {
+        margin-top: 0px !important;
+    }
+    #textoCesta11 {
+        margin-top: 0px !important;
+    }
+    #textoCesta12 {
+        margin-top: 0px !important;
+    }
+    #textoCesta13 {
+        margin-top: 0px !important;
+    }
+    #textoCesta14 {
+        margin-top: 0px !important;
+    }
+    #textoCesta15 {
+        margin-top: 0px !important;
+    }
+    #textoCesta16 {
+        margin-top: 0px !important;
     }
 }
 

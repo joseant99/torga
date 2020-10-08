@@ -15074,6 +15074,43 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
                                                 if (idProdNombre == 241) {
                                                     nombreCargarImagen = 'NX066-NX069';
                                                 }
+
+                                                if (idProdNombre == 242) {
+                                                    nombreCargarImagen = 'NX070';
+                                                }
+                                                if (idProdNombre == 243) {
+                                                    nombreCargarImagen = 'NX071';
+                                                }
+                                                if (idProdNombre == 244) {
+                                                    nombreCargarImagen = 'NX072';
+                                                }
+                                                if (idProdNombre == 245) {
+                                                    nombreCargarImagen = 'NX073';
+                                                }
+                                                if (idProdNombre == 230) {
+                                                    nombreCargarImagen = 'NX074';
+                                                }
+                                                if (idProdNombre == 231) {
+                                                    nombreCargarImagen = 'NX075';
+                                                }
+                                                if (idProdNombre == 232) {
+                                                    nombreCargarImagen = 'NX076';
+                                                }
+                                                if (idProdNombre == 233) {
+                                                    nombreCargarImagen = 'NX077';
+                                                }
+                                                if (idProdNombre == 234) {
+                                                    nombreCargarImagen = 'NX078';
+                                                }
+                                                if (idProdNombre == 235) {
+                                                    nombreCargarImagen = 'NX079';
+                                                }
+                                                if (idProdNombre == 236) {
+                                                    nombreCargarImagen = 'NX080';
+                                                }
+                                                if (idProdNombre == 237) {
+                                                    nombreCargarImagen = 'NX081';
+                                                }
                                                 if (idProdNombre == 107) {
                                                     nombreCargarImagen = 'NH001-NH006';
                                                 }

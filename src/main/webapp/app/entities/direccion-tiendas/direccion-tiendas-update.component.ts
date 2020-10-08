@@ -91,8 +91,6 @@ export class DireccionTiendasUpdateComponent implements OnInit {
                 var mun = municipios[i];
             }
         }
-        this.direccionTiendas['provincias'] = prov;
-        this.direccionTiendas['municipios'] = mun;
         this.direccionTiendas['datosUsuario'] = tienda;
         if (this.direccionTiendas.id !== undefined) {
             this.subscribeToSaveResponse(this.direccionTiendasService.update(this.direccionTiendas));

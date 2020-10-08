@@ -5,10 +5,10 @@ import { IDatosUsuario } from 'app/shared/model//datos-usuario.model';
 export interface IDireccionTiendas {
     id?: number;
     numero?: number;
-    codPostal?: number;
+    codPostal?: string;
     direccion?: string;
-    provincias?: IProvincias;
-    municipios?: IMunicipios;
+    provincias?: string;
+    municipios?: string;
     datosUsuario?: IDatosUsuario;
 }
 
@@ -16,10 +16,10 @@ export class DireccionTiendas implements IDireccionTiendas {
     constructor(
         public id?: number,
         public numero?: number,
-        public codPostal?: number,
+        public codPostal?: string,
         public direccion?: string,
-        public provincias?: IProvincias,
-        public municipios?: IMunicipios,
+        public provincias?: string,
+        public municipios?: string,
         public datosUsuario?: IDatosUsuario
     ) {}
 }

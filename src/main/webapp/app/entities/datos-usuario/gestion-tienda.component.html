@@ -3,61 +3,37 @@
     	<div style="text-align:center" *ngFor="let datosUsuario of datosUsuarios ;trackBy: trackId">
     		<div>
     		<br><br>
-    			<h2>GESTI&#211;N DE TIENDA</h2>
+    			<h2>MIS DATOS</h2>
     			<br><br>
     		</div>
     		<br>
     		<div>
     	
     			<div style="margin-left:30%" class="form-group row">
-				    <label for="nombreComercial" class="col-sm-2 col-form-label">Nombre Comercial</label>
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">CODIGO CLIENTE</label>
 				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreComercial" value="{{datosUsuario.nombreComercial}}" disabled>
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreComercial" value="{{datosUsuario.codigo}}" disabled>
 				    </div>
 				  </div>
 				<div style="margin-left:30%" class="form-group row">
-				    <label for="nombreComercial" class="col-sm-2 col-form-label">Nombre Fiscal</label>
+				    <label for="nombreComercial" class="col-sm-2 col-form-label">NOMBRE FISCAL</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreFiscal" value="{{datosUsuario.nombreFiscal}}" disabled>
 				    </div>
 				  </div>
 				<div style="margin-left:30%" class="form-group row">
-				    <label for="movil" class="col-sm-2 col-form-label">Telefono</label>
+				    <label for="movil" class="col-sm-2 col-form-label">CIF/NIF</label>
 				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.telefono}}" disabled>
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.cif}}" disabled>
 				    </div>
 				  </div>
 				<div style="margin-left:30%" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Email</label>
+				    <label for="movil" class="col-sm-2 col-form-label">REPRESENTANTE</label>
 				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="email" value="{{datosUsuario.email}}" disabled>
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.repreGCompra.nombre}}" disabled>
 				    </div>
 				  </div>
-				  <div style="margin-left:30%" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Direccion:</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="direccion" value="{{datosUsuario.direccion}}" disabled>
-				    </div>
-				  </div>
-				  <div style="margin-left:30%" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Provincia:</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="provincia" value="{{datosUsuario.provincias.nombre}}" disabled>
-				    </div>
-				  </div>
-				  <div style="margin-left:30%" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Municipio:</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="municipio" value="{{datosUsuario.municipios.nombre}}" disabled>
-				    </div>
-				  </div>
-				  <div style="margin-left:30%" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal:</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{datosUsuario.codPostal}}" disabled>
-				    </div>
-				  </div>
-				  <button style="width:210px;height:60px;margin-top:30px" data-toggle="modal" data-target="#modalMeteTexto">Solicitar un cambio</button>
+				  
 				<!-- <div style="margin-left:30%" class="form-group row">
 				    <label for="logoInput" class="col-sm-2 col-form-label" style="border: 1px solid lightgray;">Adjuntar logo:</label>
 				    <div class="col-sm-4">
@@ -74,24 +50,12 @@
     			<br><br>
     		</div>
     		<br>
-    		<div style="float:left;width:75%;margin-left: 13%;margin-bottom:5%">
-    		<div *ngFor="let direc of direccionTiendasService.todos" style="FLOAT: LEFT;WIDTH: 47%;background-color:#F4F4F4;margin-right:40px;padding-top:40px;padding-bottom:40px">
+    		<div style="float:left;width:75%;margin-left: 13%;margin-bottom:5%;margin-right: 13%;">
+    		<div *ngFor="let direc of direccionTiendasService.todos" style="FLOAT: LEFT;WIDTH: 47%;background-color:#F4F4F4;margin-right:40px;padding-top:40px;padding-bottom:40px;margin-top:40px">
     			<div style="margin-left: 5%;width: 160%;" class="form-group row">
 				    <label for="email" class="col-sm-2 col-form-label">Direccion</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.direccion}}" disabled>
-				    </div>
-				  </div>
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Provincia</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.provincias.nombre}}" disabled>
-				    </div>
-				  </div>
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
-				    <label for="email" class="col-sm-2 col-form-label">Municipio</label>
-				    <div class="col-sm-4">
-				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.municipios.nombre}}" disabled>
 				    </div>
 				  </div>
 				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
@@ -100,13 +64,40 @@
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.codPostal}}" disabled>
 				    </div>
 				  </div>
+				   <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Poblacion</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.municipios}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Provincia</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.provincias}}" disabled>
+				    </div>
+				  </div>
+				 
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Fijo</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.fijo}}" disabled>
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Movil</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.movil}}" disabled>
+				    </div>
+				  </div>
 				  
     		</div>
-    		<button style="width:210px;height:60px;margin-top:30px">Solicitar un cambio</button>
+    		
     		</div>
     		<!-- <button style="width: 200px;height: 60px;background-color: white" (click) = "guardar(datosUsuarios)">Guardar Cambios</button>		 -->
     		
 	 	</div>
+	 	<p style="width:100%;text-align:center;margin-left:3%"><button style="margin-top:30px;background-color:white;border-radius: 50%;width: 32px;margin-right:45px;" data-toggle="modal" data-target="#modalMeteDireccion">+</button> A&Ntilde;ADIR NUEVA DIRECCION DE ENTREGA</p>
+	 	<p style="width:100%;text-align:center;margin-bottom: 5%;"><button style="margin-top:30px;background-color:white;border-radius: 50%;width: 32px;margin-right:45px;" data-toggle="modal" data-target="#modalMeteTexto">+</button> ALGUN DATO ES ERRONEO</p>
     </div>
     <div class="modal fade" id="modalMeteTexto" role="dialog" style="z-index: 10000000000;">
 		    <div class="modal-dialog">
@@ -123,6 +114,68 @@
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalMeteDireccion" role="dialog" style="z-index: 10000000000;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Nueva direccion</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	
+		        	<div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Nombre</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombrecreardireccion">
+				    </div>
+				  </div>
+			        <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Direccion</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="direccioncreardireccion">
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal</label>
+				    <div class="col-sm-4">
+				      <input type="number" style="text-align:center;height:70px" class="form-control" id="codPostalcreardireccion">
+				    </div>
+				  </div>
+				   <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Poblacion</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="poblacioncreardireccion">
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Provincia</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="provinciacreardireccion">
+				    </div>
+				  </div>
+				 
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Fijo</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="fijocreardireccion">
+				    </div>
+				  </div>
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Movil</label>
+				    <div class="col-sm-4">
+				      <input type="text" style="text-align:center;height:70px" class="form-control" id="movilcreardireccion">
+				    </div>
+				  </div>
+		        </div>
+		        <p style="text-align:center"><button style="WIDTH: 35%;BORDER: 1PX SOLID;" (click)="creardirecciontienda()" data-dismiss="modal" class="btn btn-default">GUARDAR</button></p>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 		        </div>
 		      </div>
 		      

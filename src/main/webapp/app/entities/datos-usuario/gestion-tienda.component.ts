@@ -102,6 +102,39 @@ export class GestionTiendaComponent implements OnInit, OnDestroy {
             );
     }
 
+    public creardirecciontienda() {
+        var direc = $('#direccioncreardireccion').val();
+        console.log(this.datosUsuarios);
+        const cod = $('#codPostalcreardireccion').val();
+        var pob = $('#poblacioncreardireccion').val();
+        var prov = $('#provinciacreardireccion').val();
+        var fijo = $('#fijocreardireccion').val();
+        var movil = $('#movilcreardireccion').val();
+        var nombre = $('#nombrecreardireccion').val();
+        if (
+            direc != undefined &&
+            cod != undefined &&
+            pob != undefined &&
+            prov != undefined &&
+            fijo != undefined &&
+            movil != undefined &&
+            nombre != undefined
+        ) {
+            const meter = {
+                nombre: nombre.toString(),
+                direccion: direc.toString(),
+                provincias: prov.toString(),
+                municipios: pob.toString(),
+                fijo: fijo.toString(),
+                movil: movil.toString(),
+                datosUsuario: this.datosUsuarios[0]
+            };
+            this.subscribeToSaveResponse(this.direccionTiendasService.create(meter));
+            var todos = this.direccionTiendasService.todos;
+            todos[todos.length] = meter;
+        }
+    }
+
     public pagosFuncion() {
         var tienda = this.tiendaInsert;
         var cont = 0;
