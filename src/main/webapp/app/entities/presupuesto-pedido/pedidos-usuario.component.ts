@@ -112,6 +112,15 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         var arrayBueno = [];
         arrayBueno[83] = 3;
         arrayBueno[85] = 42;
+        arrayBueno[85] = 42;
+        arrayBueno[310] = 22;
+        arrayBueno[386] = 15;
+        arrayBueno[541] = 47;
+        arrayBueno[873] = 45;
+        arrayBueno[934] = 29;
+        arrayBueno[1073] = 25;
+        arrayBueno[1187] = 18;
+        arrayBueno[1188] = 34;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         if (filtro == 'TODOS') {

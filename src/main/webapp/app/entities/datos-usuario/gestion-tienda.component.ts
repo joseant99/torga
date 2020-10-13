@@ -73,33 +73,23 @@ export class GestionTiendaComponent implements OnInit, OnDestroy {
     }
     loadAll() {
         var tiendaBuena = [];
-        this.datosUsuarioService
-            .query({
-                page: this.page - 1,
-                size: this.itemsPerPage,
-                sort: this.sort()
-            })
-            .subscribe(
-                (res: HttpResponse<IDatosUsuario[]>) => {
-                    var idCuenta = this.currentAccount['id'];
+        this.datosUsuarioService.findCoger(1).subscribe(data => {
+            var idCuenta = this.currentAccount['id'];
+            console.log(data.body[0]);
+            if (data.body[0]['user'] != null) {
+                if (data.body[0]['user']['id'] == idCuenta) {
+                    tiendaBuena[0] = data.body[0];
+                }
+            }
 
-                    for (let i = 0; i < res.body.length; i++) {
-                        if (res.body[i]['user'] != null) {
-                            if (res.body[i]['user']['id'] == idCuenta) {
-                                tiendaBuena[0] = res.body[i];
-                            }
-                        }
-                    }
-                    if (tiendaBuena[0] != undefined) {
-                        this.direccionTiendasService.query1(tiendaBuena[0]['id']).subscribe(data => {
-                            console.log(data.body);
-                            this.direccionTiendasService.todos = data.body;
-                        });
-                    }
-                    this.paginateDatosUsuarios(tiendaBuena, res.headers);
-                },
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+            if (tiendaBuena[0] != undefined) {
+                this.direccionTiendasService.query1(tiendaBuena[0]['id']).subscribe(data => {
+                    console.log(data.body);
+                    this.direccionTiendasService.todos = data.body;
+                });
+            }
+            this.datosUsuarios = tiendaBuena;
+        });
     }
 
     public creardirecciontienda() {

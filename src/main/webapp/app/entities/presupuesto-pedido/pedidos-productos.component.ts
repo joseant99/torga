@@ -244,7 +244,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     }
 
     public soloMedBuen() {
-        this.loadAll();
+        var idPresu;
+        idPresu = sessionStorage.getItem('presupuesto');
+        this.precioFinalPresuService.query12(idPresu).subscribe(data => {
+            this.precioFinalPresuService.todos = data.body[0];
+            console.log(this.precioFinalPresuService.todos);
+            this.loadAll();
+        });
     }
     previousState() {
         window.history.back();

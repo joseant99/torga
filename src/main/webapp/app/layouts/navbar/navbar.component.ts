@@ -30,11 +30,12 @@ import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupu
 import { RepresenTorgaService } from '../../entities/represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 import { IluminacionProdPrePedService } from '../../entities/iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
+import { DireccionTiendasService } from '../../entities/direccion-tiendas/direccion-tiendas.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { Observable } from 'rxjs';
 import { PrecioTiendaService } from '../../entities/precio-tienda/precio-tienda.service';
 import { JhiMainComponent } from '../main/main.component';
-
+import { PrecioFinalPresuService } from '../../entities/precio-final-presu/precio-final-presu.service';
 import { IPresupuestoArmario } from 'app/shared/model/presupuesto-armario.model';
 import { PresupuestoArmarioService } from '../../entities/presupuesto-armario/presupuesto-armario.service';
 import { IPresupuestoArmarioInteriores } from 'app/shared/model/presupuesto-armario-interiores.model';
@@ -107,8 +108,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private profileService: ProfileService,
         protected interioresService: InterioresService,
         public mainComponent: JhiMainComponent,
+        public direccionTiendasService: DireccionTiendasService,
         protected medidasEspecialesService: MedidasEspecialesService,
         protected jhiAlertService: JhiAlertService,
+        protected precioFinalPresuService: PrecioFinalPresuService,
         protected presupuestoArmarioService: PresupuestoArmarioService,
         private router: Router,
         private modalService: NgbModal,
@@ -11610,7 +11613,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         cestaTodo = cestaTodo + parseFloat(sesion[1]['todoSumadoPrecio']);
 
                         $('#cestaTotal').text(cestaTodo.toFixed(2));
-
+                        $('#textoCesta' + i).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
+                                i +
+                                ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
+                        );
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     } else {
                         $('#modalCesta .modal-body').append(
@@ -15785,6 +15792,40 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('body').removeAttr('class');
         this.router.navigate(['/productos-editar']);
     }
+
+    public mostrarDireccionDeEntrega() {
+        $('#divdireccionentregamodal').css({ display: 'block' });
+    }
+
+    public tiendasDireccionPadentro() {
+        var valor = $('#selectTiendas').val();
+        $('#modalConfirmarCreacionPresu #listaDireccionTiendas').remove();
+        $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
+        var tiendas = this.todasLasTiendas;
+        if (valor != '') {
+            for (let i = 0; i < tiendas.length; i++) {
+                if (tiendas[i]['nombreFiscal'] == valor) {
+                    console.log(tiendas[i]);
+                    this.direccionTiendasService.query1(tiendas[i]['id']).subscribe(data => {
+                        console.log(data.body);
+                        this.direccionTiendasService.todos = data.body;
+                        for (let u = 0; u < data.body.length; u++) {
+                            $('#listaDireccionTiendas').append(
+                                '<option class="' +
+                                    data.body[u]['id'] +
+                                    '" id="' +
+                                    data.body[u]['direccion'] +
+                                    '">' +
+                                    data.body[u]['direccion'] +
+                                    '</option>'
+                            );
+                        }
+                    });
+                }
+            }
+        }
+    }
+
     public tarifa() {
         $('#menuComercialTorga').attr('class', 'collapse');
         $('#menuTienda').attr('class', 'collapse');
@@ -16158,6 +16199,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 codigo: 'PR-' + idDefinitiva,
                 pedido: 0
             };
+            var direcArrayGG;
+            var direccionTiendas = this.direccionTiendasService.todos;
+            var valorCogidoUInpitra = $('#selectDireccionTiendas').val();
+            for (let s = 0; s < direccionTiendas.length; s++) {
+                if (direccionTiendas[s]['direccion'] == valorCogidoUInpitra) {
+                    direcArrayGG = direccionTiendas[s];
+                }
+            }
+            if (memo.length != 0) {
+                if (memo[1]['checked'] == true) {
+                    const pagoPrecPre = {
+                        presupuestoPedido: prueba1,
+                        direccionTiendas: direcArrayGG
+                    };
+                    this.subscribeToSaveResponse(this.precioFinalPresuService.create(pagoPrecPre));
+                }
+            }
             var prodPrePed;
             var idProdCar = 0;
             for (let m = 0; m < prodCarr.length; m++) {

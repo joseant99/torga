@@ -9,25 +9,25 @@
     		<br>
     		<div>
     	
-    			<div style="margin-left:30%" class="form-group row">
+    			<div style="margin-left:30%" class="form-group row" id="divcontCSS">
 				    <label for="nombreComercial" class="col-sm-2 col-form-label">CODIGO CLIENTE</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreComercial" value="{{datosUsuario.codigo}}" disabled>
 				    </div>
 				  </div>
-				<div style="margin-left:30%" class="form-group row">
+				<div style="margin-left:30%" class="form-group row" id="divcontCSS">
 				    <label for="nombreComercial" class="col-sm-2 col-form-label">NOMBRE FISCAL</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="nombreFiscal" value="{{datosUsuario.nombreFiscal}}" disabled>
 				    </div>
 				  </div>
-				<div style="margin-left:30%" class="form-group row">
+				<div style="margin-left:30%" class="form-group row" id="divcontCSS">
 				    <label for="movil" class="col-sm-2 col-form-label">CIF/NIF</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.cif}}" disabled>
 				    </div>
 				  </div>
-				<div style="margin-left:30%" class="form-group row">
+				<div style="margin-left:30%" class="form-group row" id="divcontCSS">
 				    <label for="movil" class="col-sm-2 col-form-label">REPRESENTANTE</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="telefono" value="{{datosUsuario.repreGCompra.nombre}}" disabled>
@@ -51,39 +51,39 @@
     		</div>
     		<br>
     		<div style="float:left;width:75%;margin-left: 13%;margin-bottom:5%;margin-right: 13%;">
-    		<div *ngFor="let direc of direccionTiendasService.todos" style="FLOAT: LEFT;WIDTH: 47%;background-color:#F4F4F4;margin-right:40px;padding-top:40px;padding-bottom:40px;margin-top:40px">
-    			<div style="margin-left: 5%;width: 160%;" class="form-group row">
+    		<div *ngFor="let direc of direccionTiendasService.todos" id="divprimerodedirecciones" style="FLOAT: LEFT;WIDTH: 47%;background-color:#F4F4F4;margin-right:40px;padding-top:40px;padding-bottom:40px;margin-top:40px">
+    			<div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Direccion</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.direccion}}" disabled>
 				    </div>
 				  </div>
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Codigo Postal</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.codPostal}}" disabled>
 				    </div>
 				  </div>
-				   <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				   <div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Poblacion</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.municipios}}" disabled>
 				    </div>
 				  </div>
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Provincia</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.provincias}}" disabled>
 				    </div>
 				  </div>
 				 
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Fijo</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.fijo}}" disabled>
 				    </div>
 				  </div>
-				  <div style="margin-left: 5%;width: 160%;" class="form-group row">
+				  <div style="margin-left: 5%;width: 160%;" class="form-group row" id="divdeldivdentrodirec">
 				    <label for="email" class="col-sm-2 col-form-label">Movil</label>
 				    <div class="col-sm-4">
 				      <input type="text" style="text-align:center;height:70px" class="form-control" id="codPostal" value="{{direc.movil}}" disabled>

@@ -52,7 +52,15 @@ Browser Upgrade Prompt
 #acabadoTiradorProbar2 {
     display: none;
 }
-
+#clienteDivTienda {
+    float: LEFT;
+    width: 40%;
+}
+#clienteDivDireccion {
+    float: LEFT;
+    width: 40%;
+    margin-left: 10%;
+}
 #imagenApoyo0 {
     height: 280px;
 }
@@ -15399,6 +15407,28 @@ ui bootstrap tweaks
     }
     #textoCesta16 {
         margin-top: 0px !important;
+    }
+    #clienteDivTienda {
+        float: LEFT;
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 50px;
+    }
+    #clienteDivDireccion {
+        float: LEFT;
+        width: 80%;
+        margin-left: 10%;
+    }
+    #divcontCSS {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+    #divprimerodedirecciones {
+        width: 100% !important;
+    }
+    #divdeldivdentrodirec {
+        margin-left: 0% !important;
+        width: 100% !important;
     }
 }
 
