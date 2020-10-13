@@ -85,7 +85,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         public presupuestoPedidoService: PresupuestoPedidoService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         protected contactoFabricaService: ContactoFabricaService,
-        protected precioFinalPresuService: PrecioFinalPresuService,
+        public precioFinalPresuService: PrecioFinalPresuService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected parseLinks: JhiParseLinks,
         protected precioTiendaService: PrecioTiendaService,
