@@ -376,7 +376,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     }
 
     transition() {
-        this.router.navigate(['/presupuesto-usuario'], {
+        this.router.navigate(['/pedidos-usuario'], {
             queryParams: {
                 page: this.page,
                 size: this.itemsPerPage,
