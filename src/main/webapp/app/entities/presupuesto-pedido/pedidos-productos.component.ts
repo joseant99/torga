@@ -16325,7 +16325,11 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
     public textoObservacionesFuncion() {
         $('#textoObservaciones').css({ display: 'block' });
+        $('#botonGuardarobser').attr('disabled', 'disabled');
         var texto = $('#textAreaObs').val();
+        setTimeout(function() {
+            $('#botonGuardarobser').removeAttr('disabled');
+        }, 5000);
         if (texto != '') {
             $('#textAreaObs').empty();
             $('#textoObservaciones').empty();

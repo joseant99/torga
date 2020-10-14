@@ -15800,10 +15800,25 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public tiendasDireccionPadentro() {
-        var valor = $('#selectTiendas').val();
+        var valor;
+        if (screen.width < 800) {
+            valor = $('#selectTiendaDelNav').val();
+        } else {
+            valor = $('#selectTiendas').val();
+        }
+
         $('#modalConfirmarCreacionPresu #listaDireccionTiendas').remove();
+        $('#selectDireccionTiendaDelNav').empty();
+        $('#selectDireccionTiendaDelNav').append('<option></option>');
         $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
         var tiendas = this.todasLasTiendas;
+        if (screen.width < 800) {
+            $('#selectDireccionTiendas').css({ display: 'none' });
+            $('#selectDireccionTiendaDelNav').css({ display: 'revert' });
+        } else {
+            $('#selectDireccionTiendas').css({ display: 'revert' });
+            $('#selectDireccionTiendaDelNav').css({ display: 'none' });
+        }
         if (valor != '') {
             for (let i = 0; i < tiendas.length; i++) {
                 if (tiendas[i]['nombreFiscal'] == valor) {
@@ -15813,6 +15828,15 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         this.direccionTiendasService.todos = data.body;
                         for (let u = 0; u < data.body.length; u++) {
                             $('#listaDireccionTiendas').append(
+                                '<option class="' +
+                                    data.body[u]['id'] +
+                                    '" id="' +
+                                    data.body[u]['direccion'] +
+                                    '">' +
+                                    data.body[u]['direccion'] +
+                                    '</option>'
+                            );
+                            $('#selectDireccionTiendaDelNav').append(
                                 '<option class="' +
                                     data.body[u]['id'] +
                                     '" id="' +
@@ -16203,19 +16227,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             };
             var direcArrayGG;
             var direccionTiendas = this.direccionTiendasService.todos;
-            var valorCogidoUInpitra = $('#selectDireccionTiendas').val();
-            for (let s = 0; s < direccionTiendas.length; s++) {
-                if (direccionTiendas[s]['direccion'] == valorCogidoUInpitra) {
-                    direcArrayGG = direccionTiendas[s];
-                }
+            var valorCogidoUInpitra;
+            if (screen.width < 800) {
+                valorCogidoUInpitra = $('#selectDireccionTiendaDelNav').val();
+            } else {
+                valorCogidoUInpitra = $('#selectDireccionTiendas').val();
             }
-            if (memo.length != 0) {
-                if (memo[1]['checked'] == true) {
-                    const pagoPrecPre = {
-                        presupuestoPedido: prueba1,
-                        direccionTiendas: direcArrayGG
-                    };
-                    this.subscribeToSaveResponse100(this.precioFinalPresuService.create(pagoPrecPre));
+            if (valorCogidoUInpitra != '') {
+                for (let s = 0; s < direccionTiendas.length; s++) {
+                    if (direccionTiendas[s]['direccion'] == valorCogidoUInpitra) {
+                        direcArrayGG = direccionTiendas[s];
+                    }
+                }
+                if (memo.length != 0) {
+                    if (memo[1]['checked'] == true) {
+                        const pagoPrecPre = {
+                            presupuestoPedido: prueba1,
+                            direccionTiendas: direcArrayGG
+                        };
+                        this.subscribeToSaveResponse100(this.precioFinalPresuService.create(pagoPrecPre));
+                    }
                 }
             }
             var prodPrePed;
