@@ -35,6 +35,7 @@ import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dim
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 import { VistaAdminService } from '../vista-admin/vista-admin.service';
 import { JhiMainComponent } from '../../layouts/main/main.component';
+import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 @Component({
     providers: [JhiMainComponent],
     selector: 'jhi-presupuesto-productos',
@@ -77,6 +78,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
     numero: any;
     tiendaCargadaPresu: any;
     singulares: any;
+    precioPresu: any;
     vitrinas: any;
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
@@ -167,6 +169,7 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             console.log(data.body);
             var datos = data.body;
             this.direccionTiendasService.todos = data.body;
+            $('#direccion').empty();
             $('#direccion').append('<option></option>');
             for (let u = 0; u < data.body.length; u++) {
                 $('#direccion').append(
@@ -224,12 +227,23 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
             precioDescuento: parseFloat(meterQuitadoDescuento),
             direccionTiendas: direccion
         };
-        this.subscribeToSaveResponse(this.presupuestoPedidoService.update(presupuestoActualizado));
-        this.subscribeToSaveResponse(this.precioFinalPresuService.create(precioPresu));
+        this.precioPresu = precioPresu;
+        this.subscribeToSaveResponse100(this.presupuestoPedidoService.update(presupuestoActualizado));
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<IPresupuestoPedido>>) {
         result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
+
+    protected subscribeToSaveResponse100(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe(
+            (res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess100(),
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
+    }
+    protected subscribeToSaveResponse101(result: Observable<HttpResponse<IPrecioFinalPresu>>) {
+        result.subscribe((res: HttpResponse<IPrecioFinalPresu>) => this.onSaveSuccess101(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
     protected subscribeToSaveResponse1(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
         result.subscribe(
             (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess(),
@@ -239,6 +253,16 @@ export class PresupuestoProductosComponent implements OnInit, OnDestroy, AfterVi
 
     ngAfterViewInit() {}
     protected onSaveSuccess() {
+        this.isSaving = false;
+        this.router.navigate(['/pedidos-producto']);
+    }
+
+    protected onSaveSuccess100() {
+        this.isSaving = false;
+        var precioPresu = this.precioPresu;
+        this.subscribeToSaveResponse101(this.precioFinalPresuService.create(precioPresu));
+    }
+    protected onSaveSuccess101() {
         this.isSaving = false;
         this.router.navigate(['/pedidos-producto']);
     }

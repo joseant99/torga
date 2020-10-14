@@ -6,7 +6,7 @@
 		    		<p id="textoPedido" style="text-align:center;font-size:30px">PEDIDOS: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
 		    		<p id="textoPedido" style="text-align:center;font-size:30px">FECHA:{{productosPresupuestoPedidos.presupuestoPedido?.fecha_pedido}}</p>
 		    		
-		    		<div style="margin-top:40px;border: 1px solid;" id="clienteDivDireccion" *ngIf="precioFinalPresuService.todos.direccionTiendas !== null">
+		    		<div style="margin-top:40px;border: 1px solid;" id="clienteDivDireccion" *ngIf="precioFinalPresuService.todos !== undefined && precioFinalPresuService.todos.direccionTiendas !== null">
 		    			<p style="font-size:16px;background-color:black;color:white" id="metertamanotienda">MERCANCIA ENTREGADA EN:</p>
 		    			<p style="font-size:16px">{{precioFinalPresuService.todos.direccionTiendas.nombre}}</p>
 		    			<p style="font-size:16px">{{precioFinalPresuService.todos.direccionTiendas.direccion}}</p>

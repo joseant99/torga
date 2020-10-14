@@ -42,6 +42,8 @@ import { IPresupuestoArmarioInteriores } from 'app/shared/model/presupuesto-arma
 import { PresupuestoArmarioInterioresService } from '../../entities/presupuesto-armario-interiores/presupuesto-armario-interiores.service';
 import { IPresupuestoArmarioPuertas } from 'app/shared/model/presupuesto-armario-puertas.model';
 import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-armario-puertas/presupuesto-armario-puertas.service';
+import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
+
 @Component({
     providers: [JhiMainComponent],
     selector: 'jhi-navbar',
@@ -16213,7 +16215,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         presupuestoPedido: prueba1,
                         direccionTiendas: direcArrayGG
                     };
-                    this.subscribeToSaveResponse(this.precioFinalPresuService.create(pagoPrecPre));
+                    this.subscribeToSaveResponse100(this.precioFinalPresuService.create(pagoPrecPre));
                 }
             }
             var prodPrePed;
@@ -16668,6 +16670,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             (res: HttpResponse<IAcabadosProductosPresupuestoPedido>) => this.onSaveSuccess(),
             (res: HttpErrorResponse) => this.onSaveError()
         );
+    }
+    protected subscribeToSaveResponse100(result: Observable<HttpResponse<IPrecioFinalPresu>>) {
+        result.subscribe((res: HttpResponse<IPrecioFinalPresu>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     toggleNavbar() {
