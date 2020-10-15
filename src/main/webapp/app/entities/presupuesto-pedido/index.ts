@@ -12,3 +12,4 @@ export * from './presupuesto-pedido.route';
 export * from './presupuesto-productos.component';
 export * from './presupuesto-puntos.component';
 export * from './presupuesto-precios.component';
+export * from './pedidos-productos-nuevavista.component';

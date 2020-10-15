@@ -61,8 +61,79 @@ Browser Upgrade Prompt
     width: 40%;
     margin-left: 10%;
 }
+.cabecerapedidostodo0 {
+    display: block;
+}
+.cabecerapedidostodo1 {
+    display: none;
+}
+.cabecerapedidostodo2 {
+    display: none;
+}
+.cabecerapedidostodo3 {
+    display: none;
+}
+.cabecerapedidostodo4 {
+    display: none;
+}
+.cabecerapedidostodo5 {
+    display: none;
+}
+.cabecerapedidostodo6 {
+    display: none;
+}
+.cabecerapedidostodo7 {
+    display: none;
+}
+.cabecerapedidostodo8 {
+    display: none;
+}
+.cabecerapedidostodo9 {
+    display: none;
+}
+.cabecerapedidostodo10 {
+    display: none;
+}
+.cabecerapedidostodo11 {
+    display: none;
+}
+.cabecerapedidostodo12 {
+    display: none;
+}
+.cabecerapedidostodo13 {
+    display: none;
+}
+.cabecerapedidostodo14 {
+    display: none;
+}
+.cabecerapedidostodo15 {
+    display: none;
+}
+.cabecerapedidostodo16 {
+    display: none;
+}
+.cabecerapedidostodo17 {
+    display: none;
+}
+.cabecerapedidostodo18 {
+    display: none;
+}
+.cabecerapedidostodo19 {
+    display: none;
+}
+.cabecerapedidostodo20 {
+    display: none;
+}
 #imagenApoyo0 {
     height: 280px;
+}
+
+#divderechapedidodatos {
+    width: 15%;
+    position: absolute;
+    right: 10%;
+    border: 1px solid;
+    top: 5%;
 }
 #imagenApoyo1 {
     height: 280px;
@@ -15429,6 +15500,17 @@ ui bootstrap tweaks
     #divdeldivdentrodirec {
         margin-left: 0% !important;
         width: 100% !important;
+    }
+    #imagenlogopedidosprod {
+        display: none;
+    }
+    #divderechapedidodatos {
+        width: 80%;
+        border: 1px solid;
+        top: 5%;
+        margin-left: 10%;
+        right: auto;
+        position: relative;
     }
 }
 

@@ -67,6 +67,15 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "canteado")
     private String canteado;
     
+    @Column(name = "piloto_apoyo")
+    private String pilotoApoyo;
+    
+    @Column(name = "piloto_usb")
+    private String pilotoUsb;
+    
+    @Column(name = "piloto_luz")
+    private String pilotoLuz;
+    
     @ManyToOne
     @JsonIgnoreProperties("")
     private Usb usb;
@@ -134,6 +143,45 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setCanteado(String canteado) {
         this.canteado = canteado;
+    }
+    
+    public String getPilotoApoyo() {
+        return pilotoApoyo;
+    }
+
+    public ProductosPresupuestoPedidos pilotoApoyo(String pilotoApoyo) {
+        this.pilotoApoyo = pilotoApoyo;
+        return this;
+    }
+
+    public void setPilotoApoyo(String pilotoApoyo) {
+        this.pilotoApoyo = pilotoApoyo;
+    }
+    
+    public String getPilotoUsb() {
+        return pilotoUsb;
+    }
+
+    public ProductosPresupuestoPedidos pilotoUsb(String pilotoUsb) {
+        this.pilotoUsb = pilotoUsb;
+        return this;
+    }
+
+    public void setPilotoUsb(String pilotoUsb) {
+        this.pilotoUsb = pilotoUsb;
+    }
+    
+    public String getPilotoLuz() {
+        return pilotoLuz;
+    }
+
+    public ProductosPresupuestoPedidos pilotoLuz(String pilotoLuz) {
+        this.pilotoLuz = pilotoLuz;
+        return this;
+    }
+
+    public void setPilotoLuz(String pilotoLuz) {
+        this.pilotoLuz = pilotoLuz;
     }
 
     public ProductosDormitorio getProductosDormitorio() {

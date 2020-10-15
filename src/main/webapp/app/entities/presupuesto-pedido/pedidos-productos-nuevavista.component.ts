@@ -37,10 +37,10 @@ import { VistaAdminService } from '../vista-admin/vista-admin.service';
 import { JhiMainComponent } from '../../layouts/main/main.component';
 @Component({
     providers: [JhiMainComponent],
-    selector: 'jhi-pedidos-productos',
-    templateUrl: './pedidos-productos.component.html'
+    selector: 'jhi-pedidos-productos-nuevavista',
+    templateUrl: './pedidos-productos-nuevavista.component.html'
 })
-export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewInit {
+export class PedidosProductosNuevaVistaComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     error: any;
     isSaving: boolean;
@@ -120,18 +120,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var divToPrint = document.getElementById('imprimir');
         var ventana = window.open('');
         ventana.document.write(
-            '<html><head><style type="text/css">#aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 12% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 12% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
+            '<html><head><style type="text/css">#textoPedido{font-size:22px !important;} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter5 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter6 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter7 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter8 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter9 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter10 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter11 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter12 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter13 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter14 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter15 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter16 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter17 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter18 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter19 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter20 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter21 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #pNombreProd{font-size:18px !important;} #datosMeter1 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter2 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #datosMeter3 {width:35% !important;font-size:12px;text-align: left !important;margin-left: 10%;} #spanobser{margin-top:8% !important;margin-left: 6% !important;font-size: 15px; } #textoObservaciones{margin-top:6% !important;display: block !important;float: left !important;margin-left: 5% !important;width: 60% !important;height: 80px !important;border: 0 !important;} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;} #imagen0{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen1{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen2{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen3{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen4{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen5{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen6{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen7{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen8{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen9{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen10{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen11{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen12{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen13{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen14{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen15{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen16{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen17{ width:20% !important; height:183px !important;margin-left:20px !important;} #imagen18{ width:20% !important; height:183px !important;margin-left:20px !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{float:right !important; width:100% !important;} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
                 document.title +
                 '</title>'
         );
         ventana.document.write('</head><body style="font-family: Lato , sans-serif;font-weight: 400;">');
         ventana.document.write(divToPrint.innerHTML);
         ventana.document.write('</body></html>');
-        console.log(ventana);
+
         ventana.document.close();
         ventana.focus();
         ventana.print();
-
         return true;
     }
 
@@ -357,9 +356,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     if (toma[i]['presupuestoPedido'] != null) {
                         $('#textoObservaciones').css({ display: 'block' });
                         if (toma[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
-                            $('#aquisoloparamostrar #divobservacionesparaimprimir #textoObservaciones').append(
-                                '<p>' + toma[i]['presupuestoPedido']['observaciones'] + '</p>'
-                            );
+                            $('#textoObservaciones').append('<p>' + toma[i]['presupuestoPedido']['observaciones'] + '</p>');
                         }
                         if (parseFloat(presu) == toma[i]['presupuestoPedido']['id']) {
                             if (toma[i]['productosDormitorio'] != null) {
@@ -11976,7 +11973,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                 if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] == 4) {
                                         $('#datosMeter' + w).append(
-                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Posicion plafones</span> &nbsp;&nbsp;&nbsp;' +
+                                            '<p><span style="font-weight:600">Posicion plafones</span> &nbsp;&nbsp;&nbsp;' +
                                                 productos[w]['direccion'] +
                                                 '</p>'
                                         );
@@ -11994,9 +11991,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             for (let j = 0; j < iluminacion.length; j++) {
                                                 if (iluminacion[j]['productosPresupuestoPedidos']['id'] == productos[i]['id']) {
                                                     $('.' + productos[i]['id'] + 'DatosIluminacion').append(
-                                                        '<p id="pimprimirdatostexto">Luz&nbsp;&nbsp;&nbsp;' +
-                                                            iluminacion[j]['iluminacion']['precio'] +
-                                                            ' pp</p>'
+                                                        '<p>Luz&nbsp;&nbsp;&nbsp;' + iluminacion[j]['iluminacion']['precio'] + ' pp</p>'
                                                     );
                                                     var precioLuz = iluminacion[j]['iluminacion']['precio'];
                                                     var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
@@ -12038,7 +12033,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 315) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' TAPA :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12049,7 +12044,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' CASCO :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12060,7 +12055,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' PUERTA SUP IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12071,7 +12066,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' PUERTA SUP DER :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12082,7 +12077,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' CUBO :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12093,7 +12088,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' PUERTA CEN :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12104,7 +12099,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 6) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' CAJON INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12118,7 +12113,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 107) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12129,7 +12124,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12140,7 +12135,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12153,7 +12148,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 108) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12164,7 +12159,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12175,7 +12170,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12186,7 +12181,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Suplemento :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12199,7 +12194,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 109) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12210,7 +12205,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12221,7 +12216,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12232,7 +12227,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12245,7 +12240,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 295) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12256,7 +12251,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12267,7 +12262,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12278,7 +12273,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12289,7 +12284,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12302,7 +12297,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 296) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12313,7 +12308,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12324,7 +12319,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12335,7 +12330,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12346,7 +12341,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12357,7 +12352,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12371,7 +12366,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 111) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12382,7 +12377,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12393,7 +12388,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12404,7 +12399,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12417,7 +12412,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 110) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12428,7 +12423,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12439,7 +12434,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12450,7 +12445,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12463,7 +12458,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 113) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12474,7 +12469,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12485,7 +12480,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12496,7 +12491,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12509,7 +12504,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 112) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12520,7 +12515,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12531,7 +12526,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12542,7 +12537,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12555,7 +12550,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 114) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12566,7 +12561,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12577,7 +12572,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12588,7 +12583,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12601,7 +12596,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 116) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12612,7 +12607,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12623,7 +12618,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12634,7 +12629,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12645,7 +12640,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12658,7 +12653,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 115) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12669,7 +12664,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12680,7 +12675,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12691,7 +12686,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12702,7 +12697,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12715,7 +12710,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 298) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12726,7 +12721,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12738,7 +12733,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12749,7 +12744,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12760,7 +12755,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12771,7 +12766,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12785,7 +12780,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 297) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12796,7 +12791,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12807,7 +12802,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12818,7 +12813,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12829,7 +12824,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12840,7 +12835,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12853,7 +12848,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 118) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12864,7 +12859,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12875,7 +12870,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12886,7 +12881,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12897,7 +12892,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12910,7 +12905,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 117) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12921,7 +12916,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12932,7 +12927,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12943,7 +12938,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12954,7 +12949,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12967,7 +12962,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 119) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12978,7 +12973,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -12989,7 +12984,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13002,7 +12997,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 299) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13013,7 +13008,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13024,7 +13019,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13035,7 +13030,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13048,7 +13043,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 301) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13059,7 +13054,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13070,7 +13065,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13081,7 +13076,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13092,7 +13087,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13105,7 +13100,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 300) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13116,7 +13111,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13127,7 +13122,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13138,7 +13133,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13149,7 +13144,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13163,7 +13158,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 302) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13174,7 +13169,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13185,7 +13180,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Costados y suelo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13196,7 +13191,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13207,7 +13202,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13220,7 +13215,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 171) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13231,7 +13226,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13242,7 +13237,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13255,7 +13250,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 172) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13266,7 +13261,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13277,7 +13272,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13290,7 +13285,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 173) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13301,7 +13296,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13312,7 +13307,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13325,7 +13320,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 174) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13336,7 +13331,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13347,7 +13342,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13358,7 +13353,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13369,7 +13364,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13380,7 +13375,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13391,7 +13386,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 6) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13405,7 +13400,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 175) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13416,7 +13411,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13427,7 +13422,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13438,7 +13433,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Interior :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13451,7 +13446,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 176) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13462,7 +13457,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13473,7 +13468,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13484,7 +13479,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13495,7 +13490,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13509,7 +13504,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 177) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13520,7 +13515,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13533,7 +13528,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 178) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13546,7 +13541,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 179) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13560,7 +13555,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 159) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13571,7 +13566,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13584,7 +13579,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 158) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13595,7 +13590,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13608,7 +13603,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 161) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13619,7 +13614,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13630,7 +13625,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13643,7 +13638,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 160) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13654,7 +13649,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13665,7 +13660,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13678,7 +13673,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 163) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13689,7 +13684,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13703,7 +13698,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 162) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13714,7 +13709,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13727,7 +13722,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 331) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13738,7 +13733,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13751,7 +13746,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 330) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13762,7 +13757,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13775,7 +13770,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 165) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13786,7 +13781,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13797,7 +13792,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13810,7 +13805,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 164) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13821,7 +13816,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13832,7 +13827,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13845,7 +13840,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 167) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13856,7 +13851,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13867,7 +13862,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13880,7 +13875,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 166) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13891,7 +13886,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13902,7 +13897,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13915,7 +13910,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 169) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13926,7 +13921,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13937,7 +13932,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13950,7 +13945,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 168) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13961,7 +13956,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13972,7 +13967,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13985,7 +13980,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 170) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -13996,7 +13991,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cruceta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14007,7 +14002,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14018,7 +14013,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14029,7 +14024,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14043,7 +14038,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 180) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14054,7 +14049,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14065,7 +14060,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14078,7 +14073,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 181) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14089,7 +14084,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14100,7 +14095,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14113,7 +14108,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 183) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14124,7 +14119,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14135,7 +14130,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14146,7 +14141,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14159,7 +14154,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 182) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14170,7 +14165,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14181,7 +14176,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14192,7 +14187,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Puerta :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14206,7 +14201,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 204) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14219,7 +14214,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 332) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14232,7 +14227,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 205) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14245,7 +14240,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 333) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14258,7 +14253,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 206) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14271,7 +14266,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 207) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14284,7 +14279,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 208) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14297,7 +14292,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 209) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14310,7 +14305,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 210) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14323,7 +14318,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 211) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14337,7 +14332,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 213) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14348,7 +14343,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14361,7 +14356,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 214) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14372,7 +14367,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14386,7 +14381,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 21) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14397,7 +14392,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14410,7 +14405,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 216) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14421,7 +14416,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14434,7 +14429,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 217) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14445,7 +14440,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14456,7 +14451,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14470,7 +14465,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 218) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14481,7 +14476,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14494,7 +14489,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 219) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14505,7 +14500,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14518,7 +14513,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 220) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14529,7 +14524,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14542,7 +14537,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 221) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14553,7 +14548,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14566,7 +14561,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 222) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14577,7 +14572,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14590,7 +14585,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 223) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14601,7 +14596,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p ><span style="font-weight:600">' +
                                                                 (k + 1) +
                                                                 ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
@@ -14846,7 +14841,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 282
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +
+                                                        '<p ><span style="font-weight:600">Acabado ' +
                                                             contador +
                                                             '</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                             contador +
@@ -15814,67 +15809,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             $('#precioSubtotal').text(subTotal.toFixed(0));
                                             $('#totalDescuentoTexto').text(subTotal.toFixed(0));
-                                            $('#divimprimirtotalapagar' + i).text(subTotal.toFixed(0));
-                                            if (i == 1) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 2) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 3) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 4) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 5) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 6) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 7) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 8) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 9) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 10) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 11) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 12) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 13) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 14) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 15) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 16) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 17) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 18) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 19) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 20) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (productos[w]['tiposApoyo'] != null) {
                                                 apoyo = productos[w]['tiposApoyo'];
                                             }
@@ -15889,7 +15824,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             if (luz != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Luz</span>: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
+                                                    '<p><span style="font-weight:600">Luz</span>: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
                                                         i +
                                                         '">' +
                                                         luz['precio'] +
@@ -15911,7 +15846,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             if (usb != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                    '<p><span style="font-weight:600">' +
                                                         usb['mensaje'] +
                                                         '</span>: &nbsp;&nbsp;&nbsp; <span id="precioUsb' +
                                                         i +
@@ -15933,7 +15868,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             if (apoyo != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                    '<p><span style="font-weight:600">' +
                                                         apoyo['productoApoyo']['nombre'] +
                                                         '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
                                                         i +
@@ -16398,7 +16333,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         if (texto != '') {
             $('#textAreaObs').empty();
             $('#textoObservaciones').empty();
-            $('#aquisoloparamostrar #divobservacionesparaimprimir #textoObservaciones').append('<p>' + texto + '</p>');
             $('#textoObservaciones').append('<p>' + texto + '</p>');
             $('#textAreaObs').val('');
             var presu = this.productos[0]['presupuestoPedido'];
@@ -17040,29 +16974,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         }
 
         var blob = doc.output('blob');
-        var divToPrint = document.getElementById('imprimir');
-        var ventana = window.open('');
-        var file = new File(
-            [
-                '<html><head><style type="text/css">#aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 12% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 12% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
-                    document.title +
-                    '</title>'
-            ],
-            'foo.html',
-            {
-                type: 'text/plain'
-            }
-        );
-        ventana.document.write(
-            '<html><head><style type="text/css">#aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 12% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 12% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
-                document.title +
-                '</title>'
-        );
-        ventana.document.write('</head><body style="font-family: Lato , sans-serif;font-weight: 400;">');
-        ventana.document.write(divToPrint.innerHTML);
-        ventana.document.write('</body></html>');
         console.log(blob);
-
+        var file = new File([blob], 'presupdf.pdf');
         console.log(file);
         this.vistaadminService.pushFileToStorageExcel1(file, correo).subscribe(event => {
             console.log(event);
