@@ -75,6 +75,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     productosPresupuestoPedidos: any;
     tiendaNombre: any;
     numero: any;
+    arraysaberimagenes: any;
     tiendaCargadaPresu: any;
     singulares: any;
     vitrinas: any;
@@ -120,7 +121,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var divToPrint = document.getElementById('imprimir');
         var ventana = window.open('');
         ventana.document.write(
-            '<html><head><style type="text/css">#aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 12% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 12% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
+            '<html><head><style type="text/css">#esteDivPrueba0{margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba1{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 8% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 35% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{display:none} .estoesundivparaprobar{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;display:block !important;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
                 document.title +
                 '</title>'
         );
@@ -11934,7 +11935,58 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         ].toFixed(0);
                     }
                 }
-
+                var arraymeterparasaberespacio = [];
+                if (productosPresupuesto.length == 1) {
+                    arraymeterparasaberespacio[0] = 1;
+                }
+                if (productosPresupuesto.length == 2) {
+                    arraymeterparasaberespacio[0] = 2;
+                }
+                if (productosPresupuesto.length == 3) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 3;
+                }
+                if (productosPresupuesto.length == 4) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                }
+                if (productosPresupuesto.length == 5) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 5;
+                }
+                if (productosPresupuesto.length == 6) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                }
+                if (productosPresupuesto.length == 7) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 7;
+                }
+                if (productosPresupuesto.length == 8) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                }
+                if (productosPresupuesto.length == 9) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                    arraymeterparasaberespacio[4] = 9;
+                }
+                if (productosPresupuesto.length == 10) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                    arraymeterparasaberespacio[4] = 10;
+                }
+                this.arraysaberimagenes = arraymeterparasaberespacio;
                 this.productos = productosPresupuesto;
 
                 this.interioresArmario = todosInteriores;
@@ -11963,6 +12015,58 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 var precioSingulares = this.singulares;
                 var acaComprobar = 0;
                 console.log(productos);
+                var arraymeterparasaberespacio = [];
+                if (productos.length == 1) {
+                    arraymeterparasaberespacio[0] = 1;
+                }
+                if (productos.length == 2) {
+                    arraymeterparasaberespacio[0] = 2;
+                }
+                if (productos.length == 3) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 3;
+                }
+                if (productos.length == 4) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                }
+                if (productos.length == 5) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 5;
+                }
+                if (productos.length == 6) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                }
+                if (productos.length == 7) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 7;
+                }
+                if (productos.length == 8) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                }
+                if (productos.length == 9) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                    arraymeterparasaberespacio[4] = 9;
+                }
+                if (productos.length == 10) {
+                    arraymeterparasaberespacio[0] = 2;
+                    arraymeterparasaberespacio[1] = 4;
+                    arraymeterparasaberespacio[2] = 6;
+                    arraymeterparasaberespacio[3] = 8;
+                    arraymeterparasaberespacio[4] = 10;
+                }
+                this.arraysaberimagenes = arraymeterparasaberespacio;
                 console.log('aqui');
                 for (let w = 0; w < productos.length; w++) {
                     //setTimeout(function() {
@@ -15767,10 +15871,25 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                     nombreCargarImagen +
                                                                     '.jpeg">'
                                                             );
+                                                            $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                '<img id="imagenPresupues" style="z-index:' +
+                                                                    (100 - i) +
+                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                    nombreCargarImagen +
+                                                                    '.jpeg">'
+                                                            );
                                                         }
                                                     } else {
                                                         if (contador == 1) {
                                                             $('#imagen' + w).append(
+                                                                '<img id="imagenPresupues" style="z-index:' +
+                                                                    (100 - i) +
+                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                    nombreCargarImagen +
+                                                                    '.jpeg">'
+                                                            );
+
+                                                            $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                                 '<img id="imagenPresupues" style="z-index:' +
                                                                     (100 - i) +
                                                                     ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
@@ -15782,6 +15901,14 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 } else {
                                                     if (contador == 1) {
                                                         $('#imagen' + w).append(
+                                                            '<img id="imagenPresupues" style="z-index:' +
+                                                                (100 - i) +
+                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                nombreCargarImagen +
+                                                                '.jpeg">'
+                                                        );
+
+                                                        $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                             '<img id="imagenPresupues" style="z-index:' +
                                                                 (100 - i) +
                                                                 ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
@@ -16194,6 +16321,48 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
     ngOnInit() {
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        var arraymeterparasaberespacio = [];
+
+        arraymeterparasaberespacio[0] = 1;
+        arraymeterparasaberespacio[0] = 2;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 3;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 5;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 6;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 6;
+        arraymeterparasaberespacio[3] = 7;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 6;
+        arraymeterparasaberespacio[3] = 8;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 6;
+        arraymeterparasaberespacio[3] = 8;
+        arraymeterparasaberespacio[4] = 9;
+
+        arraymeterparasaberespacio[0] = 2;
+        arraymeterparasaberespacio[1] = 4;
+        arraymeterparasaberespacio[2] = 6;
+        arraymeterparasaberespacio[3] = 8;
+        arraymeterparasaberespacio[4] = 10;
+
+        this.arraysaberimagenes = arraymeterparasaberespacio;
 
         var idPresu;
         idPresu = sessionStorage.getItem('presupuesto');
