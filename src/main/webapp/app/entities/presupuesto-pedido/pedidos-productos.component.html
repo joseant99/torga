@@ -92,9 +92,9 @@
 		    </div>
 		    
 		    
-		    <div *ngFor="let orden of arraysaberimagenes ;trackBy: trackId; let i=index;">
+		    <div id="estoparaesconderenmovilpc" *ngFor="let orden of arraysaberimagenes ;trackBy: trackId; let i=index;" style="margin-bottom: 50px;float: left;display:none">
 		    	<div class="estoesundivparaprobar" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;display:none;" id="esteDivPrueba{{i}}">
-			    	<div style="width:100%;float:left;margin-bottom:30px;" id="primeroMeterMargin" class="cabecerapedidostodo{{i}}" *ngIf="i == 0">
+			    	<div style="width:100%;float:left;margin-bottom:15px;" id="primeroMeterMargin" class="cabecerapedidostodo{{i}}">
 			    		<img src="../../../content/images/Logo.jpg" style="width: 5%;position: absolute;left: 10%;" id="imagenlogopedidosprod">
 			    		<div>
 			    			<p style="text-align:center;font-size:17px;margin-top: 5px;margin-bottom: 5px;">MUEBLES TORGA, S.L.</p>
@@ -131,134 +131,180 @@
 			    		</div>
 			    		<!--  <a style="float:right;margin-right:20%;margin-bottom:50px;" (click)="mostrarPrecioFabrica()"><img style="max-width:50px;" src="../../../content/images/fabrica.png"/></a>-->
 			    	</div>
-			    	<div style="display:none" id="divreferenciapedido" *ngIf="i == 0">
+			    	<div style="display:none" id="divreferenciapedido">
 			    		<p id="referenciapdivreferencia">REFERENCIA</p>
 			    		<div *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;">
-			    			<p style="text-align:center;font-size:14px" *ngIf="orden > u">{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
-			    			<div *ngIf="orden > u" style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{u}}">
+			    			<p style="text-align:center;font-size:14px" *ngIf="i == 0 && orden > u">{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
+			    			<p style="text-align:center;font-size:14px" *ngIf="i != 0 && orden > u && u>= arraysaberimagenes[i-1]">{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
+			    			<div *ngIf="i == 0 && orden > u" style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{u}}">
+			    			</div>
+			    			<div *ngIf="i != 0 && orden > u && u>= arraysaberimagenes[i-1]" style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{u}}">
 			    			</div>
 			    		</div>
 			    	</div>
-			    	<div style="display:none" id="divUnidadespedido" *ngIf="i == 0">
+			    	<div style="display:none" id="divUnidadespedido" >
 			    		<p id="referenciapdivreferencia">Ud.</p>
-			    		<p style="text-align:center;font-size:14px">1</p>
-			    	</div>
-			    	
-			    	
-			    </div>
-		    </div>
-		    
-		    
-		    <div class="estoesundivparaprobar" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;display:none;margin-top: 0px !important;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;" id="esteDivPrueba{{i}}">
-		    	
-		    	<div id="divparaimagendatosmeter">
-		    		<p id="referenciapdivreferencia" class="queremosquenosevea" style="display:none" *ngIf="i == 0">DESCRIPCION</p>
-		    		<strong class="queremosquenosevea" style="display:none;text-align: center;">{{productosPresupuestoPedidos.productosDormitorio?.nombre}}</strong>
-			    	
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
-			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
-			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
-			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Fondo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
-			    		
-			    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
-			    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} PP</p>
+			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
+			    			<div *ngIf="i == 0 && orden > u" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">1</p>
+			    			</div>
+			    			<div *ngIf="i != 0 && orden > u && u>= arraysaberimagenes[i-1]" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">1</p>
+			    			</div>
 			    		</div>
-			    		<div id="primeroint"></div>
-			    		<div id="segundopuerta"></div>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.ancho}}</p>
-			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.alto}}</p>
-			    		<p id="pimprimirdatostexto">Grosor &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.grosor}}</p>
-			    		<p id="pimprimirdatostexto">Canteado &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.canteado}}</p>
+			    	<div id="divparaimagendatosmeter">
+			    		<p id="referenciapdivreferencia" class="queremosquenosevea" style="display:none">DESCRIPCION</p>
+			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
+			    		
+				    	
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null && i == 0 && orden > u">
+					    		<strong class="queremosquenosevea" style="display:none;text-align: center;margin-top:5px;">{{productosPresupuestoPedidos.productosDormitorio?.nombre}}</strong>
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Fondo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
+					    		
+					    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
+					    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} PP</p>
+					    		</div>
+					    		<div id="primeroint"></div>
+					    		<div id="segundopuerta"></div>
+					    	</div>
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null && i != 0 && orden > u && u>= arraysaberimagenes[i-1]">
+					    		<strong class="queremosquenosevea" style="display:none;text-align: center;margin-top:5px;">{{productosPresupuestoPedidos.productosDormitorio?.nombre}}</strong>
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
+					    		<p id="pimprimirdatostexto"><span style="font-weight:600">Fondo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
+					    		
+					    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
+					    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} PP</p>
+					    		</div>
+					    		<div id="primeroint"></div>
+					    		<div id="segundopuerta"></div>
+					    	</div>
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31 && i == 0 && orden > u">
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.ancho}}</p>
+					    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.alto}}</p>
+					    		<p id="pimprimirdatostexto">Grosor &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.grosor}}</p>
+					    		<p id="pimprimirdatostexto">Canteado &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.canteado}}</p>
+					    	</div>
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && i == 0 && orden > u">
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
+					    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.alto}}</p>
+					    		<p id="pimprimirdatostexto">Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.fondo}}</p>
+					    	</div>
+					    	
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31 && i != 0 && orden > u && u>= arraysaberimagenes[i-1] && orden > u">
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.ancho}}</p>
+					    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.alto}}</p>
+					    		<p id="pimprimirdatostexto">Grosor &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.grosor}}</p>
+					    		<p id="pimprimirdatostexto">Canteado &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.canteado}}</p>
+					    	</div>
+					    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{u}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && i != 0 && orden > u && u>= arraysaberimagenes[i-1] && orden > u">
+					    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+					    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
+					    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.alto}}</p>
+					    		<p id="pimprimirdatostexto">Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.fondo}}</p>
+					    	</div>
+				    	</div>
+				    </div>
+			    	<div style="display:none" id="divUnidadespedido" >
+			    		<p id="referenciapdivreferencia">PRECIO</p>
+			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
+			    			<div *ngIf="i == 0 && orden > u" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+			    			</div>
+			    			<div *ngIf="i != 0 && orden > u && u>= arraysaberimagenes[i-1] && orden > u" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+			    			</div>
+			    		</div>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
-			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
-			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.alto}}</p>
-			    		<p id="pimprimirdatostexto">Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.fondo}}</p>
+			    	<div style="display:none" id="divUnidadespedido" >
+			    		<p id="referenciapdivreferencia">IMPORTE</p>
+			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
+			    			<div *ngIf="i == 0 && orden > u" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+			    			</div>
+			    			<div *ngIf="i != 0 && orden > u && u>= arraysaberimagenes[i-1] && orden > u" style="height:350px;">
+			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+			    			</div>
+			    		</div>
 			    	</div>
+			    	
+			    	
 			    </div>
-			    <div style="display:none" id="divUnidadespedido" *ngIf="i == 0">
-		    		<p id="referenciapdivreferencia">PRECIO</p>
-		    		<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
-		    	</div>
-		    	<div style="display:none" id="divUnidadespedido" *ngIf="i == 0">
-		    		<p id="referenciapdivreferencia">IMPORTE</p>
-		    		<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
-		    	</div>
-	    	</div>
-	    	
-		    
-		    
-		    
-		    
-		    
-		    
-		    
-		    
+			    
+			    <div *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let u=index;">
+			    	<div id="basesImponiblesDiv" style="display:none;margin-left:13.5% !important" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">IMP. BRUTO</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">DTO. 1</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">DTO. 2</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">DTO. 3</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">DTO. GC</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">DTO. PP</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+			    	<div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">B. IMPONIBLE</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none;margin-left:62.5%" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">I.V.A</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">R. EQ</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none;" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia" style="font-size:13px !important;padding-bottom:4px !important">TOTAL A PAGAR</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;" id="divimprimirtotalapagar{{i}}">&nbsp;</p>
+				    </div>
+			    </div>
+			    <div id="divobservacionesparaimprimir1"  style="display:none">
+			    	<span id="spanobser" style="float: left;margin-top: 75px;margin-left: 26%;">OBSERVACIONES: </span><div id="textoObservaciones" style="float: left;margin-top: 3%;margin-left: 5%;width: 26%;border: 1px solid;height: 80px;">
+			    </div>
+			    </div>
+			    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 21.75%;height: 25px;display:none"></div>
+			    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 21.75%;height: 25px;display:none"></div>
+			    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 43.8%;height: 35px;display:none"></div>
+			    
+			    
+		    </div>
 		    <div style="float:right;width:25%;text-align:center;display:none;position: absolute;right: 0;margin-top: 24.8%;" id="datosAnadirEstanteria"></div>
 		    <div id="meterEspeciales" style="display:none"></div>
 		    
 		    
 		    
-		    <div *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;" style="display:none">
-		    	<div id="basesImponiblesDiv" style="display:none;margin-left:13.5% !important" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">IMP. BRUTO</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">DTO. 1</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">DTO. 2</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">DTO. 3</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">DTO. GC</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">DTO. PP</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-		    	<div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">B. IMPONIBLE</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none;margin-left:62.5%" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">I.V.A</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia">R. EQ</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
-			    </div>
-			    <div id="basesImponiblesDiv" style="display:none;" *ngIf="i == 0">
-			    	<p id="referenciapdivreferencia" style="font-size:13px !important;padding-bottom:4px !important">TOTAL A PAGAR</p>
-				   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;" id="divimprimirtotalapagar{{i}}">&nbsp;</p>
-			    </div>
-		    </div>
+		    
 		    
 		    
 		    
 	    </div>
-		    <div id="divobservacionesparaimprimir">
-		    	<span id="spanobser" style="float: left;margin-top: 75px;margin-left: 26%;">OBSERVACIONES: </span><div id="textoObservaciones" style="float: left;margin-top: 3%;margin-left: 5%;width: 26%;border: 1px solid;height: 80px;">
-		    </div>
-		    </div>
-		    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 21.75%;height: 35px;display:none"></div>
-		    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 21.75%;height: 35px;display:none"></div>
-		    <div id="quitamoseldisplaydeldiv" style="float: left;border: 1px solid;width: 43.8%;height: 50px;display:none"></div>
-
+		     <div id="divobservacionesparaimprimir">
+			    	<span id="spanobser" style="float: left;margin-top: 75px;margin-left: 26%;">OBSERVACIONES: </span><div id="textoObservaciones" style="float: left;margin-top: 3%;margin-left: 5%;width: 26%;border: 1px solid;height: 80px;">
+			    </div>
+			    </div>
     <hr id="idLineaDiv" style="width:100%;background-color:black;float:left;height:0px"></hr>
   	 <div style="float:left;width:100%"></div>
 

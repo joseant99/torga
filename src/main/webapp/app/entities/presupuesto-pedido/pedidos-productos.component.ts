@@ -121,7 +121,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var divToPrint = document.getElementById('imprimir');
         var ventana = window.open('');
         ventana.document.write(
-            '<html><head><style type="text/css">#esteDivPrueba0{margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba1{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{border: 1px solid;float: left;width: 55%;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 49% !important;height: 700px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 8% !important;height: 700px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 35% !important;height: 700px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:310px !important; max-height:310px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 70px !important;border: 0 !important;} .primerDivPresu{display:none} .estoesundivparaprobar{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;display:block !important;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
+            '<html><head><style type="text/css">#estoparaesconderenmovilpc{display:block !important;} #esteDivPrueba0{margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba1{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{display:none} #divobservacionesparaimprimir1{border: 1px solid;float: left;width: 55%;display:block !important;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 35% !important;height: 750px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 9% !important;height: 750px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 35% !important;height: 750px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:300px !important; max-height:300px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 45px !important;border: 0 !important;} .primerDivPresu{display:none} .estoesundivparaprobar{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;display:block !important;} #imagen0{width: 100% !important;height: 330px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 330px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 330px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 330px !important;margin-left: 0% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 13% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
                 document.title +
                 '</title>'
         );
@@ -15943,64 +15943,90 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             $('#totalDescuentoTexto').text(subTotal.toFixed(0));
                                             $('#divimprimirtotalapagar' + i).text(subTotal.toFixed(0));
                                             if (i == 1) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
-                                            if (i == 2) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar0').text(subTotal.toFixed(0));
                                             }
                                             if (i == 3) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar1').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 5) {
+                                                $('#divimprimirtotalapagar2').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 7) {
+                                                $('#divimprimirtotalapagar3').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 9) {
+                                                $('#divimprimirtotalapagar4').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 11) {
+                                                $('#divimprimirtotalapagar5').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 13) {
+                                                $('#divimprimirtotalapagar6').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 15) {
+                                                $('#divimprimirtotalapagar7').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 17) {
+                                                $('#divimprimirtotalapagar8').text(subTotal.toFixed(0));
+                                            }
+
+                                            if (i == 19) {
+                                                $('#divimprimirtotalapagar9').text(subTotal.toFixed(0));
+                                            }
+                                            if (i == 2) {
+                                                $('#divimprimirtotalapagar0').text('Sigue..');
+                                                $('#divimprimirtotalapagar1').text(subTotal.toFixed(0));
                                             }
                                             if (i == 4) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar1').text('Sigue..');
+                                                $('#divimprimirtotalapagar2').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 5) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 6) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar2').text('Sigue..');
+                                                $('#divimprimirtotalapagar3').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 7) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 8) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar3').text('Sigue..');
+                                                $('#divimprimirtotalapagar4').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 9) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 10) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar4').text('Sigue..');
+                                                $('#divimprimirtotalapagar5').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 11) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 12) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar5').text('Sigue..');
+                                                $('#divimprimirtotalapagar6').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 13) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 14) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar6').text('Sigue..');
+                                                $('#divimprimirtotalapagar7').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 15) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 16) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar7').text('Sigue..');
+                                                $('#divimprimirtotalapagar8').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 17) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 18) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar8').text('Sigue..');
+                                                $('#divimprimirtotalapagar9').text(subTotal.toFixed(0));
                                             }
-                                            if (i == 19) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
-                                            }
+
                                             if (i == 20) {
-                                                $('#divimprimirtotalapagar' + (i - 1)).text('Sigue..');
+                                                $('#divimprimirtotalapagar9').text('Sigue..');
+                                                $('#divimprimirtotalapagar10').text(subTotal.toFixed(0));
                                             }
                                             if (productos[w]['tiposApoyo'] != null) {
                                                 apoyo = productos[w]['tiposApoyo'];
@@ -16133,6 +16159,83 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                 subTotal = total + productos[w]['precioTotal'];
                                 $('#precioSubtotal').text(subTotal.toFixed(0));
                                 $('#totalDescuentoTexto').text(subTotal.toFixed(0));
+                                $('#divimprimirtotalapagar' + w).text(subTotal.toFixed(0));
+                                if (w == 1) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+                                if (w == 3) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 5) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 7) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 9) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 11) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 13) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 15) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 17) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+
+                                if (w == 19) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text(subTotal.toFixed(0));
+                                }
+                                if (w == 2) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+                                if (w == 4) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 6) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 8) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 10) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 12) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 14) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 16) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 18) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
+
+                                if (w == 20) {
+                                    $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
+                                }
                             }
                         }
                     }
