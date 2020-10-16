@@ -5,11 +5,19 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,10 +64,13 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
+
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
+import com.itextpdf.io.source.OutputStream;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+
 
 
 
@@ -172,7 +183,17 @@ public class FileController {
 	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
 	               // )
 	            //);
+	        HttpPost httpPost = new HttpPost("https://neutrinoapi.net/html5-render");
 	        
+            List<NameValuePair> postData = new ArrayList<>();
+            postData.add(new BasicNameValuePair("user-id", "joseant99"));
+            postData.add(new BasicNameValuePair("api-key", "91OH5fctIRkcHIyhNa7WvJ7scHiaKEcfSNNv85rbJFETbmyl"));
+            postData.add(new BasicNameValuePair("content", "<html><body>Prueba</body></html>"));
+            httpPost.setEntity(new UrlEncodedFormEntity(postData, "UTF-8"));
+ 
+            HttpResponse response = HttpClients.createDefault().execute(httpPost);
+            System.out.println(response); 
+            String jsonStr = EntityUtils.toString(response.getEntity());
 	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
 	                .path("/downloadFile/")
 	                .path(fileName)
@@ -203,7 +224,7 @@ public class FileController {
 	          MimeBodyPart messageBodyPart = new MimeBodyPart();
 	          messageBodyPart = new MimeBodyPart();
 	         
-	          DataSource source = new FileDataSource("src/main/webapp/content/images/imagenesSubidas/presupdf.pdf");
+	          DataSource source = new FileDataSource(fileDownloadUri);
 	          messageBodyPart.setDataHandler(new DataHandler(source));
 	          messageBodyPart.setFileName("presupesto");
 	          multipart.addBodyPart(messageBodyPart);

@@ -113,7 +113,6 @@
     </dependencyManagement>
 
     <dependencies>
-    
 	    <dependency>
 		    <groupId>org.simpleflatmapper</groupId>
 		    <artifactId>sfm-csv</artifactId>
