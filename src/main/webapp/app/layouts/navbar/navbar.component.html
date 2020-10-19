@@ -1502,13 +1502,13 @@
 		        </div>
 		        <div class="modal-body" style="text-align:center">
 		        	<input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" (change)="tiendasDireccionPadentro()" /><select id="selectTiendaDelNav" (change)="tiendasDireccionPadentro()" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
-		        	<div *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-top:25px;" id="divdireccionentregamodal">
-		        		<input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaDireccionTiendas" id="selectDireccionTiendas" name="listaTidir" type="text" /><select id="selectDireccionTiendaDelNav" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:-20px">Direccion Entrega</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
+		        	<div style="margin-top:25px;" id="divdireccionentregamodal">
+		        		<input  style="height:30px;width:180px;margin-right:35px" list="listaDireccionTiendas" id="selectDireccionTiendas" name="listaTidir" type="text" /><select id="selectDireccionTiendaDelNav" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label style="margin-left:-20px">Direccion Entrega</label><br>  
 		        	</div>
-		        	<br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"><input type="text" id="referenciaCliente"> <label  style="margin-left:10px;margin-bottom:25px;" >Referencia Cliente</label><br>
+		        	<br><input type="text" id="referenciaCliente"> <label  style="margin-left:10px;margin-bottom:25px;" >Referencia Cliente</label><br>
 		        	<div id="divinputenviarcarrito">
-		        	 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Activo" (click)="hacerclickcambiartexto(1)" value="Activo" style="display:none"> <span style="display:none" *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">Presupuesto</span>
-     				 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" type="radio" name="estado" id="Inactivo" (click)="hacerclickcambiartexto(2)" value="Inactivo" style="display:none" (click)="mostrarDireccionDeEntrega()" checked> <span *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="display:none">Pedido</span>
+		        	 <input type="radio" name="estado" id="Activo" (click)="hacerclickcambiartexto(1)" value="Activo" style="display:none"> <span style="display:none" >Presupuesto</span>
+     				 <input type="radio" name="estado" id="Inactivo" (click)="hacerclickcambiartexto(2)" value="Inactivo" style="display:none" (click)="mostrarDireccionDeEntrega()" checked> <span style="display:none">Pedido</span>
 		        	</div>
 
 		        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>

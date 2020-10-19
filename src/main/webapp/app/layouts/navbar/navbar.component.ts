@@ -232,6 +232,42 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 }
             });
         }
+        $('#modalConfirmarCreacionPresu #listaDireccionTiendas').remove();
+        $('#selectDireccionTiendaDelNav').empty();
+        $('#selectDireccionTiendaDelNav').append('<option></option>');
+        $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
+        if (screen.width < 800) {
+            $('#selectDireccionTiendas').css({ display: 'none' });
+            $('#selectDireccionTiendaDelNav').css({ display: 'revert' });
+        } else {
+            $('#selectDireccionTiendas').css({ display: 'revert' });
+            $('#selectDireccionTiendaDelNav').css({ display: 'none' });
+        }
+        var tiendaUsada = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.direccionTiendasService.query1(tiendaUsada['id']).subscribe(data => {
+            console.log(data.body);
+            this.direccionTiendasService.todos = data.body;
+            for (let u = 0; u < data.body.length; u++) {
+                $('#listaDireccionTiendas').append(
+                    '<option class="' +
+                        data.body[u]['id'] +
+                        '" id="' +
+                        data.body[u]['direccion'] +
+                        '">' +
+                        data.body[u]['direccion'] +
+                        '</option>'
+                );
+                $('#selectDireccionTiendaDelNav').append(
+                    '<option class="' +
+                        data.body[u]['id'] +
+                        '" id="' +
+                        data.body[u]['direccion'] +
+                        '">' +
+                        data.body[u]['direccion'] +
+                        '</option>'
+                );
+            }
+        });
     }
     public comprobarContrase() {
         var valor = $('#contIdMaqui').val();
@@ -16398,12 +16434,35 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                     };
                                 } else {
+                                    var meterpilotoapoyo;
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 18) {
+                                        meterpilotoapoyo = 1;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 403) {
+                                        meterpilotoapoyo = 7;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 212) {
+                                        meterpilotoapoyo = 2;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 15) {
+                                        meterpilotoapoyo = 4;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 32) {
+                                        meterpilotoapoyo = 5;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 16) {
+                                        meterpilotoapoyo = 3;
+                                    }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 17) {
+                                        meterpilotoapoyo = 6;
+                                    }
                                     prodPrePed = {
                                         productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                         presupuestoPedido: prueba1,
                                         dimensionesProductoTipo: dimen,
                                         tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
+                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
+                                        pilotoApoyo: meterpilotoapoyo
                                     };
                                 }
                             } else {

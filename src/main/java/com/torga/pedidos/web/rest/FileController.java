@@ -5,16 +5,19 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -25,6 +28,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
@@ -70,8 +74,7 @@ import com.itextpdf.html2pdf.HtmlConverter;
 import com.itextpdf.io.source.OutputStream;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
-
-
+import com.pdfcrowd.Pdfcrowd;
 
 
 /**
@@ -172,8 +175,8 @@ public class FileController {
 	    }
 	    
 	    @PostMapping("/uploadFile1")
-	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException, FileNotFoundException, IOException {
-	        String fileName = fileStorageService.storeFile(file);
+	    public ResponseEntity<byte[]> uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException, FileNotFoundException, IOException {
+	    	String fileName = fileStorageService.storeFile(file);
 	        
 	        // IO
 	         // pdfHTML specific code
@@ -183,64 +186,29 @@ public class FileController {
 	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
 	               // )
 	            //);
-	        HttpPost httpPost = new HttpPost("https://neutrinoapi.net/html5-render");
-	        
-            List<NameValuePair> postData = new ArrayList<>();
-            postData.add(new BasicNameValuePair("user-id", "joseant99"));
-            postData.add(new BasicNameValuePair("api-key", "91OH5fctIRkcHIyhNa7WvJ7scHiaKEcfSNNv85rbJFETbmyl"));
-            postData.add(new BasicNameValuePair("content", "<html><body>Prueba</body></html>"));
-            httpPost.setEntity(new UrlEncodedFormEntity(postData, "UTF-8"));
- 
-            HttpResponse response = HttpClients.createDefault().execute(httpPost);
-            System.out.println(response); 
-            String jsonStr = EntityUtils.toString(response.getEntity());
-	        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-	                .path("/downloadFile/")
-	                .path(fileName)
-	                .toUriString();
-	        final String username = "elmuebledigitalprueba@gmail.com";
-	        final String password = "elMuebleDigital2019";
-	        Properties props = new Properties();
-	        props.put("mail.smtp.auth", "true");
-	        props.put("mail.smtp.starttls.enable", "true");
-	        props.put("mail.smtp.host", "smtp.gmail.com");
-	        props.put("mail.smtp.port", "587");
-	        Session session = Session.getInstance(props,
-	          new javax.mail.Authenticator() {
-	          protected PasswordAuthentication getPasswordAuthentication() {
-	            return new PasswordAuthentication(username, password);
-	          }
-	          });
-	        try {
-	          Message message = new MimeMessage(session);
-	          message.setFrom(new InternetAddress(correo));
-	          message.setRecipients(Message.RecipientType.TO,
-	            InternetAddress.parse(correo));
-	          message.setSubject("Presupuesto");
-	          message.setText("Estimado cliente,"
-	            + "\n\n Le damos la bienvenida mediante TLS!");
-	          
-	          Multipart multipart = new MimeMultipart();
-	          MimeBodyPart messageBodyPart = new MimeBodyPart();
-	          messageBodyPart = new MimeBodyPart();
-	         
-	          DataSource source = new FileDataSource(fileDownloadUri);
-	          messageBodyPart.setDataHandler(new DataHandler(source));
-	          messageBodyPart.setFileName("presupesto");
-	          multipart.addBodyPart(messageBodyPart);
+	    	Pdfcrowd.HtmlToPdfClient client =
+	                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
+	    	FileOutputStream fileStream;
+	            // run the conversion and store the result into the "pdf" variable
+	            byte[] pdf = client.convertString("<html>\n" +
+	                "  <body>\n" +
+	                "    Hello World!\n" +
+	                "  </body>\n" +
+	                "</html>");
 
-	          message.setContent(multipart);
+	            // set HTTP response headers
+	            HttpHeaders headers = new HttpHeaders();
+	            headers.add("Content-Type", "application/pdf");
+	            headers.add("Cache-Control", "max-age=0");
+	            headers.add("Accept-Ranges", "none");
+	            headers.add("Content-Disposition", "attachment; filename=\"result.pdf\"");
+	            fileStream = new FileOutputStream("result.pdf");
+	            fileStream.close(); 
+	            System.out.println(fileStream);
+	            System.out.println(pdf);
+	            // send the result in the HTTP response
+	            return new ResponseEntity<>(pdf, headers, HttpStatus.OK);
 
-	          
-	          Transport.send(message);
-	          System.out.println("Correcto!");
-	        } catch (MessagingException e) {
-	          throw new RuntimeException(e);
-	        }
-	        
-	        
-	        return new UploadFileResponse(fileName, fileDownloadUri,
-	                file.getContentType(), file.getSize());
 	    }
 
 	    @PostMapping("/uploadMultipleFiles")
