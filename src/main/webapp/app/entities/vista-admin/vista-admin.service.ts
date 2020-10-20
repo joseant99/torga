@@ -17,6 +17,7 @@ export class VistaAdminService {
     public resourceUrlUploadConfirmacion = SERVER_API_URL + 'api/subirConfirmacion/';
     public resourceUrlUploadExcel = SERVER_API_URL + 'api/uploadFile/';
     public resourceUrlUploadExcel1 = SERVER_API_URL + 'api/uploadFile1/';
+    public resourceUrlUploadExcel2 = SERVER_API_URL + 'api/uploadFile2/';
     public resourceUrlCSV = SERVER_API_URL + '/api/insertPedidosCSV/';
     public resourceUrlExistConfirmacion = SERVER_API_URL + '/api/existeConfirmacion';
     public resourceUrlExistFactura = SERVER_API_URL + '/api/existeFactura';
@@ -36,12 +37,24 @@ export class VistaAdminService {
         return this.http.request(req);
     }
 
-    pushFileToStorageExcel1(file: File, correo: any): Observable<HttpEvent<{}>> {
+    pushFileToStorageExcel1(file: File, correo: any, correoMensaje: any): Observable<HttpEvent<{}>> {
         const formdata: FormData = new FormData();
 
         formdata.append('file', file);
         formdata.append('correo', correo);
+        formdata.append('correoMensaje', correoMensaje);
         const req = new HttpRequest('POST', this.resourceUrlUploadExcel1, formdata, {
+            reportProgress: true,
+            responseType: 'text'
+        });
+
+        return this.http.request(req);
+    }
+
+    pushFileToStorageExcel2(correoMensaje: any): Observable<HttpEvent<{}>> {
+        const formdata: FormData = new FormData();
+        formdata.append('correoMensaje', correoMensaje);
+        const req = new HttpRequest('POST', this.resourceUrlUploadExcel2, formdata, {
             reportProgress: true,
             responseType: 'text'
         });

@@ -175,8 +175,8 @@ public class FileController {
 	    }
 	    
 	    @PostMapping("/uploadFile1")
-	    public ResponseEntity<byte[]> uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo) throws MessagingException, FileNotFoundException, IOException {
-	    	String fileName = fileStorageService.storeFile(file);
+	    public UploadFileResponse uploadFile1(@RequestParam("file") MultipartFile file ,@RequestParam("correo") String correo ,@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
+	    	String fileName = null;
 	        
 	        // IO
 	         // pdfHTML specific code
@@ -186,28 +186,84 @@ public class FileController {
 	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
 	               // )
 	            //);
-	    	Pdfcrowd.HtmlToPdfClient client =
-	                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
-	    	FileOutputStream fileStream;
-	            // run the conversion and store the result into the "pdf" variable
-	            byte[] pdf = client.convertString("<html>\n" +
-	                "  <body>\n" +
-	                "    Hello World!\n" +
-	                "  </body>\n" +
-	                "</html>");
+	    	// create the API client instance
+            Pdfcrowd.HtmlToPdfClient client =
+                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
 
-	            // set HTTP response headers
-	            HttpHeaders headers = new HttpHeaders();
-	            headers.add("Content-Type", "application/pdf");
-	            headers.add("Cache-Control", "max-age=0");
-	            headers.add("Accept-Ranges", "none");
-	            headers.add("Content-Disposition", "attachment; filename=\"result.pdf\"");
-	            fileStream = new FileOutputStream("result.pdf");
-	            fileStream.close(); 
-	            System.out.println(fileStream);
-	            System.out.println(pdf);
-	            // send the result in the HTTP response
-	            return new ResponseEntity<>(pdf, headers, HttpStatus.OK);
+            // run the conversion and write the result to a file
+            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/HelloWorld.pdf");
+            
+            String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+	                .path("/downloadFile/")
+	                .path(fileName)
+	                .toUriString();
+	        final String username = "elmuebledigitalprueba@gmail.com";
+	        final String password = "elMuebleDigital2019";
+	        Properties props = new Properties();
+	        props.put("mail.smtp.auth", "true");
+	        props.put("mail.smtp.starttls.enable", "true");
+	        props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.port", "587");
+	        Session session = Session.getInstance(props,
+	          new javax.mail.Authenticator() {
+	          protected PasswordAuthentication getPasswordAuthentication() {
+	            return new PasswordAuthentication(username, password);
+	          }
+	          });
+	        try {
+	          Message message = new MimeMessage(session);
+	          message.setFrom(new InternetAddress(correo));
+	          message.setRecipients(Message.RecipientType.TO,
+	            InternetAddress.parse(correo));
+	          message.setSubject("Confirmacion de Pedido");
+	          message.setText("Estimado cliente,"
+	            + "\n\n Le damos la bienvenida mediante TLS!");
+	          
+	          Multipart multipart = new MimeMultipart();
+	          MimeBodyPart messageBodyPart = new MimeBodyPart();
+	          messageBodyPart = new MimeBodyPart();
+	         
+	          DataSource source = new FileDataSource("HelloWorld.pdf");
+	          messageBodyPart.setDataHandler(new DataHandler(source));
+	          messageBodyPart.setFileName("Confirmacion de pedido");
+	          multipart.addBodyPart(messageBodyPart);
+
+	          message.setContent(multipart);
+
+	          
+	          Transport.send(message);
+	          System.out.println("Correcto!");
+	        } catch (MessagingException e) {
+	          throw new RuntimeException(e);
+	        }
+	        
+	        
+	        return new UploadFileResponse(fileName, fileDownloadUri,
+	                file.getContentType(), file.getSize());
+
+	    }
+	    
+	    @PostMapping("/uploadFile2")
+	    public UploadFileResponse uploadFile2(@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
+	        
+	        // IO
+	         // pdfHTML specific code
+	        	//HtmlConverter.convertToPdf(
+	              //  "<img id=\"imagenPresupues\" style=\"z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;\" width=\"1000px\" height=\"1000px\" src=\"C:/Users/jose/Desktop/prueba/torgaPedidos2Bueno/src/main/webapp/content/images/1- PARA WEB/DORMITORIO2/NH033-NH036.jpeg\">",       // html to be converted
+	                //new PdfWriter(
+	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
+	               // )
+	            //);
+	    	// create the API client instance
+            Pdfcrowd.HtmlToPdfClient client =
+                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
+
+            // run the conversion and write the result to a file
+            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/HelloWorld.pdf");
+            
+            
+	        
+	        return null ;
 
 	    }
 

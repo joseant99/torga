@@ -92,7 +92,7 @@
 		    </div>
 		    
 		    
-		    <div id="estoparaesconderenmovilpc" *ngFor="let orden of arraysaberimagenes ;trackBy: trackId; let i=index;" style="margin-bottom: 50px;float: left;display:none">
+		    <div id="estoparaesconderenmovilpc" *ngFor="let orden of arraysaberimagenes ;trackBy: trackId; let i=index;" style="margin-bottom: 75px;float: left;display:none">
 		    	<div class="estoesundivparaprobar" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;display:none;" id="esteDivPrueba{{i}}">
 			    	<div style="width:100%;float:left;margin-bottom:15px;" id="primeroMeterMargin" class="cabecerapedidostodo{{i}}">
 			    		<img src="../../../content/images/Logo.jpg" style="width: 5%;position: absolute;left: 10%;" id="imagenlogopedidosprod">
@@ -105,8 +105,8 @@
 			    		</div>
 			    		
 			    		<div id="divderechapedidodatos">
-			    			<p id="textoPedido" style="font-size:17px"><span style="border-right: 1px solid;border-bottom: 1px solid;padding-left: 12.5%;padding-right: 12.5%;padding-bottom: 4%;padding-top: 1%;">PEDIDO</span></p>
-			    			<p id="textoPedido" style="font-size:17px"><span style="margin-left: 10px;">Fecha:</span><span style="float: right;margin-right: 10px;">{{productosPresupuestoPedidos.presupuestoPedido?.fecha_pedido}}</span></p>
+			    			<p id="textoPedido" style="font-size: 15px;text-align: center;">CONFIRMACION DE PEDIDO</p>
+			    			<p id="textoPedido" style="font-size:17px;margin-top: 0;"><span style="margin-left: 10px;">Fecha:</span><span style="float: right;margin-right: 10px;">{{productosPresupuestoPedidos[0].presupuestoPedido?.fecha_pedido}}</span></p>
 			    		</div>
 			    		<div style="margin-top:40px;border: 1px solid;" id="clienteDivDireccion" *ngIf="precioFinalPresuService.todos !== undefined && precioFinalPresuService.todos.direccionTiendas !== null">
 			    			<p style="font-size:16px;background-color:black;color:white" id="metertamanotienda">MERCANCIA ENTREGADA EN:</p>
@@ -378,14 +378,17 @@
 </div>
 		<div style="float:left;width:100%">
 		
-		
-	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalEnviarPorCorreo">ENVIAR PDF POR CORREO</button></p> -->
+				  		<p style="text-align:center;display:none"><a id="aparadescargarpdf" href="../../../content/images/HelloWorld.pdf" download="pedido" >Descarga la imagen</a></p>
+			
+	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalEnviarPorCorreo">ENVIAR PDF POR CORREO</button></p>
+	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="aparadescargarpdf()">DESCARGAR EN PDF</button></p>
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
 	  		<!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
 	  		<p id="contacto2" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>-->
 	  		<!--  <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" [routerLink]="['/presupuesto-edicion']">EDITAR PRESUPUESTO</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"  [routerLink]="['/pedidos-usuario']">SALIR</button></p>
+	  		
 	  		<p id="pfilasalir" style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
 		
 		</div>
