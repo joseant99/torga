@@ -130,7 +130,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         this.vistaadminService.pushFileToStorageExcel2(correoMensaje).subscribe(event => {
             if (event.type != 0) {
                 $('#aparadescargarpdf')[0].click();
-                window.stop();
             }
         });
     }

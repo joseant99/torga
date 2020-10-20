@@ -245,16 +245,7 @@ public class FileController {
 	    
 	    @PostMapping("/uploadFile2")
 	    public UploadFileResponse uploadFile2(@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
-	        
-	        // IO
-	         // pdfHTML specific code
-	        	//HtmlConverter.convertToPdf(
-	              //  "<img id=\"imagenPresupues\" style=\"z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;\" width=\"1000px\" height=\"1000px\" src=\"C:/Users/jose/Desktop/prueba/torgaPedidos2Bueno/src/main/webapp/content/images/1- PARA WEB/DORMITORIO2/NH033-NH036.jpeg\">",       // html to be converted
-	                //new PdfWriter(
-	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
-	               // )
-	            //);
-	    	// create the API client instance
+
             Pdfcrowd.HtmlToPdfClient client =
                 new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
 
