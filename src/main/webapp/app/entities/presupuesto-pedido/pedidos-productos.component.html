@@ -214,7 +214,7 @@
 				    	</div>
 				    </div>
 			    	<div style="display:none" id="divUnidadespedido" >
-			    		<p id="referenciapdivreferencia">PRECIO</p>
+			    		<p id="referenciapdivreferencia">PUNTOS</p>
 			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
 			    			<div *ngIf="i == 0 && orden > u" style="height:350px;">
 			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
@@ -225,7 +225,7 @@
 			    		</div>
 			    	</div>
 			    	<div style="display:none" id="divUnidadespedido" >
-			    		<p id="referenciapdivreferencia">IMPORTE</p>
+			    		<p id="referenciapdivreferencia">TOTAL</p>
 			    		<div  *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;let u = index;" >
 			    			<div *ngIf="i == 0 && orden > u" style="height:350px;">
 			    				<p style="text-align:center;font-size:14px">{{productosPresupuestoPedidos.precioTotal}} PP</p>
@@ -241,43 +241,43 @@
 			    
 			    <div *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let u=index;">
 			    	<div id="basesImponiblesDiv" style="display:none;margin-left:13.5% !important" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">IMP. BRUTO</p>
-					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
-				    </div>
-				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">DTO. 1</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">DTO. 2</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">DTO. 3</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">DTO. GC</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">DTO. PP</p>
+				    	<p id="referenciapdivreferencia">-</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
+				    </div>
+				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 			    	<div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">B. IMPONIBLE</p>
-					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">{{productosPresupuestoPedidos.precioTotal}} PP</p>
+				    	<p id="referenciapdivreferencia">-</p>
+					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none;margin-left:62.5%" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">I.V.A</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia">R. EQ</p>
+				    	<p id="referenciapdivreferencia">-</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;">&nbsp;</p>
 				    </div>
 				    <div id="basesImponiblesDiv" style="display:none;" *ngIf="u == 0">
-				    	<p id="referenciapdivreferencia" style="font-size:13px !important;padding-bottom:4px !important">TOTAL A PAGAR</p>
+				    	<p id="referenciapdivreferencia" style="font-size:13px !important;padding-bottom:4px !important">TOTAL PUNTOS</p>
 					   	<p style="text-align:center;font-size:14px;margin-top: 5px;margin-bottom: 5px;" id="divimprimirtotalapagar{{i}}">&nbsp;</p>
 				    </div>
 			    </div>

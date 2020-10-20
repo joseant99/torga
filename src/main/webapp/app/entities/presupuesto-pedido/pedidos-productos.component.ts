@@ -151,7 +151,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         ventana.document.close();
         ventana.focus();
         ventana.print();
-        //ventana.window.close();
+        ventana.window.close();
         return true;
     }
 
