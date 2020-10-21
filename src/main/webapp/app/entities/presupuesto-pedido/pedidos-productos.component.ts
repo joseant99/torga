@@ -138,6 +138,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     }
 
     public imprimir() {
+        var prueba = this.arraysaberimagenes;
+        if (prueba.length == 2) {
+            $('.paraverespacio0').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio1').css({ 'margin-top': '45px' });
+        }
+        if (prueba.length == 3) {
+            $('.paraverespacio0').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio1').css({ 'margin-top': '45px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio2').css({ 'margin-top': '45px' });
+        }
         var divToPrint = document.getElementById('imprimir');
         var ventana = window.open('');
         ventana.document.write(
@@ -152,6 +163,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         ventana.document.write('</body></html>');
         console.log(ventana);
         ventana.focus();
+        ventana.document.title = 'CONFIRMACION DE PEDIDO';
         ventana.document.close();
         ventana.print();
         return true;
@@ -325,6 +337,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
     loadAll() {
         var medidasEspeciales;
+
+        $('#modalcargandotodo').attr('class', 'modal fade show');
+        $('#modalcargandotodo').css({ display: 'block' });
+        $('body').append('<div id="quitarelbackroundcolor" class="modal-backdrop fade show"></div>');
         var productosPresupuesto = [];
         var acabados1 = [];
         var precioTienda = this.precioTienda;
@@ -15906,9 +15922,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                                 '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
                                                                     (100 - i) +
-                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.dropbox.com/s/6i6jjykll6fzq1u/' +
+                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
                                                                     nombreCargarImagen +
-                                                                    '.jpeg?raw=1">'
+                                                                    '.jpeg">'
                                                             );
                                                         }
                                                     } else {
@@ -15930,9 +15946,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                                 '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
                                                                     (100 - i) +
-                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.dropbox.com/s/6i6jjykll6fzq1u/' +
+                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
                                                                     nombreCargarImagen +
-                                                                    '.jpeg?raw=1">'
+                                                                    '.jpeg">'
                                                             );
                                                         }
                                                     }
@@ -15955,9 +15971,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                             '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
                                                                 (100 - i) +
-                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.dropbox.com/s/6i6jjykll6fzq1u/' +
+                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
                                                                 nombreCargarImagen +
-                                                                '.jpeg?raw=1">'
+                                                                '.jpeg">'
                                                         );
                                                     }
                                                 }
@@ -16281,6 +16297,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                     $('#divimprimirtotalapagar' + (w - 1)).text('Sigue..');
                                 }
                             }
+                            $('#modalcargandotodo').attr('class', 'modal fade');
+                            $('#modalcargandotodo').css({ display: 'none' });
+                            $('#quitarelbackroundcolor').remove();
                         }
                     }
                     //}, 1000);
@@ -17357,6 +17376,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         }
 
         var blob = doc.output('blob');
+        var prueba = this.arraysaberimagenes;
+        if (prueba.length == 2) {
+            $('.paraverespacio0').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio1').css({ 'margin-top': '45px' });
+        }
+        if (prueba.length == 3) {
+            $('.paraverespacio0').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio1').css({ 'margin-top': '45px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '75px' });
+            $('.paraverespacio2').css({ 'margin-top': '45px' });
+        }
         var divToPrint = document.getElementById('imprimir');
 
         var correoMensaje =

@@ -14888,6 +14888,7 @@ ui bootstrap tweaks
     }
     #imagenRueda {
         width: 360px;
+        margin-left: -25px;
     }
     #pfilasalir {
         margin-top: -66px !important;
