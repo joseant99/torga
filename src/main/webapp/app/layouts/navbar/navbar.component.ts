@@ -15013,7 +15013,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 279 &&
                                 idProd != 280 &&
                                 idProd != 281 &&
-                                idProd != 282
+                                idProd != 282 &&
+                                idProd != 340
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
@@ -16489,6 +16490,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (prodCarr[m][1]['iluminacion'] != undefined) {
                                 prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                                prodPrePed['pilotoLuz'] = 1;
+                            } else {
+                                prodPrePed['pilotoLuz'] = 2;
                             }
                             if (prodCarr[m][1]['direccion'] != undefined) {
                                 prodPrePed['direccion'] = prodCarr[m][1]['direccion'];

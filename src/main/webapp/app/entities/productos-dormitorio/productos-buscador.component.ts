@@ -6592,7 +6592,8 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                             idProd != 279 &&
                             idProd != 280 &&
                             idProd != 281 &&
-                            idProd != 282
+                            idProd != 282 &&
+                            idProd != 340
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +

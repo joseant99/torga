@@ -116,6 +116,10 @@
 		  $(".nav-tabs a").click(function(){
 		    $(this).tab('show');
 		  });
+		  
+		  $('body .action-button').on('click', 'span', function(){
+		        alert($(this).attr('id'))
+			});
 		});
 </script>
 

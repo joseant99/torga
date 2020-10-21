@@ -191,7 +191,7 @@ public class FileController {
                 new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
 
             // run the conversion and write the result to a file
-            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/HelloWorld.pdf");
+            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
             
             String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
 	                .path("/downloadFile/")
@@ -223,7 +223,7 @@ public class FileController {
 	          MimeBodyPart messageBodyPart = new MimeBodyPart();
 	          messageBodyPart = new MimeBodyPart();
 	         
-	          DataSource source = new FileDataSource("HelloWorld.pdf");
+	          DataSource source = new FileDataSource("src/main/webapp/content/images/pedido.pdf");
 	          messageBodyPart.setDataHandler(new DataHandler(source));
 	          messageBodyPart.setFileName("Confirmacion de pedido");
 	          multipart.addBodyPart(messageBodyPart);
@@ -250,7 +250,7 @@ public class FileController {
                 new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
 
             // run the conversion and write the result to a file
-            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/HelloWorld.pdf");
+            client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
             
             
 	        
