@@ -120,6 +120,7 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[1073] = 25;
         arrayBueno[1187] = 18;
         arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         if (filtro == 'TODOS') {

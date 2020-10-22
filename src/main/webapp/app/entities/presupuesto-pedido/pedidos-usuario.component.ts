@@ -121,6 +121,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[1073] = 25;
         arrayBueno[1187] = 18;
         arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         if (filtro == 'TODOS') {
@@ -177,7 +178,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             $('#textoDemasFiltros').css({ display: 'block' });
         }
         if (filtro == 'NOMBRE FISCAL') {
-            $('#textoDemasFiltros').css({ display: 'block' });
+            $('#nombreFiscalSelectFiltros').css({ display: 'block' });
             $('#presupuestoPedidos').append('<datalist id="listaBuena"></datalist>');
             if (this.currentAccount.authorities[0] != 'ROLE_REPRESENTATE') {
                 this.datosUsuarioService.findCoger1().subscribe(data => {
@@ -228,6 +229,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         var datosUsuariosTiendas = this.todosdatosusuarios;
         if (filtro == 'NOMBRE FISCAL') {
             if (this.currentAccount.authorities[0] != 'ROLE_REPRESENTATE') {
+                var texto = $('#nombreFiscalSelect').val();
                 for (let i = 0; i < datosUsuariosTiendas['length']; i++) {
                     if (datosUsuariosTiendas[i]['0'] == texto) {
                         for (let u = 0; u < pedidos.length; u++) {
@@ -240,6 +242,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                     }
                 }
             } else {
+                var texto = $('#nombreFiscalSelect').val();
                 for (let i = 0; i < datosUsuariosTiendas['length']; i++) {
                     if (datosUsuariosTiendas[i]['nombreFiscal'] == texto) {
                         for (let u = 0; u < pedidos.length; u++) {

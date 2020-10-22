@@ -167,6 +167,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[1073] = 25;
         arrayBueno[1187] = 18;
         arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
