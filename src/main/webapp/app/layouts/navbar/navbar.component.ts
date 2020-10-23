@@ -168,6 +168,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[1187] = 18;
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
+        arrayBueno[1694] = 32;
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -3208,14 +3209,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (screen.width >= 800) {
                                 $('#cuerpo' + i + ' #izquierda').append(
-                                    '<img class="armarioCalculadora" style="width:485px;position:absolute;margin-top: -30px;margin-left: 145px; z-index:1;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                        interior2['nombre'] +
+                                    '<img  style="position:absolute;width: 500px;height: 500px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
+                                        interior1['nombre'] +
                                         '.png">'
                                 );
 
                                 $('#cuerpo' + i + ' #izquierda').append(
-                                    '<img class="puertas3Izquierda"  style="width:485px;position:absolute;z-index:2;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                        interior1['nombre'] +
+                                    '<img  style="position:absolute;width: 500px;height: 500px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
+                                        interior2['nombre'] +
                                         '.png">'
                                 );
                             }

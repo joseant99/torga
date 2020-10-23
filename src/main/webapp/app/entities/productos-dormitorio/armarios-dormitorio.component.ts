@@ -1105,7 +1105,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         puertas = parseFloat(texto.split(' ')[0]);
         var huecos = 0;
         huecos = parseFloat(texto.split(' ')[3]);
-        if (!isNaN(huecos)) {
+        if (isNaN(huecos)) {
             var perfecto = puertas / huecos;
             var dimens = this.dimenArmarios;
             var grandes = dimens['grandes'];
@@ -1204,6 +1204,35 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 });
             }
         } else {
+            if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+                var dimens = this.dimenArmarios;
+                var grandes = dimens['grandes'];
+                var array = [];
+                var arrayPuertas = [];
+                huecos = parseFloat(texto.split(' ')[3]);
+                for (let j = 0; j < huecos; j++) {
+                    array[j] = j;
+                }
+                for (let k = 0; k < puertas; k++) {
+                    arrayPuertas[k] = k + 1;
+                }
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+                $('#imagenesArmario1').append(
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+                );
+                $('#imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1.png">'
+                );
+                $('#acabadosTodo').removeAttr('class');
+                this.acaProdService.findAca(42).subscribe(data => {
+                    this.todos = data.body[0]['acabados'];
+                    this.acabadosTrasera = data.body[0]['acabados'];
+                });
+                this.acaProdService.findAca(122).subscribe(data => {
+                    this.acabadosInteriores = data.body[0]['acabados'];
+                });
+            }
             if (texto == '1 PUERTA') {
                 var dimens = this.dimenArmarios;
                 var grandes = dimens['grandes'];
@@ -5144,10 +5173,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             $('#precioDimension').text(precioTodoFloat);
                         });
                     }
+
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                        '<img id="interiorDentroArmario' +
-                            hueco +
-                            '" class="interior14puertas" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                        '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
                             nombre +
                             '.png">'
                     );
@@ -5205,9 +5233,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         });
                     }
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                        '<img id="interiorDentroArmario' +
-                            hueco +
-                            '" class="interior24puertas" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                        '<img  style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
                             nombre +
                             '.png">'
                     );

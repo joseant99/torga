@@ -173,8 +173,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
-            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
             $('.paraverespacio5').css({ 'margin-top': '30px' });
@@ -1793,11 +1793,15 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             if ('4 PUERTAS - 2 HUECOS GRANDES' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
-
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
                                                 $('#imagen' + (cont - 1)).append(
                                                     '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
                                                         nombreInt +
@@ -1805,14 +1809,19 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 109px;margin-top: -23px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
 
                                                 $('#imagen' + (cont - 1)).append(
                                                     '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:292px;margin-left:109px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
