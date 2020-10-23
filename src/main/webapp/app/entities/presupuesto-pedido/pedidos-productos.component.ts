@@ -155,7 +155,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 5) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });
@@ -163,8 +163,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
-            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
         }
         if (prueba.length == 6) {
@@ -177,7 +177,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio3').css({ 'margin-bottom': '65px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 5) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });
@@ -189,7 +189,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio3').css({ 'margin-bottom': '65px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 7) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });
@@ -201,11 +201,11 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio3').css({ 'margin-bottom': '65px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio5').css({ 'margin-top': '35px' });
-            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '60px' });
             $('.paraverespacio6').css({ 'margin-top': '35px' });
             $('.paraverespacio6').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio7').css({ 'margin-top': '35px' });
+            $('.paraverespacio7').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 8) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });
@@ -17677,7 +17677,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 5) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });
@@ -17685,8 +17685,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
-            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
         }
         if (prueba.length == 6) {
@@ -17695,12 +17695,12 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
-            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio5').css({ 'margin-top': '35px' });
-            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '60px' });
             $('.paraverespacio6').css({ 'margin-top': '35px' });
         }
         if (prueba.length == 5) {
@@ -17709,11 +17709,11 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             $('.paraverespacio1').css({ 'margin-bottom': '65px' });
             $('.paraverespacio2').css({ 'margin-top': '35px' });
             $('.paraverespacio2').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio3').css({ 'margin-top': '35px' });
-            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
             $('.paraverespacio4').css({ 'margin-top': '35px' });
             $('.paraverespacio4').css({ 'margin-bottom': '65px' });
-            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
         }
         if (prueba.length == 7) {
             $('.paraverespacio0').css({ 'margin-bottom': '65px' });

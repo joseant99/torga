@@ -437,6 +437,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[1073] = 25;
         arrayBueno[1187] = 18;
         arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
