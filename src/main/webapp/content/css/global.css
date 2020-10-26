@@ -6959,7 +6959,7 @@ ui bootstrap tweaks
     }
     #modalConfirmarCreacionPresu {
         padding-top: 150px !important;
-        z-index: 1000000 !important;
+        z-index: 3000000035 !important;
         background: rgb(60 64 60 / 50%) !important;
         margin-top: 0px !important;
     }

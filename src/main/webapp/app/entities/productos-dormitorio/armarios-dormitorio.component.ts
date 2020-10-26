@@ -671,11 +671,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         dimens['1 puertas'] = 'margin-left:41%;';
         dimens['2 puertas'] = 'margin-left:40%;';
         dimens['3 puertas'] = 'margin-left:35%;';
-        dimens['dimenPuerta1'] = 'margin-left: 85px;margin-top: 320px;z-index: 100000;font-size: 30px;';
-        dimens['dimenPuerta2'] = 'margin-left: 220px;margin-top: 300px;z-index: 100000;font-size: 30px;';
-        dimens['dimenPuerta3'] = 'margin-left: 360px;margin-top: 280px;z-index: 100000;font-size: 30px;';
-        dimens['dimenPuerta4'] = 'margin-left: 500px;margin-top: 260px;z-index: 100000;font-size: 30px;';
-        dimens['dimenPuerta5'] = 'margin-left: 650px;margin-top: 240px;z-index: 100000;font-size: 30px;';
+        dimens['dimenPuerta1'] = 'margin-left: 130px;margin-top: 360px;z-index: 100000;font-size: 26px;';
+        dimens['dimenPuerta2'] = 'margin-left: 245px;margin-top: 325px;z-index: 100000;font-size: 26px;';
+        dimens['dimenPuerta3'] = 'margin-left: 360px;margin-top: 290px;z-index: 100000;font-size: 26px;';
+        dimens['dimenPuerta4'] = 'margin-left: 475px;margin-top: 265px;z-index: 100000;font-size: 26px;';
+        dimens['dimenPuerta5'] = 'margin-left: 650px;margin-top: 240px;z-index: 100000;font-size: 26px;';
         this.dimenArmarios = dimens;
     }
     public niveladoresCargar(id) {
@@ -1105,104 +1105,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         puertas = parseFloat(texto.split(' ')[0]);
         var huecos = 0;
         huecos = parseFloat(texto.split(' ')[3]);
-        if (isNaN(huecos)) {
-            var perfecto = puertas / huecos;
-            var dimens = this.dimenArmarios;
-            var grandes = dimens['grandes'];
-            var array = [];
-            var arrayPuertas = [];
-            for (let j = 0; j < huecos; j++) {
-                array[j] = j;
-            }
-            for (let k = 0; k < puertas; k++) {
-                arrayPuertas[k] = k + 1;
-            }
-            this.arraySaberPuertas = arrayPuertas;
-            this.arraySaberHuecos = array;
-            if (perfecto == huecos) {
-                for (let i = 0; i < huecos; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = huecos;
-                    if (i == 0) {
-                        $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
-                        $('#imagenesArmario').append(
-                            '<img  id="casco' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                        );
-                        $('#imagenesArmario').append(
-                            '<img id="trasera' +
-                                i +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                        );
-                    } else {
-                        if (screen.width >= 800) {
-                            $('#imagenesArmario').append(
-                                '<img class="casco4Puertas" style="position:absolute;width: 350px;height: 650px;z-index:' +
-                                    (100 - (i + 1)) +
-                                    ';' +
-                                    grandes +
-                                    '" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img class="casco4Puertas" style="position:absolute;width: 350px;height: 650px;z-index:' +
-                                    (100 - (i + 1)) +
-                                    ';' +
-                                    grandes +
-                                    '" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                        if (screen.width < 800) {
-                            $('#imagenesArmario').append(
-                                '<img class="casco4Puertas" style="position:absolute;margin-left: 122px !important;margin-top: -27px !important;width: 350px;height: 650px;z-index:' +
-                                    (100 - (i + 1)) +
-                                    ';' +
-                                    grandes +
-                                    '" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img class="casco4Puertas" style="position:absolute;margin-left: 122px !important;margin-top: -27px !important;width: 350px;height: 650px;z-index:' +
-                                    (100 - (i + 1)) +
-                                    ';' +
-                                    grandes +
-                                    '" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    }
-                }
-                var html = $('#imagenesArmario1').html();
-                $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                $('#imagenesArmario2').append(html);
-                for (let i = 0; i < huecos; i++) {
-                    var dimensiones = dimens[puertas + ' puertas'];
-                    this.numeroDeHuecos = huecos;
-                    if (i == 0) {
-                        $('#imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    } else {
-                        $('#imagenesArmario').append(
-                            '<p id="textoLetraHueco' +
-                                i +
-                                '" style="position:absolute;z-index:10000;margin-left: 460px;font-size: 50px;margin-top: 240px;">' +
-                                mai[i] +
-                                '</p>'
-                        );
-                    }
-                }
-                $('#acabadosTodo').removeAttr('class');
-                this.acaProdService.findAca(42).subscribe(data => {
-                    this.todos = data.body[0]['acabados'];
-                    this.acabadosTrasera = data.body[0]['acabados'];
-                });
-                this.acaProdService.findAca(122).subscribe(data => {
-                    this.acabadosInteriores = data.body[0]['acabados'];
-                });
-            }
+        var paraquenoentre = 0;
+        if (paraquenoentre == 1) {
         } else {
             if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
                 var dimens = this.dimenArmarios;
@@ -1224,7 +1128,32 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#imagenesArmario').append(
                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1.png">'
                 );
+                var html = $('#imagenesArmario1').html();
+                $('#imagenesArmario2').css({ 'margin-top': '550px' });
+                $('#imagenesArmario2').append(html);
                 $('#acabadosTodo').removeAttr('class');
+                for (let i = 0; i < puertas; i++) {
+                    var dimensiones = dimens[puertas + ' puertas'];
+                    this.numeroDeHuecos = puertas;
+                    if (i == 0) {
+                        $('#imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 200px;margin-top: 315px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                    if (i == 1) {
+                        $('#imagenesArmario').append(
+                            '<p id="textoLetraHueco' +
+                                i +
+                                '" style="position:absolute;z-index:10000;margin-left: 430px;margin-top: 270px;font-size: 50px;">' +
+                                mai[i] +
+                                '</p>'
+                        );
+                    }
+                }
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
                     this.acabadosTrasera = data.body[0]['acabados'];
@@ -1261,14 +1190,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario" class="puerta1"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                                '<img style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/1 PTA/1-1.png">'
                             );
                         }
                     }
@@ -1332,14 +1254,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario" class="puertas2"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/2-1.png">'
                             );
                         }
                     }
@@ -1410,28 +1325,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/3-1.png">'
                             );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                            );
-                        } else {
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
                         }
                     }
                     var html = $('#imagenesArmario1').html();
@@ -1502,28 +1397,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/3-1.png">'
                             );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        } else {
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                );
-                            }
                         }
                     }
                     var html = $('#imagenesArmario1').html();
@@ -1594,36 +1469,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario" class="puertas4"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/4-1.png">'
                             );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                            );
-                        } else {
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (i == 2) {
-                                $('#imagenesArmario').append(
-                                    '<img class="casco4Puertas"   style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img class="casco4Puertas"  style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                );
-                            }
                         }
                     }
                     var html = $('#imagenesArmario1').html();
@@ -1703,14 +1550,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             if (screen.width >= 800) {
                                 $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;" id="imagenesArmario"></p>');
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/5-1.png">'
                                 );
                             }
                             if (screen.width < 800) {
@@ -1720,9 +1560,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img class="casco5Central0" id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/3-1.png">'
                                 );
                                 $('#imagenesArmario').append(
                                     '<img class="casco5Central0" id="trasera' +
@@ -1732,18 +1570,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         } else {
                             if (i == 1) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img class="casco5Central0" id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img class="casco5Central0" id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img id="casco5Central1" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
@@ -1754,19 +1580,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 }
                             }
                             if (i == 2) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img id="casco5Central2" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
@@ -1901,14 +1714,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1.png">'
                                 );
                             }
                             if (screen.width < 800) {
@@ -1930,18 +1736,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         } else {
                             if (i == 1) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img class="armario7asi2" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
@@ -1952,18 +1746,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 }
                             }
                             if (i == 2) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '"  style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img  class="armario7asi3" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
@@ -1974,18 +1756,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 }
                             }
                             if (i == 3) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 705px;margin-top: -130px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 705px;margin-top: -130px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img  class="armario7asi4" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 705px;margin-top: -130px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
@@ -2132,16 +1902,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario1').append(
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
-
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/5-1.png">'
                                 );
                             }
 
@@ -2161,19 +1923,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         } else {
                             if (i == 1) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img class="casco5Central0" id="casco' +
@@ -2188,19 +1937,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 }
                             }
                             if (i == 2) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img id="casco5Izq2" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
@@ -2332,14 +2068,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/5-1.png">'
                                 );
                             }
                             if (screen.width < 800) {
@@ -2357,18 +2086,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         }
                         if (i == 1) {
-                            if (screen.width >= 800) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left:281px;margin-top:-51px" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left:281px;margin-top:-51px" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
                             if (screen.width < 800) {
                                 $('#imagenesArmario').append(
                                     '<img class="casco5Der1" id="casco' +
@@ -2383,18 +2100,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         }
                         if (i == 2) {
-                            if (screen.width >= 800) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left:491px;margin-top:-90px" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left:491px;margin-top:-90px" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                );
-                            }
                             if (screen.width < 800) {
                                 $('#imagenesArmario').append(
                                     '<img id="casco5Der2" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 177px;margin-top: -43px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
@@ -2536,14 +2241,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/6-1.png">'
                                 );
                             }
 
@@ -2563,45 +2261,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 );
                             }
                         } else {
-                            if (screen.width >= 800) {
-                                if (i == 1) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-                                if (i == 2) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-                                if (i == 3) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 704px;margin-top: -130px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 704px;margin-top: -130px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                    );
-                                }
-                            }
-
                             if (screen.width < 800) {
                                 if (i == 1) {
                                     $('#imagenesArmario').append(
@@ -2770,14 +2429,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-1.png">'
                                 );
                             }
 
@@ -2797,45 +2449,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 );
                             }
                         } else {
-                            if (screen.width >= 800) {
-                                if (i == 1) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-                                if (i == 2) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-                                if (i == 3) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 776px;margin-top: -142px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 776px;margin-top: -142px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
-                            }
-
                             if (screen.width < 800) {
                                 if (i == 1) {
                                     $('#imagenesArmario').append(
@@ -2998,52 +2611,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/3-1.png">'
                             );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        } else {
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (i == 2) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (i == 3) {
-                                $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 772px;margin-top: -142px;" src="../../../content/images/ar/peque/1. CASCO/peque_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 772px;margin-top: -142px;" src="../../../content/images/ar/peque/2. TRASERA/peque_trasera_blanco.png">'
-                                );
-                            }
                         }
                     }
 
@@ -3127,14 +2696,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $('#imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/6-1.png">'
                                 );
                             }
                             if (screen.width < 800) {
@@ -3154,18 +2716,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         } else {
                             if (i == 1) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img id="casco' +
@@ -3180,18 +2730,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 }
                             }
                             if (i == 2) {
-                                if (screen.width >= 800) {
-                                    $('#imagenesArmario').append(
-                                        '<img id="casco' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                    );
-                                    $('#imagenesArmario').append(
-                                        '<img id="trasera' +
-                                            i +
-                                            '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                    );
-                                }
                                 if (screen.width < 800) {
                                     $('#imagenesArmario').append(
                                         '<img id="casco' +
@@ -9579,28 +9117,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (!isNaN(huecos)) {
                     var cuenta = puertas / huecos;
                     if (cuenta % 1 == 0) {
-                        for (let i = 1; i <= huecos; i++) {
-                            if (i == 1) {
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<img class="" id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                );
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<img class="puerta4Color2" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                );
-                            } else {
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<img class="puerta4Color3" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;' +
-                                        grandes +
-                                        '" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                );
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<img class="" id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                );
-                            }
-                        }
                     }
                     for (let i = 1; i <= puertas; i++) {
                         if (texto == '4 PUERTAS - 2 HUECOS GRANDES') {
+                            if (i == 1) {
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img class="" id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-C.png">'
+                                );
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img class="puerta4Color2" id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-C.png">'
+                                );
+
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img class="puerta4Color3" id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-C.png">'
+                                );
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img class="" id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-C.png">'
+                                );
+                            }
                             if (screen.width >= 800) {
                                 $('#imagenesArmario2 #imagenesArmario').append(
                                     '<p class="puerta2nombre' +
@@ -9609,7 +9143,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         i +
                                         '" style="position:absolute;' +
                                         dimens['dimenPuerta' + i] +
-                                        '"> Puerta ' +
+                                        ';"> Puerta ' +
                                         i +
                                         '</p>'
                                 );
@@ -24143,48 +23677,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24224,11 +23732,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ 'z-index': '103' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puerta14puertas');
             }
@@ -24237,48 +23743,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24318,11 +23798,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ 'z-index': '103' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puerta24puertas');
             }
@@ -24331,48 +23809,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24412,11 +23864,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).attr('class', 'puerta34puertas');
                 $('#puertaColor' + id).css({ display: 'block' });
             }
@@ -24425,48 +23875,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24506,11 +23930,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).attr('class', 'puerta44puertas');
                 $('#puertaColor' + id).css({ display: 'block' });
             }

@@ -550,10 +550,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                 '<p>' + toma[i]['presupuestoPedido']['observaciones'] + '</p>'
                             );
                         }
+
                         if (parseFloat(presu) == toma[i]['presupuestoPedido']['id']) {
                             if (toma[i]['productosDormitorio'] != null) {
                                 if (toma[i]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                                    console.log(cont);
                                     this.presupuestoArmarioService.findBus(presu).subscribe(data => {
                                         var idCat = 9;
                                         var cat = {
@@ -597,19 +597,19 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 'nombre'
                                             ].toLowerCase();
                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                '<p><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                     casco +
                                                     '</p>'
                                             );
                                             if (data.body[0]['presupuestoArmario']['acabados'] != undefined) {
                                                 $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                    '<p><span style="font-weight:600">Acabado trasera</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                    '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado trasera</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                         trasera +
                                                         '</p>'
                                                 );
                                             }
                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                '<p><span style="font-weight:600">Acabado Interiores</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Interiores</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                     interiorAca +
                                                     '</p>'
                                             );
@@ -618,83 +618,83 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 if (p == 0) {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p><span style="font-weight:600">Casco</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>+ ' +
+                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>+ ' +
                                                             datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
                                                             ' pp</span></p>'
                                                     );
                                                     if (data.body[0]['presupuestoArmario']['niveladores']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Niveladores</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Niveladores</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['niveladores']['precio'] +
                                                                 '</p>'
                                                         );
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Niveladores</span> : Sin niveladores</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Niveladores</span> : Sin niveladores</p>'
                                                         );
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['cajeado']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['cajeado']['precio'] +
                                                                 '</p>'
                                                         );
                                                         if (data.body[0]['presupuestoArmario']['medACaj'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida A Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida A Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medACaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medBCaj'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida B Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida B Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medBCaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medCCaj'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida C Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida C Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medCCaj'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Cajeado</span> : Sin Cajeado</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Cajeado</span> : Sin Cajeado</p>'
                                                         );
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['enmarcados']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                 data.body[0]['presupuestoArmario']['enmarcados']['precio'] +
                                                                 '</p>'
                                                         );
                                                         if (data.body[0]['presupuestoArmario']['medAEnm'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida A enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida A enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medAEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medBEnm'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida B enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida B enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medBEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                         if (data.body[0]['presupuestoArmario']['medCEnm'] != 0) {
                                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p><span style="font-weight:600">Medida C enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida C enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                                     data.body[0]['presupuestoArmario']['medCEnm'] +
                                                                     '</p>'
                                                             );
                                                         }
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p><span style="font-weight:600">Enmarcados</span> : Sin Enmarcados</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Enmarcados</span> : Sin Enmarcados</p>'
                                                         );
                                                     }
                                                     $('#precioTotal' + (cont - 1)).text(
@@ -713,7 +713,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
                                                 if (datosInteriores[p]['mensajeLuz'] != null) {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p><strong>Interior ' +
+                                                        '<p id="pimprimirdatostexto"><strong>Interior ' +
                                                             datosInteriores[p]['productosDormitorio']['nombre'] +
                                                             '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
                                                             datosInteriores[p]['mensajeLuz'] +
@@ -723,7 +723,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 } else {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p><strong>Interior ' +
+                                                        '<p id="pimprimirdatostexto"><strong>Interior ' +
                                                             datosInteriores[p]['productosDormitorio']['nombre'] +
                                                             '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
                                                             datosInteriores[p]['precio'] +
@@ -1798,12 +1798,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         '.png">'
                                                 );
                                                 $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
-                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101;margin-top:285px" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 365px;height: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1811,15 +1816,22 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:292px;margin-left:109px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 365px;height:365px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
                                                 $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
-                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
+
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100;margin-top:285px" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
                                                 $('#imagen' + (cont - 1)).append(
                                                     '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/4-1-B-' +
                                                         nombreInt +
@@ -1830,7 +1842,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem1[0].style.setProperty('padding-left', '0%', 'important');
                                                     elem1[0].style.setProperty('font-size', '14px', 'important');
                                                     var elem = $('#imagen' + (cont - 1));
-                                                    elem[0].style.setProperty('margin-left', '-14%', 'important');
+                                                    elem[0].style.setProperty('margin-left', '0%', 'important');
                                                 }
                                             }
 
@@ -2002,7 +2014,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
-                                                    '<p><strong>Puerta ' +
+                                                    '<p id="pimprimirdatostexto"><strong>Puerta ' +
                                                         (p + 1) +
                                                         ' ' +
                                                         datosInteriores[p]['productosDormitorio']['nombre'] +
@@ -2014,7 +2026,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     if (j == 0) {
                                                         if (datosInteriores[p]['acabados'] != undefined) {
                                                             $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
-                                                                '<p>Acabado ' +
+                                                                '<p id="pimprimirdatostexto">Acabado ' +
                                                                     (j + 1) +
                                                                     ' Puerta ' +
                                                                     (p + 1) +
@@ -2026,7 +2038,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     } else {
                                                         if (datosInteriores[p]['acabados' + j] != undefined) {
                                                             $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
-                                                                '<p>Acabado ' +
+                                                                '<p id="pimprimirdatostexto">Acabado ' +
                                                                     (j + 1) +
                                                                     ' Puerta ' +
                                                                     (p + 1) +
@@ -2370,42 +2382,25 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
                                                             '">'
                                                     );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2413,8 +2408,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2422,8 +2416,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2431,8 +2424,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-G.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -7355,42 +7347,25 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7398,8 +7373,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7407,8 +7381,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7416,8 +7389,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7465,42 +7437,25 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
-                                                            src1 +
-                                                            '">'
-                                                    );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7508,8 +7463,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7517,8 +7471,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7526,8 +7479,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
@@ -7575,71 +7527,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7685,71 +7617,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[3]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -12132,58 +12044,63 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         ].toFixed(0);
                     }
                 }
+                console.log(toma);
                 var arraymeterparasaberespacio = [];
-                if (productosPresupuesto.length == 1) {
+                if (toma.length == 1) {
                     arraymeterparasaberespacio[0] = 1;
                 }
-                if (productosPresupuesto.length == 2) {
+                if (toma.length == 2) {
                     arraymeterparasaberespacio[0] = 2;
+                    if (toma[0]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                        arraymeterparasaberespacio[0] = 2;
+                        arraymeterparasaberespacio[1] = 3;
+                    }
                 }
-                if (productosPresupuesto.length == 3) {
+                if (toma.length == 3) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 3;
                 }
-                if (productosPresupuesto.length == 4) {
+                if (toma.length == 4) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                 }
-                if (productosPresupuesto.length == 5) {
+                if (toma.length == 5) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 5;
                 }
-                if (productosPresupuesto.length == 6) {
+                if (toma.length == 6) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                 }
-                if (productosPresupuesto.length == 7) {
+                if (toma.length == 7) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 7;
                 }
-                if (productosPresupuesto.length == 8) {
+                if (toma.length == 8) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                 }
-                if (productosPresupuesto.length == 9) {
+                if (toma.length == 9) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                     arraymeterparasaberespacio[4] = 9;
                 }
-                if (productosPresupuesto.length == 10) {
+                if (toma.length == 10) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                     arraymeterparasaberespacio[4] = 10;
                 }
-                if (productosPresupuesto.length == 11) {
+                if (toma.length == 11) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12191,7 +12108,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[4] = 10;
                     arraymeterparasaberespacio[5] = 11;
                 }
-                if (productosPresupuesto.length == 12) {
+                if (toma.length == 12) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12199,7 +12116,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[4] = 10;
                     arraymeterparasaberespacio[5] = 12;
                 }
-                if (productosPresupuesto.length == 13) {
+                if (toma.length == 13) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12208,7 +12125,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[5] = 12;
                     arraymeterparasaberespacio[6] = 13;
                 }
-                if (productosPresupuesto.length == 14) {
+                if (toma.length == 14) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12217,7 +12134,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[5] = 12;
                     arraymeterparasaberespacio[6] = 14;
                 }
-                if (productosPresupuesto.length == 15) {
+                if (toma.length == 15) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12227,7 +12144,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[6] = 14;
                     arraymeterparasaberespacio[7] = 15;
                 }
-                if (productosPresupuesto.length == 16) {
+                if (toma.length == 16) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12237,7 +12154,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[6] = 14;
                     arraymeterparasaberespacio[7] = 16;
                 }
-                if (productosPresupuesto.length == 17) {
+                if (toma.length == 17) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12249,6 +12166,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[8] = 17;
                 }
                 this.arraysaberimagenes = arraymeterparasaberespacio;
+                console.log(this.arraysaberimagenes);
+                console.log('prueba');
                 this.productos = productosPresupuesto;
 
                 this.interioresArmario = todosInteriores;
@@ -12278,57 +12197,61 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 var acaComprobar = 0;
                 console.log(productos);
                 var arraymeterparasaberespacio = [];
-                if (productos.length == 1) {
+                if (toma.length == 1) {
                     arraymeterparasaberespacio[0] = 1;
                 }
-                if (productos.length == 2) {
+                if (toma.length == 2) {
                     arraymeterparasaberespacio[0] = 2;
+                    if (toma[0]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                        arraymeterparasaberespacio[0] = 1;
+                        arraymeterparasaberespacio[1] = 2;
+                    }
                 }
-                if (productos.length == 3) {
+                if (toma.length == 3) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 3;
                 }
-                if (productos.length == 4) {
+                if (toma.length == 4) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                 }
-                if (productos.length == 5) {
+                if (toma.length == 5) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 5;
                 }
-                if (productos.length == 6) {
+                if (toma.length == 6) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                 }
-                if (productos.length == 7) {
+                if (toma.length == 7) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 7;
                 }
-                if (productos.length == 8) {
+                if (toma.length == 8) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                 }
-                if (productos.length == 9) {
+                if (toma.length == 9) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                     arraymeterparasaberespacio[4] = 9;
                 }
-                if (productos.length == 10) {
+                if (toma.length == 10) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
                     arraymeterparasaberespacio[3] = 8;
                     arraymeterparasaberespacio[4] = 10;
                 }
-                if (productos.length == 11) {
+                if (toma.length == 11) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12336,7 +12259,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[4] = 10;
                     arraymeterparasaberespacio[5] = 11;
                 }
-                if (productos.length == 12) {
+                if (toma.length == 12) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12344,7 +12267,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[4] = 10;
                     arraymeterparasaberespacio[5] = 12;
                 }
-                if (productos.length == 13) {
+                if (toma.length == 13) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12353,7 +12276,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[5] = 12;
                     arraymeterparasaberespacio[6] = 13;
                 }
-                if (productos.length == 14) {
+                if (toma.length == 14) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12362,7 +12285,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[5] = 12;
                     arraymeterparasaberespacio[6] = 14;
                 }
-                if (productos.length == 15) {
+                if (toma.length == 15) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12372,7 +12295,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[6] = 14;
                     arraymeterparasaberespacio[7] = 15;
                 }
-                if (productos.length == 16) {
+                if (toma.length == 16) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12382,7 +12305,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     arraymeterparasaberespacio[6] = 14;
                     arraymeterparasaberespacio[7] = 16;
                 }
-                if (productos.length == 17) {
+                if (toma.length == 17) {
                     arraymeterparasaberespacio[0] = 2;
                     arraymeterparasaberespacio[1] = 4;
                     arraymeterparasaberespacio[2] = 6;
@@ -12395,7 +12318,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 }
 
                 this.arraysaberimagenes = arraymeterparasaberespacio;
-                console.log('aqui');
+
                 for (let w = 0; w < productos.length; w++) {
                     //setTimeout(function() {
                     for (let p = 0; p <= 100000000; p++) {
@@ -12463,7 +12386,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         '.jpeg">'
                                                 );
                                             }
-
+                                            console.log(productos);
+                                            console.log('productos');
                                             for (let k = 0; k < acabados.length; k++) {
                                                 var idProdNombre = acabados[k]['productosPresupuestoPedidos']['productosDormitorio']['id'];
                                                 var idProd = idProdNombre;
