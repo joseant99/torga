@@ -4640,13 +4640,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         });
                     }
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                        '<img id="interiorDentroArmario' +
-                            hueco +
-                            '" class="' +
-                            textoclaseinterior +
-                            '' +
-                            hueco +
-                            '" style="position:absolute;width: 950px;height: 850px;z-index:100;margin-top:-100px;margin-left: -298px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                        '<img style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/2-1-A-' +
                             nombre +
                             '.png">'
                     );
@@ -4838,7 +4832,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
-                            '" class="puertas3izquierda1" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                            '" class="puertas3izquierda1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/1 PTA/1-1-A-' +
                             nombre +
                             '.png">'
                     );
@@ -4897,7 +4891,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                         '<img id="interiorDentroArmario' +
                             hueco +
-                            '" class="puertas3izquierda1" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                            '" class="puertas3izquierda1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/1 PTA/1-1-A-' +
                             nombre +
                             '.png">'
                     );
@@ -4969,7 +4963,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 textoclaseinterior +
                                 '' +
                                 hueco +
-                                '" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/3-1-A-' +
                                 nombre +
                                 '.png">'
                         );
@@ -5034,7 +5028,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 textoclaseinterior +
                                 '' +
                                 hueco +
-                                '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-137px;margin-left: -87px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/3-1-B-' +
                                 nombre +
                                 '.png">'
                         );
@@ -5113,7 +5107,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" class="puertas3derecha1"  style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                    '" class="puertas3derecha1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/3-2-A-' +
                                     nombre +
                                     '.png">'
                             );
@@ -5187,7 +5181,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" class="puertas3derecha2" style="position:absolute;width: 915px;height: 810px;z-index:99;margin-top:-120px;margin-left: -70px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                    '" class="puertas3derecha2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/3-2-B-' +
                                     nombre +
                                     '.png">'
                             );
@@ -5267,7 +5261,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" class="interior14puertasAsi" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        '" class="interior14puertasAsi" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/4-2-A-' +
                                         nombre +
                                         '.png">'
                                 );
@@ -5342,7 +5336,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" class="interior24puertasAsi" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-137px;margin-left: -87px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                        '" class="interior24puertasAsi" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/4-2-B-' +
                                         nombre +
                                         '.png">'
                                 );
@@ -5417,7 +5411,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" class="interior34puertasAsi" style="position:absolute;width: 915px;height: 810px;z-index:98;margin-top:-160px;margin-left: 140px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                        '" class="interior34puertasAsi" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/4-2-C-' +
                                         nombre +
                                         '.png">'
                                 );
@@ -5497,7 +5491,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
-                                            '" class="armario5centralint1" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                            '" class="armario5centralint1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/5-1-A-' +
                                             nombre +
                                             '.png">'
                                     );
@@ -5573,7 +5567,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
-                                            '" class="armario5centralint2" style="position:absolute;width: 915px;height: 810px;z-index:99;margin-top:-120px;margin-left: -70px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                            '" class="armario5centralint2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/5-1-B-' +
                                             nombre +
                                             '.png">'
                                     );
@@ -5648,7 +5642,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                         '<img id="interiorDentroArmario' +
                                             hueco +
-                                            '" class="armario5centralint3" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-177px;margin-left: 125px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                            '" class="armario5centralint3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/5-1-C-' +
                                             nombre +
                                             '.png">'
                                     );
@@ -5728,7 +5722,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
-                                                '" class="armario5izqint1" style="position:absolute;width: 915px;height: 810px;z-index:101;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                '" class="armario5izqint1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/5-2-A-' +
                                                 nombre +
                                                 '.png">'
                                         );
@@ -5804,7 +5798,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
-                                                '" class="armario5izqint2" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-137px;margin-left: -87px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                '" class="armario5izqint2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/5-2-B-' +
                                                 nombre +
                                                 '.png">'
                                         );
@@ -5879,7 +5873,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                             '<img id="interiorDentroArmario' +
                                                 hueco +
-                                                '" class="armario5izqint3" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-190px;margin-left: 194px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                '" class="armario5izqint3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/5-2-C-' +
                                                 nombre +
                                                 '.png">'
                                         );
@@ -5960,7 +5954,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
-                                                    '" class="class6interior1" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '" class="class6interior1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/6-2-A-' +
                                                     nombre +
                                                     '.png">'
                                             );
@@ -6037,7 +6031,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
-                                                    '" class="class6interior2" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-137px;margin-left: -87px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '" class="class6interior2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/6-2-B-' +
                                                     nombre +
                                                     '.png">'
                                             );
@@ -6115,7 +6109,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
-                                                    '" class="class6interior3" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-190px;margin-left: 194px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '" class="class6interior3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/6-2-C-' +
                                                     nombre +
                                                     '.png">'
                                             );
@@ -6192,7 +6186,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                 '<img id="interiorDentroArmario' +
                                                     hueco +
-                                                    '" class="class6interior4" style="position:absolute;width: 915px;height: 810px;z-index:97;margin-top:-212px;margin-left: 425PX;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '" class="class6interior4" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/6-2-D-' +
                                                     nombre +
                                                     '.png">'
                                             );
@@ -6274,7 +6268,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior1" style="position:absolute;width: 915px;height: 810px;z-index:100;margin-top:-80px;margin-left: -282px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                        '" class="class7Izqinterior1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-A-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6351,7 +6345,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior2" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-137px;margin-left: -87px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '" class="class7Izqinterior2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-B-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6428,7 +6422,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior3" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-190px;margin-left: 194px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '" class="class7Izqinterior3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-C-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6505,7 +6499,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior4" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-242px;margin-left: 479px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '" class="class7Izqinterior4" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-D-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6587,7 +6581,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 915px;height: 810px;z-index:97;margin-top:-224px;margin-left: 490px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-D-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6664,7 +6658,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-B-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6741,7 +6735,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-C-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6818,7 +6812,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-A-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6884,7 +6878,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int2" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-B-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -6944,7 +6938,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int3" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-202px;margin-left: 262px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-C-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -7004,7 +6998,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int4" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-254px;margin-left: 545px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int4" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-D-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -7064,7 +7058,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int1" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                '" class="armario8Int1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-A-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -8464,7 +8458,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi1Int" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                                        '" class="armario7asi1Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-A-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8557,7 +8551,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi2Int" style="position:absolute;width: 915px;height: 810px;z-index:99;margin-top:-120px;margin-left: -70px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                                                        '" class="armario7asi2Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-B-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8649,7 +8643,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi3Int" style="position:absolute;width: 950px;height: 845px;z-index:98;margin-top:-177px;margin-left: 125px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                                        '" class="armario7asi3Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-C-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8741,7 +8735,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi4Int" style="position:absolute;width: 950px;height: 845px;z-index:97;margin-top:-230px;margin-left: 410px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                                        '" class="armario7asi4Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-D-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8824,7 +8818,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario5der3" style="position:absolute;width: 915px;height: 810px;z-index:98;margin-top:-170px;margin-left: 209px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                                                        '" class="armario5der3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/5-3-C-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8902,7 +8896,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario5der2" style="position:absolute;width: 950px;height: 845px;z-index:99;margin-top:-150px;margin-left: -20px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                                        '" class="armario5der2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/5-3-B-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8980,7 +8974,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario5der1" style="position:absolute;width: 950px;height: 845px;z-index:100;margin-top:-98px;margin-left: -300px;"  src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                                                        '" class="armario5der1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/5-3-A-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -9224,7 +9218,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/1 PTA/PTAS PNG/1-C.png">'
                                     );
                                 }
                             }
@@ -9248,10 +9242,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaColor2puertas" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img class="puertaColor2puertas" id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-C.png">'
                                     );
                                 }
                             }
@@ -9305,16 +9299,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="" id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img class="" id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-C.png">'
                                     );
                                 }
                                 if (i == 2) {
                                     if (screen.width >= 800) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img class="" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 213px;margin-top: -39px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img class="" id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img class="" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img class="" id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                     }
 
@@ -9351,15 +9345,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaColor3puertas1" id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img class="puertaColor3puertas1" id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaColor3puertas2" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img class="puertaColor3puertas2" id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-C.png">'
                                     );
                                 }
                                 if (i == 2) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaColor3puertas3" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img class="puertaColor3puertas3" id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-C.png">'
                                     );
                                 }
                             }
@@ -9425,20 +9419,20 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-C.png">'
                                     );
                                 }
                                 if (i == 2) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaAsi41" id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img class="puertaAsi41" id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaAsi42" id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img class="puertaAsi42" id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-C.png">'
                                     );
                                 }
                                 if (i == 3) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img class="puertaAsi43" id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img class="puertaAsi43" id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-C.png">'
                                     );
                                 }
                             }
@@ -9466,24 +9460,24 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-C.png">'
                                         );
                                     }
 
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 492px;margin-top: -91px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-C.png">'
                                         );
                                     }
                                 }
@@ -9596,23 +9590,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424PX;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-C.png">'
                                         );
                                     }
                                 }
@@ -9712,31 +9706,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 212px;margin-top: -39px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424px;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 424PX;margin-top: -78px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 708px;margin-top: -131px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 708px;margin-top: -131px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-C.png">'
                                         );
                                     }
                                 }
@@ -9883,23 +9877,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494PX;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-C.png">'
                                         );
                                     }
                                 }
@@ -10013,28 +10007,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494PX;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 704px;margin-top: -130px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-C.png">'
                                         );
                                     }
                                 }
@@ -10154,31 +10148,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -39px;margin-left:212px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494px;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 494PX;margin-top: -91px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 776PX;margin-top: -142px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-C.png">'
                                         );
                                     }
                                 }
@@ -10310,31 +10304,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-C.png">'
                                     );
                                 }
                                 if (i == 2) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-C.png">'
                                     );
                                 }
                                 if (i == 3) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                        '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                        '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-C.png">'
                                     );
                                 }
                                 if (i == 4) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 772PX;margin-top: -142px;" src="../../../content/images/ar/peque/4. PUERTA MADERA/peque_puertamadera_blanco_optimized.png">'
+                                        '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-C.png">'
                                     );
                                 }
                             }
@@ -10366,26 +10360,26 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-C.png">'
                                         );
                                     }
                                 }
@@ -10514,34 +10508,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor7" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
+                                            '<img id="puertaColor7" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-C.png">'
                                         );
                                     }
                                 }
@@ -17634,7 +17628,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 386
                     ) {
                         $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
-                        $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
                         var comprobar = $('#inputPuertas' + (id + 1)).val();
@@ -18406,7 +18399,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         data.body[0].productosDormitorio.id != 386
                     ) {
                         $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('+ ' + precioPuerta + ' pp');
-                        $('#inputs #inputPuertas1').empty();
                         $('#inputPuertas' + (id + 1)).val(data.body[0].tipo);
                     } else {
                         var comprobar = $('#inputPuertas' + (id + 1)).val();
@@ -23379,55 +23371,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).attr('class', 'puertas3Izq1');
             }
 
@@ -23435,48 +23399,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -23516,10 +23454,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '605px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas3Izq2');
             }
@@ -23528,48 +23464,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 1/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -23609,10 +23519,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas3Izq3');
             }
@@ -23621,55 +23529,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/3-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-118px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-73px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha3');
             }
 
@@ -23695,40 +23575,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23761,40 +23629,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
-                    );
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
-                    );
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
-                    );
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
-                    );
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23827,40 +23683,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '100' });
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23893,6 +23737,132 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + id).remove();
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + id).remove();
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + id).remove();
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + id).remove();
+                }
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ 'z-index': '102' });
+                $('#puertaColor' + id).attr('class', 'puerta44puertas');
+                $('#puertaColor' + id).css({ display: 'block' });
+            }
+
+            if (texto == '5 PUERTAS DERECHA' && id == 0) {
+                var nombreLaPuerta = pue123['nombre'];
+                var codigoArmario = this.codigoArmario;
+                if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-A.png');
+                }
+                if (nombreLaPuerta == 'Puerta Aluminio Gris') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-B.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-C.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-D.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-E.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/1-F.png');
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
+                    );
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
+                    );
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
+                    );
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
+                    $('#puertaColor' + id).attr(
+                        'src',
+                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
+                    );
+                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                }
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ 'z-index': '102' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    $('#puertaColor' + id).css({ 'max-width': '340px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '390px' });
+                    $('#puertaColor' + id).css({ 'margin-top': '-44px' });
+                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
+                }
+            }
+
+            if (texto == '5 PUERTAS DERECHA' && id == 1) {
+                var nombreLaPuerta = pue123['nombre'];
+                var codigoArmario = this.codigoArmario;
+                if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-A.png');
+                }
+                if (nombreLaPuerta == 'Puerta Aluminio Gris') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-B.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-C.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-D.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-E.png');
+                }
+                if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/2-F.png');
+                }
+                if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
                         'src',
                         '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
@@ -23933,200 +23903,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).attr('class', 'puerta44puertas');
-                $('#puertaColor' + id).css({ display: 'block' });
-            }
-
-            if (texto == '5 PUERTAS DERECHA' && id == 0) {
-                var nombreLaPuerta = pue123['nombre'];
-                var codigoArmario = this.codigoArmario;
-                if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
-                }
-
-                $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
-                $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '340px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '390px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-44px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-108px' });
-                }
-            }
-
-            if (texto == '5 PUERTAS DERECHA' && id == 1) {
-                var nombreLaPuerta = pue123['nombre'];
-                var codigoArmario = this.codigoArmario;
-                if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
-                }
-                if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
-                }
-                if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png'
-                    );
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
-                    $('#nombrePuerta' + id).remove();
-                    $('#puertaColor' + (id - 1)).css({ display: 'none' });
-                }
-
-                $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24141,48 +23917,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24222,11 +23972,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24241,48 +23989,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24322,11 +24044,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24341,55 +24061,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 3/PTAS PNG/5-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-200' });
-                $('#puertaColor' + id).css({ 'margin-left': '330px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + (id + 1)).css({ display: 'block' });
             }
 
@@ -24397,48 +24089,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24478,11 +24144,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24497,48 +24161,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24578,11 +24216,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24597,48 +24233,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24678,11 +24288,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24697,48 +24305,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24778,11 +24360,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'none' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24796,48 +24376,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24877,11 +24431,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -24899,48 +24451,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 1/PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -24980,11 +24506,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'none' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -25002,48 +24526,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25083,11 +24581,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -25103,48 +24599,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25184,11 +24654,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25203,48 +24671,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25284,11 +24726,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25303,48 +24743,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25384,11 +24798,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25403,48 +24815,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25484,11 +24870,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25506,48 +24890,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25587,11 +24945,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25609,48 +24965,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25690,11 +25020,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-252px' });
-                $('#puertaColor' + id).css({ 'margin-left': '562px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25709,48 +25037,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25790,11 +25092,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-252px' });
-                $('#puertaColor' + id).css({ 'margin-left': '562px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '275px' });
@@ -25809,48 +25109,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25890,11 +25164,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -25902,48 +25174,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -25983,11 +25229,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -25995,48 +25239,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26076,11 +25294,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -26088,48 +25304,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26169,11 +25359,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-150px' });
-                $('#puertaColor' + id).css({ 'margin-left': '0px' });
                 $('#puertaColor' + id).css({ display: 'none' });
             }
 
@@ -26181,48 +25369,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26262,11 +25424,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -26274,48 +25434,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26355,11 +25489,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-203px' });
-                $('#puertaColor' + id).css({ 'margin-left': '282px' });
                 $('#puertaColor' + id).css({ display: 'none' });
             }
 
@@ -26368,55 +25500,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('body').css({ 'overflow-x': 'hidden' });
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-224px' });
-                $('#puertaColor' + id).css({ 'margin-left': '490px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -26424,48 +25528,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-B-png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26505,11 +25583,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha1');
             }
@@ -26518,48 +25594,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3 PTA 2/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26599,11 +25649,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha12');
             }
@@ -26612,48 +25660,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26693,11 +25715,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -26712,48 +25732,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26793,11 +25787,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -26813,56 +25805,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/3-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-118px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-73px' });
-
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -26876,48 +25839,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -26957,11 +25894,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColor' + id).css({ 'margin-left': '143px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -26977,48 +25912,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 1/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27058,11 +25967,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColor' + id).css({ 'margin-left': '143px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -27078,48 +25985,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27159,11 +26040,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-286px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -27178,48 +26057,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27259,11 +26112,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-284px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -27278,48 +26129,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27359,11 +26184,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-227px' });
-                $('#puertaColor' + id).css({ 'margin-left': '428px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -27381,48 +26204,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27462,11 +26259,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-227px' });
-                $('#puertaColor' + id).css({ 'margin-left': '428px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -27484,55 +26279,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-118px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-73px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -27546,48 +26313,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27627,11 +26368,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
+                $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColor' + id).css({ 'margin-left': '143px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -27646,48 +26385,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27727,8 +26440,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -27737,8 +26450,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ 'margin-left': '41px' });
                 }
                 $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ 'margin-top': '-173px' });
-                $('#puertaColor' + id).css({ 'margin-left': '143px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -27746,48 +26457,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27827,10 +26512,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas2izquierda1');
             }
@@ -27839,48 +26522,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTA/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -27920,10 +26577,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-96px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas2izquierda1');
             }
@@ -27932,55 +26587,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).attr('class', 'puertaAsiBue40');
             }
 
@@ -27988,55 +26615,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/4-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-157px' });
-                $('#puertaColor' + id).css({ 'margin-left': '140px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).attr('class', 'puertaAsiBue43');
             }
 
@@ -28044,48 +26643,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28125,10 +26698,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertaAsiBue41');
             }
@@ -28137,48 +26708,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA 2/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28218,10 +26763,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertaAsiBue42');
             }
@@ -28230,55 +26773,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
 
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '310px' });
@@ -28293,48 +26808,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28374,10 +26863,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -28393,48 +26880,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28474,10 +26935,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
@@ -28492,48 +26951,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28573,10 +27006,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -28591,48 +27022,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/5 PTA 2/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28672,10 +27077,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '340px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -28690,55 +27093,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '280px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -28752,48 +27127,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28833,10 +27182,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -28851,48 +27198,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -28932,10 +27253,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -28950,48 +27269,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29031,10 +27324,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -29053,48 +27344,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29134,10 +27399,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -29156,48 +27419,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29237,10 +27474,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-240px' });
-                $('#puertaColor' + id).css({ 'margin-left': '494px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -29258,48 +27493,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29339,10 +27548,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-240px' });
-                $('#puertaColor' + id).css({ 'margin-left': '494px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '300px' });
@@ -29360,56 +27567,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-80px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-282px' });
-
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '315px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -29423,56 +27601,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/6-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '810px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-209px' });
-                $('#puertaColor' + id).css({ 'margin-left': '423px' });
-
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '315px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -29489,48 +27638,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29570,10 +27693,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '327px' });
@@ -29588,48 +27709,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29669,10 +27764,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-136px' });
-                $('#puertaColor' + id).css({ 'margin-left': '-69px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '327px' });
@@ -29687,48 +27780,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29768,10 +27835,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '327px' });
@@ -29786,48 +27851,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png'
-                    );
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr(
-                        'src',
-                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png'
-                    );
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/6 PTA 2/PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
                     $('#puertaColor' + id).attr(
@@ -29867,10 +27906,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
-                $('#puertaColor' + id).css({ width: '915px' });
-                $('#puertaColor' + id).css({ height: '845px' });
-                $('#puertaColor' + id).css({ 'margin-top': '-187px' });
-                $('#puertaColor' + id).css({ 'margin-left': '213px' });
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '327px' });

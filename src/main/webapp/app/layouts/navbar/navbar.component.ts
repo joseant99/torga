@@ -16413,8 +16413,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (prodCarr[m][1]['iluminacion'] != undefined) {
                                 prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
                                 prodPrePed['pilotoLuz'] = 1;
-                            } else {
-                                prodPrePed['pilotoLuz'] = 2;
                             }
                             if (prodCarr[m][1]['direccion'] != undefined) {
                                 prodPrePed['direccion'] = prodCarr[m][1]['direccion'];

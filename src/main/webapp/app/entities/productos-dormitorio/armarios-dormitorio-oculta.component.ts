@@ -1449,8 +1449,11 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
 
                 $('.armariosDivTodo1 #imagenesArmario1').append(
-                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/2 PTA/2-1.png">'
                 );
+                var html = $('.armariosDivTodo1 #imagenesArmario1').html();
+                $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-top': '600px' });
+                $('.armariosDivTodo1 #imagenesArmario2').append(html);
 
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
@@ -1475,8 +1478,11 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
                 $('.armariosDivTodo1 #imagenesArmario1').append(
-                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/3 PTA/3-1.png">'
                 );
+                var html = $('.armariosDivTodo1 #imagenesArmario1').html();
+                $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-top': '600px' });
+                $('.armariosDivTodo1 #imagenesArmario2').append(html);
 
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
@@ -3949,11 +3955,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                             '<img id="interiorDentroArmario' +
                                 hueco +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/2 PTA/2-1-A-' +
                                 nombre +
-                                '/peque_interior_' +
-                                nombre +
-                                '_blanco_optimized.png">'
+                                '.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     } else {
@@ -4004,11 +4008,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                             '<img id="interiorDentroArmario' +
                                 hueco +
-                                '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/2 PTA/2-1-B-' +
                                 nombre +
-                                '/grande_interior_' +
-                                nombre +
-                                '_blanco_optimized.png">'
+                                '.png">'
                         );
                         $('#textoLetraHueco' + (hueco - 1)).remove();
                     }
@@ -4065,11 +4067,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                             $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                 '<img id="interiorDentroArmario' +
                                     hueco +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100" src="../../../content/images/ar/peque/3. INTERIORES/' +
+                                    '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/3 PTA/3-1-A-' +
                                     nombre +
-                                    '/peque_interior_' +
-                                    nombre +
-                                    '_blanco_optimized.png">'
+                                    '.png">'
                             );
                             $('#textoLetraHueco' + (hueco - 1)).remove();
                         } else {
@@ -4121,11 +4121,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                        '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/3 PTA/3-1-B-' +
                                         nombre +
-                                        '/grande_interior_' +
-                                        nombre +
-                                        '_blanco_optimized.png">'
+                                        '.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
@@ -4177,11 +4175,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                     '<img id="interiorDentroArmario' +
                                         hueco +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:100;margin-left:212px;margin-top:-39px" src="../../../content/images/ar/grande/3. INTERIORES/' +
+                                        '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/3 PTA/3-1-C-' +
                                         nombre +
-                                        '/grande_interior_' +
-                                        nombre +
-                                        '_blanco_optimized.png">'
+                                        '.png">'
                                 );
                                 $('#textoLetraHueco' + (hueco - 1)).remove();
                             }
@@ -10773,11 +10769,56 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         array1['puertas'] = this.puertasParaArray;
         this.armarioCogido = array1;
         $('#puertaTiradorImagen').remove();
-
+        var texto = this.textoArmario;
         var nombreDeLaPuerta = $('#divPuerta' + id + ' #inputPuertas' + id).val();
         var arrayPuertas = this.arraySaberPuertas;
         var arrayHuecos = this.arraySaberHuecos;
         var mejorArmario = this.armarioCogido;
+        if (texto == '2 PUERTAS CORREDERA') {
+            if (nombreDeLaPuerta == 'Puerta Lisa') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 3 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 5 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales DER') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            }
+        }
+
+        if (texto == '3 PUERTAS CORREDERA') {
+            if (nombreDeLaPuerta == 'Puerta Lisa') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 3 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 5 Plafones') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales DER') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            }
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            }
+        }
         if (nombreDeLaPuerta != 'Puerta 2 Plafones' && nombreDeLaPuerta != 'Puerta 3 Plafones' && nombreDeLaPuerta != 'Puerta 5 Plafones') {
             if (
                 mejorArmario['puertas'].length == parseFloat(arrayPuertas.length) &&
