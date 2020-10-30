@@ -1609,8 +1609,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:97" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/INT.png">'
                                 );
+                                $('#imagenesArmario2').append(
+                                    '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                                );
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/PTAS.png">'
+                                );
+                                $('#imagenesArmario2').css({ 'margin-left': '0%' });
+                                $('#imagenesArmario1').css({ 'margin-left': '0%' });
                             }
                             if (screen.width < 800) {
                                 $('#imagenesArmario1').append(
@@ -1662,9 +1670,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             }
                         }
                     }
-                    var html = $('#imagenesArmario1').html();
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('#imagenesArmario2').append(html);
+                    $('#imagenesArmario2').css({ 'margin-top': '400px' });
                     for (let i = 0; i < puertas; i++) {
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
@@ -1673,44 +1679,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             var dimensiones = segunWIDTH[puertas + ' puertas'];
                         }
                         this.numeroDeHuecos = puertas;
-                        if (screen.width >= 800) {
-                            if (i == 0) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 370px;margin-top: 250px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 2) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 590px;margin-top: 220px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 3) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 865px;margin-top: 180px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                        }
 
                         if (screen.width < 800) {
                             const elem = $('#imagenesArmario2');
@@ -2091,6 +2059,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario2 #imagenesArmario').append(
                                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PTAS PNG/PTAS.png">'
                                 );
+                                $('#imagenesArmario2').css({ 'margin-left': '-5%' });
+                                $('#imagenesArmario1').css({ 'margin-left': '-5%' });
                             }
 
                             if (screen.width < 800) {
@@ -2150,7 +2120,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
                     }
 
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
+                    $('#imagenesArmario2').css({ 'margin-top': '490px' });
                     for (let i = 0; i < puertas; i++) {
                         if (width >= 1500 && width < 2200) {
                             var dimensiones = dimens[puertas + ' puertas'];
@@ -2237,8 +2207,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                                 );
                                 $('#imagenesArmario').append(
-                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-1.png">'
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:97" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PNG/INT.png">'
                                 );
+                                $('#imagenesArmario2').append(
+                                    '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                                );
+                                $('#imagenesArmario2 #imagenesArmario').append(
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/PTAS.png">'
+                                );
+                                $('#imagenesArmario2').css({ 'margin-left': '0%' });
+                                $('#imagenesArmario1').css({ 'margin-left': '0%' });
                             }
 
                             if (screen.width < 800) {
@@ -2298,51 +2276,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
                     }
 
-                    var html = $('#imagenesArmario1').html();
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('#imagenesArmario2').append(html);
+                    $('#imagenesArmario2').css({ 'margin-top': '400px' });
                     for (let i = 0; i < puertas; i++) {
                         var dimensiones = dimens[puertas + ' puertas'];
                         this.numeroDeHuecos = puertas;
-                        if (screen.width >= 800) {
-                            if (i == 0) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 1) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 370px;margin-top: 250px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 2) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 650px;margin-top: 220px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                            if (i == 3) {
-                                $('#imagenesArmario').append(
-                                    '<p id="textoLetraHueco' +
-                                        i +
-                                        '" style="position:absolute;z-index:10000;margin-left: 935px;margin-top: 170px;font-size: 50px;">' +
-                                        mai[i] +
-                                        '</p>'
-                                );
-                            }
-                        }
-
                         if (screen.width < 800) {
                             if (i == 0) {
                                 $('#imagenesArmario').append(
@@ -2419,53 +2356,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
                             );
                             $('#imagenesArmario').append(
-                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/3-1.png">'
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:97" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/INT.png">'
                             );
+
+                            $('#imagenesArmario2').append(
+                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
+                            );
+                            $('#imagenesArmario2 #imagenesArmario').append(
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/PTAS.png">'
+                            );
+
+                            $('#imagenesArmario2').css({ 'margin-left': '0%' });
+                            $('#imagenesArmario1').css({ 'margin-left': '0%' });
                         }
                     }
 
-                    var html = $('#imagenesArmario1').html();
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('#imagenesArmario2').append(html);
+                    $('#imagenesArmario2').css({ 'margin-top': '400px' });
                     for (let i = 0; i < puertas; i++) {
                         var dimensiones = dimens[puertas + ' puertas'];
                         this.numeroDeHuecos = puertas;
-                        if (i == 0) {
-                            $('#imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 1) {
-                            $('#imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 250px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 2) {
-                            $('#imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 220px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 3) {
-                            $('#imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 950px;margin-top: 170px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
                     }
                     $('#acabadosTodo').removeAttr('class');
                     this.acaProdService.findAca(42).subscribe(data => {
@@ -2512,6 +2421,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 $('#imagenesArmario2 #imagenesArmario').append(
                                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/PTAS.png">'
                                 );
+                                $('#imagenesArmario2').css({ 'margin-left': '-5%' });
+                                $('#imagenesArmario1').css({ 'margin-left': '-5%' });
                             }
                             if (screen.width < 800) {
                                 $('#imagenesArmario1').append(
@@ -2560,9 +2471,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         }
                     }
 
-                    var html = $('#imagenesArmario1').html();
-                    $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('#imagenesArmario2').append(html);
+                    $('#imagenesArmario2').css({ 'margin-top': '490px' });
                     for (let i = 0; i < puertas; i++) {
                         var dimensiones = dimens[puertas + ' puertas'];
                         this.numeroDeHuecos = puertas;
@@ -2632,186 +2541,33 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     var dimensiones = dimens[puertas + ' puertas'];
                     this.numeroDeHuecos = puertas;
                     if (i == 0) {
-                        if (screen.width >= 800) {
-                            $('#imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>'
-                            );
-                            $(' #imagenesArmario').css({ 'margin-left': '200px' });
-                            $(' #imagenesArmario').append(
-                                '<img id="casco' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img id="trasera' +
-                                    i +
-                                    '" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
+                        $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
+                        $(' #imagenesArmario').css({ 'margin-left': '200px' });
+                        $(' #imagenesArmario').append(
+                            '<img style="position:absolute;width: 650px;height: 650px;z-index:98;" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PNG/INT.png">'
+                        );
+
+                        $('#imagenesArmario2').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
+                        $('#imagenesArmario2 #imagenesArmario').css({ 'margin-left': '200px' });
+                        $('#imagenesArmario2 #imagenesArmario').append(
+                            '<img style="position:absolute;width: 650px;height: 650px;z-index:103;" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/PTAS.png">'
+                        );
+                        $('#imagenesArmario2').css({ 'margin-left': '6%' });
+                        $('#imagenesArmario1').css({ 'margin-left': '6%' });
+
                         if (screen.width < 800) {
-                            $('#imagenesArmario1').append(
-                                '<p style="width:100%;margin-top:20%;margin-left:20.5% !important;margin-bottom:-20%;" id="imagenesArmario"></p>'
-                            );
-                            $(' #imagenesArmario').append(
-                                '<img class="armario8casco1" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                            );
-                            $('#imagenesArmario').append(
-                                '<img class="armario8casco1" style="position:absolute;width: 350px;height: 650px;z-index:100;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                            );
-                        }
-                    } else {
-                        if (i == 1) {
-                            if (screen.width >= 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (screen.width < 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco2" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco2" style="position:absolute;width: 350px;height: 650px;z-index:99;margin-left: 281px;margin-top: -52px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                        }
-                        if (i == 2) {
-                            if (screen.width >= 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (screen.width < 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco3" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco3" style="position:absolute;width: 350px;height: 650px;z-index:98;margin-left: 562px;margin-top: -103px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                        }
-                        if (i == 3) {
-                            if (screen.width >= 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img id="casco' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img id="trasera' +
-                                        i +
-                                        '" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
-                            if (screen.width < 800) {
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco4" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/1. CASCO MADERA/grande_casco_blanco.png">'
-                                );
-                                $(' #imagenesArmario').append(
-                                    '<img class="armario8casco4" style="position:absolute;width: 350px;height: 650px;z-index:97;margin-left: 843px;margin-top: -155px;" src="../../../content/images/ar/grande/2. TRASERA/grande_trasera_blanco.png">'
-                                );
-                            }
+                            $('#imagenesArmario2').css({ zoom: '50%' });
+                            $('#imagenesArmario1').css({ zoom: '50%' });
+                            $('#imagenesArmario2').css({ 'margin-left': '-20%' });
+                            $('#imagenesArmario1').css({ 'margin-left': '-20%' });
                         }
                     }
                 }
 
-                var html = $('#imagenesArmario1').html();
-                $('#imagenesArmario2').css({ 'margin-top': '600px' });
-                $('#imagenesArmario2').append(html);
+                $('#imagenesArmario2').css({ 'margin-top': '340px' });
                 for (let i = 0; i < puertas; i++) {
                     var dimensiones = dimens[puertas + ' puertas'];
                     this.numeroDeHuecos = puertas;
-                    if (screen.width >= 800) {
-                        if (i == 0) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 1) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 2) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 3) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                    }
-
-                    if (screen.width < 800) {
-                        if (i == 0) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 170px;margin-top: 260px;font-size: 50px;margin-left: 35px !important;margin-top: 120px !important;font-size: 40px !important;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 1) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 450px;margin-top: 245px;font-size: 50px;margin-left: 120px !important;margin-top: 100px !important;font-size: 40px !important;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 2) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 730px;margin-top: 205px;font-size: 50px;margin-left: 196px !important;margin-top: 80px !important;font-size: 40px !important;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                        if (i == 3) {
-                            $('#imagenesArmario1 #imagenesArmario').append(
-                                '<p id="textoLetraHueco' +
-                                    i +
-                                    '" style="position:absolute;z-index:10000;margin-left: 1010px;margin-top: 165px;font-size: 50px;margin-left: 280px !important;margin-top: 56px !important;font-size: 40px !important;">' +
-                                    mai[i] +
-                                    '</p>'
-                            );
-                        }
-                    }
                 }
                 $('.armariosDivTodo #acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
@@ -6053,7 +5809,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-A-' +
+                                                        '" class="class7Izqinterior1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PNG/7-2-A-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6130,7 +5886,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-B-' +
+                                                        '" class="class7Izqinterior2" style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PNG/7-2-B-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6207,7 +5963,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-C-' +
+                                                        '" class="class7Izqinterior3" style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PNG/7-2-C-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6284,7 +6040,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                     '<img id="interiorDentroArmario' +
                                                         hueco +
-                                                        '" class="class7Izqinterior4" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/7-2-D-' +
+                                                        '" class="class7Izqinterior4" style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/7-2 PNG/7-2-D-' +
                                                         nombre +
                                                         '.png">'
                                                 );
@@ -6366,7 +6122,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-D-' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-D-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6443,7 +6199,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-B-' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-B-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6520,7 +6276,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-C-' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-C-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6597,7 +6353,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                     $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                         '<img id="interiorDentroArmario' +
                                                             hueco +
-                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/7-3-A-' +
+                                                            '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-A-' +
                                                             nombre +
                                                             '.png">'
                                                     );
@@ -6663,7 +6419,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int2" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-B-' +
+                                                                '" style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PNG/8-1-B-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -6723,7 +6479,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int3" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-C-' +
+                                                                '" style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PNG/8-1-C-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -6783,7 +6539,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int4" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-D-' +
+                                                                '" style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PNG/8-1-D-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -6843,7 +6599,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                         $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                             '<img id="interiorDentroArmario' +
                                                                 hueco +
-                                                                '" class="armario8Int1" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/8-1-A-' +
+                                                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PNG/8-1-A-' +
                                                                 nombre +
                                                                 '.png">'
                                                         );
@@ -8243,7 +7999,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi1Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-A-' +
+                                                                                        '" class="armario7asi1Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-A-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8336,7 +8092,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi2Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-B-' +
+                                                                                        '" class="armario7asi2Int" style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-B-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8428,7 +8184,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi3Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-C-' +
+                                                                                        '" class="armario7asi3Int" style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-C-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -8520,7 +8276,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                                                                 $('#imagenesArmario' + i + ' #imagenesArmario').append(
                                                                                     '<img id="interiorDentroArmario' +
                                                                                         hueco +
-                                                                                        '" class="armario7asi4Int" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/7-1-D-' +
+                                                                                        '" class="armario7asi4Int" style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-D-' +
                                                                                         nombre +
                                                                                         '.png">'
                                                                                 );
@@ -9396,31 +9152,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-C.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-C.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-C.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-C.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-C.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-C.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-C.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-C.png">'
                                         );
                                     }
                                 }
@@ -9461,17 +9217,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         for (let i = 1; i <= puertas; i++) {
                             dimens['dimenPuerta6'] = 'margin-left:790px;margin-top:215px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta7'] = 'margin-left:930px;margin-top:185px;z-index:100000;font-size:30px';
-                            if (screen.width >= 800) {
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<p id="nombrePuerta' +
-                                        i +
-                                        '" style="position:absolute;' +
-                                        dimens['dimenPuerta' + i] +
-                                        '"> Puerta ' +
-                                        i +
-                                        '</p>'
-                                );
-                            }
                             if (screen.width < 800) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
@@ -9816,31 +9561,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 if (screen.width >= 800) {
                                     if (i == 1) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-C.png">'
+                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-C.png">'
                                         );
                                     }
                                     if (i == 2) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-C.png">'
+                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-C.png">'
+                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-C.png">'
                                         );
                                     }
                                     if (i == 3) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-C.png">'
+                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-C.png">'
+                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-C.png">'
                                         );
                                     }
                                     if (i == 4) {
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-C.png">'
+                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-C.png">'
                                         );
                                         $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-C.png">'
+                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-C.png">'
                                         );
                                     }
                                 }
@@ -9886,17 +9631,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             dimens['dimenPuerta5'] = 'margin-left:715px;margin-top:240px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta6'] = 'margin-left: 855px;margin-top: 220px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta7'] = 'margin-left: 1000px;margin-top: 200px;z-index:100000;font-size:30px';
-                            if (screen.width >= 800) {
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<p id="nombrePuerta' +
-                                        i +
-                                        '" style="position:absolute;' +
-                                        dimens['dimenPuerta' + i] +
-                                        '"> Puerta ' +
-                                        i +
-                                        '</p>'
-                                );
-                            }
 
                             if (screen.width < 800) {
                                 if (i == 1) {
@@ -9972,31 +9706,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             for (let i = 1; i <= puertas; i++) {
                                 if (i == 1) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-C.png">'
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-C.png">'
+                                        '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-C.png">'
                                     );
                                 }
                                 if (i == 2) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-C.png">'
+                                        '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-C.png">'
+                                        '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-C.png">'
                                     );
                                 }
                                 if (i == 3) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-C.png">'
+                                        '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-C.png">'
                                     );
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-C.png">'
+                                        '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-C.png">'
                                     );
                                 }
                                 if (i == 4) {
                                     $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-C.png">'
+                                        '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-C.png">'
                                     );
                                 }
                             }
@@ -10009,15 +9743,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             dimens['dimenPuerta5'] = 'margin-left:640px;margin-top:240px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta6'] = 'margin-left: 780px;margin-top: 220px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta7'] = 'margin-left: 935px;margin-top: 200px;z-index:100000;font-size:30px';
-                            $('#imagenesArmario2 #imagenesArmario').append(
-                                '<p id="nombrePuerta' +
-                                    i +
-                                    '" style="position:absolute;' +
-                                    dimens['dimenPuerta' + i] +
-                                    '"> Puerta ' +
-                                    i +
-                                    '</p>'
-                            );
                         }
                     }
 
@@ -10162,74 +9887,37 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         var cuenta = puertas;
                         if (cuenta % 1 == 0) {
                             for (let i = 1; i <= puertas; i++) {
-                                if (screen.width >= 800) {
-                                    if (i == 1) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-C.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-C.png">'
-                                        );
-                                    }
-                                    if (i == 2) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-C.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-C.png">'
-                                        );
-                                    }
-                                    if (i == 3) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-C.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-C.png">'
-                                        );
-                                    }
-                                    if (i == 4) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-C.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor7" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;"" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-C.png">'
-                                        );
-                                    }
+                                if (i == 1) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-C.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor1" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-C.png">'
+                                    );
                                 }
-
-                                if (screen.width < 800) {
-                                    if (i == 1) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor0" style="position:absolute;width: 350px;height: 650px;z-index:101;max-width: 100px !important;max-height: 278px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor1" style="position:absolute;width: 350px;height: 650px;z-index:101;max-width: 100px !important;max-height: 278px !important;margin-left:0px !important; margin-top:0px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                        );
-                                    }
-                                    if (i == 2) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor2" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;max-width: 100px !important;max-height: 278px !important;margin-top: -22px !important;margin-left: 82px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor3" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-top: -52px;margin-left:281px;max-width: 100px !important;max-height: 278px !important;margin-top: -22px !important;margin-left: 82px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                        );
-                                    }
-                                    if (i == 3) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor4" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;max-width: 100px !important;max-height: 278px !important;margin-top: -44px !important;margin-left: 163px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor5" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 562px;margin-top: -103px;max-width: 100px !important;max-height: 278px !important;margin-top: -44px !important;margin-left: 163px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                        );
-                                    }
-                                    if (i == 4) {
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor6" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;max-width: 100px !important;max-height: 278px !important;margin-top: -66px !important;margin-left: 243px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/IZQUIERDA/grande_puertamadera_izquierda_blanco_optimized.png">'
-                                        );
-                                        $('#imagenesArmario2 #imagenesArmario').append(
-                                            '<img id="puertaColor7" style="position:absolute;width: 350px;height: 650px;z-index:101;margin-left: 845px;margin-top: -155px;max-width: 100px !important;max-height: 278px !important;margin-top: -66px !important;margin-left: 243px !important;" src="../../../content/images/ar/grande/4. PUERTAS MADERA/DERECHA/grande_puertamadera_derecha_blanco_optimized.png">'
-                                        );
-                                    }
+                                if (i == 2) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor2" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-C.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor3" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-C.png">'
+                                    );
+                                }
+                                if (i == 3) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor4" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-C.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor5" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-C.png">'
+                                    );
+                                }
+                                if (i == 4) {
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor6" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-C.png">'
+                                    );
+                                    $('#imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor7" style="position:absolute;width: 650px;height: 650px;z-index:103;margin-left:0px;margin-top:0px;display:none" src="../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-C.png">'
+                                    );
                                 }
                             }
                         }
@@ -10242,92 +9930,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             dimens['dimenPuerta6'] = 'margin-left: 780px;margin-top: 220px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta7'] = 'margin-left: 925px;margin-top: 175px;z-index:100000;font-size:30px';
                             dimens['dimenPuerta8'] = 'margin-left: 1068px;margin-top: 150px;z-index:100000;font-size:30px';
-                            if (screen.width >= 800) {
-                                $('#imagenesArmario2 #imagenesArmario').append(
-                                    '<p id="nombrePuerta' +
-                                        i +
-                                        '" style="position:absolute;' +
-                                        dimens['dimenPuerta' + i] +
-                                        '"> Puerta ' +
-                                        i +
-                                        '</p>'
-                                );
-                            }
-
-                            if (screen.width < 800) {
-                                if (i == 1) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 19px !important;margin-top: 155px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 2) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 60px !important;margin-top: 140px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 3) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 101px !important;margin-top: 125px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 4) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 141px !important;margin-top: 115px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 5) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 182px !important;margin-top: 105px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 6) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 222px !important;margin-top: 95px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 7) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 262px !important;margin-top: 85px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                                if (i == 8) {
-                                    $('#imagenesArmario2 #imagenesArmario').append(
-                                        '<p id="nombrePuerta' +
-                                            i +
-                                            '" style="position:absolute;margin-left: 302px !important;margin-top: 75px !important;font-size: 11px !important;z-index: 102;"> Puerta ' +
-                                            i +
-                                            '</p>'
-                                    );
-                                }
-                            }
                         }
                     }
 
@@ -11314,7 +10916,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-
+                $('#puertaColor' + id).css({ display: 'block' });
                 var arrayPuertas = this.arraySaberPuertas;
                 $('#puertaColor' + id).attr('class', 'puertas3derecha3');
                 if (screen.width < 800) {
@@ -11337,6 +10939,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
                 $('#puertaColor' + id).attr('class', 'puertas3derecha3');
                 if (screen.width < 800) {
                     const elem = $('#puertaColorMarco' + id);
@@ -12016,31 +11619,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/1-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
 
                 $('#puertaColor' + id).css({ display: 'block' });
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-41px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem[0].style.setProperty('margin-top', '-41px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
-
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12049,29 +11640,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/1-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-41px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem[0].style.setProperty('margin-top', '-41px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12085,31 +11665,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/2-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-41px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem[0].style.setProperty('margin-top', '-41px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                    elem[0].style.setProperty('width', '915px', 'important');
-                    elem[0].style.setProperty('height', '845px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12118,30 +11685,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/2-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
                 $('#puertaColor' + id).css({ display: 'block' });
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-41px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-87px', 'important');
-                    elem[0].style.setProperty('margin-top', '-41px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12155,38 +11711,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/3-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
                 $('#puertaColor' + id).css({ display: 'block' });
-
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                }
-
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-63px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem[0].style.setProperty('margin-top', '-63px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
 
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
@@ -12196,28 +11732,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/3-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-63px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem[0].style.setProperty('margin-top', '-63px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12231,27 +11757,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/4-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-A.png');
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-63px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem[0].style.setProperty('margin-top', '-63px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12260,28 +11776,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/4-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-63px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '-5px', 'important');
-                    elem[0].style.setProperty('margin-top', '-63px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12295,28 +11801,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/5-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '76px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-85px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12325,28 +11821,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/5-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '76px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-85px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12360,28 +11845,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/6-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '76px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-85px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12390,29 +11865,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/6-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '76px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-85px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12426,29 +11891,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/7-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '156px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-107px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '156px', 'important');
-                    elem[0].style.setProperty('margin-top', '-107px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12457,29 +11911,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/7-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '156px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-107px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '156px', 'important');
-                    elem[0].style.setProperty('margin-top', '-107px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12493,30 +11936,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/8-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
 
                 $('#puertaColor' + id).css({ display: 'block' });
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '156px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-107px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '156px', 'important');
-                    elem[0].style.setProperty('margin-top', '-107px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -12525,28 +11957,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA/PTAS PNG/8-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                    const elem12 = $('#puertaColor' + id);
-                    elem12[0].style.setProperty('margin-left', '156px', 'important');
-                    elem12[0].style.setProperty('margin-top', '-107px', 'important');
-                    const elem = $('#puertaColorMarco' + id);
-                    elem[0].style.setProperty('margin-left', '156px', 'important');
-                    elem[0].style.setProperty('margin-top', '-107px', 'important');
-                    elem[0].style.setProperty('max-width', '275px', 'important');
-                    elem[0].style.setProperty('max-height', '360px', 'important');
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
+
                 var arrayPuertas = this.arraySaberPuertas;
                 var arrayHuecos = this.arraySaberHuecos;
                 var mejorArmario = this.armarioCogido;
@@ -13062,16 +12484,16 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
         }
 
-        if (nombreArmario == '7 PUERTAS IZQUIERDA' && id == 0) {
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 0) {
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-
+                $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     const elem12 = $('#puertaColor' + id);
                     $('#puertaColor' + id).css({ 'max-width': '280px' });
@@ -13095,12 +12517,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-
+                $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     const elem12 = $('#puertaColor' + id);
                     $('#puertaColor' + id).css({ 'max-width': '280px' });
@@ -13125,11 +12547,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
         }
 
-        if (nombreArmario == '7 PUERTAS IZQUIERDA' && id == 1) {
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 1) {
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-A.png');
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
@@ -13158,7 +12580,458 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-B.png');
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-59px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-59px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 2) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-59px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-59px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-59px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-59px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 3) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '60px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-82px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '60px', 'important');
+                    elem[0].style.setProperty('margin-top', '-82px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '60px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-82px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '60px', 'important');
+                    elem[0].style.setProperty('margin-top', '-82px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 4) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '60px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-82px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '60px', 'important');
+                    elem[0].style.setProperty('margin-top', '-82px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '60px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-82px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '60px', 'important');
+                    elem[0].style.setProperty('margin-top', '-82px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 5) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '148px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-104px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '148px', 'important');
+                    elem[0].style.setProperty('margin-top', '-104px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '148px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-104px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '148px', 'important');
+                    elem[0].style.setProperty('margin-top', '-104px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS DERECHA' && id == 6) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '148px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-104px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '148px', 'important');
+                    elem[0].style.setProperty('margin-top', '-104px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '148px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-104px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '148px', 'important');
+                    elem[0].style.setProperty('margin-top', '-104px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS IZQUIERDA' && id == 0) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-A.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '280px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '350px' });
+
+                    elem12[0].style.setProperty('margin-left', '-86px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-34px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-86px', 'important');
+                    elem[0].style.setProperty('margin-top', '-34px', 'important');
+                    elem[0].style.setProperty('max-width', '280px', 'important');
+                    elem[0].style.setProperty('max-height', '350px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-B.png');
+
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '280px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '350px' });
+
+                    elem12[0].style.setProperty('margin-left', '-86px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-34px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-86px', 'important');
+                    elem[0].style.setProperty('margin-top', '-34px', 'important');
+                    elem[0].style.setProperty('max-width', '280px', 'important');
+                    elem[0].style.setProperty('max-height', '350px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+        }
+
+        if (nombreArmario == '7 PUERTAS IZQUIERDA' && id == 1) {
+            var codigoArmario = this.codigoArmario;
+            $('#puertaColorMarco' + id).remove();
+            if (nombre == 381) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-A.png');
+                $('#nombrePuerta' + (id + 1)).remove();
+                $('#puertaColor' + id).css({ width: '650px' });
+                $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
+
+                if (screen.width < 800) {
+                    const elem12 = $('#puertaColor' + id);
+                    $('#puertaColor' + id).css({ 'max-width': '300px' });
+                    $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + id).css({ 'max-height': '365px' });
+
+                    elem12[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem12[0].style.setProperty('margin-top', '-59px', 'important');
+                    const elem = $('#puertaColorMarco' + id);
+                    elem[0].style.setProperty('margin-left', '-28px', 'important');
+                    elem[0].style.setProperty('margin-top', '-59px', 'important');
+                    elem[0].style.setProperty('max-width', '300px', 'important');
+                    elem[0].style.setProperty('max-height', '365px', 'important');
+                }
+
+                var arrayPuertas = this.arraySaberPuertas;
+                var arrayHuecos = this.arraySaberHuecos;
+                var mejorArmario = this.armarioCogido;
+                if (mejorArmario['puertas'].length == 7 && mejorArmario['interiores'].length == arrayHuecos.length) {
+                    $('#botonCalculadoraBatientes').css({ display: 'block' });
+                }
+            }
+            if (nombre == 382) {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-B.png');
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
@@ -13193,7 +13066,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13223,7 +13096,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13258,7 +13131,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13288,7 +13161,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13323,7 +13196,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13353,7 +13226,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13388,7 +13261,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13418,7 +13291,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13452,7 +13325,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13482,7 +13355,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
@@ -13886,11 +13759,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
@@ -13914,11 +13786,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
@@ -13946,12 +13817,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -13973,12 +13843,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -14005,11 +13874,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -14030,11 +13900,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -14061,11 +13932,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
@@ -14088,11 +13958,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
@@ -14120,13 +13989,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-
                 $('#puertaColor' + id).css({ display: 'block' });
 
                 if (screen.width < 800) {
@@ -14152,12 +14019,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -14187,11 +14053,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
 
                 $('#puertaColor' + id).css({ display: 'block' });
@@ -14219,11 +14084,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
@@ -14254,13 +14118,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var codigoArmario = this.codigoArmario;
             $('#puertaColorMarco' + id).remove();
             if (nombre == 381) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-A.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-A.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -14285,12 +14147,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
             if (nombre == 382) {
-                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-B.png');
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-B.png');
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -21873,539 +21734,673 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
 
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 1) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-41px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-87px' });
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 2) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 3) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-63px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '-5px' });
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 4) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem = $('#puertaColor' + id);
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 5) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-85px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '76px' });
-                    const elem = $('#puertaColor' + id);
-                    elem[0].style.setProperty('margin-top', '-85px', 'important');
-                    elem[0].style.setProperty('margin-left', '76px', 'important');
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 6) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id + 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                }
+
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '8 PUERTAS ASIMETRICAS' && id == 7) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/8-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/8-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/8 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
+                    var elem1 = $('#puertaColor' + (id - 1));
+                    elem1[0].style.setProperty('max-width', '650px', 'important');
+                    elem1[0].style.setProperty('max-height', '650px', 'important');
+                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                    elem1[0].style.setProperty('margin-right', '0px', 'important');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
-                if (screen.width < 800) {
-                    $('#puertaColor' + id).css({ 'max-width': '275px' });
-                    $('#puertaColor' + id).css({ 'z-index': '102' });
-                    $('#puertaColor' + id).css({ 'max-height': '360px' });
-                    $('#puertaColor' + id).css({ 'margin-top': '-107px' });
-                    $('#puertaColor' + id).css({ 'margin-left': '156px' });
-                }
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('margin-right', '0px', 'important');
             }
 
             if (texto == '7 PUERTAS DERECHA' && id == 0) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
@@ -22414,52 +22409,51 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -22467,52 +22461,50 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
-                    $('#puertaColor' + (id + 1)).css({ display: 'none' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
@@ -22521,104 +22513,102 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ display: 'none' });
+                $('#puertaColor' + id).css({ display: 'block' });
             }
 
             if (texto == '7 PUERTAS DERECHA' && id == 4) {
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
@@ -22627,53 +22617,52 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
-                $('#puertaColor' + id).css({ display: 'none' });
+                $('#puertaColor' + id).css({ display: 'block' });
             }
 
             if (texto == '7 PUERTAS DERECHA' && id == 6) {
@@ -22681,22 +22670,22 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('body').css({ 'overflow-x': 'hidden' });
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 3/PTAS PNG/7-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-3 PTAS PNG/7-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23091,51 +23080,50 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
@@ -23151,52 +23139,51 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/1-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/1-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -23211,51 +23198,50 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -23274,52 +23260,51 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -23337,27 +23322,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/3-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/3-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -23371,51 +23357,50 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ height: '650px' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '295px' });
@@ -23431,46 +23416,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 1/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-1 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23483,7 +23468,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ 'margin-top': '-72px' });
                     $('#puertaColor' + id).css({ 'margin-left': '41px' });
                 }
-                $('#puertaColor' + id).css({ 'z-index': '102' });
                 $('#puertaColor' + id).css({ display: 'block' });
             }
 
@@ -24035,27 +24019,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/1-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/1-F.png');
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
                 $('#puertaColor' + id).css({ width: '650px' });
                 $('#puertaColor' + id).css({ height: '650px' });
+                $('#puertaColor' + id).css({ display: 'block' });
                 if (screen.width < 800) {
                     $('#puertaColor' + id).css({ 'max-width': '280px' });
                     $('#puertaColor' + id).css({ 'z-index': '102' });
@@ -24069,46 +24054,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -24128,46 +24113,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/3-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/2-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/3-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/2-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -24187,46 +24172,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -24250,46 +24235,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/5-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/4-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/5-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/4-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -24313,46 +24298,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-D.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
-                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-E.png');
+                    $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -24375,46 +24360,46 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var nombreLaPuerta = pue123['nombre'];
                 var codigoArmario = this.codigoArmario;
                 if (nombreLaPuerta == 'Puerta Aluminio Transparente') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-A.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-A.png');
                 }
                 if (nombreLaPuerta == 'Puerta Aluminio Gris') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-B.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-B.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente sin tirador') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-C.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-C.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador TIM') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-D.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador NYE') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-E.png');
                 }
                 if (nombreLaPuerta == 'Puerta Batiente tirador DRAW') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-F.png');
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-F.png');
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-D.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-D.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-D.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
-                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/7-E.png');
-                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7 PTA 2/PTAS PNG/6-E.png');
-                    $('#puertaColor' + id).css({ 'z-index': '100' });
+                    $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/7-E.png');
+                    $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/7-2 PTAS PNG/6-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
