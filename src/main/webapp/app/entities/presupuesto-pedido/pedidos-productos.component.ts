@@ -1023,26 +1023,26 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:50;margin-top:315px"src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:49;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1060,26 +1060,26 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1087,13 +1087,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:48;margin-top:-34px;margin-left:164px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:48;" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:48;margin-top:279px;margin-left:164px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:48;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/4-2 PNG/4-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1103,13 +1103,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 320px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/1-1 PNG/1-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 320px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/1-1 PNG/1-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1124,127 +1124,70 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
 
                                             if ('7 PUERTAS IZQUIERDA' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;margin-left: 183px;margin-top: -47px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:268px;margin-left:183px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;margin-left: 292px;margin-top: -70px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:47;margin-top:245px;margin-left:292px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                }
-
-                                                if (screen.width < 800) {
-                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 300px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 300px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;margin-left: 62px;margin-top: -22px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;position: absolute;z-index:49;margin-top:293px;margin-left:62px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;margin-left: 156px;margin-top: -42px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;position: absolute;z-index:48;margin-top:273px;margin-left:156px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;margin-left: 250px;margin-top: -62px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 315px;position: absolute;z-index:47;margin-top:253px;margin-left:250px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                }
-                                            }
-
-                                            if ('2 PUERTAS' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:47" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-D-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:47;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-D-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                            }
+
+                                            if ('2 PUERTAS' == nombre) {
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 320px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PNG/2-1-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 320px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PNG/2-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1260,13 +1203,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             if ('3 PUERTAS DERECHA' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/3-2 PNG/3-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-2 PNG/3-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1274,13 +1217,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:49;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-2 PNG/3-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 340px;position: absolute;z-index:49;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/3-2 PNG/3-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1373,13 +1316,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (screen.width >= 800) {
                                                     var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-A-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
 
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-A-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
@@ -1387,26 +1330,26 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                     $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:49;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-B-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
 
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-B-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
 
                                                     var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-left:164px;margin-top:-34px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:48;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-C-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
 
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:281px;margin-left:164px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                        '<img style="max-width: 360px;position: absolute;z-index:48;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/5-1 PNG/5-1-C-' +
                                                             nombreInt +
                                                             '.png">'
                                                     );
@@ -1475,165 +1418,111 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('margin-top', '8%', 'important');
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
-                                                if (screen.width >= 800) {
-                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-left:90px;margin-top:-10px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:49;margin-top:305px;margin-left:90px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-left:164px;margin-top:-34px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:281px;margin-left:164px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;margin-left: 274px;margin-top: -57px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:47;margin-top:258px;margin-left:274px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                }
-
-                                                if (screen.width < 800) {
-                                                    var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 297px;position: absolute;z-index:49;margin-left:75px;margin-top:-8px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 297px;position: absolute;z-index:49;margin-top:307px;margin-left:75px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;position: absolute;z-index:48;margin-left:137px;margin-top:-29px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;position: absolute;z-index:48;margin-top:286px;margin-left:137px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                    var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;margin-left: 229px;margin-top: -48px;position: absolute;z-index:47" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 310px;position: absolute;z-index:47;margin-top:267px;margin-left:229px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
-                                                            nombreInt +
-                                                            '.png">'
-                                                    );
-                                                }
-                                            }
-
-                                            if ('7 PUERTAS DERECHA' == nombre) {
-                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-left:307px;margin-top:-55px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
-
-                                                $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-top:260px;margin-left:307px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
-                                                        nombreInt +
-                                                        '.png">'
-                                                );
-
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 109px;margin-top: -23px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:292px;margin-left:109px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 218px;margin-top: -45px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:270px;margin-left:218px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:47" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-D-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:47;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/7-1 PNG/7-1-D-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                            }
+
+                                            if ('7 PUERTAS DERECHA' == nombre) {
+                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-D-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 400px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/7-3 PNG/7-3-D-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1642,39 +1531,39 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             if ('6 PUERTAS -3 HUECOS GRANDES' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 109px;margin-top: -23px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:292px;margin-left:109px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 218px;margin-top: -45px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:270px;margin-left:218px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1802,40 +1691,39 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 109px;margin-top: -23px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:292px;margin-left:109px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
-                                                $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:48;margin-left:198px;margin-top:-33px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:48;margin-top:282px;margin-left:198px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-3 PNG/5-3-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1854,39 +1742,39 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 183px;margin-top: -47px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:268px;margin-left:183px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 360px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/5-2 PNG/5-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1895,39 +1783,39 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50;margin-top:315px" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-A-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 74px;margin-top: -24px;position: absolute;z-index:49" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:49;margin-top:291px;margin-left:74px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-B-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;margin-left: 183px;margin-top: -47px;position: absolute;z-index:48" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 365px;position: absolute;z-index:48;margin-top:268px;margin-left:183px" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/INTERIORES/' +
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-C-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -1935,13 +1823,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var nombreInt = datosInteriores[3]['productosDormitorio']['nombre'];
                                                 $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-left: 272px;margin-top:-57px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:47;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-D-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
 
                                                 $('#imagen' + (cont - 1)).append(
-                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-top:258px;margin-left: 272px;" src="../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/INTERIORES/' +
+                                                    '<img style="max-width: 350px;position: absolute;z-index:47;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-2-D-' +
                                                         nombreInt +
                                                         '.png">'
                                                 );
@@ -2024,71 +1912,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2097,108 +1965,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2207,108 +2051,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#cuerpo' + i + ' #derecha').append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 340px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2326,7 +2146,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-A.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
@@ -2335,7 +2155,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-B.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
                                                             src +
@@ -2344,7 +2164,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-C.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2352,7 +2172,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-D.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2360,7 +2180,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-E.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2368,7 +2188,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4 PTA CEN/PTAS PNG/1-G.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
@@ -2379,108 +2199,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2489,108 +2285,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 365px;position: absolute;z-index:99;margin-top:291px;margin-left:74px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:99;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2598,71 +2370,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 var tipo = data.body[3]['productosDormitorio']['nombre'];
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;opacity:0.4;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/4-2 PTAS PNG/4-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:279px;margin-left:164px" src="' +
+                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2680,71 +2432,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px;opacity:0.4" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/1-1 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 350px;position: absolute;z-index:100;margin-top:315px" src="' +
+                                                        '<img style="max-width: 320px;position: absolute;z-index:100;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2763,71 +2495,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2836,108 +2548,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -2946,108 +2634,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 74px;margin-top: 291px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 74px;margin-top: 291px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3056,108 +2720,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[3]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -3166,108 +2806,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[4]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;opacity:0.4;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-2 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 183px;margin-top: 268px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4766,108 +4382,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4876,108 +4468,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -4985,71 +4553,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-2 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:340px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5065,108 +4613,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img  style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img  style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img  style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img  style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5175,108 +4699,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5284,71 +4784,51 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:305px;margin-left:90px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5357,108 +4837,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[3]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -5467,108 +4923,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[4]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:281px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-1 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px;margin-top:281px;margin-left:164px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7062,108 +6494,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7172,108 +6580,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:320px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7661,108 +7045,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     elem[0].style.setProperty('height', '700px', 'important');
                                                 }
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/1-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7771,108 +7131,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[1]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-top:315px" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/2-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7881,108 +7217,84 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[2]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/10.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/12.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/3-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
@@ -7991,179 +7303,135 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 var tipo = data.body[3]['productosDormitorio']['nombre'];
 
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/5.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;opacity:0.4;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/3.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:5;margin-left: 109px;margin-top: 292px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/7.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/9.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/11.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/13.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/14.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle TIM Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/15.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == '2 Puertas Fuelle NYE Izquierda') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/16.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img class="armarioCalculadora" style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img class="armarioCalculadora" style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == '2 Puertas Fuelle NYE Derecha') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/2 PUERTAS/PUERTAS/17.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/4-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:365px;position:absolute;z-index:105;margin-left: 109px;margin-top: 292px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top: 315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 var tipo = data.body[4]['productosDormitorio']['nombre'];
                                                 if (tipo == 'Puerta Aluminio Transparente') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/1.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-A.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-left:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Aluminio Gris') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/2.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-B.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;opacity:0.4;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-left:315px;" src="' +
                                                             src +
-                                                            '">'
-                                                    );
-                                                    var src1 =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/0.png';
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
-                                                            src1 +
                                                             '">'
                                                     );
                                                 }
 
                                                 if (tipo == 'Puerta Batiente sin tirador') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/3.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-C.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador TIM') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/4.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-D.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador NYE') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/6.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-E.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );
                                                 }
                                                 if (tipo == 'Puerta Batiente tirador DRAW') {
-                                                    var src =
-                                                        '../../../content/images/1- PARA WEB/DORMITORIO/1- ARMARIOS/BATIENTES/1 PUERTA/PUERTAS/8.png';
+                                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/5-3 PTAS PNG/5-F.png';
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="width:350px;position:absolute;z-index:105;margin-top:282px;margin-left:198px;" src="' +
+                                                        '<img style="width:360px;position:absolute;z-index:105;margin-top:315px;" src="' +
                                                             src +
                                                             '">'
                                                     );

@@ -10762,7 +10762,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ width: '650px' });
                     $('#puertaColor' + id).css({ height: '650px' });
                     $('#puertaColor' + id).attr('class', 'puertas3Izq1');
-
+                    $('#puertaColor' + id).css({ display: 'block' });
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
@@ -10777,6 +10777,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ width: '650px' });
                     $('#puertaColor' + id).css({ height: '650px' });
                     $('#puertaColor' + id).attr('class', 'puertas3Izq1');
+                    $('#puertaColor' + id).css({ display: 'block' });
 
                     var arrayPuertas = this.arraySaberPuertas;
                     var arrayHuecos = this.arraySaberHuecos;
@@ -10793,6 +10794,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ height: '650px' });
                     var arrayPuertas = this.arraySaberPuertas;
                     $('#puertaColor' + id).attr('class', 'puertas3Izq1');
+                    $('#puertaColor' + id).css({ display: 'block' });
 
                     var arrayHuecos = this.arraySaberHuecos;
                     var mejorArmario = this.armarioCogido;
@@ -10807,6 +10809,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).css({ width: '650px' });
                     $('#puertaColor' + id).css({ height: '650px' });
                     $('#puertaColor' + id).attr('class', 'puertas3Izq1');
+                    $('#puertaColor' + id).css({ display: 'block' });
 
                     $('#puertaColorMarco' + id).css({ 'margin-left': '-282px' });
                     var arrayPuertas = this.arraySaberPuertas;
@@ -20777,21 +20780,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + (id + 2)).remove();
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -20826,21 +20833,25 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png');
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-D.png');
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-D.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png');
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/2-E.png');
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/3-E.png');
                     $('#nombrePuerta' + id).remove();
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                 }
 
                 $('#nombrePuerta' + (id + 1)).remove();
@@ -23496,24 +23507,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                     $('#nombrePuerta' + (id + 2)).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                     $('#nombrePuerta' + (id + 2)).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                     $('#nombrePuerta' + (id + 2)).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png');
                     $('#puertaColor' + (id + 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id + 1)).css({ display: 'block' });
                     $('#nombrePuerta' + (id + 2)).remove();
                 }
 
@@ -23550,24 +23565,28 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png');
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                     $('#nombrePuerta' + id).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle TIM Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-D.png');
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-D.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                     $('#nombrePuerta' + id).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Izquierda') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png');
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                     $('#nombrePuerta' + id).remove();
                 }
                 if (nombreLaPuerta == '2 Puertas Fuelle NYE Derecha') {
                     $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/2-E.png');
                     $('#puertaColor' + (id - 1)).attr('src', '../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/1-E.png');
                     $('#puertaColor' + id).css({ 'z-index': '102' });
+                    $('#puertaColor' + (id - 1)).css({ display: 'block' });
                     $('#nombrePuerta' + id).remove();
                 }
 
