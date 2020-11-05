@@ -658,7 +658,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
         if (id == 2) {
             $('.armariosDivInputCodigo').css({ display: 'block' });
             if (screen.width < 800) {
-                $('#productosPrincipal').css({ height: '2050px' });
+                $('#productosPrincipal').css({ height: '2350px' });
             }
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });

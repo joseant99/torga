@@ -3357,7 +3357,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
         }
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2450px' });
+            $('#productosPrincipal').css({ height: '2650px' });
         }
         if (bueno == 1) {
             this.cascoService.findBus1(coger).subscribe(data => {

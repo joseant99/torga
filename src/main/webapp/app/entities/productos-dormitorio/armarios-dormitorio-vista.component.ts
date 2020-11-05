@@ -641,7 +641,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             }
         }
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2450px' });
+            $('#productosPrincipal').css({ height: '2650px' });
         }
         if (bueno == 1) {
             this.cascoService.findBus1(coger).subscribe(data => {
@@ -1040,7 +1040,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             this.armarioCogido = armariosTodos[j];
         }
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2850px' });
+            $('#productosPrincipal').css({ height: '3250px' });
         }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
@@ -1403,14 +1403,28 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-                $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
-
                 $('.armariosDivTodo2 #imagenesArmario1').append(
-                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/2 PTA/2-1.png">'
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
                 );
-                var html = $('.armariosDivTodo2 #imagenesArmario1').html();
-                $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-top': '600px' });
-                $('.armariosDivTodo2 #imagenesArmario2').append(html);
+
+                $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/INT.png">'
+                );
+                $('.armariosDivTodo2 #imagenesArmario2').append(
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+                );
+                $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/PTAS.png">'
+                );
+                var elem1 = $('.armariosDivTodo2 #imagenesArmario2');
+                elem1[0].style.setProperty('margin-top', '550px', 'important');
+                if (screen.width < 800) {
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-left': '-28%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ 'margin-left': '-28%' });
+                }
+
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -1433,14 +1447,29 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 arrayPuertas[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
-                $('#imagenesArmario1').append('<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario"></p>');
-
                 $('.armariosDivTodo2 #imagenesArmario1').append(
-                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA OCULTA/3 PTA/3-1.png">'
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
                 );
-                var html = $('.armariosDivTodo2 #imagenesArmario1').html();
-                $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-top': '600px' });
-                $('.armariosDivTodo2 #imagenesArmario2').append(html);
+
+                $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/INT.png">'
+                );
+                $('.armariosDivTodo2 #imagenesArmario2').append(
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+                );
+                $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/PTAS.png">'
+                );
+                var elem1 = $('.armariosDivTodo2 #imagenesArmario2');
+                elem1[0].style.setProperty('margin-top', '550px', 'important');
+                if (screen.width < 800) {
+                    elem1[0].style.setProperty('margin-top', '555px', 'important');
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-left': '-30%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ 'margin-left': '-30%' });
+                }
+
                 $('#acabadosTodo').removeAttr('class');
                 this.acaProdService.findAca(42).subscribe(data => {
                     this.todos = data.body[0]['acabados'];
@@ -3953,10 +3982,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                 $('#precioDimension').text(precioTodoFloat);
                             });
                         }
-                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                            '<img id="interiorDentroArmario' +
-                                hueco +
-                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA VISTA/2 PTA/2-1-A-' +
+                        $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
+                            '<img  style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
                                 nombre +
                                 '.png">'
                         );
@@ -4006,10 +4033,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                 $('#precioDimension').text(precioTodoFloat);
                             });
                         }
-                        $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                            '<img id="interiorDentroArmario' +
-                                hueco +
-                                '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA VISTA/2 PTA/2-1-B-' +
+                        $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
+                            '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
                                 nombre +
                                 '.png">'
                         );
@@ -4065,10 +4090,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                     $('#precioDimension').text(precioTodoFloat);
                                 });
                             }
-                            $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                '<img id="interiorDentroArmario' +
-                                    hueco +
-                                    '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA VISTA/3 PTA/3-1-A-' +
+                            $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
+                                '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-A-' +
                                     nombre +
                                     '.png">'
                             );
@@ -4119,10 +4142,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
                                 }
-                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                    '<img id="interiorDentroArmario' +
-                                        hueco +
-                                        '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA VISTA/3 PTA/3-1-B-' +
+                                $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:101" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-B-' +
                                         nombre +
                                         '.png">'
                                 );
@@ -4173,10 +4194,8 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                                         $('#precioDimension').text(precioTodoFloat);
                                     });
                                 }
-                                $('#imagenesArmario' + i + ' #imagenesArmario').append(
-                                    '<img id="interiorDentroArmario' +
-                                        hueco +
-                                        '" style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS CORREDERA VISTA/3 PTA/3-1-C-' +
+                                $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
+                                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-C-' +
                                         nombre +
                                         '.png">'
                                 );
@@ -6882,6 +6901,41 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                         }
                     }
 
+                    if (texto == '2 PUERTAS CORREDERA VISTA') {
+                        var cuenta = puertas;
+                        if (cuenta % 1 == 0) {
+                            for (let i = 1; i <= puertas; i++) {
+                                if (i == 1) {
+                                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px !important;height: 650px !important;z-index:103;margin-left:0px !important;margin-top:0px !important;display:none" src="../../../content/images/pruebaarmarios/VISTA/2 PTA PNG/1-C.png">'
+                                    );
+                                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor1" style="position:absolute;width: 650px !important;height: 650px !important;z-index:103;margin-left:0px !important;margin-top:0px !important;display:none" src="../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-C.png">'
+                                    );
+                                }
+                            }
+                        }
+                    }
+
+                    if (texto == '3 PUERTAS CORREDERA VISTA') {
+                        var cuenta = puertas;
+                        if (cuenta % 1 == 0) {
+                            for (let i = 1; i <= puertas; i++) {
+                                if (i == 1) {
+                                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor0" style="position:absolute;width: 650px !important;height: 650px !important;z-index:103;margin-left:0px !important;margin-top:0px !important;display:none" src="../../../content/images/pruebaarmarios/VISTA/2 PTA PNG/1-C.png">'
+                                    );
+                                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor1" style="position:absolute;width: 650px !important;height: 650px !important;z-index:103;margin-left:0px !important;margin-top:0px !important;display:none" src="../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-C.png">'
+                                    );
+                                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').append(
+                                        '<img id="puertaColor2" style="position:absolute;width: 650px !important;height: 650px !important;z-index:103;margin-left:0px !important;margin-top:0px !important;display:none" src="../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-C.png">'
+                                    );
+                                }
+                            }
+                        }
+                    }
+
                     if (texto == '4 PUERTAS ASIMETRICAS') {
                         var cuenta = puertas;
                         if (cuenta % 1 == 0) {
@@ -8341,6 +8395,226 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 });
 
                 $('#inputPuertas' + id).val(nombre);
+            }
+        }
+
+        if (texto == '2 PUERTAS CORREDERA VISTA' && id == 0) {
+            if (nombre == 'Puerta Lisa') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-A.png');
+            }
+            if (nombre == 'Puerta 2 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-B.png');
+            }
+            if (nombre == 'Puerta 3 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-C.png');
+            }
+            if (nombre == 'Puerta 5 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-D.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-E.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-F.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-G.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales DER') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-H.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-I.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-J.png');
+            }
+            $('#puertaColor' + id).css({ width: '650px' });
+            $('#puertaColor' + id).css({ height: '650px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ 'z-index': '103' });
+            if (screen.width < 800) {
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('margin-top', '0px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+            }
+        }
+
+        if (texto == '2 PUERTAS CORREDERA VISTA' && id == 1) {
+            if (nombre == 'Puerta Lisa') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-A.png');
+            }
+            if (nombre == 'Puerta 2 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-B.png');
+            }
+            if (nombre == 'Puerta 3 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-C.png');
+            }
+            if (nombre == 'Puerta 5 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-D.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-E.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-F.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-G.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales DER') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-H.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-I.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-J.png');
+            }
+            $('#puertaColor' + id).css({ width: '650px' });
+            $('#puertaColor' + id).css({ height: '650px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ 'z-index': '103' });
+            if (screen.width < 800) {
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('margin-top', '0px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+            }
+        }
+
+        if (texto == '3 PUERTAS CORREDERA VISTA' && id == 0) {
+            if (nombre == 'Puerta Lisa') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-A.png');
+            }
+            if (nombre == 'Puerta 2 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-B.png');
+            }
+            if (nombre == 'Puerta 3 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-C.png');
+            }
+            if (nombre == 'Puerta 5 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-D.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-E.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-F.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-G.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales DER') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-H.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-I.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-J.png');
+            }
+            $('#puertaColor' + id).css({ width: '650px' });
+            $('#puertaColor' + id).css({ height: '650px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ 'z-index': '103' });
+            if (screen.width < 800) {
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('margin-top', '0px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+            }
+        }
+
+        if (texto == '3 PUERTAS CORREDERA VISTA' && id == 1) {
+            if (nombre == 'Puerta Lisa') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-A.png');
+            }
+            if (nombre == 'Puerta 2 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-B.png');
+            }
+            if (nombre == 'Puerta 3 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-C.png');
+            }
+            if (nombre == 'Puerta 5 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-D.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-E.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-F.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-G.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales DER') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-H.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-I.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-J.png');
+            }
+            $('#puertaColor' + id).css({ width: '650px' });
+            $('#puertaColor' + id).css({ height: '650px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ 'z-index': '103' });
+            if (screen.width < 800) {
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('margin-top', '0px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
+            }
+        }
+
+        if (texto == '3 PUERTAS CORREDERA VISTA' && id == 2) {
+            if (nombre == 'Puerta Lisa') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-A.png');
+            }
+            if (nombre == 'Puerta 2 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-B.png');
+            }
+            if (nombre == 'Puerta 3 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-C.png');
+            }
+            if (nombre == 'Puerta 5 Plafones') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-D.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-E.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-F.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-G.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales DER') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-H.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-I.png');
+            }
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-J.png');
+            }
+            $('#puertaColor' + id).css({ width: '650px' });
+            $('#puertaColor' + id).css({ height: '650px' });
+            $('#puertaColor' + id).css({ display: 'block' });
+            $('#puertaColor' + id).css({ 'z-index': '103' });
+            if (screen.width < 800) {
+                var elem1 = $('#puertaColor' + id);
+                elem1[0].style.setProperty('margin-top', '0px', 'important');
+                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                elem1[0].style.setProperty('max-width', '650px', 'important');
+                elem1[0].style.setProperty('max-height', '650px', 'important');
             }
         }
 

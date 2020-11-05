@@ -1206,76 +1206,201 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 );
                                             }
                                             if ('2 PUERTAS CORREDERA' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                }
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:101" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101;margin-top:285px" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 365px;height: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 365px;height:365px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100;margin-top:285px" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
                                                 if (screen.width < 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
-                                                    }
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
                                                 }
                                             }
+
                                             if ('3 PUERTAS CORREDERA' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                }
-                                                if (screen.width < 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
-                                                    }
-                                                }
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
                                             }
                                             if ('2 PUERTAS CORREDERA VISTA' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                }
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:101" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:101;margin-top:285px" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 365px;height: 365px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 365px;height:365px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 310px;height: 310px;z-index:100;margin-top:285px" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img  style="position:absolute;width: 365px;height: 365px;z-index:100" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
                                                 if (screen.width < 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
-                                                    }
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
                                                 }
                                             }
                                             if ('3 PUERTAS CORREDERA VISTA' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                }
-                                                if (screen.width < 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
-                                                    }
-                                                }
+                                                var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-A-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[1]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:49;margin-top:315px;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-B-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                var nombreInt = datosInteriores[2]['productosDormitorio']['nombre'];
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 380px;position: absolute;z-index:48;margin-top:315px;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-C-' +
+                                                        nombreInt +
+                                                        '.png">'
+                                                );
                                             }
                                             if ('5 PUERTAS CENTRAL' == nombre) {
                                                 var nombreInt = datosInteriores[0]['productosDormitorio']['nombre'];
@@ -2017,6 +2142,494 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             src +
                                                             '">'
                                                     );
+                                                }
+                                            }
+
+                                            if ('2 PUERTAS CORREDERA' == nombre) {
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
+                                                }
+                                                for (let u = 0; u <= 1; u++) {
+                                                    var tipo = data.body[u]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Lisa') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-A.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-B.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 3 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-C.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 5 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-D.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-E.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-F.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-G.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales DER') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-H.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-I.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-J.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                }
+                                            }
+
+                                            if ('2 PUERTAS CORREDERA VISTA' == nombre) {
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('height', '700px', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
+                                                }
+                                                for (let u = 0; u <= 1; u++) {
+                                                    var tipo = data.body[u]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Lisa') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-A.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-B.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 3 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-C.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 5 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-D.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-E.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-F.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-G.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales DER') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-H.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-I.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-J.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:365px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                }
+                                            }
+
+                                            if ('3 PUERTAS CORREDERA' == nombre) {
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
+                                                    elem[0].style.setProperty('height', '710px', 'important');
+                                                }
+                                                for (let u = 0; u <= 2; u++) {
+                                                    var tipo = data.body[u]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Lisa') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-A.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-B.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 3 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-C.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 5 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-D.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-E.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-F.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-G.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales DER') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-H.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-I.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
+                                                            (u + 1) +
+                                                            '-J.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (screen.width < 800) {
+                                                        var elem = $('#imagen' + (cont - 1));
+                                                        elem[0].style.setProperty('height', '710px', 'important');
+                                                    }
+                                                }
+                                            }
+
+                                            if ('3 PUERTAS CORREDERA VISTA' == nombre) {
+                                                if (screen.width < 800) {
+                                                    var elem1 = $('#datosMeter' + (cont - 1));
+                                                    elem1[0].style.setProperty('padding-left', '0%', 'important');
+                                                    elem1[0].style.setProperty('font-size', '14px', 'important');
+                                                    var elem = $('#imagen' + (cont - 1));
+                                                    elem[0].style.setProperty('margin-left', '7%', 'important');
+                                                    elem[0].style.setProperty('margin-top', '5%', 'important');
+                                                    elem[0].style.setProperty('zoom', '85%', 'important');
+                                                    elem[0].style.setProperty('height', '710px', 'important');
+                                                }
+                                                for (let u = 0; u <= 2; u++) {
+                                                    var tipo = data.body[u]['productosDormitorio']['nombre'];
+
+                                                    if (tipo == 'Puerta Lisa') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-A.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-B.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 3 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-C.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 5 Plafones') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-D.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-E.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-F.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-G.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales DER') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-H.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-I.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                        var src =
+                                                            '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-J.png';
+                                                        $('#imagen' + (cont - 1)).append(
+                                                            '<img style="width:380px;position:absolute;z-index:105;margin-top:315px" src="' +
+                                                                src +
+                                                                '">'
+                                                        );
+                                                    }
+                                                    if (screen.width < 800) {
+                                                        var elem = $('#imagen' + (cont - 1));
+                                                        elem[0].style.setProperty('height', '710px', 'important');
+                                                    }
                                                 }
                                             }
 

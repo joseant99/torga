@@ -1091,56 +1091,582 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
                         if (nombreArmario == '2 PUERTAS CORREDERA') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var puerta1 = sesion[1]['puertas'][0];
+                            var puerta2 = sesion[1]['puertas'][1];
+                            var puerta3 = sesion[1]['puertas'][2];
+                            var puerta4 = sesion[1]['puertas'][3];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 520px;margin-top: 50px;float: left;"></div>'
+                            );
+                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:475px;"></div>');
+
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2;" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+
                             if (screen.width < 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                );
+                                const elem = $('#cuerpo' + i + ' .armarioIzquierda');
+                                elem[0].style.setProperty('margin-left', '30px', 'important');
+                                elem[0].style.setProperty('margin-top', '100px', 'important');
+                                elem[0].style.setProperty('zoom', '70%', 'important');
+                                const elem1 = $('#cuerpo' + i + ' .armarioDerecha');
+                                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                                elem1[0].style.setProperty('margin-top', '480px', 'important');
+                                elem1[0].style.setProperty('zoom', '70%', 'important');
+                                const elem2 = $('#cuerpo' + i);
+                                elem2[0].style.setProperty('height', '670px', 'important');
+                            }
+                            console.log(puerta1);
+                            console.log(puerta2);
+
+                            for (let e = 0; e <= 5; e++) {
+                                var puertavalidamen = sesion[1]['puertas'][e];
+
+                                if (puertavalidamen != undefined) {
+                                    if (puertavalidamen['nombre'] == 'Puerta Lisa') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-A.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-B.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 3 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-C.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 5 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-D.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-E.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-F.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-G.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-H.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-I.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-J.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
                             }
 
-                            if (screen.width >= 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
-                                );
-                            }
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img  style="position:absolute;width: 400px !important;height: 400px !important;z-index:101" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img  style="position:absolute;width: 400px !important;height: 400px !important;z-index:100" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
                         }
                         if (nombreArmario == '3 PUERTAS CORREDERA') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var puerta2 = sesion[1]['puertas'][0];
+                            var puerta3 = sesion[1]['puertas'][1];
+                            var puerta4 = sesion[1]['puertas'][2];
+                            var puerta5 = sesion[1]['puertas'][3];
+                            var puerta6 = sesion[1]['puertas'][4];
+                            var puerta7 = sesion[1]['puertas'][5];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 520px;margin-top: 100px;float: left;"></div>'
+                            );
+                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:470px;"></div>');
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-C-' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
                             if (screen.width < 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                );
+                                const elem = $('#cuerpo' + i + ' .armarioIzquierda');
+                                elem[0].style.setProperty('margin-left', '30px', 'important');
+                                elem[0].style.setProperty('margin-top', '110px', 'important');
+                                elem[0].style.setProperty('zoom', '70%', 'important');
+                                const elem1 = $('#cuerpo' + i + ' .armarioDerecha');
+                                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                                elem1[0].style.setProperty('margin-top', '480px', 'important');
+                                elem1[0].style.setProperty('zoom', '70%', 'important');
+                                const elem2 = $('#cuerpo' + i);
+                                elem2[0].style.setProperty('height', '670px', 'important');
+                            }
+                            for (let e = 0; e <= 5; e++) {
+                                var puertavalidamen = sesion[1]['puertas'][e];
+
+                                if (puertavalidamen != undefined) {
+                                    if (puertavalidamen['nombre'] == 'Puerta Lisa') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-A.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-B.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 3 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-C.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 5 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-D.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-E.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-F.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-G.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-H.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-I.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-J.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
                             }
 
-                            if (screen.width >= 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
-                                );
-                            }
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/OCULTA/3 PNG/3-C-' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
                         }
                         if (nombreArmario == '2 PUERTAS CORREDERA VISTA') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var puerta1 = sesion[1]['puertas'][0];
+                            var puerta2 = sesion[1]['puertas'][1];
+                            var puerta3 = sesion[1]['puertas'][2];
+                            var puerta4 = sesion[1]['puertas'][3];
+
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 520px;margin-top: 50px;float: left;"></div>'
+                            );
+                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:475px;"></div>');
+
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2;" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+
                             if (screen.width < 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                );
+                                const elem = $('#cuerpo' + i + ' .armarioIzquierda');
+                                elem[0].style.setProperty('margin-left', '30px', 'important');
+                                elem[0].style.setProperty('margin-top', '100px', 'important');
+                                elem[0].style.setProperty('zoom', '70%', 'important');
+                                const elem1 = $('#cuerpo' + i + ' .armarioDerecha');
+                                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                                elem1[0].style.setProperty('margin-top', '480px', 'important');
+                                elem1[0].style.setProperty('zoom', '70%', 'important');
+                                const elem2 = $('#cuerpo' + i);
+                                elem2[0].style.setProperty('height', '670px', 'important');
+                            }
+                            console.log(puerta1);
+                            console.log(puerta2);
+
+                            for (let e = 0; e <= 5; e++) {
+                                var puertavalidamen = sesion[1]['puertas'][e];
+
+                                if (puertavalidamen != undefined) {
+                                    if (puertavalidamen['nombre'] == 'Puerta Lisa') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-A.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-B.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 3 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-C.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 5 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-D.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-E.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-F.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-G.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-H.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-I.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-J.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
                             }
 
-                            if (screen.width >= 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
-                                );
-                            }
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img  style="position:absolute;width: 400px !important;height: 400px !important;z-index:101" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img  style="position:absolute;width: 400px !important;height: 400px !important;z-index:100" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
                         }
                         if (nombreArmario == '3 PUERTAS CORREDERA VISTA') {
+                            var interior1 = sesion[1]['interiores'][0];
+                            var interior2 = sesion[1]['interiores'][1];
+                            var interior3 = sesion[1]['interiores'][2];
+                            var puerta2 = sesion[1]['puertas'][0];
+                            var puerta3 = sesion[1]['puertas'][1];
+                            var puerta4 = sesion[1]['puertas'][2];
+                            var puerta5 = sesion[1]['puertas'][3];
+                            var puerta6 = sesion[1]['puertas'][4];
+                            var puerta7 = sesion[1]['puertas'][5];
+                            $('#cuerpo' + i).append(
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 520px;margin-top: 100px;float: left;"></div>'
+                            );
+                            $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:470px;"></div>');
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-C-' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #derecha').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
                             if (screen.width < 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                );
+                                const elem = $('#cuerpo' + i + ' .armarioIzquierda');
+                                elem[0].style.setProperty('margin-left', '30px', 'important');
+                                elem[0].style.setProperty('margin-top', '110px', 'important');
+                                elem[0].style.setProperty('zoom', '70%', 'important');
+                                const elem1 = $('#cuerpo' + i + ' .armarioDerecha');
+                                elem1[0].style.setProperty('margin-left', '0px', 'important');
+                                elem1[0].style.setProperty('margin-top', '480px', 'important');
+                                elem1[0].style.setProperty('zoom', '70%', 'important');
+                                const elem2 = $('#cuerpo' + i);
+                                elem2[0].style.setProperty('height', '670px', 'important');
+                            }
+                            for (let e = 0; e <= 5; e++) {
+                                var puertavalidamen = sesion[1]['puertas'][e];
+
+                                if (puertavalidamen != undefined) {
+                                    if (puertavalidamen['nombre'] == 'Puerta Lisa') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-A.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-B.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 3 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-C.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 5 Plafones') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-D.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-E.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-F.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-G.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-H.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-I.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                        var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-J.png';
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
+                                                src +
+                                                '">'
+                                        );
+                                    }
+                                }
                             }
 
-                            if (screen.width >= 800) {
-                                $('#cuerpo' + i).append(
-                                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
-                                );
-                            }
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-A-' +
+                                    interior1['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-B-' +
+                                    interior2['nombre'] +
+                                    '.png">'
+                            );
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/VISTA/3 PNG/3-C-' +
+                                    interior3['nombre'] +
+                                    '.png">'
+                            );
                         }
                         if (nombreArmario == '2 CUERPO TIPO 1') {
                             if (screen.width < 800) {

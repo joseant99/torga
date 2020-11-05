@@ -879,7 +879,7 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
             }
         }
         if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2850px' });
+            $('#productosPrincipal').css({ height: '3250px' });
         }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
@@ -1141,11 +1141,26 @@ export class VestidoresDormitorioComponent implements OnInit, OnDestroy, AfterVi
                 this.arraySaberHuecos = array;
                 if (puertas == 1) {
                     $('.armariosDivTodo3 #imagenesArmario1').append(
-                        '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/VESTIDOR/1 PTA 1/1-1.png">'
+                        '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario" class="puertas2"></p>'
                     );
-                    var html = $('.armariosDivTodo3 #imagenesArmario1').html();
+                    $('.armariosDivTodo3 #imagenesArmario').append(
+                        '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PNG/INT.png">'
+                    );
+                    $('.armariosDivTodo3 #imagenesArmario2').append(
+                        '<p style="width:100%;margin-top:7%;' + dimensiones + '" id="imagenesArmario" class="puertas2"></p>'
+                    );
+                    $('.armariosDivTodo3 #imagenesArmario2 #imagenesArmario').append(
+                        '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/ARMARIOS/2 PTAS PNG/PTAS.png">'
+                    );
                     $('.armariosDivTodo3 #imagenesArmario2').css({ 'margin-top': '600px' });
-                    $('.armariosDivTodo3 #imagenesArmario2').append(html);
+                    var elem1 = $('#imagenesArmario2');
+                    if (screen.width < 800) {
+                        elem1[0].style.setProperty('margin-top', '590px', 'important');
+                        $('.armariosDivTodo3 #imagenesArmario2').css({ zoom: '50%' });
+                        $('.armariosDivTodo3 #imagenesArmario1').css({ zoom: '50%' });
+                        $('.armariosDivTodo3 #imagenesArmario2').css({ 'margin-left': '-25%' });
+                        $('.armariosDivTodo3 #imagenesArmario1').css({ 'margin-left': '-25%' });
+                    }
                     $('#acabadosTodo').removeAttr('class');
                     this.acaProdService.findAca(42).subscribe(data => {
                         this.todos = data.body[0]['acabados'];
