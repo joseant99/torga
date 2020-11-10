@@ -35,6 +35,7 @@ import { ProductosColgantesHorizontalesComponent } from './productos-colgantes-h
 import { ProductosSingularesComponent } from './productos-singulares.component';
 import { ProductosBuscadorComponent } from './productos-buscador.component';
 import { ProductosBuscadorComponent2 } from './productos-buscador.component2';
+import { ProductosBuscadorComponent3 } from './productos-buscador.component3';
 import { ProductosEditarComponent } from './productos-editar.component';
 import { ProductosDormitorioUpdateComponent } from './productos-dormitorio-update.component';
 import { ProductosDormitorioDeletePopupComponent } from './productos-dormitorio-delete-dialog.component';
@@ -320,6 +321,19 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-buscador2',
         component: ProductosBuscadorComponent2,
+        resolve: {
+            pagingParams: JhiResolvePagingParams
+        },
+        data: {
+            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
+            defaultSort: 'id,asc',
+            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'nativ-dormitorios',
+        component: ProductosBuscadorComponent3,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },

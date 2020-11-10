@@ -13,6 +13,8 @@ type EntityArrayResponseType = HttpResponse<ICasco[]>;
 export class CascoService {
     public resourceUrl = SERVER_API_URL + 'api/cascos';
     public dato;
+    public alto;
+    public fondo;
 
     constructor(protected http: HttpClient) {}
 

@@ -53,9 +53,9 @@ import { JhiMainComponent } from '../../layouts/main/main.component';
         VestidoresDormitorioComponent
     ],
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './productos-buscador.component2.html'
+    templateUrl: './productos-buscador.component3.html'
 })
-export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
+export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -529,10 +529,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public volveratras(id) {
         if (id == 1) {
-            $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
+            $('.armariosDivInputCodigo').attr('id', 'simplepruebaani2');
             $('#page-heading').css({ display: 'block' });
             setTimeout(function() {
-                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.armariosDivInputCodigo').css({ display: 'none' });
+                $('.armariosDivInputCodigo').removeAttr('id');
             }, 1200);
         }
 
@@ -543,14 +544,40 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#calculadoraCarrito').css({ display: 'none' });
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
+                $('.divBuscadorArticulos').removeAttr('id');
             }, 1200);
         }
         if (id == 3) {
-            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
+            $('.armariosDivTodo').attr('id', 'simplepruebaani2');
             $('#page-heading').css({ display: 'block' });
             $('#calculadoraCarrito').css({ display: 'none' });
             setTimeout(function() {
-                $('.divBuscadorArticulos').css({ display: 'none' });
+                $('.armariosDivTodo').css({ display: 'none' });
+                $('.armariosDivTodo').removeAttr('id');
+                $('.armariosDivInputCodigo').removeAttr('id');
+                $('#simplepruebaani').css({ display: 'none' });
+                $('.armariosDivInputCodigo').css({ display: 'none' });
+            }, 1200);
+        }
+        if (id == 4) {
+            $('.armariosDivTodo').attr('id', 'simplepruebaani2');
+            $('#codigoArmariosBatientesDivs').css({ display: 'block' });
+            $('#volverAtras1').css({ display: 'block' });
+            $('#volverAtras2').css({ display: 'none' });
+
+            setTimeout(function() {
+                $('.armariosDivTodo').css({ display: 'none' });
+                $('.armariosDivTodo').removeAttr('id');
+            }, 1200);
+        }
+        if (id == 5) {
+            $('.divaltoocogidomen').attr('id', 'simplepruebaani2');
+            $('#volverAtras2').css({ display: 'block' });
+            $('#volverAtras3').css({ display: 'none' });
+            $('#divanchocogidomen').css({ display: 'block' });
+            setTimeout(function() {
+                $('.divaltoocogidomen').css({ display: 'none' });
+                $('.divaltoocogidomen').removeAttr('id');
             }, 1200);
         }
     }
@@ -620,6 +647,71 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         });
     }
 
+    public meterinputabrirarmarios(id) {
+        $('#inputCodigoArmario').val(id);
+        $('#volverAtras1').css({ display: 'none' });
+        $('#volverAtras2').css({ display: 'block' });
+        $('.armariosDivTodo').attr('id', 'simplepruebaani');
+        this.armariosDormitorioComponent.abrirArmariosTodos();
+        $('#divanchocogidomen').css({ display: 'block' });
+        $('.cuerpoImagenPuertas').css({ display: 'none' });
+
+        setTimeout(function() {
+            $('#codigoArmariosBatientesDivs').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public anchoCogidoParaMeterval(id) {
+        $('#anchosSelect4').val(id);
+        $('#divanchocogidomen').css({ position: 'absolute' });
+        $('.divaltoocogidomen').css({ display: 'block' });
+        $('#volverAtras2').css({ display: 'none' });
+        $('#volverAtras3').css({ display: 'block' });
+        $('.divaltoocogidomen').attr('id', 'simplepruebaani');
+        setTimeout(function() {
+            $('#divanchocogidomen').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public altoCogidoParaMeterval(id) {
+        $('#alturaSelect4').val(id);
+        $('.divfondoSaber').css({ display: 'block' });
+        $('.divfondoSaber').attr('id', 'simplepruebaani');
+
+        setTimeout(function() {
+            $('.divaltoocogidomen').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public fondomostrarpaso1() {
+        $('.divfondoocogidomen').css({ display: 'block' });
+        $('.divfondoocogidomen').attr('id', 'simplepruebaani');
+
+        setTimeout(function() {
+            $('.divfondoSaber').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public fondoNoQuiereCambiar() {
+        $('.cuerpoImagenPuertas').css({ display: 'block' });
+        $('.armariosDivTodo').css({ position: 'absolute' });
+        this.armariosDormitorioComponent.carcarCascosInterioresPuertas();
+        $('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+        $('#inputFondoBatientes').val(61);
+        setTimeout(function() {
+            $('#calculadoraCarrito').removeAttr('style');
+            $('#calculadoraCarrito').attr('style');
+            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('.divBuscadorArticulos').css({ height: '100%' });
+            $('#calculadoraCarrito').css({ width: '25%' });
+            $('.divfondoSaber').css({ display: 'none' });
+            $('.divfondoocogidomen').css({ display: 'none' });
+            $('#imagenesArmario1 #imagenesArmario').css({ 'margin-top': '-5%' });
+            $('#imagenesArmario1 #imagenesArmario').css({ 'margin-left': '58%' });
+            $('#imagenesArmario2').css({ display: 'none' });
+        }, 1000);
+    }
+
     public elegirBusqueda(id) {
         $('.divConfiguracionestant').css({ display: 'none' });
         $('#botonCalculadoraTablero').attr('class', 'displayBoton');
@@ -685,19 +777,12 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#elegirLado').css({ display: 'none' });
         $('.selectbuscaarticulos').append('<option></option>');
 
-        $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
-        $('#inputBusca').css({ display: 'block' });
-        $('.divseleccionarcodigo').css({ display: 'block' });
-        setTimeout(function() {
-            $('#page-heading').css({ display: 'none' });
-        }, 1000);
         var arrayGG = [];
+        var contdivarray = 0;
         if (id == 0) {
             $('#inputBusca').css({ display: 'block' });
         }
-        if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2175px' });
-        }
+
         if (id == 1) {
             $('#nombreMesita').text('ESTANTERIA A MEDIDA');
             $('#estanteriaDiv').css({ display: 'block' });
@@ -711,6 +796,30 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });
             $('.armariosDivInputCodigo #botonOkAnchos').removeAttr('disabled');
+            for (let i = 1; i <= 276; i++) {
+                if (i <= 9) {
+                    arrayGG[i - 1] = 'NB00' + i;
+                }
+                if (i > 9 && i <= 99) {
+                    arrayGG[i - 1] = 'NB0' + i;
+                }
+                if (i > 99) {
+                    arrayGG[i - 1] = 'NB' + i;
+                }
+            }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia12').text('ARMARIOS BATIENTES');
+            $('.armariosDivInputCodigo').attr('id', 'simplepruebaani');
+            $('#codigoArmariosBatientesDivs').removeAttr('style');
+            $('#codigoArmariosBatientesDivs').css({ 'margin-top': '5%' });
+            $('#codigoArmariosBatientesDivs').css({ width: '80%' });
+            $('#codigoArmariosBatientesDivs').css({ 'margin-left': '10%' });
+            $('.armariosDivInputCodigo').css({ display: 'block' });
+
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+            }, 1000);
         }
 
         if (id == 3) {
@@ -776,7 +885,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#textodivsuperiorquenosecambia').text('MODULOS BAJOS');
             $('#textodivsuperiorquenosecambia1').text('MODULOS BAJOS');
         }
-        var contdivarray = 0;
+
         if (id == 9) {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
@@ -1033,17 +1142,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('CAMAS');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
 
         if (id == 22) {
@@ -1054,17 +1177,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NT00' + i + '">NT00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NT00' + i + '">NT00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NT0' + i + '">NT0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NT0' + i + '">NT0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NT' + i + '">NT' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NT' + i + '">NT' + i + '</option>');
+                    arrayGG[contdivarray] = 'NT' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('CANAPES Y BAÑERAS');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
 
         if (id == 23) {
@@ -1075,17 +1212,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('MESITAS');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
 
         if (id == 24) {
@@ -1096,17 +1247,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('CHINFONIERES');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
 
         if (id == 25) {
@@ -1117,17 +1282,37 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('COMODAS');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
 
         if (id == 26) {
@@ -1138,17 +1323,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (i >= 1 && i <= 9) {
                     $('.selectbuscaarticulos').append('<option value="NX00' + i + '">NX00' + i + '</option>');
                     $('#listaAnchos1').append('<option value="NX00' + i + '">NX00' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX00' + i;
+                    contdivarray++;
                 }
                 if (i >= 10 && i <= 99) {
                     $('#listaAnchos1').append('<option value="NX0' + i + '">NX0' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX0' + i + '">NX0' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX0' + i;
+                    contdivarray++;
                 }
 
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NX' + i + '">NX' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NX' + i + '">NX' + i + '</option>');
+                    arrayGG[contdivarray] = 'NX' + i;
+                    contdivarray++;
                 }
             }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('AUXILIARES');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            setTimeout(function() {
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
     }
 
@@ -1324,7 +1523,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#botonbuscarcargardimen').attr('disabled', 'disabled');
         var precioTienda1;
         $('#total').text(0);
-        $('.divBuscadorArticulos').css({ display: 'block' });
         $('#elegirLado').css({ display: 'none' });
         this.usb = undefined;
         if (screen.width < 1100) {
@@ -1409,18 +1607,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#calculadoraCarrito').css({ 'padding-top': '7%' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
-            if (screen.width < 800) {
-                $('#calculadoraCarrito').css({ width: '100%' });
-                $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '40px' });
-                const elem = $('#textprecioCalculadoraazul');
-                elem[0].style.setProperty('bottom', '0px', 'important');
-                elem[0].style.setProperty('height', '55px', 'important');
-                const elem1 = $('#botonCalculadora');
-                elem1[0].style.setProperty('bottom', '0px', 'important');
-                elem1[0].style.setProperty('height', '55px', 'important');
-            }
         }, 1000);
-
+        $('html, body').animate({ scrollTop: 0 });
         this.dimensionesProductoTipoService.findDimensionNombre(nombre.toUpperCase()).subscribe(data => {
             var datos = data.body[0];
             var todosLosDatos = data.body;
@@ -12276,9 +12464,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.classanchoArmarioVes').css({ display: 'block' });
             $('.classinputaltoArmarioVes').remove();
             $('.classaltoArmarioVes').css({ display: 'block' });
-            if (screen.width < 800) {
-                $('#productosPrincipal').css({ height: '1575px' });
-            }
         }
         this.pruebaCargar();
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));

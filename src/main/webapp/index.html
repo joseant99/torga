@@ -152,6 +152,22 @@
 	}
 </script>
 <script>
+$("#divDentroCalcu").scroll(function() {
+	alert("funciono");
+   var class = $("#divDentroCalcu").attr("class");
+   if(class == "armario"){
+	   var contenido = $("#divDentroCalcu").height();
+	   var prueba = $("#divPuerta0").height();
+	   var hola = contenido2 - prueba;
+	   var contenido2 = $("#divDentroCalcu").scrollTop();
+	   if(contenido2 >= hola)
+	   { 
+		   alert("men") 
+	   }
+   }
+});
+</script>
+<script>
 	function interior(id){
 		        var id = $('.dimensionesColor'+id + ' #imagenDimensiones').attr("class");
 		        var interiores = JSON.parse(sessionStorage.getItem('interiores'));;

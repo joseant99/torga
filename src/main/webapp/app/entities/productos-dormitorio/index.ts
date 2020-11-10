@@ -28,6 +28,7 @@ export * from './productos-singulares.component';
 export * from './productos-aparadores.component';
 export * from './productos-buscador.component';
 export * from './productos-buscador.component2';
+export * from './productos-buscador.component3';
 export * from './productos-mesas.component';
 export * from './productos-aux.component';
 export * from './productos-comoda.component';

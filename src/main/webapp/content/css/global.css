@@ -40,6 +40,160 @@ Browser Upgrade Prompt
     color: #000;
     padding: 0.2em 0;
 }
+
+div#simplepruebaani {
+    background-color: white;
+    position: absolute;
+
+    -moz-animation-name: simple-animation;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: simple-animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+}
+
+div#simplepruebaani2 {
+    background-color: white;
+    position: absolute;
+
+    -moz-animation-name: simple2-animation;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: simple2-animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@-moz-keyframes simple-animation {
+    100% {
+        right: 0%;
+        width: 100%;
+    }
+
+    0% {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+@-webkit-keyframes simple-animation {
+    100% {
+        right: 0%;
+        width: 100%;
+    }
+
+    0% {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+@-moz-keyframes simple2-animation {
+    0% {
+        right: 0%;
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+        right: -100%;
+        display: none;
+    }
+}
+
+@-webkit-keyframes simple2-animation {
+    0% {
+        right: 0%;
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+        right: -100%;
+        display: none;
+    }
+}
+
+div#simplepruebaani1 {
+    background-color: white;
+    position: absolute;
+
+    -moz-animation-name: simple1-animation;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: simple-animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+}
+@-moz-keyframes simple1-animation {
+    100% {
+        right: 0%;
+        width: 100%;
+    }
+
+    0% {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+@-webkit-keyframes simple1-animation {
+    100% {
+        right: 0%;
+        width: 100%;
+        height: 100% !important;
+    }
+
+    0% {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+#divcodigoarituclos {
+    float: left;
+    width: 150px;
+    text-align: center;
+    border: 1px solid;
+    font-size: 22px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+#pruebahoverdiv:hover {
+    opacity: 0.4;
+}
+.divcodigometerfondo:hover {
+    background-color: #c1c1c1;
+}
 .hidetext {
     -webkit-text-security: disc; /* Default */
 }
@@ -13504,6 +13658,85 @@ ui bootstrap tweaks
 }
 
 @media screen and (max-width: 700px) {
+    #divcodigoarituclos {
+        float: left;
+        width: 80px;
+        text-align: center;
+        border: 1px solid;
+        font-size: 18px;
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    #imagenAtarmen {
+        display: block !important;
+        width: 58px !important;
+        position: absolute;
+    }
+    #imagenAtarmen1 {
+        display: block !important;
+        width: 45px !important;
+        position: absolute;
+        float: right;
+        top: 87px;
+        right: 10px;
+    }
+    #volverAtras1MeterCasa {
+        margin-left: 2% !important;
+        border: 0px !important;
+    }
+    #textodivsuperiorquenosecambia {
+        font-size: 22px !important;
+        float: left;
+        width: 90%;
+        height: 81px;
+        margin-left: 3%;
+    }
+    #textodivsuperiorquenosecambia4 {
+        font-size: 20px !important;
+        float: left;
+        width: 90%;
+        height: 40px;
+        margin-left: 3%;
+        margin-top: 3%;
+        letter-spacing: 4px !important;
+        padding-bottom: 15px;
+    }
+    #divvolveriniciomen {
+        border: 0px !important;
+    }
+    #divprincipalhuecomenmen {
+        padding-bottom: 6px !important;
+    }
+    #paraQuitarPaTras {
+        display: none;
+    }
+    #divdentrodeloscodigos {
+        margin-top: 160px !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    #idDivDentroImagenes {
+        padding-left: 0px !important;
+    }
+    #textoStrongNativ {
+        font-size: 22px !important;
+        letter-spacing: 15px !important;
+        padding-bottom: 15px !important;
+    }
+    #pruebahoverdiv {
+        width: 150px !important;
+        float: left !important;
+        border: 1px solid !important;
+        margin-right: 5px !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        margin-left: 25px !important;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 150px !important;
+        padding-right: 5px !important;
+    }
     .puerta2nombre1 {
         margin-left: 34px !important;
         margin-top: 180px !important;

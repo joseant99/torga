@@ -173,6 +173,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     precioInterior3: any;
     precioInterior4: any;
     precioInterior5: any;
+    codigoparadivsAncho: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -882,6 +883,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
     public carcarCascosInterioresPuertas() {
         var cogerSeccion = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        $('#divDentroCalcu').attr('class', 'armario');
         if (cogerSeccion == 'A') {
             $('#euroNiveladores').css({ display: 'none' });
             $('#euroCajeado').css({ display: 'none' });
@@ -3369,16 +3371,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#producto').append('<datalist id="listaAltura"></datalist>');
                 $('#armariosCogidos').attr('class', data.body[0].armario.id);
                 var array = [];
+                var arrayAncho = [];
+                var arrayFondo = [];
+                var arrayAlto = [];
                 array[0] = data.body[0].armario;
                 this.armarioService.todo = array;
+                var contancho = 0;
+                var contalto = 0;
+                var contfondo = 0;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
                     $('#listaAnchos').append('<option value="' + i + '">' + i + '</option>');
                     $('.classanchoArmarioBat').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAncho[contancho] = i;
+                    contancho++;
                 }
+                this.cascoService.dato = arrayAncho;
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAltura').append('<option value="' + i + '">' + i + '</option>');
                     $('.classaltoArmarioBat').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAlto[contalto] = i;
+                    contalto++;
                 }
+                this.cascoService.alto = arrayAlto;
+
+                for (let w = 40; w <= 70; w++) {
+                    arrayFondo[contfondo] = w;
+                    contfondo++;
+                }
+                this.cascoService.fondo = arrayFondo;
             });
             $('.armariosDivTodo').css({ display: 'block' });
             $('#inputCodigoArmario').attr('readonly', 'readonly');
