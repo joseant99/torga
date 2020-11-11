@@ -531,6 +531,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         if (id == 1) {
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
             $('#page-heading').css({ display: 'block' });
+            $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divseleccionarcodigo').css({ display: 'none' });
             }, 1200);
@@ -541,6 +542,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'block' });
             $('.divseleccionarcodigo').removeAttr('id');
             $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
             }, 1200);
@@ -549,6 +551,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
             $('#page-heading').css({ display: 'block' });
             $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
             }, 1200);
@@ -684,7 +687,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.selectbuscaarticulos').empty();
         $('#elegirLado').css({ display: 'none' });
         $('.selectbuscaarticulos').append('<option></option>');
-
+        if (screen.width < 800) {
+            $('.divseleccionarcodigo #divprincipalhuecomenmen').css({ 'padding-top': '47px' });
+        }
         $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
         $('#inputBusca').css({ display: 'block' });
         $('.divseleccionarcodigo').css({ display: 'block' });
@@ -1322,6 +1327,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen(codigo) {
         $('#botonbuscarcargardimen').attr('disabled', 'disabled');
+        $('html, body').animate({ scrollTop: 0 });
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
@@ -1402,6 +1408,20 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         nombre = codigo;
         $('.divBuscadorArticulos').attr('id', 'simplepruebaani1');
         $('.divBuscadorArticulos').css({ display: 'block' });
+        if (screen.width < 800) {
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'margin-bottom': '60px' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'border-bottom': '1px solid' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-bottom': '0px' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });
+            $('body').attr('style');
+            $('body').css({ 'overflow-y': 'hidden' });
+        }
         setTimeout(function() {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
@@ -1411,7 +1431,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#calculadoraCarrito').css({ width: '25%' });
             if (screen.width < 800) {
                 $('#calculadoraCarrito').css({ width: '100%' });
-                $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '40px' });
+                $('#calculadoraCarrito').css({ height: '40%' });
+                $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
                 const elem = $('#textprecioCalculadoraazul');
                 elem[0].style.setProperty('bottom', '0px', 'important');
                 elem[0].style.setProperty('height', '55px', 'important');
@@ -2006,7 +2028,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 u +
                                 '</button>'
                         );
-
+                        if (screen.width < 800) {
+                            $('#imagenAcabado').css({ 'margin-top': '5px' });
+                            $('#imagenAcabado').css({ 'padding-top': '5px' });
+                            const elem = $('#imagenAcabado');
+                            elem[0].style.setProperty('max-width', '350px', 'important');
+                            elem[0].style.setProperty('max-height', '350px', 'important');
+                            elem[0].style.setProperty('margin-left', '-3%', 'important');
+                        }
                         if (u == 1) {
                             $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
                         }
@@ -7304,6 +7333,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     public escogidaLuz(id) {}
     public cargarComposicion() {}
     public borrarProdCalculadora() {
+        $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
+        $('#page-heading').css({ display: 'block' });
+        $('#calculadoraCarrito').css({ display: 'none' });
+        $('body').removeAttr('style');
+        setTimeout(function() {
+            $('.divBuscadorArticulos').css({ display: 'none' });
+        }, 1200);
         $('#medidasEspecialesTexto').css({ display: 'none' });
         $('.divBuscadorArticulos').css({ display: 'none' });
         $('#anchosSelect1').val('');

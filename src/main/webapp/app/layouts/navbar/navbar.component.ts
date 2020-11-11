@@ -350,7 +350,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         for (let x = 0; x < 21; x++) {
             $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
         }
-
+        prod = '';
         if (prod != '') {
             if (bool == false) {
                 this.ruta = ruta;
@@ -12132,7 +12132,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
             }
         }
-
+        prod = '';
         if (prod != '') {
             if (bool == false) {
                 this.ruta = ruta;

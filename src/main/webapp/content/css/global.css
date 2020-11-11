@@ -13678,7 +13678,7 @@ ui bootstrap tweaks
         width: 45px !important;
         position: absolute;
         float: right;
-        top: 87px;
+        top: 53px;
         right: 10px;
     }
     #volverAtras1MeterCasa {
@@ -13689,18 +13689,22 @@ ui bootstrap tweaks
         font-size: 22px !important;
         float: left;
         width: 90%;
-        height: 81px;
+        height: 69px;
         margin-left: 3%;
     }
     #textodivsuperiorquenosecambia4 {
         font-size: 20px !important;
         float: left;
         width: 90%;
-        height: 40px;
+        height: 24px;
         margin-left: 3%;
         margin-top: 3%;
         letter-spacing: 4px !important;
         padding-bottom: 15px;
+    }
+    #idNativComedoresDiv {
+        padding-top: 53px !important;
+        padding-bottom: 17px !important;
     }
     #divvolveriniciomen {
         border: 0px !important;
@@ -13712,7 +13716,7 @@ ui bootstrap tweaks
         display: none;
     }
     #divdentrodeloscodigos {
-        margin-top: 160px !important;
+        margin-top: 90px !important;
         width: 100% !important;
         margin-left: 0% !important;
     }
