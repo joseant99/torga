@@ -534,6 +534,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divseleccionarcodigo').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
 
@@ -545,6 +546,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
         if (id == 3) {
@@ -554,6 +556,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
     }
@@ -695,6 +698,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigo').css({ display: 'block' });
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
+            $('html, body').animate({ scrollTop: 0 });
         }, 1000);
         var arrayGG = [];
         if (id == 0) {
@@ -2032,9 +2036,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             $('#imagenAcabado').css({ 'margin-top': '5px' });
                             $('#imagenAcabado').css({ 'padding-top': '5px' });
                             const elem = $('#imagenAcabado');
-                            elem[0].style.setProperty('max-width', '350px', 'important');
-                            elem[0].style.setProperty('max-height', '350px', 'important');
-                            elem[0].style.setProperty('margin-left', '-3%', 'important');
+                            elem[0].style.setProperty('max-width', '300px', 'important');
+                            elem[0].style.setProperty('max-height', '300px', 'important');
+                            elem[0].style.setProperty('margin-left', '8%', 'important');
                         }
                         if (u == 1) {
                             $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
