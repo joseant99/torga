@@ -895,6 +895,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var id = 0;
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '3200px' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '48%' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-14%' });
+            $('body').attr('style');
+            $('body').css({ 'overflow-y': 'hidden' });
         }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         var ancho = $('#anchosSelect4').val();
@@ -1208,6 +1212,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         this.numeroDeHuecos = puertas;
                     }
                     $('#acabadosTodo').removeAttr('class');
+                    var arrayTodosMen = [];
                     this.acaProdService.findAca(42).subscribe(data => {
                         this.todos = data.body[0]['acabados'];
                         this.acabadosTrasera = data.body[0]['acabados'];
@@ -2938,6 +2943,20 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
             }
         }
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '3200px' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-48%' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-14%' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-48%' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-14%' });
+            const elem = $('.cuerpoImagenPuertas #imagenesArmario2');
+            elem[0].style.setProperty('margin-left', '-48%', 'important');
+            elem[0].style.setProperty('margin-top', '-14%', 'important');
+            $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-left': '58%' });
+            $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '-5%' });
+            $('body').attr('style');
+            $('body').css({ 'overflow-y': 'hidden' });
+        }
     }
     loadPage(page: number) {
         if (page !== this.previousPage) {
@@ -2950,6 +2969,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var hueco = this.numeroDeHuecos;
         var acabados = this.todos;
         var array = this.armarioCogido;
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
+        }
         $('#inputAcabadoCasco').empty();
         $('#calculadoraCarrito #inputAcabadoCasco').empty();
         for (let w = 0; w < acabados.length; w++) {
@@ -3639,6 +3662,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         if (todo['interiores'] != undefined) {
             saberCont = todo['interiores'].length;
             meterInt = todo['interiores'];
+        }
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
         }
 
         var todosLosInteriores = this.productosDormitorioModal;
@@ -8105,6 +8132,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var acabados = this.todos;
         var dimens = this.dimenArmarios;
         var grandes = dimens['grandes'];
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
+        }
         var array = this.armarioCogido;
         $('#inputAcabadoTirador').empty();
         var todo = this.armarioCogido;
@@ -8150,6 +8181,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var acabados = this.todos;
         var dimens = this.dimenArmarios;
         var grandes = dimens['grandes'];
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
+        }
         var array = this.armarioCogido;
         $('#inputAcabadoInterior').empty();
         $('#calculadoraCarrito #inputAcabadoInterior').empty();
@@ -9061,6 +9096,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var meterInt = [];
         if (todo['puertas'] != undefined) {
             meterInt = todo['puertas'];
+        }
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
         }
 
         for (let o = 0; o < todasLasPuertas.length; o++) {
@@ -17718,6 +17757,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var texto = this.textoArmario;
         var prueba = 0;
         var acabados = this.todos;
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
+        }
         var puertasEspacio = texto.split(' ')[0];
         this.arraySaberPuertas = puertasEspacio;
         $('#marco' + id).remove();
@@ -28275,6 +28318,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var hueco = this.numeroDeHuecos;
         var acabados = this.todos;
         var array = this.armarioCogido;
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
+        }
         $('#inputAcabadoTrasera').empty();
         $('#calculadoraCarrito #inputAcabadoTrasera').empty();
         for (let w = 0; w < acabados.length; w++) {

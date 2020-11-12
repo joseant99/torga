@@ -13658,6 +13658,9 @@ ui bootstrap tweaks
 }
 
 @media screen and (max-width: 700px) {
+    #volveratrasconfiguracionarmarios {
+        margin-left: 2% !important;
+    }
     #divcodigoarituclos {
         float: left;
         width: 80px;
@@ -13685,6 +13688,10 @@ ui bootstrap tweaks
         margin-left: 2% !important;
         border: 0px !important;
     }
+    .volverAtras1MeterCasa1 {
+        margin-left: 2% !important;
+        border: 0px !important;
+    }
     #textodivsuperiorquenosecambia {
         font-size: 22px !important;
         float: left;
@@ -13693,6 +13700,16 @@ ui bootstrap tweaks
         margin-left: 3%;
     }
     #textodivsuperiorquenosecambia4 {
+        font-size: 20px !important;
+        float: left;
+        width: 90%;
+        height: 24px;
+        margin-left: 3%;
+        margin-top: 3%;
+        letter-spacing: 4px !important;
+        padding-bottom: 15px;
+    }
+    #textodivsuperiorquenosecambia12 {
         font-size: 20px !important;
         float: left;
         width: 90%;
@@ -13717,6 +13734,16 @@ ui bootstrap tweaks
     }
     #divdentrodeloscodigos {
         margin-top: 90px !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    #codigoArmariosBatientesDivs {
+        margin-top: 25px !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    #divanchocogidomen {
+        margin-top: 0px !important;
         width: 100% !important;
         margin-left: 0% !important;
     }
