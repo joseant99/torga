@@ -337,6 +337,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         idsArray[19] = 'mesitasSpan';
         idsArray[20] = 'cabecerosSpan';
         var usuarios = [];
+        $('body').removeAttr('style');
         this.userService
             .query({
                 size: 100000
@@ -12117,6 +12118,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         idsArray[19] = 'mesitasSpan';
         idsArray[20] = 'cabecerosSpan';
         var usuarios = [];
+        $('body').removeAttr('style');
         this.userService
             .query({
                 size: 100000
