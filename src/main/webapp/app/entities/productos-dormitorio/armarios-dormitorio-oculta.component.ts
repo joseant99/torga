@@ -467,16 +467,34 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#producto').append('<datalist id="listaAlturaOcu"></datalist>');
                 $('#armariosCogidosVes').attr('class', data.body[0].armario.id);
                 var array = [];
+                var arrayAncho = [];
+                var arrayFondo = [];
+                var arrayAlto = [];
+                var contancho = 0;
+                var contalto = 0;
+                var contfondo = 0;
                 array[0] = data.body[0].armario;
                 this.armarioService.todo = array;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
                     $('#listaAnchosOcu').append('<option value="' + i + '">' + i + '</option>');
                     $('.classanchoArmarioOcu').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAncho[contancho] = i;
+                    contancho++;
                 }
+                this.cascoService.dato = arrayAncho;
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAlturaOcu').append('<option value="' + i + '">' + i + '</option>');
                     $('.classaltoArmarioOcu').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAlto[contalto] = i;
+                    contalto++;
                 }
+                this.cascoService.alto = arrayAlto;
+
+                for (let w = 40; w <= 70; w++) {
+                    arrayFondo[contfondo] = w;
+                    contfondo++;
+                }
+                this.cascoService.fondo = arrayFondo;
             });
             $('.armariosDivTodo1').css({ display: 'block' });
             $('#inputCodigoOculta').attr('readonly', 'readonly');
@@ -1084,6 +1102,12 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '3250px' });
         }
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '48%' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-14%' });
+            $('body').attr('style');
+            $('body').css({ 'overflow-y': 'hidden' });
+        }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
         $('#armarioColorFondo1').css({ 'background-color': 'white' });
@@ -1462,8 +1486,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 var elem1 = $('.armariosDivTodo1 #imagenesArmario2');
                 elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
-                    $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '50%' });
-                    $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '45%' });
+                    $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-left': '-28%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ 'margin-left': '-28%' });
                 }
@@ -1476,6 +1500,26 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 this.acaProdService.findAca(122).subscribe(data => {
                     this.acabadosInteriores = data.body[0]['acabados'];
                 });
+
+                if (screen.width < 800) {
+                    $('#productosPrincipal').css({ height: '0' });
+                    setTimeout(function() {
+                        $('#productosPrincipal').css({ height: '3200px' });
+                    }, 1000);
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-47%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '0px' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-47%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '0%' });
+                    const elem2 = $('.armariosDivTodo');
+                    elem2[0].style.setProperty('height', 'auto', 'important');
+                    const elem = $('.cuerpoImagenPuertas #imagenesArmario2');
+                    elem[0].style.setProperty('margin-left', '-47%', 'important');
+                    elem[0].style.setProperty('margin-top', '0%', 'important');
+                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-left': '58%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '-5%' });
+                    $('body').attr('style');
+                    $('body').css({ 'overflow-y': 'hidden' });
+                }
             }
 
             if (texto == '3 PUERTAS CORREDERA') {
@@ -1507,8 +1551,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
                     elem1[0].style.setProperty('margin-top', '555px', 'important');
-                    $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '50%' });
-                    $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '45%' });
+                    $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-left': '-30%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ 'margin-left': '-30%' });
                 }
@@ -1521,6 +1565,26 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 this.acaProdService.findAca(122).subscribe(data => {
                     this.acabadosInteriores = data.body[0]['acabados'];
                 });
+
+                if (screen.width < 800) {
+                    $('#productosPrincipal').css({ height: '0' });
+                    setTimeout(function() {
+                        $('#productosPrincipal').css({ height: '3200px' });
+                    }, 1000);
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-46%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-17%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-46%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-17%' });
+                    const elem2 = $('.armariosDivTodo');
+                    elem2[0].style.setProperty('height', 'auto', 'important');
+                    const elem = $('.cuerpoImagenPuertas #imagenesArmario2');
+                    elem[0].style.setProperty('margin-left', '-46%', 'important');
+                    elem[0].style.setProperty('margin-top', '-17%', 'important');
+                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-left': '58%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '-5%' });
+                    $('body').attr('style');
+                    $('body').css({ 'overflow-y': 'hidden' });
+                }
             }
 
             if (texto == '3 PUERTAS IZQUIERDA') {
@@ -3835,6 +3899,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         ancho = $('#anchosSelect2').val();
         alto = $('#alturaSelect2').val();
         var cuenta = 0;
+
+        $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+        $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
 
         puertas = parseFloat(texto.split(' ')[0]);
         var dimensiones = dimens[puertas + ' puertas'];
@@ -7702,7 +7769,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#4acaPuerta' + id).css({ display: 'none' });
         $('#5acaPuerta' + id).css({ display: 'none' });
         $('#calcuOculta #divPuerta' + id + ' #inputs').css({ display: 'block' });
-
+        $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
+        $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
         if (nombre == 'Puerta Lisa') {
             var idPuerta = 392;
         }
@@ -11022,6 +11090,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var prueba = 0;
         var acabados = this.todos;
         $('#marco' + id).remove();
+        $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
+        $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
                 $('#calcuOculta #inputs #inputPuertas' + id).empty();

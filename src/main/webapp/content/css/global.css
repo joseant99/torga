@@ -13658,6 +13658,22 @@ ui bootstrap tweaks
 }
 
 @media screen and (max-width: 700px) {
+    .armariosDivTodo {
+        height: 100% !important;
+        margin-top: 0px !important;
+    }
+    .divaltoocogidomen {
+        margin-top: 0% !important;
+        height: 100% !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    .divfondoSaber {
+        margin-top: 0% !important;
+        height: 100% !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
     #volveratrasconfiguracionarmarios {
         margin-left: 2% !important;
     }
@@ -13738,6 +13754,11 @@ ui bootstrap tweaks
         margin-left: 0% !important;
     }
     #codigoArmariosBatientesDivs {
+        margin-top: 25px !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    #codigoArmariosOcultaDivs {
         margin-top: 25px !important;
         width: 100% !important;
         margin-left: 0% !important;
