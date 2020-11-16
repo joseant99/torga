@@ -2059,11 +2059,27 @@
     </div>
     
     <div id="producto" class="armariosVistaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
+    	<div id="divprincipalhuecomenmen" style="margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span id="volverAtras1" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(16)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span> <span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" class="volverAtras1MeterCasa1" id="volverAtras2" (click)="volveratras(17)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span> <span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" class="volverAtras1MeterCasa1" id="volverAtras3" (click)="volveratras(18)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span> <span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" class="volverAtras1MeterCasa1" id="volverAtras4" (click)="volveratras(19)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span> <span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textodivsuperiorquenosecambia12"></span></div>
+
+    	<div style="margin-top:5%;width:90%;margin-left:10%;" id="codigoArmariosVistaDivs">
+	   			<div *ngFor="let codigo of codigoparadivs" id="divcodigoarituclos" (click)="meterinputabrirarmariosVista(codigo)" class="divcodigometerfondo">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    </div>
+	    <input style="display:none" id="inputCodigoVista">
+    	<!-- 
+    	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
+    	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NL001 Y NL076]</label><input list="listaArmariosOculta" type="text" id="inputCodigoOculta" class="inputbuscaroculta"><select class="selectbuscaroculta" id="inputCodigoOculta" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
+   		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioOcultaComponent.abrirArmariosTodos()">OK</button></p>
+		 -->
+    </div>
+    <!-- 
+    <div id="producto" class="armariosVistaDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
     	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NV001 Y NV076]</label><input list="listaArmariosVista" type="text" class="inputbuscarvista" id="inputCodigoVista" ><select class="selectbuscarvista" id="inputCodigoVista" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
    		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.abrirArmariosTodos()">OK</button></p>
     </div>
-    
+     -->
     <div id="producto" class="armariosRinconDivInputCodigo" style="display:none;margin-left:0%;width:100%;margin-bottom:3%;">
     	<h2 style="text-align:center;letter-spacing:3px">C&#211;DIGO</h2><BR><BR>
     	<p style="text-align:center"><label style="margin-right:3%;letter-spacing:3px">C&#211;DIGO DE TARIFA &nbsp;&nbsp;[ENTRE NB277 Y NB324]</label><input list="listaArmariosRincon" type="text" id="inputCodigoRincon" class="inputbuscarrincon"><select class="selectbuscarrincon" id="inputCodigoRincon" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select></p>
@@ -2278,18 +2294,51 @@
     
     
     <div id="producto" class="armariosDivTodo2" style="display:none;margin-left:0%;width:100%">
-    <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
+    	<div style="margin-top:5%;width:90%;margin-left:10%;" id="divanchocogidomen">
+    		<h2 style="text-align:center;letter-spacing:3px">Selecciona el ancho</h2><BR><BR>
+	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.dato" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "anchoCogidoParaMetervalVista(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+		    	<input style="display:none" id="anchosSelect3">
+	    </div>
+	    
+	    <div style="margin-top:5%;width:90%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divaltoocogidomen">
+    		<h2 style="text-align:center;letter-spacing:3px">Selecciona el alto</h2><BR><BR>
+	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "altoCogidoParaMetervalVista(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+		    	<input style="display:none" id="alturaSelect3">
+	    </div>
+	    
+	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoSaber">
+    		<h2 style="text-align:center;letter-spacing:3px">El fondo es 61 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
+    		
+    		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondoNoQuiereCambiarVista()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarVista()" class="divcodigometerfondo">NO</div>
+	    </div>
+	    
+	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoocogidomen">
+    		<h2 style="text-align:center;letter-spacing:3px">Selecciona el fondo</h2><BR><BR>
+	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.fondo" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiar()">
+		    		<span>{{codigo}}</span>
+		    	</div>
+		    	<input style="display:none" id="inputFondoBatientes">
+	    </div>
+    <!-- <h2 style="text-align:center;letter-spacing:3px">MEDIDA DEL ARMARIO</h2><BR><BR>
     	<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">ANCHO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.anchoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" list="listaAnchosVista" step="10" class="classinputanchoArmarioVis" id="anchosSelect3" name="anchos" type="number"/><select class="classanchoArmarioVis" id="anchosSelect3" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
 		<p style="text-align:center"><label style="margin-right:5%;letter-spacing:3px">ALTO EN CM  &nbsp;&nbsp;[ENTRE {{this.armariosDormitorioVistaComponent.altoMin}} Y {{this.armariosDormitorioVistaComponent.anchoMax}}]</label><input style="text-align:center" class="classinputaltoArmarioVis" list="listaAlturaVista" id="alturaSelect3" name="anchos" type="number"/><select class="classaltoArmarioVis" id="alturaSelect3" style="display:none;margin-left:28%;width:160px;height:25px"><option></option></select></p>
 		<p style="text-align:center"><label style="margin-right:3.8%;letter-spacing:3px">FONDO EN CM</label><input style="text-align:center" value="52" type="number" disabled/></p>
 		<p style="text-align:center;margin-top:3%;"><button style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas()">Buscar</button></p>
-		   
-    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
-    		
+		    -->
+		<div class="cuerpoImagenPuertas" style="display:none">
+			<div id="divprincipalhuecomenmen" style="margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER;z-index:1000"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volveratrasconfiguracionarmarios" (click)="volveratras(20)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%"  id="textodivsuperiorquenosecambia4">CONFIGURACION</span><span id="divvolveriniciomen" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: right;border: 1px red solid;color: red;padding-top: 13px;margin-right: 10%;" (click)="volveratras(21)"><span id="paraQuitarPaTras">VOLVER AL INICIO</span><img src="../../../content/images/comedores/cajaroja.png" style="width:10px;display:none" id="imagenAtarmen1"></span></div>
+			   
+	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
+	    		
+	    	</div>
+	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
+	    		
+	    	</div>
     	</div>
-    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
-    		
-    	</div> 
     	<div style="width:100%" id="imagenInteriorPuertas">
     	<h2 style="text-align:center" id="textoImagenInterior"></h2>
     	<div id="imagenesLasDos"></div>
@@ -2894,10 +2943,10 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados"> </div></p></a>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesOculta #modalTraseraAcabados"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 60px;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados1"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 40px;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados2"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 15px;width:25%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesOculta #modalTraseraAcabados"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados1"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 40px;width:30%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesOculta #modalInterioresAcabados2"> </div></p></a>
 		    					
 							</div>
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
@@ -3041,10 +3090,10 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados"> </div></p></a>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVista #modalTraseraAcabados"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 60px;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados1"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 40px;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados2"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 15px;width:25%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesVista #modalTraseraAcabados"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados1"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 40px;width:30%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesVista #modalInterioresAcabados2"> </div></p></a>
 		    					
 							</div>
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">

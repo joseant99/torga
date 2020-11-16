@@ -189,7 +189,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected userService: UserService,
-        protected cascoService: CascoService,
+        public cascoService: CascoService,
         protected interioresArmariosService: InterioresArmariosService,
         protected dimensionesProductoService: DimensionesProductoService,
         public armarioService: ArmarioService,
@@ -653,16 +653,34 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 $('#producto').append('<datalist id="listaAlturaVista"></datalist>');
                 $('#armariosCogidosVes').attr('class', data.body[0].armario.id);
                 var array = [];
+                var arrayAncho = [];
+                var arrayFondo = [];
+                var arrayAlto = [];
+                var contancho = 0;
+                var contalto = 0;
+                var contfondo = 0;
                 array[0] = data.body[0].armario;
                 this.armarioService.todo = array;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
                     $('#listaAnchosVista').append('<option value="' + i + '">' + i + '</option>');
                     $('.classanchoArmarioVis').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAncho[contancho] = i;
+                    contancho++;
                 }
+                this.cascoService.dato = arrayAncho;
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAlturaVista').append('<option value="' + i + '">' + i + '</option>');
                     $('.classaltoArmarioVis').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAlto[contalto] = i;
+                    contalto++;
                 }
+                this.cascoService.alto = arrayAlto;
+
+                for (let w = 40; w <= 70; w++) {
+                    arrayFondo[contfondo] = w;
+                    contfondo++;
+                }
+                this.cascoService.fondo = arrayFondo;
             });
             $('.armariosDivTodo2').css({ display: 'block' });
             $('#inputCodigoVista').attr('readonly', 'readonly');
@@ -1417,12 +1435,18 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/PTAS.png">'
                 );
                 var elem1 = $('.armariosDivTodo2 #imagenesArmario2');
-                elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
-                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '50%' });
-                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '45%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-left': '-28%' });
                     $('.armariosDivTodo2 #imagenesArmario1').css({ 'margin-left': '-28%' });
+                }
+                if (screen.width > 800) {
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-4%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-4%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '10%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '10%' });
+                    $('body').css({ 'overflow-x': 'hidden' });
                 }
 
                 $('#acabadosTodo').removeAttr('class');
@@ -1433,6 +1457,32 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 this.acaProdService.findAca(122).subscribe(data => {
                     this.acabadosInteriores = data.body[0]['acabados'];
                 });
+
+                if (screen.width < 800) {
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('#productosPrincipal').css({ height: '0' });
+                    setTimeout(function() {
+                        $('#productosPrincipal').css({ height: '3200px' });
+                    }, 1000);
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-33%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-12%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-33%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-12%' });
+                    const elem2 = $('.armariosDivTodo2');
+                    elem2[0].style.setProperty('height', 'auto', 'important');
+                    const elem = $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2');
+                    elem[0].style.setProperty('margin-left', '-33%', 'important');
+                    elem[0].style.setProperty('margin-top', '-12%', 'important');
+                    $('body').attr('style');
+                    $('body').css({ 'overflow-y': 'hidden' });
+                }
             }
 
             if (texto == '3 PUERTAS CORREDERA VISTA') {
@@ -1461,13 +1511,20 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/PTAS.png">'
                 );
                 var elem1 = $('.armariosDivTodo2 #imagenesArmario2');
-                elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
                     elem1[0].style.setProperty('margin-top', '555px', 'important');
-                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '50%' });
-                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '50%' });
+                    $('.armariosDivTodo2 #imagenesArmario2').css({ zoom: '45%' });
+                    $('.armariosDivTodo2 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo2 #imagenesArmario2').css({ 'margin-left': '-30%' });
                     $('.armariosDivTodo2 #imagenesArmario1').css({ 'margin-left': '-30%' });
+                }
+
+                if (screen.width > 800) {
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-4%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-4%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '10%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '10%' });
+                    $('body').css({ 'overflow-x': 'hidden' });
                 }
 
                 $('#acabadosTodo').removeAttr('class');
@@ -1478,6 +1535,31 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 this.acaProdService.findAca(122).subscribe(data => {
                     this.acabadosInteriores = data.body[0]['acabados'];
                 });
+                if (screen.width < 800) {
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo2 #imagenesArmario1 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo2 #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('#productosPrincipal').css({ height: '0' });
+                    setTimeout(function() {
+                        $('#productosPrincipal').css({ height: '3200px' });
+                    }, 1000);
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-33%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-12%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-33%' });
+                    $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-12%' });
+                    const elem2 = $('.armariosDivTodo2');
+                    elem2[0].style.setProperty('height', 'auto', 'important');
+                    const elem = $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario2');
+                    elem[0].style.setProperty('margin-left', '-33%', 'important');
+                    elem[0].style.setProperty('margin-top', '-12%', 'important');
+                    $('body').attr('style');
+                    $('body').css({ 'overflow-y': 'hidden' });
+                }
             }
 
             if (texto == '3 PUERTAS IZQUIERDA') {

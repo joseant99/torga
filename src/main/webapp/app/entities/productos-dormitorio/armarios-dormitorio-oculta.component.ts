@@ -1484,12 +1484,17 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/PTAS.png">'
                 );
                 var elem1 = $('.armariosDivTodo1 #imagenesArmario2');
-                elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
                     $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-left': '-28%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ 'margin-left': '-28%' });
+                }
+                if (screen.width > 800) {
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-8%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-8%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '10%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '10%' });
                 }
 
                 $('#acabadosTodo').removeAttr('class');
@@ -1502,21 +1507,27 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 });
 
                 if (screen.width < 800) {
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '7%' });
                     $('#productosPrincipal').css({ height: '0' });
                     setTimeout(function() {
                         $('#productosPrincipal').css({ height: '3200px' });
                     }, 1000);
-                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-47%' });
-                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '0px' });
-                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-47%' });
-                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '0%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-33%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-17%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-33%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-17%' });
                     const elem2 = $('.armariosDivTodo');
                     elem2[0].style.setProperty('height', 'auto', 'important');
                     const elem = $('.cuerpoImagenPuertas #imagenesArmario2');
-                    elem[0].style.setProperty('margin-left', '-47%', 'important');
-                    elem[0].style.setProperty('margin-top', '0%', 'important');
-                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-left': '58%' });
-                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '-5%' });
+                    elem[0].style.setProperty('margin-left', '-33%', 'important');
+                    elem[0].style.setProperty('margin-top', '-17%', 'important');
                     $('body').attr('style');
                     $('body').css({ 'overflow-y': 'hidden' });
                 }
@@ -1548,13 +1559,19 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                     '<img  style="position:absolute;width: 650px;height: 650px;z-index:103" src="../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/PTAS.png">'
                 );
                 var elem1 = $('.armariosDivTodo1 #imagenesArmario2');
-                elem1[0].style.setProperty('margin-top', '550px', 'important');
                 if (screen.width < 800) {
                     elem1[0].style.setProperty('margin-top', '555px', 'important');
                     $('.armariosDivTodo1 #imagenesArmario2').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ zoom: '45%' });
                     $('.armariosDivTodo1 #imagenesArmario2').css({ 'margin-left': '-30%' });
                     $('.armariosDivTodo1 #imagenesArmario1').css({ 'margin-left': '-30%' });
+                }
+
+                if (screen.width > 800) {
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-8%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-8%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '10%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '10%' });
                 }
 
                 $('#acabadosTodo').removeAttr('class');
@@ -1567,21 +1584,27 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 });
 
                 if (screen.width < 800) {
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').removeAttr('style');
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').attr('style');
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo1 #imagenesArmario1 #imagenesArmario').css({ 'margin-top': '7%' });
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').css({ width: '100%' });
+                    $('.armariosDivTodo1 #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '7%' });
                     $('#productosPrincipal').css({ height: '0' });
                     setTimeout(function() {
                         $('#productosPrincipal').css({ height: '3200px' });
                     }, 1000);
-                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-46%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '-33%' });
                     $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-17%' });
-                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-46%' });
+                    $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '-33%' });
                     $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-17%' });
                     const elem2 = $('.armariosDivTodo');
                     elem2[0].style.setProperty('height', 'auto', 'important');
                     const elem = $('.cuerpoImagenPuertas #imagenesArmario2');
-                    elem[0].style.setProperty('margin-left', '-46%', 'important');
+                    elem[0].style.setProperty('margin-left', '-33%', 'important');
                     elem[0].style.setProperty('margin-top', '-17%', 'important');
-                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-left': '58%' });
-                    $('.cuerpoImagenPuertas #imagenesArmario2 #imagenesArmario').css({ 'margin-top': '-5%' });
                     $('body').attr('style');
                     $('body').css({ 'overflow-y': 'hidden' });
                 }
