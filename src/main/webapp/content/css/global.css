@@ -177,7 +177,13 @@ div#simplepruebaani1 {
         right: -100%;
     }
 }
-
+#pruebahoverdiv {
+    width: 500px;
+    margin-left: 5%;
+}
+#imagenDeCadaTipoNativ {
+    width: 500px;
+}
 #divcodigoarituclos {
     float: left;
     width: 150px;
@@ -13656,8 +13662,82 @@ ui bootstrap tweaks
         font-size: inherit;
     }
 }
-
+@media screen and (max-width: 1800px) {
+    #pruebahoverdiv {
+        width: 500px;
+        margin-left: 4%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1750px) {
+    #pruebahoverdiv {
+        width: 500px;
+        margin-left: 3%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 1700px) {
+    #pruebahoverdiv {
+        width: 450px;
+        margin-left: 5%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1630px) {
+    #pruebahoverdiv {
+        width: 450px;
+        margin-left: 5%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 450px;
+    }
+}
 @media screen and (max-width: 700px) {
+    #botonmencambiarvista {
+        right: 10px !important;
+        top: 275px !important;
+    }
+    .divdentrogrosortablero {
+        margin-top: 30% !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    .divdentrocanteadotablero {
+        margin-top: 30% !important;
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
+    .divdentrodelosAncho {
+        margin-top: 30% !important;
+        width: 100% !important;
+        padding-left: 0% !important;
+    }
+    .divdentrodelosAlto {
+        margin-top: 30% !important;
+        width: 100% !important;
+        padding-left: 0% !important;
+    }
+    .divcodigometerfondo123 {
+        margin-left: 22% !important;
+    }
+    #volverAtras10MeterCasa {
+        margin-left: 2% !important;
+        border: 0px !important;
+    }
+    #volverAtras11MeterCasa {
+        margin-left: 2% !important;
+        border: 0px !important;
+    }
+    #volverAtras12MeterCasa {
+        margin-left: 2% !important;
+        border: 0px !important;
+    }
     .armariosDivTodo {
         height: 100% !important;
         margin-top: 0px !important;

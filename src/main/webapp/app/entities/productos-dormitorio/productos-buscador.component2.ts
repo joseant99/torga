@@ -139,6 +139,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     estanteriaCogida: any;
     precioBase: any;
     codigoparadivs: any;
+    anchoTablero: any;
+    altoTablero: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -557,6 +559,45 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
                 $('html, body').animate({ scrollTop: 0 });
+            }, 1200);
+        }
+        if (id == 4) {
+            $('.divdentrocanteadotablero').attr('id', 'simplepruebaani2');
+            $('.divdentrogrosortablero').css({ display: 'block' });
+            $('.divdentrogrosortablero').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrocanteadotablero').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('#volverAtras10MeterCasa').css({ display: 'none' });
+                $('#volverAtras1MeterCasa').css({ display: 'block' });
+            }, 1200);
+        }
+        if (id == 5) {
+            $('.divdentrodelosAncho').attr('id', 'simplepruebaani2');
+            $('.divdentrocanteadotablero').css({ display: 'block' });
+            $('.divdentrocanteadotablero').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrodelosAncho').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('#volverAtras11MeterCasa').css({ display: 'none' });
+                $('#volverAtras10MeterCasa').css({ display: 'block' });
+            }, 1200);
+        }
+        if (id == 6) {
+            $('.divdentrodelosAlto').attr('id', 'simplepruebaani2');
+            $('.divdentrodelosAncho').css({ display: 'block' });
+            $('.divdentrodelosAncho').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrodelosAlto').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('#volverAtras12MeterCasa').css({ display: 'none' });
+                $('#volverAtras11MeterCasa').css({ display: 'block' });
             }, 1200);
         }
     }
@@ -1014,7 +1055,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
 
         if (id == 30) {
-            $('.divConfiguracionestant').css({ display: 'block' });
+            $('.divdentrogrosortablero').css({ display: 'block' });
+            $('#divdentrodeloscodigos').css({ display: 'none' });
+            $('#textodivsuperiorquenosecambia').text('TABLEROS A MEDIDA');
         }
 
         if (id == 20) {
@@ -1190,53 +1233,88 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
     }
 
-    public meterAnchoCalculadora() {
+    public meterAnchoCalculadora(id) {
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '2375px' });
         }
-        var ancho = $('#cogerAnchoestanlibre').val();
+        var ancho = id;
         $('#nombreMesita').text('Tablero a Medida');
         $('#grosorTableCalcu').text(ancho.toString());
         $('#h4canteado').css({ display: 'block' });
         $('#pcanteado').css({ display: 'block' });
         $('#pgrosorcalcu').css({ display: 'block' });
         $('#cogerAnchoEstant').empty();
+        var array = [];
+        var cont = 0;
         if (ancho == '12 mm') {
             $('#cogerAnchoEstant').append('<option></option>');
             for (let i = 10; i <= 260; i++) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+                array[cont] = i;
+                cont++;
             }
         } else {
             $('#cogerAnchoEstant').append('<option></option>');
             for (let i = 10; i <= 280; i++) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+                array[cont] = i;
+                cont++;
             }
         }
+        $('.divdentrocanteadotablero').attr('id', 'simplepruebaani');
+        $('.divdentrocanteadotablero').css({ display: 'block' });
+        $('.divdentrogrosortablero').css({ display: 'none' });
+        setTimeout(function() {
+            $('#volverAtras10MeterCasa').css({ display: 'block' });
+            $('#volverAtras1MeterCasa').css({ display: 'none' });
+        }, 1000);
+
+        this.anchoTablero = array;
     }
 
-    public meterCanteadoCalculadora() {
-        var ancho = $('#cogerCANTEADO').val();
+    public meterCanteadoCalculadora(id) {
+        var ancho = id;
         $('#canteadoTableCalcu').text(ancho.toString());
         $('#h4ancho').css({ display: 'block' });
         $('#pAnchoEstant').css({ display: 'block' });
         $('#pcanteadocalcu').css({ display: 'block' });
+        $('.divdentrodelosAncho').attr('id', 'simplepruebaani');
+        $('.divdentrodelosAncho').css({ display: 'block' });
+        $('.divdentrocanteadotablero').css({ display: 'none' });
+        $('#volverAtras11MeterCasa').css({ display: 'block' });
+        $('#volverAtras10MeterCasa').css({ display: 'none' });
+        setTimeout(function() {
+            $('.divdentrocanteadotablero').css({ display: 'none' });
+        }, 1000);
     }
 
-    public meterAnchoEstantCalculadora() {
-        var ancho = $('#cogerAnchoEstant').val();
+    public meterAnchoEstantCalculadora(id) {
+        var ancho = id;
         $('#panchocalcu').css({ display: 'block' });
         $('#anchoTableCalcu').text(ancho.toString());
         $('#h4alto').css({ display: 'block' });
         $('#pAltoEstant').css({ display: 'block' });
         $('#cogerAltoEstant').empty();
         $('#cogerAltoEstant').append('<option></option>');
+        var array = [];
+        var cont = 0;
         for (let i = 10; i <= 200; i++) {
             $('#cogerAltoEstant').append('<option>' + i + '</option>');
+            array[cont] = i;
+            cont++;
         }
+        this.altoTablero = array;
+        $('.divdentrodelosAlto').attr('id', 'simplepruebaani');
+        $('.divdentrodelosAlto').css({ display: 'block' });
+        $('#volverAtras12MeterCasa').css({ display: 'block' });
+        $('#volverAtras11MeterCasa').css({ display: 'none' });
+        setTimeout(function() {
+            $('.divdentrodelosAncho').css({ display: 'none' });
+        }, 1000);
     }
 
-    public meterAltoEstantCalculadora() {
-        var ancho = $('#cogerAltoEstant').val();
+    public meterAltoEstantCalculadora(id) {
+        var ancho = id;
         $('#paltocalcu').css({ display: 'block' });
         $('#nombreMesita').attr('class', 408);
         $('#altoTableCalcu').text(ancho.toString());
@@ -1299,8 +1377,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     '" style="margin-left:10px"></span></p>'
             );
 
-            $('#acabadosTable #imagenAcabadoPrincipal123').css({ display: 'block' });
-            $('#acabadosTable #imagenAcabadoPrincipal123').append(
+            $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
+            $('#acabados #imagenAcabadoPrincipal').append(
                 '<img id="imagenAcabado" src="data:image/gif;base64,' +
                     imagen +
                     '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
@@ -1326,6 +1404,42 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                 i++;
             }
+            $('.divBuscadorArticulos').attr('id', 'simplepruebaani1');
+            $('.divBuscadorArticulos').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'margin-bottom': '60px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'border-bottom': '1px solid' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-bottom': '0px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });
+                $('body').attr('style');
+                $('body').css({ 'overflow-y': 'hidden' });
+            }
+            setTimeout(function() {
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('#calculadoraCarrito').removeAttr('style');
+                $('#calculadoraCarrito').attr('style');
+                $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+                $('.divBuscadorArticulos').css({ height: '100%' });
+                $('#calculadoraCarrito').css({ width: '25%' });
+                if (screen.width < 800) {
+                    $('#calculadoraCarrito').css({ width: '100%' });
+                    $('#calculadoraCarrito').css({ height: '40%' });
+                    $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                    $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                    const elem = $('#textprecioCalculadoraazul');
+                    elem[0].style.setProperty('bottom', '0px', 'important');
+                    elem[0].style.setProperty('height', '55px', 'important');
+                    const elem1 = $('#botonCalculadora');
+                    elem1[0].style.setProperty('bottom', '0px', 'important');
+                    elem1[0].style.setProperty('height', '55px', 'important');
+                }
+            }, 1000);
         });
     }
 

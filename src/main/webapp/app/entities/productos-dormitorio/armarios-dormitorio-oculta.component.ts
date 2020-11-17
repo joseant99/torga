@@ -437,6 +437,18 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 console.log(sessionStorage);
             }
         }
+        $('.armariosDivTodo1').attr('id', 'simplepruebaani2');
+        $('#page-heading').css({ display: 'block' });
+        $('#calculadoraCarrito').css({ display: 'none' });
+        $('body').removeAttr('style');
+        setTimeout(function() {
+            $('.armariosDivTodo1').css({ display: 'none' });
+            $('.armariosDivTodo1').removeAttr('id');
+            $('.armariosOcultaDivInputCodigo').removeAttr('id');
+            $('#simplepruebaani').css({ display: 'none' });
+            $('.armariosOcultaDivInputCodigo').css({ display: 'none' });
+            $('html, body').animate({ scrollTop: 0 });
+        }, 1200);
     }
 
     public abrirArmariosTodos() {
@@ -7792,8 +7804,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         $('#4acaPuerta' + id).css({ display: 'none' });
         $('#5acaPuerta' + id).css({ display: 'none' });
         $('#calcuOculta #divPuerta' + id + ' #inputs').css({ display: 'block' });
-        $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
-        $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
+
         if (nombre == 'Puerta Lisa') {
             var idPuerta = 392;
         }
@@ -11113,8 +11124,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var prueba = 0;
         var acabados = this.todos;
         $('#marco' + id).remove();
-        $('.cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
-        $('.cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
+
         for (let w = 0; w < acabados.length; w++) {
             if (acabados[w]['nombre'] == nombre) {
                 $('#calcuOculta #inputs #inputPuertas' + id).empty();

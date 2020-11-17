@@ -395,6 +395,18 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                 console.log(sessionStorage);
             }
         }
+        $('.armariosDivTodo2').attr('id', 'simplepruebaani2');
+        $('#page-heading').css({ display: 'block' });
+        $('#calculadoraCarrito').css({ display: 'none' });
+        $('body').removeAttr('style');
+        setTimeout(function() {
+            $('.armariosDivTodo2').css({ display: 'none' });
+            $('.armariosDivTodo2').removeAttr('id');
+            $('.armariosVistaDivInputCodigo').removeAttr('id');
+            $('#simplepruebaani').css({ display: 'none' });
+            $('.armariosVistaDivInputCodigo').css({ display: 'none' });
+            $('html, body').animate({ scrollTop: 0 });
+        }, 1200);
     }
 
     public generarPresupuesto() {
@@ -4116,7 +4128,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
                             });
                         }
                         $('.armariosDivTodo2 #imagenesArmario' + i + ' #imagenesArmario').append(
-                            '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/OCULTA/2 PNG/2-B-' +
+                            '<img  style="position:absolute;width: 650px;height: 650px;z-index:100" src="../../../content/images/pruebaarmarios/VISTA/2 PNG/2-B-' +
                                 nombre +
                                 '.png">'
                         );
