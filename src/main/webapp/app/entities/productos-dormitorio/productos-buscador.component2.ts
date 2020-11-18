@@ -12266,6 +12266,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var apoyos = [];
         this.posicionEstanteria = 0;
         var cont = 0;
+        if (screen.width >= 800) {
+            const elem = $('#textprecioCalculadoraazul');
+            elem[0].style.setProperty('padding-top', '20px', 'important');
+            elem[0].style.setProperty('padding-left', '80px', 'important');
+        }
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();
         this.armariosDormitorioOcultaComponent.loadAll();

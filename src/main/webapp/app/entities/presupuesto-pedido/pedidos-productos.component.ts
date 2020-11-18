@@ -561,31 +561,42 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         };
 
                                         var uno = {
-                                            nombre: data.body[0]['armario']['mensaje'],
+                                            nombre: data.body[i]['armario']['mensaje'],
                                             categoriasDormi: cat
                                         };
                                         var codigo = {
-                                            codigo: data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
+                                            codigo: data.body[i]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
                                             fecha_presupuesto:
-                                                data.body[0]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
+                                                data.body[i]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
                                         };
                                         var dimen = {
                                             incremento: undefined,
-                                            ancho: data.body[0]['ancho'],
-                                            alto: data.body[0]['alto'],
-                                            fondo: data.body[0]['fondo'],
-                                            codigo: data.body[0]['codigo']
+                                            ancho: data.body[i]['ancho'],
+                                            alto: data.body[i]['alto'],
+                                            fondo: data.body[i]['fondo'],
+                                            codigo: data.body[i]['codigo']
                                         };
                                         var todo = {
                                             productosDormitorio: uno,
                                             presupuestoPedido: codigo,
-                                            dimensionesProductoTipo: dimen
+                                            dimensionesProductoTipo: dimen,
+                                            cont: cont
                                         };
 
                                         productosPresupuesto[cont] = todo;
                                         this.productosPresupuestoPedidos = productosPresupuesto;
                                         cont++;
-                                        this.presupuestoArmarioInterioresService.busqueda(data.body[0]['id']).subscribe(data => {
+                                        this.presupuestoArmarioInterioresService.busqueda(data.body[i]['id']).subscribe(data => {
+                                            var cont = 0;
+                                            var secogeparaprobar = this.productosPresupuestoPedidos;
+                                            for (let joven = 0; joven < secogeparaprobar.length; joven++) {
+                                                if (
+                                                    secogeparaprobar[joven]['productosDormitorio']['nombre'] ==
+                                                    data.body[0]['presupuestoArmario']['armario']['mensaje']
+                                                ) {
+                                                    cont = secogeparaprobar[joven]['cont'] + 1;
+                                                }
+                                            }
                                             this.presupuestoArmarioInterioresService.todos = data.body;
                                             var datosInteriores = data.body;
                                             console.log(data.body);
@@ -1844,7 +1855,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
                                             $('#imagen' + (cont - 1)).css({ height: '650px' });
                                         });
-                                        this.presupuestoArmarioPuertasService.busqueda(data.body[0]['id']).subscribe(data => {
+                                        this.presupuestoArmarioPuertasService.busqueda(data.body[i]['id']).subscribe(data => {
+                                            var cont = 0;
+                                            var secogeparaprobar = this.productosPresupuestoPedidos;
+                                            for (let joven = 0; joven < secogeparaprobar.length; joven++) {
+                                                if (
+                                                    secogeparaprobar[joven]['productosDormitorio']['nombre'] ==
+                                                    data.body[0]['presupuestoArmario']['armario']['mensaje']
+                                                ) {
+                                                    cont = secogeparaprobar[joven]['cont'] + 1;
+                                                }
+                                            }
                                             this.presupuestoArmarioPuertasService.todos = data.body;
                                             var datosInteriores = data.body;
                                             console.log(data.body);

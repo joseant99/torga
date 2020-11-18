@@ -12844,107 +12844,76 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var m = this.mGuardar;
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
+        var estoyprobando = 0;
         this.presupuestoArmarioService.query1234().subscribe(data => {
-            var idArmario;
-            idArmario = data.body[0];
-            presupuestoArmario['id'] = idArmario;
-            if (prodCarr[m][1]['interiores'] != undefined) {
-                for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
-                    var interiores;
-                    if (screen.width >= 800) {
-                        for (let ve = 0; ve <= 100005; ve++) {
-                            if (ve == 100005) {
-                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                    interiores = {
-                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                        orden: x
-                                    };
-                                } else {
-                                    interiores = {
-                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                        orden: x,
-                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                    };
+            for (let m = 0; m < prodCarr.length; m++) {
+                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                    var idArmario;
+                    idArmario = data.body[0];
+                    idArmario = idArmario + estoyprobando;
+                    estoyprobando++;
+                    presupuestoArmario['id'] = idArmario;
+                    if (prodCarr[m][1]['interiores'] != undefined) {
+                        for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
+                            var interiores;
+                            if (screen.width >= 800) {
+                                for (let ve = 0; ve <= 100005; ve++) {
+                                    if (ve == 100005) {
+                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x
+                                            };
+                                        } else {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                            };
+                                        }
+                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                    }
                                 }
-                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                            }
+
+                            if (screen.width < 800) {
+                                for (let ve = 0; ve <= 100005; ve++) {
+                                    if (ve == 100005) {
+                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x
+                                            };
+                                        } else {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                            };
+                                        }
+                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                    }
+                                }
                             }
                         }
-                    }
-
-                    if (screen.width < 800) {
-                        for (let ve = 0; ve <= 100005; ve++) {
-                            if (ve == 100005) {
-                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                    interiores = {
-                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                        orden: x
-                                    };
-                                } else {
-                                    interiores = {
-                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                        orden: x,
-                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                    };
-                                }
-                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                            }
-                        }
-                    }
-                }
-            } else {
-                var interiores;
-                if (screen.width >= 800) {
-                    for (let ve = 0; ve <= 100005; ve++) {
-                        if (ve == 100005) {
-                            interiores = {
-                                presupuestoArmario: presupuestoArmario
-                            };
-
-                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                        }
-                    }
-                }
-
-                if (screen.width < 800) {
-                    for (let ve = 0; ve <= 100005; ve++) {
-                        if (ve == 100005) {
-                            interiores = {
-                                presupuestoArmario: presupuestoArmario
-                            };
-
-                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                        }
-                    }
-                }
-            }
-            if (prodCarr[m][1]['puertas'] != undefined) {
-                for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
-                    var puertas;
-                    if (
-                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
-                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
-                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
-                    ) {
+                    } else {
+                        var interiores;
                         if (screen.width >= 800) {
                             for (let ve = 0; ve <= 100005; ve++) {
                                 if (ve == 100005) {
-                                    puertas = {
-                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                        orden: x
+                                    interiores = {
+                                        presupuestoArmario: presupuestoArmario
                                     };
 
-                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                                 }
                             }
                         }
@@ -12952,72 +12921,110 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (screen.width < 800) {
                             for (let ve = 0; ve <= 100005; ve++) {
                                 if (ve == 100005) {
-                                    puertas = {
-                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                        orden: x
+                                    interiores = {
+                                        presupuestoArmario: presupuestoArmario
                                     };
 
-                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                                 }
-                            }
-                        }
-                    } else {
-                        for (let ve = 0; ve <= 100005; ve++) {
-                            if (ve == 100005) {
-                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
-                                    puertas = {
-                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                        orden: x
-                                    };
-                                }
-
-                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
-                                    puertas = {
-                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                        orden: x
-                                    };
-                                }
-
-                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
-                                    puertas = {
-                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                        presupuestoArmario: presupuestoArmario,
-                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                        acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
-                                        acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
-                                        orden: x
-                                    };
-                                }
-
-                                this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                             }
                         }
                     }
-                }
-            }
+                    if (prodCarr[m][1]['puertas'] != undefined) {
+                        for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
+                            var puertas;
+                            if (
+                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
+                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
+                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
+                            ) {
+                                if (screen.width >= 800) {
+                                    for (let ve = 0; ve <= 100005; ve++) {
+                                        if (ve == 100005) {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                orden: x
+                                            };
 
-            for (let h = 0; h < data.body.length; h++) {
-                if (h == 0) {
-                    var prod = data.body[h];
-                }
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                        }
+                                    }
+                                }
 
-                if (prod['id'] <= data.body[h]['id']) {
-                    prod = data.body[h];
+                                if (screen.width < 800) {
+                                    for (let ve = 0; ve <= 100005; ve++) {
+                                        if (ve == 100005) {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                orden: x
+                                            };
+
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                        }
+                                    }
+                                }
+                            } else {
+                                for (let ve = 0; ve <= 100005; ve++) {
+                                    if (ve == 100005) {
+                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                orden: x
+                                            };
+                                        }
+
+                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                                orden: x
+                                            };
+                                        }
+
+                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                                acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
+                                                acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
+                                                orden: x
+                                            };
+                                        }
+
+                                        this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    for (let h = 0; h < data.body.length; h++) {
+                        if (h == 0) {
+                            var prod = data.body[h];
+                        }
+
+                        if (prod['id'] <= data.body[h]['id']) {
+                            prod = data.body[h];
+                        }
+                    }
                 }
             }
             this.presupuestoPedidoService.query1().subscribe(data => {
@@ -13136,7 +13143,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                         this.productosPresupuestoPedidos = prodPrePed;
                         this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-                        prodPrePed['id'] = idProdCar + 1;
+                        prodPrePed['id'] = idProdCar + 1 + m;
                         var armario;
                         armario = {
                             id: prodCarr[m][1]['id'],

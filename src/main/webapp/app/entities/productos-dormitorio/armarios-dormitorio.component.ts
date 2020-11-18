@@ -174,6 +174,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     precioInterior4: any;
     precioInterior5: any;
     codigoparadivsAncho: any;
+    estoesunapruebamen: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -8235,7 +8236,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var contPuertas = 0;
         if (casco != '' && trasera != '') {
             $('#interioresDiv').removeAttr('class');
-            this.productosDormitorioService.categoria(24).subscribe(data => {
+            this.productosDormitorioService.categoria2(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
             });
             this.productosDormitorioService.categoria(10).subscribe(data => {
@@ -28390,6 +28391,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
 
     ngOnInit() {
         this.iva = JSON.parse(sessionStorage.getItem('IVA'));
+        this.cascoService.dato = [];
+        this.cascoService.alto = [];
+        this.cascoService.fondo = [];
         this.loadAll();
         this.accountService.identity().then(account => {
             this.currentAccount = account;

@@ -3494,14 +3494,6 @@ ui bootstrap tweaks
     #imagenProdEspeciales {
         display: none;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 10000;
-        width: 100%;
-        top: 0;
-        height: 50px;
-        background-color: black;
-    }
     #modalApoyo {
         margin-top: -10px;
     }
@@ -3599,25 +3591,6 @@ ui bootstrap tweaks
         max-width: 6%;
         margin-left: 5px;
         margin-top: 5px;
-    }
-    #posicion0 {
-        position: absolute;
-        right: 8px;
-        top: 6px;
-        color: white;
-    }
-    #imagenLogoCuenta {
-        margin-left: 5%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 120px;
-        height: 25px;
-    }
-    #cestaImagen {
-        right: 10px;
-        position: fixed;
-        margin-top: -5px;
     }
     #productosPrincipal {
         width: 100%;
@@ -4011,14 +3984,6 @@ ui bootstrap tweaks
     #imagenProdEspeciales {
         display: none;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 10000;
-        width: 100%;
-        top: 0;
-        height: 50px;
-        background-color: black;
-    }
     #modalApoyo {
         margin-top: -10px;
     }
@@ -4117,25 +4082,7 @@ ui bootstrap tweaks
         margin-left: 5px;
         margin-top: 5px;
     }
-    #posicion0 {
-        position: absolute;
-        right: 8px;
-        top: 6px;
-        color: white;
-    }
-    #imagenLogoCuenta {
-        margin-left: 5%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 120px;
-        height: 25px;
-    }
-    #cestaImagen {
-        right: 10px;
-        position: fixed;
-        margin-top: -5px;
-    }
+
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
@@ -4636,14 +4583,7 @@ ui bootstrap tweaks
     #imagenProdEspeciales {
         display: none;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 10000;
-        width: 100%;
-        top: 0;
-        height: 50px;
-        background-color: black;
-    }
+
     #modalApoyo {
         margin-top: -10px;
     }
@@ -4742,25 +4682,7 @@ ui bootstrap tweaks
         margin-left: 5px;
         margin-top: 5px;
     }
-    #posicion0 {
-        position: absolute;
-        right: 8px;
-        top: 6px;
-        color: white;
-    }
-    #imagenLogoCuenta {
-        margin-left: 5%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 120px;
-        height: 25px;
-    }
-    #cestaImagen {
-        right: 10px;
-        position: fixed;
-        margin-top: -5px;
-    }
+
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
@@ -5255,14 +5177,6 @@ ui bootstrap tweaks
     #imagenProdEspeciales {
         display: none;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 10000;
-        width: 100%;
-        top: 0;
-        height: 50px;
-        background-color: black;
-    }
     #modalApoyo {
         margin-top: -10px;
     }
@@ -5360,25 +5274,6 @@ ui bootstrap tweaks
         max-width: 6%;
         margin-left: 5px;
         margin-top: 5px;
-    }
-    #posicion0 {
-        position: absolute;
-        right: 8px;
-        top: 6px;
-        color: white;
-    }
-    #imagenLogoCuenta {
-        margin-left: 5%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 120px;
-        height: 25px;
-    }
-    #cestaImagen {
-        right: 10px;
-        position: fixed;
-        margin-top: -5px;
     }
     #productosPrincipal {
         width: 100%;
@@ -5753,14 +5648,7 @@ ui bootstrap tweaks
     #acabado {
         margin-left: 20%;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 1000000;
-        width: 100%;
-        top: 0;
-        height: 55px;
-        background-color: black;
-    }
+
     #menuPrincipal {
         float: left;
         width: 100%;
@@ -6028,26 +5916,7 @@ ui bootstrap tweaks
         margin-top: 5px;
         width: 155px;
     }
-    #posicion0 {
-        position: absolute;
-        right: 4px;
-        top: 12px;
-        color: white;
-        font-size: 25px;
-    }
-    #imagenLogoCuenta {
-        margin-left: 38%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 190px;
-        height: 45px;
-    }
-    #cestaImagen {
-        right: 10px !important;
-        position: fixed;
-        margin-top: -5px;
-    }
+
     #productosPrincipal {
         width: 100%;
         margin-left: 0px;
@@ -7631,14 +7500,6 @@ ui bootstrap tweaks
     #imagenProdEspeciales {
         display: none;
     }
-    #menuFijoArriba {
-        position: fixed;
-        z-index: 10000;
-        width: 100%;
-        top: 0;
-        height: 40px;
-        background-color: black;
-    }
     #modalApoyo {
         margin-top: -10px;
     }
@@ -7737,25 +7598,6 @@ ui bootstrap tweaks
         max-width: 6%;
         margin-left: 5px;
         margin-top: 5px;
-    }
-    #posicion0 {
-        position: absolute;
-        right: 8px;
-        top: 6px;
-        color: white;
-    }
-    #imagenLogoCuenta {
-        margin-left: 5%;
-    }
-    #logoImagen {
-        position: absolute;
-        width: 120px;
-        height: 25px;
-    }
-    #cestaImagen {
-        right: 10px;
-        position: fixed;
-        margin-top: -5px;
     }
     #productosPrincipal {
         width: 100%;
@@ -13692,10 +13534,136 @@ ui bootstrap tweaks
 @media screen and (max-width: 1630px) {
     #pruebahoverdiv {
         width: 450px;
-        margin-left: 5%;
+        margin-left: 4%;
     }
     #imagenDeCadaTipoNativ {
         width: 450px;
+    }
+}
+@media screen and (max-width: 1575px) {
+    #pruebahoverdiv {
+        width: 450px;
+        margin-left: 3%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1525px) {
+    #pruebahoverdiv {
+        width: 400px;
+        margin-left: 5%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 1475px) {
+    #pruebahoverdiv {
+        width: 400px;
+        margin-left: 4%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 1410px) {
+    #pruebahoverdiv {
+        width: 400px;
+        margin-left: 3%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 1390px) {
+    #pruebahoverdiv {
+        width: 350px;
+        margin-left: 5%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    #pruebahoverdiv {
+        width: 350px;
+        margin-left: 4%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 1250px) {
+    #pruebahoverdiv {
+        width: 350px;
+        margin-left: 3%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 350px;
+    }
+}
+@media screen and (max-width: 1250px) {
+    #pruebahoverdiv {
+        width: 300px;
+        margin-left: 5%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 1115px) {
+    #pruebahoverdiv {
+        width: 300px;
+        margin-left: 3%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    #pruebahoverdiv {
+        width: 300px;
+        margin-left: 2%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 1020px) {
+    #pruebahoverdiv {
+        width: 250px;
+        margin-left: 4%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 910px) {
+    #pruebahoverdiv {
+        width: 250px;
+        margin-left: 2%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 250px;
+    }
+}
+@media screen and (max-width: 860px) {
+    #pruebahoverdiv {
+        width: 225px;
+        margin-left: 2%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 225px;
+    }
+}
+@media screen and (max-width: 770px) {
+    #pruebahoverdiv {
+        width: 200px;
+        margin-left: 2%;
+    }
+    #imagenDeCadaTipoNativ {
+        width: 200px;
     }
 }
 @media screen and (max-width: 700px) {
