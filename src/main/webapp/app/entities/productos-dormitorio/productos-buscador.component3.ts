@@ -574,245 +574,476 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
         var array = [];
         var cont = 0;
-        this.productosDormitorioModal = [];
-        var productosDormitorioModal = this.productosDormitorioService.todos;
 
         if (nombreArma == '3 PUERTAS IZQUIERDA') {
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
 
             if (id == 2) {
-                this.productosDormitorioModal = this.productosDormitorioService.todos;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '3 PUERTAS DERECHA') {
             if (id == 2) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
 
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '2 PUERTAS') {
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '1 PUERTA') {
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
         }
 
         if (nombreArma == '4 PUERTAS - 2 HUECOS GRANDES') {
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '4 PUERTAS ASIMETRICAS') {
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
         }
 
         if (nombreArma == '5 PUERTAS CENTRAL') {
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 2) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '5 PUERTAS IZQUIERDA') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '5 PUERTAS DERECHA') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '6 PUERTAS -3 HUECOS GRANDES') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '6 PUERTAS ASIMETRICAS') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 4) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
         }
 
         if (nombreArma == '7 PUERTAS IZQUIERDA') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 4) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
 
         if (nombreArma == '7 PUERTAS DERECHA') {
             if (id == 2) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 4) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
         if (nombreArma == '7 PUERTA ASIMETRICAS') {
             if (id == 2) {
-                for (let i = 0; i < productosDormitorioModal['length']; i++) {
-                    if (i != 1 && i != 6 && i != 14 && i != 15 && i != 16 && i != 17 && i != 18 && i != 19 && i != 20) {
-                        array[cont] = productosDormitorioModal[i];
-                        cont++;
-                    }
-                }
-                this.productosDormitorioModal = array;
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 3) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 4) {
-                this.productosDormitorioModal = productosDormitorioModal;
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
             }
         }
     }

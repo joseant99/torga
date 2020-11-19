@@ -745,7 +745,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" class="tirador" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
+		          <div *ngFor="let aca of productosDormitorioModal; let i=index;" class="classintdivmen{{i}}" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" class="tirador" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1852,38 +1852,38 @@
     <h2 style="text-align:center;margin-top:-15px;margin-left:0%;" id="page-heading">
         <div id="idNativComedoresDiv" style="margin-bottom: 65px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;"><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textoStrongNativ"><strong>NATIV DORMITORIOS</strong></span></div>
         <div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
-        	<div style="width:500px;float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;margin-left: 110px" (click)="elegirBusqueda(21)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-1.jpeg">
+        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px" (click)="elegirBusqueda(21)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-1.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;"(click)="elegirBusqueda(22)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-2.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;"(click)="elegirBusqueda(22)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-2.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(23)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-3.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(23)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-3.jpeg">
         	</div>
-        	<div style="width:500px;float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;margin-left: 110px" (click)="elegirBusqueda(24)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-4.jpeg">
+        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(24)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-4.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(25)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-5.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(25)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-5.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(26)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-6.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(26)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-6.jpeg">
         	</div>
-        	<div style="width:500px;float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;margin-left: 110px" (click)="elegirBusqueda(2)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
+        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(2)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(3)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-9.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(3)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-9.jpeg">
         	</div>
-        	<div style="width:500px;float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;margin-left: 110px" (click)="elegirBusqueda(4)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-10.jpeg">
+        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(4)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-10.jpeg">
         	</div>
-        	<div style="width:500px;float: left;margin-left: 110px;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(5)" id="pruebahoverdiv">
-        		<img id="imagenDeCadaTipoNativ" style="width:500px;padding-right: 5px;" src="../../../content/images/comedores/dormitorio-11.jpeg">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(5)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-11.jpeg">
         	</div>
         </div>
         <!-- 

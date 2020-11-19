@@ -1101,6 +1101,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     public carcarCascosInterioresPuertas() {
         var ancho = $('#anchosSelect2').val();
         var alto = $('#alturaSelect2').val();
+        var codigo = $('#inputCodigoOculta').val();
         var armariosTodos = this.armarioService.todo;
         var id = 0;
         var classe = $('#armariosCogidos' + id).attr('class');
@@ -1109,6 +1110,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             armariosTodos[j]['ancho'] = ancho;
             armariosTodos[j]['alto'] = alto;
             armariosTodos[j]['fondo'] = 61;
+            armariosTodos[j]['codigo'] = codigo;
             this.armarioCogido = armariosTodos[j];
         }
         if (screen.width < 800) {

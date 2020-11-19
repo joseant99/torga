@@ -18,6 +18,6 @@ public interface PresupuestoArmarioRepository extends JpaRepository<PresupuestoA
 	@Query("Select u from PresupuestoArmario u where u.productosPresupuestoPedidos.presupuestoPedido.id = ?1")
 	Collection<PresupuestoArmario> findByPresupuestoArmario(Long id);
 	
-	@Query("Select MAX(u.id) from PresupuestoArmario u")
+	@Query("Select u from PresupuestoArmario u ORDER BY u.id DESC")
 	Collection<PresupuestoArmario> findultimaid();
 }

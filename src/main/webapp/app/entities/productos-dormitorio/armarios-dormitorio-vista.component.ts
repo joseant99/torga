@@ -1057,6 +1057,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
     public carcarCascosInterioresPuertas() {
         var ancho = $('#anchosSelect3').val();
         var alto = $('#alturaSelect3').val();
+        var codigo = $('#inputCodigoVista').val();
         var armariosTodos = this.armarioService.todo;
         var id = 0;
 
@@ -1067,6 +1068,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             armariosTodos[j]['ancho'] = ancho;
             armariosTodos[j]['alto'] = alto;
             armariosTodos[j]['fondo'] = 61;
+            armariosTodos[j]['codigo'] = codigo;
             this.armarioCogido = armariosTodos[j];
         }
         if (screen.width < 800) {

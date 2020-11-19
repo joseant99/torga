@@ -12845,13 +12845,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         var estoyprobando = 0;
+        for (let m = 0; m < prodCarr.length; m++) {
+            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                estoyprobando++;
+            }
+        }
         this.presupuestoArmarioService.query1234().subscribe(data => {
             for (let m = 0; m < prodCarr.length; m++) {
                 if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                     var idArmario;
-                    idArmario = data.body[0];
-                    idArmario = idArmario + estoyprobando;
-                    estoyprobando++;
+                    for (let w = 0; w < data.body['length']; w++) {
+                        if (w < estoyprobando) {
+                            if (prodCarr[m][1]['codigo'] == data.body[w]['codigo']) {
+                                idArmario = data.body[w]['id'];
+                            }
+                        }
+                    }
+
                     presupuestoArmario['id'] = idArmario;
                     if (prodCarr[m][1]['interiores'] != undefined) {
                         for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {

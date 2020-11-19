@@ -1526,6 +1526,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         nombre = codigo;
         $('.divBuscadorArticulos').attr('id', 'simplepruebaani1');
         $('.divBuscadorArticulos').css({ display: 'block' });
+        if (screen.width <= 1400) {
+            $('body').attr('style');
+            $('body').css({ 'overflow-y': 'hidden' });
+        }
         if (screen.width < 800) {
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'margin-bottom': '60px' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'border-bottom': '1px solid' });
@@ -1544,7 +1548,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('#calculadoraCarrito').css({ 'padding-top': '130px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             if (screen.width < 800) {
