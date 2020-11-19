@@ -103,6 +103,26 @@ div#simplepruebaani2 {
     -webkit-animation-fill-mode: forwards;
 }
 
+.subir {
+    opacity: 1;
+
+    -moz-animation-name: simple31-animation;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: simple31-animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+}
+
 @-moz-keyframes simple-animation {
     100% {
         right: 0%;
@@ -174,6 +194,30 @@ div#simplepruebaani2 {
     100% {
         width: 100%;
         top: 0%;
+    }
+}
+
+@-moz-keyframes simple31-animation {
+    0% {
+        top: 0%;
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+        top: -100%;
+    }
+}
+
+@-webkit-keyframes simple31-animation {
+    0% {
+        top: 0%;
+        width: 100%;
+    }
+
+    100% {
+        width: 100%;
+        top: -100%;
     }
 }
 

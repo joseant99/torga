@@ -12837,6 +12837,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         this.isSaving = false;
     }
 
+    public subirmodal() {
+        $('#modalCesta').attr('class', 'modal fade show subir');
+        $('.modal-backdrop').remove();
+        $('body').removeAttr('class');
+        setTimeout(function() {
+            $('#modalCesta').attr('class', 'modal fade');
+            $('#modalCesta').css({ display: 'none' });
+            $('#modalCesta').removeAttr('aria-hidden');
+        }, 1000);
+    }
+
     protected onSaveSuccess6() {
         this.isSaving = false;
         var presupuestoArmario = this.presupuestoArmarioTodoLOL;
