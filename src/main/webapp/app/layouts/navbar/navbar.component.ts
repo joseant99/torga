@@ -573,6 +573,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public abrirCesta() {
+        $('.modal-backdrop').remove();
         var productosArrayNombres = this.productosArrayNombre;
         $('#modalCesta .modal-body').empty();
         var medidas = this.medidasModal;
@@ -13353,9 +13354,95 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                             }
-                            if (prodCarr[m][1]['iluminacion'] != undefined) {
-                                prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
-                                prodPrePed['pilotoLuz'] = 1;
+
+                            if (
+                                prodCarr[m][1]['productosDormitorio']['id'] == 334 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 235 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 234 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 230 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 268 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 267 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 272 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 271 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 264 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 263 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 260 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 259 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 112 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 113 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 117 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 118 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 64 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 65 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 67 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 313 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 171 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 172 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 173 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 76 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 77 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 78 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 79 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 80 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 81 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 83 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 85 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 86 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 87 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 88 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 89 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 90 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 91 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 92 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 174 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 175 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 205 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 206 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 306 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 63 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 307 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 309 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 66 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 310 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 314 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 320 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 325 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 324 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 327 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 326 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 318 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 321 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 329 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 328 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 340 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 339 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 322 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 315 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 316 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 331 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 330 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 332 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 333 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 277 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 278 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 279 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 280 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 281 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 246 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 282 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 247 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 248 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 251 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 252 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 255 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 256
+                            ) {
+                                if (prodCarr[m][1]['iluminacion'] != undefined) {
+                                    prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
+                                    prodPrePed['pilotoLuz'] = 1;
+                                } else {
+                                    prodPrePed['pilotoLuz'] = 2;
+                                }
                             }
                             if (prodCarr[m][1]['direccion'] != undefined) {
                                 prodPrePed['direccion'] = prodCarr[m][1]['direccion'];

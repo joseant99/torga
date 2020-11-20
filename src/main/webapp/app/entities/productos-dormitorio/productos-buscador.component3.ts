@@ -9049,6 +9049,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 var precioDimen = parseFloat($('#precioDimension').text());
                 $('#precioDimension').text(precioDimen - precioLuz);
             }
+            $('#datos1 #iluminacion1').remove();
             this.estaEsLaLUZ = undefined;
         }
     }

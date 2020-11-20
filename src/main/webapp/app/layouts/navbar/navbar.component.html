@@ -1281,23 +1281,21 @@
   </div>
 </ng-template>
  
-	<div class="modal fade" id="modalCesta" role="dialog" style="z-index: 1000000000000;">
-		    <div class="modal-dialog modal-lg">
+	<div class="modal fade" id="modalCesta" role="dialog" style="z-index: 1000000000000;max-width: 100%;margin-top: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">
+		    <div class="modal-dialog modal-lg" style="max-width: 100%;margin: 0;padding-bottom: 0px;">
 		    
 		     
-		      <div class="modal-content" style="background-color:white!important" id="modalcontenidoCss">
-		     
-		      
+		      <div class="modal-content" style="background-color:white!important;margin-top: 0px !important;width: 100% !important;height: 100% !important;" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title" style="text-align:center;width: 100%;font-size: 25px;">CESTA</h4>
 		          <button type="button" class="close" (click)="subirmodal()">&times;</button>
 		        </div>
-		        <div class="modal-body" id="muyImportante" style="height: 590px;overflow-y:scroll;overflow-x:hidden">
+		        <div class="modal-body" id="muyImportante" style="height: 767px;overflow-y:scroll;overflow-x:hidden">
 			        
 		        </div>
 		       <div class="modal-footer">
 			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
-			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 350px;font-weight:600" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span>
+			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 650px;font-weight:600" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span>
 			       
 			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">FINALIZAR</button></p>
 		        </div>
