@@ -52,4 +52,8 @@ export class DatosUsuarioService {
     query12(id: any): Observable<EntityArrayResponseType> {
         return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-busquing/${id}`, { observe: 'response' });
     }
+
+    query13(nombre: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-id99/${nombre}`, { observe: 'response' });
+    }
 }

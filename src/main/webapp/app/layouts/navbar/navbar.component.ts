@@ -86,6 +86,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     productoPresupuesto: any;
     presupuestoArmarioTodoLOL: any;
     mGuardar: any;
+    arrayNombreFiscal: any;
+    meterdireccionarray: any;
+    idDeLaTiendaCogida: any;
+    iddireccioncogida;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         private loginService: LoginService,
@@ -153,6 +157,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#todometerFondo #textoRueda').text('Se esta generando el pedido, un momento.');
         }
     }
+
+    public consultarNombreFiscal() {
+        var nombreFiscal = $('#nombrefiscalinputcesta').val();
+        this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
+            this.todasLasTiendas = data.body;
+            if (data.body.length <= 5) {
+                this.arrayNombreFiscal = data.body;
+            } else {
+                alert('introduce un nombre mas concreto');
+            }
+        });
+    }
     cargarTodasTiendas() {
         var account = this.accountService.userIdentity;
         var arrayBueno = [];
@@ -169,6 +185,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
         arrayBueno[1694] = 32;
+        var arrayNombreFiscal = [];
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
                 .query({
@@ -271,6 +288,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         });
     }
+
+    public volveratrascestaconfirm(id) {
+        $('#volveratrascesta' + id).css({ display: 'none' });
+        if (id == 1) {
+            $('.div1direccionentrega').attr('id', 'simplepruebaani2');
+            this.arrayNombreFiscal = [];
+            $('#nombrefiscalinputcesta').val('');
+            setTimeout(function() {
+                $('.div1direccionentrega').css({ display: 'block' });
+            }, 1000);
+        }
+    }
+
     public comprobarContrase() {
         var valor = $('#contIdMaqui').val();
         if (valor == '1234') {
@@ -390,6 +420,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     public generarPresupuesto() {
         $('#todometerFondo').css({ display: 'block' });
+        $('#modalCesta').attr('class', 'modal fade show subir');
+        $('#modalConfirmarCreacionPresu').attr('class', 'modal fade show subir');
         $('#modalCesta').css({ display: 'none' });
         this.todasDimensiones = this.dimensionesProductoTipoService.todos;
         var memo = document.getElementsByName('estado');
@@ -506,15 +538,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         fecha_presupuesto: output
                     };
                 }
-                var tiendaElegida = $('#selectTiendas').val();
-                if (screen.width < 800) {
-                    var tiendaElegida = $('#selectTiendaDelNav').val();
-                }
+                var tiendaElegida = this.idDeLaTiendaCogida;
                 var referenciaCliente = $('#referenciaCliente').val();
                 var todasTiendaBuenas = this.todasLasTiendas;
                 if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
                     for (let q = 0; q < todasTiendaBuenas.length; q++) {
-                        if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
+                        if (todasTiendaBuenas[q]['id'] == tiendaElegida) {
                             var usuGG = todasTiendaBuenas[q]['user'];
                         }
                     }
@@ -12674,6 +12703,35 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         $('#divdireccionentregamodal').css({ display: 'block' });
     }
 
+    public meterCuadroDireccion(id) {
+        var array = [];
+        this.idDeLaTiendaCogida = id;
+        this.direccionTiendasService.query1(id).subscribe(data => {
+            this.direccionTiendasService.todos = data.body;
+            for (let u = 0; u < data.body.length; u++) {}
+            this.meterdireccionarray = data.body;
+            console.log(this.meterdireccionarray);
+            $('.div1direccionentrega').css({ display: 'block' });
+
+            $('.div1direccionentrega').attr('id', 'simplepruebaani');
+            setTimeout(function() {
+                $('#div1nombrefiscalcesta').css({ display: 'none' });
+                $('.div1direccionentrega').css({ height: 'auto' });
+                $('#volveratrascesta1').css({ display: 'block' });
+            }, 1000);
+        });
+    }
+
+    public direccogidamen(id) {
+        this.iddireccioncogida = id;
+        $('.div1referenciaCliente').css({ display: 'block' });
+        $('.div1referenciaCliente').attr('id', 'simplepruebaani');
+        setTimeout(function() {
+            $('.div1direccionentrega').css({ display: 'none' });
+            $('.div1referenciaCliente').css({ height: 'auto' });
+        }, 1000);
+    }
+
     public tiendasDireccionPadentro() {
         var valor;
         if (screen.width < 800) {
@@ -12846,6 +12904,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#modalCesta').attr('class', 'modal fade');
             $('#modalCesta').css({ display: 'none' });
             $('#modalCesta').removeAttr('aria-hidden');
+        }, 1000);
+    }
+    public subirmodal1() {
+        $('#modalConfirmarCreacionPresu').attr('class', 'modal fade show subir');
+        this.arrayNombreFiscal = [];
+        this.meterdireccionarray = [];
+        $('#referenciaCliente').val('');
+        $('#nombrefiscalinputcesta').val('');
+
+        $('#div1nombrefiscalcesta').css({ display: 'block' });
+        $('.div1direccionentrega').css({ display: 'none' });
+        $('.div1referenciaCliente').css({ display: 'none' });
+        $('#volveratrascesta1').css({ display: 'none' });
+
+        setTimeout(function() {
+            $('#modalConfirmarCreacionPresu').attr('class', 'modal fade');
+            $('#modalConfirmarCreacionPresu').css({ display: 'none' });
+            $('#modalConfirmarCreacionPresu').removeAttr('aria-hidden');
         }, 1000);
     }
 
@@ -13129,16 +13205,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 pedido: 0
             };
             var direcArrayGG;
-            var direccionTiendas = this.direccionTiendasService.todos;
-            var valorCogidoUInpitra;
-            if (screen.width < 800) {
-                valorCogidoUInpitra = $('#selectDireccionTiendaDelNav').val();
-            } else {
-                valorCogidoUInpitra = $('#selectDireccionTiendas').val();
-            }
+            var direccionTiendas = this.meterdireccionarray;
+
+            var valorCogidoUInpitra = this.iddireccioncogida;
             if (valorCogidoUInpitra != '') {
                 for (let s = 0; s < direccionTiendas.length; s++) {
-                    if (direccionTiendas[s]['direccion'] == valorCogidoUInpitra) {
+                    if (direccionTiendas[s]['id'] == valorCogidoUInpitra) {
                         direcArrayGG = direccionTiendas[s];
                     }
                 }
@@ -13545,6 +13617,37 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     dimensionesProductoTipo: dimen,
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
+                                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 2) {
+                                    var meterpilotoapoyo;
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 18) {
+                                        meterpilotoapoyo = 1;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 403) {
+                                        meterpilotoapoyo = 7;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 212) {
+                                        meterpilotoapoyo = 2;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 15) {
+                                        meterpilotoapoyo = 4;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 32) {
+                                        meterpilotoapoyo = 5;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 16) {
+                                        meterpilotoapoyo = 3;
+                                    }
+                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 17) {
+                                        meterpilotoapoyo = 6;
+                                    }
+                                    prodPrePed = {
+                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                        presupuestoPedido: prueba1,
+                                        dimensionesProductoTipo: dimen,
+                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
+                                        pilotoApoyo: meterpilotoapoyo
+                                    };
+                                }
                             } else {
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],

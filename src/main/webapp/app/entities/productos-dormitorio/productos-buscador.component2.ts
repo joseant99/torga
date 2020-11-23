@@ -7204,7 +7204,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 idProd != 231 &&
                 idProd != 232 &&
                 idProd != 234 &&
-                idProd != 235
+                idProd != 235 &&
+                idProd != 331
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
