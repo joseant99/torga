@@ -10635,7 +10635,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             idProd != '231' &&
             idProd != '232' &&
             idProd != '234' &&
-            idProd != '235'
+            idProd != '235' &&
+            idProd != '332'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;
