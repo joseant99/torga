@@ -3778,6 +3778,748 @@ export class JhiMainComponent implements OnInit {
             }
         }
 
+        if (idProd == 360) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 3 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 7) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 4 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 361) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 3 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 7) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 4 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 362) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 363) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 3 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 7) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 4 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+
+            if (o == 8) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 4 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 364) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 3 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 365) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 3 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 366) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 367) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 368) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 369) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 2 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 370) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 371) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 372) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 373) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 374) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
+        if (idProd == 375) {
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Costado :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Trasera :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Estantes :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        o +
+                        ' Puerta 1 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
+
         if (idProd == 89) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
@@ -5442,7 +6184,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 247) {
-            if (o == 0) {
+            if (o == 1) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafones A :</span> ' +
                         acabados[o] +
@@ -5485,7 +6227,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 251) {
-            if (o == 0) {
+            if (o == 1) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafones A :</span> ' +
                         acabados[o] +
@@ -5528,7 +6270,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 255) {
-            if (o == 0) {
+            if (o == 4) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 3 :</span> ' +
                         acabados[o] +
@@ -5648,7 +6390,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 259) {
-            if (o == 0) {
+            if (o == 2) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Tapizado A :</span> ' +
                         acabados[o] +
@@ -5698,7 +6440,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 263) {
-            if (o == 0) {
+            if (o == 2) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Tapizado A :</span> ' +
                         acabados[o] +
@@ -5799,7 +6541,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 271) {
-            if (o == 0) {
+            if (o == 3) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon A :</span> ' +
                         acabados[o] +
@@ -5878,7 +6620,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 277) {
-            if (o == 0) {
+            if (o == 8) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
@@ -5937,7 +6679,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 278) {
-            if (o == 0) {
+            if (o == 10) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
@@ -6009,7 +6751,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 279) {
-            if (o == 0) {
+            if (o == 13) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
@@ -6103,7 +6845,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 280) {
-            if (o == 0) {
+            if (o == 10) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">A :</span> ' +
                         acabados[o] +
@@ -6175,7 +6917,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 281) {
-            if (o == 0) {
+            if (o == 2) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">1 Tapizado :</span> ' +
                         acabados[o] +
@@ -6191,7 +6933,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 246) {
-            if (o == 0) {
+            if (o == 2) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
@@ -6207,7 +6949,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 282) {
-            if (o == 0) {
+            if (o == 2) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
@@ -6296,14 +7038,14 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 276) {
-            if (o == 0) {
+            if (o == 1) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 1 :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
             }
-            if (o == 1) {
+            if (o == 0) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Tapizado :</span> ' +
                         acabados[o] +
@@ -10907,6 +11649,889 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
+
+        if (idProd == 360) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 6) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 7) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 361) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 6) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 7) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 362) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 363) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 6) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 7) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 8) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+
+        if (idProd == 364) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 6) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 365) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 6) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 366) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 367) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 368) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 369) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 5) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 370) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 371) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 372) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 373) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+
+        if (idProd == 374) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 375) {
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Costado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Trasera :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 3) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 4) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        k +
+                        ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+
         if (idProd == 88) {
             if (k == 0) {
                 $('.' + productos[i]['id'] + 'Datos').append(
@@ -12878,7 +14503,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 247) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafones A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -12931,7 +14556,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 251) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafones A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -12984,7 +14609,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 255) {
-            if (k == 0) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13136,7 +14761,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 259) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tapizado A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13198,7 +14823,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 263) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tapizado A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13260,7 +14885,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 267) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13323,7 +14948,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 271) {
-            if (k == 0) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13422,7 +15047,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 277) {
-            if (k == 0) {
+            if (k == 8) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13497,7 +15122,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 278) {
-            if (k == 0) {
+            if (k == 10) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13589,7 +15214,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 279) {
-            if (k == 0) {
+            if (k == 13) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13709,7 +15334,7 @@ export class JhiMainComponent implements OnInit {
         }
 
         if (idProd == 280) {
-            if (k == 0) {
+            if (k == 10) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13801,7 +15426,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 281) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">1 Tapizado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13821,7 +15446,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 246) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13841,7 +15466,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 282) {
-            if (k == 0) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13954,7 +15579,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 276) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -13963,7 +15588,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 0) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tapizado :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15850,7 +17475,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 276) {
-            if (u == 1) {
+            if (u == 2) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
@@ -15861,7 +17486,7 @@ export class JhiMainComponent implements OnInit {
                         '" style="margin-left:10px"></span></p>'
                 );
             }
-            if (u == 2) {
+            if (u == 1) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
@@ -17915,6 +19540,1054 @@ export class JhiMainComponent implements OnInit {
                         '"><span style="font-weight:600">' +
                         u +
                         ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 360) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 7) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 4</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 361) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 7) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 4</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 362) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 363) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 7) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 4</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 8) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 5</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 364) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 365) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 366) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 367) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+        if (idProd == 368) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 369) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 370) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 371) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 372) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 373) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 374) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
+        if (idProd == 375) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Costado</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Trasera</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

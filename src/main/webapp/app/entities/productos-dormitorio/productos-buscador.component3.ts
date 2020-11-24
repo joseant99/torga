@@ -12953,7 +12953,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var contadorDimen = contador;
         var contAca = 0;
         for (let i = 1; i <= 3; i++) {
-            const idProd = $('#nombreProd' + i).attr('class');
+            const idProd = $('#nombreMesita').attr('class');
             const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
             const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
             const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
@@ -12987,6 +12987,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
             const aca = [];
             var acabadoCogido;
+
             for (let j = 1; j <= 100; j++) {
                 acabadoCogido = $('#productoCalculadora1 #datos1 #val' + j + 'Dato').attr('class');
                 if (acabadoCogido != undefined) {

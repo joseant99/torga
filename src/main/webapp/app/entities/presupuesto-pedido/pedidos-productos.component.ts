@@ -8760,11 +8760,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                             ) {
                                 if (productos[w]['productosDormitorio']['categoriasDormi']['id'] != 9) {
                                     if (productos[w]['productosDormitorio']['categoriasDormi']['id'] == 4) {
-                                        $('#datosMeter' + w).append(
-                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Posicion plafones</span> &nbsp;&nbsp;&nbsp;' +
-                                                productos[w]['direccion'] +
-                                                '</p>'
-                                        );
+                                        if (productos[w]['direccion'] != null) {
+                                            $('#datosMeter' + w).append(
+                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Posicion plafones</span> &nbsp;&nbsp;&nbsp;' +
+                                                    productos[w]['direccion'] +
+                                                    '</p>'
+                                            );
+                                        }
                                     }
                                     this.productosPresupuestoPedidosService.todos[w]['acabados'] = productos[w]['acabados'];
                                     acaComprobar = 0;
@@ -11630,7 +11632,23 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 280 &&
                                                     idProd != 281 &&
                                                     idProd != 282 &&
-                                                    idProd != 340
+                                                    idProd != 340 &&
+                                                    idProd != 360 &&
+                                                    idProd != 361 &&
+                                                    idProd != 362 &&
+                                                    idProd != 363 &&
+                                                    idProd != 364 &&
+                                                    idProd != 365 &&
+                                                    idProd != 366 &&
+                                                    idProd != 367 &&
+                                                    idProd != 368 &&
+                                                    idProd != 369 &&
+                                                    idProd != 370 &&
+                                                    idProd != 371 &&
+                                                    idProd != 372 &&
+                                                    idProd != 373 &&
+                                                    idProd != 374 &&
+                                                    idProd != 375
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +

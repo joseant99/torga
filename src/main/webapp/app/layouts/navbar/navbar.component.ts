@@ -11880,7 +11880,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 280 &&
                                 idProd != 281 &&
                                 idProd != 282 &&
-                                idProd != 340
+                                idProd != 340 &&
+                                idProd != 360 &&
+                                idProd != 361 &&
+                                idProd != 362 &&
+                                idProd != 363 &&
+                                idProd != 364 &&
+                                idProd != 365 &&
+                                idProd != 366 &&
+                                idProd != 367 &&
+                                idProd != 368 &&
+                                idProd != 369 &&
+                                idProd != 370 &&
+                                idProd != 371 &&
+                                idProd != 372 &&
+                                idProd != 373 &&
+                                idProd != 374 &&
+                                idProd != 375
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
