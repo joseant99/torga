@@ -3515,7 +3515,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 precioDimen = precioDimen - 120;
                 $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                meterInt['luz'] = undefined;
+                meterInt['luz'] = 'Sin luz';
                 meterInt['precioLuz'] = undefined;
                 $('#precioLuz' + id + '1').css({ display: 'none' });
             }
@@ -3527,7 +3527,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 precioDimen = precioDimen - 200;
                 $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                meterInt['luz'] = undefined;
+                meterInt['luz'] = 'Sin luz';
                 meterInt['precioLuz'] = undefined;
                 $('#precioLuz' + id + '2').css({ display: 'none' });
             }
@@ -3544,7 +3544,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
                 $('#precioLuz' + id + '2').css({ display: 'none' });
-                meterInt['luz'] = undefined;
+                meterInt['luz'] = 'Sin luz';
                 meterInt['precioLuz'] = undefined;
             }
             if (this.gg != 1) {
@@ -3557,7 +3557,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precio = parseFloat(prec);
                 precio = precio + 120;
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                meterInt['luz'] = 'Iluminacion izq';
+                meterInt['luz'] = 'Con 1 Luz';
                 meterInt['precioLuz'] = '120';
             }
             this.gg = 1;
@@ -3594,7 +3594,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#precioDimension').text(precioDimen);
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
                 $('#precioLuz' + id + '1').css({ display: 'none' });
-                meterInt['luz'] = undefined;
+                meterInt['luz'] = 'Sin Luz';
                 meterInt['precioLuz'] = undefined;
             }
             $('#precioLuz' + id + '1').css({ display: 'none' });
@@ -3607,7 +3607,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 var precio = parseFloat(prec);
                 precio = precio + 200;
                 $('#precioInt' + id).text('+ ' + precio + ' pp');
-                meterInt['luz'] = 'Iluminacion izq';
+                meterInt['luz'] = 'Con 2 Luces';
                 meterInt['precioLuz'] = '200';
             }
             this.gg = 2;

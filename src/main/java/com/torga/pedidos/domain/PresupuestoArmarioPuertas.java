@@ -28,6 +28,9 @@ public class PresupuestoArmarioPuertas implements Serializable {
     
     @Column(name = "orden")
     private Float orden;
+    
+    @Column(name = "terminacion")
+    private String terminacion;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -103,6 +106,19 @@ public class PresupuestoArmarioPuertas implements Serializable {
 
     public void setAcabados(Acabados acabados) {
         this.acabados = acabados;
+    }
+    
+    public String getTerminacion() {
+        return terminacion;
+    }
+
+    public PresupuestoArmarioPuertas terminacion(String terminacion) {
+        this.terminacion = terminacion;
+        return this;
+    }
+
+    public void setTerminacion(String terminacion) {
+        this.terminacion = terminacion;
     }
     
     public Acabados getAcabados1() {

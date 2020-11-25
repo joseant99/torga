@@ -29,6 +29,15 @@ public class PresupuestoArmario implements Serializable {
     @Column(name = "codigo")
     private String codigo;
     
+    @Column(name = "enmarcados")
+    private String enmarcadosTexto;
+    
+    @Column(name = "cajeado")
+    private String cajeadoTexto;
+    
+    @Column(name = "niveladores")
+    private String niveladoresTexto;
+    
     @Column(name = "precio_total")
     private Float precioTotal;
 
@@ -128,6 +137,45 @@ public class PresupuestoArmario implements Serializable {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+    
+    public String getEnmarcadosTexto() {
+        return enmarcadosTexto;
+    }
+
+    public PresupuestoArmario enmarcadosTexto(String enmarcadosTexto) {
+        this.enmarcadosTexto = enmarcadosTexto;
+        return this;
+    }
+
+    public void setEnmarcadosTexto(String enmarcadosTexto) {
+        this.enmarcadosTexto = enmarcadosTexto;
+    }
+    
+    public String getCajeadoTexto() {
+        return cajeadoTexto;
+    }
+
+    public PresupuestoArmario cajeadoTexto(String cajeadoTexto) {
+        this.cajeadoTexto = cajeadoTexto;
+        return this;
+    }
+
+    public void setCajeadoTexto(String cajeadoTexto) {
+        this.cajeadoTexto = cajeadoTexto;
+    }
+    
+    public String getNiveladoresTexto() {
+        return niveladoresTexto;
+    }
+
+    public PresupuestoArmario niveladoresTexto(String niveladoresTexto) {
+        this.niveladoresTexto = niveladoresTexto;
+        return this;
+    }
+
+    public void setNiveladoresTexto(String niveladoresTexto) {
+        this.niveladoresTexto = niveladoresTexto;
     }
     
     public Float getPrecioTotal() {

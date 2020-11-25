@@ -12974,18 +12974,34 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 for (let ve = 0; ve <= 100005; ve++) {
                                     if (ve == 100005) {
                                         if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                            interiores = {
-                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x
-                                            };
-                                        } else {
+                                            var terminacioninterior;
+                                            if (
+                                                prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
+                                                prodCarr[m][1]['interiores'][x]['nombre'] <= 9
+                                            ) {
+                                                terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                            }
                                             interiores = {
                                                 precio: prodCarr[m][1]['interiores'][x]['precio'],
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                 orden: x,
+                                                terminacion: terminacioninterior
+                                            };
+                                        } else {
+                                            var terminacioninterior;
+                                            if (
+                                                prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
+                                                prodCarr[m][1]['interiores'][x]['nombre'] <= 9
+                                            ) {
+                                                terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                            }
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                terminacion: terminacioninterior,
                                                 mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
                                             };
                                         }
@@ -13052,6 +13068,41 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
                                 prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
                             ) {
+                                var terminacionpuerta = '';
+                                prodCarr[m][1]['acabadoTirador'];
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 381) {
+                                    terminacionpuerta = 'A Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Transparente';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 382) {
+                                    terminacionpuerta = 'B Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Gris';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 383) {
+                                    terminacionpuerta = 'C Madera Sin Tirador';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 384) {
+                                    terminacionpuerta = 'D Madera Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 385) {
+                                    terminacionpuerta = 'E Madera Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 386) {
+                                    terminacionpuerta = 'F Madera Draw ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 387) {
+                                    terminacionpuerta = 'G Fuelle IZQ Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 388) {
+                                    terminacionpuerta = 'H Fuelle DCH Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 389) {
+                                    terminacionpuerta = 'I Fuelle IZQ Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 390) {
+                                    terminacionpuerta = 'J Fuelle DCH Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 391) {
+                                    terminacionpuerta = 'K Sin Puerta';
+                                }
                                 if (screen.width >= 800) {
                                     for (let ve = 0; ve <= 100005; ve++) {
                                         if (ve == 100005) {
@@ -13060,7 +13111,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['puertas'][x],
                                                 acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
 
                                             this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
@@ -13268,24 +13320,31 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         };
 
                         var presupuestoArmario;
-
+                        var niveladoresTexto = '';
+                        var enmarcadoTexto = '';
+                        var cajeadoTexto = '';
                         if (prodCarr[m][1]['niveladores'] == undefined) {
                             var arrayNive = {
                                 id: 25000
                             };
                             prodCarr[m][1]['niveladores'] = arrayNive;
+                            niveladoresTexto = 'Sin niveladores';
+                        } else {
+                            niveladoresTexto = 'Con niveladores';
                         }
                         if (prodCarr[m][1]['enmarcado'] == undefined) {
                             var arrayEnmar = {
                                 id: 25000
                             };
                             prodCarr[m][1]['enmarcado'] = arrayEnmar;
+                            enmarcadoTexto = 'Sin enmarcar';
                         }
                         if (prodCarr[m][1]['cajeado'] == undefined) {
                             var arrayCaje = {
                                 id: 25000
                             };
                             prodCarr[m][1]['cajeado'] = arrayCaje;
+                            cajeadoTexto = 'Sin cajeado';
                         }
                         presupuestoArmario = {
                             productosPresupuestoPedidos: prodPrePed,
@@ -13308,23 +13367,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             fondo: prodCarr[m][1]['fondo'],
                             alto: prodCarr[m][1]['alto'],
                             ancho: prodCarr[m][1]['ancho'],
-                            codigo: prodCarr[m][1]['codigo']
+                            codigo: prodCarr[m][1]['codigo'],
+                            niveladoresTexto: niveladoresTexto,
+                            cajeadoTexto: cajeadoTexto,
+                            enmarcadosTexto: enmarcadoTexto
                         };
                         if (prodCarr[m][1]['enmarcado'] != undefined) {
                             if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
                                 presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                presupuestoArmario['enmarcadosTexto'] = 'Tipo A';
                             }
                             if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
                                 presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
+                                presupuestoArmario['enmarcadosTexto'] = 'Tipo B';
                             }
                             if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
                                 presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
                                 presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
+                                presupuestoArmario['enmarcadosTexto'] = 'Tipo C';
                             }
                             if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
                                 presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
                                 presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
                                 presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
+                                presupuestoArmario['enmarcadosTexto'] = 'Tipo D';
                             }
                         }
 
@@ -13332,19 +13398,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
                                 presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
                                 presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                presupuestoArmario['cajeadoTexto'] = 'Tipo A';
                             }
                             if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
                                 presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
                                 presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                presupuestoArmario['cajeadoTexto'] = 'Tipo B';
                             }
                             if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
                                 presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
                                 presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
                                 presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
+                                presupuestoArmario['cajeadoTexto'] = 'Tipo C';
                             }
                             if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
                                 presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
                                 presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
+                                presupuestoArmario['cajeadoTexto'] = 'Tipo D';
                             }
                         }
 
