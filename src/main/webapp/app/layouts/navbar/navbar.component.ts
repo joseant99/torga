@@ -13128,7 +13128,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['puertas'][x],
                                                 acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
 
                                             this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
