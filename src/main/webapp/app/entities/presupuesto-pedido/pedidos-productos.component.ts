@@ -650,27 +650,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 data.body[0]['presupuestoArmario']['cajeado']['precio'] +
                                                                 '</p>'
                                                         );
-                                                        if (data.body[0]['presupuestoArmario']['medACaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida A Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medACaj'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
-                                                        if (data.body[0]['presupuestoArmario']['medBCaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida B Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medBCaj'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
-                                                        if (data.body[0]['presupuestoArmario']['medCCaj'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida C Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medCCaj'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">Cajeado</span> : Sin Cajeado</p>'
@@ -682,27 +661,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 data.body[0]['presupuestoArmario']['enmarcados']['precio'] +
                                                                 '</p>'
                                                         );
-                                                        if (data.body[0]['presupuestoArmario']['medAEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida A enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medAEnm'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
-                                                        if (data.body[0]['presupuestoArmario']['medBEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida B enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medBEnm'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
-                                                        if (data.body[0]['presupuestoArmario']['medCEnm'] != 0) {
-                                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Medida C enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                    data.body[0]['presupuestoArmario']['medCEnm'] +
-                                                                    '</p>'
-                                                            );
-                                                        }
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">Enmarcados</span> : Sin Enmarcados</p>'

@@ -262,8 +262,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#selectDireccionTiendas').css({ display: 'revert' });
             $('#selectDireccionTiendaDelNav').css({ display: 'none' });
         }
+
+        if (account['authorities'].length == 1) {
+            if (account['authorities'][0] == 'ROLE_USER') {
+                $('#div1nombrefiscalcesta').css({ display: 'none' });
+                $('.div1direccionentrega').css({ display: 'block' });
+            }
+        }
+
         var tiendaUsada = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         this.direccionTiendasService.query1(tiendaUsada['id']).subscribe(data => {
+            this.meterdireccionarray = data.body;
             console.log(data.body);
             this.direccionTiendasService.todos = data.body;
             for (let u = 0; u < data.body.length; u++) {
@@ -12980,6 +12989,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 prodCarr[m][1]['interiores'][x]['nombre'] <= 9
                                             ) {
                                                 terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                            } else {
+                                                terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
                                             }
                                             interiores = {
                                                 precio: prodCarr[m][1]['interiores'][x]['precio'],
@@ -12995,6 +13006,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 prodCarr[m][1]['interiores'][x]['nombre'] <= 9
                                             ) {
                                                 terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                            } else {
+                                                terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
                                             }
                                             interiores = {
                                                 precio: prodCarr[m][1]['interiores'][x]['precio'],
@@ -13012,13 +13025,20 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (screen.width < 800) {
                                 for (let ve = 0; ve <= 100005; ve++) {
+                                    var terminacioninterior;
+                                    if (prodCarr[m][1]['interiores'][x]['nombre'] >= 1 && prodCarr[m][1]['interiores'][x]['nombre'] <= 9) {
+                                        terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                    } else {
+                                        terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
+                                    }
                                     if (ve == 100005) {
                                         if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
                                             interiores = {
                                                 precio: prodCarr[m][1]['interiores'][x]['precio'],
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacioninterior
                                             };
                                         } else {
                                             interiores = {
@@ -13026,7 +13046,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                 orden: x,
-                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
+                                                terminacion: terminacioninterior
                                             };
                                         }
                                         this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
@@ -13103,6 +13124,28 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 if (prodCarr[m][1]['puertas'][x]['id'] == 391) {
                                     terminacionpuerta = 'K Sin Puerta';
                                 }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 392) {
+                                    terminacionpuerta = 'A Lisa';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 396) {
+                                    terminacionpuerta = 'E 2 pla. vert. izq';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 397) {
+                                    terminacionpuerta = 'F 2 pla. vert. izq. luna estrecha';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 398) {
+                                    terminacionpuerta = 'G 2 pla. vert. izq. luna ancha';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 399) {
+                                    terminacionpuerta = 'H 2 pla. vert. dch.';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 400) {
+                                    terminacionpuerta = 'I 2 pla. vert. dch. luna estrecha';
+                                }
+                                if (prodCarr[m][1]['puertas'][x]['id'] == 401) {
+                                    terminacionpuerta = 'J 2 pla. vert. dch. luna ancha';
+                                }
+
                                 if (screen.width >= 800) {
                                     for (let ve = 0; ve <= 100005; ve++) {
                                         if (ve == 100005) {
@@ -13139,18 +13182,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             } else {
                                 for (let ve = 0; ve <= 100005; ve++) {
                                     if (ve == 100005) {
+                                        var terminacionpuerta = '';
                                         if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
+                                            terminacionpuerta = 'B 2 plafones';
                                             puertas = {
                                                 precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                 presupuestoArmario: presupuestoArmario,
                                                 productosDormitorio: prodCarr[m][1]['puertas'][x],
                                                 acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
                                                 acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
                                         }
 
                                         if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
+                                            terminacionpuerta = 'C 3 plafones';
                                             puertas = {
                                                 precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                 presupuestoArmario: presupuestoArmario,
@@ -13158,11 +13205,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
                                                 acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
                                                 acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
                                         }
 
                                         if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
+                                            terminacionpuerta = 'D 5 plafones';
                                             puertas = {
                                                 precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                 presupuestoArmario: presupuestoArmario,
@@ -13172,7 +13221,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
                                                 acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
                                                 acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
-                                                orden: x
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
                                         }
 
