@@ -349,7 +349,8 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                     pruelol = stop;
                     puertas[1] = pruelol;
                 }
-            } else {
+            }
+            if (this.armarioCogido['mensaje'] == '3 PUERTAS CORREDERA') {
                 if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][0]['id']) {
                     stop = todasLasPuertas[i];
                     stop['acabado0'] = this.armarioCogido['puertas'][0]['acabado0'];
@@ -397,6 +398,24 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                     }
                     pruelol = stop;
                     puertas[2] = pruelol;
+                }
+            }
+            if (this.armarioCogido['mensaje'] != '2 PUERTAS CORREDERA' && this.armarioCogido['mensaje'] != '3 PUERTAS CORREDERA') {
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][0]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][0]['acabado0'];
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][0]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][0]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][0]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][0]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[0] = pruelol;
                 }
             }
         }
