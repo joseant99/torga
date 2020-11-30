@@ -316,7 +316,6 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         const todasLasPuertas = this.puertasModal;
         for (let i = 0; i < todasLasPuertas.length; i++) {
             var pruelol = {};
-
             if (this.armarioCogido['mensaje'] == '2 PUERTAS CORREDERA') {
                 if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][0]['id']) {
                     stop = todasLasPuertas[i];
@@ -401,6 +400,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 }
             }
         }
+
         todo[1]['puertas'] = puertas;
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
