@@ -3692,10 +3692,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         }
 
         meterInt[hueco - 1] = buenInt;
-        if (luzSiTiene == 1) {
-            meterInt[hueco - 1]['luz'] = 'Luz izq';
-            meterInt[hueco - 1]['precioLuz'] = 120;
-        }
+        //if (luzSiTiene == 1) {
+        //  meterInt[hueco - 1]['luz'] = 'Luz izq';
+        //meterInt[hueco - 1]['precioLuz'] = 120;
+        //}
         if (luzSiTiene == 2) {
             meterInt[hueco - 1]['luz'] = 'Luz 2 costados';
             meterInt[hueco - 1]['precioLuz'] = 200;

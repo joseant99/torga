@@ -7120,7 +7120,7 @@ export class JhiMainComponent implements OnInit {
         if (idProd == 280) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">A :</span> ' +
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Casco :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
@@ -16079,7 +16079,7 @@ export class JhiMainComponent implements OnInit {
         if (idProd == 280) {
             if (k == 0) {
                 $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p id="pimprimirdatostexto"><span style="font-weight:600">A :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -22412,7 +22412,7 @@ export class JhiMainComponent implements OnInit {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
-                        '"><span style="font-weight:600">A</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        '"><span style="font-weight:600">Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

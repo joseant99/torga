@@ -311,7 +311,97 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         var conta = 0;
         var todo = [];
         todo[1] = this.armarioCogido;
+        var puertas = [];
+        var stop;
+        const todasLasPuertas = this.puertasModal;
+        for (let i = 0; i < todasLasPuertas.length; i++) {
+            var pruelol = {};
 
+            if (this.armarioCogido['mensaje'] == '2 PUERTAS CORREDERA') {
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][0]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][0]['acabado0'];
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][0]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][0]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][0]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][0]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[0] = pruelol;
+                }
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][1]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][1]['acabado0'];
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][1]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][1]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][1]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][1]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[1] = pruelol;
+                }
+            } else {
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][0]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][0]['acabado0'];
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][0]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][0]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][0]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][0]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][0]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[0] = pruelol;
+                }
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][1]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][1]['acabado0'];
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][1]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][1]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][1]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][1]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][1]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[1] = pruelol;
+                }
+                if (todasLasPuertas[i]['id'] == this.armarioCogido['puertas'][2]['id']) {
+                    stop = todasLasPuertas[i];
+                    stop['acabado0'] = this.armarioCogido['puertas'][2]['acabado0'];
+                    if (this.armarioCogido['puertas'][2]['nombre'] == 'Puerta 2 Plafones') {
+                        stop['acabado1'] = this.armarioCogido['puertas'][2]['acabado1'];
+                    }
+                    if (this.armarioCogido['puertas'][2]['nombre'] == 'Puerta 3 Plafones') {
+                        stop['acabado2'] = this.armarioCogido['puertas'][2]['acabado2'];
+                    }
+                    if (this.armarioCogido['puertas'][2]['nombre'] == 'Puerta 5 Plafones') {
+                        stop['acabado3'] = this.armarioCogido['puertas'][2]['acabado3'];
+                        stop['acabado4'] = this.armarioCogido['puertas'][2]['acabado4'];
+                    }
+                    pruelol = stop;
+                    puertas[2] = pruelol;
+                }
+            }
+        }
+        todo[1]['puertas'] = puertas;
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
             precio = precio.split(' ')[1];
@@ -7877,12 +7967,17 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
             var idPuerta = 401;
         }
-
+        var paraprobarelarray = [];
         var interTodos = this.puertasModal;
         var arrayParaVer = this.puertasParaArray;
         for (let j = 0; j < interTodos.length; j++) {
             if (interTodos[j]['nombre'] == nombre) {
-                arrayParaVer[id] = interTodos[j];
+                paraprobarelarray['categoriasDormi'] = interTodos[j]['categoriasDormi'];
+                paraprobarelarray['id'] = interTodos[j]['id'];
+                paraprobarelarray['imagen'] = interTodos[j]['imagen'];
+                paraprobarelarray['imagenContentType'] = interTodos[j]['imagenContentType'];
+                paraprobarelarray['nombre'] = interTodos[j]['nombre'];
+                arrayParaVer[id] = paraprobarelarray;
             }
         }
         this.puertasParaArray = arrayParaVer;
@@ -11139,7 +11234,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
 
                 $('#PuertaAcabado' + id).text(nombre);
                 var arrayParaVer = this.puertasParaArray;
-                arrayParaVer[id]['acabado' + id] = acabados[w];
+                arrayParaVer[id]['acabado0'] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
