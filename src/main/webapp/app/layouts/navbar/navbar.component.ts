@@ -43,7 +43,7 @@ import { PresupuestoArmarioInterioresService } from '../../entities/presupuesto-
 import { IPresupuestoArmarioPuertas } from 'app/shared/model/presupuesto-armario-puertas.model';
 import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
-
+import { AcabadosService } from 'app/entities/acabados';
 @Component({
     providers: [JhiMainComponent],
     selector: 'jhi-navbar',
@@ -89,9 +89,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     arrayNombreFiscal: any;
     meterdireccionarray: any;
     idDeLaTiendaCogida: any;
+    todosLosAcabados: any;
     iddireccioncogida;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
+        protected acabadosService: AcabadosService,
         private loginService: LoginService,
         private languageService: JhiLanguageService,
         private languageHelper: JhiLanguageHelper,
@@ -647,6 +649,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             'Y',
             'Z'
         ];
+        var acabados = [];
+        this.acabadosService
+            .query({
+                size: 1000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+                this.acabadosService.todos = acabados;
+            });
         for (let i = 1; i <= 100; i++) {
             var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
             console.log(sesion);
@@ -13774,33 +13787,257 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 var acaPedProd = this.acaProdPed.length;
                                 acaPedProd = this.acaProdPed[acaPedProd - 1];
                                 prodAca[m]['id'] = acaPedProd + m + 1;
-                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                    if (screen.width >= 800) {
-                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                            if (ve == 10000500) {
-                                                const acabados1 = {
-                                                    acabados: numeroAcaProd[m][b],
-                                                    productosPresupuestoPedidos: prodAca[m],
-                                                    orden: b + 1
-                                                };
-                                                this.subscribeToSaveResponse2(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
+
+                                if (
+                                    prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 4 &&
+                                    prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 27
+                                ) {
+                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                        if (screen.width >= 800) {
+                                            for (let ve = 0; ve <= 10000500; ve++) {
+                                                if (ve == 10000500) {
+                                                    const acabados1 = {
+                                                        acabados: numeroAcaProd[m][b],
+                                                        productosPresupuestoPedidos: prodAca[m],
+                                                        orden: b + 1
+                                                    };
+                                                    this.subscribeToSaveResponse2(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
+                                            }
+                                        }
+
+                                        if (screen.width < 800) {
+                                            for (let ve = 0; ve <= 10000500; ve++) {
+                                                if (ve == 10000500) {
+                                                    const acabados1 = {
+                                                        acabados: numeroAcaProd[m][b],
+                                                        productosPresupuestoPedidos: prodAca[m],
+                                                        orden: b + 1
+                                                    };
+                                                    this.subscribeToSaveResponse2(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
                                             }
                                         }
                                     }
+                                } else {
+                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
+                                        if (screen.width >= 800) {
+                                            for (let ve = 0; ve <= 10000500; ve++) {
+                                                if (ve == 10000500) {
+                                                    const acabados1 = {
+                                                        acabados: numeroAcaProd[m][b],
+                                                        productosPresupuestoPedidos: prodAca[m],
+                                                        orden: b + 1
+                                                    };
+                                                    this.subscribeToSaveResponse2(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
+                                            }
+                                        }
+                                        if (b == 0) {
+                                            var acatipocabecero;
 
-                                    if (screen.width < 800) {
-                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                            if (ve == 10000500) {
-                                                const acabados1 = {
-                                                    acabados: numeroAcaProd[m][b],
-                                                    productosPresupuestoPedidos: prodAca[m],
-                                                    orden: b + 1
-                                                };
-                                                this.subscribeToSaveResponse2(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
+                                            for (let j = 0; j < this.acabadosService.todos.length; j++) {
+                                                if (
+                                                    prodCarr[m][1]['mensaje'] == 'NT071' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT075' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT079' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT083' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT087' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT091' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT095' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT099' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT103' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT107' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT124' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT128' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT132' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT136' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT140' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT157' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT161' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT165' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT169' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT173' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT190' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT194' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT198' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT202' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT206' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT220' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT224' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT238' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT242' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT259' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT263' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT267' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT271' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT275' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT289' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT293'
+                                                ) {
+                                                    if (this.acabadosService.todos[j]['nombre'] == 450) {
+                                                        acatipocabecero = this.acabadosService.todos[j];
+                                                    }
+                                                }
+                                                if (
+                                                    prodCarr[m][1]['mensaje'] == 'NT072' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT076' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT080' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT084' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT088' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT092' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT096' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT100' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT104' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT108' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT125' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT129' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT133' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT137' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT141' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT158' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT162' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT166' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT170' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT174' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT191' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT195' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT199' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT203' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT207' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT221' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT225' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT239' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT243' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT260' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT264' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT268' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT272' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT276' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT290' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT294'
+                                                ) {
+                                                    if (this.acabadosService.todos[j]['nombre'] == 550) {
+                                                        acatipocabecero = this.acabadosService.todos[j];
+                                                    }
+                                                }
+                                                if (
+                                                    prodCarr[m][1]['mensaje'] == 'NT073' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT077' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT081' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT085' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT089' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT093' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT097' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT101' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT105' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT109' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT126' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT130' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT134' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT138' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT142' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT159' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT163' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT167' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT171' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT175' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT192' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT196' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT200' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT204' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT208' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT222' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT226' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT240' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT244' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT261' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT265' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT269' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT273' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT277' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT291' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT295'
+                                                ) {
+                                                    if (this.acabadosService.todos[j]['nombre'] == 650) {
+                                                        acatipocabecero = this.acabadosService.todos[j];
+                                                    }
+                                                }
+                                                if (
+                                                    prodCarr[m][1]['mensaje'] == 'NT074' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT078' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT082' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT086' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT090' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT094' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT098' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT102' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT106' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT110' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT127' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT131' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT135' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT139' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT143' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT160' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT164' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT168' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT172' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT176' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT193' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT197' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT201' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT205' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT209' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT223' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT227' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT241' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT245' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT262' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT266' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT270' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT274' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT278' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT292' ||
+                                                    prodCarr[m][1]['mensaje'] == 'NT296'
+                                                ) {
+                                                    if (this.acabadosService.todos[j]['nombre'] == 750) {
+                                                        acatipocabecero = this.acabadosService.todos[j];
+                                                    }
+                                                }
+                                            }
+                                            for (let ve = 0; ve <= 10000500; ve++) {
+                                                if (ve == 10000500) {
+                                                    const acabados1 = {
+                                                        acabados: acatipocabecero,
+                                                        productosPresupuestoPedidos: prodAca[m],
+                                                        orden: 0
+                                                    };
+                                                    this.subscribeToSaveResponse2(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
+                                            }
+                                        }
+
+                                        if (screen.width < 800) {
+                                            for (let ve = 0; ve <= 10000500; ve++) {
+                                                if (ve == 10000500) {
+                                                    const acabados1 = {
+                                                        acabados: numeroAcaProd[m][b],
+                                                        productosPresupuestoPedidos: prodAca[m],
+                                                        orden: b + 1
+                                                    };
+                                                    this.subscribeToSaveResponse2(
+                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                    );
+                                                }
                                             }
                                         }
                                     }

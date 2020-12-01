@@ -118,12 +118,172 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     }
 
     public aparadescargarpdf() {
+        var prueba = this.arraysaberimagenes;
+        if (prueba.length == 2) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 3) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 4) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+        }
+        if (prueba.length == 5) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 6) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '30px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '60px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
+        }
+        if (prueba.length == 5) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
+        }
+        if (prueba.length == 7) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '30px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '60px' });
+            $('.paraverespacio6').css({ 'margin-top': '35px' });
+            $('.paraverespacio6').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio7').css({ 'margin-top': '30px' });
+        }
+        if (prueba.length == 8) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio6').css({ 'margin-top': '35px' });
+            $('.paraverespacio6').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio7').css({ 'margin-top': '35px' });
+            $('.paraverespacio7').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio8').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 9) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio6').css({ 'margin-top': '35px' });
+            $('.paraverespacio6').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio7').css({ 'margin-top': '35px' });
+            $('.paraverespacio7').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio8').css({ 'margin-top': '35px' });
+            $('.paraverespacio8').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio9').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 12) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio6').css({ 'margin-top': '35px' });
+            $('.paraverespacio6').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio7').css({ 'margin-top': '35px' });
+            $('.paraverespacio7').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio8').css({ 'margin-top': '35px' });
+            $('.paraverespacio8').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio9').css({ 'margin-top': '35px' });
+            $('.paraverespacio9').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio10').css({ 'margin-top': '35px' });
+            $('.paraverespacio10').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio11').css({ 'margin-top': '35px' });
+            $('.paraverespacio11').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio12').css({ 'margin-top': '35px' });
+        }
+        if (prueba.length == 13) {
+            $('.paraverespacio0').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio1').css({ 'margin-top': '35px' });
+            $('.paraverespacio1').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio2').css({ 'margin-top': '35px' });
+            $('.paraverespacio2').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio3').css({ 'margin-top': '35px' });
+            $('.paraverespacio3').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio4').css({ 'margin-top': '35px' });
+            $('.paraverespacio4').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio5').css({ 'margin-top': '35px' });
+            $('.paraverespacio5').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio6').css({ 'margin-top': '35px' });
+            $('.paraverespacio6').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio7').css({ 'margin-top': '35px' });
+            $('.paraverespacio7').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio8').css({ 'margin-top': '35px' });
+            $('.paraverespacio8').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio9').css({ 'margin-top': '35px' });
+            $('.paraverespacio9').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio10').css({ 'margin-top': '35px' });
+            $('.paraverespacio10').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio11').css({ 'margin-top': '35px' });
+            $('.paraverespacio11').css({ 'margin-bottom': '65px' });
+            $('.paraverespacio12').css({ 'margin-top': '35px' });
+        }
+
         var divToPrint = document.getElementById('imprimir');
 
         var correoMensaje =
-            '<html><head><style type="text/css">@page{size: A4;} .imagensolobotonimprimir{display:none} .imagensolobotonimprimir1{display:block} #estoparaesconderenmovilpc{display:block !important;} #esteDivPrueba0{margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba1{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{display:none} #divobservacionesparaimprimir1{border: 1px solid;float: left;width: 55%;display:block !important;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 35% !important;height: 750px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 9% !important;height: 750px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 35% !important;height: 750px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:300px !important; max-height:300px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 45px !important;border: 0 !important;} .primerDivPresu{display:none} .estoesundivparaprobar{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;display:block !important;} #imagen0{width: 100% !important;height: 330px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 330px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 330px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 330px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;} .pietrasin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(125%);} .norwaysin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .broncesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .transparentesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;} .nocesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .naturesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .tabaksin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .kobesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .blancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .beigesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(140%);} .lattesin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .grafenosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(150%);} .lagosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .maresin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(130%);} .marmolblancosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .marmolnegrosin {position: absolute;max-width: 400px;max-height: 592.75px;margin-left: -400px;filter: brightness(190%);} .norway {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .bronce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .transparente {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;} .noce {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .nature {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .tabak {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .kobe {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .blanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .beige {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(140%);} .latte {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .grafeno {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(150%);} .lago {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .mare {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(130%);} .marmolblanco {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);} .marmolnegro {position: absolute;max-width: 650px;max-height: 433px;margin-left: -650px;filter: brightness(190%);}</style><title>' +
+            '<html><head><style type="text/css">@page{size: A4;} .imagensolobotonimprimir{display:none} .imagensolobotonimprimir1{display:block} #estoparaesconderenmovilpc{display:block !important;} #esteDivPrueba0{margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba1{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba2{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba3{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba4{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba5{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba6{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #esteDivPrueba7{margin-top: 0px !important;margin-bottom: 0px !important;position: inherit;display: block !important;} #aquisoloparaimprimir{display:block !important;} #aquisoloparamostrar{display:none !important;} #divTotalPuntosParaTodo{display:none} #quitamoseldisplaydeldiv{display:block !important;} #divobservacionesparaimprimir{display:none} #divobservacionesparaimprimir1{border: 1px solid;float: left;width: 55%;display:block !important;} #pimprimirdatostexto{margin-top:4px !important; margin-bottom:4px !important;} #basesImponiblesDiv{display:block !important;float:left;width:12%;border: 1px solid;} .queremosquenosevea{display:block !important;} #divparaimagendatosmeter{float: left;display: block !important;width: 35% !important;height: 750px !important;border: 1px solid;} #divUnidadespedido{float: left;display: block !important;width: 9% !important;height: 750px !important;border: 1px solid;} #referenciapdivreferencia{FONT-SIZE: 14PX;MARGIN-TOP: 0;BORDER-BOTTOM: 1PX SOLID;TEXT-ALIGN: CENTER;BACKGROUND-COLOR: #2E2E2E;COLOR: WHITE;padding-top: 5px;padding-bottom: 3px;margin-bottom:5px;} #divreferenciapedido{float: left;display: block !important;width: 35% !important;height: 750px !important;margin-left: 8px !important;border: 1px solid;} #imagenlogopedidosprod{width: 10% !important;position: absolute !important;left: 2% !important;} #divderechapedidodatos{width: 25%;position: absolute;right: 2%;border: 1px solid;top: 5%;} #pmetidoimprimir{margin-top: 0;margin-bottom: 5px;margin-left: 10;} #metertamanotienda{margin-bottom: 2px;} #elultimopadentrop{margin-top: 2;} #metertamanotienda{margin-top:0;} #clienteDivTienda{margin-top: 40px;border: 1px solid;width: 49%;float: left;} #clienteDivDireccion{margin-top: 40px;border: 1px solid;width: 49%;float: left;margin-left:0.8%} #primeroMeterMargin{margin-top:-60px !important;} #clienteDiv{margin-top:0px !important;} #metertamanotienda{font-size:20px !important;} #divObserPoner{display:none} #esteDiv0{float:initial !important} #imagenPresupues{max-width:300px !important; max-height:300px !important;} #estoParaImprimir {float: left;width: 100%;} #datosMeter4 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter5 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter6 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter7 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter8 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter9 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter10 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter11 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter12 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter13 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter14 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter15 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter16 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter17 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter18 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter19 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter20 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter21 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;} #tapa {max-width:250px;max-height:183px} #datosMeter0 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #pNombreProd{display:none;} #datosMeter1 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #datosMeter2 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 365px;} #datosMeter3 {float:left !important;width: 100% !important;font-size: 12px;text-align: left !important;margin-left: 2%;height: 350px;} #spanobser{margin-top:0% !important;margin-left: 1% !important;font-size: 15px; } #textoObservaciones{margin-top:0% !important;display: block !important;float: left !important;margin-left: 1% !important;width: 80% !important;height: 45px !important;border: 0 !important;} .primerDivPresu{display:none} .estoesundivparaprobar{margin-top:0px !important; margin-bottom:0px !important;margin-top: 50px !important;float: initial;width: 100%;margin-bottom: 40px !important;position: inherit;display:block !important;} #imagen0{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen1{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen2{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen3{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen4{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen5{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen6{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen7{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen8{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen9{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen10{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen11{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen12{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen13{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen14{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen15{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen16{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen17{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #imagen18{width: 100% !important;height: 310px !important;margin-left: 1% !important;margin-top:1% !important;} #hrUltimo{ display: none} #logoPresu{max-width: 60px !important;position: absolute !important;margin-top: 100px !important;margin-left: 110px !important;} #idLineaDiv{display:none} #bajarFontSize{font-size:15px !important;} #totalDescuentoTexto{font-size:15px !important;} #euro{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #ivaPrecioQuitar{font-size:15px !important;} #bajarFontSize{font-size:15px !important;} #precioIvaSumado{font-size:15px !important;} #rightImprimir{float:right !important; right:0; text-align:right; width:100% !important;}</style><title>' +
             document.title +
-            '</title></head><body style="font-family: Lato , sans-serif;font-weight: 400;-webkit-print-color-adjust:exact;">' +
+            '</title></head><body "font-family: Lato , sans-serif;font-weight: 400;zoom:78% !important;-webkit-print-color-adjust:exact;">' +
             divToPrint.innerHTML +
             '</body></html>';
 
@@ -132,7 +292,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 console.log(event);
                 setTimeout(function() {
                     $('#aparadescargarpdf')[0].click();
-                }, 100);
+                }, 1000);
             }
         });
     }

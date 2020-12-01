@@ -14942,7 +14942,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 248) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14951,7 +14951,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14960,7 +14960,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14969,7 +14969,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14978,7 +14978,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14987,7 +14987,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -14996,7 +14996,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15076,7 +15076,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 252) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15085,7 +15085,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15094,7 +15094,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15103,7 +15103,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15112,7 +15112,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15121,7 +15121,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15130,7 +15130,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15210,7 +15210,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 256) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15219,7 +15219,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15228,7 +15228,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15237,7 +15237,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15246,7 +15246,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15255,7 +15255,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15264,7 +15264,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 6 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15273,7 +15273,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 7) {
+            if (k == 8) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 7 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15282,7 +15282,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 8) {
+            if (k == 9) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 8 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15371,7 +15371,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 260) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15380,7 +15380,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tabicas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15389,7 +15389,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Central :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15398,7 +15398,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15451,7 +15451,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 264) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15460,7 +15460,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tabicas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15469,7 +15469,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Central :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15478,7 +15478,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15531,7 +15531,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 268) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15540,7 +15540,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tabicas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15549,7 +15549,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Central :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15558,7 +15558,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Ala DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15630,7 +15630,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 272) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15639,7 +15639,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15648,7 +15648,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Tabicas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15657,7 +15657,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15666,7 +15666,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15675,7 +15675,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15684,7 +15684,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 6 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -15693,7 +15693,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 7) {
+            if (k == 8) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 7 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16169,7 +16169,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 281) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16178,7 +16178,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16187,7 +16187,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16196,7 +16196,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16205,7 +16205,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16214,7 +16214,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16223,7 +16223,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 6 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16234,7 +16234,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 246) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16243,7 +16243,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16252,7 +16252,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16261,7 +16261,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16270,7 +16270,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16279,7 +16279,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16288,7 +16288,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 6 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16299,7 +16299,7 @@ export class JhiMainComponent implements OnInit {
             }
         }
         if (idProd == 282) {
-            if (k == 0) {
+            if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16308,7 +16308,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 1) {
+            if (k == 2) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16317,7 +16317,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 2) {
+            if (k == 3) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16326,7 +16326,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 3) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16335,7 +16335,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 4) {
+            if (k == 5) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16344,7 +16344,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 6) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 5 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16353,7 +16353,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 6) {
+            if (k == 7) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 6 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
@@ -16362,7 +16362,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 7) {
+            if (k == 8) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 7 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +

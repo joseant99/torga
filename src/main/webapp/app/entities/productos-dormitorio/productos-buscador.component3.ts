@@ -13045,7 +13045,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     }
                     prod[1] = value;
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
-
+                    prod[1]['todosAcabados'] = this.acabados1;
                     prod[1]['imagen'] = '';
                     prod[1]['productosDormitorio']['imagen'] = '';
                     if (prod[1]['apoyo'] != undefined) {

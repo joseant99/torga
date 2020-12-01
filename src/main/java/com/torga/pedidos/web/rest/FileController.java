@@ -245,10 +245,10 @@ public class FileController {
 	    
 	    @PostMapping("/uploadFile2")
 	    public UploadFileResponse uploadFile2(@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
-
+	    	
             Pdfcrowd.HtmlToPdfClient client =
                 new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
-
+            client.setScaleFactor(78);
             // run the conversion and write the result to a file
             client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
 
