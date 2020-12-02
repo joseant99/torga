@@ -76,6 +76,9 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.pdfcrowd.Pdfcrowd;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 
 /**
  * REST controller for managing Files.
@@ -188,7 +191,7 @@ public class FileController {
 	            //);
 	    	// create the API client instance
             Pdfcrowd.HtmlToPdfClient client =
-                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
+                new Pdfcrowd.HtmlToPdfClient("joseantonioord99", "f144079c304c7544cf6969e7d8930e1f");
 
             // run the conversion and write the result to a file
             client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
@@ -261,7 +264,7 @@ String fileName = null;
 	            //);
 	    	// create the API client instance
             Pdfcrowd.HtmlToPdfClient client =
-                new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
+                    new Pdfcrowd.HtmlToPdfClient("joseantonioord99", "f144079c304c7544cf6969e7d8930e1f");
             client.setScaleFactor(78);
             // run the conversion and write the result to a file
             client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
