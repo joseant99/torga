@@ -145,3 +145,4 @@ Desktop.ini
 /.apt_generated/
 /.apt_generated_tests/
 /package.json
+/package-lock.json

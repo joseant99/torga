@@ -245,14 +245,71 @@ public class FileController {
 	    
 	    @PostMapping("/uploadFile2")
 	    public UploadFileResponse uploadFile2(@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
-	    	
+
+            // run the conversion and write the result to a file
+
+            
+String fileName = null;
+	        
+	        // IO
+	         // pdfHTML specific code
+	        	//HtmlConverter.convertToPdf(
+	              //  "<img id=\"imagenPresupues\" style=\"z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;\" width=\"1000px\" height=\"1000px\" src=\"C:/Users/jose/Desktop/prueba/torgaPedidos2Bueno/src/main/webapp/content/images/1- PARA WEB/DORMITORIO2/NH033-NH036.jpeg\">",       // html to be converted
+	                //new PdfWriter(
+	                  //  new File("C:\\Users\\jose\\output.pdf")  // destination file
+	               // )
+	            //);
+	    	// create the API client instance
             Pdfcrowd.HtmlToPdfClient client =
                 new Pdfcrowd.HtmlToPdfClient("demo", "ce544b6ea52a5621fb9d55f8b542d14d");
             client.setScaleFactor(78);
             // run the conversion and write the result to a file
             client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
+            System.out.println(client);
+            String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+	                .path("/downloadFile/")
+	                .path(fileName)
+	                .toUriString();
+	        final String username = "elmuebledigitalprueba@gmail.com";
+	        final String password = "elMuebleDigital2019";
+	        Properties props = new Properties();
+	        props.put("mail.smtp.auth", "true");
+	        props.put("mail.smtp.starttls.enable", "true");
+	        props.put("mail.smtp.host", "smtp.gmail.com");
+	        props.put("mail.smtp.port", "587");
+	        Session session = Session.getInstance(props,
+	          new javax.mail.Authenticator() {
+	          protected PasswordAuthentication getPasswordAuthentication() {
+	            return new PasswordAuthentication(username, password);
+	          }
+	          });
+	        try {
+	          Message message = new MimeMessage(session);
+	          message.setFrom(new InternetAddress("jose45335@gmail.com"));
+	          message.setRecipients(Message.RecipientType.TO,
+	            InternetAddress.parse("jose45335@gmail.com"));
+	          message.setSubject("Confirmacion de Pedido");
+	          message.setText("Estimado cliente,"
+	            + "\n\n Le damos la bienvenida mediante TLS!");
+	          
+	          Multipart multipart = new MimeMultipart();
+	          MimeBodyPart messageBodyPart = new MimeBodyPart();
+	          messageBodyPart = new MimeBodyPart();
+	         
+	          DataSource source = new FileDataSource("src/main/webapp/content/images/pedido.pdf");
+	          messageBodyPart.setDataHandler(new DataHandler(source));
+	          messageBodyPart.setFileName("Confirmacion de pedido");
+	          multipart.addBodyPart(messageBodyPart);
 
-            
+	          message.setContent(multipart);
+
+	          
+	          System.out.println("Correcto!");
+	        } catch (MessagingException e) {
+	          throw new RuntimeException(e);
+	        }
+	        
+	        
             
 	        
 	        return null ;

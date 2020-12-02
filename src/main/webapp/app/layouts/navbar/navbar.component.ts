@@ -8769,6 +8769,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 229) {
                             nombreCargarImagen = 'NX053';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 238) {
+                            nombreCargarImagen = 'NX054-NH057';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 239) {
                             nombreCargarImagen = 'NX058-NX061';
                         }
@@ -13925,6 +13928,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 ) {
                                                     if (this.acabadosService.todos[j]['nombre'] == 550) {
                                                         acatipocabecero = this.acabadosService.todos[j];
+                                                        for (let ve = 0; ve <= 10000500; ve++) {
+                                                            if (ve == 10000500) {
+                                                                const acabados1 = {
+                                                                    acabados: acatipocabecero,
+                                                                    productosPresupuestoPedidos: prodAca[m],
+                                                                    orden: 0
+                                                                };
+                                                                this.subscribeToSaveResponse2(
+                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                                );
+                                                            }
+                                                        }
                                                     }
                                                 }
                                                 if (
@@ -13967,6 +13982,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 ) {
                                                     if (this.acabadosService.todos[j]['nombre'] == 650) {
                                                         acatipocabecero = this.acabadosService.todos[j];
+                                                        for (let ve = 0; ve <= 10000500; ve++) {
+                                                            if (ve == 10000500) {
+                                                                const acabados1 = {
+                                                                    acabados: acatipocabecero,
+                                                                    productosPresupuestoPedidos: prodAca[m],
+                                                                    orden: 0
+                                                                };
+                                                                this.subscribeToSaveResponse2(
+                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                                );
+                                                            }
+                                                        }
                                                     }
                                                 }
                                                 if (
@@ -14009,19 +14036,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 ) {
                                                     if (this.acabadosService.todos[j]['nombre'] == 750) {
                                                         acatipocabecero = this.acabadosService.todos[j];
+                                                        for (let ve = 0; ve <= 10000500; ve++) {
+                                                            if (ve == 10000500) {
+                                                                const acabados1 = {
+                                                                    acabados: acatipocabecero,
+                                                                    productosPresupuestoPedidos: prodAca[m],
+                                                                    orden: 0
+                                                                };
+                                                                this.subscribeToSaveResponse2(
+                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                                );
+                                                            }
+                                                        }
                                                     }
-                                                }
-                                            }
-                                            for (let ve = 0; ve <= 10000500; ve++) {
-                                                if (ve == 10000500) {
-                                                    const acabados1 = {
-                                                        acabados: acatipocabecero,
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: 0
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
                                                 }
                                             }
                                         }
