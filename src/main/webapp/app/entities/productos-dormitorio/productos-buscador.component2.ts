@@ -736,6 +736,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
         $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
         $('#inputBusca').css({ display: 'block' });
+        $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
         $('.divseleccionarcodigo').css({ display: 'block' });
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
@@ -1286,6 +1287,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         setTimeout(function() {
             $('.divdentrocanteadotablero').css({ display: 'none' });
         }, 1000);
+    }
+
+    public medidaEstandar() {
+        $('.divseleccionarcodigo').css({ display: 'block' });
+        $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    }
+
+    public medidaEspecial() {
+        $('.divseleccionarcodigoEspecial').css({ display: 'block' });
+        $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+        $('.divseleccionarcodigoEspecial').attr('id', 'simplepruebaani');
     }
 
     public meterAnchoEstantCalculadora(id) {
@@ -6905,7 +6917,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             idProd != 372 &&
                             idProd != 373 &&
                             idProd != 374 &&
-                            idProd != 375
+                            idProd != 375 &&
+                            idProd != 316
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -11555,7 +11568,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     parseFloat(idProd) == 116 ||
                                     parseFloat(idProd) == 117 ||
                                     parseFloat(idProd) == 118 ||
-                                    parseFloat(idProd) == 119
+                                    parseFloat(idProd) == 119 ||
+                                    parseFloat(idProd) == 302
                                 ) {
                                     if (value['id'] == 48) {
                                         var precio = parseFloat(value['precio']);

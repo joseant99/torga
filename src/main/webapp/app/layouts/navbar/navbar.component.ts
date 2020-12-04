@@ -546,6 +546,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         pedido: 0,
                         puntos: puntos,
                         user: usuario,
+                        usuarioCreadoPre: account,
                         fecha_presupuesto: output
                     };
                 }
@@ -1254,7 +1255,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         );
                                     }
 
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                         var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-I.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1262,7 +1263,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 '">'
                                         );
                                     }
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                         var src = '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' + (e + 1) + '-J.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1397,7 +1398,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         );
                                     }
 
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                         var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-I.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1405,7 +1406,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 '">'
                                         );
                                     }
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                         var src = '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' + (e + 1) + '-J.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1543,7 +1544,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         );
                                     }
 
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                         var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-I.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1551,7 +1552,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 '">'
                                         );
                                     }
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                         var src = '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (e + 1) + '-J.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1686,7 +1687,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         );
                                     }
 
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                         var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-I.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -1694,7 +1695,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 '">'
                                         );
                                     }
-                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                    if (puertavalidamen['nombre'] == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                         var src = '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (e + 1) + '-J.png';
                                         $('#cuerpo' + i + ' #derecha').append(
                                             '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
@@ -8496,41 +8497,42 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Cajeado:</span> Sin cajeado</p>'
                             );
                         }
-                        if (sesion[1]['enmarcado'] != undefined) {
-                            $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado:</span> ' +
-                                    sesion[1]['enmarcado']['codigo'] +
-                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['enmarcado']['precio'] +
-                                    ' pp</i></p>'
-                            );
-                            if (sesion[1]['enmarcado']['medA'] != undefined) {
+                        if (nombreArmario != '2 PUERTAS CORREDERA' && nombreArmario != '3 PUERTAS CORREDERA') {
+                            if (sesion[1]['enmarcado'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida A</span>: ' +
-                                        sesion[1]['enmarcado']['medA'] +
-                                        '</p>'
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado:</span> ' +
+                                        sesion[1]['enmarcado']['codigo'] +
+                                        '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
+                                        sesion[1]['enmarcado']['precio'] +
+                                        ' pp</i></p>'
+                                );
+                                if (sesion[1]['enmarcado']['medA'] != undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida A</span>: ' +
+                                            sesion[1]['enmarcado']['medA'] +
+                                            '</p>'
+                                    );
+                                }
+                                if (sesion[1]['enmarcado']['medB'] != undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida B</span>: ' +
+                                            sesion[1]['enmarcado']['medB'] +
+                                            '</p>'
+                                    );
+                                }
+                                if (sesion[1]['enmarcado']['medC'] != undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida C</span>: ' +
+                                            sesion[1]['enmarcado']['medC'] +
+                                            '</p>'
+                                    );
+                                }
+                            } else {
+                                $('#textoCesta' + i).append(
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado:</span> Sin enmarcado</p>'
                                 );
                             }
-                            if (sesion[1]['enmarcado']['medB'] != undefined) {
-                                $('#textoCesta' + i).append(
-                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida B</span>: ' +
-                                        sesion[1]['enmarcado']['medB'] +
-                                        '</p>'
-                                );
-                            }
-                            if (sesion[1]['enmarcado']['medC'] != undefined) {
-                                $('#textoCesta' + i).append(
-                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado Medida C</span>: ' +
-                                        sesion[1]['enmarcado']['medC'] +
-                                        '</p>'
-                                );
-                            }
-                        } else {
-                            $('#textoCesta' + i).append(
-                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado:</span> Sin enmarcado</p>'
-                            );
                         }
-
                         var cestaTodo = parseFloat($('#cestaTotal').text());
 
                         if ($('#cestaTotal').text() == '') {
@@ -11921,7 +11923,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 372 &&
                                 idProd != 373 &&
                                 idProd != 374 &&
-                                idProd != 375
+                                idProd != 375 &&
+                                idProd != 316
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
@@ -13409,6 +13412,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['enmarcado'] = arrayEnmar;
                                 enmarcadoTexto = 'Sin enmarcar';
                             }
+                        } else {
+                            var arrayEnmar = {
+                                id: 25000
+                            };
+                            prodCarr[m][1]['enmarcado'] = arrayEnmar;
+                            enmarcadoTexto = null;
                         }
                         if (prodCarr[m][1]['cajeado'] == undefined) {
                             var arrayCaje = {

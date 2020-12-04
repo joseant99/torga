@@ -1218,7 +1218,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             console.log(armariosTodos[j]);
             armariosTodos[j]['ancho'] = ancho;
             armariosTodos[j]['alto'] = alto;
-            armariosTodos[j]['fondo'] = 61;
+            armariosTodos[j]['fondo'] = 64;
             armariosTodos[j]['codigo'] = codigo;
             this.armarioCogido = armariosTodos[j];
         }
@@ -7980,10 +7980,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         if (nombre == 'Puerta 2 Plafones Verticales DER') {
             var idPuerta = 399;
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             var idPuerta = 400;
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
             var idPuerta = 401;
         }
         var paraprobarelarray = [];
@@ -8305,10 +8305,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         if (nombre == 'Puerta 2 Plafones Verticales DER') {
             var idPuerta = 399;
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             var idPuerta = 400;
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
             var idPuerta = 401;
         }
         this.puertasPreciosService.findBus1(casco, idPuerta).subscribe(data => {
@@ -8513,10 +8513,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/1-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/1-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/1-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8557,10 +8557,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/2-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/2-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/2-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8601,10 +8601,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/1-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/1-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/1-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8645,10 +8645,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/2-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/2-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/2-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8689,10 +8689,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/3-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/3-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/3-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -11284,9 +11284,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             }
             if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales DER') {
             }
-            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
             }
-            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             }
         }
 
@@ -11307,9 +11307,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             }
             if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales DER') {
             }
-            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
             }
-            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombreDeLaPuerta == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             }
         }
         if (nombreDeLaPuerta != 'Puerta 2 Plafones' && nombreDeLaPuerta != 'Puerta 3 Plafones' && nombreDeLaPuerta != 'Puerta 5 Plafones') {

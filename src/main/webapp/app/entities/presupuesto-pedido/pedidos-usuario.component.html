@@ -19,6 +19,7 @@
         <table class="table table-striped" id="presupuestoPedidosTabla">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th><span>Numero Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
              <th (click) = "ordenarPorFecha()"><span >Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             
@@ -34,6 +35,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let presupuestoPedido of presupuestoPedidos;">
+            	<td>{{presupuestoPedido.numero_pedido}}</td>
             	<td >{{presupuestoPedido.fecha_pedido}}</td>
                 <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
                 

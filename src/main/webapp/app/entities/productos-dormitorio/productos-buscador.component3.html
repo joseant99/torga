@@ -1271,7 +1271,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let aca of puertasModal" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioOcultaComponent.puertasArmarioModal(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoPuertaModal" style="text-align:center;font-size:25px">{{aca.nombre}}</p></div>  
+			          <div *ngFor="let aca of puertasModal" style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioOcultaComponent.puertasArmarioModal(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoPuertaModal" style="text-align:center;font-size:25px">{{aca.nombreDistinto}}</p></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1494,7 +1494,7 @@
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        <div class="modal-body">	          
-			          <div *ngFor="let puertas of puertasTabla" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{puertas.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.cargarAcabadosPuertas(puertas.id)" [src]="'data:' + puertas.imagenContentType + ';base64,' + puertas.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
+			          <div *ngFor="let puertas of puertasTabla" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{puertas.nombreDistinto}}</p><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.cargarAcabadosPuertas(puertas.id)" [src]="'data:' + puertas.imagenContentType + ';base64,' + puertas.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
 			        </div>
 			        <div class="modal-footer">
 			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -2238,7 +2238,7 @@
 	    </div>
 	    
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoSaber">
-    		<h2 style="text-align:center;letter-spacing:3px">El fondo es 61 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
+    		<h2 style="text-align:center;letter-spacing:3px">El fondo es 64 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
     		
     		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondoNoQuiereCambiarOculta()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarOculta()" class="divcodigometerfondo">NO</div>
 	    </div>
@@ -2313,7 +2313,7 @@
 	    </div>
 	    
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoSaber">
-    		<h2 style="text-align:center;letter-spacing:3px">El fondo es 61 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
+    		<h2 style="text-align:center;letter-spacing:3px">El fondo es 64 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
     		
     		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondoNoQuiereCambiarVista()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarVista()" class="divcodigometerfondo">NO</div>
 	    </div>

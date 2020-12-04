@@ -1067,7 +1067,7 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             console.log(armariosTodos[j]);
             armariosTodos[j]['ancho'] = ancho;
             armariosTodos[j]['alto'] = alto;
-            armariosTodos[j]['fondo'] = 61;
+            armariosTodos[j]['fondo'] = 64;
             armariosTodos[j]['codigo'] = codigo;
             this.armarioCogido = armariosTodos[j];
         }

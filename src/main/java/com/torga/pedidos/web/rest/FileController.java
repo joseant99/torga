@@ -89,7 +89,7 @@ public class FileController {
 
 	 private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 	 	private final JHipsterProperties jHipsterProperties;
-
+	 	
 	    private final JavaMailSender javaMailSender;
 
 	    private final MessageSource messageSource;
@@ -250,8 +250,8 @@ public class FileController {
 	    public UploadFileResponse uploadFile2(@RequestParam("correoMensaje") String correoMensaje) throws MessagingException, FileNotFoundException, IOException {
 
             // run the conversion and write the result to a file
-
-            
+	    	
+	    
 String fileName = null;
 	        
 	        // IO
@@ -263,12 +263,31 @@ String fileName = null;
 	               // )
 	            //);
 	    	// create the API client instance
-            Pdfcrowd.HtmlToPdfClient client =
+		try {
+			Pdfcrowd.HtmlToPdfClient client =
                     new Pdfcrowd.HtmlToPdfClient("joseantonioord99", "f144079c304c7544cf6969e7d8930e1f");
+            client.setHttpAuth("admin", "torga2019");
             client.setScaleFactor(78);
             // run the conversion and write the result to a file
+            
             client.convertStringToFile(correoMensaje, "src/main/webapp/content/images/pedido.pdf");
+            
+
             System.out.println(client);
+		}
+		catch(Pdfcrowd.Error why) {
+		    // print error
+		    System.err.println("Pdfcrowd Error: " + why);
+		
+		    // print just error code
+		    System.err.println("Pdfcrowd Error Code: " + why.getCode());
+		
+		    // print just error message
+		    System.err.println("Pdfcrowd Error Message: " + why.getMessage());
+		
+		    // or handle the error in your way
+		}
+            
             String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
 	                .path("/downloadFile/")
 	                .path(fileName)

@@ -1575,7 +1575,41 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
                 this.productosDormitorioService.categoria(30).subscribe(data => {
-                    this.puertasModal = data.body;
+                    var arrayggsmen = [];
+                    for (let j = 0; j < data.body['length']; j++) {
+                        if (j == 0) {
+                            data.body[j]['nombreDistinto'] = 'Tipo A ' + data.body[j]['nombre'];
+                        }
+                        if (j == 1) {
+                            data.body[j]['nombreDistinto'] = 'Tipo B ' + data.body[j]['nombre'];
+                        }
+                        if (j == 2) {
+                            data.body[j]['nombreDistinto'] = 'Tipo C ' + data.body[j]['nombre'];
+                        }
+                        if (j == 3) {
+                            data.body[j]['nombreDistinto'] = 'Tipo D ' + data.body[j]['nombre'];
+                        }
+                        if (j == 4) {
+                            data.body[j]['nombreDistinto'] = 'Tipo E ' + data.body[j]['nombre'];
+                        }
+                        if (j == 5) {
+                            data.body[j]['nombreDistinto'] = 'Tipo F ' + data.body[j]['nombre'];
+                        }
+                        if (j == 6) {
+                            data.body[j]['nombreDistinto'] = 'Tipo G ' + data.body[j]['nombre'];
+                        }
+                        if (j == 7) {
+                            data.body[j]['nombreDistinto'] = 'Tipo H ' + data.body[j]['nombre'];
+                        }
+                        if (j == 8) {
+                            data.body[j]['nombreDistinto'] = 'Tipo I ' + data.body[j]['nombre'];
+                        }
+                        if (j == 9) {
+                            data.body[j]['nombreDistinto'] = 'Tipo J ' + data.body[j]['nombre'];
+                        }
+                        arrayggsmen[j] = data.body[j];
+                    }
+                    this.puertasModal = arrayggsmen;
                     this.armariosDormitorioOcultaComponent.carcarCascosInterioresPuertas();
                 });
             });

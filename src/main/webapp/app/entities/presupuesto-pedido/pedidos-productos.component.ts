@@ -720,6 +720,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             id: idCat
                                         };
 
+                                        if (data.body.length == 1) {
+                                            data.body[i] = data.body[0];
+                                        }
+
                                         var uno = {
                                             nombre: data.body[i]['armario']['mensaje'],
                                             categoriasDormi: cat
@@ -2389,7 +2393,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         );
                                                     }
 
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
                                                             (u + 1) +
@@ -2400,7 +2404,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 '">'
                                                         );
                                                     }
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/OCULTA/2 PTAS PNG/' +
                                                             (u + 1) +
@@ -2503,7 +2507,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         );
                                                     }
 
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-I.png';
                                                         $('#imagen' + (cont - 1)).append(
@@ -2512,7 +2516,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 '">'
                                                         );
                                                     }
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/' + (u + 1) + '-J.png';
                                                         $('#imagen' + (cont - 1)).append(
@@ -2629,7 +2633,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         );
                                                     }
 
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
                                                             (u + 1) +
@@ -2640,7 +2644,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 '">'
                                                         );
                                                     }
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/OCULTA/3 PTAS PNG/' +
                                                             (u + 1) +
@@ -2747,7 +2751,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         );
                                                     }
 
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-I.png';
                                                         $('#imagen' + (cont - 1)).append(
@@ -2756,7 +2760,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 '">'
                                                         );
                                                     }
-                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+                                                    if (tipo == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                                                         var src =
                                                             '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/' + (u + 1) + '-J.png';
                                                         $('#imagen' + (cont - 1)).append(
@@ -11766,7 +11770,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 372 &&
                                                     idProd != 373 &&
                                                     idProd != 374 &&
-                                                    idProd != 375
+                                                    idProd != 375 &&
+                                                    idProd != 316
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +
