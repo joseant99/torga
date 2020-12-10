@@ -3333,6 +3333,7 @@ ui bootstrap tweaks
 
 #imagenAcabadoPrincipal1 {
     max-width: 100%;
+    border: 1px solid;
 }
 #imagenAcabado0 {
     max-width: 100%;
@@ -7475,6 +7476,16 @@ ui bootstrap tweaks
     }
 }
 @media screen and (max-width: 1000px) {
+    #medespecialDiv {
+        font-size: 25px;
+    }
+    #medestandarDiv {
+        font-size: 25px;
+    }
+    .divseleccionarcodigoRutaNueva #idDivDentroImagenes {
+        width: 100% !important;
+        margin-left: 0% !important;
+    }
     #medidasEspecialesTexto {
         margin-left: 33%;
     }

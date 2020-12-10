@@ -19,6 +19,9 @@ public interface DimensionesProductoTipoRepository extends JpaRepository<Dimensi
 	@Query("SELECT u FROM DimensionesProductoTipo u WHERE u.productosDormitorio.id = ?1")
 	Collection<DimensionesProductoTipo> findProducto(Long id);
 	
+	@Query("SELECT u.ancho FROM DimensionesProductoTipo u WHERE u.productosDormitorio.id = ?1 and u.ancho <> 0 group by u.ancho")
+	Collection<DimensionesProductoTipo> findProductoEspecial(Long id);
+	
 	@Query("SELECT u FROM DimensionesProductoTipo u WHERE u.id = ?1")
 	Collection<DimensionesProductoTipo> findDimensiones(Long id);
 	

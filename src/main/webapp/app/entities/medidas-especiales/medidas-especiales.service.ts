@@ -41,4 +41,10 @@ export class MedidasEspecialesService {
     findProd(id: any): Observable<EntityResponseType> {
         return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus/${id}`, { observe: 'response' });
     }
+    findProd1(id: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus1/${id}`, { observe: 'response' });
+    }
+    findProd2(id: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus2/${id}`, { observe: 'response' });
+    }
 }

@@ -2085,6 +2085,71 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
+        if (idProd == 339) {
+            if (o == 0) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Tapa :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Casco :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Puerta Sup IZQ :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 3) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Puerta Sup DCH :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 4) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Cubo :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 5) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Puerta CEN :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 6) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Cajon INF :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
         if (idProd == 196) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
@@ -17900,6 +17965,101 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
+
+        if (idProd == 339) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta Sup IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 4) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta Sup DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 5) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 6) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puerta Cen</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 7) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+
         if (idProd == 196) {
             if (u == 1) {
                 $('#datos1').append(

@@ -111,6 +111,34 @@ public class MedidasEspecialesResource {
         Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd(id);
         return ResponseEntity.ok().body(page);
     }
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus1/{id}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds1(@PathVariable Long id) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd1(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus2/{id}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds2(@PathVariable Long id) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd2(id);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /medidas-especiales/:id : get the "id" medidasEspeciales.

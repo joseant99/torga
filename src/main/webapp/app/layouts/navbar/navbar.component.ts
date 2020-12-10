@@ -6984,21 +6984,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             var puerta6 = sesion[1]['puertas'][4];
                             var puerta7 = sesion[1]['puertas'][5];
                             $('#cuerpo' + i).append(
-                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 520;margin-top: 100px;float: left;"></div>'
+                                '<div id="izquierda" class="armarioIzquierda" style="margin-left: 700px;margin-top: 100px;float: left;"></div>'
                             );
                             $('#cuerpo' + i).append('<div id="derecha" class="armarioDerecha" style="float:left;margin-top:470px;"></div>');
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-1-C-' +
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-C-' +
                                     interior3['nombre'] +
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-1-A-' +
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 3;" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-A-' +
                                     interior1['nombre'] +
                                     '.png">'
                             );
                             $('#cuerpo' + i + ' #derecha').append(
-                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2" src="../../../content/images/pruebaarmarios/ARMARIOS/6-2 PNG/6-1-B-' +
+                                '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 2" src="../../../content/images/pruebaarmarios/ARMARIOS/6-1 PNG/6-1-B-' +
                                     interior2['nombre'] +
                                     '.png">'
                             );
@@ -7016,7 +7016,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (puerta2 != undefined) {
                                 if (puerta2['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-A.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-A.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7025,7 +7025,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta2['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-B.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-B.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7034,7 +7034,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta2['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-C.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-C.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7042,7 +7042,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7050,7 +7050,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7058,7 +7058,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-F.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-F.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7066,7 +7066,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7074,7 +7074,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7083,7 +7083,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta2['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7091,7 +7091,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta2['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/1-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7102,7 +7102,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (puerta3 != undefined) {
                                 if (puerta3['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-A.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-A.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7111,7 +7111,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta3['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-B.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-B.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7120,7 +7120,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta3['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-C.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-C.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7128,7 +7128,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7136,7 +7136,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7144,7 +7144,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-F.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-F.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7152,7 +7152,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7160,7 +7160,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7169,7 +7169,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta3['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7177,7 +7177,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta3['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/2-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7188,7 +7188,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (puerta4 != undefined) {
                                 if (puerta4['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-A.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-A.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7197,7 +7197,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta4['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-B.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-B.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7206,7 +7206,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta4['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-C.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-C.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7214,7 +7214,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7222,7 +7222,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7230,7 +7230,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-F.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-F.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7238,7 +7238,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7246,7 +7246,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7255,7 +7255,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta4['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7263,7 +7263,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta4['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/3-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7274,7 +7274,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (puerta5 != undefined) {
                                 if (puerta5['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-A.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-A.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7283,7 +7283,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta5['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-B.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-B.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7292,7 +7292,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta5['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-C.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-C.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7300,7 +7300,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7308,7 +7308,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7316,7 +7316,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-F.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-F.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7324,7 +7324,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7332,7 +7332,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7341,7 +7341,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta5['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7349,7 +7349,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta5['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/4-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7360,7 +7360,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
                             if (puerta6 != undefined) {
                                 if (puerta6['nombre'] == 'Puerta Aluminio Transparente') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-A.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-A.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7369,7 +7369,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta6['nombre'] == 'Puerta Aluminio Gris') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-B.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-B.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7378,7 +7378,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta6['nombre'] == 'Puerta Batiente sin tirador') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-C.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-C.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7386,7 +7386,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == 'Puerta Batiente tirador TIM') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7394,7 +7394,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == 'Puerta Batiente tirador NYE') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:485px;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7402,7 +7402,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == 'Puerta Batiente tirador DRAW') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-F.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-F.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7410,7 +7410,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == '2 Puertas Fuelle TIM Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7418,7 +7418,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == '2 Puertas Fuelle TIM Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-D.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-D.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7427,7 +7427,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
 
                                 if (puerta6['nombre'] == '2 Puertas Fuelle NYE Izquierda') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -7435,7 +7435,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     );
                                 }
                                 if (puerta6['nombre'] == '2 Puertas Fuelle NYE Derecha') {
-                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/6-E.png';
+                                    var src = '../../../content/images/pruebaarmarios/ARMARIOS/6-1 PTAS PNG/5-E.png';
                                     $('#cuerpo' + i + ' #derecha').append(
                                         '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:5;" src="' +
                                             src +
@@ -11924,7 +11924,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 373 &&
                                 idProd != 374 &&
                                 idProd != 375 &&
-                                idProd != 316
+                                idProd != 316 &&
+                                idProd != 236 &&
+                                idProd != 237 &&
+                                idProd != 339 &&
+                                idProd != 81
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
@@ -13769,6 +13773,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             if (prodCarr[m][1]['direccion'] != undefined) {
                                 prodPrePed['direccion'] = prodCarr[m][1]['direccion'];
+                            }
+                            if (prodCarr[m][1]['mensajeEspecial'] != undefined) {
+                                if (
+                                    prodCarr[m][1]['mensajeEspecial'] == 'Ancho especial' ||
+                                    prodCarr[m][1]['mensajeEspecial'] == 'Alto especial' ||
+                                    prodCarr[m][1]['mensajeEspecial'] == 'Fondo especial'
+                                ) {
+                                    prodPrePed['textoEspecial'] = prodCarr[m][1]['mensajeEspecial'];
+                                    prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
+                                    prodPrePed['alto'] = prodCarr[m][1]['alto'];
+                                    prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
+                                }
                             }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;

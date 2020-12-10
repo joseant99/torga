@@ -1535,6 +1535,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 this.productosDormitorioModal = data.body;
                 this.productosDormitorioModaltodos = data.body;
                 this.productosDormitorioService.todos = data.body;
+                this.armariosDormitorioComponent.esteeselfondonuevo = 61;
                 this.armariosDormitorioComponent.carcarCascosInterioresPuertas();
             });
         });
@@ -1561,6 +1562,52 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
         }, 1000);
     }
+
+    public fondoNoQuiereCambiar1(id) {
+        $('.cuerpoImagenPuertas').css({ display: 'block' });
+        $('.armariosDivTodo').css({ position: 'absolute' });
+
+        $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
+        if (screen.width < 800) {
+            $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+        }
+        $('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+        $('#inputFondoBatientes').val(61);
+        this.acaProdService.findAca(42).subscribe(data => {
+            this.todos = data.body[0]['acabados'];
+            this.productosDormitorioService.categoria(24).subscribe(data => {
+                this.productosDormitorioModal = data.body;
+                this.productosDormitorioModaltodos = data.body;
+                this.productosDormitorioService.todos = data.body;
+
+                this.armariosDormitorioComponent.esteeselfondonuevo = id;
+                this.armariosDormitorioComponent.carcarCascosInterioresPuertas();
+            });
+        });
+        setTimeout(function() {
+            $('#calculadoraCarrito').removeAttr('style');
+            $('#calculadoraCarrito').attr('style');
+            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('.divBuscadorArticulos').css({ height: '100%' });
+            $('#calculadoraCarrito').css({ width: '25%' });
+            $('.divfondoSaber').css({ display: 'none' });
+            $('.divfondoocogidomen').css({ display: 'none' });
+            $('#imagenesArmario2').css({ display: 'none' });
+            if (screen.width < 800) {
+                $('#calculadoraCarrito').css({ width: '100%' });
+                $('#calculadoraCarrito').css({ height: '40%' });
+                $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                const elem = $('#textprecioCalculadoraazul');
+                elem[0].style.setProperty('bottom', '0px', 'important');
+                elem[0].style.setProperty('height', '55px', 'important');
+                const elem1 = $('#botonCalculadora');
+                elem1[0].style.setProperty('bottom', '0px', 'important');
+                elem1[0].style.setProperty('height', '55px', 'important');
+            }
+        }, 1000);
+    }
+
     public fondoNoQuiereCambiarOculta() {
         $('.armariosDivTodo1 .cuerpoImagenPuertas').css({ display: 'block' });
         $('.armariosDivTodo1').css({ position: 'absolute' });
@@ -1745,6 +1792,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         $('.selectbuscaarticulos').empty();
         $('#elegirLado').css({ display: 'none' });
         $('.selectbuscaarticulos').append('<option></option>');
+        if (screen.width >= 1000) {
+            $('#botonmencambiarvista').css({ width: '160px' });
+            $('#botonmencambiarvista').css({ height: '60px' });
+            $('#botonmencambiarvista').css({ 'font-size': '20px' });
+        }
         if (screen.width < 800) {
             $('.divseleccionarcodigo #divprincipalhuecomenmen').css({ 'padding-top': '47px' });
             $('.armariosDivInputCodigo #divprincipalhuecomenmen').css({ 'padding-top': '60px' });
@@ -8006,7 +8058,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             idProd != 280 &&
                             idProd != 281 &&
                             idProd != 282 &&
-                            idProd != 340
+                            idProd != 340 &&
+                            idProd != 236 &&
+                            idProd != 237
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -12023,7 +12077,8 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     parseFloat(idProd) == 116 ||
                     parseFloat(idProd) == 117 ||
                     parseFloat(idProd) == 118 ||
-                    parseFloat(idProd) == 119
+                    parseFloat(idProd) == 119 ||
+                    parseFloat(idProd) == 241
                 ) {
                     var hbueno = parseFloat(h) - 5.5;
                 } else {

@@ -634,7 +634,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         this.isSaving = false;
         for (let i = 0; i <= 10000; i++) {
             if (i == 10000) {
-                this.router.navigate(['/presupuesto-usuario']);
+                this.router.navigate(['/pedidos-usuario']);
             }
         }
     }
@@ -646,9 +646,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     loadAll() {
         var medidasEspeciales;
 
-        $('#modalcargandotodo').attr('class', 'modal fade show');
-        $('#modalcargandotodo').css({ display: 'block' });
-        $('body').append('<div id="quitarelbackroundcolor" class="modal-backdrop fade show"></div>');
         var productosPresupuesto = [];
         var acabados1 = [];
         var precioTienda = this.precioTienda;
@@ -709,6 +706,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                             $('#divobservacionesparaimprimir1 #textoObservaciones').append(
                                 '<p>' + toma[i]['presupuestoPedido']['observaciones'] + '</p>'
                             );
+                        }
+                        if (toma[i]['textoEspecial'] == 'Ancho Especial') {
+                            toma[i]['dimensionesProductoTipo']['ancho'] == toma[i]['ancho'];
                         }
 
                         if (parseFloat(presu) == toma[i]['presupuestoPedido']['id']) {
@@ -11771,7 +11771,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 373 &&
                                                     idProd != 374 &&
                                                     idProd != 375 &&
-                                                    idProd != 316
+                                                    idProd != 316 &&
+                                                    idProd != 236 &&
+                                                    idProd != 237
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +
@@ -13272,6 +13274,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     }
 
     ngOnInit() {
+        $('#modalcargandotodo').attr('class', 'modal fade show');
+        $('#modalcargandotodo').css({ display: 'block' });
+        $('body').append('<div id="quitarelbackroundcolor" class="modal-backdrop fade show"></div>');
         var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
         var arraymeterparasaberespacio = [];
 
@@ -13382,6 +13387,16 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                     data.body[f]['productosDormitorio'] != undefined
                                 ) {
                                     toma[contToma] = data.body[f];
+                                    if (toma[contToma]['textoEspecial'] == 'Ancho especial') {
+                                        toma[contToma]['dimensionesProductoTipo']['ancho'] = toma[contToma]['ancho'];
+                                    }
+                                    if (toma[contToma]['textoEspecial'] == 'Alto especial') {
+                                        toma[contToma]['dimensionesProductoTipo']['alto'] = toma[contToma]['alto'];
+                                    }
+                                    if (toma[contToma]['textoEspecial'] == 'Fondo especial') {
+                                        toma[contToma]['dimensionesProductoTipo']['fondo'] = toma[contToma]['fondo'];
+                                    }
+
                                     contToma++;
                                 }
                             }
