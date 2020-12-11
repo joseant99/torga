@@ -2014,7 +2014,6 @@
 		
 		<div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
         	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" *ngFor="let codigo of modulosBajos" id="pruebahoverdiv" (click)="paso1cogerespecial(codigo.id)">
-        		<p  style="text-align:center;font-weight: 300;letter-spacing: 0.5px;">{{codigo.nombre}}</p>
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" [src]="'data:' + codigo.imagenContentType + ';base64,' + codigo.imagen">
         	</div>
 		</div>
@@ -2092,7 +2091,6 @@
 		    		<span>{{codigo}}</span>
 		    	</div>
 	    	</div>
-	    	
 	    	<div style="margin-top:9%;width:90%;margin-left:10%;display:none" class="divdentrogrosortablero">
 	    		<p style="width:100%;text-align:center;font-size:25px;">SELECIONE EL GROSOR DEL TABLERO</p>
 	   			<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterAnchoCalculadora('12 mm')">

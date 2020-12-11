@@ -7970,6 +7970,15 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         }
         if (nombre == 'Puerta 2 Plafones Verticales') {
             var idPuerta = 396;
+            if (id == 0) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
         }
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
             var idPuerta = 397;
@@ -7979,6 +7988,15 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         }
         if (nombre == 'Puerta 2 Plafones Verticales DER') {
             var idPuerta = 399;
+            if (id == 0) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
         }
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             var idPuerta = 400;

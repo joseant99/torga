@@ -7852,6 +7852,15 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         }
         if (nombre == 'Puerta 2 Plafones Verticales') {
             var idPuerta = 396;
+            if (id == 0) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
         }
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
             var idPuerta = 397;
@@ -7861,11 +7870,20 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
         }
         if (nombre == 'Puerta 2 Plafones Verticales DER') {
             var idPuerta = 399;
+            if (id == 0) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('#2acaPuerta' + id).css({ display: 'block' });
+            }
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
             var idPuerta = 400;
         }
-        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+        if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
             var idPuerta = 401;
         }
 
@@ -8519,10 +8537,10 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/1-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8563,10 +8581,10 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/2 PTAS PNG/2-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8607,10 +8625,10 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/1-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8651,10 +8669,10 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/2-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });
@@ -8695,10 +8713,10 @@ export class ArmariosDormitorioVistaComponent implements OnInit, OnDestroy, Afte
             if (nombre == 'Puerta 2 Plafones Verticales DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-H.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-I.png');
             }
-            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha') {
+            if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
                 $('#puertaColor' + id).attr('src', '../../../content/images/pruebaarmarios/VISTA/3 PTAS PNG/3-J.png');
             }
             $('#puertaColor' + id).css({ width: '650px' });

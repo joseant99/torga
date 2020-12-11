@@ -64,6 +64,9 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "ancho")
     private String ancho;
     
+    @Column(name = "fondo")
+    private String fondo;
+    
     @Column(name = "canteado")
     private String canteado;
     
@@ -130,6 +133,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setAncho(String ancho) {
         this.ancho = ancho;
+    }
+    
+    public String getFondo() {
+        return fondo;
+    }
+
+    public ProductosPresupuestoPedidos fondo(String fondo) {
+        this.fondo = fondo;
+        return this;
+    }
+
+    public void setFondo(String fondo) {
+        this.fondo = fondo;
     }
     
     public String getCanteado() {

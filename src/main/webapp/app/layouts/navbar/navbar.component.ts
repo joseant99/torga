@@ -8822,6 +8822,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 107) {
                             nombreCargarImagen = 'NH001-NH006';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 410) {
+                            nombreCargarImagen = 'NH007-NH010';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 108) {
                             nombreCargarImagen = 'NH011-NH014';
                         }
@@ -9607,6 +9610,35 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                             var idProd = sesion[1]['productosDormitorio']['id'];
                             if (idProd == 107) {
+                                if (o == 0) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Tapa :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 1) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Casco :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                                if (o == 2) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            (o + 1) +
+                                            ' Cajon :</span> ' +
+                                            acabados[o] +
+                                            '</p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 410) {
                                 if (o == 0) {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
@@ -11679,6 +11711,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             this.mainComponent.funcionNav(idProd, o, acabados, i);
                             if (
                                 idProd != 107 &&
+                                idProd != 410 &&
                                 idProd != 315 &&
                                 idProd != 108 &&
                                 idProd != 109 &&
@@ -13786,6 +13819,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
                                 }
                             }
+                            prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
+                            prodPrePed['alto'] = prodCarr[m][1]['alto'];
+                            prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;
                             prodIlu[m] = prodPrePed;

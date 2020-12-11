@@ -9060,6 +9060,41 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         );
                                                     }
                                                 }
+                                                if (idProd == 410) {
+                                                    if (k == 0) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                (k + 1) +
+                                                                ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                contador +
+                                                                '">' +
+                                                                acabados[k]['acabados']['nombre'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                    if (k == 1) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                (k + 1) +
+                                                                ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                contador +
+                                                                '">' +
+                                                                acabados[k]['acabados']['nombre'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                    if (k == 2) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                (k + 1) +
+                                                                ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                contador +
+                                                                '">' +
+                                                                acabados[k]['acabados']['nombre'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                }
                                                 if (idProd == 108) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
@@ -11526,6 +11561,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 if (
                                                     idProd != 107 &&
+                                                    idProd != 410 &&
                                                     idProd != 315 &&
                                                     idProd != 108 &&
                                                     idProd != 109 &&
@@ -12057,6 +12093,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
                                                 if (idProdNombre == 107) {
                                                     nombreCargarImagen = 'NH001-NH006';
+                                                }
+                                                if (idProdNombre == 410) {
+                                                    nombreCargarImagen = 'NH007-NH010';
                                                 }
                                                 if (idProdNombre == 108) {
                                                     nombreCargarImagen = 'NH011-NH014';
@@ -13794,6 +13833,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             }
             if (idProdNombre == 107) {
                 nombreCargarImagen = 'NH001-NH006';
+            }
+            if (idProdNombre == 410) {
+                nombreCargarImagen = 'NH007-NH010';
             }
             if (idProdNombre == 108) {
                 nombreCargarImagen = 'NH011-NH014';

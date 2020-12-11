@@ -531,6 +531,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public volveratras(id) {
+        this.uid = 0;
         if (id == 1) {
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
             $('#page-heading').css({ display: 'block' });
@@ -751,6 +752,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public elegirBusqueda(id) {
+        $('.divdentrogrosortablero').css({ display: 'none' });
+        $('.divdentrocanteadotablero').css({ display: 'none' });
+        $('.divdentrodelosAncho').css({ display: 'none' });
+        $('.divdentrodelosAlto').css({ display: 'none' });
         $('.divConfiguracionestant').css({ display: 'none' });
         $('#botonCalculadoraTablero').attr('class', 'displayBoton');
         $('#imagenAcabadoPrincipal123').empty();
@@ -1177,8 +1182,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
 
         if (id == 30) {
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
             $('.divdentrogrosortablero').css({ display: 'block' });
             $('#divdentrodeloscodigos').css({ display: 'none' });
+            this.codigoparadivs = [];
             $('#textodivsuperiorquenosecambia').text('TABLEROS A MEDIDA');
         }
 
@@ -1371,17 +1381,19 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var cont = 0;
         if (ancho == '12 mm') {
             $('#cogerAnchoEstant').append('<option></option>');
-            for (let i = 10; i <= 260; i++) {
+            for (let i = 10; i <= 260; ) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
                 array[cont] = i;
                 cont++;
+                i = i + 0.5;
             }
         } else {
             $('#cogerAnchoEstant').append('<option></option>');
-            for (let i = 10; i <= 280; i++) {
+            for (let i = 10; i <= 280; ) {
                 $('#cogerAnchoEstant').append('<option>' + i + '</option>');
                 array[cont] = i;
                 cont++;
+                i = i + 0.5;
             }
         }
         $('.divdentrocanteadotablero').attr('id', 'simplepruebaani');
@@ -1654,6 +1666,15 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     cogidoggmenez = 1;
                 }
             }
+            if (cogidoggmenez == 0) {
+                var length = data.body['length'];
+                if (data.body[length - 1]['ancho'] < codigo && cogidoggmenez == 0) {
+                    var datos = data.body[length - 1];
+                    data.body[length - 1]['ancho'] = codigo;
+                    data.body[length - 1]['mensajeEspecial'] = 'Ancho especial';
+                    cogidoggmenez = 1;
+                }
+            }
 
             var todosLosDatos = data.body;
             if (
@@ -1712,6 +1733,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             totalfloat = parseFloat(todasCuenta.toFixed(0));
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             totalfloat = totalfloat * 1.3;
+            totalfloat = Math.ceil(totalfloat);
             $('#total').text(totalfloat);
             this.precioDimension = totalfloat;
             $('#precioDimension').text(totalfloat);
@@ -2344,6 +2366,47 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         }
 
                         if (idProd == 107) {
+                            if (u == 1) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 2) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 3) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                        }
+                        if (idProd == 410) {
                             if (u == 1) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -6749,6 +6812,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                         if (
                             idProd != 107 &&
+                            idProd != 410 &&
                             idProd != 315 &&
                             idProd != 108 &&
                             idProd != 109 &&
@@ -7151,16 +7215,19 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     } else {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     }
 
                     $('#datos1').append(
-                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                        '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
                     );
                 }
             });
@@ -7336,6 +7403,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -7514,6 +7582,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                     }
+                    this.apoyoCogido(0);
                 });
             }
 
@@ -7541,6 +7610,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -7888,7 +7958,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
             for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
+                if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
                     var datos = data.body[i];
                     data.body[i]['alto'] = this.alturas;
                     data.body[i]['mensajeEspecial'] = 'Alto especial';
@@ -7950,12 +8020,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             var totalfloat = 0;
             this.precioDimension = todasCuenta;
-            totalfloat = parseFloat(todasCuenta.toFixed(2));
+            totalfloat = parseFloat(todasCuenta.toFixed(0));
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             totalfloat = totalfloat * 1.3;
-            $('#total').text(totalfloat.toFixed(2));
-            this.precioDimension = totalfloat.toFixed(2);
-            $('#precioDimension').text(totalfloat.toFixed(2));
+            totalfloat = Math.ceil(totalfloat);
+            $('#total').text(totalfloat.toFixed(0));
+            this.precioDimension = totalfloat.toFixed(0);
+            $('#precioDimension').text(totalfloat.toFixed(0));
             var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
             if (saberlo != 'A') {
                 $('#euroCalculadora').css({ display: 'block' });
@@ -8627,6 +8698,47 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 );
                             }
                         }
+                        if (idProd == 410) {
+                            if (u == 1) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 2) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 3) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                        }
                         if (idProd == 108) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -12992,6 +13104,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                         if (
                             idProd != 107 &&
+                            idProd != 410 &&
                             idProd != 315 &&
                             idProd != 108 &&
                             idProd != 109 &&
@@ -13392,16 +13505,19 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     } else {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     }
 
                     $('#datos1').append(
-                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                        '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
                     );
                 }
             });
@@ -13577,6 +13693,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -13755,6 +13872,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                     }
+                    this.apoyoCogido(0);
                 });
             }
 
@@ -13782,6 +13900,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -14130,7 +14249,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             var cogidoggmenez = 0;
 
             for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
+                if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
                     var datos = data.body[i];
                     data.body[i]['fondo'] = this.fondos;
                     data.body[i]['mensajeEspecial'] = 'Fondo especial';
@@ -14191,12 +14310,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             var totalfloat = 0;
             this.precioDimension = todasCuenta;
-            totalfloat = parseFloat(todasCuenta.toFixed(2));
+            totalfloat = parseFloat(todasCuenta.toFixed(0));
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             totalfloat = totalfloat * 1.3;
-            $('#total').text(totalfloat.toFixed(2));
-            this.precioDimension = totalfloat.toFixed(2);
-            $('#precioDimension').text(totalfloat.toFixed(2));
+            totalfloat = Math.ceil(totalfloat);
+            $('#total').text(totalfloat.toFixed(0));
+            this.precioDimension = totalfloat.toFixed(0);
+            $('#precioDimension').text(totalfloat.toFixed(0));
             var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
             if (saberlo != 'A') {
                 $('#euroCalculadora').css({ display: 'block' });
@@ -14254,7 +14374,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                             var totalfloat = 0;
                             this.precioDimension = todasCuenta;
-                            totalfloat = parseFloat(todasCuenta.toFixed(2));
+                            totalfloat = parseFloat(todasCuenta.toFixed(0));
                             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
                             $('#total').text(totalfloat);
                             $('#precioDimension').text(totalfloat);
@@ -14866,6 +14986,47 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 );
                             }
                         }
+                        if (idProd == 410) {
+                            if (u == 1) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 2) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                            if (u == 3) {
+                                $('#datos1').append(
+                                    '<p style="width:100%" id="acabado' +
+                                        u +
+                                        '"><span style="font-weight:600">' +
+                                        u +
+                                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        u +
+                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                        u +
+                                        '" style="margin-left:10px"></span></p>'
+                                );
+                            }
+                        }
                         if (idProd == 108) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -19231,6 +19392,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                         if (
                             idProd != 107 &&
+                            idProd != 410 &&
                             idProd != 315 &&
                             idProd != 108 &&
                             idProd != 109 &&
@@ -19631,16 +19793,19 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">&euro;</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     } else {
                         $('#datos1').append(
-                            '<p style="width:95%"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
+                            '<p style="width:95%;display:none"><strong>APOYO </strong><span style="float:right">PP</span><span id="precioApoyo" style="float:right"></span></p>'
                         );
                     }
 
                     $('#datos1').append(
-                        '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                        '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
                     );
                 }
             });
@@ -19816,6 +19981,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -19994,6 +20160,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                     }
+                    this.apoyoCogido(0);
                 });
             }
 
@@ -20021,6 +20188,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[w]['nombre'] == 'Colgado') {
                             if (
                                 idProd == 107 ||
+                                idProd == 410 ||
                                 idProd == 108 ||
                                 idProd == 109 ||
                                 idProd == 110 ||
@@ -20252,10 +20420,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#cogerAltoEstant').append('<option></option>');
         var array = [];
         var cont = 0;
-        for (let i = 10; i <= 200; i++) {
+        for (let i = 10; i <= 200; ) {
             $('#cogerAltoEstant').append('<option>' + i + '</option>');
             array[cont] = i;
             cont++;
+            i = i + 0.5;
         }
         this.altoTablero = array;
         $('.divdentrodelosAlto').attr('id', 'simplepruebaani');
@@ -21214,6 +21383,47 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
 
                             if (idProd == 107) {
+                                if (u == 1) {
+                                    $('#datos1').append(
+                                        '<p style="width:100%" id="acabado' +
+                                            u +
+                                            '"><span style="font-weight:600">' +
+                                            u +
+                                            ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            u +
+                                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                            u +
+                                            '" style="margin-left:10px"></span></p>'
+                                    );
+                                }
+                                if (u == 2) {
+                                    $('#datos1').append(
+                                        '<p style="width:100%" id="acabado' +
+                                            u +
+                                            '"><span style="font-weight:600">' +
+                                            u +
+                                            ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            u +
+                                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                            u +
+                                            '" style="margin-left:10px"></span></p>'
+                                    );
+                                }
+                                if (u == 3) {
+                                    $('#datos1').append(
+                                        '<p style="width:100%" id="acabado' +
+                                            u +
+                                            '"><span style="font-weight:600">' +
+                                            u +
+                                            ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            u +
+                                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                            u +
+                                            '" style="margin-left:10px"></span></p>'
+                                    );
+                                }
+                            }
+                            if (idProd == 410) {
                                 if (u == 1) {
                                     $('#datos1').append(
                                         '<p style="width:100%" id="acabado' +
@@ -25619,6 +25829,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                             if (
                                 idProd != 107 &&
+                                idProd != 410 &&
                                 idProd != 315 &&
                                 idProd != 108 &&
                                 idProd != 109 &&
@@ -25864,7 +26075,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 idProd != 373 &&
                                 idProd != 374 &&
                                 idProd != 375 &&
-                                idProd != 316
+                                idProd != 316 &&
+                                idProd != 339 &&
+                                idProd != 81
                             ) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -26204,6 +26417,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             if (data.body[w]['nombre'] == 'Colgado') {
                                 if (
                                     idProd == 107 ||
+                                    idProd == 410 ||
                                     idProd == 108 ||
                                     idProd == 109 ||
                                     idProd == 110 ||
@@ -26409,6 +26623,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             if (data.body[w]['nombre'] == 'Colgado') {
                                 if (
                                     idProd == 107 ||
+                                    idProd == 410 ||
                                     idProd == 108 ||
                                     idProd == 109 ||
                                     idProd == 110 ||
@@ -30110,6 +30325,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     parseFloat(idProd) == 300 ||
                     parseFloat(idProd) == 301 ||
                     parseFloat(idProd) == 107 ||
+                    parseFloat(idProd) == 410 ||
                     parseFloat(idProd) == 108 ||
                     parseFloat(idProd) == 109 ||
                     parseFloat(idProd) == 110 ||
@@ -30154,6 +30370,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     parseFloat(idProd) == 300 ||
                     parseFloat(idProd) == 301 ||
                     parseFloat(idProd) == 107 ||
+                    parseFloat(idProd) == 410 ||
                     parseFloat(idProd) == 108 ||
                     parseFloat(idProd) == 109 ||
                     parseFloat(idProd) == 110 ||
@@ -30505,6 +30722,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     parseFloat(idProd) == 300 ||
                                     parseFloat(idProd) == 301 ||
                                     parseFloat(idProd) == 107 ||
+                                    parseFloat(idProd) == 410 ||
                                     parseFloat(idProd) == 108 ||
                                     parseFloat(idProd) == 109 ||
                                     parseFloat(idProd) == 110 ||
@@ -31122,6 +31340,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public enviarCarrito() {
+        this.uid = 0;
         for (let j = 1; j <= 10; j++) {
             $('#productoCarrito' + j + ' #datos' + j).empty();
             $('#productoCarrito' + j + ' #precios' + j).empty();
