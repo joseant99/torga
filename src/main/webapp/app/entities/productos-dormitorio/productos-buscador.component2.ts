@@ -7257,7 +7257,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
                     $('#datos1').append(
-                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado aparte.</p>'
                     );
                 }
             });
@@ -13547,7 +13547,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
                     $('#datos1').append(
-                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado aparte.</p>'
                     );
                 }
             });
@@ -19835,7 +19835,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         '<p style="width:100%;display:none"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
                     $('#datos1').append(
-                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado a parte.</p>'
+                        '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado aparte.</p>'
                     );
                 }
             });
