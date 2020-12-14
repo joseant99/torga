@@ -1116,7 +1116,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
                     }
                 }
                 /**
-                this.medidasEspecialesService.findProd(producto).subscribe(data => {
+                this.medidasEspecialesService.findProd(producto,1).subscribe(data => {
                     for (let j = 0; j < data.body['length']; j++) {
                         if (data.body[j] != undefined) {
                             if (data.body[j]['ancho'] == 1) {
@@ -3696,7 +3696,7 @@ export class ProductosAparadoresComponent implements OnInit, OnDestroy {
         }
         $('#productoCalculadora1 #datos1').empty();
 
-        this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+        this.medidasEspecialesService.findProd(idProd, 1).subscribe(data => {
             medidasEspeciales = data['body'];
             if (id == 1) {
                 $('#imagenProdEspeciales').empty();

@@ -38,13 +38,13 @@ export class MedidasEspecialesService {
     query1(req?: any): Observable<EntityArrayResponseType> {
         return (this.todos = req.especiales);
     }
-    findProd(id: any): Observable<EntityResponseType> {
-        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus/${id}`, { observe: 'response' });
+    findProd(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus/${id}/${altura}`, { observe: 'response' });
     }
-    findProd1(id: any): Observable<EntityResponseType> {
-        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus1/${id}`, { observe: 'response' });
+    findProd1(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus1/${id}/${altura}`, { observe: 'response' });
     }
-    findProd2(id: any): Observable<EntityResponseType> {
-        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus2/${id}`, { observe: 'response' });
+    findProd2(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus2/${id}/${altura}`, { observe: 'response' });
     }
 }

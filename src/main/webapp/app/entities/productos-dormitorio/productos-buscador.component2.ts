@@ -142,6 +142,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     anchoTablero: any;
     altoTablero: any;
     tipoProductos: any;
+    alturaArray: any;
+    alturaseleccionada: any;
+    idApoyoSecundario: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -1433,12 +1436,39 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
         $('.divseleccionarcodigoCategorias').attr('id', 'simplepruebaani');
         var tipo = this.tipoProductos;
-        this.productosDormitorioService.categoria(tipo).subscribe(data => {
-            this.modulosBajos = data.body;
+        this.productosDormitorioService.categoria12(tipo).subscribe(data => {
+            var array = [];
+            var array1 = [];
+            var objeto = {};
+            var cont = 0;
+            var cont1 = 0;
+            var altura;
+            for (let i = 0; i < data.body['length']; i++) {
+                data.body[i][0]['altura'] = data.body[i][1];
+                if (i == 0) {
+                    altura = data.body[i][1];
+                    array[i] = data.body[i][0];
+                }
+
+                if (data.body[i][0]['id'] != array[cont1]['id']) {
+                    cont1++;
+                    array[cont1] = data.body[i][0];
+                }
+
+                if (altura != data.body[i][1]) {
+                    cont++;
+                    altura = data.body[i][1];
+                }
+                array1[cont] = data.body[i][1];
+            }
+            this.alturaArray = array1;
+            this.modulosBajos = array;
+            console.log(array);
         });
     }
 
-    public paso1cogerespecial(id) {
+    public paso1cogerespecial(id, altura) {
+        this.alturaseleccionada = altura;
         this.idDelProducto = id;
         $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'block' });
         $('.divseleccionarcodigoCategorias').css({ display: 'none' });
@@ -1452,7 +1482,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var min;
         var max;
         if (id == 1) {
-            this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+            this.medidasEspecialesService.findProd(idProd, this.alturaseleccionada).subscribe(data => {
                 console.log(data.body);
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
@@ -1483,7 +1513,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
                 this.anchos = data.body;
             });
-            this.medidasEspecialesService.findProd1(idProd).subscribe(data => {
+            this.medidasEspecialesService.findProd1(idProd, this.alturaseleccionada).subscribe(data => {
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
                 for (let i = min; i <= max; i++) {
@@ -1502,7 +1532,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
                 this.anchos = data.body;
             });
-            this.medidasEspecialesService.findProd2(idProd).subscribe(data => {
+            this.medidasEspecialesService.findProd2(idProd, this.alturaseleccionada).subscribe(data => {
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
                 for (let i = min; i <= max; i++) {
@@ -26505,7 +26535,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                                 '" height="160px" width="280px" style=" ">'
                                         );
                                         $('#modalApoyo #apoyoModal' + 2).append(
-                                            '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                            '<strong><p style="text-align:center;font-size: 14px;">' +
+                                                data.body[w]['nombre'] +
+                                                ' Remetido 6,25 cm a ambos lados</strong></p>'
                                         );
                                     }
                                 } else {
@@ -26544,6 +26576,24 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         }
                                     }
                                     if (data.body[w]['id'] == 18) {
+                                        $('#modalApoyo #apoyoModal' + 7).empty();
+                                        console.log(productoTocho);
+                                        $('#modalApoyo #apoyoModal' + 7).append(
+                                            '<img  src="data:image/gif;base64,' +
+                                                data.body[w]['imagen'] +
+                                                '" id="imagenApoyo' +
+                                                7 +
+                                                '" class="' +
+                                                data.body[w]['id'] +
+                                                '" height="160px" width="280px" style=" ">'
+                                        );
+                                        $('#modalApoyo #apoyoModal' + 7).append(
+                                            '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
+                                                data.body[w]['nombre'] +
+                                                ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                        );
+                                    }
+                                    if (data.body[w]['id'] == 411) {
                                         $('#modalApoyo #apoyoModal' + 3).empty();
                                         console.log(productoTocho);
                                         $('#modalApoyo #apoyoModal' + 3).append(
@@ -26556,6 +26606,22 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                                 '" height="160px" width="280px" style=" ">'
                                         );
                                         $('#modalApoyo #apoyoModal' + 3).append(
+                                            '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                        );
+                                    }
+                                    if (data.body[w]['id'] == 412) {
+                                        $('#modalApoyo #apoyoModal' + 8).empty();
+                                        console.log(productoTocho);
+                                        $('#modalApoyo #apoyoModal' + 8).append(
+                                            '<img  src="data:image/gif;base64,' +
+                                                data.body[w]['imagen'] +
+                                                '" id="imagenApoyo' +
+                                                8 +
+                                                '" class="' +
+                                                data.body[w]['id'] +
+                                                '" height="160px" width="280px" style=" ">'
+                                        );
+                                        $('#modalApoyo #apoyoModal' + 8).append(
                                             '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
                                         );
                                     }
@@ -28727,7 +28793,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 cont++;
             }
         }
-        this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+        this.medidasEspecialesService.findProd(idProd, 1).subscribe(data => {
             medidasEspeciales = data['body'];
             if (id == 1) {
                 $('#imagenProdEspeciales').empty();
@@ -30276,6 +30342,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.apoyoCogido' + id).css({ 'background-color': '#DFDDDC' });
         var idApoyo;
         idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
+        var idApoyoPorSi = 0;
+        if (idApoyo == 411) {
+            idApoyo = 17;
+            idApoyoPorSi = 411;
+            this.idApoyoSecundario = 411;
+        }
+        if (idApoyo == 412) {
+            idApoyo = 18;
+            idApoyoPorSi = 412;
+            this.idApoyoSecundario = 412;
+        }
         var idProd = $('#nombreMesita').attr('class');
         var h;
         h = $('#productoCalculadora1  #datos1 #ancho1').text();
@@ -30671,7 +30748,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
-                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #apoyoCalculadoraTexto').val('Bancada Remetida');
+                                if (idApoyoPorSi == 412) {
+                                    $('#datos1 #apoyoCalculadoraTexto').val('Bancada al ancho');
+                                }
                                 $('#datos1 #precioApoyo').text('+ ' + precio.toFixed(0) + ' ');
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
@@ -30837,7 +30917,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         precio.toFixed(2) +
                                         '&euro;</span></p>'
                                 );
-                                $('#datos1 #apoyoCalculadoraTexto').val(value['productoApoyo']['nombre']);
+                                $('#datos1 #apoyoCalculadoraTexto').val('Zocalo Remetido');
+                                if (idApoyoPorSi == 411) {
+                                    $('#datos1 #apoyoCalculadoraTexto').val('Zocalo al ancho');
+                                }
                                 $('#datos1 #precioApoyo').text('+ ' + precio.toFixed(0) + ' ');
                                 $('#botonApoyoNuevo #nombreApoyoCajon').remove();
                                 $('#botonApoyoNuevo').append(
@@ -31413,6 +31496,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             for (let k = 0; k < sistemasApoyo.length; k++) {
                 if (sistemasApoyo[k]['id'] == idApoyo) {
                     apoyoBueno[1] = sistemasApoyo[k];
+                    if (this.idApoyoSecundario != undefined) {
+                        apoyoBueno[1]['apoyoSecundario'] = this.idApoyoSecundario;
+                    }
                 }
             }
 

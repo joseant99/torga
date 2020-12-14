@@ -104,11 +104,11 @@ public class MedidasEspecialesResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
      */
-    @GetMapping("/medidas-especiales-bus/{id}")
+    @GetMapping("/medidas-especiales-bus/{id}/{altura}")
     @Timed
-    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds(@PathVariable Long id) {
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds(@PathVariable Long id, @PathVariable Float altura) {
         log.debug("REST request to get a page of MedidasEspeciales");
-        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd(id);
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd(id,altura);
         return ResponseEntity.ok().body(page);
     }
     
@@ -118,11 +118,11 @@ public class MedidasEspecialesResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
      */
-    @GetMapping("/medidas-especiales-bus1/{id}")
+    @GetMapping("/medidas-especiales-bus1/{id}/{altura}")
     @Timed
-    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds1(@PathVariable Long id) {
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds1(@PathVariable Long id, @PathVariable Float altura) {
         log.debug("REST request to get a page of MedidasEspeciales");
-        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd1(id);
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd1(id,altura);
         return ResponseEntity.ok().body(page);
     }
     
@@ -132,11 +132,11 @@ public class MedidasEspecialesResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
      */
-    @GetMapping("/medidas-especiales-bus2/{id}")
+    @GetMapping("/medidas-especiales-bus2/{id}/{altura}")
     @Timed
-    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds2(@PathVariable Long id) {
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds2(@PathVariable Long id, @PathVariable Float altura) {
         log.debug("REST request to get a page of MedidasEspeciales");
-        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd2(id);
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd2(id,altura);
         return ResponseEntity.ok().body(page);
     }
 

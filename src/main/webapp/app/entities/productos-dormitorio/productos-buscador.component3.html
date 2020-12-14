@@ -2223,7 +2223,7 @@
     
     	<div style="margin-top:5%;width:90%;margin-left:10%;" id="divanchocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el ancho</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.dato" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "anchoCogidoParaMetervalOculta(codigo)">
+	   			<div *ngFor="let codigo of this.armariosDormitorioOcultaComponent.cascoService.dato" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "anchoCogidoParaMetervalOculta(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="anchosSelect2">
@@ -2231,7 +2231,7 @@
 	    
 	    <div style="margin-top:5%;width:90%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divaltoocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el alto</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "altoCogidoParaMetervalOculta(codigo)">
+	   			<div *ngFor="let codigo of this.armariosDormitorioOcultaComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "altoCogidoParaMetervalOculta(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="alturaSelect2">
@@ -2240,12 +2240,12 @@
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoSaber">
     		<h2 style="text-align:center;letter-spacing:3px">El fondo es 64 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
     		
-    		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondoNoQuiereCambiarOculta()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarOculta()" class="divcodigometerfondo">NO</div>
+    		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondomostrarpaso1Oculta()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarOculta()" class="divcodigometerfondo">NO</div>
 	    </div>
 	    
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el fondo</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.fondo" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiar()">
+	   			<div *ngFor="let codigo of this.armariosDormitorioOcultaComponent.cascoService.fondo" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiarOculta1(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="inputFondoBatientes">
@@ -2298,7 +2298,7 @@
     <div id="producto" class="armariosDivTodo2" style="display:none;margin-left:0%;width:100%">
     	<div style="margin-top:5%;width:90%;margin-left:10%;" id="divanchocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el ancho</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.dato" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "anchoCogidoParaMetervalVista(codigo)">
+	   			<div *ngFor="let codigo of this.armariosDormitorioVistaComponent.cascoService.dato" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "anchoCogidoParaMetervalVista(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="anchosSelect3">
@@ -2306,7 +2306,7 @@
 	    
 	    <div style="margin-top:5%;width:90%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divaltoocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el alto</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "altoCogidoParaMetervalVista(codigo)">
+	   			<div *ngFor="let codigo of this.armariosDormitorioVistaComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click) = "altoCogidoParaMetervalVista(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="alturaSelect3">
@@ -2315,12 +2315,12 @@
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoSaber">
     		<h2 style="text-align:center;letter-spacing:3px">El fondo es 64 CM, &#191;Quiere cambiarlo?</h2><BR><BR>
     		
-    		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondoNoQuiereCambiarVista()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarVista()" class="divcodigometerfondo">NO</div>
+    		<div id="divcodigoarituclos" class="divcodigometerfondo estoesunclassparaprobar" style="margin-left:40%" (click)="fondomostrarpaso1Vista()">SI</div><div id="divcodigoarituclos" (click)="fondoNoQuiereCambiarVista()" class="divcodigometerfondo">NO</div>
 	    </div>
 	    
 	    <div style="margin-top:5%;width:80%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divfondoocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el fondo</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.armariosDormitorioComponent.cascoService.fondo" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiar()">
+	   			<div *ngFor="let codigo of this.armariosDormitorioVistaComponent.cascoService.fondo" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiarVista1(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="inputFondoBatientes">

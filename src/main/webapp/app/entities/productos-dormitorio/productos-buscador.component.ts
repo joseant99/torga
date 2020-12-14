@@ -8994,7 +8994,7 @@ export class ProductosBuscadorComponent implements OnInit, OnDestroy {
                 cont++;
             }
         }
-        this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+        this.medidasEspecialesService.findProd(idProd, 1).subscribe(data => {
             medidasEspeciales = data['body'];
             if (id == 1) {
                 $('#imagenProdEspeciales').empty();

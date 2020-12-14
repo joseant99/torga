@@ -31,6 +31,9 @@ public class MedidasEspeciales implements Serializable {
 
     @Column(name = "alto")
     private Float alto;
+    
+    @Column(name = "altura")
+    private Float altura;
 
     @Column(name = "precio")
     private Float precio;
@@ -91,6 +94,19 @@ public class MedidasEspeciales implements Serializable {
 
     public void setAlto(Float alto) {
         this.alto = alto;
+    }
+    
+    public Float getAltura() {
+        return altura;
+    }
+
+    public MedidasEspeciales altura(Float altura) {
+        this.altura = altura;
+        return this;
+    }
+
+    public void setAltura(Float altura) {
+        this.altura = altura;
     }
 
     public Float getPrecio() {

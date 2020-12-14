@@ -171,6 +171,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
     precioInterior3: any;
     precioInterior4: any;
     precioInterior5: any;
+    esteeselfondonuevo: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -1218,7 +1219,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             console.log(armariosTodos[j]);
             armariosTodos[j]['ancho'] = ancho;
             armariosTodos[j]['alto'] = alto;
-            armariosTodos[j]['fondo'] = 64;
+            armariosTodos[j]['fondo'] = this.esteeselfondonuevo;
             armariosTodos[j]['codigo'] = codigo;
             this.armarioCogido = armariosTodos[j];
         }
@@ -1280,7 +1281,9 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             $('#nombreMesita').text(nombreArmario);
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 64<p/>');
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
+                '<p style="width:100%">Fondo: ' + this.esteeselfondonuevo + '<p/>'
+            );
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p style="width:100%">Codigo: ' + data.body[0]['codigo'] + '<p/>'
             );

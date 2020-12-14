@@ -404,6 +404,9 @@ div#simplepruebaani1 {
 #imagenApoyo7 {
     height: 280px;
 }
+#imagenApoyo8 {
+    height: 280px;
+}
 
 #datos1 {
     font-size: 14px;
@@ -3659,6 +3662,10 @@ ui bootstrap tweaks
         max-height: 80px;
         max-width: 140px;
     }
+    #imagenApoyo8 {
+        max-height: 80px;
+        max-width: 140px;
+    }
 
     #botonEsconder {
         max-width: 6%;
@@ -4130,6 +4137,10 @@ ui bootstrap tweaks
         max-width: 140px;
     }
     #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo8 {
         max-height: 80px;
         max-width: 140px;
     }
@@ -4717,6 +4728,10 @@ ui bootstrap tweaks
         max-height: 80px;
         max-width: 140px;
     }
+    #imagenApoyo8 {
+        max-height: 80px;
+        max-width: 140px;
+    }
 
     #botonEsconder {
         max-width: 6%;
@@ -5291,6 +5306,10 @@ ui bootstrap tweaks
         max-width: 140px;
     }
     #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo8 {
         max-height: 80px;
         max-width: 140px;
     }
@@ -5920,6 +5939,10 @@ ui bootstrap tweaks
         max-width: 225px;
     }
     #imagenApoyo7 {
+        max-height: 170px;
+        max-width: 225px;
+    }
+    #imagenApoyo8 {
         max-height: 170px;
         max-width: 225px;
     }
@@ -7608,6 +7631,10 @@ ui bootstrap tweaks
         max-height: 80px;
         max-width: 140px;
     }
+    #imagenApoyo8 {
+        max-height: 80px;
+        max-width: 140px;
+    }
 
     #botonEsconder {
         max-width: 6%;
@@ -8192,6 +8219,10 @@ ui bootstrap tweaks
         max-width: 140px;
     }
     #imagenApoyo7 {
+        max-height: 80px;
+        max-width: 140px;
+    }
+    #imagenApoyo8 {
         max-height: 80px;
         max-width: 140px;
     }
@@ -9279,6 +9310,10 @@ ui bootstrap tweaks
         max-height: 80px;
         max-width: 140px;
     }
+    #imagenApoyo8 {
+        max-height: 80px;
+        max-width: 140px;
+    }
 
     #botonEsconder {
         max-width: 6%;
@@ -10003,6 +10038,10 @@ ui bootstrap tweaks
         max-width: 210px;
     }
     #imagenApoyo7 {
+        max-height: 180px;
+        max-width: 210px;
+    }
+    #imagenApoyo8 {
         max-height: 180px;
         max-width: 210px;
     }
@@ -11857,6 +11896,10 @@ ui bootstrap tweaks
         max-width: 160px;
     }
     #imagenApoyo7 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo8 {
         max-height: 145px;
         max-width: 160px;
     }
@@ -14126,6 +14169,10 @@ ui bootstrap tweaks
         max-width: 160px;
     }
     #imagenApoyo7 {
+        max-height: 145px;
+        max-width: 160px;
+    }
+    #imagenApoyo8 {
         max-height: 145px;
         max-width: 160px;
     }

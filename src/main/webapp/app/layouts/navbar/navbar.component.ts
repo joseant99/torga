@@ -11974,13 +11974,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         }
                         if (saberlo != 'A') {
                             if (sesion[1]['apoyo'] != undefined) {
-                                $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
-                                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                        '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['apoyo']['precio'] +
-                                        ' &euro;</i></p>'
-                                );
+                                if (sesion[1]['apoyo']['apoyoSecundario'] == undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
+                                            sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                                            '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                            sesion[1]['apoyo']['precio'] +
+                                            ' &euro;</i></p>'
+                                    );
+                                } else {
+                                    if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                                sesion[1]['apoyo']['precio'] +
+                                                ' &euro;</i></p>'
+                                        );
+                                    }
+                                    if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                                sesion[1]['apoyo']['precio'] +
+                                                ' &euro;</i></p>'
+                                        );
+                                    }
+                                }
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
@@ -12001,13 +12018,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         } else {
                             if (sesion[1]['apoyo'] != undefined) {
-                                $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
-                                        sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                        '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['apoyo']['precio'] +
-                                        ' PP</i></p>'
-                                );
+                                if (sesion[1]['apoyo']['apoyoSecundario'] == undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
+                                            sesion[1]['apoyo']['productoApoyo']['nombre'] +
+                                            '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                            sesion[1]['apoyo']['precio'] +
+                                            ' &euro;</i></p>'
+                                    );
+                                } else {
+                                    if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                                sesion[1]['apoyo']['precio'] +
+                                                ' &euro;</i></p>'
+                                        );
+                                    }
+                                    if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
+                                                sesion[1]['apoyo']['precio'] +
+                                                ' &euro;</i></p>'
+                                        );
+                                    }
+                                }
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
@@ -13612,6 +13646,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     var meterpilotoapoyo;
                                     if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 18) {
                                         meterpilotoapoyo = 1;
+                                        if (prodCarr[m][1]['apoyo']['apoyoSecundario'] != undefined) {
+                                            meterpilotoapoyo = 9;
+                                        }
                                     }
                                     if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 403) {
                                         meterpilotoapoyo = 7;
@@ -13630,6 +13667,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     }
                                     if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 17) {
                                         meterpilotoapoyo = 6;
+                                        if (prodCarr[m][1]['apoyo']['apoyoSecundario'] != undefined) {
+                                            meterpilotoapoyo = 8;
+                                        }
                                     }
                                     prodPrePed = {
                                         productosDormitorio: prodCarr[m][1]['productosDormitorio'],

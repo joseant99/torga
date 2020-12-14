@@ -112,6 +112,13 @@ public class ProductosDormitorioResource {
         Collection<ProductosDormitorio> page =  (Collection<ProductosDormitorio>) productosDormitorioQueryService.findByCategoria(id);
         return ResponseEntity.ok().body(page);
     }
+    
+    @GetMapping("/productos-dormitorios-categoria12/{id}")
+    @Timed
+    public ResponseEntity<Collection<ProductosDormitorio>> getProductosDormitoriosCategoria12(@PathVariable Long id) {
+        Collection<ProductosDormitorio> page =  (Collection<ProductosDormitorio>) productosDormitorioQueryService.findByCategoriaDormi12(id);
+        return ResponseEntity.ok().body(page);
+    }
     @GetMapping("/productos-dormitorios-categoria1/{id}")
     @Timed
     public ResponseEntity<Collection<ProductosDormitorio>> getProductosDormitoriosCategoria1(@PathVariable Long id) {

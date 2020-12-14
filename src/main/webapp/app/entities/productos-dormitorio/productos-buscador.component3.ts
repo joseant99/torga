@@ -1520,6 +1520,24 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }, 1000);
     }
 
+    public fondomostrarpaso1Vista() {
+        $('.armariosDivTodo2 .divfondoocogidomen').css({ display: 'block' });
+        $('.armariosDivTodo2 .divfondoocogidomen').attr('id', 'simplepruebaani');
+
+        setTimeout(function() {
+            $('.armariosDivTodo2 .divfondoSaber').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public fondomostrarpaso1Oculta() {
+        $('.armariosDivTodo1 .divfondoocogidomen').css({ display: 'block' });
+        $('.armariosDivTodo1 .divfondoocogidomen').attr('id', 'simplepruebaani');
+
+        setTimeout(function() {
+            $('.armariosDivTodo1 .divfondoSaber').css({ display: 'none' });
+        }, 1000);
+    }
+
     public fondoNoQuiereCambiar() {
         $('.cuerpoImagenPuertas').css({ display: 'block' });
         $('.armariosDivTodo').css({ position: 'absolute' });
@@ -1657,6 +1675,85 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         }
                         arrayggsmen[j] = data.body[j];
                     }
+                    this.armariosDormitorioOcultaComponent.esteeselfondonuevo = 64;
+                    this.puertasModal = arrayggsmen;
+                    this.armariosDormitorioOcultaComponent.carcarCascosInterioresPuertas();
+                });
+            });
+        });
+        setTimeout(function() {
+            $('#calculadoraCarrito').removeAttr('style');
+            $('#calculadoraCarrito').attr('style');
+            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('.divBuscadorArticulos').css({ height: '100%' });
+            $('#calculadoraCarrito').css({ width: '25%' });
+            $('.armariosDivTodo1 .divfondoSaber').css({ display: 'none' });
+            $('.armariosDivTodo1 .divfondoocogidomen').css({ display: 'none' });
+            $('.armariosDivTodo1 #imagenesArmario2').css({ display: 'none' });
+            if (screen.width < 800) {
+                $('#calculadoraCarrito').css({ width: '100%' });
+                $('#calculadoraCarrito').css({ height: '40%' });
+                $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                $('.armariosDivTodo1 .imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                const elem = $('#textprecioCalculadoraazul');
+                elem[0].style.setProperty('bottom', '0px', 'important');
+                elem[0].style.setProperty('height', '55px', 'important');
+                const elem1 = $('#botonCalculadora');
+                elem1[0].style.setProperty('bottom', '0px', 'important');
+                elem1[0].style.setProperty('height', '55px', 'important');
+            }
+        }, 1000);
+    }
+
+    public fondoNoQuiereCambiarOculta1(id) {
+        $('.armariosDivTodo1 .cuerpoImagenPuertas').css({ display: 'block' });
+        $('.armariosDivTodo1').css({ position: 'absolute' });
+
+        $('.armariosDivTodo1 .cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
+        if (screen.width < 800) {
+            $('.armariosDivTodo1 .cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+        }
+        $('.armariosDivTodo1 .cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+        this.acaProdService.findAca(42).subscribe(data => {
+            this.todos = data.body[0]['acabados'];
+            this.productosDormitorioService.categoria(24).subscribe(data => {
+                this.productosDormitorioModal = data.body;
+                this.productosDormitorioService.categoria(30).subscribe(data => {
+                    var arrayggsmen = [];
+                    for (let j = 0; j < data.body['length']; j++) {
+                        if (j == 0) {
+                            data.body[j]['nombreDistinto'] = 'Tipo A ' + data.body[j]['nombre'];
+                        }
+                        if (j == 1) {
+                            data.body[j]['nombreDistinto'] = 'Tipo B ' + data.body[j]['nombre'];
+                        }
+                        if (j == 2) {
+                            data.body[j]['nombreDistinto'] = 'Tipo C ' + data.body[j]['nombre'];
+                        }
+                        if (j == 3) {
+                            data.body[j]['nombreDistinto'] = 'Tipo D ' + data.body[j]['nombre'];
+                        }
+                        if (j == 4) {
+                            data.body[j]['nombreDistinto'] = 'Tipo E ' + data.body[j]['nombre'];
+                        }
+                        if (j == 5) {
+                            data.body[j]['nombreDistinto'] = 'Tipo F ' + data.body[j]['nombre'];
+                        }
+                        if (j == 6) {
+                            data.body[j]['nombreDistinto'] = 'Tipo G ' + data.body[j]['nombre'];
+                        }
+                        if (j == 7) {
+                            data.body[j]['nombreDistinto'] = 'Tipo H ' + data.body[j]['nombre'];
+                        }
+                        if (j == 8) {
+                            data.body[j]['nombreDistinto'] = 'Tipo I ' + data.body[j]['nombre'];
+                        }
+                        if (j == 9) {
+                            data.body[j]['nombreDistinto'] = 'Tipo J ' + data.body[j]['nombre'];
+                        }
+                        arrayggsmen[j] = data.body[j];
+                    }
+                    this.armariosDormitorioOcultaComponent.esteeselfondonuevo = id;
                     this.puertasModal = arrayggsmen;
                     this.armariosDormitorioOcultaComponent.carcarCascosInterioresPuertas();
                 });
@@ -1734,6 +1831,85 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         }
                         arrayggsmen[j] = data.body[j];
                     }
+                    this.armariosDormitorioVistaComponent.esteeselfondonuevo = 64;
+                    this.puertasModal = arrayggsmen;
+                    this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas();
+                });
+            });
+        });
+        setTimeout(function() {
+            $('#calculadoraCarrito').removeAttr('style');
+            $('#calculadoraCarrito').attr('style');
+            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('.divBuscadorArticulos').css({ height: '100%' });
+            $('#calculadoraCarrito').css({ width: '25%' });
+            $('.armariosDivTodo2 .divfondoSaber').css({ display: 'none' });
+            $('.armariosDivTodo2 .divfondoocogidomen').css({ display: 'none' });
+            $('.armariosDivTodo2 #imagenesArmario2').css({ display: 'none' });
+            if (screen.width < 800) {
+                $('#calculadoraCarrito').css({ width: '100%' });
+                $('#calculadoraCarrito').css({ height: '40%' });
+                $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                $('.armariosDivTodo2 .imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                const elem = $('#textprecioCalculadoraazul');
+                elem[0].style.setProperty('bottom', '0px', 'important');
+                elem[0].style.setProperty('height', '55px', 'important');
+                const elem1 = $('#botonCalculadora');
+                elem1[0].style.setProperty('bottom', '0px', 'important');
+                elem1[0].style.setProperty('height', '55px', 'important');
+            }
+        }, 1000);
+    }
+
+    public fondoNoQuiereCambiarVista1(id) {
+        $('.armariosDivTodo2 .cuerpoImagenPuertas').css({ display: 'block' });
+        $('.armariosDivTodo2').css({ position: 'absolute' });
+
+        $('.armariosDivTodo2 .cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
+        if (screen.width < 800) {
+            $('.armariosDivTodo2 .cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+        }
+        $('.armariosDivTodo2 .cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+        this.acaProdService.findAca(42).subscribe(data => {
+            this.todos = data.body[0]['acabados'];
+            this.productosDormitorioService.categoria(24).subscribe(data => {
+                this.productosDormitorioModal = data.body;
+                this.productosDormitorioService.categoria(30).subscribe(data => {
+                    var arrayggsmen = [];
+                    for (let j = 0; j < data.body['length']; j++) {
+                        if (j == 0) {
+                            data.body[j]['nombreDistinto'] = 'Tipo A ' + data.body[j]['nombre'];
+                        }
+                        if (j == 1) {
+                            data.body[j]['nombreDistinto'] = 'Tipo B ' + data.body[j]['nombre'];
+                        }
+                        if (j == 2) {
+                            data.body[j]['nombreDistinto'] = 'Tipo C ' + data.body[j]['nombre'];
+                        }
+                        if (j == 3) {
+                            data.body[j]['nombreDistinto'] = 'Tipo D ' + data.body[j]['nombre'];
+                        }
+                        if (j == 4) {
+                            data.body[j]['nombreDistinto'] = 'Tipo E ' + data.body[j]['nombre'];
+                        }
+                        if (j == 5) {
+                            data.body[j]['nombreDistinto'] = 'Tipo F ' + data.body[j]['nombre'];
+                        }
+                        if (j == 6) {
+                            data.body[j]['nombreDistinto'] = 'Tipo G ' + data.body[j]['nombre'];
+                        }
+                        if (j == 7) {
+                            data.body[j]['nombreDistinto'] = 'Tipo H ' + data.body[j]['nombre'];
+                        }
+                        if (j == 8) {
+                            data.body[j]['nombreDistinto'] = 'Tipo I ' + data.body[j]['nombre'];
+                        }
+                        if (j == 9) {
+                            data.body[j]['nombreDistinto'] = 'Tipo J ' + data.body[j]['nombre'];
+                        }
+                        arrayggsmen[j] = data.body[j];
+                    }
+                    this.armariosDormitorioVistaComponent.esteeselfondonuevo = id;
                     this.puertasModal = arrayggsmen;
                     this.armariosDormitorioVistaComponent.carcarCascosInterioresPuertas();
                 });
@@ -10504,7 +10680,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 cont++;
             }
         }
-        this.medidasEspecialesService.findProd(idProd).subscribe(data => {
+        this.medidasEspecialesService.findProd(idProd, 1).subscribe(data => {
             medidasEspeciales = data['body'];
             if (id == 1) {
                 $('#imagenProdEspeciales').empty();
