@@ -190,7 +190,7 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected userService: UserService,
-        protected cascoService: CascoService,
+        public cascoService: CascoService,
         protected interioresArmariosService: InterioresArmariosService,
         protected dimensionesProductoService: DimensionesProductoService,
         public armarioService: ArmarioService,
