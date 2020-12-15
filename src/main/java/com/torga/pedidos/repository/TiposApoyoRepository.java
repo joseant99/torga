@@ -21,4 +21,7 @@ public interface TiposApoyoRepository extends JpaRepository<TiposApoyo, Long> {
 	
 	@Query("SELECT u FROM TiposApoyo u WHERE  u.productoApoyo.id =?1 and u.id>60 and u.id<151 ")
 	Collection<TiposApoyo> findAncho2(Long id);
+	
+	@Query("SELECT u FROM TiposApoyo u WHERE  u.productoApoyo.id = ?1 and u.ancho>= ?2 and (u.id <61 or u.id>113) order by u.ancho")
+	Collection<TiposApoyo> findAncho3(Long id, Float ancho);
 }
