@@ -618,6 +618,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
         if (id == 51) {
             $('.divseleccionarcodigoRutaNueva').removeAttr('id');
+            this.alturaArray = [];
+            this.modulosBajos = [];
             $('.divseleccionarcodigoCategorias').attr('id', 'simplepruebaani2');
             $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
             $('body').removeAttr('style');
@@ -1436,53 +1438,100 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
         $('.divseleccionarcodigoCategorias').attr('id', 'simplepruebaani');
         var tipo = this.tipoProductos;
-        if (tipo != 19) {
-            this.productosDormitorioService.categoria12(tipo).subscribe(data => {
-                var array = [];
-                var array1 = [];
-                var objeto = {};
-                var cont = 0;
-                var cont1 = 0;
-                var altura;
-                for (let i = 0; i < data.body['length']; i++) {
-                    if (
-                        data.body[i][0]['id'] != 15 &&
-                        data.body[i][0]['id'] != 16 &&
-                        data.body[i][0]['id'] != 412 &&
-                        data.body[i][0]['id'] != 404 &&
-                        data.body[i][0]['id'] != 405 &&
-                        data.body[i][0]['id'] != 406 &&
-                        data.body[i][0]['id'] != 407 &&
-                        data.body[i][0]['id'] != 409 &&
-                        data.body[i][0]['id'] != 403 &&
-                        data.body[i][0]['id'] != 32 &&
-                        data.body[i][0]['id'] != 211 &&
-                        data.body[i][0]['id'] != 212
-                    ) {
-                        data.body[i][0]['altura'] = data.body[i][1];
-                        if (i == 0) {
-                            altura = data.body[i][1];
-                            array[i] = data.body[i][0];
-                        }
+        if (tipo != 22 && tipo != 14 && tipo != 15) {
+            if (tipo != 19) {
+                this.productosDormitorioService.categoria12(tipo).subscribe(data => {
+                    var array = [];
+                    var array1 = [];
+                    var objeto = {};
+                    var cont = 0;
+                    var cont1 = 0;
+                    var altura;
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i][0]['id'] != 15 &&
+                            data.body[i][0]['id'] != 16 &&
+                            data.body[i][0]['id'] != 412 &&
+                            data.body[i][0]['id'] != 404 &&
+                            data.body[i][0]['id'] != 405 &&
+                            data.body[i][0]['id'] != 406 &&
+                            data.body[i][0]['id'] != 407 &&
+                            data.body[i][0]['id'] != 409 &&
+                            data.body[i][0]['id'] != 403 &&
+                            data.body[i][0]['id'] != 32 &&
+                            data.body[i][0]['id'] != 211 &&
+                            data.body[i][0]['id'] != 212
+                        ) {
+                            data.body[i][0]['altura'] = data.body[i][1];
+                            if (i == 0) {
+                                altura = data.body[i][1];
+                                array[i] = data.body[i][0];
+                            }
 
-                        if (data.body[i][0]['id'] != array[cont1]['id']) {
-                            cont1++;
-                            array[cont1] = data.body[i][0];
-                        }
+                            if (data.body[i][0]['id'] != array[cont1]['id']) {
+                                cont1++;
+                                array[cont1] = data.body[i][0];
+                            }
 
-                        if (altura != data.body[i][1]) {
-                            cont++;
-                            altura = data.body[i][1];
+                            if (altura != data.body[i][1]) {
+                                cont++;
+                                altura = data.body[i][1];
+                            }
+                            array1[cont] = data.body[i][1];
                         }
-                        array1[cont] = data.body[i][1];
                     }
-                }
-                this.alturaArray = array1;
-                this.modulosBajos = array;
-                console.log(array);
-            });
+                    this.alturaArray = array1;
+                    this.modulosBajos = array;
+                    console.log(array);
+                });
+            } else {
+                this.productosDormitorioService.categoria13(tipo).subscribe(data => {
+                    var array = [];
+                    var array1 = [];
+                    var objeto = {};
+                    var cont = 0;
+                    var cont1 = 0;
+                    var altura;
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (
+                            data.body[i][0]['id'] != 15 &&
+                            data.body[i][0]['id'] != 16 &&
+                            data.body[i][0]['id'] != 412 &&
+                            data.body[i][0]['id'] != 404 &&
+                            data.body[i][0]['id'] != 405 &&
+                            data.body[i][0]['id'] != 406 &&
+                            data.body[i][0]['id'] != 407 &&
+                            data.body[i][0]['id'] != 409 &&
+                            data.body[i][0]['id'] != 403 &&
+                            data.body[i][0]['id'] != 32 &&
+                            data.body[i][0]['id'] != 211 &&
+                            data.body[i][0]['id'] != 212
+                        ) {
+                            data.body[i][0]['altura'] = data.body[i][1];
+                            if (i == 0) {
+                                altura = data.body[i][1];
+                                array[i] = data.body[i][0];
+                            }
+
+                            if (data.body[i][0]['id'] != array[cont1]['id']) {
+                                cont1++;
+                                array[cont1] = data.body[i][0];
+                            }
+
+                            if (altura != data.body[i][1]) {
+                                cont++;
+                                altura = data.body[i][1];
+                            }
+                            array1[cont] = data.body[i][1];
+                        }
+                    }
+                    this.alturaArray = array1;
+                    this.modulosBajos = array;
+                    console.log(array);
+                });
+            }
         } else {
-            this.productosDormitorioService.categoria13(tipo).subscribe(data => {
+            this.productosDormitorioService.categoria14(tipo).subscribe(data => {
                 var array = [];
                 var array1 = [];
                 var objeto = {};
@@ -1519,12 +1568,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             cont++;
                             altura = data.body[i][1];
                         }
-                        array1[cont] = data.body[i][1];
+                        array1[0] = data.body[i][1];
                     }
+                }
+                for (let u = 0; u < array.length; u++) {
+                    array[u]['altura'] = array1[0];
                 }
                 this.alturaArray = array1;
                 this.modulosBajos = array;
                 console.log(array);
+                setTimeout(function() {
+                    $('#palturaparaquitarlomesas').css({ display: 'none' });
+                }, 100);
             });
         }
     }

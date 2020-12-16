@@ -26,5 +26,8 @@ public interface ProductosDormitorioRepository extends JpaRepository<ProductosDo
 	
 	@Query("Select u,o.alto from ProductosDormitorio u inner join DimensionesProductoTipo o ON o.productosDormitorio.id=u.id where u.categoriasDormi.id = ?1 and o.mensaje <> 'Medidas Especiales' order by o.alto")
 	Collection<ProductosDormitorio> findByCategoriaDormi13(Long id);
+	
+	@Query("Select u,o.alto from ProductosDormitorio u inner join DimensionesProductoTipo o ON o.productosDormitorio.id=u.id where u.categoriasDormi.id = ?1 and o.mensaje <> 'Medidas Especiales' order by u.id")
+	Collection<ProductosDormitorio> findByCategoriaDormi14(Long id);
 
 }
