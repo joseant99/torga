@@ -62,4 +62,8 @@ export class ProductosDormitorioService {
     categoria14(id: number): Observable<EntityResponseType> {
         return this.http.get<IProductosDormitorio>(`${this.resourceUrl}-categoria14/${id}`, { observe: 'response' });
     }
+
+    categoria15(id: number): Observable<EntityResponseType> {
+        return this.http.get<IProductosDormitorio>(`${this.resourceUrl}-categoria15/${id}`, { observe: 'response' });
+    }
 }

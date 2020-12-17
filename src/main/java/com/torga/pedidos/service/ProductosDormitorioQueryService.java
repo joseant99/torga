@@ -127,4 +127,9 @@ public class ProductosDormitorioQueryService extends QueryService<ProductosDormi
 		// TODO Auto-generated method stub
 		return (Collection<ProductosDormitorio>) (productosDormitorioRepository.findByCategoriaDormi14(id));
 	}
+
+	public Collection<ProductosDormitorio> findByCategoriaDormi15(Long id) {
+		// TODO Auto-generated method stub
+		return (Collection<ProductosDormitorio>) (productosDormitorioRepository.findByCategoriaDormi15(id));
+	}
 }

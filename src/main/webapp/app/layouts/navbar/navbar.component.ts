@@ -13851,7 +13851,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 if (
                                     prodCarr[m][1]['mensajeEspecial'] == 'Ancho especial' ||
                                     prodCarr[m][1]['mensajeEspecial'] == 'Alto especial' ||
-                                    prodCarr[m][1]['mensajeEspecial'] == 'Fondo especial'
+                                    prodCarr[m][1]['mensajeEspecial'] == 'Fondo especial' ||
+                                    prodCarr[m][1]['mensajeEspecial'] == 'Incremento 1 cajon'
                                 ) {
                                     prodPrePed['textoEspecial'] = prodCarr[m][1]['mensajeEspecial'];
                                     prodPrePed['ancho'] = prodCarr[m][1]['ancho'];

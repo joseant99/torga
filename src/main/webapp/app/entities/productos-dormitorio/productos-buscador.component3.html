@@ -87,6 +87,41 @@
 		      
 		    </div>
 	  </div>
+	  
+	  <div class="modal fade" id="modalApoyo1" role="dialog" style="z-index: 1000000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" id="modalcontenidoCss">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un sistema de apoyo</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div class="apoyoModal" id="apoyoModal0"  style="float:left" (click)="apoyoCogido1(0)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal1" style="float:left" (click)="apoyoCogido1(1)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal2" style="float:left" (click)="apoyoCogido1(2)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal3" style="float:left" (click)="apoyoCogido1(3)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal4" style="float:left;margin-right: 20px;" (click)="apoyoCogido1(4)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal5" style="float:left" (click)="apoyoCogido1(5)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal6" style="float:left" (click)="apoyoCogido1(6)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal7"  style="float:left" (click)="apoyoCogido1(7)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal8" style="float:left" (click)="apoyoCogido1(8)"  data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal9" style="float:left" (click)="apoyoCogido1(9)" data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal10" style="float:left" (click)="apoyoCogido1(10)" data-dismiss="modal"></div>
+		          <div class="apoyoModal" id="apoyoModal11" style="float:left" (click)="apoyoCogido1(11)" data-dismiss="modal"></div> 
+		          <div class="apoyoModal" id="apoyoModal12" style="float:left" (click)="apoyoCogido1(12)" data-dismiss="modal"></div>          
+		          <div class="apoyoModal" id="apoyoModal13" style="float:left" (click)="apoyoCogido1(13)" data-dismiss="modal"></div>          
+		                   
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  
 	  <div class="modal fade" id="modalEnviadoCarrito" role="dialog" style="margin-top:200px;z-index: 10000000000;">
 	    <div class="modal-dialog modal-sm">
 	    
@@ -1985,6 +2020,101 @@
 		
 		
     </h2>
+    
+    <div class="divseleccionarcodigoRutaNueva" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(50)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span id="textoStrongNativ" style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%">RUTAS</span></div>
+    		<div style="width:85%;padding-top: 135px;margin-left:15%;" id="idDivDentroImagenes">
+	    		<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;padding-top: 25px;padding-bottom: 25px;text-align:center" (click)="medidaEspecial()" id="pruebahoverdiv">
+	        		<span style="font-size:35px;" id="medespecialDiv">MEDIDA ESPECIAL</span>
+	        	</div>
+	        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;padding-top: 25px;padding-bottom: 25px;text-align:center" (click)="medidaEstandar()" id="pruebahoverdiv">
+	        		<span style="font-size:35px;" id="medestandarDiv">MEDIDA ESTANDAR</span>
+	        	</div>
+        	</div>
+    </div>
+	<div class="divseleccionarcodigoCategorias" style="display:none;top: 0;bottom: 0;height: 100%;">
+		<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(51)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoStrongNativ">RUTAS</span></div>
+		
+		<div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
+			<div  *ngFor="let codigo1 of alturaArray" style="float:left;width:100%;margin-top: 15px;margin-bottom: 30px;">
+				<p style="width:100%;text-align:center;font-size:24px" id="palturaparaquitarlomesas">ALTURA {{codigo1}}</p>
+				<div *ngFor="let codigo of modulosBajos">
+		        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" *ngIf="codigo1 === codigo.altura" id="pruebahoverdiv" (click)="paso1cogerespecial(codigo.id,codigo.altura)">
+		        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" [src]="'data:' + codigo.imagenContentType + ';base64,' + codigo.imagen">
+		        	</div>
+	        	</div>
+	        </div>
+		</div>
+	</div>
+	<div class="divseleccionarcodigoEscogerTipoEspecial" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(52)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoStrongNativ">ESPECIAL</span></div>
+    		<div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
+	    		<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;padding-top: 25px;padding-bottom: 25px;text-align:center;margin-left:20%" class="anchoquitarmargin" id="pruebahoverdiv" (click)="tipoEspecialCogido(1)">
+	        		<span style="font-size:35px;">ANCHO</span>
+	        	</div>
+	        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;padding-top: 25px;padding-bottom: 25px;text-align:center" class="alturaclasequitarposible" id="pruebahoverdiv" (click)="tipoEspecialCogido(2)">
+	        		<span style="font-size:35px;">ALTO</span>
+	        	</div>
+	        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;padding-top: 25px;padding-bottom: 25px;text-align:center;display:none" class="cajon1incremento" id="pruebahoverdiv" (click)="tipoEspecialCogido(3)">
+	        		<span style="font-size:35px;">+ 1 CAJON</span>
+	        	</div>
+	        	
+        	</div>
+    </div>
+    
+    <div class="divseleccionarcodigoEscogerMedidaEspecial" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(53)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoEspecial textoStrongNativ">MEDIDA</span></div>
+    		<div style="margin-top:9%;width:90%;margin-left:10%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona medida especial</p>
+	   			<div *ngFor="let codigo of especiales" id="divcodigoarituclos" class="divcodigometerfondo" (click)="cargarDimen10(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
+    <div class="divseleccionarcodigoEscogerMedidaEspecialAltura" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(54)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoEspecial textoStrongNativ">MEDIDA</span></div>
+    		<div style="margin-top:9%;width:90%;margin-left:10%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona medida especial</p>
+	   			<div *ngFor="let codigo of especiales" id="divcodigoarituclos" class="divcodigometerfondo" (click)="alturacogidaEspecial(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
+    <div class="divseleccionarcodigoEscogerMedidaEspecialFondo" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(55)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoEspecial textoStrongNativ">MEDIDA</span></div>
+    		<div style="margin-top:9%;width:90%;margin-left:10%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona medida especial</p>
+	   			<div *ngFor="let codigo of especiales" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondocogidaEspecial(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
+    <div class="divseleccionarcodigoEscogerMedidaEspecialAncho" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(56)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoStrongNativ">ANCHO</span></div>
+    		<div style="margin-top:9%;width:75%;margin-left:15%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona Ancho Definido</p>
+	   			<div *ngFor="let codigo of anchos" id="divcodigoarituclos" class="divcodigometerfondo" (click)="cargarDimen11(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
+    <div class="divseleccionarcodigoEscogerMedidaEspecialAncho1" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(57)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoStrongNativ">ANCHO</span></div>
+    		<div style="margin-top:9%;width:75%;margin-left:15%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona Ancho Definido</p>
+	   			<div *ngFor="let codigo of anchos" id="divcodigoarituclos" class="divcodigometerfondo" (click)="cargarDimen12(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
+    
+    
+    
     <div class="divseleccionarcodigo"  style="display:none;top: 0;bottom: 0;height: 100%;">
     	 <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(1)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textodivsuperiorquenosecambia"></span></div>
     	
