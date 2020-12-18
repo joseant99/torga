@@ -79,6 +79,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     tiendaCargadaPresu: any;
     singulares: any;
     vitrinas: any;
+    currentFileUploadExcel: File;
+    selectedFilesExcel: FileList;
+    iddelpedido: any;
+    progressExcel: { percentage: number } = { percentage: 0 };
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         public presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
@@ -115,6 +119,12 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             this.reverse = data.pagingParams.ascending;
             this.predicate = data.pagingParams.predicate;
         });
+    }
+
+    selectFileExcel(event) {
+        var presu;
+        presu = sessionStorage.getItem('presupuesto');
+        this.selectedFilesExcel = event.target.files;
     }
 
     public aparadescargarpdf() {
@@ -643,6 +653,14 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         this.isSaving = false;
     }
 
+    public subirpdfweb() {
+        this.progressExcel.percentage = 0;
+        this.currentFileUploadExcel = this.selectedFilesExcel.item(0);
+        this.vistaadminService.pushFileToStorageExcel(this.currentFileUploadExcel).subscribe(event => {});
+
+        this.selectedFilesExcel = undefined;
+    }
+
     loadAll() {
         var medidasEspeciales;
 
@@ -654,6 +672,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var precioMulti = JSON.parse(sessionStorage.getItem(item));
         var presu;
         presu = sessionStorage.getItem('presupuesto');
+        this.iddelpedido = presu;
         var todaTienda = this.datosUsuarioService.tiendaCargadaPresu;
         this.tiendaNombre = todaTienda['nombreComercial'];
         this.numero = todaTienda['telefono'];
@@ -698,6 +717,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         var precioPunto = this.precioPunto[0];
                     }
                     if (toma[i]['presupuestoPedido'] != null) {
+                        this.iddelpedido = toma[i]['presupuestoPedido']['numero_pedido'];
                         $('#textoObservaciones').css({ display: 'block' });
                         if (toma[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
                             $('#divobservacionesparaimprimir #textoObservaciones').append(

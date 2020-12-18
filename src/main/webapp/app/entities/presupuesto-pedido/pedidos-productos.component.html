@@ -378,11 +378,9 @@
 </div>
 </div>
 		<div style="float:left;width:100%">
-		
-				  		<p *jhiHasAnyAuthority="'ROLE_ADMIN'" style="text-align:center;display:none"><a id="aparadescargarpdf" href="../../../content/images/pedido.pdf" download="pedido" >Descarga la imagen</a></p>
 			<!-- <p style="text-align:center;"><a id="aparadescargarpdf" href="../../../content/images/pedido.pdf" download="pedido" >Descarga PDF</a></p> -->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalEnviarPorCorreo">ENVIAR PDF POR CORREO</button></p> -->
-	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="aparadescargarpdf()">DESCARGAR EN PDF</button></p>
+	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/imagenesSubidas/{{iddelpedido}}.pdf" download="pedido" >DESCARGAR EN PDF</a></button></p>
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
 	  		<!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
