@@ -380,16 +380,20 @@
 		<div style="float:left;width:100%">
 			<!-- <p style="text-align:center;"><a id="aparadescargarpdf" href="../../../content/images/pedido.pdf" download="pedido" >Descarga PDF</a></p> -->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalEnviarPorCorreo">ENVIAR PDF POR CORREO</button></p> -->
-	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/imagenesSubidas/{{iddelpedido}}.pdf" download="pedido" >DESCARGAR EN PDF</a></button></p>
+	  		<p style="text-align:center;display:none" id="botonsepuededescargar"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/imagenesSubidas/{{iddelpedido}}.pdf" download="{{iddelpedido}}" style="color:white">CONFIRMACION DISPONIBLE</a></button></p>
+	  		<p style="text-align:center" id="botonnosepuededescargar"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">CONFIRMACION NO DISPONIBLE</a></button></p>		
+	  		<p style="text-align:center;display:none" id="botonsepuededescargar1"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/facturas/{{iddefactura}}.pdf" download="{{iddefactura}}" style="color:white">FACTURA DISPONIBLE</a></button></p>
+	  		<p style="text-align:center" id="botonnosepuededescargar1"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">FACTURA NO DISPONIBLE</a></button></p>		
+	  		
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
-	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
-	  		<!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
+	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
+	  		 --><!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
 	  		<p id="contacto2" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal1">Contacto con Fabrica</button></p>-->
 	  		<!--  <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" [routerLink]="['/presupuesto-edicion']">EDITAR PRESUPUESTO</button></p>-->
 	  		<p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;"  [routerLink]="['/pedidos-usuario']">SALIR</button></p>
 	  		
-	  		<p id="pfilasalir" style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
-		
+	  		<!-- <p id="pfilasalir" style="text-align:center;position: absolute;margin-top: -81px;margin-left: 42.16%;z-index: 10;" *jhiHasAnyAuthority="'ROLE_ADMIN'"><button id="botonTodosTamaño" style="width: 300px;background-color: #CDCDCD;color: black;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalVistoPresupuesto"">SALIR</button></p>
+			 -->
 		</div>
   	</div>
 <div class="modal fade" id="modalPasarPedido" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
@@ -424,6 +428,22 @@
 	        	<!--  <p style="text-align:center">&#191;Escoge una direccion de envio</p>
 	        	<p style="text-align:center"><select id="direccion"></select></p>-->
 	          <img id="imagenRueda" src="../../../content/images/ruedaGirando.gif">
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalmostrarmensajenodispo" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p>EL PEDIDO HA LLEGADO A FABRICA.</p>
+	        	<p>LE NOTIFICAREMOS TAN PRONTO CUANDO TENGAMOS LA CONFIRMACION DEL PEDIDO DISPONIBLE.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
 	        </div>
 	      </div>
 	      

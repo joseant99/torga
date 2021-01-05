@@ -82,26 +82,6 @@ div#simplepruebaani2 {
     -webkit-animation-direction: normal;
     -webkit-animation-fill-mode: forwards;
 }
-.fade {
-    opacity: 1;
-    top: 100%;
-
-    -moz-animation-name: simple30-animation;
-    -moz-animation-duration: 0.5s;
-    -moz-animation-delay: 0s;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
-    -moz-animation-direction: normal;
-    -moz-animation-fill-mode: forwards;
-
-    -webkit-animation-name: simple30-animation;
-    -webkit-animation-duration: 0.3s;
-    -webkit-animation-delay: 0s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: ease-out;
-    -webkit-animation-direction: normal;
-    -webkit-animation-fill-mode: forwards;
-}
 
 .subir {
     opacity: 1;
@@ -3464,7 +3444,7 @@ ui bootstrap tweaks
     margin-top: 200px;
 }
 #contenidoDivPrincipal {
-    margin-top: 52px;
+    margin-top: 73px;
 }
 #botonIzquierdaComposicion {
     margin-left: 75px;

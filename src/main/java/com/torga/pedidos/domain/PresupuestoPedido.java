@@ -30,6 +30,15 @@ public class PresupuestoPedido implements Serializable {
 
     @Column(name = "pedido")
     private Integer pedido;
+    
+    @Column(name = "web")
+    private Integer web;
+    
+    @Column(name = "esta_pedido")
+    private Integer estapedido;
+    
+    @Column(name = "esta_factura")
+    private Integer estafactura;
 
     @Column(name = "puntos")
     private Float puntos;
@@ -45,6 +54,9 @@ public class PresupuestoPedido implements Serializable {
     
     @Column(name = "num_pedido")
     private String numero_pedido;
+    
+    @Column(name = "num_factura")
+    private String numero_factura;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -101,6 +113,45 @@ public class PresupuestoPedido implements Serializable {
         this.pedido = pedido;
     }
     
+    public Integer getWeb() {
+        return web;
+    }
+
+    public PresupuestoPedido web(Integer web) {
+        this.web = web;
+        return this;
+    }
+
+    public void setWeb(Integer web) {
+        this.web = web;
+    }
+    
+    public Integer getEstapedido() {
+        return estapedido;
+    }
+
+    public PresupuestoPedido estapedido(Integer estapedido) {
+        this.estapedido = estapedido;
+        return this;
+    }
+
+    public void setEstapedido(Integer estapedido) {
+        this.estapedido = estapedido;
+    }
+    
+    public Integer getEstafactura() {
+        return estafactura;
+    }
+
+    public PresupuestoPedido estafactura(Integer estafactura) {
+        this.estafactura = estafactura;
+        return this;
+    }
+
+    public void setEstafactura(Integer estafactura) {
+        this.estafactura = estafactura;
+    }
+    
     public Integer getVisto() {
         return visto;
     }
@@ -151,6 +202,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setNumero_pedido(String numero_pedido) {
         this.numero_pedido = numero_pedido;
+    }
+    
+    public String getNumero_factura() {
+        return numero_factura;
+    }
+
+    public PresupuestoPedido numero_factura(String numero_factura) {
+        this.numero_factura = numero_factura;
+        return this;
+    }
+
+    public void setNumero_factura(String numero_factura) {
+        this.numero_factura = numero_factura;
     }
 
     public String getFecha_pedido() {

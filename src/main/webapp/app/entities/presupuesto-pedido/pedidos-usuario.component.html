@@ -3,7 +3,7 @@
     <br/>
    
     	<p style="text-align:center;font-size: 28PX;margin-bottom: 40PX;">PEDIDOS</p>
-    	<p style="text-align:center;"><select style="height: 50px;width: 300px;" id="filtroos" (change)="filtrosBuscados()">
+    	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;"><select style="height: 50px;width: 300px;" id="filtroos" (change)="filtrosBuscados()">
     		<option>TODOS</option>
     		<!--  <option>FECHA PEDIDO</option>
     		<option *jhiHasAnyAuthority="'ROLE_ADMIN'">CODIGO CLIENTE</option>-->
@@ -11,10 +11,10 @@
     		<option *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'">NOMBRE FISCAL</option>
     		<!-- <option>REFERENCIA CLIENTE</option>-->
     	</select></p>
-    	<p style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
-    	<p style="text-align:center;display: none" id="nombreFiscalSelectFiltros" ><select style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalSelect" ><option></option></select></p>
-    	<p style="text-align:center;display: none" id="fechaFiltrado" ><input style="height: 50px;width: 300px;" type="date" id="fechaBus"></p>
-        <p style="text-align:center;"><button style="width: 140px;height: 44px;font-size: 20px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="buscarPresu()">BUSCAR</button></p>
+    	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
+    	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="nombreFiscalSelectFiltros" ><select style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalSelect" ><option></option></select></p>
+    	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="fechaFiltrado" ><input style="height: 50px;width: 300px;" type="date" id="fechaBus"></p>
+        <p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;"><button style="width: 140px;height: 44px;font-size: 20px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="buscarPresu()">BUSCAR</button></p>
 		 <div class="table-responsive" *ngIf="presupuestoPedidos" >
         <table class="table table-striped" id="presupuestoPedidosTabla">
             <thead>
@@ -22,7 +22,7 @@
             <th><span>Numero Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
              <th (click) = "ordenarPorFecha()"><span >Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            
+            <th jhiSortBy="codigo" ><span >Fecha Prevista de Entrega</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
@@ -42,7 +42,9 @@
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.login}}</i>
                 </td>
-                
+                <td >
+                    <i *ngIf="presupuestoPedido != undefined"> </i>
+                </td>
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
                 </td>
@@ -78,7 +80,25 @@
                         </button>           
                     </div>
                      -->
-                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;POSITION: absolute;z-index: 1;right: 10px;">
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
+                        <button *ngIf="presupuestoPedido.estafactura == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo">
+                            <span class="d-md-inline">FACTURA</span>
+                        </button>
+                        <button *ngIf="presupuestoPedido.estafactura == 1" class="btn btn-info btn-sm" href="../../../content/images/imagenesSubidas/presupuestoPedido.numero_factura.pdf" download="presupuestoPedido.numero_factura">
+                            <span class="d-md-inline">FACTURA</span>
+                        </button>           
+                    </div>
+                     
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
+                        <button *ngIf="presupuestoPedido.estapedido == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo">
+                            <span class="d-md-inline">CONFIRMACION</span>
+                        </button>
+                        <button *ngIf="presupuestoPedido.estapedido == 1"  class="btn btn-info btn-sm">
+                            <span (click)="descargarconfirmacion(presupuestoPedido.numero_pedido)" class="d-md-inline">CONFIRMACION</span>
+                        </button>          
+                    </div>
+                     <a id="estosoloparadescargar" style="display:none"></a>
+                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
                         <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
                                 [routerLink]="['/pedidos-producto' ]"
                                 class="btn btn-info btn-sm">
@@ -86,7 +106,11 @@
                         </button>           
                     </div>
                     
-                    <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 2;right: 10px;">
+                    
+                    
+                    
+                    
+                    <!-- <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="btn-group flex-btn-group-container" style="float: right;margin-left:20px;POSITION: absolute;z-index: 2;right: 10px;">
                         <button *ngIf="presupuestoPedido.visto == 0" style="background-color:red" (click)="cogerIdPresupuesto1(presupuestoPedido.id)" type="submit"
                                 class="btn btn-info btn-sm">
                             <span class="d-none d-md-inline">VER PEDIDO</span>
@@ -97,7 +121,7 @@
                             <span class="d-none d-md-inline">VER PEDIDO</span>
                         </button>         
                     </div>
-                    
+                     -->
                     
                     
                     
@@ -130,6 +154,22 @@
 	         <p style="float:right"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">Cancelar</button></p>
 	        </div>
 	        	<p id="verPresupuesto" style="display:none"> <a data-dismiss="modal" routerLink="../presupuesto-usuario"  routerLinkActive="active"><span>Abrir Presupuesto</span></a></p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalmostrarmensajenodispo" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p>EL PEDIDO HA LLEGADO A FABRICA.</p>
+	        	<p>LE NOTIFICAREMOS TAN PRONTO CUANDO TENGAMOS LA CONFIRMACION DEL PEDIDO DISPONIBLE.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
 	      </div>
 	      
 	    </div>

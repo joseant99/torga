@@ -63,6 +63,7 @@ export class HomeComponent implements OnInit {
         $('#cestaImagen').css({ display: 'none' });
         $('#menuFijoArriba').attr('style');
         $('#menuFijoArriba').css({ display: 'none' });
+        $('.menuFijoArriba1').css({ display: 'none' });
         this.accountService.identity().then(account => {
             this.account = account;
         });
@@ -99,6 +100,7 @@ export class HomeComponent implements OnInit {
                 $('#botonEsconder').attr('style');
                 $('#botonEsconder').css({ 'max-width': '100%' });
                 $('#menuFijoArriba').removeAttr('style');
+                $('.menuFijoArriba1').css({ display: 'block' });
                 var cont = 0;
                 for (let i = 1; i < 20; i++) {
                     if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
@@ -107,8 +109,14 @@ export class HomeComponent implements OnInit {
                 }
 
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                    $('#menuPrincipal').css({ display: 'block' });
+                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                    $('#menuPrincipal').css({ display: 'block' });
+                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                     this.represenTorgaService.findUsu(account.id).subscribe(data => {
@@ -117,9 +125,14 @@ export class HomeComponent implements OnInit {
                             this.representanteTiendaService.representante = data.body[0]['represenTorga'];
                         });
                     });
-
+                    $('#menuPrincipal').css({ display: 'block' });
+                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
+                    $('#menuPrincipal').css({ display: 'block' });
+                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else {
                     this.account = account;

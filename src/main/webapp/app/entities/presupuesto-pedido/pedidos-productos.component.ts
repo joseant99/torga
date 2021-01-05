@@ -82,6 +82,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     currentFileUploadExcel: File;
     selectedFilesExcel: FileList;
     iddelpedido: any;
+    iddefactura: any;
     progressExcel: { percentage: number } = { percentage: 0 };
     constructor(
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
@@ -718,6 +719,33 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                     }
                     if (toma[i]['presupuestoPedido'] != null) {
                         this.iddelpedido = toma[i]['presupuestoPedido']['numero_pedido'];
+                        this.iddefactura = toma[i]['presupuestoPedido']['numero_factura'];
+
+                        $.ajax({
+                            url: '../../../content/images/imagenesSubidas/' + this.iddelpedido + '.pdf',
+                            type: 'HEAD',
+                            error: function() {
+                                $('#botonnosepuededescargar').css({ display: 'block' });
+                                $('#botonsepuededescargar').css({ display: 'none' });
+                            },
+                            success: function() {
+                                $('#botonnosepuededescargar').css({ display: 'none' });
+                                $('#botonsepuededescargar').css({ display: 'block' });
+                            }
+                        });
+                        $.ajax({
+                            url: '../../../content/images/facturas/' + this.iddefactura + '.pdf',
+                            type: 'HEAD',
+                            error: function() {
+                                $('#botonnosepuededescargar1').css({ display: 'block' });
+                                $('#botonsepuededescargar1').css({ display: 'none' });
+                            },
+                            success: function() {
+                                $('#botonnosepuededescargar1').css({ display: 'none' });
+                                $('#botonsepuededescargar1').css({ display: 'block' });
+                            }
+                        });
+
                         $('#textoObservaciones').css({ display: 'block' });
                         if (toma[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
                             $('#divobservacionesparaimprimir #textoObservaciones').append(

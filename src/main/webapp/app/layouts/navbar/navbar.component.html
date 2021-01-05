@@ -28,6 +28,7 @@
 -->    
 	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
+<div id="menuFijoArriba" class="menuFijoArriba1" style="height:25px; top:40px;background-color:yellow"><p style="width:100%;text-align:center;letter-spacing:2px">TELEFONO DE ASISTENCIA: 647 15 68 40</p></div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
 <div style="float:left;width:100%;top:50px;" id="contenidoDivPrincipal">				
 	<div id="menuUnico">				
@@ -729,7 +730,7 @@
 			</ul>
 			
 		-->	
-			
+			<!-- 
 			<div id="divsiesrepresentante">
 				<ul style="list-style:none;margin-left:-40px;margin-top:30px">
 	       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -743,6 +744,7 @@
 				</ul>
 				
 			</div>
+			 -->
 			<!--  
       	  <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li id="liTitulo5" style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_USER','ROLE_ADMIN']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -1281,21 +1283,21 @@
   </div>
 </ng-template>
  
-	<div class="modal fade" id="modalCesta" role="dialog" style="z-index: 1000000000000;max-width: 100%;margin-top: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">
-		    <div class="modal-dialog modal-lg" style="max-width: 100%;margin: 0;padding-bottom: 0px;height: 100%;">
+	<div class="modal fade" id="modalCesta" role="dialog" style="z-index: 1000000000000;">
+		    <div class="modal-dialog modal-lg">
 		    
 		     
-		      <div class="modal-content" style="background-color:white!important;margin-top: 0px !important;width: 100% !important;height: 100% !important;" id="modalcontenidoCss">
+		      <div class="modal-content" id="modalcontenidoCss">
 		        <div class="modal-header">
 		          <h4 class="modal-title" style="text-align:center;width: 100%;font-size: 25px;">CESTA</h4>
 		          <button type="button" class="close" (click)="subirmodal()">&times;</button>
 		        </div>
-		        <div class="modal-body" id="muyImportante" style="height: 767px;overflow-y:scroll;overflow-x:hidden">
+		        <div class="modal-body" id="muyImportante" style="height: 590px;overflow-y:scroll;overflow-x:hidden">
 			        
 		        </div>
 		       <div class="modal-footer">
 			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
-			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 650px;font-weight:600" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span>
+			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 450px;font-weight:600" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span>
 			       
 			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">FINALIZAR</button></p>
 		        </div>
@@ -1529,7 +1531,9 @@
 					        <p>Codigo: {{array.codigo}}</p>
 					        <p>Nombre Fiscal: {{array.nombreFiscal}}</p>
 					        <p>Nombre Comercial: {{array.nombreComercial}}</p>
-					        <p>CIF: {{array.cif}}</p></div>
+					        <p>CIF: {{array.cif}}</p>
+					        <p>Provincia: {{array.provincia}}</p>
+					        <p>Municipio: {{array.municipio}}</p></div>
 				        	<!-- <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" (change)="tiendasDireccionPadentro()" /><select id="selectTiendaDelNav" (change)="tiendasDireccionPadentro()" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
 				        	<div style="margin-top:25px;" id="divdireccionentregamodal">
 				        		<input  style="height:30px;width:180px;margin-right:35px" list="listaDireccionTiendas" id="selectDireccionTiendas" name="listaTidir" type="text" /><select id="selectDireccionTiendaDelNav" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label style="margin-left:-20px">Direccion Entrega</label><br>  

@@ -13,6 +13,8 @@ type EntityArrayResponseType = HttpResponse<IPresupuestoPedido[]>;
 export class PresupuestoPedidoService {
     public resourceUrl = SERVER_API_URL + 'api/presupuesto-pedidos';
     public resourceUrl1 = SERVER_API_URL + 'api/presupuesto-pedidos1';
+    public resourceUrl2 = SERVER_API_URL + 'api/presupuesto-pedidos2';
+    public resourceUrl3 = SERVER_API_URL + 'api/presupuesto-pedidos4';
     constructor(protected http: HttpClient) {}
 
     create(presupuestoPedido: IPresupuestoPedido): Observable<EntityResponseType> {
@@ -38,5 +40,13 @@ export class PresupuestoPedidoService {
 
     query1(): Observable<EntityArrayResponseType> {
         return this.http.get<IPresupuestoPedido[]>(this.resourceUrl1, { observe: 'response' });
+    }
+
+    query2(): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoPedido[]>(this.resourceUrl2, { observe: 'response' });
+    }
+
+    comprobarexiste(id: any) {
+        return this.http.get(`${this.resourceUrl3}/${id}`, { observe: 'response' });
     }
 }

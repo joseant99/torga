@@ -280,6 +280,12 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         }
     }
 
+    public descargarconfirmacion(id) {
+        $('#estosoloparadescargar').attr('href', '../../../content/images/imagenesSubidas/' + id + '.pdf');
+        $('#estosoloparadescargar').attr('download', id);
+        $('#estosoloparadescargar')[0].click();
+    }
+
     loadAll() {
         console.log(sessionStorage);
         $('#page-heading').css({ 'margin-left': '2%' });
@@ -291,7 +297,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         var todos = this.representanteTiendaService.todos;
         this.presupuestoPedidoService
             .query({
-                size: 10000000
+                size: 100000
             })
             .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
                 $.each(res['body'], function(index, value) {
@@ -320,10 +326,17 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                 });
                 if (res['body']['0'] != 'undefined') {
                     this.tamano = contador;
-                    this.todos = cogidos;
-                    this.presuped1 = cogidos;
+                    var cont = 0;
+                    var ole = [];
+                    for (let i = cogidos.length - 1; i >= 0; i--) {
+                        ole[cont] = cogidos[i];
+                        cont++;
+                    }
+                    this.todos = ole;
+                    this.presuped1 = ole;
                     this.headres = res.headers;
-                    this.paginatePresupuestoPedidos(cogidos, res.headers);
+                    res.headers.set('X-Total-Count', this.tamano);
+                    this.paginatePresupuestoPedidos(ole, res.headers);
                 }
 
                 (res: HttpErrorResponse) => this.onError(res.message);
@@ -489,11 +502,11 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     }
 
     protected paginatePresupuestoPedidos(data: IPresupuestoPedido[], headers: HttpHeaders) {
+        this.presupuestoPedidos = data;
         var tamano = headers.get('X-Total-Count');
         tamano = this.tamano;
-        this.links = this.parseLinks.parse(headers.get('link'));
+        //this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = parseInt(tamano, 10);
         this.queryCount = this.totalItems;
-        this.presupuestoPedidos = data;
     }
 }

@@ -31,6 +31,12 @@ public class DatosUsuario implements Serializable {
 
     @Column(name = "telefono")
     private String telefono;
+    
+    @Column(name = "provincia")
+    private String provincia;
+    
+    @Column(name = "municipio")
+    private String municipio;
 
     @Column(name = "nombre_comercial")
     private String nombreComercial;
@@ -208,6 +214,32 @@ public class DatosUsuario implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public DatosUsuario provincia(String provincia) {
+        this.provincia = provincia;
+        return this;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+    
+    public String getMunicipio() {
+        return provincia;
+    }
+
+    public DatosUsuario municipio(String municipio) {
+        this.municipio = municipio;
+        return this;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public String getTelefono() {

@@ -17,6 +17,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collection;
@@ -103,6 +105,20 @@ public class PresupuestoPedidoResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
      */
+    @GetMapping("/presupuesto-pedidos2")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidos2(Pageable pageable) {
+        log.debug("REST request to get a page of PresupuestoPedidos");
+        Collection<PresupuestoPedido> page = presupuestoPedidoRepository.findByPresupuesto1();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /presupuesto-pedidos : get all the presupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
+     */
     @GetMapping("/presupuesto-pedidos1")
     @Timed
     public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidos1() {
@@ -110,6 +126,24 @@ public class PresupuestoPedidoResource {
         Collection<PresupuestoPedido> page = presupuestoPedidoRepository.findByPresupuesto();
         return ResponseEntity.ok().body(page);
     }
+    @GetMapping("/presupuesto-pedidos4/{id}")
+    @Timed
+    public String getAllPresupuestoPedidos4(@PathVariable String id) {
+    	String sFichero = id;
+        File fichero = new File(sFichero);
+        System.out.println("El fichero " + sFichero);
+        if (fichero.exists()) {
+           System.out.println("El fichero " + sFichero + " existe");
+           return "existe";
+        }
+        else {
+           System.out.println("Pues va a ser que no");
+           return "noexiste";
+        }
+
+    }
+    
+    
 
     /**
      * GET  /presupuesto-pedidos/:id : get the "id" presupuestoPedido.
