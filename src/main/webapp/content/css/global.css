@@ -3440,6 +3440,10 @@ ui bootstrap tweaks
 #modalCesta {
     margin-top: 70px;
 }
+#modalConfirmarCreacionPresu {
+    margin-top: 70px;
+}
+
 #modalEnviadoCarrito {
     margin-top: 200px;
 }
@@ -3938,6 +3942,10 @@ ui bootstrap tweaks
         margin-top: 10px;
         z-index: 100000;
     }
+    #modalConfirmarCreacionPresu {
+        margin-top: 10px;
+        z-index: 100000;
+    }
     #page-heading {
         margin-left: 0%;
         font-size: 26px;
@@ -4415,6 +4423,10 @@ ui bootstrap tweaks
         margin-left: 375px;
     }
     #modalCesta {
+        margin-top: 10px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: 10px;
         z-index: 100000;
     }
@@ -5001,6 +5013,10 @@ ui bootstrap tweaks
         margin-top: -95px;
         z-index: 100000;
     }
+    #modalConfirmarCreacionPresu {
+        margin-top: -95px;
+        z-index: 100000;
+    }
     #page-heading {
         margin-left: 0%;
         font-size: 26px;
@@ -5582,6 +5598,10 @@ ui bootstrap tweaks
         margin-left: 375px;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }
@@ -6282,6 +6302,10 @@ ui bootstrap tweaks
         margin-left: 34%;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }
@@ -7913,6 +7937,10 @@ ui bootstrap tweaks
         margin-top: -15px;
         z-index: 100000;
     }
+    #modalConfirmarCreacionPresu {
+        margin-top: -15px;
+        z-index: 100000;
+    }
     #page-heading {
         margin-left: 20%;
         font-size: 22px;
@@ -8522,6 +8550,10 @@ ui bootstrap tweaks
         margin-left: 165px;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }
@@ -9653,6 +9685,10 @@ ui bootstrap tweaks
         margin-top: -15px;
         z-index: 100000;
     }
+    #modalConfirmarCreacionPresu {
+        margin-top: -15px;
+        z-index: 100000;
+    }
     #page-heading {
         margin-left: 20%;
         font-size: 22px;
@@ -10352,6 +10388,10 @@ ui bootstrap tweaks
         margin-left: 58%;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }
@@ -12266,6 +12306,10 @@ ui bootstrap tweaks
         margin-left: 18%;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }
@@ -14522,6 +14566,10 @@ ui bootstrap tweaks
         margin-left: 0px;
     }
     #modalCesta {
+        margin-top: -15px;
+        z-index: 100000;
+    }
+    #modalConfirmarCreacionPresu {
         margin-top: -15px;
         z-index: 100000;
     }

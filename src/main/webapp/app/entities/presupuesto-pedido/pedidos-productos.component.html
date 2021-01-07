@@ -380,10 +380,10 @@
 		<div style="float:left;width:100%">
 			<!-- <p style="text-align:center;"><a id="aparadescargarpdf" href="../../../content/images/pedido.pdf" download="pedido" >Descarga PDF</a></p> -->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalEnviarPorCorreo">ENVIAR PDF POR CORREO</button></p> -->
-	  		<p style="text-align:center;display:none" id="botonsepuededescargar"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/imagenesSubidas/{{iddelpedido}}.pdf" download="{{iddelpedido}}" style="color:white">CONFIRMACION DISPONIBLE</a></button></p>
+	  		<p style="text-align:center;display:none" id="botonsepuededescargar"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/imagenesSubidas/{{iddelpedido}}.pdf" download="{{iddelpedido}}" style="color:black;font-weight: 400;font-size:20px">CONFIRMACION DISPONIBLE</a></button></p>
 	  		<p style="text-align:center" id="botonnosepuededescargar"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">CONFIRMACION NO DISPONIBLE</a></button></p>		
-	  		<p style="text-align:center;display:none" id="botonsepuededescargar1"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/facturas/{{iddefactura}}.pdf" download="{{iddefactura}}" style="color:white">FACTURA DISPONIBLE</a></button></p>
-	  		<p style="text-align:center" id="botonnosepuededescargar1"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">FACTURA NO DISPONIBLE</a></button></p>		
+	  		<p style="text-align:center;display:none" id="botonsepuededescargar1"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="../../../content/images/facturas/{{iddefactura}}.pdf" download="{{iddefactura}}" style="color:black;font-weight: 400;font-size:20px">FACTURA DISPONIBLE</a></button></p>
+	  		<p style="text-align:center" id="botonnosepuededescargar1"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo1"><a style="color:white">FACTURA NO DISPONIBLE</a></button></p>		
 	  		
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
@@ -443,6 +443,22 @@
 	        <div class="modal-body">
 	        	<p>EL PEDIDO HA LLEGADO A FABRICA.</p>
 	        	<p>LE NOTIFICAREMOS TAN PRONTO CUANDO TENGAMOS LA CONFIRMACION DEL PEDIDO DISPONIBLE.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalmostrarmensajenodispo1" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p style="text-align:center">SU FACTURA AUN NO ESTA DISPONIBLE.</p>
+	        	<p style="text-align:center">LO ESTARA CUANDO EL PEDIDO SALGA DE FABRICA.</p>
 	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
 	        </div>
 	      </div>

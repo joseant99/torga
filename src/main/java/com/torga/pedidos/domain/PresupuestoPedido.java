@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -33,6 +34,9 @@ public class PresupuestoPedido implements Serializable {
     
     @Column(name = "web")
     private Integer web;
+    
+    @Column(name = "fecha_prevista")
+    private String fecha_prevista;
     
     @Column(name = "esta_pedido")
     private Integer estapedido;
@@ -112,6 +116,21 @@ public class PresupuestoPedido implements Serializable {
     public void setPedido(Integer pedido) {
         this.pedido = pedido;
     }
+    
+    public String getFecha_prevista() {
+        return fecha_prevista;
+    }
+
+    public PresupuestoPedido fecha_prevista(String fecha_prevista) {
+        this.fecha_prevista = fecha_prevista;
+        return this;
+    }
+
+    public void setFecha_prevista(String fecha_prevista) {
+        this.fecha_prevista = fecha_prevista;
+    }
+    
+    
     
     public Integer getWeb() {
         return web;

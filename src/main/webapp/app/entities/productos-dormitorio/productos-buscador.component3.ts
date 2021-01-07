@@ -2751,7 +2751,6 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#textodivsuperiorquenosecambia').text('COMODAS');
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
-            $('.divseleccionarcodigo').css({ display: 'block' });
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
             }, 1000);

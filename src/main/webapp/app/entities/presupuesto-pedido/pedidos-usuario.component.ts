@@ -427,13 +427,46 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                 this.ordenarFecha = 1;
             }
         } else {
-            for (let i = 0 - 1; i < cogidos.length; i++) {
+            for (let i = 0; i < cogidos.length; i++) {
                 ole[cont] = cogidos[i];
                 cont++;
                 this.ordenarFecha = 0;
             }
         }
         this.presupuestoPedidos = ole;
+    }
+
+    public ponercomoborrado() {
+        var id = parseFloat(sessionStorage.getItem('presupuesto'));
+        this.isSaving = true;
+        var pedidos = this.presupuestoPedidos;
+        var ole = [];
+        var cont = 0;
+        for (let i = 0; i < pedidos.length; i++) {
+            if (pedidos[i]['id'] != id) {
+                ole[cont] = pedidos[i];
+                cont++;
+            } else {
+                var ped = pedidos[i];
+                ped['pedido'] = 2;
+                this.subscribeToSaveResponse10(this.presupuestoPedidoService.update(ped));
+            }
+        }
+        this.presupuestoPedidos = ole;
+    }
+
+    protected subscribeToSaveResponse10(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe(
+            (res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess10(),
+            (res: HttpErrorResponse) => this.onSaveError10()
+        );
+    }
+
+    protected onSaveSuccess10() {
+        this.isSaving = false;
+    }
+    protected onSaveError10() {
+        this.isSaving = false;
     }
 
     ngOnInit() {

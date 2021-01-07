@@ -68,24 +68,6 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
-
-        this.municipiosService.query1({}).subscribe(data => {
-            for (let i = 0; i < data['body'].length; i++) {
-                municipios[i] = data[i];
-            }
-        });
-        this.municipios = municipios;
-
-        this.provinciasService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    provincias[i] = data['body'][i];
-                }
-            });
-        this.provincias = provincias;
     }
 
     registerAuthenticationSuccess() {
@@ -110,12 +92,12 @@ export class HomeComponent implements OnInit {
 
                 if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
                     $('#menuPrincipal').css({ display: 'block' });
-                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
                     $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
                     $('#menuPrincipal').css({ display: 'block' });
-                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
                     $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
@@ -126,12 +108,12 @@ export class HomeComponent implements OnInit {
                         });
                     });
                     $('#menuPrincipal').css({ display: 'block' });
-                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
                     $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
                     $('#menuPrincipal').css({ display: 'block' });
-                    $('#rayasNavegador').attr('onClick', 'esconderMenu()');
+                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
                     $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
                     this.router.navigate(['/inicio']);
                 } else {

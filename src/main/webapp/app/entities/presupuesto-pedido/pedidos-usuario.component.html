@@ -22,7 +22,7 @@
             <th><span>Numero Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
              <th (click) = "ordenarPorFecha()"><span >Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="codigo" ><span >Fecha Prevista de Entrega</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" ><span >Previsi&#243;n Entrega</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th *ngIf="currentAccount.authorities[0] == 'ROLE_REPRESENTATE'" >
@@ -30,7 +30,9 @@
 			</th>
 			
             <th></th>
-            
+            <th></th>
+            <th></th>
+            <th *jhiHasAnyAuthority="'ROLE_ADMIN'"></th>
             </tr>
             </thead>
             <tbody>
@@ -38,13 +40,13 @@
             	<td>{{presupuestoPedido.numero_pedido}}</td>
             	<td >{{presupuestoPedido.fecha_pedido}}</td>
                 <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
-                
+                <td >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_prevista}}</i>
+                </td>
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.login}}</i>
                 </td>
-                <td >
-                    <i *ngIf="presupuestoPedido != undefined"> </i>
-                </td>
+                
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.firstName}}</i>
                 </td>
@@ -80,30 +82,19 @@
                         </button>           
                     </div>
                      -->
-                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
-                        <button *ngIf="presupuestoPedido.estafactura == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo">
-                            <span class="d-md-inline">FACTURA</span>
-                        </button>
-                        <button *ngIf="presupuestoPedido.estafactura == 1" class="btn btn-info btn-sm" href="../../../content/images/imagenesSubidas/presupuestoPedido.numero_factura.pdf" download="presupuestoPedido.numero_factura">
-                            <span class="d-md-inline">FACTURA</span>
-                        </button>           
-                    </div>
                      
-                     <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
-                        <button *ngIf="presupuestoPedido.estapedido == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo">
-                            <span class="d-md-inline">CONFIRMACION</span>
-                        </button>
-                        <button *ngIf="presupuestoPedido.estapedido == 1"  class="btn btn-info btn-sm">
-                            <span (click)="descargarconfirmacion(presupuestoPedido.numero_pedido)" class="d-md-inline">CONFIRMACION</span>
-                        </button>          
-                    </div>
+                     
+                   
                      <a id="estosoloparadescargar" style="display:none"></a>
                      <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
-                        <button (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
+                        <button *ngIf="presupuestoPedido.web == 1" (click)="cogerIdPresupuesto(presupuestoPedido.id)" type="submit"
                                 [routerLink]="['/pedidos-producto' ]"
                                 class="btn btn-info btn-sm">
                             <span class="d-md-inline">VER PEDIDO</span>
-                        </button>           
+                        </button>
+                        <button *ngIf="presupuestoPedido.web != 1" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo4">
+                            <span class="d-md-inline">VER PEDIDO</span>
+                        </button>       
                     </div>
                     
                     
@@ -127,7 +118,35 @@
                     
                     
                 </td>
+                <td *ngIf="presupuestoPedido != undefined" class="text-right">
+                	  <div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
+                        <button *ngIf="presupuestoPedido.estapedido == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo">
+                            <span class="d-md-inline">CONFIRMACION</span>
+                        </button>
+                        <button *ngIf="presupuestoPedido.estapedido == 1"  class="btn btn-info btn-sm">
+                            <span (click)="descargarconfirmacion(presupuestoPedido.numero_pedido)" class="d-md-inline">CONFIRMACION</span>
+                        </button>          
+                    </div>
+                </td>
+                <td *ngIf="presupuestoPedido != undefined" class="text-right">
+                	<div *jhiHasAnyAuthority ="'ROLE_USER'" class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
+                        <button *ngIf="presupuestoPedido.estafactura == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo1">
+                            <span class="d-md-inline">FACTURA</span>
+                        </button>
+                        <button *ngIf="presupuestoPedido.estafactura == 1" class="btn btn-info btn-sm" href="../../../content/images/imagenesSubidas/presupuestoPedido.numero_factura.pdf" download="presupuestoPedido.numero_factura">
+                            <span class="d-md-inline">FACTURA</span>
+                        </button>           
+                    </div>
+                </td>
                 
+                <td *jhiHasAnyAuthority="'ROLE_ADMIN'" class="text-right">
+                    <div class="btn-group flex-btn-group-container" id="divBotonPedidoBueno" style="float: right;margin-left:20px;z-index: 1;right: 10px;">
+                        <button class="btn btn-info btn-sm" style="background-color:RED;BORDER:0;" (click)="cogerIdPresupuesto(presupuestoPedido.id)" data-toggle="modal" data-target="#modalmostrarmensajenodispo2">
+                            <span class="d-md-inline">BORRAR</span>
+                        </button>
+       
+                    </div>
+                </td>
             </tr>
             <tr></tr>
             </tbody>
@@ -169,6 +188,52 @@
 	        	<p>EL PEDIDO HA LLEGADO A FABRICA.</p>
 	        	<p>LE NOTIFICAREMOS TAN PRONTO CUANDO TENGAMOS LA CONFIRMACION DEL PEDIDO DISPONIBLE.</p>
 	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalmostrarmensajenodispo1" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p style="text-align:center">SU FACTURA AUN NO ESTA DISPONIBLE.</p>
+	        	<p style="text-align:center">LO ESTARA CUANDO EL PEDIDO SALGA DE FABRICA.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  <div class="modal fade" id="modalmostrarmensajenodispo4" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p style="text-align:center">ESTE PEDIDO NO SE HA TRAMITADO A TRAVES DE LA WEB, POR ELLO, SU VISUALIZACION NO ESTA DISPONIBLE.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	  <div class="modal fade" id="modalmostrarmensajenodispo2" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<p style="text-align:center">VA A BORRAR UN PEDIDO.</p>
+	        	<p style="text-align:center">&#191;ESTAS SEGURO?</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color: #17a2b8;border-color: #17a2b8;color:white;margin-right:25px" data-dismiss="modal" (click)="ponercomoborrado()">SI</button><button style="width:100px;background-color:#B5BABD;BORDER:0;" data-dismiss="modal">NO</button></p>
 	        </div>
 	      </div>
 	      

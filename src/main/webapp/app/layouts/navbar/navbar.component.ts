@@ -537,6 +537,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         pedido: 0,
                         user: usuario,
                         puntos: puntos,
+                        web: 1,
+                        estapedido: 0,
+                        estafactura: 0,
                         fecha_presupuesto: output,
                         usuarioCreadoPre: usuarioCreado
                     };
@@ -546,6 +549,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         pedido: 0,
                         puntos: puntos,
                         user: usuario,
+                        web: 1,
+                        estapedido: 0,
+                        estafactura: 0,
                         usuarioCreadoPre: account,
                         fecha_presupuesto: output
                     };
@@ -11980,21 +11986,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             sesion[1]['apoyo']['productoApoyo']['nombre'] +
                                             '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                             sesion[1]['apoyo']['precio'] +
-                                            ' &euro;</i></p>'
+                                            ' PP</i></p>'
                                     );
                                 } else {
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
                                         $('#textoCesta' + i).append(
                                             '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                                 sesion[1]['apoyo']['precio'] +
-                                                ' &euro;</i></p>'
+                                                ' PP</i></p>'
                                         );
                                     }
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
                                         $('#textoCesta' + i).append(
                                             '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                                 sesion[1]['apoyo']['precio'] +
-                                                ' &euro;</i></p>'
+                                                ' PP</i></p>'
                                         );
                                     }
                                 }
@@ -12003,7 +12009,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 $('#textoCesta' + i).append(
                                     '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Iluminacion</span>: SI <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['iluminacion']['precio'] +
-                                        ' &euro;</i></p>'
+                                        ' PP</i></p>'
                                 );
                             }
 
@@ -12013,7 +12019,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         sesion[1]['usb']['mensaje'] +
                                         '</span>: <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                         sesion[1]['usb']['precio'] +
-                                        ' &euro;</i></p>'
+                                        ' PP</i></p>'
                                 );
                             }
                         } else {
@@ -12024,21 +12030,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             sesion[1]['apoyo']['productoApoyo']['nombre'] +
                                             '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                             sesion[1]['apoyo']['precio'] +
-                                            ' &euro;</i></p>'
+                                            ' PP</i></p>'
                                     );
                                 } else {
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
                                         $('#textoCesta' + i).append(
                                             '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                                 sesion[1]['apoyo']['precio'] +
-                                                ' &euro;</i></p>'
+                                                ' PP</i></p>'
                                         );
                                     }
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
                                         $('#textoCesta' + i).append(
                                             '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
                                                 sesion[1]['apoyo']['precio'] +
-                                                ' &euro;</i></p>'
+                                                ' PP</i></p>'
                                         );
                                     }
                                 }

@@ -944,6 +944,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('MODULOS BAJOS');
             $('#textodivsuperiorquenosecambia1').text('MODULOS BAJOS');
+            this.cogidoTirador = 'MODULOS BAJOS';
             this.tipoProductos = 8;
         }
         var contdivarray = 0;
@@ -968,6 +969,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('APARADORES');
             $('#textodivsuperiorquenosecambia1').text('APARADORES');
+            this.cogidoTirador = 'APARADORES';
             this.tipoProductos = 11;
         }
 
@@ -986,6 +988,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('VITRINAS');
             $('#textodivsuperiorquenosecambia1').text('VITRINAS');
+            this.cogidoTirador = 'VITRINAS';
             this.tipoProductos = 12;
         }
 
@@ -1021,6 +1024,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('SINGULARES');
             $('#textodivsuperiorquenosecambia1').text('SINGULARES');
+            this.cogidoTirador = 'SINGULARES';
             this.tipoProductos = 13;
         }
 
@@ -1039,6 +1043,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('ESCRITORIOS');
             $('#textodivsuperiorquenosecambia1').text('ESCRITORIOS');
+            this.cogidoTirador = 'ESCRITORIOS';
             this.tipoProductos = 14;
         }
 
@@ -1057,6 +1062,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('SISTEMAS DE APOYO');
             $('#textodivsuperiorquenosecambia1').text('SISTEMAS DE APOYO');
+            this.cogidoTirador = 'SISTEMAS DE APOYO';
             this.tipoProductos = 2;
         }
 
@@ -1075,6 +1081,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('ESTANTERIAS COLGANTES Y ESTANTES');
             $('#textodivsuperiorquenosecambia1').text('ESTANTERIAS COLGANTES Y ESTANTES');
+            this.cogidoTirador = 'ESTANTERIAS COLGANTES Y ESTANTES';
             this.tipoProductos = 15;
         }
 
@@ -1093,6 +1100,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('COLGANTES VERTICALES');
             $('#textodivsuperiorquenosecambia1').text('COLGANTES VERTICALES');
+            this.cogidoTirador = 'COLGANTES VERTICALES';
             this.tipoProductos = 16;
         }
 
@@ -1111,6 +1119,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('COLGANTES VERTICALES ESTANTERIA');
             $('#textodivsuperiorquenosecambia1').text('COLGANTES VERTICALES ESTATERIA');
+            this.cogidoTirador = 'COLGANTES VERTICALES ESTANTERIA';
             this.tipoProductos = 17;
         }
 
@@ -1129,6 +1138,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('COLGANTES HORIZONTALES');
             $('#textodivsuperiorquenosecambia1').text('COLGANTES HORIZONTALES');
+            this.cogidoTirador = 'COLGANTES HORIZONTALES';
             this.tipoProductos = 18;
         }
 
@@ -1147,6 +1157,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('ESTANTERIAS');
             $('#textodivsuperiorquenosecambia1').text('ESTANTERIAS');
+            this.cogidoTirador = 'ESTANTERIAS';
             this.tipoProductos = 19;
         }
 
@@ -1165,6 +1176,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('SUPLEMENTO TV - PANELES TV');
             $('#textodivsuperiorquenosecambia1').text('SUPLEMENTO TV - PANELES TV');
+            this.cogidoTirador = 'SUPLEMENTO TV - PANELES TV';
             this.tipoProductos = 20;
         }
 
@@ -1183,6 +1195,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('PANELES');
             $('#textodivsuperiorquenosecambia1').text('PANELES');
+            this.cogidoTirador = 'PANELES';
             this.tipoProductos = 21;
         }
 
@@ -1212,6 +1225,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('MESAS');
             $('#textodivsuperiorquenosecambia1').text('MESAS');
+            this.cogidoTirador = 'MESAS';
             this.tipoProductos = 22;
         }
 
@@ -30952,7 +30966,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {
                             if (h < 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == 174) {
                                     var precio = parseFloat(value['precio']);
 
                                     precio = precio * precioPunto;
@@ -30990,7 +31004,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
 
                             if (h >= 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == 176) {
                                     var precio = parseFloat(value['precio']);
 
                                     precio = precio * precioPunto;
@@ -31030,7 +31044,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
                         if (idApoyo == 403) {
                             if (h < 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] < 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == 174 && value['id']) {
                                     var precio = parseFloat(value['precio']);
 
                                     precio = precio * precioPunto;
@@ -31068,7 +31082,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
 
                             if (h >= 175) {
-                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] >= 175) {
+                                if (idApoyo == value['productoApoyo']['id'] && value['ancho'] == 176) {
                                     var precio = parseFloat(value['precio']);
                                     precio = precio * precioPunto;
                                     precio = Math.round(precio * 100) / 100;
