@@ -108,6 +108,11 @@ export class VistaAdminService {
     getConfirmacion(nombre: string): Observable<Blob> {
         return this.http.get(`${this.resourceUrlPDFConfirmacion}/${nombre}` + '.pdf', { responseType: 'blob' });
     }
+
+    getConfirmacion1(nombre: string) {
+        return this.http.get(`${this.resourceUrlPDFConfirmacion}1/${nombre}` + '.pdf', { responseType: 'blob' });
+    }
+
     findPedido(): Observable<EntityArrayResponseType> {
         return this.http.get<IPedidos[]>(`${this.resourceUrlPedido}` + '?size=5000&sort=id%2Cdesc&sort.sorted=true', {
             observe: 'response'

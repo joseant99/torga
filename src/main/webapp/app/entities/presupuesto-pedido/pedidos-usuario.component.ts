@@ -281,8 +281,19 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     }
 
     public descargarconfirmacion(id) {
-        $('#estosoloparadescargar').attr('href', '../../../content/images/imagenesSubidas/' + id + '.pdf');
-        $('#estosoloparadescargar').attr('download', id);
+        $('#estosoloparadescargar').attr(
+            'href',
+            'https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/' + id + '.pdf'
+        );
+        $('#estosoloparadescargar').attr('target', '_blank');
+        $('#estosoloparadescargar')[0].click();
+    }
+    public descargarconfirmacion1(id) {
+        $('#estosoloparadescargar').attr(
+            'href',
+            'https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/' + id + '.pdf'
+        );
+        $('#estosoloparadescargar').attr('target', '_blank');
         $('#estosoloparadescargar')[0].click();
     }
 

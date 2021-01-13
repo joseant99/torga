@@ -21625,6 +21625,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 var idProd = producto;
                 this.idDelProducto = idProd;
                 $('#tenerLUZ').css({ display: 'none' });
+                $('#precioDeLaLuz').css({ display: 'none' });
+                this.estaEsLaLUZ = undefined;
+                $('#tenerLUZ #noLuz').prop('checked', true);
                 this.iluminacionService.findProd(idProd).subscribe(data => {
                     console.log(data.body);
                     if (data.body.length != 0) {

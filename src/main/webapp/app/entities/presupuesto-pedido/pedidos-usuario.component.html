@@ -41,7 +41,7 @@
             	<td >{{presupuestoPedido.fecha_pedido}}</td>
                 <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
                 <td >
-                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.fecha_prevista}}</i>
+                    <i *ngIf="presupuestoPedido != undefined" class="blink">{{presupuestoPedido.fecha_prevista}}</i>
                 </td>
                 <td *jhiHasAnyAuthority="'ROLE_ADMIN'" >
                     <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.user?.login}}</i>
@@ -133,8 +133,8 @@
                         <button *ngIf="presupuestoPedido.estafactura == 0" class="btn btn-info btn-sm" style="background-color:#B5BABD;BORDER:0;" data-toggle="modal" data-target="#modalmostrarmensajenodispo1">
                             <span class="d-md-inline">FACTURA</span>
                         </button>
-                        <button *ngIf="presupuestoPedido.estafactura == 1" class="btn btn-info btn-sm" href="../../../content/images/imagenesSubidas/presupuestoPedido.numero_factura.pdf" download="presupuestoPedido.numero_factura">
-                            <span class="d-md-inline">FACTURA</span>
+                        <button *ngIf="presupuestoPedido.estafactura == 1" class="btn btn-info btn-sm" >
+                            <span (click)="descargarconfirmacion1(presupuestoPedido.numero_factura)" class="d-md-inline">FACTURA</span>
                         </button>           
                     </div>
                 </td>

@@ -721,30 +721,21 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         this.iddelpedido = toma[i]['presupuestoPedido']['numero_pedido'];
                         this.iddefactura = toma[i]['presupuestoPedido']['numero_factura'];
 
-                        $.ajax({
-                            url: '../../../content/images/imagenesSubidas/' + this.iddelpedido + '.pdf',
-                            type: 'HEAD',
-                            error: function() {
-                                $('#botonnosepuededescargar').css({ display: 'block' });
-                                $('#botonsepuededescargar').css({ display: 'none' });
-                            },
-                            success: function() {
-                                $('#botonnosepuededescargar').css({ display: 'none' });
-                                $('#botonsepuededescargar').css({ display: 'block' });
-                            }
-                        });
-                        $.ajax({
-                            url: '../../../content/images/facturas/' + this.iddefactura + '.pdf',
-                            type: 'HEAD',
-                            error: function() {
-                                $('#botonnosepuededescargar1').css({ display: 'block' });
-                                $('#botonsepuededescargar1').css({ display: 'none' });
-                            },
-                            success: function() {
-                                $('#botonnosepuededescargar1').css({ display: 'none' });
-                                $('#botonsepuededescargar1').css({ display: 'block' });
-                            }
-                        });
+                        if (toma[i]['presupuestoPedido']['estapedido'] != 0) {
+                            $('#botonsepuededescargar').css({ display: 'block' });
+                            $('#botonnosepuededescargar').css({ display: 'none' });
+                        } else {
+                            $('#botonsepuededescargar').css({ display: 'none' });
+                            $('#botonnosepuededescargar').css({ display: 'block' });
+                        }
+
+                        if (toma[i]['presupuestoPedido']['estafactura'] != 0) {
+                            $('#botonsepuededescargar1').css({ display: 'block' });
+                            $('#botonnosepuededescargar1').css({ display: 'none' });
+                        } else {
+                            $('#botonnosepuededescargar1').css({ display: 'block' });
+                            $('#botonsepuededescargar1').css({ display: 'none' });
+                        }
 
                         $('#textoObservaciones').css({ display: 'block' });
                         if (toma[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
