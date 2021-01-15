@@ -9581,7 +9581,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' PUERTA SUP DER :</span> ' +
+                                            ' PUERTA SUP DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9667,7 +9667,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon :</span> ' +
+                                            ' Puerta Abatible :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9734,7 +9734,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9743,7 +9743,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9772,7 +9772,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9781,7 +9781,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Cen :</span> ' +
+                                            ' Puerta CEN :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9790,7 +9790,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9799,54 +9799,42 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (idProd == 296) {
                                 if (o == 0) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Tapa :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Tapa :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
                                 }
                                 if (o == 1) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Casco :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Casco :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
                                 }
                                 if (o == 2) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Puerta 1 :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Puerta 1 :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
                                 }
                                 if (o == 3) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Puerta 2 :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Puerta 2 :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
                                 }
                                 if (o == 4) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Puerta 3 :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Puerta 3 :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
                                 }
                                 if (o == 5) {
                                     $('#textoCesta' + i).append(
-                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                                            (o + 1) +
-                                            ' Puerta 4 :</span> ' +
+                                        '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Puerta 4 :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9885,7 +9873,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9914,7 +9902,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -9990,7 +9978,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10113,7 +10101,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10161,7 +10149,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            '  Cajon Sup :</span> ' +
+                                            '  Cajon SUP :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10170,7 +10158,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Inf :</span> ' +
+                                            ' Cajon INF :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10179,7 +10167,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10188,7 +10176,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10321,7 +10309,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10330,7 +10318,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Sup :</span> ' +
+                                            ' Cajon SUP :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10339,7 +10327,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Inf :</span> ' +
+                                            ' Cajon INF :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10482,7 +10470,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10682,7 +10670,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Cen :</span> ' +
+                                            ' Cajon CEN :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10691,7 +10679,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Inf Izq :</span> ' +
+                                            ' Puerta INF IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10700,7 +10688,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Inf Dch :</span> ' +
+                                            ' Puerta INF DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10768,7 +10756,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Izq :</span> ' +
+                                            ' Cajon IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10777,7 +10765,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon Dch :</span> ' +
+                                            ' Cajon DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10890,7 +10878,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10899,7 +10887,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10919,7 +10907,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -10928,7 +10916,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11029,7 +11017,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11038,7 +11026,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11058,7 +11046,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Izq :</span> ' +
+                                            ' Puerta IZQ :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11067,7 +11055,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Puerta Dch :</span> ' +
+                                            ' Puerta DCH :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11587,7 +11575,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cajon :</span> ' +
+                                            ' Cajones :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11659,7 +11647,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Tapa :</span> ' +
+                                            ' Casco :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11668,7 +11656,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Patas :</span> ' +
+                                            ' Cubo :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );

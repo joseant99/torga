@@ -54,6 +54,23 @@
 	    </div>
 	  </div>
 	  
+	  <div class="modal fade" id="modalNoSePuedeVer" role="dialog" style="margin-top:10%;z-index: 1000000000000;">
+	    <div class="modal-dialog modal-sm">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+				<p>AUN NO ESTA DISPONIBLE.</p>
+				<p>ESTAMOS TRABAJANDO EN ELLO.</p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
 	  <div class="modal fade" id="modalApoyo" role="dialog" style="z-index: 1000000000000;">
 		    <div class="modal-dialog modal-lg">
 		    
@@ -1908,7 +1925,7 @@
         	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(2)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" data-toggle="modal" data-target="#modalNoSePuedeVer" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
         	</div>
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(3)" id="pruebahoverdiv">
@@ -1917,7 +1934,7 @@
         	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(4)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-10.jpeg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(5)" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" data-toggle="modal" data-target="#modalNoSePuedeVer" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-11.jpeg">
         	</div>
         </div>

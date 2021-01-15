@@ -9022,7 +9022,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' PUERTA SUP DER :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' PUERTA SUP DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9126,7 +9126,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta Abatible :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9207,7 +9207,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9218,7 +9218,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9253,7 +9253,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9264,7 +9264,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta CEN :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9275,7 +9275,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9286,9 +9286,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProd == 296) {
                                                     if (k == 0) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9297,9 +9295,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 1) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9308,9 +9304,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 2) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Puerta 1 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9319,9 +9313,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 3) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Puerta 2 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9330,9 +9322,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 4) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Puerta 3 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9341,9 +9331,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (k == 5) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                (k + 1) +
-                                                                ' Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Puerta 4 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9390,7 +9378,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9425,7 +9413,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9517,7 +9505,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9666,7 +9654,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9724,7 +9712,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon SUP :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9735,7 +9723,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9746,7 +9734,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9757,7 +9745,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9793,7 +9781,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9804,7 +9792,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9815,7 +9803,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon SUP :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9826,7 +9814,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9918,7 +9906,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9929,7 +9917,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Sup :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon SUP :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -9940,7 +9928,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Inf :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10113,7 +10101,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10355,7 +10343,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Cen :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon CEN :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10366,7 +10354,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Inf Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta INF IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10377,7 +10365,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Inf Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta INF DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10459,7 +10447,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10470,7 +10458,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajon DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10605,7 +10593,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10616,7 +10604,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10640,7 +10628,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10651,7 +10639,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10772,7 +10760,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10783,7 +10771,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10807,7 +10795,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Izq :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta IZQ :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -10818,7 +10806,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Puerta Dch :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Puerta DCH :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -11442,7 +11430,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cajon :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cajones :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -11528,7 +11516,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -11539,7 +11527,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +

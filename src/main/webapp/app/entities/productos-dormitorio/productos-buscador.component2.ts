@@ -854,8 +854,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
         $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
         $('#inputBusca').css({ display: 'block' });
-        $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-        $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+        $('.divseleccionarcodigo').css({ display: 'block' });
+        $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
             $('html, body').animate({ scrollTop: 0 });
@@ -2345,7 +2345,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     if (value['productosDormitorio']['id'] == idProd) {
                         imagen = value['imagen'];
                         72;
-
                         if (
                             idProd != 72 &&
                             idProd != 73 &&
@@ -2600,7 +2599,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta Abatible</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -2788,9 +2787,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -2801,9 +2798,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -3059,7 +3054,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -4528,7 +4523,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -4569,7 +4564,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -5134,21 +5129,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                         if (idProd == 210) {
-                            if (u == 1) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                        }
-                        if (idProd == 211) {
                             if (u == 1) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -9148,7 +9128,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta abatible</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9243,7 +9223,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9297,7 +9277,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9310,7 +9290,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Cen</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta CEN</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9362,9 +9342,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Puerta 1</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9375,9 +9353,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Puerta 2</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9388,9 +9364,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Puerta 3</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9401,9 +9375,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Puerta 4</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        '"><span style="font-weight:600">Puerta 4</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9499,7 +9471,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9607,7 +9579,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9782,7 +9754,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -9876,7 +9848,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -15367,7 +15339,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta SUP Der</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta SUP DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -15393,7 +15365,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Cen</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta CEN</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -15584,7 +15556,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16217,7 +16189,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16272,7 +16244,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16419,7 +16391,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16648,7 +16620,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16932,7 +16904,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cajon Cen</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Cajon CEN</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -16945,7 +16917,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta INF Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta INF IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -17054,7 +17026,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cajon Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Cajon IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -17222,7 +17194,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -17263,7 +17235,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta Izq</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -21706,6 +21678,12 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (value['productosDormitorio']['id'] == idProd) {
                             imagen = value['imagen'];
                             72;
+                            var nombreCargarImagen;
+                            if (idProd == 159) {
+                                if (codigo == 'NH246') {
+                                    nombreCargarImagen = 'NH246';
+                                }
+                            }
 
                             if (
                                 idProd != 72 &&
@@ -21733,11 +21711,20 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 if (contador == 1) {
                                     $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
                                     $('#acabados #imagenAcabadoPrincipalSin').css({ display: 'none' });
-                                    $('#acabados #imagenAcabadoPrincipal').append(
-                                        '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                            imagen +
-                                            '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-                                    );
+
+                                    if (idProd != 159) {
+                                        $('#acabados #imagenAcabadoPrincipal').append(
+                                            '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                                                imagen +
+                                                '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+                                        );
+                                    } else {
+                                        $('#acabados #imagenAcabadoPrincipal').append(
+                                            '<img id="imagenAcabado" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                nombreCargarImagen +
+                                                '.jpeg" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+                                        );
+                                    }
                                 }
                             } else {
                                 if (contador == 1) {
@@ -24715,7 +24702,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                             u +
                                             '"><span style="font-weight:600">' +
                                             u +
-                                            ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            ' Cajones</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                             u +
                                             '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                             u +
@@ -24815,7 +24802,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                             u +
                                             '"><span style="font-weight:600">' +
                                             u +
-                                            ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                             u +
                                             '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                             u +
@@ -24828,7 +24815,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                             u +
                                             '"><span style="font-weight:600">' +
                                             u +
-                                            ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                             u +
                                             '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                             u +
@@ -26732,7 +26719,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         idProd != 231 &&
                         idProd != 232 &&
                         idProd != 234 &&
-                        idProd != 235
+                        idProd != 235 &&
+                        idProd != 331 &&
+                        idProd != 330
                     ) {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
@@ -26914,7 +26903,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 372 &&
                     idProd != 373 &&
                     idProd != 374 &&
-                    idProd != 375
+                    idProd != 375 &&
+                    idProd != 331 &&
+                    idProd != 330
                 ) {
                     this.productosDormitorioService.categoria(2).subscribe(data => {
                         console.log(data.body);
@@ -27919,13 +27910,31 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 console.log(data.body);
                 if (data.body.length != 0) {
                     $('#tenerLUZ').css({ display: 'block' });
-
+                    if (idProd == 87) {
+                        var codigodato = $('#codigoMensajeDatos').text();
+                        if (codigodato == 'NH145') {
+                            data.body[0]['precio'] = data.body[0]['precio'] - 1;
+                        }
+                    }
+                    if (idProd == 86) {
+                        var codigodato = $('#codigoMensajeDatos').text();
+                        if (codigodato == 'NH146') {
+                            data.body[0]['precio'] = data.body[0]['precio'] - 1;
+                        }
+                    }
+                    if (idProd == 92) {
+                        var codigodato = $('#codigoMensajeDatos').text();
+                        if (codigodato == 'NH153') {
+                            data.body[0]['precio'] = data.body[0]['precio'] - 3;
+                        }
+                    }
                     $('#datos1').append('<p style="display:none" id="iluminacion1" class="' + data.body[0]['id'] + '"></p>');
                     this.estaEsLaLUZ = data.body[0];
                     var precioDimen = parseFloat($('#precioDimension').text());
                     var precioLuz = data.body[0]['precio'] * precioPunto;
                     $('#precioDeLaLuz').text('+ ' + precioLuz);
                     $('#precioDimension').text(precioDimen + precioLuz);
+                    this.precioDimension = precioDimen + precioLuz;
                 }
             });
         } else {
@@ -27935,6 +27944,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 var precioLuz = luz['precio'] * precioPunto;
                 var precioDimen = parseFloat($('#precioDimension').text());
                 $('#precioDimension').text(precioDimen - precioLuz);
+                this.precioDimension = precioDimen - precioLuz;
             }
             $('#datos1 #iluminacion1').remove();
             this.estaEsLaLUZ = undefined;
@@ -30944,6 +30954,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 var hbueno = parseFloat(h) - 12.5;
             }
         }
+        if (hbueno == 62.400000000000006) {
+            hbueno = 62.4;
+        }
         var apoyoDentro = 0;
         if (
             parseFloat(idProd) != 360 &&
@@ -31464,6 +31477,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             this.tiposApoyoService.findBus1(idApoyo).subscribe(data => {
                 datos = data['body'];
+                if (idApoyo != 32) {
+                    $('#fondoDatosDimen').text('44');
+                    $('#productoCalculadora1 #datos1 #fondo1').text('44');
+                }
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {
@@ -34481,7 +34498,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
             const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
-            const fondo = $('#productoCalculadora1 #datos1 #fondo' + i).text();
+            const fondo = $('#productoCalculadora1 #datos1 #fondoDatosDimen').text();
             const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
             const todoSumadoPrecio = $('#precioDimension').text();
@@ -34578,7 +34595,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         value['acabado' + w] = aca[w];
                         value['acabado' + w]['imagenFondo'] = '';
                     }
-
+                    value['fondo'] = fondo;
                     var direccion;
                     if (
                         value['productosDormitorio']['id'] == '281' ||
