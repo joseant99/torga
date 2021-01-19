@@ -26,7 +26,7 @@
 	</a>
 </div>
 -->    
-	<a id="cestaImagen" data-toggle="modal" data-target="#modalCesta"  (click)="abrirCesta()"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
+	<a id="cestaImagen" (click)="open('cesta',false,myModel)"><img id="imagenCesta" src="../../../content/images/CESTA-min.png"><i id="posicion0">{{productosDormitorioService.numeroCesta}}</i></a>
 </div>
 <div id="menuFijoArriba" class="menuFijoArriba1" style="height:25px; top:40px;background-color:yellow"><p style="width:100%;text-align:center;letter-spacing:2px">TELEFONO DE ASISTENCIA: 661 50 30 22</p></div>
 <nav class="navbar navbar-dark navbar-expand-md bg-white" id="menuPrincipal" style="display:none">
@@ -1282,7 +1282,7 @@
 	         <p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" (click)="modal.close()">No</button></p>
   </div>
 </ng-template>
- 
+ 	<!-- 
 	<div class="modal fade" id="modalCesta" role="dialog" style="z-index: 1000000000000;">
 		    <div class="modal-dialog modal-lg">
 		    
@@ -1296,7 +1296,7 @@
 			        
 		        </div>
 		       <div class="modal-footer">
-			       <!--  <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>-->
+			         <p style="width:100%"><button id="botonIzquierdaComposicion" style="left: 0;background-color: white;color: black;border: 1px solid black;letter-spacing: 2px;float: left;" type="submit" class="btn btn-primary ">VER EN COMPOSICION</button>
 			       <span style="float: right;margin-top:30px;margin-bottom:30px;margin-right: 450px;font-weight:600" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span>
 			       
 			        <button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;float: right;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalConfirmarCreacionPresu">FINALIZAR</button></p>
@@ -1306,7 +1306,7 @@
 		      
 		    </div>
 	  </div> 
-	  
+	  -->
 	  
 	  <div class="modal fade" id="modalConfirmarEditar" role="dialog" style="margin-top:150px;z-index: 1000000000000;">
 		    <div class="modal-dialog modal-sm">
@@ -1512,10 +1512,10 @@
 	  </div>
 	  
 	  
-	  <div class="modal fade" id="modalConfirmarCreacionPresu" role="dialog" style="z-index: 1000000000000;">
+	<!--   <div class="modal fade" id="modalConfirmarCreacionPresu" role="dialog" style="z-index: 1000000000000;">
 		    <div class="modal-dialog modal-lg" >
 		    
-		      <!-- Modal content-->
+		   
 		      <div class="modal-content" id="modalcontenidoCss" style="background-color:#f5f5f5!important;">
 		        <div class="modal-header">
 		          <button (click)="volveratrascestaconfirm(1)" id="volveratrascesta1" style="display:none">VOLVER ATRAS</button>
@@ -1534,7 +1534,7 @@
 					        <p>CIF: {{array.cif}}</p>
 					        <p>Provincia: {{array.provincia}}</p>
 					        <p>Municipio: {{array.municipio}}</p></div>
-				        	<!-- <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" (change)="tiendasDireccionPadentro()" /><select id="selectTiendaDelNav" (change)="tiendasDireccionPadentro()" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
+				        	 <input *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']"  style="height:30px;width:180px;margin-right:35px" list="listaTiendas" id="selectTiendas" name="listaTi" type="text" (change)="tiendasDireccionPadentro()" /><select id="selectTiendaDelNav" (change)="tiendasDireccionPadentro()" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="margin-left:10px">Nombre fiscal</label><br *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']">  
 				        	<div style="margin-top:25px;" id="divdireccionentregamodal">
 				        		<input  style="height:30px;width:180px;margin-right:35px" list="listaDireccionTiendas" id="selectDireccionTiendas" name="listaTidir" type="text" /><select id="selectDireccionTiendaDelNav" style="display:none;height:30px;width:180px;margin-right:35px"><option></option></select><label style="margin-left:-20px">Direccion Entrega</label><br>  
 				        	</div>
@@ -1546,7 +1546,7 @@
 		
 				        	<button type="button" style="width: 110px;float: left;background-color: white;border: 1px solid;" data-dismiss="modal" (click)="generarPresupuesto()" onclick="cerrarModal()">Si</button>
 					        <button type="button" style="width: 110px;float: right;background-color: white;border: 1px solid;" data-dismiss="modal" >No</button>
-				       	 -->
+				       	 
 				    </div>
 				    
 				    <div class="div1direccionentrega" style="display:none;height: 98%;background-color: #f5f5f5;top:0;">
@@ -1573,7 +1573,7 @@
 		      </div>
 		      
 		    </div>
-	  </div>
+	  </div>-->
 <div id="todometerFondo" style="position: fixed;width: 100%;height: 100%;z-index: 1000000000;top: 0;display:none">
 	
 	<div style="background-color: black;position: fixed;width: 100%;height: 100%;z-index: 1000000000;top: 0;opacity: 0.4">

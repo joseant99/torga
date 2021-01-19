@@ -11589,6 +11589,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (
                                                     idProd != 107 &&
                                                     idProd != 410 &&
+                                                    idProd != 81 &&
+                                                    idProd != 316 &&
                                                     idProd != 315 &&
                                                     idProd != 108 &&
                                                     idProd != 109 &&
@@ -12954,6 +12956,11 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 usb = productos[w]['usb'];
                                             }
 
+                                            var observaciones = undefined;
+                                            if (productos[w]['observacionestext'] != undefined) {
+                                                observaciones = productos[w]['observacionestext'];
+                                            }
+
                                             if (luz != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Luz</span>: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
@@ -12997,7 +13004,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                             }
-
+                                            if (observaciones != undefined) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Observaciones</span>: &nbsp;&nbsp;&nbsp; <span>' +
+                                                        observaciones +
+                                                        '</span></p>'
+                                                );
+                                            }
                                             if (apoyo != undefined) {
                                                 if (productos[i]['pilotoApoyo'] != 8 && productos[i]['pilotoApoyo'] != 9) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(

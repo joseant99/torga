@@ -12,10 +12,6 @@ import { MunicipiosService } from '../entities/municipios/municipios.service';
 import { LoginService } from 'app/core/login/login.service';
 import { Router } from '@angular/router';
 import { StateStorageService } from 'app/core/auth/state-storage.service';
-import { ProvinciasService } from '../entities/provincias/provincias.service';
-import { DatosUsuarioService } from '../entities/datos-usuario/datos-usuario.service';
-import { IMunicipios } from 'app/shared/model/municipios.model';
-import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import { RepresenTorgaService } from '../entities/represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
 import { RepresentanteTiendaService } from '../entities/representante-tienda/representante-tienda.service';
@@ -43,9 +39,6 @@ export class HomeComponent implements OnInit {
     constructor(
         private accountService: AccountService,
         private loginModalService: LoginModalService,
-        protected datosUsuarioService: DatosUsuarioService,
-        protected provinciasService: ProvinciasService,
-        protected municipiosService: MunicipiosService,
         protected precioTiendaService: PrecioTiendaService,
         protected representanteTiendaService: RepresentanteTiendaService,
         protected represenTorgaService: RepresenTorgaService,
@@ -136,28 +129,12 @@ export class HomeComponent implements OnInit {
         $('.form1').attr('style');
         $('.form').css({ display: 'none' });
         $('.form1').css({ 'margin-top': '115px' });
-        this.provinciasService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    $('#provincia').append('<option value="' + data['body'][i]['id'] + '">' + data['body'][i]['nombre'] + '</option>');
-                }
-            });
     }
 
     public cargarMunicipios() {
         var idProv = $('#provincia').val();
         $('#municipios').empty();
         $('#municipios').append('<option></option>');
-        this.municipiosService.query1({}).subscribe(data => {
-            for (let i = 0; i < data['body'].length; i++) {
-                if (data['body'][i]['provincias']['id'] == idProv) {
-                    $('#municipios').append('<option value="' + data['body'][i]['id'] + '">' + data['body'][i]['nombre'] + '</option>');
-                }
-            }
-        });
     }
 
     isAuthenticated() {
@@ -216,12 +193,7 @@ export class HomeComponent implements OnInit {
                 provincias: provincia,
                 municipios: municipio
             };
-            this.subscribeToSaveResponse(this.datosUsuarioService.create(datos));
         }
-    }
-
-    protected subscribeToSaveResponse(result: Observable<HttpResponse<IDatosUsuario>>) {
-        result.subscribe((res: HttpResponse<IDatosUsuario>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     protected onSaveSuccess() {

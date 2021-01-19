@@ -2614,6 +2614,16 @@
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;">
 								
 						</div>
+						<div id="observacionesArticulo" style="float:left;width:100%;">
+							<p style="width:100%"><strong>OBSERVACIONES</strong></p>
+								<form>
+									<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%" >Si</label>
+									<input type="radio" id="siLuz25" name="luz25" value="Si" (click)="observacionesMeterCuadro('si')"></p>
+									<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%">No</label>
+									<input type="radio" id="noLuz25" name="luz25" value="No" (click)="observacionesMeterCuadro('no')" checked></p>
+								</form>
+								<textarea id="textareaobservaciones" name="w3review" rows="4" cols="40" style="display:none"></textarea>
+						</div>
 						<div id="datos1Tablero" style="float:left;margin-left:5px;width:100%;font-size: 14px;">
 							<p style="width:100%;display:none;" id="pgrosorcalcu"><span style="font-weight:600">Grosor : </span><span id="grosorTableCalcu"></span></p>	
 							<p style="width:100%;display:none;" id="pcanteadocalcu"><span style="font-weight:600">Canteado : </span><span id="canteadoTableCalcu"></span></p>	

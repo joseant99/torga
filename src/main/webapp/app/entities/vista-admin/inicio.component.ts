@@ -162,41 +162,37 @@ export class inicioComponent implements OnInit, AfterViewInit {
                     }
                     if (authorities[0] != 'ROLE_REPRESENTATE') {
                         if (usuarioBuscado != undefined) {
-                            this.datosUsuarioService
-                                .query({
-                                    size: 10000000
-                                })
-                                .subscribe(
-                                    (res: HttpResponse<IDatosUsuario[]>) => {
-                                        for (let k = 0; k < res.body.length; k++) {
-                                            if (res.body[k]['user'] != null) {
-                                                if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
-                                                    tiendaUsuario = res.body[k];
-                                                    sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
-                                                    var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-                                                    if (prueba['logo'] != undefined) {
-                                                        $('#logoImagen').remove();
-                                                        $('.logo-img').append(
-                                                            '<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>'
-                                                        );
-                                                        $('.logo-img').css({ background: 'none' });
-                                                    }
+                            this.datosUsuarioService.findCoger12(usuarioBuscado.id).subscribe(
+                                (res: HttpResponse<IDatosUsuario[]>) => {
+                                    for (let k = 0; k < res.body.length; k++) {
+                                        if (res.body[k]['user'] != null) {
+                                            if (res.body[k]['user']['id'] == usuarioBuscado['id']) {
+                                                tiendaUsuario = res.body[k];
+                                                sessionStorage.setItem('tiendaUsuario', JSON.stringify(tiendaUsuario));
+                                                var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                                                if (prueba['logo'] != undefined) {
+                                                    $('#logoImagen').remove();
+                                                    $('.logo-img').append(
+                                                        '<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>'
+                                                    );
+                                                    $('.logo-img').css({ background: 'none' });
                                                 }
                                             }
                                         }
-                                        for (let h = 0; h < pagos.length; h++) {
-                                            if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
-                                                sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
-                                                dato = 1;
-                                            } else {
-                                                if (dato == 0) {
-                                                    sessionStorage.setItem('precioTienda', JSON.stringify(1));
-                                                }
+                                    }
+                                    for (let h = 0; h < pagos.length; h++) {
+                                        if (pagos[h]['datosUsuario']['id'] == tiendaUsuario['id']) {
+                                            sessionStorage.setItem('precioTienda', JSON.stringify(pagos[h]['precioTienda']));
+                                            dato = 1;
+                                        } else {
+                                            if (dato == 0) {
+                                                sessionStorage.setItem('precioTienda', JSON.stringify(1));
                                             }
                                         }
-                                    },
-                                    (res: HttpErrorResponse) => this.onError(res.message)
-                                );
+                                    }
+                                },
+                                (res: HttpErrorResponse) => this.onError(res.message)
+                            );
                         } else {
                             if (cliente != undefined) {
                                 this.datosUsuarioService

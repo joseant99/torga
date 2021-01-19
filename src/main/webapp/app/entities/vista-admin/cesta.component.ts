@@ -1,63 +1,88 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router, NavigationCancel } from '@angular/router';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { JhiLanguageService } from 'ng-jhipster';
-import { SessionStorageService } from 'ngx-webstorage';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
-import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
-import { VERSION } from 'app/app.constants';
-import { JhiLanguageHelper, Account, AccountService, LoginModalService, LoginService, UserService, User } from 'app/core';
-import { ProfileService } from '../profiles/profile.service';
-import { DatosUsuarioService } from '../../entities/datos-usuario/datos-usuario.service';
+import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { JhiEventManager } from 'ng-jhipster';
 import * as $ from 'jquery';
-import { AcaProdService } from '../../entities/aca-prod/aca-prod.service';
+import { Observable } from 'rxjs';
+import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
+import { ActivatedRoute } from '@angular/router';
+import { IContactoFabrica } from 'app/shared/model/contacto-fabrica.model';
+import { LoginModalService, AccountService, Account, UserService } from 'app/core';
+import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
+import { LoginService } from 'app/core/login/login.service';
+import { Router } from '@angular/router';
+import { StateStorageService } from 'app/core/auth/state-storage.service';
+import { PagosTiendaService } from '../pagos-tienda/pagos-tienda.service';
+import { VendedoresService } from '../vendedores/vendedores.service';
+import { IVendedores } from 'app/shared/model/vendedores.model';
+import { IPagosTienda } from 'app/shared/model/pagos-tienda.model';
+import { ContactoFabricaService } from '../contacto-fabrica/contacto-fabrica.service';
+import { MensajesService } from '../mensajes/mensajes.service';
+import { IMensajes } from 'app/shared/model/mensajes.model';
+import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
+import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
+import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
+import { AcaProdService } from '../aca-prod/aca-prod.service';
 import { IAcaProd } from 'app/shared/model/aca-prod.model';
-import { DimensionesProductoTipoService } from '../../entities/dimensiones-producto-tipo/dimensiones-producto-tipo.service';
-import { InterioresService } from '../../entities/interiores/interiores.service';
-import { MedidasEspecialesService } from '../../entities/medidas-especiales/medidas-especiales.service';
-import { ProductosDormitorioService } from '../../entities/productos-dormitorio/productos-dormitorio.service';
-import { PresupuestoPedidoService } from '../../entities/presupuesto-pedido/presupuesto-pedido.service';
+import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
+import { InterioresService } from '../interiores/interiores.service';
+import { MedidasEspecialesService } from '../medidas-especiales/medidas-especiales.service';
+import { ProductosDormitorioService } from '../productos-dormitorio/productos-dormitorio.service';
+import { PresupuestoPedidoService } from '../presupuesto-pedido/presupuesto-pedido.service';
 import { IProductosDormitorio } from 'app/shared/model/productos-dormitorio.model';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { RepresentanteTiendaService } from '../../entities/representante-tienda/representante-tienda.service';
+import { RepresentanteTiendaService } from '../representante-tienda/representante-tienda.service';
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
-import { AcabadosProductosPresupuestoPedidoService } from '../../entities/acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
-import { ProductosPresupuestoPedidosService } from '../../entities/productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
-import { MedEspProductoPedidoPresuService } from '../../entities/med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
+import { AcabadosProductosPresupuestoPedidoService } from '../acabados-productos-presupuesto-pedido/acabados-productos-presupuesto-pedido.service';
+import { ProductosPresupuestoPedidosService } from '../productos-presupuesto-pedidos/productos-presupuesto-pedidos.service';
+import { MedEspProductoPedidoPresuService } from '../med-esp-producto-pedido-presu/med-esp-producto-pedido-presu.service';
 import { IAcabadosProductosPresupuestoPedido } from 'app/shared/model/acabados-productos-presupuesto-pedido.model';
 import { IProductosPresupuestoPedidos } from 'app/shared/model/productos-presupuesto-pedidos.model';
-import { RepresenTorgaService } from '../../entities/represen-torga/represen-torga.service';
+import { RepresenTorgaService } from '../represen-torga/represen-torga.service';
 import { IRepresenTorga } from 'app/shared/model/represen-torga.model';
-import { IluminacionProdPrePedService } from '../../entities/iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
-import { DireccionTiendasService } from '../../entities/direccion-tiendas/direccion-tiendas.service';
+import { IluminacionProdPrePedService } from '../iluminacion-prod-pre-ped/iluminacion-prod-pre-ped.service';
+import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.service';
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
-import { Observable } from 'rxjs';
-import { PrecioTiendaService } from '../../entities/precio-tienda/precio-tienda.service';
-import { JhiMainComponent } from '../main/main.component';
-import { PrecioFinalPresuService } from '../../entities/precio-final-presu/precio-final-presu.service';
+import { JhiMainComponent } from '../../layouts/main/main.component';
+import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
 import { IPresupuestoArmario } from 'app/shared/model/presupuesto-armario.model';
-import { PresupuestoArmarioService } from '../../entities/presupuesto-armario/presupuesto-armario.service';
+import { PresupuestoArmarioService } from '../presupuesto-armario/presupuesto-armario.service';
 import { IPresupuestoArmarioInteriores } from 'app/shared/model/presupuesto-armario-interiores.model';
-import { PresupuestoArmarioInterioresService } from '../../entities/presupuesto-armario-interiores/presupuesto-armario-interiores.service';
+import { PresupuestoArmarioInterioresService } from '../presupuesto-armario-interiores/presupuesto-armario-interiores.service';
 import { IPresupuestoArmarioPuertas } from 'app/shared/model/presupuesto-armario-puertas.model';
-import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-armario-puertas/presupuesto-armario-puertas.service';
+import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 import { AcabadosService } from 'app/entities/acabados';
+import { SessionStorageService } from 'ngx-webstorage';
+import { NavbarComponent } from '../../layouts/navbar/navbar.component';
 @Component({
-    providers: [JhiMainComponent],
-    selector: 'jhi-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['navbar.css']
+    providers: [NavbarComponent],
+    selector: 'jhi-inicio',
+    templateUrl: './cesta.component.html'
 })
-export class NavbarComponent implements AfterViewInit, OnInit {
+export class cestaComponent implements OnInit, AfterViewInit {
+    account: Account;
+    currentAccount: any;
+    modalRef: NgbModalRef;
+    isSaving: boolean;
+    provincias: any;
+    logo: any;
+    municipios: any;
+    authenticationError: boolean;
+    password: string;
+    rememberMe: boolean;
+    pagosTienda: any;
+    username: string;
+    credentials: any;
+    contacto: any;
+    mensajes: any;
+
     inProduction: boolean;
     isNavbarCollapsed: boolean;
     languages: any[];
-    isSaving: boolean;
     ruta: any;
     swaggerEnabled: boolean;
-    modalRef: NgbModalRef;
     id: any;
     medidasModal: any;
     productosArrayNombre: any;
@@ -72,7 +97,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     acaProdPed: any;
     version: string;
     closeResult: string;
-    account: Account;
     link: string;
     settingsAccount: any;
     contador: any;
@@ -91,17 +115,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     idDeLaTiendaCogida: any;
     todosLosAcabados: any;
     iddireccioncogida;
+
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         protected acabadosService: AcabadosService,
-        private loginService: LoginService,
-        private languageService: JhiLanguageService,
-        private languageHelper: JhiLanguageHelper,
-        public dimensionesProductoTipoService: DimensionesProductoTipoService,
+        protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         private sessionStorage: SessionStorageService,
         protected datosUsuarioService: DatosUsuarioService,
         protected precioTiendaService: PrecioTiendaService,
-        private accountService: AccountService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
@@ -112,273 +133,149 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected userService: UserService,
         protected represenTorgaService: RepresenTorgaService,
         protected presupuestoArmarioInterioresService: PresupuestoArmarioInterioresService,
-        private loginModalService: LoginModalService,
-        private profileService: ProfileService,
         protected interioresService: InterioresService,
         public mainComponent: JhiMainComponent,
         public direccionTiendasService: DireccionTiendasService,
         protected medidasEspecialesService: MedidasEspecialesService,
-        protected jhiAlertService: JhiAlertService,
         protected precioFinalPresuService: PrecioFinalPresuService,
         protected presupuestoArmarioService: PresupuestoArmarioService,
-        private router: Router,
-        private modalService: NgbModal,
-        public productosDormitorioService: ProductosDormitorioService,
+        protected navbarComponent: NavbarComponent,
+        private accountService: AccountService,
+        protected ivaProductoTiendaService: IvaProductoTiendaService,
+        protected vendedoresService: VendedoresService,
+        private loginModalService: LoginModalService,
+        protected contactoFabricaService: ContactoFabricaService,
         private eventManager: JhiEventManager,
-        protected activatedRoute: ActivatedRoute
-    ) {
-        this.version = VERSION ? 'v' + VERSION : '';
-        this.isNavbarCollapsed = true;
-        this.routeData = this.activatedRoute.data.subscribe(data => {
-            this.reverse = data.pagingParams.ascending;
-            this.predicate = data.pagingParams.predicate;
-        });
-    }
+        protected mensajesService: MensajesService,
+        private loginService: LoginService,
+        private router: Router,
+        protected activatedRoute: ActivatedRoute,
+        protected pagosTiendaService: PagosTiendaService,
+        private stateStorageService: StateStorageService
+    ) {}
 
-    ngAfterViewInit() {
-        setTimeout(function() {
-            var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-            if (prueba['logo'] != undefined) {
-                $('#logoImagen').remove();
-                $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
-                $('.logo-img').css({ background: 'none' });
-            }
-        }, 10);
-    }
-    public estoesunaprueba() {
-        var account = this.accountService.userIdentity;
-        if (account.authorities[0] == 'ROLE_REPRESENTATE') {
-            $('#divsiesrepresentante').css({ display: 'none' });
-        }
-    }
-    public hacerclickcambiartexto(id) {
-        if (id == 1) {
-            $('#todometerFondo #textoRueda').text('Se esta generando el presupuesto, un momento.');
-        }
-        if (id == 2) {
-            $('#todometerFondo #textoRueda').text('Se esta generando el pedido, un momento.');
-        }
-    }
+    ngOnInit() {
+        var bottomModulos = [];
+        bottomModulos[2] = 'bottom:0px;';
+        bottomModulos[3] = 'bottom:0px;';
+        bottomModulos[4] = 'bottom:0px;';
+        bottomModulos[5] = 'bottom:0px;';
+        bottomModulos[6] = 'bottom:0px;';
+        bottomModulos[7] = 'bottom:0px;';
+        bottomModulos[8] = 'bottom:0px;';
+        bottomModulos[9] = 'bottom:0px;';
+        bottomModulos[10] = 'bottom:0px;';
+        bottomModulos[11] = 'bottom:0px;';
+        bottomModulos[12] = 'bottom:0px;';
+        bottomModulos[13] = 'bottom:0px;';
+        this.bottomModulos = bottomModulos;
+        var medidasModal = [];
+        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
+        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
+        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb5'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap2'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap3'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap4'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap5'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['ap7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg1'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg2'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg3'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg4'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg5'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg6'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg7'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg8'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg9'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg10'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg11'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg12'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg13'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg14'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg15'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['sg16'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv27'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv25'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv6'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv19'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv10'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
+        medidasModal['cv12'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
 
-    public consultarNombreFiscal() {
-        var nombreFiscal = $('#nombrefiscalinputcesta').val();
-        this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
-            this.todasLasTiendas = data.body;
-            if (data.body.length <= 5) {
-                this.arrayNombreFiscal = data.body;
-            } else {
-                alert('introduce un nombre mas concreto');
-            }
-        });
-    }
-    cargarTodasTiendas() {
-        var account = this.accountService.userIdentity;
-        var arrayBueno = [];
-        arrayBueno[83] = 3;
-        arrayBueno[84] = 4;
-        arrayBueno[85] = 42;
-        arrayBueno[310] = 22;
-        arrayBueno[386] = 15;
-        arrayBueno[541] = 47;
-        arrayBueno[873] = 45;
-        arrayBueno[934] = 29;
-        arrayBueno[1073] = 25;
-        arrayBueno[1187] = 18;
-        arrayBueno[1188] = 34;
-        arrayBueno[1410] = 5;
-        arrayBueno[1694] = 32;
-        var arrayNombreFiscal = [];
-        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
-            this.datosUsuarioService
-                .query({
-                    size: 100000
-                })
-                .subscribe(data => {
-                    this.todasLasTiendas = data.body;
-                    for (let o = 0; o < data.body['length']; o++) {
-                        $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
-                        if (screen.width < 800) {
-                            $('#selectTiendaDelNav').append(
-                                '<option class="' +
-                                    data.body[o]['id'] +
-                                    '" id="' +
-                                    data.body[o]['nombreFiscal'] +
-                                    '">' +
-                                    data.body[o]['nombreFiscal'] +
-                                    '</option>'
-                            );
-                            $('#selectTiendaDelNav').css({ display: 'initial' });
-                            $('#selectTiendas').css({ display: 'none' });
-                        }
-                        $('#listaTiendas').append(
-                            '<option class="' +
-                                data.body[o]['id'] +
-                                '" id="' +
-                                data.body[o]['nombreFiscal'] +
-                                '">' +
-                                data.body[o]['nombreFiscal'] +
-                                '</option>'
-                        );
-                    }
-                });
-        }
-        if (account.authorities[0] == 'ROLE_REPRESENTATE') {
-            this.datosUsuarioService.query12(arrayBueno[account.id]).subscribe(data => {
-                this.todasLasTiendas = data.body;
-                for (let o = 0; o < data.body['length']; o++) {
-                    $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
-                    if (screen.width < 800) {
-                        $('#selectTiendaDelNav').append(
-                            '<option class="' +
-                                data.body[o]['id'] +
-                                '" id="' +
-                                data.body[o]['nombreFiscal'] +
-                                '">' +
-                                data.body[o]['nombreFiscal'] +
-                                '</option>'
-                        );
-                        $('#selectTiendaDelNav').css({ display: 'initial' });
-                        $('#selectTiendas').css({ display: 'none' });
-                    }
+        this.medidasModal = medidasModal;
 
-                    $('#listaTiendas').append(
-                        '<option class="' +
-                            data.body[o]['id'] +
-                            '" id="' +
-                            data.body[o]['nombreFiscal'] +
-                            '">' +
-                            data.body[o]['nombreFiscal'] +
-                            '</option>'
-                    );
-                }
-            });
-        }
-        $('#modalConfirmarCreacionPresu #listaDireccionTiendas').remove();
-        $('#selectDireccionTiendaDelNav').empty();
-        $('#selectDireccionTiendaDelNav').append('<option></option>');
-        $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
-        if (screen.width < 800) {
-            $('#selectDireccionTiendas').css({ display: 'none' });
-            $('#selectDireccionTiendaDelNav').css({ display: 'revert' });
-        } else {
-            $('#selectDireccionTiendas').css({ display: 'revert' });
-            $('#selectDireccionTiendaDelNav').css({ display: 'none' });
-        }
+        var productosArrayNombres = [];
+        productosArrayNombres[107] = 'mb1';
+        productosArrayNombres[72] = 'sg1';
+        productosArrayNombres[73] = 'sg1';
+        productosArrayNombres[74] = 'sg2';
+        productosArrayNombres[75] = 'sg2';
+        productosArrayNombres[76] = 'sg3';
+        productosArrayNombres[77] = 'sg3';
+        productosArrayNombres[78] = 'sg4';
+        productosArrayNombres[79] = 'sg5';
+        productosArrayNombres[80] = 'sg6';
+        productosArrayNombres[81] = 'sg7';
+        productosArrayNombres[82] = 'sg8';
+        productosArrayNombres[83] = 'sg9';
+        productosArrayNombres[84] = 'sg10';
+        productosArrayNombres[85] = 'sg11';
+        productosArrayNombres[86] = 'sg12';
+        productosArrayNombres[87] = 'sg12';
+        productosArrayNombres[88] = 'sg13';
+        productosArrayNombres[89] = 'sg13';
+        productosArrayNombres[90] = 'sg14';
+        productosArrayNombres[91] = 'sg15';
+        productosArrayNombres[92] = 'sg16';
+        productosArrayNombres[108] = 'mb';
+        productosArrayNombres[109] = 'mb4';
+        productosArrayNombres[110] = 'mb6';
+        productosArrayNombres[111] = 'mb5';
+        productosArrayNombres[112] = 'mb8';
+        productosArrayNombres[113] = 'mb7';
+        productosArrayNombres[114] = 'mb9';
+        productosArrayNombres[115] = 'mb11';
+        productosArrayNombres[116] = 'mb10';
+        productosArrayNombres[117] = 'mb13';
+        productosArrayNombres[118] = 'mb12';
+        productosArrayNombres[119] = 'mb14';
+        productosArrayNombres[53] = 'ap2';
+        productosArrayNombres[62] = 'ap3';
+        productosArrayNombres[63] = 'ap4';
+        productosArrayNombres[64] = 'ap5';
+        productosArrayNombres[65] = 'ap6';
+        productosArrayNombres[66] = 'ap7';
+        productosArrayNombres[67] = 'ap8';
+        productosArrayNombres[68] = 'ap9';
+        productosArrayNombres[69] = 'ap10';
+        productosArrayNombres[158] = 'cv27';
+        productosArrayNombres[159] = 'cv27';
+        productosArrayNombres[160] = 'cv25';
+        productosArrayNombres[161] = 'cv25';
+        productosArrayNombres[162] = 'cv6';
+        productosArrayNombres[163] = 'cv6';
+        productosArrayNombres[164] = 'cv19';
+        productosArrayNombres[165] = 'cv19';
+        productosArrayNombres[166] = 'cv10';
+        productosArrayNombres[167] = 'cv10';
+        productosArrayNombres[168] = 'cv12';
+        productosArrayNombres[169] = 'cv12';
+        productosArrayNombres[170] = 'ap10';
 
-        if (account['authorities'].length == 1) {
-            if (account['authorities'][0] == 'ROLE_USER') {
-                $('#div1nombrefiscalcesta').css({ display: 'none' });
-                $('.div1direccionentrega').css({ display: 'block' });
-            }
-        }
-
-        var tiendaUsada = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        this.direccionTiendasService.query1(tiendaUsada['id']).subscribe(data => {
-            this.meterdireccionarray = data.body;
-            console.log(data.body);
-            this.direccionTiendasService.todos = data.body;
-            for (let u = 0; u < data.body.length; u++) {
-                $('#listaDireccionTiendas').append(
-                    '<option class="' +
-                        data.body[u]['id'] +
-                        '" id="' +
-                        data.body[u]['direccion'] +
-                        '">' +
-                        data.body[u]['direccion'] +
-                        '</option>'
-                );
-                $('#selectDireccionTiendaDelNav').append(
-                    '<option class="' +
-                        data.body[u]['id'] +
-                        '" id="' +
-                        data.body[u]['direccion'] +
-                        '">' +
-                        data.body[u]['direccion'] +
-                        '</option>'
-                );
-            }
-        });
-    }
-
-    public volveratrascestaconfirm(id) {
-        $('#volveratrascesta' + id).css({ display: 'none' });
-        if (id == 1) {
-            $('.div1direccionentrega').attr('id', 'simplepruebaani2');
-            this.arrayNombreFiscal = [];
-            $('#nombrefiscalinputcesta').val('');
-            setTimeout(function() {
-                $('.div1direccionentrega').css({ display: 'block' });
-            }, 1000);
-        }
-    }
-
-    public comprobarContrase() {
-        var valor = $('#contIdMaqui').val();
-        if (valor == '1234') {
-            $('#contraseModalMen').css({ display: 'none' });
-            $('#contIdMaqui').val('');
-            this.open('productos-precio', 'false', 'myModel');
-            $('#modalContrase').attr('class', 'modal fade'); //ocultamos el modal
-            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-        } else {
-            $('#contraseModalMen').css({ display: 'block' });
-        }
-    }
-
-    public comprobarContrase1() {
-        var valor = $('#contIdMaqui1').val();
-        if (valor == '1234') {
-            $('#contraseModalMen1').css({ display: 'none' });
-            $('#contIdMaqui1').val('');
-            this.open('gestion-tienda', 'false', 'myModel');
-            $('#modalContrase1').attr('class', 'modal fade'); //ocultamos el modal
-            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-        } else {
-            $('#contraseModalMen1').css({ display: 'block' });
-        }
-    }
-    public comprobarContrase2() {
-        var valor = $('#contIdMaqui2').val();
-        if (valor == '1234') {
-            $('#contraseModalMen2').css({ display: 'none' });
-            $('#contIdMaqui2').val('');
-            this.open('password', 'false', 'myModel');
-            $('#modalContrase2').attr('class', 'modal fade'); //ocultamos el modal
-            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-        } else {
-            $('#contraseModalMen2').css({ display: 'block' });
-        }
-    }
-
-    open(ruta, bool, content) {
-        var prod = $('#calculadoraCarrito #nombreMesita').text();
-        var idsArray = [];
-        idsArray[0] = 'composicionesSpan1';
-        idsArray[1] = 'mesasSpan';
-        idsArray[2] = 'panelesSpan';
-        idsArray[3] = 'suplementosTv';
-        idsArray[4] = 'estanteriasSpan';
-        idsArray[5] = 'colHorizontales';
-        idsArray[6] = 'colVertEstant';
-        idsArray[7] = 'colVerticalesSpan';
-        idsArray[8] = 'estantColgantesSpan';
-        idsArray[9] = 'apoyoSistemaSpan1';
-        idsArray[10] = 'escritoriosSpan';
-        idsArray[11] = 'singularesSpan';
-        idsArray[12] = 'vitrinasSpan';
-        idsArray[13] = 'aparadoresSpan';
-        idsArray[14] = 'modulosBajos';
-        idsArray[15] = 'armariosSpan';
-        idsArray[16] = 'banerascanapes';
-        idsArray[17] = 'apoyoSistema2';
-        idsArray[18] = 'chifonieresSpan';
-        idsArray[19] = 'mesitasSpan';
-        idsArray[20] = 'cabecerosSpan';
+        this.productosArrayNombre = productosArrayNombres;
         var usuarios = [];
-        $('body').removeAttr('style');
         this.userService
             .query({
                 size: 100000
@@ -389,239 +286,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 }
             });
         this.user = usuarios;
-        for (let x = 0; x < 21; x++) {
-            $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
-        }
-        prod = '';
-        if (prod != '') {
-            if (bool == false) {
-                this.ruta = ruta;
-                $('#modalPreguntarSalida').attr('style');
-                this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-                    result => {
-                        this.closeResult = `Closed with: ${result}`;
-                    },
-                    reason => {
-                        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-                    }
-                );
-            } else {
-                this.productosDormitorioService.todos = undefined;
-                this.router.navigate(['/' + ruta]);
-                this.modalService.dismissAll();
-                $('#menuPrincipal').css({ display: 'none' });
-                $('#botonEsconder').removeAttr('onclick');
-                $('#botonEsconder').attr('onclick', 'apareceMenu()');
-                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
-            }
-        } else {
-            this.router.navigate(['/' + ruta]);
-            this.productosDormitorioService.todos = undefined;
-            $('#menuPrincipal').css({ display: 'none' });
-            $('#botonEsconder').removeAttr('onclick');
-            $('#botonEsconder').attr('onclick', 'apareceMenu()');
-            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
-        }
-    }
 
-    public cambiardirecParaPedido() {
-        var tiendaElegida = $('#selectTiendaDelNav').val();
-        var todasTiendaBuenas = this.todasLasTiendas;
-    }
-
-    public generarPresupuesto() {
-        //$('#todometerFondo').css({ display: 'block' });
-        //$('#modalCesta').attr('class', 'modal fade show');
-        //$('#modalConfirmarCreacionPresu').attr('class', 'modal fade show');
-        //$('#modalCesta').css({ display: 'none' });
-        this.todasDimensiones = this.dimensionesProductoTipoService.todos;
-        var memo = document.getElementsByName('estado');
-        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        var puntos = null;
-
-        if (item == 'C') {
-            puntos = JSON.parse(sessionStorage.getItem(item));
-        }
-        var numeroProductos = [];
-        this.productosPresupuestoPedidosService.query12().subscribe(data => {
-            for (let i = 0; i < data.body.length; i++) {
-                numeroProductos[i] = data.body[0];
-            }
-            this.acaProdPed = numeroProductos;
-            if (numeroProductos.length != 0) {
-                var prodCarr = [];
-                var todoCarr;
-                var contProd = 0;
-                for (let i = 1; i < 100; i++) {
-                    todoCarr = JSON.parse(sessionStorage.getItem('prod' + i));
-                    if (todoCarr != undefined) {
-                        if (todoCarr[1].length == undefined) {
-                            prodCarr[contProd] = todoCarr;
-                            contProd++;
-                        } else {
-                            for (let v = 0; v < todoCarr[1].length; v++) {
-                                var arrayAux = [];
-                                arrayAux[1] = todoCarr[1][v];
-                                prodCarr[contProd] = arrayAux;
-                                contProd++;
-                            }
-                        }
-                    }
-                }
-
-                this.productoPresupuesto = prodCarr;
-                var numeroAcaProd = [];
-                var aux = [];
-                var acab = [];
-                var prodAca = [];
-                var prodIlu = [];
-                var dimensionEspecialBien = [];
-                var contAcab = 0;
-                for (let j = 0; j < prodCarr.length; j++) {
-                    for (let i = 0; i < 15; i++) {
-                        if (prodCarr[j][1]['acabado' + (i + 1)] != undefined) {
-                            acab[contAcab] = prodCarr[j][1]['acabado' + (i + 1)];
-                            contAcab++;
-                        }
-                    }
-                    contAcab = 0;
-                    numeroAcaProd[j] = acab;
-                    acab = [];
-                }
-                this.acabadosPresupuesto = numeroAcaProd;
-                var account = this.accountService.userIdentity;
-                if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                    this.isSaving = true;
-                    var usuarios = this.user;
-                    var usuario;
-                    var idUsu = account['id'];
-                    for (let i = 0; i < usuarios.length; i++) {
-                        if (usuarios[i]['id'] == idUsu) {
-                            usuario = usuarios[i];
-                        }
-                    }
-                } else {
-                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
-                        var idTienda = $('#selectTienda').val();
-                        var tiendaUsuarioAdmin = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-                        var usuario = tiendaUsuarioAdmin['user'];
-                        var usuarios = this.user;
-                        var usuarioCreado;
-                        var idUsu = account['id'];
-                        for (let i = 0; i < usuarios.length; i++) {
-                            if (usuarios[i]['id'] == idUsu) {
-                                usuarioCreado = usuarios[i];
-                            }
-                        }
-                    } else {
-                        this.isSaving = true;
-                        var usuarios = this.user;
-                        var usuario;
-                        var idUsu = account['id'];
-                        for (let i = 0; i < usuarios.length; i++) {
-                            if (usuarios[i]['id'] == idUsu) {
-                                usuario = usuarios[i];
-                            }
-                        }
-                    }
-                }
-                var d = new Date();
-
-                var month = d.getMonth() + 1;
-                var day = d.getDate();
-                var prueba;
-                var output = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + d.getFullYear();
-                if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
-                    prueba = {
-                        codigo: 'PR-' + usuario['id'],
-                        pedido: 0,
-                        user: usuario,
-                        puntos: puntos,
-                        web: 1,
-                        estapedido: 0,
-                        estafactura: 0,
-                        fecha_presupuesto: output,
-                        usuarioCreadoPre: usuarioCreado
-                    };
-                } else {
-                    prueba = {
-                        codigo: 'PR-' + usuario['id'],
-                        pedido: 0,
-                        puntos: puntos,
-                        user: usuario,
-                        web: 1,
-                        estapedido: 0,
-                        estafactura: 0,
-                        usuarioCreadoPre: account,
-                        fecha_presupuesto: output
-                    };
-                }
-                var tiendaElegida = this.idDeLaTiendaCogida;
-                var referenciaCliente = $('#referenciaCliente').val();
-                var todasTiendaBuenas = this.todasLasTiendas;
-                if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
-                    for (let q = 0; q < todasTiendaBuenas.length; q++) {
-                        if (todasTiendaBuenas[q]['id'] == tiendaElegida) {
-                            var usuGG = todasTiendaBuenas[q]['user'];
-                        }
-                    }
-                    prueba['user'] = usuGG;
-                    prueba['codigo'] = referenciaCliente;
-                }
-                if (referenciaCliente != null && referenciaCliente != '') {
-                    prueba['codigo'] = referenciaCliente;
-                }
-                if (tiendaElegida != null && tiendaElegida != '') {
-                    for (let q = 0; q < todasTiendaBuenas.length; q++) {
-                        if (todasTiendaBuenas[q]['nombreFiscal'] == tiendaElegida) {
-                            var usuGG = todasTiendaBuenas[q]['user'];
-                        }
-                    }
-                    prueba['user'] = usuGG;
-                }
-
-                if (memo.length != 0) {
-                    if (memo[1]['checked'] == true) {
-                        prueba['pedido'] = 1;
-                        prueba['fecha_pedido'] = output;
-                    }
-                }
-                console.log(prueba);
-                this.presupuestoPedido = prueba;
-
-                this.subscribeToSaveResponse4(this.presupuestoPedidoService.create(this.presupuestoPedido));
-            }
-        });
-        this.productosDormitorioService.numeroCesta = 0;
-    }
-    sort() {
-        const result = [this.predicate + ',' + (this.reverse ? 'asc' : 'desc')];
-        if (this.predicate !== 'id') {
-            result.push('id');
-        }
-        return result;
-    }
-
-    public cargarComposicionNT(id) {
-        $('#menuPrincipal').css({ display: 'none' });
-        for (let i = 1; i < 49; i++) {
-            $('#composicionNt' + i).css({ 'font-weight': '400' });
-        }
-        $('#composicionNt' + id).css({ 'font-weight': '600' });
-        $('#botonEsconder').removeAttr('onclick');
-        $('#botonEsconder').attr('onclick', 'apareceMenu()');
-        $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
-        sessionStorage.setItem('composicion', '' + id);
-        if (this.router.url == '/composicion-ver') {
-            location.reload();
-        } else {
-            this.router.navigate(['/composicion-ver']);
-        }
-    }
-
-    public abrirCesta() {
         $('.modal-backdrop').remove();
-        var productosArrayNombres = this.productosArrayNombre;
+        productosArrayNombres = this.productosArrayNombre;
         $('#modalCesta .modal-body').empty();
         var medidas = this.medidasModal;
         var acabados = [];
@@ -12054,6 +11721,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 );
                             }
                         }
+                        if (sesion[1]['obsertext'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Observaciones: </span>' +
+                                    sesion[1]['obsertext'] +
+                                    '</p>'
+                            );
+                        }
 
                         $('#textoCesta' + i).append(
                             '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
@@ -12094,6 +11768,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     '">' +
                                     sesion[1]['todoSumadoPrecio'] +
                                     '</span> PP </i></p>'
+                            );
+                        }
+                        if (sesion[1]['obsertext'] != undefined) {
+                            $('#textoCesta' + i).append(
+                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['obsertext'] + '</p>'
                             );
                         }
 
@@ -12184,6 +11863,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 );
                                 $('#textoCesta' + i).css({ 'text-align': 'center' });
                             }
+                            if (sesion[1]['obsertext'] != undefined) {
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['obsertext'] + '</p>'
+                                );
+                            }
+
                             if (screen.width >= 800) {
                                 $('#textoCesta' + i).append(
                                     '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['texto'] + '</p>'
@@ -12194,6 +11879,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         '">Descargar Archivo</a></p>'
                                 );
                             }
+
                             var precioTotalCesta;
                             precioTotalCesta = $('#cestaTotal').text();
                             if (precioTotalCesta != '') {
@@ -12231,587 +11917,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             }
         }
     }
-    open1(ruta, bool, content, id, nombreId) {
-        var prod = $('#nombreMesita').text();
-        //$('#' + nombreId).css({ 'font-weight': 'bold' });
-        var idsArray = [];
-        idsArray[0] = 'composicionesSpan1';
-        idsArray[1] = 'mesasSpan';
-        idsArray[2] = 'panelesSpan';
-        idsArray[3] = 'suplementosTv';
-        idsArray[4] = 'estanteriasSpan';
-        idsArray[5] = 'colHorizontales';
-        idsArray[6] = 'colVertEstant';
-        idsArray[7] = 'colVerticalesSpan';
-        idsArray[8] = 'estantColgantesSpan';
-        idsArray[9] = 'apoyoSistemaSpan1';
-        idsArray[10] = 'escritoriosSpan';
-        idsArray[11] = 'singularesSpan';
-        idsArray[12] = 'vitrinasSpan';
-        idsArray[13] = 'aparadoresSpan';
-        idsArray[14] = 'modulosBajos';
-        idsArray[15] = 'armariosSpan';
-        idsArray[16] = 'banerascanapes';
-        idsArray[17] = 'apoyoSistema2';
-        idsArray[18] = 'chifonieresSpan';
-        idsArray[19] = 'mesitasSpan';
-        idsArray[20] = 'cabecerosSpan';
-        var usuarios = [];
-        $('body').removeAttr('style');
-        this.userService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    usuarios[i] = data.body[i];
-                }
-            });
-        this.user = usuarios;
-        for (let x = 0; x < 21; x++) {
-            if (idsArray[x] != nombreId) {
-                $('#' + idsArray[x]).css({ 'font-weight': 'normal' });
-            }
-        }
-        prod = '';
-        if (prod != '') {
-            if (bool == false) {
-                this.ruta = ruta;
-                this.id = id;
-                $('#modalPreguntarSalida').attr('style');
-                this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-                    result => {
-                        this.closeResult = `Closed with: ${result}`;
-                    },
-                    reason => {
-                        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-                    }
-                );
-            } else {
-                this.productosDormitorioService.todos = undefined;
-                this.cargarProductosCategoria(id, ruta);
-                this.modalService.dismissAll();
-                $('#menuPrincipal').css({ display: 'none' });
-                $('#botonEsconder').removeAttr('onclick');
-                $('#botonEsconder').attr('onclick', 'apareceMenu()');
-                $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
-            }
-        } else {
-            this.productosDormitorioService.todos = undefined;
-            this.cargarProductosCategoria(id, ruta);
-            $('#menuPrincipal').css({ display: 'none' });
-            $('#botonEsconder').removeAttr('onclick');
-            $('#botonEsconder').attr('onclick', 'apareceMenu()');
-            $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
-        }
-    }
-
-    private getDismissReason(reason: any): string {
-        if (reason === ModalDismissReasons.ESC) {
-            return 'by pressing ESC';
-        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        } else {
-            return `with: ${reason}`;
-        }
-    }
-
-    public funcionQuitarRaya(id) {
-        var divs = [];
-        divs[1] = 'torgaTarifaComedores';
-        divs[2] = 'torgaTarifaDormitorios';
-        divs[3] = 'menuComercial';
-        divs[4] = 'menuContacto';
-        divs[5] = 'menuFabricantesTorgaDentro';
-        divs[6] = 'menuTienda';
-        divs[7] = 'menuGestionUsuario';
-        var usuarios = [];
-        this.userService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    usuarios[i] = data.body[i];
-                }
-            });
-        this.user = usuarios;
-        for (let g = 1; g <= 7; g++) {
-            if (divs[g] != divs[id]) {
-                $('#' + divs[g]).attr('class', 'collapse');
-                $('#mas' + g).text('+');
-            }
-        }
-        var mas = $('#mas' + id).text();
-        if (mas == '+') {
-            $('#mas' + id).text('x');
-            $('#liTitulo' + id).css({ 'border-bottom': '0' });
-        } else {
-            $('#mas' + id).text('+');
-            $('#liTitulo' + id).css({ 'border-bottom': '1px solid #D9D9D9' });
-        }
-    }
-    public presupuestosCargar() {
-        var account = this.accountService.userIdentity;
-
-        var autoBueno;
-
-        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
-            autoBueno = 'admin';
-        } else {
-            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                autoBueno = 'repre';
-            }
-        }
-
-        this.presupuestoPedidoService
-            .query({
-                size: 10000000
-            })
-            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
-                var numero = 0;
-                var numeroPedidos = 0;
-                var d = new Date();
-                var month = d.getMonth() + 1;
-                var day = d.getDate();
-                var output = d.getFullYear() + '/' + (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day;
-                for (let i = 0; i < res.body.length; i++) {
-                    if (autoBueno == 'admin') {
-                        if (res.body[i]['fecha_presupuesto'] == output) {
-                            numero++;
-                        }
-                        if (res.body[i]['fecha_pedido'] == output) {
-                            numeroPedidos++;
-                        }
-                    } else {
-                        if (autoBueno == 'repre') {
-                            var todos = this.representanteTiendaService.todos;
-                            for (let K = 0; K < todos.length; K++) {
-                                var usuario = todos[K]['datosUsuario']['user']['id'];
-                                if (res.body[i]['user']['id'] == usuario && res.body[i]['fecha_presupuesto'] == output) {
-                                    numero++;
-                                }
-                                if (res.body[i]['user']['id'] == usuario && res.body[i]['fecha_pedido'] == output) {
-                                    numeroPedidos++;
-                                }
-                            }
-                        }
-                    }
-                }
-                this.numeroPresupuestos = numero;
-                this.numeroPedidos = numeroPedidos;
-            });
-    }
-
-    public siEsCambiarB() {
-        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        $('#modalCambiar1A').css({ 'background-color': 'black' });
-        $('#modalCambiar1B').css({ 'background-color': 'black' });
-        $('#modalCambiar1C').css({ 'background-color': 'black' });
-        $('#modalCambiar1A').css({ color: 'white' });
-        $('#modalCambiar1B').css({ color: 'white' });
-        $('#modalCambiar1C').css({ color: 'white' });
-        this.precioTiendaService.findBus(tienda.id).subscribe(data => {
-            this.precioPunto = data.body;
-            sessionStorage.setItem('B', JSON.stringify(this.precioPunto[0]));
-            sessionStorage.setItem('seccionPrecios', JSON.stringify('B'));
-        });
-        sessionStorage.removeItem('C');
-        sessionStorage.removeItem('A');
-        $('#siEsIva').css({ display: 'block' });
-        $('#modalCambiar1B').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1B').css({ color: 'black' });
-        this.router.navigate(['/inicio']);
-        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
-        this.productosDormitorioService.numeroCesta = 0;
-        for (let i = 1; i <= 100; i++) {
-            sessionStorage.removeItem('prod' + i);
-        }
-    }
-    public textoRojoMostrarA() {
-        var cesta = this.productosDormitorioService.numeroCesta;
-        if (cesta != 0) {
-            $('#modalCambiarA #textoRojoCarrito').css({ display: 'block' });
-        }
-    }
-    public textoRojoMostrarB() {
-        var cesta = this.productosDormitorioService.numeroCesta;
-        if (cesta != 0) {
-            $('#modalCambiarB #textoRojoCarrito').css({ display: 'block' });
-        }
-    }
-    public textoRojoMostrarC() {
-        var cesta = this.productosDormitorioService.numeroCesta;
-        if (cesta != 0) {
-            $('#modalCambiarC #textoRojoCarrito').css({ display: 'block' });
-        }
-    }
-    public siEsCambiarA() {
-        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        $('#modalCambiar1A').css({ 'background-color': 'black' });
-        $('#modalCambiar1B').css({ 'background-color': 'black' });
-        $('#modalCambiar1C').css({ 'background-color': 'black' });
-        $('#modalCambiar1A').css({ color: 'white' });
-        $('#modalCambiar1B').css({ color: 'white' });
-        $('#modalCambiar1C').css({ color: 'white' });
-        sessionStorage.setItem('A', JSON.stringify(1));
-        sessionStorage.setItem('seccionPrecios', JSON.stringify('A'));
-        sessionStorage.removeItem('C');
-        sessionStorage.removeItem('B');
-        $('#siEsIva').css({ display: 'none' });
-        this.router.navigate(['/inicio']);
-        $('#modalCambiar1A').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1A').css({ color: 'black' });
-        sessionStorage.setItem('IVA', JSON.stringify(0));
-        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
-        this.productosDormitorioService.numeroCesta = 0;
-        for (let i = 1; i <= 100; i++) {
-            sessionStorage.removeItem('prod' + i);
-        }
-    }
-
-    public siEsCambiarC() {
-        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        $('#modalCambiar1A').css({ 'background-color': 'black' });
-        $('#modalCambiar1B').css({ 'background-color': 'black' });
-        $('#modalCambiar1C').css({ 'background-color': 'black' });
-        $('#modalCambiar1A').css({ color: 'white' });
-        $('#modalCambiar1B').css({ color: 'white' });
-        $('#modalCambiar1C').css({ color: 'white' });
-        var valorInput = $('#inputPrecioTienda').val();
-        sessionStorage.setItem('C', JSON.stringify(valorInput));
-        sessionStorage.setItem('seccionPrecios', JSON.stringify('C'));
-        sessionStorage.removeItem('A');
-        sessionStorage.removeItem('B');
-        $('#modalCambiar1C').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1C').css({ color: 'black' });
-        $('#siEsIva').css({ display: 'block' });
-        this.router.navigate(['/inicio']);
-        var cesta = this.productosDormitorioService.numeroCesta;
-        $('#modalCambiarC #textoRojoCarrito').css({ display: 'none' });
-        this.productosDormitorioService.numeroCesta = 0;
-        for (let i = 1; i <= 100; i++) {
-            sessionStorage.removeItem('prod' + i);
-        }
-    }
-
-    public siEsCambiarD() {
-        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        $('#modalCambiar1D').css({ 'background-color': 'black' });
-        $('#modalCambiar1D').css({ color: 'white' });
-        $('#modalCambiar1E').css({ 'background-color': 'black' });
-        $('#modalCambiar1E').css({ color: 'white' });
-        sessionStorage.setItem('IVA', JSON.stringify(1));
-        this.router.navigate(['/inicio']);
-        $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1D').css({ color: 'black' });
-    }
-
-    public siEsCambiarE() {
-        var tienda = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-        $('#modalCambiar1D').css({ 'background-color': 'black' });
-        $('#modalCambiar1D').css({ color: 'white' });
-        $('#modalCambiar1E').css({ 'background-color': 'black' });
-        $('#modalCambiar1E').css({ color: 'white' });
-        sessionStorage.setItem('IVA', JSON.stringify(0));
-        this.router.navigate(['/inicio']);
-        $('#modalCambiar1E').css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1E').css({ color: 'black' });
-    }
-
-    public comprobarCambiar() {
-        var text = $('#inputVerContra').val();
-        if (text == '1234') {
-            $('#modalCambiarB #conContrasena').css({ display: 'block' });
-            $('#modalCambiarB #sinContrasena').css({ display: 'none' });
-        } else {
-            $('#modalCambiarB #sinContrasena').css({ border: '1px solid red' });
-        }
-    }
-
-    ngOnInit() {
-        this.predicate = 'id';
-        this.reverse = true;
-        this.languageHelper.getAll().then(languages => {
-            this.languages = languages;
-        });
-        sessionStorage.setItem('A', JSON.stringify(1));
-        sessionStorage.setItem('seccionPrecios', JSON.stringify('A'));
-
-        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        var item1 = JSON.parse(sessionStorage.getItem('IVA'));
-        $('#modalCambiar1A').css({ 'background-color': 'black' });
-        $('#modalCambiar1B').css({ 'background-color': 'black' });
-        $('#modalCambiar1C').css({ 'background-color': 'black' });
-        $('#modalCambiar1A').css({ color: 'white' });
-        $('#modalCambiar1B').css({ color: 'white' });
-        $('#modalCambiar1C').css({ color: 'white' });
-        $('#modalCambiar1' + item).css({ 'background-color': '#D8E8C6' });
-        $('#modalCambiar1' + item).css({ color: 'black' });
-        if (item != undefined && item != null) {
-            if (item != 'A') {
-                $('#siEsIva').css({ display: 'block' });
-            }
-        }
-        if (item1 == 1) {
-            $('#modalCambiar1D').css({ 'background-color': '#D8E8C6' });
-            $('#modalCambiar1D').css({ color: 'black' });
-            $('#modalCambiar1E').css({ 'background-color': 'black' });
-            $('#modalCambiar1E').css({ color: 'white' });
-        }
-        if (item1 == 0) {
-            $('#modalCambiar1E').css({ 'background-color': '#D8E8C6' });
-            $('#modalCambiar1E').css({ color: 'black' });
-            $('#modalCambiar1D').css({ 'background-color': 'black' });
-            $('#modalCambiar1D').css({ color: 'white' });
-        }
-
-        var contCesta = 0;
-        for (let i = 1; i < 20; i++) {
-            if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
-                contCesta++;
-            }
-        }
-
-        this.productosDormitorioService.numeroCesta = contCesta;
-        var bottomModulos = [];
-        bottomModulos[2] = 'bottom:0px;';
-        bottomModulos[3] = 'bottom:0px;';
-        bottomModulos[4] = 'bottom:0px;';
-        bottomModulos[5] = 'bottom:0px;';
-        bottomModulos[6] = 'bottom:0px;';
-        bottomModulos[7] = 'bottom:0px;';
-        bottomModulos[8] = 'bottom:0px;';
-        bottomModulos[9] = 'bottom:0px;';
-        bottomModulos[10] = 'bottom:0px;';
-        bottomModulos[11] = 'bottom:0px;';
-        bottomModulos[12] = 'bottom:0px;';
-        bottomModulos[13] = 'bottom:0px;';
-        this.bottomModulos = bottomModulos;
-        var medidasModal = [];
-        medidasModal['mb4'] = 'margin-left:-140px;bottom:125px;max-width:500px;max-height:300px;';
-        medidasModal['mb1'] = 'margin-left:-60px;bottom:105px;max-width:500px;max-height:300px;';
-        medidasModal['mb6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb5'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb11'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb12'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb13'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['mb14'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap2'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap3'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap4'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap5'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap6'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap8'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap9'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap10'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['ap7'] = 'margin-left:-70px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg1'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg2'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg3'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg4'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg5'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg6'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg7'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg8'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg9'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg10'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg11'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg12'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg13'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg14'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg15'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['sg16'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv27'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv25'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv6'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv19'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv10'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-        medidasModal['cv12'] = 'margin-left:0px;bottom:140px;max-width:500px;max-height:300px;';
-
-        this.medidasModal = medidasModal;
-
-        var productosArrayNombres = [];
-        productosArrayNombres[107] = 'mb1';
-        productosArrayNombres[72] = 'sg1';
-        productosArrayNombres[73] = 'sg1';
-        productosArrayNombres[74] = 'sg2';
-        productosArrayNombres[75] = 'sg2';
-        productosArrayNombres[76] = 'sg3';
-        productosArrayNombres[77] = 'sg3';
-        productosArrayNombres[78] = 'sg4';
-        productosArrayNombres[79] = 'sg5';
-        productosArrayNombres[80] = 'sg6';
-        productosArrayNombres[81] = 'sg7';
-        productosArrayNombres[82] = 'sg8';
-        productosArrayNombres[83] = 'sg9';
-        productosArrayNombres[84] = 'sg10';
-        productosArrayNombres[85] = 'sg11';
-        productosArrayNombres[86] = 'sg12';
-        productosArrayNombres[87] = 'sg12';
-        productosArrayNombres[88] = 'sg13';
-        productosArrayNombres[89] = 'sg13';
-        productosArrayNombres[90] = 'sg14';
-        productosArrayNombres[91] = 'sg15';
-        productosArrayNombres[92] = 'sg16';
-        productosArrayNombres[108] = 'mb';
-        productosArrayNombres[109] = 'mb4';
-        productosArrayNombres[110] = 'mb6';
-        productosArrayNombres[111] = 'mb5';
-        productosArrayNombres[112] = 'mb8';
-        productosArrayNombres[113] = 'mb7';
-        productosArrayNombres[114] = 'mb9';
-        productosArrayNombres[115] = 'mb11';
-        productosArrayNombres[116] = 'mb10';
-        productosArrayNombres[117] = 'mb13';
-        productosArrayNombres[118] = 'mb12';
-        productosArrayNombres[119] = 'mb14';
-        productosArrayNombres[53] = 'ap2';
-        productosArrayNombres[62] = 'ap3';
-        productosArrayNombres[63] = 'ap4';
-        productosArrayNombres[64] = 'ap5';
-        productosArrayNombres[65] = 'ap6';
-        productosArrayNombres[66] = 'ap7';
-        productosArrayNombres[67] = 'ap8';
-        productosArrayNombres[68] = 'ap9';
-        productosArrayNombres[69] = 'ap10';
-        productosArrayNombres[158] = 'cv27';
-        productosArrayNombres[159] = 'cv27';
-        productosArrayNombres[160] = 'cv25';
-        productosArrayNombres[161] = 'cv25';
-        productosArrayNombres[162] = 'cv6';
-        productosArrayNombres[163] = 'cv6';
-        productosArrayNombres[164] = 'cv19';
-        productosArrayNombres[165] = 'cv19';
-        productosArrayNombres[166] = 'cv10';
-        productosArrayNombres[167] = 'cv10';
-        productosArrayNombres[168] = 'cv12';
-        productosArrayNombres[169] = 'cv12';
-        productosArrayNombres[170] = 'ap10';
-
-        this.productosArrayNombre = productosArrayNombres;
-
-        if (this.representanteTiendaService.todos == undefined) {
-            var account = this.accountService.userIdentity;
-            if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                this.represenTorgaService.findUsu(account.id).subscribe(data => {
-                    this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
-                        this.representanteTiendaService.todos = data.body;
-                        this.representanteTiendaService.representante = data.body[0]['represenTorga'];
-                    });
-                });
-            }
-        }
-        this.profileService.getProfileInfo().then(profileInfo => {
-            this.inProduction = profileInfo.inProduction;
-            this.swaggerEnabled = profileInfo.swaggerEnabled;
-        });
-
-        this.accountService.identity().then(account => {
-            this.account = account;
-        });
-
-        var usuarios = [];
-        this.userService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    usuarios[i] = data.body[i];
-                }
-            });
-        this.user = usuarios;
-
-        this.registerAuthenticationSuccess();
-        var cont = 0;
-        this.contador = 0;
-        this.datosUsuarioService
-            .query({
-                size: 10000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data['body'].length; i++) {
-                    if (
-                        data['body'][i]['direccion'] == null ||
-                        (data['body'][i]['direccion'] == '' && data['body'][i]['codPostal'] == null) ||
-                        (data['body'][i]['codPostal'] == '' && data['body'][i]['cif'] == null) ||
-                        (data['body'][i]['cif'] == '' && data['body'][i]['nombreFiscal'] == null) ||
-                        data['body'][i]['nombreFiscal'] == ''
-                    ) {
-                        cont++;
-                        this.contador = cont;
-                        if (this.contador > 0) {
-                            $('#contadorDatos').css({ color: 'red' });
-                            $('#contadorDatos').css({ 'font-size': '36px' });
-                        }
-                    }
-                }
-            });
-    }
-    registerAuthenticationSuccess() {
-        this.eventManager.subscribe('authenticationSuccess', message => {
-            this.accountService.identity().then(account => {
-                this.account = account;
-            });
-            var usuarios = [];
-            this.userService
-                .query({
-                    size: 1000000
-                })
-                .subscribe(data => {
-                    for (let i = 0; i < data.body.length; i++) {
-                        usuarios[i] = data.body[i];
-                    }
-                });
-            this.user = usuarios;
-            setTimeout(function() {
-                var prueba = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-                if (prueba['logo'] != undefined) {
-                    this.logo = prueba;
-                    $('#logoImagen').remove();
-                    $('.logo-img').append('<img id="logoImagen"  src="data:image/gif;base64,' + prueba['logo'] + '"/>');
-                }
-            }, 10);
-        });
-    }
-
-    public cargarProductosCategoria(id, url) {
-        if (url == 'productos-aparadores' || url == 'productos-singulares') {
-            this.productosDormitorioService.categoria1(id).subscribe(data => {
-                this.productosDormitorioService.todos = data.body;
-                this.router.navigate(['/' + url + '']);
-            });
-        } else {
-            this.productosDormitorioService.categoria(id).subscribe(data => {
-                this.productosDormitorioService.todos = data.body;
-                this.router.navigate(['/' + url + '']);
-            });
-        }
-    }
-
-    changeLanguage(languageKey: string) {
-        this.sessionStorage.store('locale', languageKey);
-        this.languageService.changeLanguage(languageKey);
-    }
-    public cargarEditarLink() {
-        $('#modalCesta').attr('class', 'modal fade');
-        $('#modalCesta').css({ display: 'none' });
-        $('#modalConfirmarEditar').attr('class', 'modal fade');
-        $('#modalConfirmarEditar').css({ display: 'none' });
-        $('.modal-backdrop').remove();
-        $('body').removeAttr('class');
-        this.router.navigate(['/productos-editar']);
-    }
-
-    public mostrarDireccionDeEntrega() {
-        $('#divdireccionentregamodal').css({ display: 'block' });
-    }
-
     public meterCuadroDireccion(id) {
         var array = [];
         this.idDeLaTiendaCogida = id;
@@ -12841,19 +11946,124 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }, 1000);
     }
 
-    public tiendasDireccionPadentro() {
-        var valor;
-        if (screen.width < 800) {
-            valor = $('#selectTiendaDelNav').val();
-        } else {
-            valor = $('#selectTiendas').val();
-        }
+    public consultarNombreFiscal() {
+        var nombreFiscal = $('#nombrefiscalinputcesta').val();
+        this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
+            this.todasLasTiendas = data.body;
+            if (data.body.length <= 5) {
+                this.arrayNombreFiscal = data.body;
+            } else {
+                alert('introduce un nombre mas concreto');
+            }
+        });
+    }
 
+    public llamargenerar() {
+        $('#botonfinalizarpedidocesta').css({ display: 'none' });
+        this.navbarComponent.dimensionesProductoTipoService.todos = this.dimensionesProductoTipoService.todos;
+        this.navbarComponent.idDeLaTiendaCogida = this.idDeLaTiendaCogida;
+        this.navbarComponent.todasLasTiendas = this.todasLasTiendas;
+        this.navbarComponent.meterdireccionarray = this.meterdireccionarray;
+        this.navbarComponent.iddireccioncogida = this.iddireccioncogida;
+        this.navbarComponent.user = this.user;
+        this.navbarComponent.generarPresupuesto();
+    }
+    public cargarTodasTiendas() {
+        var account = this.accountService.userIdentity;
+        if (account['authorities'].length == 1) {
+            if (account['authorities'][0] == 'ROLE_USER') {
+                $('#div1nombrefiscalcesta').css({ display: 'none' });
+                $('.div1direccionentrega').css({ display: 'block' });
+            }
+        }
+        $('#modalCesta').css({ display: 'none' });
+        $('#modalConfirmarCreacionPresu').attr('class', 'simplepruebaani599');
+        $('#modalConfirmarCreacionPresu').css({ display: 'block' });
+
+        var arrayBueno = [];
+        arrayBueno[83] = 3;
+        arrayBueno[84] = 4;
+        arrayBueno[85] = 42;
+        arrayBueno[310] = 22;
+        arrayBueno[386] = 15;
+        arrayBueno[541] = 47;
+        arrayBueno[873] = 45;
+        arrayBueno[934] = 29;
+        arrayBueno[1073] = 25;
+        arrayBueno[1187] = 18;
+        arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
+        arrayBueno[1694] = 32;
+        var arrayNombreFiscal = [];
+        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+            this.datosUsuarioService
+                .query({
+                    size: 100000
+                })
+                .subscribe(data => {
+                    this.todasLasTiendas = data.body;
+                    for (let o = 0; o < data.body['length']; o++) {
+                        $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
+                        if (screen.width < 800) {
+                            $('#selectTiendaDelNav').append(
+                                '<option class="' +
+                                    data.body[o]['id'] +
+                                    '" id="' +
+                                    data.body[o]['nombreFiscal'] +
+                                    '">' +
+                                    data.body[o]['nombreFiscal'] +
+                                    '</option>'
+                            );
+                            $('#selectTiendaDelNav').css({ display: 'initial' });
+                            $('#selectTiendas').css({ display: 'none' });
+                        }
+                        $('#listaTiendas').append(
+                            '<option class="' +
+                                data.body[o]['id'] +
+                                '" id="' +
+                                data.body[o]['nombreFiscal'] +
+                                '">' +
+                                data.body[o]['nombreFiscal'] +
+                                '</option>'
+                        );
+                    }
+                });
+        }
+        if (account.authorities[0] == 'ROLE_REPRESENTATE') {
+            this.datosUsuarioService.query12(arrayBueno[account.id]).subscribe(data => {
+                this.todasLasTiendas = data.body;
+                for (let o = 0; o < data.body['length']; o++) {
+                    $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
+                    if (screen.width < 800) {
+                        $('#selectTiendaDelNav').append(
+                            '<option class="' +
+                                data.body[o]['id'] +
+                                '" id="' +
+                                data.body[o]['nombreFiscal'] +
+                                '">' +
+                                data.body[o]['nombreFiscal'] +
+                                '</option>'
+                        );
+                        $('#selectTiendaDelNav').css({ display: 'initial' });
+                        $('#selectTiendas').css({ display: 'none' });
+                    }
+
+                    $('#listaTiendas').append(
+                        '<option class="' +
+                            data.body[o]['id'] +
+                            '" id="' +
+                            data.body[o]['nombreFiscal'] +
+                            '">' +
+                            data.body[o]['nombreFiscal'] +
+                            '</option>'
+                    );
+                }
+            });
+        }
         $('#modalConfirmarCreacionPresu #listaDireccionTiendas').remove();
         $('#selectDireccionTiendaDelNav').empty();
         $('#selectDireccionTiendaDelNav').append('<option></option>');
         $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
-        var tiendas = this.todasLasTiendas;
         if (screen.width < 800) {
             $('#selectDireccionTiendas').css({ display: 'none' });
             $('#selectDireccionTiendaDelNav').css({ display: 'revert' });
@@ -12861,1567 +12071,100 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             $('#selectDireccionTiendas').css({ display: 'revert' });
             $('#selectDireccionTiendaDelNav').css({ display: 'none' });
         }
-        if (valor != '') {
-            for (let i = 0; i < tiendas.length; i++) {
-                if (tiendas[i]['nombreFiscal'] == valor) {
-                    console.log(tiendas[i]);
-                    this.direccionTiendasService.query1(tiendas[i]['id']).subscribe(data => {
-                        console.log(data.body);
-                        this.direccionTiendasService.todos = data.body;
-                        for (let u = 0; u < data.body.length; u++) {
-                            $('#listaDireccionTiendas').append(
-                                '<option class="' +
-                                    data.body[u]['id'] +
-                                    '" id="' +
-                                    data.body[u]['direccion'] +
-                                    '">' +
-                                    data.body[u]['direccion'] +
-                                    '</option>'
-                            );
-                            $('#selectDireccionTiendaDelNav').append(
-                                '<option class="' +
-                                    data.body[u]['id'] +
-                                    '" id="' +
-                                    data.body[u]['direccion'] +
-                                    '">' +
-                                    data.body[u]['direccion'] +
-                                    '</option>'
-                            );
-                        }
-                    });
-                }
+
+        if (account['authorities'].length == 1) {
+            if (account['authorities'][0] == 'ROLE_USER') {
+                $('#div1nombrefiscalcesta').css({ display: 'none' });
+                $('.div1direccionentrega').css({ display: 'block' });
             }
         }
+
+        var tiendaUsada = JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+        this.direccionTiendasService.query1(tiendaUsada['id']).subscribe(data => {
+            this.meterdireccionarray = data.body;
+            console.log(data.body);
+            this.direccionTiendasService.todos = data.body;
+            for (let u = 0; u < data.body.length; u++) {
+                $('#listaDireccionTiendas').append(
+                    '<option class="' +
+                        data.body[u]['id'] +
+                        '" id="' +
+                        data.body[u]['direccion'] +
+                        '">' +
+                        data.body[u]['direccion'] +
+                        '</option>'
+                );
+                $('#selectDireccionTiendaDelNav').append(
+                    '<option class="' +
+                        data.body[u]['id'] +
+                        '" id="' +
+                        data.body[u]['direccion'] +
+                        '">' +
+                        data.body[u]['direccion'] +
+                        '</option>'
+                );
+            }
+        });
     }
 
-    public tarifa() {
-        $('#menuComercialTorga').attr('class', 'collapse');
-        $('#menuTienda').attr('class', 'collapse');
-        $('#menuFabricanteTorga').attr('class', 'collapse');
-        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
-        $('#menuContactoTorga').attr('class', 'collapse');
-        $('#menuComercial').attr('class', 'collapse');
-    }
-
-    public comercial() {
-        $('#menuComercialTorga').attr('class', 'collapse');
-        $('#menuTienda').attr('class', 'collapse');
-        $('#menuFabricanteTorga').attr('class', 'collapse');
-        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
-        $('#menuContactoTorga').attr('class', 'collapse');
-        $('#menuTarifa').attr('class', 'collapse');
-        $('#menuTarifaTorga').attr('class', 'collapse');
-        $('#menuTarifaComedores').attr('class', 'collapse');
-        $('#menuTarifaDormitorios').attr('class', 'collapse');
-    }
-
-    public contacto() {
-        $('#menuComercialTorga').attr('class', 'collapse');
-        $('#menuTienda').attr('class', 'collapse');
-        $('#menuFabricanteTorga').attr('class', 'collapse');
-        $('#menuComercial').attr('class', 'collapse');
-        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
-        $('#menuTarifa').attr('class', 'collapse');
-        $('#menuTarifaTorga').attr('class', 'collapse');
-        $('#menuTarifaComedores').attr('class', 'collapse');
-        $('#menuTarifaDormitorios').attr('class', 'collapse');
-    }
-
-    public fabricantes() {
-        $('#menuComercialTorga').attr('class', 'collapse');
-        $('#menuTienda').attr('class', 'collapse');
-        $('#menuComercial').attr('class', 'collapse');
-        $('#menuTarifa').attr('class', 'collapse');
-        $('#menuContactoTorga').attr('class', 'collapse');
-        $('#menuTarifaTorga').attr('class', 'collapse');
-        $('#menuTarifaComedores').attr('class', 'collapse');
-        $('#menuTarifaDormitorios').attr('class', 'collapse');
-    }
-    public gestionTienda() {
-        $('#menuComercial').attr('class', 'collapse');
-        $('#menuTarifa').attr('class', 'collapse');
-        $('#menuContactoTorga').attr('class', 'collapse');
-        $('#menuTarifaTorga').attr('class', 'collapse');
-        $('#menuTarifaComedores').attr('class', 'collapse');
-        $('#menuTarifaDormitorios').attr('class', 'collapse');
-        $('#menuFabricanteTorga').attr('class', 'collapse');
-        $('#menuFabricanteTorgaDentro').attr('class', 'collapse');
-    }
-
-    collapseNavbar() {
-        this.isNavbarCollapsed = true;
-    }
     isAuthenticated() {
         return this.accountService.isAuthenticated();
     }
 
-    login() {
-        this.modalRef = this.loginModalService.open();
+    // login() {
+    //     this.modalRef = this.loginModalService.open();
+    // }
+
+    register() {
+        this.router.navigate(['/register']);
     }
 
-    logout() {
-        $('#menuPrincipal').css({ display: 'none' });
-        $('#botonEsconder').removeAttr('onclick');
-        $('#botonEsconder').attr('onclick', 'apareceMenu()');
-        this.collapseNavbar();
-        this.loginService.logout();
-        this.router.navigate(['']);
-    }
-
-    protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
-        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
-    }
-
-    protected subscribeToSaveResponse4(result: Observable<HttpResponse<ICategoriasDormi>>) {
-        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess4(), (res: HttpErrorResponse) => this.onSaveError());
-    }
-
-    protected onSaveError() {
-        this.isSaving = false;
-    }
-
-    protected subscribeToSaveResponse1(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
-        result.subscribe(
-            (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess(),
-            (res: HttpErrorResponse) => this.onSaveError()
-        );
-    }
-
-    protected subscribeToSaveResponse10(result: Observable<HttpResponse<IPresupuestoArmarioPuertas>>) {
-        result.subscribe(
-            (res: HttpResponse<IPresupuestoArmarioPuertas>) => this.onSaveSuccess(),
-            (res: HttpErrorResponse) => this.onSaveError()
-        );
-    }
-
-    protected subscribeToSaveResponse6(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
-        result.subscribe(
-            (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess6(),
-            (res: HttpErrorResponse) => this.onSaveError()
-        );
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IDatosUsuario>>) {
+        result.subscribe((res: HttpResponse<IDatosUsuario>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
     protected onSaveSuccess() {
         this.isSaving = false;
+        this.previousState();
     }
-
-    public subirmodal() {
-        $('#modalCesta').attr('class', 'modal fade');
-        $('.modal-backdrop').remove();
-        $('body').removeAttr('class');
-        setTimeout(function() {
-            $('#modalCesta').attr('class', 'modal fade');
-            $('#modalCesta').css({ display: 'none' });
-            $('#modalCesta').removeAttr('aria-hidden');
-        }, 1000);
-    }
-    public subirmodal1() {
-        $('#modalConfirmarCreacionPresu').attr('class', 'modal fade show subir');
-        this.arrayNombreFiscal = [];
-        this.meterdireccionarray = [];
-        $('#referenciaCliente').val('');
-        $('#nombrefiscalinputcesta').val('');
-
-        $('#div1nombrefiscalcesta').css({ display: 'block' });
-        $('.div1direccionentrega').css({ display: 'none' });
-        $('.div1referenciaCliente').css({ display: 'none' });
-        $('#volveratrascesta1').css({ display: 'none' });
-
-        setTimeout(function() {
-            $('#modalConfirmarCreacionPresu').attr('class', 'modal fade');
-            $('#modalConfirmarCreacionPresu').css({ display: 'none' });
-            $('#modalConfirmarCreacionPresu').removeAttr('aria-hidden');
-        }, 1000);
-    }
-
-    protected onSaveSuccess6() {
+    protected onError(errorMessage: string) {}
+    previousState() {}
+    protected onSaveError() {
         this.isSaving = false;
-        var presupuestoArmario = this.presupuestoArmarioTodoLOL;
-        var prodCarr = this.productoPresupuesto;
-        var m = this.mGuardar;
-        var memo = document.getElementsByName('estado');
-        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        var estoyprobando = 0;
-        for (let m = 0; m < prodCarr.length; m++) {
-            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                estoyprobando++;
-            }
-        }
-        this.presupuestoArmarioService.query1234().subscribe(data => {
-            for (let m = 0; m < prodCarr.length; m++) {
-                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                    var idArmario;
-                    for (let w = 0; w < data.body['length']; w++) {
-                        if (w < estoyprobando) {
-                            if (prodCarr[m][1]['codigo'] == data.body[w]['codigo']) {
-                                idArmario = data.body[w]['id'];
-                            }
-                        }
-                    }
-
-                    presupuestoArmario['id'] = idArmario;
-                    if (prodCarr[m][1]['interiores'] != undefined) {
-                        for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
-                            var interiores;
-                            if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 100005; ve++) {
-                                    if (ve == 100005) {
-                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                            var terminacioninterior;
-                                            if (
-                                                prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
-                                                prodCarr[m][1]['interiores'][x]['nombre'] <= 9
-                                            ) {
-                                                terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
-                                            } else {
-                                                terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
-                                            }
-                                            interiores = {
-                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x,
-                                                mensajeLuz: 'Sin luz',
-                                                terminacion: terminacioninterior
-                                            };
-                                        } else {
-                                            var terminacioninterior;
-                                            if (
-                                                prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
-                                                prodCarr[m][1]['interiores'][x]['nombre'] <= 9
-                                            ) {
-                                                terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
-                                            } else {
-                                                terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
-                                            }
-                                            interiores = {
-                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x,
-                                                terminacion: terminacioninterior,
-                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                            };
-                                        }
-                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                    }
-                                }
-                            }
-
-                            if (screen.width < 800) {
-                                for (let ve = 0; ve <= 100005; ve++) {
-                                    var terminacioninterior;
-                                    if (prodCarr[m][1]['interiores'][x]['nombre'] >= 1 && prodCarr[m][1]['interiores'][x]['nombre'] <= 9) {
-                                        terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
-                                    } else {
-                                        terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
-                                    }
-                                    if (ve == 100005) {
-                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                            interiores = {
-                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x,
-                                                mensajeLuz: 'Sin luz',
-                                                terminacion: terminacioninterior
-                                            };
-                                        } else {
-                                            interiores = {
-                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                orden: x,
-                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
-                                                terminacion: terminacioninterior
-                                            };
-                                        }
-                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        var interiores;
-                        if (screen.width >= 800) {
-                            for (let ve = 0; ve <= 100005; ve++) {
-                                if (ve == 100005) {
-                                    interiores = {
-                                        presupuestoArmario: presupuestoArmario
-                                    };
-
-                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                }
-                            }
-                        }
-
-                        if (screen.width < 800) {
-                            for (let ve = 0; ve <= 100005; ve++) {
-                                if (ve == 100005) {
-                                    interiores = {
-                                        presupuestoArmario: presupuestoArmario
-                                    };
-
-                                    this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                }
-                            }
-                        }
-                    }
-                    if (prodCarr[m][1]['puertas'] != undefined) {
-                        for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
-                            var puertas;
-                            if (
-                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
-                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
-                                prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
-                            ) {
-                                var terminacionpuerta = '';
-                                prodCarr[m][1]['acabadoTirador'];
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 381) {
-                                    terminacionpuerta = 'A Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Transparente';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 382) {
-                                    terminacionpuerta = 'B Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Gris';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 383) {
-                                    terminacionpuerta = 'C Madera Sin Tirador';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 384) {
-                                    terminacionpuerta = 'D Madera Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 385) {
-                                    terminacionpuerta = 'E Madera Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 386) {
-                                    terminacionpuerta = 'F Madera Draw ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 387) {
-                                    terminacionpuerta = 'G Fuelle IZQ Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 388) {
-                                    terminacionpuerta = 'H Fuelle DCH Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 389) {
-                                    terminacionpuerta = 'I Fuelle IZQ Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 390) {
-                                    terminacionpuerta = 'J Fuelle DCH Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 391) {
-                                    terminacionpuerta = 'K Sin Puerta';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 392) {
-                                    terminacionpuerta = 'A Lisa';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 396) {
-                                    terminacionpuerta = 'E 2 pla. vert. izq';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 397) {
-                                    terminacionpuerta = 'F 2 pla. vert. izq. luna estrecha';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 398) {
-                                    terminacionpuerta = 'G 2 pla. vert. izq. luna ancha';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 399) {
-                                    terminacionpuerta = 'H 2 pla. vert. dch.';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 400) {
-                                    terminacionpuerta = 'I 2 pla. vert. dch. luna estrecha';
-                                }
-                                if (prodCarr[m][1]['puertas'][x]['id'] == 401) {
-                                    terminacionpuerta = 'J 2 pla. vert. dch. luna ancha';
-                                }
-
-                                if (screen.width >= 800) {
-                                    for (let ve = 0; ve <= 100005; ve++) {
-                                        if (ve == 100005) {
-                                            puertas = {
-                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                orden: x,
-                                                terminacion: terminacionpuerta
-                                            };
-
-                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                        }
-                                    }
-                                }
-
-                                if (screen.width < 800) {
-                                    for (let ve = 0; ve <= 100005; ve++) {
-                                        if (ve == 100005) {
-                                            puertas = {
-                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                orden: x,
-                                                terminacion: terminacionpuerta
-                                            };
-
-                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                        }
-                                    }
-                                }
-                            } else {
-                                for (let ve = 0; ve <= 100005; ve++) {
-                                    if (ve == 100005) {
-                                        var terminacionpuerta = '';
-                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
-                                            terminacionpuerta = 'B 2 plafones';
-                                            puertas = {
-                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                orden: x,
-                                                terminacion: terminacionpuerta
-                                            };
-                                        }
-
-                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
-                                            terminacionpuerta = 'C 3 plafones';
-                                            puertas = {
-                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                                orden: x,
-                                                terminacion: terminacionpuerta
-                                            };
-                                        }
-
-                                        if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
-                                            terminacionpuerta = 'D 5 plafones';
-                                            puertas = {
-                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                presupuestoArmario: presupuestoArmario,
-                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                                acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
-                                                acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
-                                                orden: x,
-                                                terminacion: terminacionpuerta
-                                            };
-                                        }
-
-                                        this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    for (let h = 0; h < data.body.length; h++) {
-                        if (h == 0) {
-                            var prod = data.body[h];
-                        }
-
-                        if (prod['id'] <= data.body[h]['id']) {
-                            prod = data.body[h];
-                        }
-                    }
-                }
-            }
-            this.presupuestoPedidoService.query1().subscribe(data => {
-                var id = data.body;
-                sessionStorage.setItem('presupuesto', '' + id);
-                sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                $('#todometerFondo').css({ display: 'none' });
-                this.productosDormitorioService.numeroCesta = 0;
-                for (let i = 1; i <= 100; i++) {
-                    sessionStorage.removeItem('prod' + i);
-                }
-
-                alert('enviado');
-                var memo = document.getElementsByName('estado');
-                if (memo.length != 0) {
-                    if (memo[0]['checked'] == true) {
-                        if (item == 'A') {
-                            this.router.navigate(['/presupuesto-producto']);
-                        }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
-                    }
-
-                    if (memo[1]['checked'] == true) {
-                        if (item == 'A') {
-                            this.router.navigate(['/pedidos-producto']);
-                        }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
-                    }
-                }
-            });
-        });
     }
 
-    protected onSaveSuccess4() {
-        this.isSaving = false;
-        var memo = document.getElementsByName('estado');
-        var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        var esArmario = 0;
-        var prodCarr = this.productoPresupuesto;
-        for (let m = 0; m < prodCarr.length; m++) {
-            if (prodCarr[m][1]['productosDormitorio'] != undefined) {
-                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                    esArmario = 1;
+    login() {
+        this.loginService
+            .login({
+                username: this.username,
+                password: this.password,
+                rememberMe: this.rememberMe
+            })
+            .then(() => {
+                this.authenticationError = false;
+
+                if (this.router.url === '/register' || /^\/activate\//.test(this.router.url) || /^\/reset\//.test(this.router.url)) {
+                    this.router.navigate(['']);
                 }
-            }
-        }
-        var armario;
-        this.presupuestoPedidoService.query1().subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
-            var presupuesto = this.presupuesto;
-            var id = localStorage.getItem('ultimoPresupuesto');
-            var id1 = parseFloat(id);
-            id1 = id1;
-            localStorage.setItem('ultimoPresupuesto', JSON.stringify(id1));
-            var idDefinitiva;
 
-            var numeroAcaProd = this.acabadosPresupuesto;
-            var aux = [];
-            var prodAca = [];
-            var prodIlu = [];
-            var dimensionEspecialBien = [];
-            var numeroProductos = this.acaProdPed;
-
-            var idAux = res.body[0];
-            idDefinitiva = idAux;
-            const prueba1 = {
-                id: idDefinitiva,
-                codigo: 'PR-' + idDefinitiva,
-                pedido: 0
-            };
-            var direcArrayGG;
-            var direccionTiendas = this.meterdireccionarray;
-
-            var valorCogidoUInpitra = this.iddireccioncogida;
-            if (valorCogidoUInpitra != '') {
-                for (let s = 0; s < direccionTiendas.length; s++) {
-                    if (direccionTiendas[s]['id'] == valorCogidoUInpitra) {
-                        direcArrayGG = direccionTiendas[s];
-                    }
-                }
-                if (memo.length != 0) {
-                    if (memo[1]['checked'] == true) {
-                        const pagoPrecPre = {
-                            presupuestoPedido: prueba1,
-                            direccionTiendas: direcArrayGG
-                        };
-                        this.subscribeToSaveResponse100(this.precioFinalPresuService.create(pagoPrecPre));
-                    }
-                }
-            }
-            var prodPrePed;
-            var idProdCar = 0;
-            for (let m = 0; m < prodCarr.length; m++) {
-                if (prodCarr[m][1]['especial'] != 0) {
-                    if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                        idProdCar = numeroProductos[0];
-                        prodPrePed = {
-                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                            presupuestoPedido: prueba1
-                        };
-
-                        this.productosPresupuestoPedidos = prodPrePed;
-                        this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));
-                        prodPrePed['id'] = idProdCar + 1 + m;
-                        var armario;
-                        armario = {
-                            id: prodCarr[m][1]['id'],
-                            anchoMax: prodCarr[m][1]['anchoMax'],
-                            anchoMin: prodCarr[m][1]['anchoMin'],
-                            imagen: prodCarr[m][1]['imagen'],
-                            imagenContentType: prodCarr[m][1]['imagenContentType'],
-                            mensaje: prodCarr[m][1]['mensaje'],
-                            numCostado: prodCarr[m][1]['numCostado'],
-                            numeroPuertas: prodCarr[m][1]['numeroPuertas'],
-                            productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                        };
-
-                        var presupuestoArmario;
-                        var niveladoresTexto = '';
-                        var enmarcadoTexto = '';
-                        var cajeadoTexto = '';
-                        if (prodCarr[m][1]['niveladores'] == undefined) {
-                            var arrayNive = {
-                                id: 25000
-                            };
-                            prodCarr[m][1]['niveladores'] = arrayNive;
-                            niveladoresTexto = 'Sin niveladores';
-                        } else {
-                            niveladoresTexto = 'Con niveladores';
-                        }
-                        if (prodCarr[m][1]['productosDormitorio']['id'] != 341 && prodCarr[m][1]['productosDormitorio']['id'] != 342) {
-                            if (prodCarr[m][1]['enmarcado'] == undefined) {
-                                var arrayEnmar = {
-                                    id: 25000
-                                };
-                                prodCarr[m][1]['enmarcado'] = arrayEnmar;
-                                enmarcadoTexto = 'Sin enmarcar';
-                            }
-                        } else {
-                            var arrayEnmar = {
-                                id: 25000
-                            };
-                            prodCarr[m][1]['enmarcado'] = arrayEnmar;
-                            enmarcadoTexto = null;
-                        }
-                        if (prodCarr[m][1]['cajeado'] == undefined) {
-                            var arrayCaje = {
-                                id: 25000
-                            };
-                            prodCarr[m][1]['cajeado'] = arrayCaje;
-                            cajeadoTexto = 'Sin cajeado';
-                        }
-                        if (
-                            prodCarr[m][1]['productosDormitorio']['id'] != 341 &&
-                            prodCarr[m][1]['productosDormitorio']['id'] != 342 &&
-                            prodCarr[m][1]['productosDormitorio']['id'] != 343 &&
-                            prodCarr[m][1]['productosDormitorio']['id'] != 344
-                        ) {
-                            presupuestoArmario = {
-                                productosPresupuestoPedidos: prodPrePed,
-                                acabadosInterior: prodCarr[m][1]['acabadoInterior'],
-                                acabados: prodCarr[m][1]['acabadoTrasera'],
-                                acabadosCasco: prodCarr[m][1]['acabadoCasco'],
-                                niveladores: prodCarr[m][1]['niveladores'],
-                                enmarcados: prodCarr[m][1]['enmarcado'],
-                                cajeado: prodCarr[m][1]['cajeado'],
-                                medACaj: 0,
-                                medBCaj: 0,
-                                medCCaj: 0,
-                                medAEnm: 0,
-                                medBEnm: 0,
-                                medCEnm: 0,
-                                armario: armario,
-                                precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                cascoPrecio: prodCarr[m][1]['precioCasco'],
-                                fondo: prodCarr[m][1]['fondo'],
-                                alto: prodCarr[m][1]['alto'],
-                                ancho: prodCarr[m][1]['ancho'],
-                                codigo: prodCarr[m][1]['codigo'],
-                                niveladoresTexto: niveladoresTexto,
-                                cajeadoTexto: cajeadoTexto,
-                                enmarcadosTexto: enmarcadoTexto
-                            };
-                        } else {
-                            presupuestoArmario = {
-                                productosPresupuestoPedidos: prodPrePed,
-                                acabadosInterior: prodCarr[m][1]['acabadoInterior'],
-                                acabados: prodCarr[m][1]['acabadoTrasera'],
-                                acabadosCasco: prodCarr[m][1]['acabadoCasco'],
-                                acabadosTirador: prodCarr[m][1]['acabadoTirador'],
-                                niveladores: prodCarr[m][1]['niveladores'],
-                                enmarcados: prodCarr[m][1]['enmarcado'],
-                                cajeado: prodCarr[m][1]['cajeado'],
-                                medACaj: 0,
-                                medBCaj: 0,
-                                medCCaj: 0,
-                                medAEnm: 0,
-                                medBEnm: 0,
-                                medCEnm: 0,
-                                armario: armario,
-                                precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                cascoPrecio: prodCarr[m][1]['precioCasco'],
-                                fondo: prodCarr[m][1]['fondo'],
-                                alto: prodCarr[m][1]['alto'],
-                                ancho: prodCarr[m][1]['ancho'],
-                                codigo: prodCarr[m][1]['codigo'],
-                                niveladoresTexto: niveladoresTexto,
-                                cajeadoTexto: cajeadoTexto,
-                                enmarcadosTexto: enmarcadoTexto
-                            };
-                        }
-                        if (prodCarr[m][1]['enmarcado'] != undefined) {
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'A') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['enmarcadosTexto'] = 'Tipo A';
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'B') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['enmarcadosTexto'] = 'Tipo B';
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'C') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                                presupuestoArmario['enmarcadosTexto'] = 'Tipo C';
-                            }
-                            if (prodCarr[m][1]['enmarcado']['codigo'] == 'D') {
-                                presupuestoArmario['medAEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medA']);
-                                presupuestoArmario['medBEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medB']);
-                                presupuestoArmario['medCEnm'] = parseFloat(prodCarr[m][1]['enmarcado']['medC']);
-                                presupuestoArmario['enmarcadosTexto'] = 'Tipo D';
-                            }
-                        }
-
-                        if (prodCarr[m][1]['cajeado'] != undefined) {
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO A') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                presupuestoArmario['cajeadoTexto'] = 'Tipo A';
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO B') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                presupuestoArmario['cajeadoTexto'] = 'Tipo B';
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO C') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                presupuestoArmario['medCCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medC']);
-                                presupuestoArmario['cajeadoTexto'] = 'Tipo C';
-                            }
-                            if (prodCarr[m][1]['cajeado']['tipo'] == 'TIPO D') {
-                                presupuestoArmario['medACaj'] = parseFloat(prodCarr[m][1]['cajeado']['medA']);
-                                presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
-                                presupuestoArmario['cajeadoTexto'] = 'Tipo D';
-                            }
-                        }
-
-                        this.presupuestoArmarioTodoLOL = presupuestoArmario;
-                        this.mGuardar = m;
-                        this.subscribeToSaveResponse6(this.presupuestoArmarioService.create(presupuestoArmario));
-                    } else {
-                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 2) {
-                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
-                                var dimen = {
-                                    id: prodCarr[m][1]['id'],
-                                    nombre: prodCarr[m][1]['nombre'],
-                                    anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
-                                    fondo: prodCarr[m][1]['fondo'],
-                                    alto: prodCarr[m][1]['alto'],
-                                    ancho: prodCarr[m][1]['ancho'],
-                                    imagen: prodCarr[m][1]['imagen'],
-                                    imagenContentType: prodCarr[m][1]['imagenContentType'],
-                                    mensaje: prodCarr[m][1]['mensaje'],
-                                    precio: prodCarr[m][1]['precio'],
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                                };
-                                var dimensionesFinal = dimen;
-                                if (dimen['mensaje'] == 'Medidas Especiales') {
-                                    var anchoEspecial = dimensionesFinal['ancho'].split(':')[1];
-                                    anchoEspecial = anchoEspecial.split(' ')[1];
-                                    var altoEspecial = dimensionesFinal['alto'].split(':')[1];
-                                    altoEspecial = altoEspecial.split(' ')[1];
-                                    var fondoEspecial = dimensionesFinal['fondo'].split(':')[1];
-                                    fondoEspecial = fondoEspecial.split(' ')[1];
-                                    dimen['ancho'] = parseFloat(anchoEspecial);
-                                    dimen['alto'] = parseFloat(altoEspecial);
-                                    dimen['fondo'] = parseFloat(fondoEspecial);
-                                }
-                            }
-                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
-                                if (prodCarr[m][1]['apoyo'] == undefined) {
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                } else {
-                                    var meterpilotoapoyo;
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 18) {
-                                        meterpilotoapoyo = 1;
-                                        if (prodCarr[m][1]['apoyo']['apoyoSecundario'] != undefined) {
-                                            meterpilotoapoyo = 9;
-                                        }
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 403) {
-                                        meterpilotoapoyo = 7;
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 212) {
-                                        meterpilotoapoyo = 2;
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 15) {
-                                        meterpilotoapoyo = 4;
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 32) {
-                                        meterpilotoapoyo = 5;
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 16) {
-                                        meterpilotoapoyo = 3;
-                                    }
-                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 17) {
-                                        meterpilotoapoyo = 6;
-                                        if (prodCarr[m][1]['apoyo']['apoyoSecundario'] != undefined) {
-                                            meterpilotoapoyo = 8;
-                                        }
-                                    }
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                        pilotoApoyo: meterpilotoapoyo
-                                    };
-                                }
-                            } else {
-                                prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    presupuestoPedido: prueba1,
-                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                    ancho: prodCarr[m][1]['ancho'],
-                                    grosor: prodCarr[m][1]['grosor'],
-                                    alto: prodCarr[m][1]['alto'],
-                                    canteado: prodCarr[m][1]['canteado']
-                                };
-                            }
-                            var pilotousvar = '';
-                            if (
-                                prodCarr[m][1]['productosDormitorio']['id'] == 246 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 248 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 249 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 250 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 252 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 253 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 254 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 256 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 257 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 258 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 260 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 261 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 262 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 264 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 265 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 266 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 268 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 269 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 270 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 272 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 273 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 274 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 277 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 278 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 279 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 280 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 281 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 282
-                            ) {
-                                if (prodCarr[m][1]['usb'] != undefined) {
-                                    if (prodCarr[m][1]['usb']['mensaje'] == 'Con USB Izquierda') {
-                                        pilotousvar = '3';
-                                    }
-                                    if (prodCarr[m][1]['usb']['mensaje'] == 'Con USB Derecha') {
-                                        pilotousvar = '4';
-                                    }
-                                    if (prodCarr[m][1]['usb']['mensaje'] == 'Con DOS USB') {
-                                        pilotousvar = '1';
-                                    }
-
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        usb: prodCarr[m][1]['usb'],
-                                        pilotoUsb: pilotousvar,
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                } else {
-                                    pilotousvar = '2';
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        tiposApoyo: prodCarr[m][1]['apoyo'],
-                                        pilotoUsb: pilotousvar,
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                    };
-                                }
-                            }
-
-                            if (
-                                prodCarr[m][1]['productosDormitorio']['id'] == 334 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 235 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 234 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 230 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 268 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 267 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 272 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 271 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 264 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 263 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 260 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 259 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 112 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 113 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 117 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 118 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 64 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 65 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 67 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 313 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 171 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 172 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 173 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 76 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 77 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 78 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 79 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 80 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 81 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 83 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 85 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 86 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 87 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 88 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 89 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 90 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 91 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 92 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 174 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 175 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 205 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 206 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 306 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 63 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 307 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 309 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 66 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 310 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 314 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 320 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 325 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 324 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 327 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 326 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 318 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 321 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 329 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 328 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 340 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 339 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 322 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 315 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 316 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 331 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 330 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 332 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 333 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 277 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 278 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 279 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 280 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 281 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 246 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 282 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 247 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 248 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 251 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 252 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 255 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 256
-                            ) {
-                                if (prodCarr[m][1]['iluminacion'] != undefined) {
-                                    prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];
-                                    prodPrePed['pilotoLuz'] = 1;
-                                } else {
-                                    prodPrePed['pilotoLuz'] = 2;
-                                }
-                            }
-                            if (prodCarr[m][1]['direccion'] != undefined) {
-                                prodPrePed['direccion'] = prodCarr[m][1]['direccion'];
-                            }
-                            if (prodCarr[m][1]['obsertext'] != undefined) {
-                                prodPrePed['observacionestext'] = prodCarr[m][1]['obsertext'];
-                            }
-                            if (prodCarr[m][1]['mensajeEspecial'] != undefined) {
-                                if (
-                                    prodCarr[m][1]['mensajeEspecial'] == 'Ancho especial' ||
-                                    prodCarr[m][1]['mensajeEspecial'] == 'Alto especial' ||
-                                    prodCarr[m][1]['mensajeEspecial'] == 'Fondo especial' ||
-                                    prodCarr[m][1]['mensajeEspecial'] == 'Incremento 1 cajon'
-                                ) {
-                                    prodPrePed['textoEspecial'] = prodCarr[m][1]['mensajeEspecial'];
-                                    prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
-                                    prodPrePed['alto'] = prodCarr[m][1]['alto'];
-                                    prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
-                                }
-                            }
-                            prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
-                            prodPrePed['alto'] = prodCarr[m][1]['alto'];
-                            prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
-
-                            numeroAcaProd[m]['prod'] = prodPrePed;
-                            prodAca[m] = prodPrePed;
-                            prodIlu[m] = prodPrePed;
-                            dimensionEspecialBien[m] = prodPrePed;
-
-                            this.productosPresupuestoPedidos = prodPrePed;
-                            if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 100500; ve++) {
-                                    if (ve == 100500) {
-                                        this.subscribeToSaveResponse1(
-                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                        );
-                                    }
-                                }
-                            }
-
-                            if (screen.width < 800) {
-                                for (let ve = 0; ve <= 100500; ve++) {
-                                    if (ve == 100500) {
-                                        this.subscribeToSaveResponse1(
-                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                        );
-                                    }
-                                }
-                            }
-
-                            if (numeroAcaProd[m].length != 0) {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                prodAca[m]['id'] = acaPedProd + m + 1;
-
-                                if (
-                                    prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 4 &&
-                                    prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 27
-                                ) {
-                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                        if (screen.width >= 800) {
-                                            for (let ve = 0; ve <= 10000500; ve++) {
-                                                if (ve == 10000500) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-
-                                        if (screen.width < 800) {
-                                            for (let ve = 0; ve <= 10000500; ve++) {
-                                                if (ve == 10000500) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
-                                } else {
-                                    for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                        if (screen.width >= 800) {
-                                            for (let ve = 0; ve <= 10000500; ve++) {
-                                                if (ve == 10000500) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-                                        if (b == 0) {
-                                            var acatipocabecero;
-
-                                            for (let j = 0; j < this.acabadosService.todos.length; j++) {
-                                                if (
-                                                    prodCarr[m][1]['mensaje'] == 'NT071' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT075' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT079' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT083' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT087' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT091' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT095' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT099' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT103' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT107' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT124' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT128' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT132' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT136' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT140' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT157' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT161' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT165' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT169' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT173' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT190' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT194' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT198' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT202' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT206' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT220' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT224' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT238' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT242' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT259' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT263' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT267' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT271' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT275' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT289' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT293'
-                                                ) {
-                                                    if (this.acabadosService.todos[j]['nombre'] == 450) {
-                                                        acatipocabecero = this.acabadosService.todos[j];
-                                                    }
-                                                }
-                                                if (
-                                                    prodCarr[m][1]['mensaje'] == 'NT072' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT076' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT080' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT084' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT088' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT092' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT096' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT100' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT104' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT108' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT125' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT129' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT133' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT137' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT141' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT158' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT162' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT166' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT170' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT174' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT191' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT195' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT199' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT203' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT207' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT221' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT225' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT239' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT243' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT260' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT264' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT268' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT272' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT276' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT290' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT294'
-                                                ) {
-                                                    if (this.acabadosService.todos[j]['nombre'] == 550) {
-                                                        acatipocabecero = this.acabadosService.todos[j];
-                                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                                            if (ve == 10000500) {
-                                                                const acabados1 = {
-                                                                    acabados: acatipocabecero,
-                                                                    productosPresupuestoPedidos: prodAca[m],
-                                                                    orden: 0
-                                                                };
-                                                                this.subscribeToSaveResponse2(
-                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                                );
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                if (
-                                                    prodCarr[m][1]['mensaje'] == 'NT073' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT077' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT081' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT085' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT089' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT093' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT097' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT101' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT105' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT109' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT126' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT130' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT134' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT138' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT142' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT159' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT163' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT167' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT171' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT175' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT192' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT196' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT200' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT204' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT208' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT222' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT226' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT240' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT244' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT261' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT265' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT269' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT273' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT277' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT291' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT295'
-                                                ) {
-                                                    if (this.acabadosService.todos[j]['nombre'] == 650) {
-                                                        acatipocabecero = this.acabadosService.todos[j];
-                                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                                            if (ve == 10000500) {
-                                                                const acabados1 = {
-                                                                    acabados: acatipocabecero,
-                                                                    productosPresupuestoPedidos: prodAca[m],
-                                                                    orden: 0
-                                                                };
-                                                                this.subscribeToSaveResponse2(
-                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                                );
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                if (
-                                                    prodCarr[m][1]['mensaje'] == 'NT074' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT078' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT082' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT086' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT090' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT094' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT098' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT102' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT106' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT110' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT127' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT131' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT135' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT139' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT143' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT160' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT164' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT168' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT172' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT176' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT193' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT197' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT201' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT205' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT209' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT223' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT227' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT241' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT245' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT262' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT266' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT270' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT274' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT278' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT292' ||
-                                                    prodCarr[m][1]['mensaje'] == 'NT296'
-                                                ) {
-                                                    if (this.acabadosService.todos[j]['nombre'] == 750) {
-                                                        acatipocabecero = this.acabadosService.todos[j];
-                                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                                            if (ve == 10000500) {
-                                                                const acabados1 = {
-                                                                    acabados: acatipocabecero,
-                                                                    productosPresupuestoPedidos: prodAca[m],
-                                                                    orden: 0
-                                                                };
-                                                                this.subscribeToSaveResponse2(
-                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                                );
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-
-                                        if (screen.width < 800) {
-                                            for (let ve = 0; ve <= 10000500; ve++) {
-                                                if (ve == 10000500) {
-                                                    const acabados1 = {
-                                                        acabados: numeroAcaProd[m][b],
-                                                        productosPresupuestoPedidos: prodAca[m],
-                                                        orden: b + 1
-                                                    };
-                                                    this.subscribeToSaveResponse2(
-                                                        this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                    );
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
-                                if (dimensionesFinal['mensaje'] == 'Medidas Especiales') {
-                                    var acaPedProd = this.acaProdPed.length;
-                                    acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                    dimensionEspecialBien[m]['id'] = acaPedProd['id'] + m + 1;
-
-                                    const medEsp = {
-                                        productosPresupuestoPedidos: dimensionEspecialBien[m],
-                                        ancho: anchoEspecial,
-                                        fondo: fondoEspecial,
-                                        alto: altoEspecial,
-                                        precio: dimensionesFinal['precio']
-                                    };
-                                    this.subscribeToSaveResponse(this.medEspProductoPedidoPresuService.create(medEsp));
-                                }
-                            }
-                        } else {
-                            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
-                                var dimen = {
-                                    id: prodCarr[m][1]['id'],
-                                    nombre: prodCarr[m][1]['nombre'],
-                                    anchoMesitaIdeal: prodCarr[m][1]['anchoMesitaIdeal'],
-                                    fondo: prodCarr[m][1]['fondo'],
-                                    alto: prodCarr[m][1]['alto'],
-                                    ancho: prodCarr[m][1]['ancho'],
-                                    imagen: prodCarr[m][1]['imagen'],
-                                    imagenContentType: prodCarr[m][1]['imagenContentType'],
-                                    mensaje: prodCarr[m][1]['mensaje'],
-                                    precio: prodCarr[m][1]['precio'],
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio']
-                                };
-                                prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    presupuestoPedido: prueba1,
-                                    dimensionesProductoTipo: dimen,
-                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio']
-                                };
-                                if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 2) {
-                                    var meterpilotoapoyo;
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 18) {
-                                        meterpilotoapoyo = 1;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 403) {
-                                        meterpilotoapoyo = 7;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 212) {
-                                        meterpilotoapoyo = 2;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 15) {
-                                        meterpilotoapoyo = 4;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 32) {
-                                        meterpilotoapoyo = 5;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 16) {
-                                        meterpilotoapoyo = 3;
-                                    }
-                                    if (prodCarr[m][1]['productosDormitorio']['id'] == 17) {
-                                        meterpilotoapoyo = 6;
-                                    }
-                                    prodPrePed = {
-                                        productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                        presupuestoPedido: prueba1,
-                                        dimensionesProductoTipo: dimen,
-                                        precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                        pilotoApoyo: meterpilotoapoyo
-                                    };
-                                }
-                            } else {
-                                prodPrePed = {
-                                    productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    presupuestoPedido: prueba1,
-                                    precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
-                                    ancho: prodCarr[m][1]['ancho'],
-                                    grosor: prodCarr[m][1]['grosor'],
-                                    alto: prodCarr[m][1]['alto'],
-                                    canteado: prodCarr[m][1]['canteado']
-                                };
-                            }
-                            numeroAcaProd[m]['prod'] = prodPrePed;
-                            prodAca[m] = prodPrePed;
-                            prodIlu[m] = prodPrePed;
-                            dimensionEspecialBien[m] = prodPrePed;
-                            this.productosPresupuestoPedidos = prodPrePed;
-                            if (screen.width >= 800) {
-                                for (let ve = 0; ve <= 100500; ve++) {
-                                    if (ve == 100500) {
-                                        this.subscribeToSaveResponse1(
-                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                        );
-                                    }
-                                }
-                            }
-
-                            if (screen.width < 800) {
-                                for (let ve = 0; ve <= 100500; ve++) {
-                                    if (ve == 100500) {
-                                        this.subscribeToSaveResponse1(
-                                            this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos)
-                                        );
-                                    }
-                                }
-                            }
-
-                            if (numeroAcaProd[m].length != 0) {
-                                var acaPedProd = this.acaProdPed.length;
-                                acaPedProd = this.acaProdPed[acaPedProd - 1];
-                                prodAca[m]['id'] = acaPedProd + m + 1;
-                                for (let b = 0; b < numeroAcaProd[m].length; b++) {
-                                    if (screen.width >= 800) {
-                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                            if (ve == 10000500) {
-                                                const acabados1 = {
-                                                    acabados: numeroAcaProd[m][b],
-                                                    productosPresupuestoPedidos: prodAca[m],
-                                                    orden: b + 1
-                                                };
-                                                this.subscribeToSaveResponse(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
-                                            }
-                                        }
-                                    }
-
-                                    if (screen.width < 800) {
-                                        for (let ve = 0; ve <= 10000500; ve++) {
-                                            if (ve == 10000500) {
-                                                const acabados1 = {
-                                                    acabados: numeroAcaProd[m][b],
-                                                    productosPresupuestoPedidos: prodAca[m],
-                                                    orden: b + 1
-                                                };
-                                                this.subscribeToSaveResponse(
-                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
-                                                );
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    if (prodCarr[m][1]['precio'] != 'No definido') {
-                        prodPrePed = {
-                            presupuestoPedido: prueba1,
-                            precioTotal: prodCarr[m][1]['precio'],
-                            nombreArchivo: prodCarr[m][1]['imagen'],
-                            textoEspecial: prodCarr[m][1]['texto']
-                        };
-                    } else {
-                        prodPrePed = {
-                            presupuestoPedido: prueba1,
-                            nombreArchivo: prodCarr[m][1]['imagen'],
-                            textoEspecial: prodCarr[m][1]['texto']
-                        };
-                    }
-                    if (screen.width >= 800) {
-                        for (let ve = 0; ve <= 100500; ve++) {
-                            if (ve == 100500) {
-                                this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
-                            }
-                        }
-                    }
-
-                    if (screen.width < 800) {
-                        for (let ve = 0; ve <= 100500; ve++) {
-                            if (ve == 100500) {
-                                this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(prodPrePed));
-                            }
-                        }
-                    }
-                }
-            }
-            if (esArmario != 1) {
-                this.presupuestoPedidoService.query1().subscribe(data => {
-                    var id = data.body;
-                    sessionStorage.setItem('presupuesto', '' + id);
-                    sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                    $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                    $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                    $('#todometerFondo').css({ display: 'none' });
-                    this.productosDormitorioService.numeroCesta = 0;
-                    for (let i = 1; i <= 100; i++) {
-                        sessionStorage.removeItem('prod' + i);
-                    }
-                    var memo = document.getElementsByName('estado');
-                    if (memo.length != 0) {
-                        if (memo[0]['checked'] == true) {
-                            if (item == 'A') {
-                                this.router.navigate(['/presupuesto-producto']);
-                            }
-                            if (item == 'B') {
-                                this.router.navigate(['/presupuesto-precios']);
-                            }
-                            if (item == 'C') {
-                                this.router.navigate(['/presupuesto-puntos']);
-                            }
-                        }
-
-                        if (memo[1]['checked'] == true) {
-                            if (item == 'A') {
-                                this.router.navigate(['/pedidos-producto']);
-                            }
-                            if (item == 'B') {
-                                this.router.navigate(['/presupuesto-precios']);
-                            }
-                            if (item == 'C') {
-                                this.router.navigate(['/presupuesto-puntos']);
-                            }
-                        }
-                    }
+                this.eventManager.broadcast({
+                    name: 'authenticationSuccess',
+                    content: 'Sending Authentication Success'
                 });
-            }
-        });
+
+                // previousState was set in the authExpiredInterceptor before being redirected to login modal.
+                // since login is successful, go to stored previousState and clear previousState
+                const redirect = this.stateStorageService.getUrl();
+                if (redirect) {
+                    this.stateStorageService.storeUrl(null);
+                    this.router.navigate([redirect]);
+                }
+            })
+            .catch(() => {
+                //aqui añadimos try catch y comprobamos con la otra tabla de usuario.
+                this.authenticationError = true;
+            });
     }
 
-    previousState() {
-        this.presupuestoPedido;
-        $('#modalPresupuesto .modal-body').empty();
-        $('#modalPresupuesto .modal-title').text('Presupuesto Generado');
-        $('#modalPresupuesto .modal-body').append('<p style="text-align:center">Codigo</p>');
-        $('#modalPresupuesto .modal-body').append('<p style="text-align:center">' + this.presupuestoPedido['codigo'] + '</p>');
-        $('#modalPresupuesto #verPresupuesto').removeAttr('style');
-        $('#modalPresupuesto #verPresupuesto').attr('style');
-        $('#modalPresupuesto #verPresupuesto').css({ 'text-align': 'center' });
-        for (let i = 1; i <= 10; i++) {
-            if (sessionStorage.getItem('prod' + i) != 'undefinded') {
-                sessionStorage.removeItem('prod' + i);
-            }
-        }
-    }
-    protected subscribeToSaveResponse2(result: Observable<HttpResponse<IAcabadosProductosPresupuestoPedido>>) {
-        result.subscribe(
-            (res: HttpResponse<IAcabadosProductosPresupuestoPedido>) => this.onSaveSuccess(),
-            (res: HttpErrorResponse) => this.onSaveError()
-        );
-    }
-    protected subscribeToSaveResponse100(result: Observable<HttpResponse<IPrecioFinalPresu>>) {
-        result.subscribe((res: HttpResponse<IPrecioFinalPresu>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
-    }
-
-    toggleNavbar() {
-        this.isNavbarCollapsed = !this.isNavbarCollapsed;
-    }
-
-    getImageUrl() {
-        return this.isAuthenticated() ? this.accountService.getImageUrl() : null;
-    }
-
-    protected onError(errorMessage: string) {
-        this.jhiAlertService.error(errorMessage, null, null);
-    }
+    ngAfterViewInit() {}
 }

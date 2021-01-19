@@ -79,6 +79,9 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "piloto_luz")
     private String pilotoLuz;
     
+    @Column(name = "observacionestext")
+    private String observacionestext;
+    
     @ManyToOne
     @JsonIgnoreProperties("")
     private Usb usb;
@@ -120,6 +123,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setAlto(String alto) {
         this.alto = alto;
+    }
+    
+    public String getObservacionesText() {
+        return observacionestext;
+    }
+
+    public ProductosPresupuestoPedidos observacionestext(String observacionestext) {
+        this.observacionestext = observacionestext;
+        return this;
+    }
+
+    public void setObservacionesText(String observacionestext) {
+        this.observacionestext = observacionestext;
     }
     
     public String getAncho() {

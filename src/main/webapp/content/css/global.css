@@ -58,6 +58,27 @@ Browser Upgrade Prompt
     padding: 0.2em 0;
 }
 
+div.simplepruebaani599 {
+    background-color: white;
+    position: absolute;
+
+    -moz-animation-name: simple-animation;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-delay: 0s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out; /* r�pido al principio lento al final */
+    -moz-animation-direction: normal;
+    -moz-animation-fill-mode: forwards;
+
+    -webkit-animation-name: simple-animation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+}
+
 div#simplepruebaani {
     background-color: white;
     position: absolute;
