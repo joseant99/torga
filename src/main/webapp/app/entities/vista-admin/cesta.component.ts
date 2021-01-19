@@ -11917,6 +11917,8 @@ export class cestaComponent implements OnInit, AfterViewInit {
             }
         }
     }
+    public hacerclickcambiartexto(id) {}
+    public mostrarDireccionDeEntrega() {}
     public meterCuadroDireccion(id) {
         var array = [];
         this.idDeLaTiendaCogida = id;
