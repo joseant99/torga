@@ -1,8 +1,10 @@
+<h4 class="modal-title"  style="text-align:center;width: 100%;font-size: 25px;border:0;margin-top:25px;margin-bottom:25px;"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras6MeterCasa" (click)="volverAtras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none;" id="volverAtras1MeterCasa" (click)="volverAtras(2)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none;" id="volverAtras2MeterCasa" (click)="volverAtras(3)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none;" id="volverAtras4MeterCasa" (click)="volverAtras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none;" id="volverAtras5MeterCasa" (click)="volverAtras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="margin-left: -12%;">CESTA</span></h4>
+
 <div  id="modalCesta"  style="z-index: 1000000000000;">
 		    <div id="">
 		      <div class="modal-content" style="border:0;">
 		        <div class="modal-header" style="border:0;">
-		          <h4 class="modal-title"  style="text-align:center;width: 100%;font-size: 25px;border:0;">CESTA</h4>
+		          
 		        </div>
 		        <div class="modal-body" id="muyImportante">
 			        
@@ -22,7 +24,7 @@
 	  </div> 
 	  
 	  
-	  <div id="modalConfirmarCreacionPresu" style="z-index: 1000000000000;display:none">
+	  <div id="modalConfirmarCreacionPresu" style="z-index: 1000000000000;display:none;position:inherit;padding-top:100px !important;margin-top:15px !important;background-color:white !important;">
 		    <div>
 		    
 		      <!-- Modal content-->
@@ -58,7 +60,7 @@
 				       	 -->
 				    </div>
 				    
-				    <div class="div1direccionentrega" style="display:none;height: 98%;top:0;">
+				    <div class="div1direccionentrega" style="display:none;height: 98%;top:0;position:inherit">
 				    	<p style="width:100%;text-align:center;margin-top:25px;">Selecciona una direccion de entrega</p>
 				    	<div style="float:left;margin-left:3%;width: 500px;border: 1px solid;padding-top: 20px;background-color: white;margin-top: 2%;" id="arraynombrefiscaldiv" id="arraynombrefiscaldiv" *ngFor="let array of meterdireccionarray" (click)="direccogidamen(array.id)">
 					        <p>Direccion: {{array.direccion}}</p>
@@ -67,7 +69,7 @@
 					    </div>
 				    </div>
 				    
-				    <div class="div1referenciaCliente" style="display:none;height: 98%;top:0;">
+				    <div class="div1referenciaCliente" style="display:none;height: 98%;top:0;position:inherit;">
 				    	<p style="width:100%;text-align:center;margin-top:25px;">Introduce una referencia de cliente</p>
 				    	<p style="width:100%;text-align:center;margin-top:25px;"><input type="text" id="referenciaCliente"> <label  style="margin-left:10px;margin-bottom:25px;" >Referencia Cliente</label></p>
 				    	<p style="width:100%;text-align:center;margin-top:25px;"><button style="background-color:white;margin-top:75px" id="botonfinalizarpedidocesta" (click)="llamargenerar()">FINALIZAR PEDIDO</button></p>

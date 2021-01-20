@@ -79,8 +79,8 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "piloto_luz")
     private String pilotoLuz;
     
-    @Column(name = "observacionestext")
-    private String observacionestext;
+    @Column(name = "observaciones")
+    private String observaciones;
     
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -125,17 +125,17 @@ public class ProductosPresupuestoPedidos implements Serializable {
         this.alto = alto;
     }
     
-    public String getObservacionesText() {
-        return observacionestext;
+    public String getObservaciones() {
+        return observaciones;
     }
 
-    public ProductosPresupuestoPedidos observacionestext(String observacionestext) {
-        this.observacionestext = observacionestext;
+    public ProductosPresupuestoPedidos observaciones(String observaciones) {
+        this.observaciones = observaciones;
         return this;
     }
 
-    public void setObservacionesText(String observacionestext) {
-        this.observacionestext = observacionestext;
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
     
     public String getAncho() {

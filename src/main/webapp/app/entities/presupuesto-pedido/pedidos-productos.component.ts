@@ -8912,8 +8912,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                 for (let w = 0; w < productos.length; w++) {
                     //setTimeout(function() {
-                    for (let p = 0; p <= 100000000; p++) {
-                        if (p == 100000000) {
+                    for (let p = 0; p <= 10; p++) {
+                        if (p == 10) {
                             if (
                                 productos[w]['productosDormitorio'] != null &&
                                 productos[w]['productosDormitorio'] != '' &&
@@ -12957,8 +12957,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
 
                                             var observaciones = undefined;
-                                            if (productos[w]['observacionestext'] != undefined) {
-                                                observaciones = productos[w]['observacionestext'];
+                                            if (productos[w]['observaciones'] != undefined) {
+                                                observaciones = productos[w]['observaciones'];
                                             }
 
                                             if (luz != undefined) {
@@ -13004,13 +13004,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                             }
-                                            if (observaciones != undefined) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Observaciones</span>: &nbsp;&nbsp;&nbsp; <span>' +
-                                                        observaciones +
-                                                        '</span></p>'
-                                                );
-                                            }
+
                                             if (apoyo != undefined) {
                                                 if (productos[i]['pilotoApoyo'] != 8 && productos[i]['pilotoApoyo'] != 9) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
@@ -13072,6 +13066,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 total = precioFloat * precioTienda;
                                                 console.log(total);
                                                 total = total - precioFloat;
+                                            }
+                                            if (observaciones != undefined) {
+                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Observaciones</span>: &nbsp;&nbsp;&nbsp; <textarea id="textareaobservaciones" name="w3review" rows="4" cols="40" readonly>' +
+                                                        observaciones +
+                                                        '</textarea></p>'
+                                                );
                                             }
                                         }
                                         acaComprobar = 1;

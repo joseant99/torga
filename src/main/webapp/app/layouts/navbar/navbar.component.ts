@@ -354,6 +354,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     open(ruta, bool, content) {
+        if (ruta != 'cesta') {
+            sessionStorage.setItem('ruta', ruta);
+        }
         var prod = $('#calculadoraCarrito #nombreMesita').text();
         var idsArray = [];
         idsArray[0] = 'composicionesSpan1';
@@ -12232,6 +12235,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
     }
     open1(ruta, bool, content, id, nombreId) {
+        if (ruta != 'cesta') {
+            sessionStorage.setItem('ruta', ruta);
+        }
         var prod = $('#nombreMesita').text();
         //$('#' + nombreId).css({ 'font-weight': 'bold' });
         var idsArray = [];
@@ -13842,7 +13848,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodPrePed['direccion'] = prodCarr[m][1]['direccion'];
                             }
                             if (prodCarr[m][1]['obsertext'] != undefined) {
-                                prodPrePed['observacionestext'] = prodCarr[m][1]['obsertext'];
+                                prodPrePed['observaciones'] = prodCarr[m][1]['obsertext'];
                             }
                             if (prodCarr[m][1]['mensajeEspecial'] != undefined) {
                                 if (
@@ -14249,6 +14255,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     alto: prodCarr[m][1]['alto'],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
+                            }
+                            if (prodCarr[m][1]['obsertext'] != undefined) {
+                                prodPrePed['observaciones'] = prodCarr[m][1]['obsertext'];
                             }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;

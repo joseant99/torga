@@ -11930,22 +11930,64 @@ export class cestaComponent implements OnInit, AfterViewInit {
             $('.div1direccionentrega').css({ display: 'block' });
 
             $('.div1direccionentrega').attr('id', 'simplepruebaani');
-            setTimeout(function() {
-                $('#div1nombrefiscalcesta').css({ display: 'none' });
-                $('.div1direccionentrega').css({ height: 'auto' });
-                $('#volveratrascesta1').css({ display: 'block' });
-            }, 1000);
+
+            $('#div1nombrefiscalcesta').css({ display: 'none' });
+            $('.div1direccionentrega').css({ height: 'auto' });
+            $('#volverAtras4MeterCasa').css({ display: 'block' });
+            $('#volverAtras1MeterCasa').css({ display: 'none' });
         });
+    }
+
+    public volverAtras(id) {
+        if (id == 2) {
+            $('#modalConfirmarCreacionPresu').css({ display: 'none' });
+            $('#modalCesta').css({ display: 'block' });
+            $('#volverAtras6MeterCasa').css({ display: 'block' });
+            $('#volverAtras1MeterCasa').css({ display: 'none' });
+        }
+        if (id == 3) {
+            $('#modalConfirmarCreacionPresu').css({ display: 'none' });
+            $('#modalCesta').css({ display: 'block' });
+            $('#volverAtras6MeterCasa').css({ display: 'block' });
+            $('#volverAtras2MeterCasa').css({ display: 'none' });
+        }
+        if (id == 4) {
+            $('#volverAtras1MeterCasa').css({ display: 'block' });
+            $('#volverAtras4MeterCasa').css({ display: 'none' });
+            $('.div1direccionentrega').css({ display: 'none' });
+            $('#div1nombrefiscalcesta').css({ display: 'block' });
+            $('#nombrefiscalinputcesta').val('');
+            this.arrayNombreFiscal = [];
+        }
+        if (id == 5) {
+            $('#volverAtras4MeterCasa').css({ display: 'block' });
+            $('#volverAtras5MeterCasa').css({ display: 'none' });
+            $('.div1direccionentrega').css({ display: 'block' });
+            $('.div1referenciaCliente').css({ display: 'none' });
+            var account = this.accountService.userIdentity;
+            if (account['authorities'].length == 1) {
+                if (account['authorities'][0] == 'ROLE_USER') {
+                    $('#volverAtras4MeterCasa').css({ display: 'none' });
+                    $('#volverAtras2MeterCasa').css({ display: 'block' });
+                }
+            }
+        }
+        if (id == 6) {
+            var ruta = sessionStorage.getItem('ruta');
+            this.router.navigate(['/' + ruta]);
+        }
     }
 
     public direccogidamen(id) {
         this.iddireccioncogida = id;
         $('.div1referenciaCliente').css({ display: 'block' });
         $('.div1referenciaCliente').attr('id', 'simplepruebaani');
-        setTimeout(function() {
-            $('.div1direccionentrega').css({ display: 'none' });
-            $('.div1referenciaCliente').css({ height: 'auto' });
-        }, 1000);
+
+        $('.div1direccionentrega').css({ display: 'none' });
+        $('.div1referenciaCliente').css({ height: 'auto' });
+        $('#volverAtras4MeterCasa').css({ display: 'none' });
+        $('#volverAtras2MeterCasa').css({ display: 'none' });
+        $('#volverAtras5MeterCasa').css({ display: 'block' });
     }
 
     public consultarNombreFiscal() {
@@ -11971,11 +12013,15 @@ export class cestaComponent implements OnInit, AfterViewInit {
         this.navbarComponent.generarPresupuesto();
     }
     public cargarTodasTiendas() {
+        $('#volverAtras6MeterCasa').css({ display: 'none' });
         var account = this.accountService.userIdentity;
+        $('#volverAtras1MeterCasa').css({ display: 'block' });
         if (account['authorities'].length == 1) {
             if (account['authorities'][0] == 'ROLE_USER') {
                 $('#div1nombrefiscalcesta').css({ display: 'none' });
                 $('.div1direccionentrega').css({ display: 'block' });
+                $('#volverAtras1MeterCasa').css({ display: 'none' });
+                $('#volverAtras2MeterCasa').css({ display: 'block' });
             }
         }
         $('#modalCesta').css({ display: 'none' });
