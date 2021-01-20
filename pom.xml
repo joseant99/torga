@@ -474,6 +474,7 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
+                        <phase>none</phase>
                     </execution>
                 </executions>
                 <configuration>
