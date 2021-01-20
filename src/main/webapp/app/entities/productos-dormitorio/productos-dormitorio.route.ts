@@ -19,9 +19,7 @@ import { ProductosDormitorioCategoriaComponent } from './productos-dormitorio-ca
 import { ProductosDormitorioChinfonierComponent } from './productos-dormitorio-chinfonier.component';
 import { ProductosDormitorioCabecerosComponent } from './productos-dormitorio-cabeceros.component';
 import { ProductosDormitorioApoyoComponent } from './productos-dormitorio-apoyo.component';
-import { ProductosDormitorioCanapeComponent } from './productos-dormitorio-canape.component';
 import { ProductosModulosBajosComponent } from './productos-modulos-bajos.component';
-import { ProductosColgantesEstanteriaComponent } from './productos-colgantes-estanteria.component';
 import { ProductosEscritoriosComponent } from './productos-escritorios.component';
 import { ProductosMesasComponent } from './productos-mesas.component';
 import { ProductosAuxComponent } from './productos-aux.component';
@@ -30,8 +28,6 @@ import { ProductosVitrinasComponent } from './productos-vitrinas.component';
 import { ProductosPanelesComponent } from './productos-paneles.component';
 import { ProductosSuplementosTvComponent } from './productos-suplementos-tv.component';
 import { ProductosAparadoresComponent } from './productos-aparadores.component';
-import { ProductosColgantesEstantesComponent } from './productos-colgantes-estantes.component';
-import { ProductosColgantesHorizontalesComponent } from './productos-colgantes-horizontales.component';
 import { ProductosSingularesComponent } from './productos-singulares.component';
 import { ProductosBuscadorComponent } from './productos-buscador.component';
 import { ProductosBuscadorComponent2 } from './productos-buscador.component2';
@@ -215,45 +211,6 @@ export const productosDormitorioRoute: Routes = [
         canActivate: [UserRouteAccessService]
     },
     {
-        path: 'productos-colgantes-horizontales',
-        component: ProductosColgantesHorizontalesComponent,
-        resolve: {
-            pagingParams: JhiResolvePagingParams
-        },
-        data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
-            defaultSort: 'id,asc',
-            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
-        },
-        canActivate: [UserRouteAccessService]
-    },
-    {
-        path: 'productos-colgantes-estanteria',
-        component: ProductosColgantesEstanteriaComponent,
-        resolve: {
-            pagingParams: JhiResolvePagingParams
-        },
-        data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
-            defaultSort: 'id,asc',
-            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
-        },
-        canActivate: [UserRouteAccessService]
-    },
-    {
-        path: 'productos-colgantes-estantes',
-        component: ProductosColgantesEstantesComponent,
-        resolve: {
-            pagingParams: JhiResolvePagingParams
-        },
-        data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
-            defaultSort: 'id,asc',
-            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
-        },
-        canActivate: [UserRouteAccessService]
-    },
-    {
         path: 'productos-escritorios',
         component: ProductosEscritoriosComponent,
         resolve: {
@@ -269,19 +226,6 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-vitrinas',
         component: ProductosVitrinasComponent,
-        resolve: {
-            pagingParams: JhiResolvePagingParams
-        },
-        data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
-            defaultSort: 'id,asc',
-            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
-        },
-        canActivate: [UserRouteAccessService]
-    },
-    {
-        path: 'productos-colgadores',
-        component: ProductosColgantesComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },
@@ -386,19 +330,6 @@ export const productosDormitorioRoute: Routes = [
     {
         path: 'productos-dormitorio/apoyo',
         component: ProductosDormitorioApoyoComponent,
-        resolve: {
-            pagingParams: JhiResolvePagingParams
-        },
-        data: {
-            authorities: ['ROLE_USER', 'ROLE_CLIENTE', 'ROLE_REPRESENTATE'],
-            defaultSort: 'id,asc',
-            pageTitle: 'torgaPedidosApp.productosDormitorio.home.title'
-        },
-        canActivate: [UserRouteAccessService]
-    },
-    {
-        path: 'productos-dormitorio/canape',
-        component: ProductosDormitorioCanapeComponent,
         resolve: {
             pagingParams: JhiResolvePagingParams
         },
