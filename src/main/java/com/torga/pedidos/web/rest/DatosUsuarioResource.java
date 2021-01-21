@@ -138,6 +138,13 @@ public class DatosUsuarioResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/datos-usuarios-reprebus12/{id}")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosIdreprebus12(@PathVariable Long id) {
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquingRepre(id);
+        return ResponseEntity.ok().body(page);
+    }
+    
     @GetMapping("/datos-usuarios-id99/{nombre}")
     @Timed
     public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId99(@PathVariable String nombre) {

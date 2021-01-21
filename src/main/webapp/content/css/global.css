@@ -4048,7 +4048,7 @@ ui bootstrap tweaks
         margin-left: 27% !important;
     }
     #muyImportante {
-        height: 800px !important;
+        height: 100% !important;
     }
     #medidasEspecialesTexto {
         margin-left: 33%;
@@ -4639,7 +4639,7 @@ ui bootstrap tweaks
 }
 @media screen and (max-width: 1350px) {
     #muyImportante {
-        height: 800px !important;
+        height: 100% !important;
     }
     #medidasEspecialesTexto {
         margin-left: 33%;

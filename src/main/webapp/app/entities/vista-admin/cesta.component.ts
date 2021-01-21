@@ -276,15 +276,11 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
         this.productosArrayNombre = productosArrayNombres;
         var usuarios = [];
-        this.userService
-            .query({
-                size: 100000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    usuarios[i] = data.body[i];
-                }
-            });
+        this.userService.queryCogemosAll().subscribe(data => {
+            for (let i = 0; i < data.body.length; i++) {
+                usuarios[i] = data.body[i];
+            }
+        });
         this.user = usuarios;
 
         $('.modal-backdrop').remove();
@@ -12078,25 +12074,12 @@ export class cestaComponent implements OnInit, AfterViewInit {
                 });
         }
         if (account.authorities[0] == 'ROLE_REPRESENTATE') {
-            this.datosUsuarioService.query12(arrayBueno[account.id]).subscribe(data => {
+            this.datosUsuarioService.reprebuscar(arrayBueno[account.id]).subscribe(data => {
                 this.todasLasTiendas = data.body;
                 for (let o = 0; o < data.body['length']; o++) {
                     $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
-                    if (screen.width < 800) {
-                        $('#selectTiendaDelNav').append(
-                            '<option class="' +
-                                data.body[o]['id'] +
-                                '" id="' +
-                                data.body[o]['nombreFiscal'] +
-                                '">' +
-                                data.body[o]['nombreFiscal'] +
-                                '</option>'
-                        );
-                        $('#selectTiendaDelNav').css({ display: 'initial' });
-                        $('#selectTiendas').css({ display: 'none' });
-                    }
 
-                    $('#listaTiendas').append(
+                    $('#selectTiendaDelNav').append(
                         '<option class="' +
                             data.body[o]['id'] +
                             '" id="' +
@@ -12105,6 +12088,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             data.body[o]['nombreFiscal'] +
                             '</option>'
                     );
+                    $('#estoelrepresentantenolove').css({ display: 'none' });
+                    $('#selectTiendaDelNav').css({ display: 'initial' });
+                    $('#selectTiendas').css({ display: 'none' });
                 }
             });
         }
@@ -12112,13 +12098,6 @@ export class cestaComponent implements OnInit, AfterViewInit {
         $('#selectDireccionTiendaDelNav').empty();
         $('#selectDireccionTiendaDelNav').append('<option></option>');
         $('#modalConfirmarCreacionPresu').append('<datalist id="listaDireccionTiendas"></datalist>');
-        if (screen.width < 800) {
-            $('#selectDireccionTiendas').css({ display: 'none' });
-            $('#selectDireccionTiendaDelNav').css({ display: 'revert' });
-        } else {
-            $('#selectDireccionTiendas').css({ display: 'revert' });
-            $('#selectDireccionTiendaDelNav').css({ display: 'none' });
-        }
 
         if (account['authorities'].length == 1) {
             if (account['authorities'][0] == 'ROLE_USER') {

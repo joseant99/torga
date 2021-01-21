@@ -433,7 +433,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     public generarPresupuesto() {
-        //$('#todometerFondo').css({ display: 'block' });
+        $('#todometerFondo').css({ display: 'block' });
         //$('#modalCesta').attr('class', 'modal fade show');
         //$('#modalConfirmarCreacionPresu').attr('class', 'modal fade show');
         //$('#modalCesta').css({ display: 'none' });
