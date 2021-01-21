@@ -22,6 +22,8 @@
             <th><span>Numero Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
              <th (click) = "ordenarPorFecha()"><span >Fecha Pedido</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Referencia Cliente</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" ><span >Estado</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo" ><span >Transportista</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="codigo" ><span >Previsi&#243;n Entrega</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="user.login" *jhiHasAnyAuthority="'ROLE_ADMIN'"><span>Nombre Fiscal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -40,6 +42,12 @@
             	<td>{{presupuestoPedido.numero_pedido}}</td>
             	<td >{{presupuestoPedido.fecha_pedido}}</td>
                 <td ><i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.codigo}}</i></td>
+                <td >
+                    <a (click)="funcionmostrarmensajemodal(presupuestoPedido.estado)" data-toggle="modal" data-target="#modalmostrarmensajeestado"><i *ngIf="presupuestoPedido != undefined" class="blink1" style="border-bottom: 1px solid red;">{{presupuestoPedido.estado}}</i></a>
+                </td>
+                <td >
+                    <i *ngIf="presupuestoPedido != undefined">{{presupuestoPedido.transportista}}</i>
+                </td>
                 <td >
                     <i *ngIf="presupuestoPedido != undefined" class="blink">{{presupuestoPedido.fecha_prevista}}</i>
                 </td>
@@ -187,6 +195,23 @@
 	        <div class="modal-body">
 	        	<p>EL PEDIDO HA LLEGADO A FABRICA.</p>
 	        	<p>LE NOTIFICAREMOS TAN PRONTO CUANDO TENGAMOS LA CONFIRMACION DEL PEDIDO DISPONIBLE.</p>
+	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
+	  
+	   <div class="modal fade" id="modalmostrarmensajeestado" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	       
+	        <div class="modal-body">
+	        	<div id="divmetertextoEstado">
+	        	
+	        	</div>
 	        	<p style="text-align:center"> <button style="width:100px;background-color:#9CDBDF" data-dismiss="modal">CERRAR</button></p>
 	        </div>
 	      </div>

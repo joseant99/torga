@@ -589,6 +589,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         prueba['fecha_pedido'] = output;
                     }
                 }
+                prueba['estado'] = 'En Revision';
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
 

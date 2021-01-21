@@ -33176,7 +33176,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var contadorProd = contador;
         var contadorDimen = contador;
         var contAca = 0;
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 1; i++) {
             const idProd = $('#nombreMesita').attr('class');
             const dimen = $('#productoCalculadora1 #datos1 #ancho' + i).attr('class');
             const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
@@ -33248,9 +33248,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     }
                 }
             } else {
+                var idApoyo1 = parseFloat(idApoyo);
                 var acabados = this.acabadosService.todos;
                 for (let k = 0; k < acabados.length; k++) {
-                    if (idApoyo != '32') {
+                    if (apoyoBueno[1]['productoApoyo']['id'] != 32) {
                         if (acabados[k]['nombre'] == 'Si') {
                             aca[1] = acabados[k];
                         }

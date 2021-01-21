@@ -26,4 +26,5 @@ public interface PresupuestoPedidoRepository extends JpaRepository<PresupuestoPe
     
     @Query("Select u from PresupuestoPedido u order by u.fecha_pedido desc")
 	Collection<PresupuestoPedido> findByPresupuesto1();
+    
 }

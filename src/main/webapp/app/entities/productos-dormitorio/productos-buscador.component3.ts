@@ -274,6 +274,14 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }, 1000);
     }
 
+    public observacionesMeterCuadro(id) {
+        if (id != 'si') {
+            $('#textareaobservaciones').css({ display: 'none' });
+        } else {
+            $('#textareaobservaciones').css({ display: 'block' });
+        }
+    }
+
     uploadFactura() {
         var long = this.selectedFilesFactura.length;
         for (var i = 0; i < long; i++) {
@@ -32842,7 +32850,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             const prods = this.apoyo;
             const apoyoBueno = [];
             const iluBuena = [];
-
+            if ($('#siLuz25').is(':checked')) {
+                var obsertext = $('#textareaobservaciones').val();
+            }
             const sistemasApoyo = this.sistemasApoyo;
             for (let k = 0; k < sistemasApoyo.length; k++) {
                 if (sistemasApoyo[k]['id'] == idApoyo) {
@@ -32922,6 +32932,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     }
                     prod[1] = value;
                     prod[1]['todoSumadoPrecio'] = todoSumadoPrecio;
+
+                    if (obsertext != null && obsertext != '' && obsertext != undefined) {
+                        prod[1]['obsertext'] = obsertext;
+                    }
                     prod[1]['todosAcabados'] = this.acabados1;
                     prod[1]['imagen'] = '';
                     prod[1]['productosDormitorio']['imagen'] = '';

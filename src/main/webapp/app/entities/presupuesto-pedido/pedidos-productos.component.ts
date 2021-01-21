@@ -768,6 +768,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             categoriasDormi: cat
                                         };
                                         var codigo = {
+                                            id: data.body[i]['productosPresupuestoPedidos']['presupuestoPedido']['id'],
                                             codigo: data.body[i]['productosPresupuestoPedidos']['presupuestoPedido']['codigo'],
                                             fecha_presupuesto:
                                                 data.body[i]['productosPresupuestoPedidos']['presupuestoPedido']['fecha_presupuesto']
@@ -781,7 +782,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         };
                                         var todo = {
                                             productosDormitorio: uno,
-                                            presupuestoPedido: codigo,
+                                            presupuestoPedido: data.body[i]['productosPresupuestoPedidos']['presupuestoPedido'],
                                             dimensionesProductoTipo: dimen,
                                             cont: cont
                                         };
@@ -13640,7 +13641,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         }, 5000);
         if (texto != '') {
             $('#textAreaObs').empty();
-            $('#textoObservaciones').empty();
+            $('#divobservacionesparaimprimir #textoObservaciones').empty();
             $('#divobservacionesparaimprimir #textoObservaciones').append('<p>' + texto + '</p>');
             $('#divobservacionesparaimprimir1 #textoObservaciones').append('<p>' + texto + '</p>');
             $('#textoObservaciones').append('<p>' + texto + '</p>');

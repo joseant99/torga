@@ -340,7 +340,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                     console.log(nombre);
                     if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                         $('#modalCesta .modal-body').append(
-                            '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative" class="cuerpoArmario" id="cuerpo' +
+                            '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative;" class="cuerpoArmario" id="cuerpo' +
                                 i +
                                 '"></div>'
                         );
@@ -7981,7 +7981,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#modalCesta .modal-body').append(
-                            '<div style="float: left;width: 100%;margin-top:50%" id="textoCesta' + i + '"></div>'
+                            '<div style="float: left;width: 100%;margin-top: 50%;" id="textoCesta' + i + '"></div>'
                         );
                         $('#textoCesta' + i).append(
                             '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;margin-left:28%;"><span style="font-weight:600">' +
@@ -8218,7 +8218,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     } else {
                         $('#modalCesta .modal-body').append(
-                            '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative" id="cuerpo' +
+                            '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
                                 i +
                                 '"></div>'
                         );
@@ -8232,12 +8232,15 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         console.log(nombre);
 
                         contAca = 1;
-                        $('#cuerpo' + i).append('<div id="izquierda" class="marginIzquierda" style="float: left;margin-top:20px"></div>');
-
-                        $('#modalCesta .modal-body').append(
-                            '<div style="float: left;width: 100%;height:180px:margin-bottom:50px;" id="textoCesta' + i + '"></div>'
-                        );
-
+                        $('#cuerpo' + i).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
+                        //class="marginIzquierda"
+                        $('#modalCesta .modal-body').append('<div style="float: right;width: 40%;" id="textoCesta' + i + '"></div>');
+                        if (i != 1) {
+                            var elem1 = $('#cuerpo' + i);
+                            elem1[0].style.setProperty('margin-top', '6%', 'important');
+                            var elem2 = $('#textoCesta' + i);
+                            elem2[0].style.setProperty('margin-top', '6%', 'important');
+                        }
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
                             $('#textoCesta' + i).append(
@@ -9160,13 +9163,13 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#cuerpo' + i + ' #izquierda').append(
-                            '<img id="mueblesTodos" style="z-index:' +
+                            '<img id="imagenPresupues" style="z-index:' +
                                 (100 - i) +
                                 ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
                                 nombreCargarImagen +
                                 '.jpeg">'
                         );
-                        $('#textoCesta' + i).css({ 'margin-top': '110px' });
+
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();
                         if (precioTotalCesta != '') {
@@ -11726,11 +11729,11 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;margin-left: 28%;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );
-                        $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                        //$('#textoCesta' + i).append('<hr style="100%"></hr>');
                         acabados = [];
                     }
                 } else {
@@ -11768,7 +11771,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
                         if (sesion[1]['obsertext'] != undefined) {
                             $('#textoCesta' + i).append(
-                                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;">' + sesion[1]['obsertext'] + '</p>'
+                                '<p style="letter-spacing: 1px;font-weight: 300;">' + sesion[1]['obsertext'] + '</p>'
                             );
                         }
 
@@ -11785,11 +11788,11 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left:28%;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );
-                        $('#textoCesta' + i).append('<hr style="100%"></hr>');
+                        //$('#textoCesta' + i).append('<hr style="100%"></hr>');
                         acabados = [];
                     } else {
                         if (sesion[1]['especial'] == 0) {
@@ -11954,6 +11957,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
             $('#div1nombrefiscalcesta').css({ display: 'block' });
             $('#nombrefiscalinputcesta').val('');
             this.arrayNombreFiscal = [];
+            $('#selectTiendaDelNav').val('0');
         }
         if (id == 5) {
             $('#volverAtras4MeterCasa').css({ display: 'block' });
@@ -12007,6 +12011,18 @@ export class cestaComponent implements OnInit, AfterViewInit {
         this.navbarComponent.iddireccioncogida = this.iddireccioncogida;
         this.navbarComponent.user = this.user;
         this.navbarComponent.generarPresupuesto();
+    }
+
+    public hacerquecargelastiendas() {
+        var valor = $('#selectTiendaDelNav').val();
+        var tiendas = this.todasLasTiendas;
+        var val = [];
+        for (let i = 0; i < tiendas.length; i++) {
+            if (tiendas[i]['nombreFiscal'] == valor) {
+                val[0] = tiendas[i];
+            }
+        }
+        this.arrayNombreFiscal = val;
     }
     public cargarTodasTiendas() {
         $('#volverAtras6MeterCasa').css({ display: 'none' });

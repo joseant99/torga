@@ -32,6 +32,9 @@ public class PresupuestoPedido implements Serializable {
     @Column(name = "pedido")
     private Integer pedido;
     
+    @Column(name = "modificado")
+    private Integer modificado;
+    
     @Column(name = "web")
     private Integer web;
     
@@ -61,6 +64,12 @@ public class PresupuestoPedido implements Serializable {
     
     @Column(name = "num_factura")
     private String numero_factura;
+    
+    @Column(name = "estado")
+    private String estado;
+    
+    @Column(name = "transportista")
+    private String transportista;
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -115,6 +124,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setPedido(Integer pedido) {
         this.pedido = pedido;
+    }
+    
+    public Integer getModificado() {
+        return pedido;
+    }
+
+    public PresupuestoPedido modificado(Integer modificado) {
+        this.modificado = modificado;
+        return this;
+    }
+
+    public void setModificado(Integer modificado) {
+        this.modificado = modificado;
     }
     
     public String getFecha_prevista() {
@@ -221,6 +243,32 @@ public class PresupuestoPedido implements Serializable {
 
     public void setNumero_pedido(String numero_pedido) {
         this.numero_pedido = numero_pedido;
+    }
+    
+    public String getEstado() {
+        return estado;
+    }
+
+    public PresupuestoPedido estado(String estado) {
+        this.estado = estado;
+        return this;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    
+    public String getTransportista() {
+        return transportista;
+    }
+
+    public PresupuestoPedido transportista(String transportista) {
+        this.transportista = transportista;
+        return this;
+    }
+
+    public void setTransportista(String transportista) {
+        this.transportista = transportista;
     }
     
     public String getNumero_factura() {

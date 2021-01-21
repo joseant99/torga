@@ -28,6 +28,12 @@ a {
     color: green;
     font-weight: 600;
 }
+.blink1 {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    color: red;
+    font-weight: 600;
+}
 @keyframes blink-animation {
     to {
         visibility: hidden;
@@ -6298,8 +6304,8 @@ ui bootstrap tweaks
     }
 
     .puertas3izquierda1 {
-        margin-top: -42px !important;
-        margin-left: -122px !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
         max-width: 396px;
         max-height: 424px;
     }
@@ -7030,8 +7036,8 @@ ui bootstrap tweaks
     }
 
     .puertas3Izquierda1 {
-        margin-left: 63px !important;
-        margin-top: -22px !important;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
         width: 315px !important;
     }
 
@@ -7297,6 +7303,234 @@ ui bootstrap tweaks
         height: 350px !important;
     }
     #datosMeter18 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo0 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta0 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo1 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta1 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo2 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta2 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo3 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta3 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo4 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta4 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo5 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta5 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo6 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta6 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo7 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta7 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo8 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta8 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo9 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta9 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo10 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta10 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo11 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta11 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo12 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta12 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo13 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta13 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo14 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta14 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo15 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta15 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo16 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta16 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo17 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta17 {
+        width: 35% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo18 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta18 {
         width: 35% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
@@ -8912,6 +9146,67 @@ ui bootstrap tweaks
         margin-top: 0% !important;
         height: 260px !important;
     }
+
+    #cuerpo0 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo1 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo2 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo3 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo4 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo5 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo6 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo7 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo8 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo9 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo10 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
+    #cuerpo11 {
+        margin-left: 25% !important;
+        margin-top: 0% !important;
+        height: 260px !important;
+    }
     .primerDivPresu {
         margin-bottom: 75px !important;
         margin-top: 0px !important;
@@ -9768,57 +10063,6 @@ ui bootstrap tweaks
         position: fixed;
         margin-top: -5px;
     }
-    #cuerpo1 {
-        height: 400px !important;
-    }
-    #cuerpo2 {
-        height: 400px !important;
-    }
-    #cuerpo3 {
-        height: 400px !important;
-    }
-    #cuerpo4 {
-        height: 400px !important;
-    }
-    #cuerpo5 {
-        height: 400px !important;
-    }
-    #cuerpo6 {
-        height: 400px !important;
-    }
-    #cuerpo7 {
-        height: 400px !important;
-    }
-    #cuerpo8 {
-        height: 400px !important;
-    }
-    #cuerpo9 {
-        height: 400px !important;
-    }
-    #cuerpo10 {
-        height: 400px !important;
-    }
-    #cuerpo11 {
-        height: 400px !important;
-    }
-    #cuerpo12 {
-        height: 400px !important;
-    }
-    #cuerpo13 {
-        height: 400px !important;
-    }
-    #cuerpo14 {
-        height: 400px !important;
-    }
-    #cuerpo15 {
-        height: 400px !important;
-    }
-    #cuerpo16 {
-        height: 400px !important;
-    }
-    #cuerpo17 {
-        height: 400px !important;
-    }
     .puerta2nombre2 {
         margin-left: 94px !important;
         margin-top: 168px !important;
@@ -10391,8 +10635,8 @@ ui bootstrap tweaks
     }
 
     .puertas3izquierda1 {
-        margin-top: -42px !important;
-        margin-left: -122px !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
         max-width: 396px;
         max-height: 424px;
     }
@@ -11109,8 +11353,8 @@ ui bootstrap tweaks
     }
 
     .puertas3Izquierda1 {
-        margin-left: 63px !important;
-        margin-top: -22px !important;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
         width: 315px !important;
     }
 
@@ -11382,6 +11626,236 @@ ui bootstrap tweaks
         text-align: initial !important;
         padding-left: 0%;
     }
+
+    #cuerpo0 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta0 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo1 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta1 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo2 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta2 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo3 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta3 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo4 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta4 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo5 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta5 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo6 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta6 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo7 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta7 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo8 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta8 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo9 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta9 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo10 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta10 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo11 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta11 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo12 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta12 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo13 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta13 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo14 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta14 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo15 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta15 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo16 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta16 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo17 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta17 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo18 {
+        margin-left: 3% !important;
+        margin-top: 0% !important;
+        height: 350px !important;
+    }
+    #textoCesta18 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+
     #imagenPresupues {
         max-width: 400px !important;
         max-height: 400px !important;
@@ -11620,57 +12094,7 @@ ui bootstrap tweaks
         margin-top: 180px !important;
         font-size: 14px !important;
     }
-    #cuerpo1 {
-        height: 330px !important;
-    }
-    #cuerpo2 {
-        height: 330px !important;
-    }
-    #cuerpo3 {
-        height: 330px !important;
-    }
-    #cuerpo4 {
-        height: 330px !important;
-    }
-    #cuerpo5 {
-        height: 330px !important;
-    }
-    #cuerpo6 {
-        height: 330px !important;
-    }
-    #cuerpo7 {
-        height: 330px !important;
-    }
-    #cuerpo8 {
-        height: 330px !important;
-    }
-    #cuerpo9 {
-        height: 330px !important;
-    }
-    #cuerpo10 {
-        height: 330px !important;
-    }
-    #cuerpo11 {
-        height: 330px !important;
-    }
-    #cuerpo12 {
-        height: 330px !important;
-    }
-    #cuerpo13 {
-        height: 330px !important;
-    }
-    #cuerpo14 {
-        height: 330px !important;
-    }
-    #cuerpo15 {
-        height: 330px !important;
-    }
-    #cuerpo16 {
-        height: 330px !important;
-    }
-    #cuerpo17 {
-        height: 330px !important;
-    }
+
     .puerta2nombre2 {
         margin-left: 94px !important;
         margin-top: 168px !important;
@@ -12302,8 +12726,8 @@ ui bootstrap tweaks
     }
 
     .puertas3izquierda1 {
-        margin-top: -42px !important;
-        margin-left: -122px !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
         max-width: 396px;
         max-height: 424px;
     }
@@ -13033,8 +13457,8 @@ ui bootstrap tweaks
     }
 
     .puertas3Izquierda1 {
-        margin-left: 63px !important;
-        margin-top: -22px !important;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
         width: 315px !important;
     }
 
@@ -13300,6 +13724,235 @@ ui bootstrap tweaks
         height: 350px !important;
     }
     #datosMeter18 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+
+    #cuerpo0 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta0 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo1 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta1 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo2 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta2 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo3 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta3 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo4 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta4 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo5 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta5 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo6 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta6 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo7 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta7 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo8 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta8 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo9 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta9 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo10 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta10 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo11 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta11 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo12 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta12 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo13 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta13 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo14 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta14 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo15 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta15 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo16 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta16 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo17 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta17 {
+        width: 45% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo18 {
+        margin-left: 0% !important;
+        margin-top: 4% !important;
+        height: 350px !important;
+    }
+    #textoCesta18 {
         width: 45% !important;
         font-size: 15px !important;
         margin-right: -25px !important;
@@ -14562,8 +15215,8 @@ ui bootstrap tweaks
     }
 
     .puertas3izquierda1 {
-        margin-top: -42px !important;
-        margin-left: -122px !important;
+        margin-top: 0px !important;
+        margin-left: 0px !important;
         max-width: 396px;
         max-height: 424px;
     }
@@ -15293,8 +15946,8 @@ ui bootstrap tweaks
     }
 
     .puertas3Izquierda1 {
-        margin-left: 63px !important;
-        margin-top: -22px !important;
+        margin-left: 0px !important;
+        margin-top: -0x !important;
         width: 315px !important;
     }
 
@@ -15567,6 +16220,235 @@ ui bootstrap tweaks
         text-align: initial !important;
         padding-left: 0%;
     }
+
+    #cuerpo0 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta0 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo1 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta1 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo2 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta2 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo3 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta3 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo4 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta4 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo5 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta5 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo6 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta6 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo7 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta7 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo8 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta8 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo9 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta9 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo10 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta10 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo11 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta11 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo12 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta12 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo13 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta13 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo14 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta14 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo15 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta15 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo16 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta16 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo17 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta17 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
+    #cuerpo18 {
+        margin-left: 3% !important;
+        margin-top: -5% !important;
+        height: 350px !important;
+    }
+    #textoCesta18 {
+        width: 100% !important;
+        font-size: 15px !important;
+        margin-right: -25px !important;
+        text-align: initial !important;
+        padding-left: 0%;
+    }
     #imagenPresupues {
         max-width: 350px !important;
         max-height: 350px !important;
@@ -15826,105 +16708,7 @@ ui bootstrap tweaks
     #noticiasClass {
         margin-top: 20px !important;
     }
-    #cuerpo1 {
-        height: 300px !important;
-    }
-    #cuerpo2 {
-        height: 300px !important;
-    }
-    #cuerpo3 {
-        height: 300px !important;
-    }
-    #cuerpo4 {
-        height: 300px !important;
-    }
-    #cuerpo5 {
-        height: 300px !important;
-    }
-    #cuerpo6 {
-        height: 300px !important;
-    }
-    #cuerpo7 {
-        height: 300px !important;
-    }
-    #cuerpo8 {
-        height: 300px !important;
-    }
-    #cuerpo9 {
-        height: 300px !important;
-    }
-    #cuerpo10 {
-        height: 300px !important;
-    }
-    #cuerpo11 {
-        height: 300px !important;
-    }
-    #cuerpo12 {
-        height: 300px !important;
-    }
-    #cuerpo13 {
-        height: 300px !important;
-    }
-    #cuerpo14 {
-        height: 300px !important;
-    }
-    #cuerpo15 {
-        height: 300px !important;
-    }
-    #cuerpo16 {
-        height: 300px !important;
-    }
-    #cuerpo17 {
-        height: 300px !important;
-    }
-    #textoCesta1 {
-        margin-top: 0px !important;
-    }
-    #textoCesta2 {
-        margin-top: 0px !important;
-    }
-    #textoCesta3 {
-        margin-top: 0px !important;
-    }
-    #textoCesta4 {
-        margin-top: 0px !important;
-    }
-    #textoCesta5 {
-        margin-top: 0px !important;
-    }
-    #textoCesta6 {
-        margin-top: 0px !important;
-    }
-    #textoCesta7 {
-        margin-top: 0px !important;
-    }
-    #textoCesta8 {
-        margin-top: 0px !important;
-    }
-    #textoCesta9 {
-        margin-top: 0px !important;
-    }
-    #textoCesta10 {
-        margin-top: 0px !important;
-    }
-    #textoCesta11 {
-        margin-top: 0px !important;
-    }
-    #textoCesta12 {
-        margin-top: 0px !important;
-    }
-    #textoCesta13 {
-        margin-top: 0px !important;
-    }
-    #textoCesta14 {
-        margin-top: 0px !important;
-    }
-    #textoCesta15 {
-        margin-top: 0px !important;
-    }
-    #textoCesta16 {
-        margin-top: 0px !important;
-    }
+
     #clienteDivTienda {
         float: LEFT;
         width: 80%;

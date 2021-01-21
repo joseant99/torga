@@ -44,6 +44,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     reverse: any;
     todosdatosusuarios: any;
     presuped1: any;
+    numeroPagina: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
@@ -103,6 +104,30 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
 
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    public funcionmostrarmensajemodal(id) {
+        if (id == 'En Revision') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'PROCESADO') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'FABRICACION') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'TERMINADO') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'MONTAJE') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'LISTO PARA ENVIAR') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
+        if (id == 'ENVIADO') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        }
     }
 
     public filtrosBuscados() {
@@ -306,6 +331,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         var account = this.accountService['userIdentity'];
         var contador = 0;
         var todos = this.representanteTiendaService.todos;
+        console.log(this.numeroPagina);
         this.presupuestoPedidoService
             .query({
                 size: 100000
@@ -411,6 +437,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
                 sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
             }
         });
+        this.numeroPagina = this.page;
         this.loadAll();
     }
 
@@ -460,6 +487,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             } else {
                 var ped = pedidos[i];
                 ped['pedido'] = 2;
+                ped['modificado'] = 0;
                 this.subscribeToSaveResponse10(this.presupuestoPedidoService.update(ped));
             }
         }
@@ -497,6 +525,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
         arrayBueno[1694] = 32;
+        this.numeroPagina = 1;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
