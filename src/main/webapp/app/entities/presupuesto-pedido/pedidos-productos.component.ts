@@ -2049,11 +2049,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     if (j == 0) {
                                                         if (datosInteriores[p]['acabados'] != undefined) {
                                                             $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
-                                                                '<p id="pimprimirdatostexto">Acabado ' +
+                                                                '<p id="pimprimirdatostexto"><strong>Plafon ' +
                                                                     (j + 1) +
-                                                                    ' Puerta ' +
-                                                                    (p + 1) +
-                                                                    ' ' +
+                                                                    '</strong> ' +
                                                                     datosInteriores[p]['acabados']['nombre'] +
                                                                     '</span></p>'
                                                             );
@@ -2061,11 +2059,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     } else {
                                                         if (datosInteriores[p]['acabados' + j] != undefined) {
                                                             $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
-                                                                '<p id="pimprimirdatostexto">Acabado ' +
+                                                                '<p id="pimprimirdatostexto"><strong>Plafon ' +
                                                                     (j + 1) +
-                                                                    ' Puerta ' +
-                                                                    (p + 1) +
-                                                                    ' ' +
+                                                                    '</strong> ' +
                                                                     datosInteriores[p]['acabados' + j]['nombre'] +
                                                                     '</span></p>'
                                                             );

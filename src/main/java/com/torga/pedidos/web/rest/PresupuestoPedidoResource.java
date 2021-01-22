@@ -119,6 +119,34 @@ public class PresupuestoPedidoResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
      */
+    @GetMapping("/presupuesto-pedidos-buscar")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidosbuscar() {
+        log.debug("REST request to get a page of PresupuestoPedidos");
+        Collection<PresupuestoPedido> page = presupuestoPedidoRepository.busquing9999();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /presupuesto-pedidos : get all the presupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
+     */
+    @GetMapping("/presupuesto-pedidos-buscar1")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidosbuscar1() {
+        log.debug("REST request to get a page of PresupuestoPedidos");
+        Collection<PresupuestoPedido> page = presupuestoPedidoRepository.sacarUltimaFecha();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /presupuesto-pedidos : get all the presupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
+     */
     @GetMapping("/presupuesto-pedidos1")
     @Timed
     public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidos1() {

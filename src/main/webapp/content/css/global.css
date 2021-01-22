@@ -306,6 +306,12 @@ div#simplepruebaani1 {
     margin-left: 20px;
     margin-bottom: 30px;
 }
+#pdeltextoAzul {
+    display: block;
+}
+#pdeltextoAzulMoviendose {
+    display: none;
+}
 #pruebahoverdiv:hover {
     opacity: 0.4;
 }
@@ -675,6 +681,15 @@ nput[type='radio'] {
         position: fixed;
         z-index: 1;
         top: 40px;
+    }
+    #contenidoDivPrincipal {
+        margin-top: 30px;
+    }
+    #pdeltextoAzul {
+        display: none;
+    }
+    #pdeltextoAzulMoviendose {
+        display: block;
     }
 }
 @media screen and (max-width: 850px) {
@@ -3492,7 +3507,7 @@ ui bootstrap tweaks
     margin-top: 200px;
 }
 #contenidoDivPrincipal {
-    margin-top: 73px;
+    margin-top: 95px;
 }
 #botonIzquierdaComposicion {
     margin-left: 75px;
@@ -3619,7 +3634,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 95px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -4100,7 +4115,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 80px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -4692,7 +4707,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 80px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -5277,7 +5292,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 60px;
+        margin-top: 75px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -7829,7 +7844,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 30px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -8427,7 +8442,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 30px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -9578,7 +9593,7 @@ ui bootstrap tweaks
         margin-bottom: -15px;
     }
     #contenidoDivPrincipal {
-        margin-top: 15px;
+        margin-top: 45px;
     }
     #modalEnviadoCarrito {
         margin-top: 50px;
@@ -14536,7 +14551,7 @@ ui bootstrap tweaks
         padding-bottom: 15px;
     }
     #idNativComedoresDiv {
-        padding-top: 53px !important;
+        padding-top: 105px !important;
         padding-bottom: 17px !important;
     }
     #divvolveriniciomen {
@@ -14549,9 +14564,12 @@ ui bootstrap tweaks
         display: none;
     }
     #divdentrodeloscodigos {
-        margin-top: 90px !important;
+        margin-top: 152px !important;
         width: 100% !important;
         margin-left: 0% !important;
+    }
+    #imagenAcabado {
+        margin-top: 50px !important;
     }
     #codigoArmariosBatientesDivs {
         margin-top: 25px !important;

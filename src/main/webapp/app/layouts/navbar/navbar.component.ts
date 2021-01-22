@@ -106,7 +106,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected acabadosProductosPresupuestoPedidoService: AcabadosProductosPresupuestoPedidoService,
         protected iluminacionProdPrePedService: IluminacionProdPrePedService,
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
-        protected presupuestoPedidoService: PresupuestoPedidoService,
+        public presupuestoPedidoService: PresupuestoPedidoService,
         protected representanteTiendaService: RepresentanteTiendaService,
         protected acaProdService: AcaProdService,
         protected userService: UserService,
@@ -589,7 +589,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         prueba['fecha_pedido'] = output;
                     }
                 }
-                prueba['estado'] = 'En Revision';
+                prueba['estado'] = 'EN REVISION';
+                prueba['modificado'] = 1;
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
 

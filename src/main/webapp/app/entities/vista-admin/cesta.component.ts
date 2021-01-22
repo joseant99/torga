@@ -7986,7 +7986,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         $('#textoCesta' + i).append(
                             '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;margin-left:28%;"><span style="font-weight:600">' +
                                 sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                '</span><i id="precioArm" style="float:right;margin-right:40%;font-weight:600">' +
+                                '</span><i id="precioArm" style="float:right;margin-right:40%;font-weight:600">TOTAL: ' +
                                 sesion[1]['todoSumadoPrecio'] +
                                 ' pp</i></p>'
                         );
@@ -8110,8 +8110,8 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 for (let k = 0; k < 5; k++) {
                                     if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Acabado Puerta ' +
-                                                (w + 1) +
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Plafon ' +
+                                                (k + 1) +
                                                 '</span>: ' +
                                                 sesion[1]['puertas'][w]['acabado' + k]['nombre'] +
                                                 '</p>'
@@ -8218,6 +8218,11 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         $('#textoCesta' + i).append('<hr style="100%"></hr>');
                     } else {
                         $('#modalCesta .modal-body').append(
+                            '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +
+                                i +
+                                '"></div>'
+                        );
+                        $('#modalCesta .modal-body #esteDiv' + i).append(
                             '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
                                 i +
                                 '"></div>'
@@ -8234,7 +8239,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         contAca = 1;
                         $('#cuerpo' + i).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
                         //class="marginIzquierda"
-                        $('#modalCesta .modal-body').append('<div style="float: right;width: 40%;" id="textoCesta' + i + '"></div>');
+                        $('#modalCesta .modal-body #esteDiv' + i).append(
+                            '<div style="float: right;width: 40%;" id="textoCesta' + i + '"></div>'
+                        );
                         if (i != 1) {
                             var elem1 = $('#cuerpo' + i);
                             elem1[0].style.setProperty('margin-top', '6%', 'important');
@@ -8248,7 +8255,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
                                     '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '"><strong style="font-weight: 600;">' +
+                                    '"><strong style="font-weight: 600;">TOTAL: ' +
                                     sesion[1]['todoSumadoPrecio'] +
                                     '</strong></span><strong style="font-weight: 600;"> pp </strong></i></p>'
                             );
@@ -8258,7 +8265,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
                                     '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
                                     i +
-                                    '"><strong style="font-weight: 600;">' +
+                                    '"><strong style="font-weight: 600;">TOTAL: ' +
                                     sesion[1]['todoSumadoPrecio'] +
                                     '</strong></span><strong style="font-weight:600"> pp </strong></i></p>'
                             );

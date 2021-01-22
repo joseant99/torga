@@ -1789,7 +1789,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
-            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '100px' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });
@@ -1800,7 +1800,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '130px' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'none' });
@@ -7985,7 +7985,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
-            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+            $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '95px' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });

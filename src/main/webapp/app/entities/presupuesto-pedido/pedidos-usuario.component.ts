@@ -45,6 +45,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     todosdatosusuarios: any;
     presuped1: any;
     numeroPagina: any;
+    todospedidos: any;
     constructor(
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected parseLinks: JhiParseLinks,
@@ -107,26 +108,47 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     }
 
     public funcionmostrarmensajemodal(id) {
-        if (id == 'En Revision') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+        if (id.toUpperCase() == 'EN REVISION') {
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/1.jpg">'
+            );
         }
         if (id == 'PROCESADO') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/2.jpg">'
+            );
         }
         if (id == 'FABRICACION') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/3.jpg">'
+            );
         }
         if (id == 'TERMINADO') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/5.jpg">'
+            );
         }
         if (id == 'MONTAJE') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/4.jpg">'
+            );
         }
         if (id == 'LISTO PARA ENVIAR') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/6.jpg">'
+            );
         }
         if (id == 'ENVIADO') {
-            $('#modalmostrarmensajeestado #divmetertextoEstado').append('<p></p>');
+            $('#modalmostrarmensajeestado #divmetertextoEstado').empty();
+            $('#modalmostrarmensajeestado #divmetertextoEstado').append(
+                '<img style="width:100%;margin-top-58px;" src="../../../content/images/1- PARA WEB/7.jpg">'
+            );
         }
     }
 
@@ -332,52 +354,51 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
         var contador = 0;
         var todos = this.representanteTiendaService.todos;
         console.log(this.numeroPagina);
-        this.presupuestoPedidoService
-            .query({
-                size: 100000
-            })
-            .subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
-                $.each(res['body'], function(index, value) {
-                    if (auto == 'ROLE_ADMIN') {
-                        if (value['pedido'] == 1) {
+        this.presupuestoPedidoService.busquing().subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+            $.each(res['body'], function(index, value) {
+                if (auto == 'ROLE_ADMIN') {
+                    if (value['pedido'] == 1) {
+                        cogidos[contador] = value;
+                        contador++;
+                    }
+                } else {
+                    if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                        for (let k = 0; k < todos.length; k++) {
+                            if (todos[k]['user'] != null) {
+                                if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                    cogidos[contador] = value;
+                                    contador++;
+                                }
+                            }
+                        }
+                    } else {
+                        if (value['user']['id'] == idUsu && value['pedido'] == 1) {
                             cogidos[contador] = value;
                             contador++;
                         }
-                    } else {
-                        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                            for (let k = 0; k < todos.length; k++) {
-                                if (todos[k]['user'] != null) {
-                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
-                                        cogidos[contador] = value;
-                                        contador++;
-                                    }
-                                }
-                            }
-                        } else {
-                            if (value['user']['id'] == idUsu && value['pedido'] == 1) {
-                                cogidos[contador] = value;
-                                contador++;
-                            }
-                        }
                     }
-                });
-                if (res['body']['0'] != 'undefined') {
-                    this.tamano = contador;
-                    var cont = 0;
-                    var ole = [];
-                    for (let i = cogidos.length - 1; i >= 0; i--) {
+                }
+            });
+            if (res['body']['0'] != 'undefined') {
+                this.todospedidos = cogidos;
+                this.tamano = contador;
+                var cont = 0;
+                var ole = [];
+                for (let i = cogidos.length - 1; i >= 0; i--) {
+                    if (cont <= 99) {
                         ole[cont] = cogidos[i];
                         cont++;
                     }
-                    this.todos = ole;
-                    this.presuped1 = ole;
-                    this.headres = res.headers;
-                    res.headers.set('X-Total-Count', this.tamano);
-                    this.paginatePresupuestoPedidos(ole, res.headers);
                 }
+                this.todos = ole;
+                this.presuped1 = ole;
+                this.headres = res.headers;
+                res.headers.set('X-Total-Count', this.tamano);
+                this.paginatePresupuestoPedidos(ole, res.headers);
+            }
 
-                (res: HttpErrorResponse) => this.onError(res.message);
-            });
+            (res: HttpErrorResponse) => this.onError(res.message);
+        });
     }
 
     public cogerIdPresupuesto(id) {
@@ -403,10 +424,197 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
     loadPage(page: number) {
         if (page !== this.previousPage) {
             this.previousPage = page;
-            this.transition();
+            this.cambiarpaginacion();
         }
     }
-
+    public cambiarpaginacion() {
+        var pagina = this.page;
+        var cont = 0;
+        var contador = 0;
+        var ole = [];
+        var cogidos = this.todospedidos;
+        if (pagina == 2) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 100 && contador <= 199) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 1) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 0 && contador <= 99) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 3) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 200 && contador <= 299) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 4) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 300 && contador <= 399) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 5) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 400 && contador <= 499) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 6) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 500 && contador <= 599) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 7) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 600 && contador <= 699) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 8) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 700 && contador <= 799) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 9) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 800 && contador <= 899) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 10) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 900 && contador <= 999) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 11) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1000 && contador <= 1099) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 12) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1100 && contador <= 1199) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 13) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1200 && contador <= 1299) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 14) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1300 && contador <= 1399) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 15) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1400 && contador <= 1499) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 16) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1500 && contador <= 1599) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 17) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1600 && contador <= 1699) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 18) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1700 && contador <= 1799) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 19) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1800 && contador <= 1899) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        if (pagina == 20) {
+            for (let i = cogidos.length - 1; i >= 0; i--) {
+                if (contador >= 1900 && contador <= 1999) {
+                    ole[cont] = cogidos[i];
+                    cont++;
+                }
+                contador++;
+            }
+        }
+        this.presupuestoPedidos = ole;
+    }
     public sacarPresupuestos() {
         var val = $('#tiendaSelect').val();
         var presu = [];
@@ -438,7 +646,6 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             }
         });
         this.numeroPagina = this.page;
-        this.loadAll();
     }
 
     clear() {

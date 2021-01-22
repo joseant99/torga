@@ -1,5 +1,6 @@
 package com.torga.pedidos.repository;
 
+import com.torga.pedidos.domain.DatosUsuario;
 import com.torga.pedidos.domain.PresupuestoArmario;
 import com.torga.pedidos.domain.PresupuestoPedido;
 import org.springframework.data.jpa.repository.*;
@@ -26,5 +27,12 @@ public interface PresupuestoPedidoRepository extends JpaRepository<PresupuestoPe
     
     @Query("Select u from PresupuestoPedido u order by u.fecha_pedido desc")
 	Collection<PresupuestoPedido> findByPresupuesto1();
+    
+
+    @Query("Select u from PresupuestoPedido u where u.pedido = 1")
+	Collection<PresupuestoPedido> busquing9999();
+    
+    @Query("Select u.fecha_prevista from PresupuestoPedido u where u.pedido = 1 and u.id = (Select max(o.id) from PresupuestoPedido o where o.fecha_prevista is not null)")
+	Collection<PresupuestoPedido> sacarUltimaFecha();
     
 }

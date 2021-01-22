@@ -1,9 +1,14 @@
 <div id="imprimir">
 	<div id="estoParaImprimir">
 	    <br/>
-
+		
 			    <div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" *ngFor="let productosPresupuestoPedidos of productosPresupuestoPedidos ;trackBy: trackId; let i=index;" id="esteDiv{{i}}">
-		    	<div style="width:100%;float:left;margin-bottom:30px;" id="primeroMeterMargin" class="cabecerapedidostodo{{i}}" *ngIf="i == 0">
+		    	<div *ngIf="i == 0">
+					<p style="text-align:center;font-size:34px">PEDIDO</p>
+					<p style="text-align:center;font-size:22px">REFERENCIA PEDIDO: {{productosPresupuestoPedidos.presupuestoPedido?.codigo}}</p>
+					<p style="text-align:center;font-size:22px">FECHA PEDIDO: {{productosPresupuestoPedidos.presupuestoPedido?.fecha_pedido}}</p>
+				</div>
+		    	<div style="width:100%;float:left;margin-bottom:30px;display:none" id="primeroMeterMargin" class="cabecerapedidostodo{{i}}" *ngIf="i == 0">
 		    		<img src="../../../content/images/Logo.jpg" style="width: 5%;position: absolute;left: 10%;" id="imagenlogopedidosprod">
 		    		<div>
 		    			<p style="text-align:center;font-size:17px;margin-top: 5px;margin-bottom: 5px;">MUEBLES TORGA, S.L.</p>
@@ -53,7 +58,7 @@
 		    		<strong class="queremosquenosevea" style="display:none;text-align: center;">{{productosPresupuestoPedidos.productosDormitorio?.nombre}}</strong>
 			    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
 			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
@@ -66,14 +71,14 @@
 			    		<div id="primeroint"></div>
 			    		<div id="segundopuerta"></div>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31">
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31">
 			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.ancho}}</p>
 			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.alto}}</p>
 			    		<p id="pimprimirdatostexto">Grosor &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.grosor}}</p>
 			    		<p id="pimprimirdatostexto">Canteado &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.canteado}}</p>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;text-align:center" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 9">
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 9">
 			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
 			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.alto}}</p>

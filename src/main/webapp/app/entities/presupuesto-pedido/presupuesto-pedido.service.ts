@@ -16,7 +16,7 @@ export class PresupuestoPedidoService {
     public resourceUrl2 = SERVER_API_URL + 'api/presupuesto-pedidos2';
     public resourceUrl3 = SERVER_API_URL + 'api/presupuesto-pedidos4';
     constructor(protected http: HttpClient) {}
-
+    public fechaBarraAzul;
     create(presupuestoPedido: IPresupuestoPedido): Observable<EntityResponseType> {
         return this.http.post<IPresupuestoPedido>(this.resourceUrl, presupuestoPedido, { observe: 'response' });
     }
@@ -48,5 +48,12 @@ export class PresupuestoPedidoService {
 
     comprobarexiste(id: any) {
         return this.http.get(`${this.resourceUrl3}/${id}`, { observe: 'response' });
+    }
+
+    busquing(): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoPedido[]>(`${this.resourceUrl}-buscar`, { observe: 'response' });
+    }
+    fecha(): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoPedido[]>(`${this.resourceUrl}-buscar1`, { observe: 'response' });
     }
 }

@@ -2105,7 +2105,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#botonmencambiarvista').css({ 'font-size': '20px' });
         }
         if (screen.width < 800) {
-            $('.divseleccionarcodigo #divprincipalhuecomenmen').css({ 'padding-top': '47px' });
+            $('.divseleccionarcodigo #divprincipalhuecomenmen').css({ 'padding-top': '110px' });
             $('.armariosDivInputCodigo #divprincipalhuecomenmen').css({ 'padding-top': '60px' });
             const elem = $('.armariosDivInputCodigo #divprincipalhuecomenmen');
             elem[0].style.setProperty('padding-top', '60px', 'important');
@@ -2128,7 +2128,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             elem5[0].style.setProperty('padding-bottom', '27px', 'important');
 
             $('.divseleccionarcodigoRutaNueva #divprincipalhuecomenmen').css({ 'padding-top': '57px' });
-            $('.divseleccionarcodigoCategorias #divprincipalhuecomenmen').css({ 'padding-top': '57px' });
+            $('.divseleccionarcodigoCategorias #divprincipalhuecomenmen').css({ 'padding-top': '110px' });
             $('.divseleccionarcodigoEscogerTipoEspecial #divprincipalhuecomenmen').css({ 'padding-top': '57px' });
             $('.divseleccionarcodigoEscogerMedidaEspecial #divprincipalhuecomenmen').css({ 'padding-top': '57px' });
             $('.divseleccionarcodigoEscogerMedidaEspecialAltura #divprincipalhuecomenmen').css({ 'padding-top': '57px' });
@@ -3368,7 +3368,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
-                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '90px' });
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
                 $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });
@@ -3379,7 +3379,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.divseleccionarcodigo').css({ display: 'none' });
                 $('#calculadoraCarrito').removeAttr('style');
                 $('#calculadoraCarrito').attr('style');
-                $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+                $('#calculadoraCarrito').css({ 'padding-top': '9%' });
                 $('.divBuscadorArticulos').css({ height: '100%' });
                 $('#calculadoraCarrito').css({ width: '25%' });
                 if (screen.width < 800) {
@@ -3425,6 +3425,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     datos['productosDormitorio']['categoriasDormi']['id'] == 4
                 ) {
                     this.singulares = datos;
+                }
+                if (datos['productosDormitorio']['categoriasDormi']['id'] == 1) {
+                    $('#solomesitascant').css({ display: 'block' });
+                } else {
+                    $('#solomesitascant').css({ display: 'else' });
                 }
                 var producto = datos.productosDormitorio.id;
                 var precioPunto = parseFloat(this.precioPunto);
@@ -32945,6 +32950,13 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
+                    var cantidad = $('#selectCantidad').val();
+                    if (cantidad != 1) {
+                        for (let l = 1; l < cantidad; l++) {
+                            sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+                            contadorDimen++;
+                        }
+                    }
                 }
             });
         }
