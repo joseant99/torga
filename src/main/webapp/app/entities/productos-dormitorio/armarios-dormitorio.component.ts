@@ -13097,7 +13097,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 }
                 var precioPuerta = 0;
                 precioPuerta = data.body[0].puerta1;
-
                 if (nombreArmario == '3 PUERTAS DERECHA') {
                     if (
                         data.body[0].productosDormitorio.id != 381 &&
@@ -13119,6 +13118,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13145,6 +13152,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13171,6 +13186,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13197,6 +13220,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13223,6 +13254,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13249,6 +13288,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13275,6 +13322,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13301,6 +13356,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13326,6 +13389,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13402,6 +13473,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13428,6 +13507,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13454,6 +13541,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13480,6 +13575,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13506,6 +13609,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13532,6 +13643,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13558,6 +13677,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13583,6 +13710,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13609,6 +13744,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13635,6 +13778,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13661,6 +13812,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13687,6 +13846,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13713,6 +13880,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13739,6 +13914,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13812,6 +13995,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13838,6 +14029,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13864,6 +14063,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13890,6 +14097,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -13916,6 +14131,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13942,6 +14165,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13968,6 +14199,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -13994,6 +14233,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14020,6 +14267,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14046,6 +14301,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14072,6 +14335,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14097,6 +14368,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14171,6 +14450,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14197,6 +14484,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14223,6 +14518,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14249,6 +14552,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14274,6 +14585,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14300,6 +14619,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14326,6 +14653,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14352,6 +14687,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14378,6 +14721,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14404,6 +14755,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14477,6 +14836,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14503,6 +14870,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14528,6 +14903,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14554,6 +14937,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14579,6 +14970,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14604,6 +15003,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14630,6 +15037,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14656,6 +15071,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14729,6 +15152,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14755,6 +15186,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -14781,6 +15220,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14807,6 +15254,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14833,6 +15288,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14906,6 +15369,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14932,6 +15403,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }
@@ -14958,6 +15437,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id + 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id + 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id + 1)).text('');
                         }
                     }
@@ -15031,6 +15518,14 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                             comprobar == 'J Fuelle DCH Nye'
                         ) {
                             $('#inputPuertas' + (id - 1)).val('');
+                            var quieroBorrar = 0;
+                            var arrayBorrar = [];
+                            var textoBorrar = $('#calculadoraCarrito #precioPuerta' + (id - 1)).text();
+                            arrayBorrar = textoBorrar.split(' ');
+                            quieroBorrar = arrayBorrar[1];
+                            precioTodo = $('#precioDimension').text();
+                            precioTodo = precioTodo - quieroBorrar;
+                            $('#precioDimension').text(precioTodo);
                             $('#calculadoraCarrito #precioPuerta' + (id - 1)).text('');
                         }
                     }

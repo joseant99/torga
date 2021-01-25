@@ -38,6 +38,12 @@ public class PresupuestoPedido implements Serializable {
     @Column(name = "web")
     private Integer web;
     
+    @Column(name = "archivo_adjunto")
+    private String archivoAdjunto;
+    
+    @Column(name = "creado")
+    private Integer creado;
+    
     @Column(name = "fecha_prevista")
     private String fecha_prevista;
     
@@ -139,6 +145,19 @@ public class PresupuestoPedido implements Serializable {
         this.modificado = modificado;
     }
     
+    public String getArchivoAdjunto() {
+        return archivoAdjunto;
+    }
+
+    public PresupuestoPedido archivoAdjunto(String archivoAdjunto) {
+        this.archivoAdjunto = archivoAdjunto;
+        return this;
+    }
+
+    public void setArchivoAdjunto(String archivoAdjunto) {
+        this.archivoAdjunto = archivoAdjunto;
+    }
+    
     public String getFecha_prevista() {
         return fecha_prevista;
     }
@@ -152,7 +171,18 @@ public class PresupuestoPedido implements Serializable {
         this.fecha_prevista = fecha_prevista;
     }
     
-    
+    public Integer getCreado() {
+        return creado;
+    }
+
+    public PresupuestoPedido creado(Integer creado) {
+        this.creado = creado;
+        return this;
+    }
+
+    public void setCreado(Integer creado) {
+        this.creado = creado;
+    }
     
     public Integer getWeb() {
         return web;

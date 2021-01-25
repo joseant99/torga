@@ -491,12 +491,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     numeroAcaProd[j] = acab;
                     acab = [];
                 }
+                var creado;
                 this.acabadosPresupuesto = numeroAcaProd;
                 var account = this.accountService.userIdentity;
                 if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
                     this.isSaving = true;
                     var usuarios = this.user;
                     var usuario;
+                    creado = 0;
                     var idUsu = account['id'];
                     for (let i = 0; i < usuarios.length; i++) {
                         if (usuarios[i]['id'] == idUsu) {
@@ -517,13 +519,27 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             }
                         }
                     } else {
-                        this.isSaving = true;
-                        var usuarios = this.user;
-                        var usuario;
-                        var idUsu = account['id'];
-                        for (let i = 0; i < usuarios.length; i++) {
-                            if (usuarios[i]['id'] == idUsu) {
-                                usuario = usuarios[i];
+                        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                            this.isSaving = true;
+                            var usuarios = this.user;
+                            var usuario;
+                            creado = 0;
+                            var idUsu = account['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuario = usuarios[i];
+                                }
+                            }
+                        } else {
+                            this.isSaving = true;
+                            var usuarios = this.user;
+                            var usuario;
+                            creado = 1;
+                            var idUsu = account['id'];
+                            for (let i = 0; i < usuarios.length; i++) {
+                                if (usuarios[i]['id'] == idUsu) {
+                                    usuario = usuarios[i];
+                                }
                             }
                         }
                     }
@@ -591,6 +607,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 }
                 prueba['estado'] = 'EN REVISION';
                 prueba['modificado'] = 1;
+                prueba['creado'] = creado;
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
 

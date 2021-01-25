@@ -79,6 +79,11 @@ import com.pdfcrowd.Pdfcrowd;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTP; // Nos permite indicar si transfer BINARY o ASCII
+import org.apache.commons.net.ftp.FTPClient; // Para FTP plano
+import org.apache.commons.net.ftp.FTPSClient; // Para FTPSecure (FTPS)
+
 
 /**
  * REST controller for managing Files.
@@ -243,6 +248,44 @@ public class FileController {
 	        
 	        return new UploadFileResponse(fileName, fileDownloadUri,
 	                file.getContentType(), file.getSize());
+
+	    }
+	    
+	    @PostMapping("/uploadFileFTP")
+	    public UploadFileResponse uploadFileFTP(@RequestParam("file") MultipartFile file, @RequestParam("name") String name) throws MessagingException, FileNotFoundException, IOException {
+	    	//InputStream inputStream = new FileInputStream(file.getInputStream());
+	    	FTPClient client = new FTPClient();
+	    	try {
+	    	    client.setBufferSize(512); // Opcional para definir Buffer size en bytes
+	    	    client.connect("pedidospdftorga.com",21); // no el puerto es por defecto, podemos usar client.connect("servidor.ftp.com");
+	    	    client.login( "u749062425","Torga56pedidos123." );
+	    	    client.enterLocalPassiveMode(); // IMPORTANTE!!!! 
+	    	    client.setFileType(FTP.BINARY_FILE_TYPE);
+	    	    client.changeWorkingDirectory("/public_html/confirmaciones");
+	    	    boolean uploadFile = client.storeFile(name,file.getInputStream());
+	    	    client.logout();
+	    	    client.disconnect();
+	    	 
+	    	    if ( uploadFile == false ) {
+	    	        throw new Exception("Error al subir el fichero");
+	    	    }
+	    	} catch (Exception eFTPClient) {
+	    	    // Gestionar el error, mostrar pantalla, reescalar excepcion... etc...
+	    	} finally {
+	    	}
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	String fileName = name;
+	    	String fileDownloadUri = null;
+	        return new UploadFileResponse(fileName, fileDownloadUri, fileDownloadUri, 0);
 
 	    }
 	    

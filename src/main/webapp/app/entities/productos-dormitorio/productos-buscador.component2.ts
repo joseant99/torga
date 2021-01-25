@@ -1161,6 +1161,25 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.tipoProductos = 19;
         }
 
+        if (id == 50) {
+            $('#inputBusca').css({ display: 'block' });
+            $('#producto #listaAnchos1').remove();
+            $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            for (let i = 423; i < 455; i++) {
+                if (i >= 100) {
+                    $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
+                    arrayGG[contdivarray] = 'NH' + i;
+                    contdivarray++;
+                }
+            }
+            this.codigoparadivs = arrayGG;
+            $('#textodivsuperiorquenosecambia').text('ESTANTERIAS');
+            $('#textodivsuperiorquenosecambia1').text('ESTANTERIAS');
+            this.cogidoTirador = 'ESTANTERIAS';
+            this.tipoProductos = 28;
+        }
+
         if (id == 19) {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
@@ -7996,7 +8015,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '130px' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecialAncho').css({ display: 'none' });
@@ -13992,7 +14011,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '130px' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').css({ display: 'none' });
@@ -20135,7 +20154,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 $('.divseleccionarcodigo').css({ display: 'none' });
                 $('#calculadoraCarrito').removeAttr('style');
                 $('#calculadoraCarrito').attr('style');
-                $('#calculadoraCarrito').css({ 'padding-top': '130px' });
+                $('#calculadoraCarrito').css({ 'padding-top': '170px' });
                 $('.divBuscadorArticulos').css({ height: '100%' });
                 $('#calculadoraCarrito').css({ width: '25%' });
                 if (screen.width < 800) {
@@ -25246,7 +25265,16 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 idProd != 375 &&
                                 idProd != 316 &&
                                 idProd != 339 &&
-                                idProd != 81
+                                idProd != 81 &&
+                                idProd != 352 &&
+                                idProd != 353 &&
+                                idProd != 354 &&
+                                idProd != 355 &&
+                                idProd != 356 &&
+                                idProd != 357 &&
+                                idProd != 358 &&
+                                idProd != 359 &&
+                                idProd != 409
                             ) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +

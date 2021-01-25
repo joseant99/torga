@@ -82,6 +82,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
     currentFileUploadExcel: File;
     selectedFilesExcel: FileList;
     iddelpedido: any;
+    nombrearchivoadjunto: any;
     iddefactura: any;
     progressExcel: { percentage: number } = { percentage: 0 };
     constructor(
@@ -126,6 +127,21 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         var presu;
         presu = sessionStorage.getItem('presupuesto');
         this.selectedFilesExcel = event.target.files;
+    }
+
+    public pushFileToStorageExcelftp() {
+        var dato_archivo = $('#inputfilecoger').prop('files')[0];
+        this.vistaadminService.pushFileToStorageExcelftp(dato_archivo, dato_archivo.name).subscribe(event => {
+            if (event['status'] == 200) {
+                console.log(event);
+                var presu = this.productosPresupuestoPedidos[0]['presupuestoPedido'];
+                presu['archivoAdjunto'] = dato_archivo.name;
+                $('#modalnoestasubidoarchivo').css({ display: 'none' });
+                $('#botonarchivosubido').css({ display: 'block' });
+                this.nombrearchivoadjunto = this.productosPresupuestoPedidos[0]['presupuestoPedido']['archivoAdjunto'];
+                this.subscribeToSaveResponse5(this.presupuestoPedidoService.update(presu));
+            }
+        });
     }
 
     public aparadescargarpdf() {
@@ -735,6 +751,18 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         } else {
                             $('#botonnosepuededescargar1').css({ display: 'block' });
                             $('#botonsepuededescargar1').css({ display: 'none' });
+                        }
+
+                        if (
+                            toma[i]['presupuestoPedido']['archivoAdjunto'] != null &&
+                            toma[i]['presupuestoPedido']['archivoAdjunto'] != undefined
+                        ) {
+                            $('#modalnoestasubidoarchivo').css({ display: 'none' });
+                            $('#botonarchivosubido').css({ display: 'block' });
+                            this.nombrearchivoadjunto = toma[i]['presupuestoPedido']['archivoAdjunto'];
+                        } else {
+                            $('#modalnoestasubidoarchivo').css({ display: 'block' });
+                            $('#botonarchivosubido').css({ display: 'none' });
                         }
 
                         $('#textoObservaciones').css({ display: 'block' });
@@ -11835,7 +11863,18 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 375 &&
                                                     idProd != 316 &&
                                                     idProd != 236 &&
-                                                    idProd != 237
+                                                    idProd != 237 &&
+                                                    idProd != 339 &&
+                                                    idProd != 81 &&
+                                                    idProd != 352 &&
+                                                    idProd != 353 &&
+                                                    idProd != 354 &&
+                                                    idProd != 355 &&
+                                                    idProd != 356 &&
+                                                    idProd != 357 &&
+                                                    idProd != 358 &&
+                                                    idProd != 359 &&
+                                                    idProd != 409
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +

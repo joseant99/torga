@@ -58,8 +58,8 @@
 		    		<strong class="queremosquenosevea" style="display:none;text-align: center;">{{productosPresupuestoPedidos.productosDormitorio?.nombre}}</strong>
 			    	<div style="float:left;width:40%;margin-left:100px;height:333px;margin-top:4%;" id="imagen{{i}}">
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;font-size:12px;letter-spacing:1px;" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo !== null">
+			    		<p style="font-size:16px;"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i  style="float:right;margin-right:20%;FONT-WEIGHT:600">TOTAL: <span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</i></strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
@@ -71,15 +71,15 @@
 			    		<div id="primeroint"></div>
 			    		<div id="segundopuerta"></div>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;font-size:12px;letter-spacing:1px" *ngIf="productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id === 31">
+			    		<p style="font-size:16px;"><strong>{{productosPresupuestoPedidos.productosDormitorio.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i  style="float:right;margin-right:20%;FONT-WEIGHT:600">TOTAL: <i id="precioTotal{{i}}">{{productosPresupuestoPedidos.precioTotal}}</i> pp</i></strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.ancho}}</p>
 			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.alto}}</p>
 			    		<p id="pimprimirdatostexto">Grosor &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.grosor}}</p>
 			    		<p id="pimprimirdatostexto">Canteado &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.canteado}}</p>
 			    	</div>
-			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 9">
-			    		<p style="font-size:30px" id="pNombreProd"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
+			    	<div class="{{productosPresupuestoPedidos.id}}Datos" id="datosMeter{{i}}" style="float:right;width:25%;font-size:12px;letter-spacing:1px" *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo === null && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 31 && productosPresupuestoPedidos.productosDormitorio.categoriasDormi.id !== 9">
+			    		<p  style="font-size:16px;"><strong>{{productosPresupuestoPedidos.tiposApoyo.productoApoyo?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i  style="float:right;margin-right:20%;FONT-WEIGHT:600">TOTAL: <i id="precioTotal{{i}}">{{productosPresupuestoPedidos.tiposApoyo?.precio}}</i> pp</i></strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto">Ancho &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.ancho}}</p>
 			    		<p id="pimprimirdatostexto">Alto &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.alto}}</p>
 			    		<p id="pimprimirdatostexto">Fondo &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.tiposApoyo?.fondo}}</p>
@@ -389,7 +389,8 @@
 	  		<p style="text-align:center" id="botonnosepuededescargar"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">CONFIRMACION NO DISPONIBLE</a></button></p>		
 	  		<p style="text-align:center;display:none" id="botonsepuededescargar1"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/{{iddefactura}}.pdf" target="_blank" style="color:black;font-weight: 400;font-size:20px">FACTURA DISPONIBLE</a></button></p>
 	  		<p style="text-align:center" id="botonnosepuededescargar1"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo1"><a style="color:white">FACTURA NO DISPONIBLE</a></button></p>		
-	  		
+	  		<p style="text-align:center" data-toggle="modal" data-target="#modalsubirarchivo" id="modalnoestasubidoarchivo"><button id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;background-color: #17a2b8;"><a style="color:white">SUBIR ARCHIVO</a></button></p>
+	  		<p style="text-align:center;display:none" id="botonarchivosubido"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/{{nombrearchivoadjunto}}" target="_blank" style="color:black;font-weight: 400;font-size:20px">DESCARGAR ARCHIVO</a></button></p>
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
 	  		 --><!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>
@@ -587,3 +588,27 @@
 		      
 		    </div>
 	  </div> 
+	  
+	  <div class="modal fade" id="modalsubirarchivo" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">ADJUNTAR ARCHIVO</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		        <input type="file" id="inputfilecoger"> 
+				     <p style="text-align:center"><button class="btn btn-success" style="margin-top: 60px;" (click)="pushFileToStorageExcelftp()" data-dismiss="modal">Adjuntar archivo</button></p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div> 
+	  
+	  
+	  
