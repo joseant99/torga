@@ -56,6 +56,8 @@ import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 import { AcabadosService } from 'app/entities/acabados';
 import { SessionStorageService } from 'ngx-webstorage';
 import { NavbarComponent } from '../../layouts/navbar/navbar.component';
+import { VistaAdminService } from './vista-admin.service';
+
 @Component({
     providers: [NavbarComponent],
     selector: 'jhi-inicio',
@@ -115,10 +117,14 @@ export class cestaComponent implements OnInit, AfterViewInit {
     idDeLaTiendaCogida: any;
     todosLosAcabados: any;
     iddireccioncogida;
-
+    estaobservacion: any;
+    nombrearchivoadjunto: any;
+    arrayNombresArchivos: any;
+    adjuntoya: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         protected acabadosService: AcabadosService,
+        protected vistaadminService: VistaAdminService,
         protected dimensionesProductoTipoService: DimensionesProductoTipoService,
         private sessionStorage: SessionStorageService,
         protected datosUsuarioService: DatosUsuarioService,
@@ -11280,7 +11286,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Casco :</span> ' +
+                                            ' Tapa :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11289,7 +11295,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cubo :</span> ' +
+                                            ' Patas :</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11329,7 +11335,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             (o + 1) +
-                                            ' Cubo :</span> ' +
+                                            ' Cubo DCH:</span> ' +
                                             acabados[o] +
                                             '</p>'
                                     );
@@ -11932,6 +11938,57 @@ export class cestaComponent implements OnInit, AfterViewInit {
             }
         }
     }
+    public observacionesmodificado() {
+        var cont = 0;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            console.log(sesion);
+
+            if (sesion != null) {
+                cont++;
+            }
+        }
+        if (this.estaobservacion == 0) {
+            cont++;
+            var texto = $('#textAreaObs').val();
+            $('#modalCesta .modal-body').append(
+                '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append(
+                '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append('<div style="float: right;width: 40%;" id="textoCesta' + cont + '"></div>');
+            $('#cuerpo' + cont).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
+            $('#cuerpo' + cont + ' #izquierda').append(
+                '<img id="imagenPresupues" style="z-index:' +
+                    (100 - cont) +
+                    ';max-width:400px;max-height:400px;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/OBSERVACIONES.jpg">'
+            );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight:600">OBSERVACIONES</strong></p>'
+            );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv">' +
+                    texto +
+                    '</p>'
+            );
+
+            this.estaobservacion = 1;
+            var sesion = JSON.parse(sessionStorage.getItem('prod1'));
+            sesion[1]['observaciones'] = texto;
+            sessionStorage.setItem('prod1', JSON.stringify(sesion));
+        } else {
+            var texto = $('#textAreaObs').val();
+            $('#textobserdiv').text(texto.toString());
+            var sesion = JSON.parse(sessionStorage.getItem('prod1'));
+            sesion[1]['observaciones'] = texto;
+            sessionStorage.setItem('prod1', JSON.stringify(sesion));
+        }
+    }
     public hacerclickcambiartexto(id) {}
     public mostrarDireccionDeEntrega() {}
     public meterCuadroDireccion(id) {
@@ -12026,6 +12083,8 @@ export class cestaComponent implements OnInit, AfterViewInit {
         this.navbarComponent.meterdireccionarray = this.meterdireccionarray;
         this.navbarComponent.iddireccioncogida = this.iddireccioncogida;
         this.navbarComponent.user = this.user;
+        this.navbarComponent.arrayNombresArchivos = this.arrayNombresArchivos;
+
         this.navbarComponent.generarPresupuesto();
     }
 
@@ -12225,5 +12284,217 @@ export class cestaComponent implements OnInit, AfterViewInit {
             });
     }
 
-    ngAfterViewInit() {}
+    public pushFileToStorageExcelftp() {
+        var dato_archivo = $('#inputfilecoger').prop('files')[0];
+        this.vistaadminService.pushFileToStorageExcelftp(dato_archivo, dato_archivo.name).subscribe(event => {
+            if (event['status'] == 200) {
+                console.log(event);
+                var array = this.arrayNombresArchivos;
+                if (event.type == 4) {
+                    if (array.length == 0) {
+                        array[0] = dato_archivo.name;
+                    } else {
+                        array[array.length] = dato_archivo.name;
+                    }
+                    this.arrayNombresArchivos = array;
+                    var adjuntoya = this.adjuntoya;
+                    if (adjuntoya == 0) {
+                        var cont = 0;
+                        for (let i = 1; i <= 100; i++) {
+                            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+                            console.log(sesion);
+
+                            if (sesion != null) {
+                                cont++;
+                            }
+                        }
+
+                        cont++;
+                        cont++;
+                        $('#modalCesta .modal-body').append(
+                            '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +
+                                cont +
+                                '"></div>'
+                        );
+                        $('#modalCesta .modal-body #esteDiv' + cont).append(
+                            '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
+                                cont +
+                                '"></div>'
+                        );
+                        $('#modalCesta .modal-body #esteDiv' + cont).append(
+                            '<div style="float: right;width: 40%;" id="textoCesta' + cont + '"></div>'
+                        );
+                        $('#cuerpo' + cont).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
+                        $('#cuerpo' + cont + ' #izquierda').append(
+                            '<img id="imagenPresupues" style="z-index:' +
+                                (100 - cont) +
+                                ';max-width:400px;max-height:400px;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/ARCHIVOS ADJUNTOS.jpg">'
+                        );
+                        $('#textoCesta' + cont).append(
+                            '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight:600">ARCHIVOS ADJUNTOS</strong></p>'
+                        );
+                        $('#textoCesta' + cont).append(
+                            '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo 1: ' +
+                                dato_archivo.name +
+                                '</p>'
+                        );
+                        this.adjuntoya = 1;
+                        var nombrearch = '';
+                        for (let n = 0; n < this.arrayNombresArchivos.length; n++) {
+                            if (n == 0) {
+                                nombrearch = nombrearch + '' + this.arrayNombresArchivos[n];
+                            } else {
+                                nombrearch = nombrearch + '-' + this.arrayNombresArchivos[n];
+                            }
+                        }
+                        var sesion = JSON.parse(sessionStorage.getItem('prod1'));
+                        sesion[1]['archivosAdjuntos'] = nombrearch;
+                        sessionStorage.setItem('prod1', JSON.stringify(sesion));
+                    } else {
+                        var cont = 0;
+                        for (let i = 1; i <= 100; i++) {
+                            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+                            console.log(sesion);
+
+                            if (sesion != null) {
+                                cont++;
+                            }
+                        }
+
+                        cont++;
+                        cont++;
+
+                        var nombrearch = '';
+                        for (let n = 0; n < this.arrayNombresArchivos.length; n++) {
+                            if (n == 0) {
+                                nombrearch = nombrearch + '' + this.arrayNombresArchivos[n];
+                            } else {
+                                nombrearch = nombrearch + '-' + this.arrayNombresArchivos[n];
+                                $('#textoCesta' + cont).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo ' +
+                                        (n + 1) +
+                                        ': ' +
+                                        dato_archivo.name +
+                                        '</p>'
+                                );
+                            }
+                            var sesion = JSON.parse(sessionStorage.getItem('prod1'));
+                            sesion[1]['archivosAdjuntos'] = nombrearch;
+                            sessionStorage.setItem('prod1', JSON.stringify(sesion));
+                        }
+                    }
+                }
+            }
+        });
+    }
+    public simpleprueba() {
+        alert(1);
+    }
+    protected subscribeToSaveResponse5(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess5(), (res: HttpErrorResponse) => this.onSaveError5());
+    }
+
+    protected onSaveSuccess5() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError5() {
+        this.isSaving = false;
+    }
+
+    ngAfterViewInit() {
+        this.arrayNombresArchivos = [];
+        this.adjuntoya = 0;
+        var cont = 0;
+        this.estaobservacion = 0;
+        var es = 0;
+        var es1 = 0;
+        for (let i = 1; i <= 100; i++) {
+            var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+            console.log(sesion);
+            if (i == 1) {
+                if (sesion != null) {
+                    if (sesion[1]['observaciones'] != undefined && sesion[1]['observaciones'] != null) {
+                        es = 1;
+                        var texto = sesion[1]['observaciones'];
+                        this.estaobservacion = 1;
+                    }
+                    if (sesion[1]['archivosAdjuntos'] != undefined && sesion[1]['archivosAdjuntos'] != null) {
+                        es1 = 1;
+                        var pruearra = [];
+                        var pruearra1 = [];
+                        pruearra = sesion[1]['archivosAdjuntos'].split('-');
+                        this.arrayNombresArchivos = pruearra;
+                        this.adjuntoya = 1;
+                    }
+                }
+            }
+            if (sesion != null) {
+                cont++;
+            }
+        }
+        if (es == 1) {
+            cont++;
+            $('#modalCesta .modal-body').append(
+                '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append(
+                '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append('<div style="float: right;width: 40%;" id="textoCesta' + cont + '"></div>');
+            $('#cuerpo' + cont).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
+            $('#cuerpo' + cont + ' #izquierda').append(
+                '<img id="imagenPresupues" style="z-index:' +
+                    (100 - cont) +
+                    ';max-width:400px;max-height:400px;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/OBSERVACIONES.jpg">'
+            );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight:600">OBSERVACIONES</strong></p>'
+            );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv">' +
+                    texto +
+                    '</p>'
+            );
+            $('#textAreaObs').val(texto);
+        }
+        if (es1 == 1) {
+            cont++;
+            $('#modalCesta .modal-body').append(
+                '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append(
+                '<div style="float: left;width: 500px;text-align: center;height:300px;position:relative;float: left;width: 40%;margin-left: 100px;height: 333px;" id="cuerpo' +
+                    cont +
+                    '"></div>'
+            );
+            $('#modalCesta .modal-body #esteDiv' + cont).append('<div style="float: right;width: 40%;" id="textoCesta' + cont + '"></div>');
+            $('#cuerpo' + cont).append('<div id="izquierda"  style="float: left;margin-top:20px"></div>');
+            $('#cuerpo' + cont + ' #izquierda').append(
+                '<img id="imagenPresupues" style="z-index:' +
+                    (100 - cont) +
+                    ';max-width:400px;max-height:400px;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/ARCHIVOS ADJUNTOS.jpg">'
+            );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight:600">ARCHIVOS ADJUNTOS</strong></p>'
+            );
+
+            for (let r = 0; r < this.arrayNombresArchivos.length; r++) {
+                $('#textoCesta' + cont).append(
+                    '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv">Archivo ' +
+                        (r + 1) +
+                        ': ' +
+                        this.arrayNombresArchivos[r] +
+                        '</p>'
+                );
+            }
+            $('#textAreaObs').val(texto);
+        }
+    }
 }

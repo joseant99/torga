@@ -324,6 +324,19 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         });
     }
 
+    public clicdescargarweb() {
+        var nombre = this.nombrearchivoadjunto;
+        var array = [];
+        array = nombre.split('-');
+        for (let i = 0; i < array.length; i++) {
+            $('#descargararchivoswebsubidos').attr(
+                'href',
+                'https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/' + array[i]
+            );
+            $('#descargararchivoswebsubidos')[0].click();
+        }
+    }
+
     public imprimir() {
         var prueba = this.arraysaberimagenes;
         if (prueba.length == 2) {
@@ -11493,7 +11506,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -11504,7 +11517,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +
@@ -11552,7 +11565,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                                 (k + 1) +
-                                                                ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                                                                ' Cubo DCH:</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                                                                 contador +
                                                                 '">' +
                                                                 acabados[k]['acabados']['nombre'] +

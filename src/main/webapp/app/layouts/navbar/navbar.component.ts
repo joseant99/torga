@@ -91,6 +91,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     idDeLaTiendaCogida: any;
     todosLosAcabados: any;
     iddireccioncogida;
+    arrayNombresArchivos: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         protected acabadosService: AcabadosService,
@@ -441,7 +442,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         var memo = document.getElementsByName('estado');
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
         var puntos = null;
-
+        var oberser;
         if (item == 'C') {
             puntos = JSON.parse(sessionStorage.getItem(item));
         }
@@ -460,8 +461,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     if (todoCarr != undefined) {
                         if (todoCarr[1].length == undefined) {
                             prodCarr[contProd] = todoCarr;
+                            oberser = todoCarr[1]['observaciones'];
                             contProd++;
                         } else {
+                            oberser = todoCarr[1]['observaciones'];
                             for (let v = 0; v < todoCarr[1].length; v++) {
                                 var arrayAux = [];
                                 arrayAux[1] = todoCarr[1][v];
@@ -605,9 +608,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         prueba['fecha_pedido'] = output;
                     }
                 }
+                var nombreFichero = '';
+                if (this.arrayNombresArchivos.length != 0) {
+                    var arrayNombreArchivo = this.arrayNombresArchivos;
+                    for (let x = 0; x < arrayNombreArchivo.length; x++) {
+                        if (x != 0) {
+                            nombreFichero = nombreFichero + '-' + arrayNombreArchivo[x];
+                        } else {
+                            nombreFichero = nombreFichero + '' + arrayNombreArchivo[x];
+                        }
+                    }
+                    prueba['archivoAdjunto'] = nombreFichero;
+                }
                 prueba['estado'] = 'EN REVISION';
                 prueba['modificado'] = 1;
                 prueba['creado'] = creado;
+                prueba['observaciones'] = oberser;
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
 

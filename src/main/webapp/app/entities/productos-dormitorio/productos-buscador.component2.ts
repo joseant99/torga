@@ -1165,7 +1165,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
-            for (let i = 423; i < 455; i++) {
+            for (let i = 422; i < 455; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
                     $('.selectbuscaarticulos').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1415,6 +1415,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#pcanteado').css({ display: 'block' });
         $('#pgrosorcalcu').css({ display: 'block' });
         $('#cogerAnchoEstant').empty();
+        $('#datos1').append('<p id="anchodetablerogrosor" style="display:none">' + ancho + '</p>');
         var array = [];
         var cont = 0;
         if (ancho == '12 mm') {
@@ -1448,6 +1449,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     public meterCanteadoCalculadora(id) {
         var ancho = id;
         $('#canteadoTableCalcu').text(ancho.toString());
+        $('#datos1').append('<p id="anchodetablerocanteado" style="display:none">' + ancho + '</p>');
         $('#h4ancho').css({ display: 'block' });
         $('#pAnchoEstant').css({ display: 'block' });
         $('#pcanteadocalcu').css({ display: 'block' });
@@ -5058,7 +5060,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -5071,7 +5073,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -5114,7 +5116,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -5127,7 +5129,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Patas</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Cubo DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -10995,21 +10997,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                         if (idProd == 210) {
-                            if (u == 1) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                        }
-                        if (idProd == 211) {
                             if (u == 1) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -17026,21 +17013,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 );
                             }
                         }
-                        if (idProd == 211) {
-                            if (u == 1) {
-                                $('#datos1').append(
-                                    '<p style="width:100%" id="acabado' +
-                                        u +
-                                        '"><span style="font-weight:600">' +
-                                        u +
-                                        ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                        u +
-                                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                        u +
-                                        '" style="margin-left:10px"></span></p>'
-                                );
-                            }
-                        }
+
                         if (idProd == 213) {
                             if (u == 1) {
                                 $('#datos1').append(
@@ -19918,8 +19891,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#nombreMesita').attr('class', 408);
         $('#altoTableCalcu').text(ancho.toString());
         var ancho1 = $('#cogerAnchoEstant').val();
-        var caje = $('#cogerCANTEADO').val();
-        var grosor = $('#cogerAnchoestanlibre').val();
+        var caje = $('#anchodetablerocanteado').text();
+        var grosor = $('#anchodetablerogrosor').text();
 
         var prueba = parseFloat($('#altoTableCalcu').text());
         var prueba1 = parseFloat($('#anchoTableCalcu').text());
@@ -23207,21 +23180,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     );
                                 }
                             }
-                            if (idProd == 211) {
-                                if (u == 1) {
-                                    $('#datos1').append(
-                                        '<p style="width:100%" id="acabado' +
-                                            u +
-                                            '"><span style="font-weight:600">' +
-                                            u +
-                                            ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                            u +
-                                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                            u +
-                                            '" style="margin-left:10px"></span></p>'
-                                    );
-                                }
-                            }
+
                             if (idProd == 213) {
                                 if (u == 1) {
                                     $('#datos1').append(

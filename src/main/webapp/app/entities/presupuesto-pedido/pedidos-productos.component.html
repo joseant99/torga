@@ -376,7 +376,7 @@
 		</div>
 		
 		<hr style="width:100%;background-color:black;float:left;height:0px" id="hrUltimo"></hr>
-		<div id="divObserPoner" style="float:left;width:100%;margin-bottom:60px;">
+		<div id="divObserPoner" style="float:left;width:100%;margin-bottom:60px;display:none">
 			<textarea style="margin-left: 38%;"  rows="4" cols="50" id="textAreaObs" onclick="borrarTextoObservaciones()">Observaciones...</textarea>
 			<button id="botonGuardarobser" style="margin-top: 110px;position: absolute;" (click)="textoObservacionesFuncion()">Guardar</button>
 		</div>
@@ -389,8 +389,9 @@
 	  		<p style="text-align:center" id="botonnosepuededescargar"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo"><a style="color:white">CONFIRMACION NO DISPONIBLE</a></button></p>		
 	  		<p style="text-align:center;display:none" id="botonsepuededescargar1"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/{{iddefactura}}.pdf" target="_blank" style="color:black;font-weight: 400;font-size:20px">FACTURA DISPONIBLE</a></button></p>
 	  		<p style="text-align:center" id="botonnosepuededescargar1"><button id="botonTodosTamaño" style="width: 300px;background-color: #B5BABD;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalmostrarmensajenodispo1"><a style="color:white">FACTURA NO DISPONIBLE</a></button></p>		
-	  		<p style="text-align:center" data-toggle="modal" data-target="#modalsubirarchivo" id="modalnoestasubidoarchivo"><button id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;background-color: #17a2b8;"><a style="color:white">SUBIR ARCHIVO</a></button></p>
-	  		<p style="text-align:center;display:none" id="botonarchivosubido"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/{{nombrearchivoadjunto}}" target="_blank" style="color:black;font-weight: 400;font-size:20px">DESCARGAR ARCHIVO</a></button></p>
+	  		<!-- <p style="text-align:center" data-toggle="modal" data-target="#modalsubirarchivo" id="modalnoestasubidoarchivo"><button id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;background-color: #17a2b8;"><a style="color:white">SUBIR ARCHIVO</a></button></p> -->
+	  		<p style="text-align:center;display:none" id="botonarchivosubido"><button class="btn btn-info btn-sm" id="botonTodosTamaño" style="width: 300px;color: white;height: 65px;font-size: 21px;" ><a id="aparadescargarpdf" target="_blank" style="color:black;font-weight: 400;font-size:20px" (click)="clicdescargarweb()">DESCARGAR ARCHIVO</a></button></p>
+	  		<a id="descargararchivoswebsubidos" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/{{nombrearchivoadjunto}}" target="_blank" style="display:none"></a>
 	  		 <!--<p style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modalDatosCliente" (click)="provinciasCargar()">Datos del Cliente</button></p>-->
 	  		<!-- <p style="text-align:center"><button id="botonTodosTamaño" style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" (click)="imprimir()" value='Print'>IMPRIMIR</button></p>
 	  		 --><!--  <p id="contacto1" style="text-align:center"><button style="width: 300px;background-color: black;color: white;height: 65px;font-size: 21px;" data-toggle="modal" data-target="#modal" (click)="contactoPresupuesto()">Contacto con Fabrica</button></p>

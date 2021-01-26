@@ -14,14 +14,59 @@
 			       <p style="text-align:center;width:100%"><span style="font-weight:600;font-size:22px;" id="precioCestaFinalBueno">TOTAL CESTA :<span id="cestaTotal" style="margin-left:25px;font-weight:600"></span> <span style="font-weight:600">pp</span></span></p>
 			       
 		        </div>
-		        <p style="text-align:center;width:100%"><button id="botonDerechaPresupuesto" (click)="cargarTodasTiendas()" style="font-size:22px;right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;" type="submit" class="btn btn-primary ">FINALIZAR</button></p>
+		        <p style="text-align:center;width:100%"><button data-toggle="modal" data-target="#modalModificarObservaciones" style="font-size:22px;right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;width: 380px;" type="submit" class="btn btn-primary ">ESCRIBIR UNA OBSERVACION</button></p>
+		        <p style="text-align:center;width:100%"><button style="font-size:22px;right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;width: 380px;" type="submit" class="btn btn-primary " data-toggle="modal" data-target="#modalsubirarchivo"  >ADJUNTAR ARCHIVOS</button></p>
+		        <p style="text-align:center;width:100%"><button (click)="cargarTodasTiendas()" style="font-size:22px;right: 0;background-color: black;color: white;border: 1px solid black;letter-spacing: 2px;width: 380px;" type="submit" class="btn btn-primary ">FINALIZAR PEDIDO</button></p>
 		        
 		      </div>
 		
 		      
 		    </div>
 		    
-	  </div> 
+	  </div>
+	  <div class="modal fade" id="modalModificarObservaciones" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		        	<textarea rows="4" cols="55" id="textAreaObs"></textarea>
+		        	<p style="width:100%;text-align:center"><button style="width: 60px;height: 40px;font-size: 20px;" (click)="observacionesmodificado()" data-dismiss="modal">OK</button></p>
+		        </div>
+		       
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalsubirarchivo" role="dialog" style="margin-top: 100px;z-index: 1000000000000;">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <h4 class="modal-title">ADJUNTAR ARCHIVO</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		        	<div>
+		        		<p *ngFor="let nombre of arrayNombresArchivos">{{nombre}}</p>
+		        	
+		        	</div>
+				     <p style="text-align:center">
+				     	<input type="file" id="inputfilecoger" (change)="pushFileToStorageExcelftp()" style="display: none;" />
+						<input type="button" value="ADJUNTAR" onclick="document.getElementById('inputfilecoger').click();" />
+				     </p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
 	  
 	  
 	  <div id="modalConfirmarCreacionPresu" style="z-index: 1000000000000;display:none;position:inherit;padding-top:100px !important;margin-top:15px !important;background-color:white !important;">
@@ -74,10 +119,13 @@
 				    </div>
 				    <div class="div1direccionentrega" style="display:none;height: 98%;top:0;position:inherit">
 				    	<p style="width:100%;text-align:center;margin-top:25px;">Selecciona una direccion de entrega</p>
-				    	<div style="float:left;margin-left:3%;width: 500px;border: 1px solid;padding-top: 20px;background-color: white;margin-top: 2%;" id="arraynombrefiscaldiv" id="arraynombrefiscaldiv" *ngFor="let array of meterdireccionarray" (click)="direccogidamen(array.id)">
-					        <p>Direccion: {{array.direccion}}</p>
-					        <p>Poblacion: {{array.municipios}}</p>
-					        <p>Provincia: {{array.provincias}}</p>
+				    	<div style="float:left;margin-left:3%;width: 500px;padding-top: 20px;background-color: white;margin-top: 2%;" id="arraynombrefiscaldiv" id="arraynombrefiscaldiv" *ngFor="let array of meterdireccionarray">
+					    	<div style="border: 1px solid;">
+						        <p>Direccion: {{array.direccion}}</p>
+						        <p>Poblacion: {{array.municipios}}</p>
+						        <p>Provincia: {{array.provincias}}</p>
+					        </div>
+					        <button style="float: left;margin-top: 10px;width: 100%;font-size: 23px;height: 50px;background-color: black;color: white;" (click)="direccogidamen(array.id)">ENTREGAR EN ESTA DIRECCION</button>
 					    </div>
 				    </div>
 				    
