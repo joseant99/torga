@@ -234,6 +234,43 @@ $("#divDentroCalcu").scroll(function() {
 			}
 		
 	}
+	function quitarObservacionesPedido(){
+		var prod = JSON.parse(sessionStorage.getItem("prod1"));
+		prod[1]["observaciones"] = undefined;
+		sessionStorage.setItem("prod1",JSON.stringify(prod));
+		var cont = 0;
+		for(let i = 0;i<100;i++){
+			var sesion = JSON.parse(sessionStorage.getItem("prod"+i));
+			if(sesion != undefined){
+				cont++;
+				
+			}
+		}
+		cont++;
+		$("#modalCesta .modal-body #cuerpo"+cont).remove();
+		$("#modalCesta .modal-body #textoCesta"+cont).remove();
+	}
+	function quitarArchivosPedido(){
+		var prod = JSON.parse(sessionStorage.getItem("prod1"));
+		prod[1]["archivosAdjuntos"] = undefined;
+		sessionStorage.setItem("prod1",JSON.stringify(prod));
+		var tieneObser = 0;
+		var cont = 0;
+		for(let i = 0;i<100;i++){
+			var sesion = JSON.parse(sessionStorage.getItem("prod"+i));
+			if(sesion != undefined){
+				cont++;
+			}
+		}
+		cont++;
+
+		cont++;
+		
+		$("#modalCesta .modal-body #cuerpo"+cont).remove();
+		$("#modalCesta .modal-body #textoCesta"+cont).remove();
+	}
+	
+	
 	function guardarIdEditar(id){
 		sessionStorage.setItem("idEditarProd",id);
 	}

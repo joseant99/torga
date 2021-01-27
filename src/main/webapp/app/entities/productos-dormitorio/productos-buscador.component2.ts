@@ -19861,6 +19861,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public meterAnchoEstantCalculadora(id) {
         var ancho = id;
+        $('html, body').animate({ scrollTop: 0 });
         $('#panchocalcu').css({ display: 'block' });
         $('#anchoTableCalcu').text(ancho.toString());
         $('#h4alto').css({ display: 'block' });
@@ -19886,6 +19887,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public meterAltoEstantCalculadora(id) {
+        $('html, body').animate({ scrollTop: 0 });
         var ancho = id;
         $('#paltocalcu').css({ display: 'block' });
         $('#nombreMesita').attr('class', 408);
@@ -25385,7 +25387,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         idProd != 234 &&
                         idProd != 235 &&
                         idProd != 331 &&
-                        idProd != 330
+                        idProd != 330 &&
+                        idProd != 409
                     ) {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
@@ -25569,7 +25572,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 374 &&
                     idProd != 375 &&
                     idProd != 331 &&
-                    idProd != 330
+                    idProd != 330 &&
+                    idProd != 409
                 ) {
                     this.productosDormitorioService.categoria(2).subscribe(data => {
                         console.log(data.body);

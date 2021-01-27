@@ -13378,38 +13378,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                 $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                 $('#todometerFondo').css({ display: 'none' });
+                $('#todometerMensajeEnviado').css({ display: 'block' });
                 this.productosDormitorioService.numeroCesta = 0;
                 for (let i = 1; i <= 100; i++) {
                     sessionStorage.removeItem('prod' + i);
                 }
 
                 alert('enviado');
-                var memo = document.getElementsByName('estado');
-                if (memo.length != 0) {
-                    if (memo[0]['checked'] == true) {
-                        if (item == 'A') {
-                            this.router.navigate(['/presupuesto-producto']);
-                        }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
-                    }
-
-                    if (memo[1]['checked'] == true) {
-                        if (item == 'A') {
-                            this.router.navigate(['/pedidos-producto']);
-                        }
-                        if (item == 'B') {
-                            this.router.navigate(['/presupuesto-precios']);
-                        }
-                        if (item == 'C') {
-                            this.router.navigate(['/presupuesto-puntos']);
-                        }
-                    }
-                }
             });
         });
     }
@@ -14397,39 +14372,21 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
                     $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
                     $('#todometerFondo').css({ display: 'none' });
+                    $('#todometerMensajeEnviado').css({ display: 'block' });
                     this.productosDormitorioService.numeroCesta = 0;
                     for (let i = 1; i <= 100; i++) {
                         sessionStorage.removeItem('prod' + i);
                     }
-                    var memo = document.getElementsByName('estado');
-                    if (memo.length != 0) {
-                        if (memo[0]['checked'] == true) {
-                            if (item == 'A') {
-                                this.router.navigate(['/presupuesto-producto']);
-                            }
-                            if (item == 'B') {
-                                this.router.navigate(['/presupuesto-precios']);
-                            }
-                            if (item == 'C') {
-                                this.router.navigate(['/presupuesto-puntos']);
-                            }
-                        }
-
-                        if (memo[1]['checked'] == true) {
-                            if (item == 'A') {
-                                this.router.navigate(['/pedidos-producto']);
-                            }
-                            if (item == 'B') {
-                                this.router.navigate(['/presupuesto-precios']);
-                            }
-                            if (item == 'C') {
-                                this.router.navigate(['/presupuesto-puntos']);
-                            }
-                        }
-                    }
                 });
             }
         });
+    }
+
+    public nosvamosapedidos() {
+        $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+        $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+        $('#todometerMensajeEnviado').css({ display: 'none' });
+        this.router.navigate(['/pedidos-producto']);
     }
 
     previousState() {

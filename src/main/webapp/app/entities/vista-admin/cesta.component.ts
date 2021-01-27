@@ -11976,6 +11976,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                     texto +
                     '</p>'
             );
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()">ELIMINAR</a></p>'
+            );
 
             this.estaobservacion = 1;
             var sesion = JSON.parse(sessionStorage.getItem('prod1'));
@@ -12338,13 +12341,16 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 dato_archivo.name +
                                 '</p>'
                         );
+                        $('#textoCesta' + cont).append(
+                            '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
+                        );
                         this.adjuntoya = 1;
                         var nombrearch = '';
                         for (let n = 0; n < this.arrayNombresArchivos.length; n++) {
                             if (n == 0) {
                                 nombrearch = nombrearch + '' + this.arrayNombresArchivos[n];
                             } else {
-                                nombrearch = nombrearch + '-' + this.arrayNombresArchivos[n];
+                                nombrearch = nombrearch + '%' + this.arrayNombresArchivos[n];
                             }
                         }
                         var sesion = JSON.parse(sessionStorage.getItem('prod1'));
@@ -12369,7 +12375,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             if (n == 0) {
                                 nombrearch = nombrearch + '' + this.arrayNombresArchivos[n];
                             } else {
-                                nombrearch = nombrearch + '-' + this.arrayNombresArchivos[n];
+                                nombrearch = nombrearch + '%' + this.arrayNombresArchivos[n];
                                 $('#textoCesta' + cont).append(
                                     '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo ' +
                                         (n + 1) +
@@ -12378,6 +12384,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                             }
+                            $('#textoCesta' + cont).append(
+                                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
+                            );
                             var sesion = JSON.parse(sessionStorage.getItem('prod1'));
                             sesion[1]['archivosAdjuntos'] = nombrearch;
                             sessionStorage.setItem('prod1', JSON.stringify(sesion));
@@ -12423,7 +12432,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         es1 = 1;
                         var pruearra = [];
                         var pruearra1 = [];
-                        pruearra = sesion[1]['archivosAdjuntos'].split('-');
+                        pruearra = sesion[1]['archivosAdjuntos'].split('%');
                         this.arrayNombresArchivos = pruearra;
                         this.adjuntoya = 1;
                     }
@@ -12461,6 +12470,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                     '</p>'
             );
             $('#textAreaObs').val(texto);
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()">ELIMINAR</a></p>'
+            );
         }
         if (es1 == 1) {
             cont++;
@@ -12494,6 +12506,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         '</p>'
                 );
             }
+            $('#textoCesta' + cont).append(
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
+            );
             $('#textAreaObs').val(texto);
         }
     }

@@ -598,6 +598,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
 
             if (id == 2) {
@@ -610,6 +611,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -624,6 +626,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
 
             if (id == 1) {
@@ -636,6 +639,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -650,6 +654,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -664,6 +669,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
         }
 
@@ -678,6 +684,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 2) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -689,6 +696,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -703,6 +711,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 2) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -714,6 +723,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -725,6 +735,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
         }
 
@@ -739,6 +750,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 2) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -750,6 +762,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -761,6 +774,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -775,6 +789,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -786,6 +801,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -797,6 +813,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -811,6 +828,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -822,6 +840,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -833,6 +852,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -847,6 +867,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -858,6 +879,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -869,6 +891,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -883,6 +906,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -894,6 +918,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -904,6 +929,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen17').css({ display: 'none' });
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
             }
             if (id == 4) {
@@ -914,6 +940,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen16').css({ display: 'none' });
                 $('.classintdivmen17').css({ display: 'none' });
                 $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
             }
@@ -930,6 +957,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -940,6 +968,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen17').css({ display: 'block' });
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
             }
             if (id == 1) {
@@ -952,6 +981,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 4) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -963,6 +993,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
 
@@ -977,6 +1008,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -988,6 +1020,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 4) {
                 $('.classintdivmen1').css({ display: 'none' });
@@ -999,6 +1032,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -1010,6 +1044,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
         if (nombreArma == '7 PUERTA ASIMETRICAS') {
@@ -1023,6 +1058,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'none' });
                 $('.classintdivmen19').css({ display: 'none' });
                 $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
             }
             if (id == 3) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -1034,6 +1070,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 1) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -1045,6 +1082,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
             if (id == 4) {
                 $('.classintdivmen1').css({ display: 'block' });
@@ -1056,6 +1094,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen18').css({ display: 'block' });
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
             }
         }
     }
