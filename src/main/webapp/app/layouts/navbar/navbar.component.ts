@@ -613,7 +613,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     var arrayNombreArchivo = this.arrayNombresArchivos;
                     for (let x = 0; x < arrayNombreArchivo.length; x++) {
                         if (x != 0) {
-                            nombreFichero = nombreFichero + '-' + arrayNombreArchivo[x];
+                            nombreFichero = nombreFichero + '%' + arrayNombreArchivo[x];
                         } else {
                             nombreFichero = nombreFichero + '' + arrayNombreArchivo[x];
                         }
