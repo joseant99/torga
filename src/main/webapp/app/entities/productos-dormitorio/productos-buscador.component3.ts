@@ -3467,8 +3467,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 }
                 if (datos['productosDormitorio']['categoriasDormi']['id'] == 1) {
                     $('#solomesitascant').css({ display: 'block' });
+                    $('#selectCantidad').val('1');
                 } else {
-                    $('#solomesitascant').css({ display: 'else' });
+                    $('#solomesitascant').css({ display: 'none' });
+                    $('#selectCantidad').val('1');
                 }
                 var producto = datos.productosDormitorio.id;
                 var precioPunto = parseFloat(this.precioPunto);

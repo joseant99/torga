@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "fecha_entrega": {
+            "home": {
+                "title": "Fecha Entregas",
+                "createLabel": "Crear nuevo Fecha Entrega",
+                "createOrEditLabel": "Crear o editar Fecha Entrega"
+            },
+            "created": "Un nuevo Fecha Entrega ha sido creado con el identificador {{ param }}",
+            "updated": "Un Fecha Entrega ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Fecha Entrega ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Fecha Entrega {{ id }}?"
+            },
+            "detail": {
+                "title": "Fecha Entrega"
+            },
+            "fecha": "Fecha"
+        }
+    }
+}

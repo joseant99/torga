@@ -34,6 +34,7 @@ import { DireccionTiendasService } from '../../entities/direccion-tiendas/direcc
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { Observable } from 'rxjs';
 import { PrecioTiendaService } from '../../entities/precio-tienda/precio-tienda.service';
+import { Fecha_entregaService } from '../../entities/fecha-entrega/fecha-entrega.service';
 import { JhiMainComponent } from '../main/main.component';
 import { PrecioFinalPresuService } from '../../entities/precio-final-presu/precio-final-presu.service';
 import { IPresupuestoArmario } from 'app/shared/model/presupuesto-armario.model';
@@ -44,6 +45,7 @@ import { IPresupuestoArmarioPuertas } from 'app/shared/model/presupuesto-armario
 import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-armario-puertas/presupuesto-armario-puertas.service';
 import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 import { AcabadosService } from 'app/entities/acabados';
+import { IFecha_entrega } from 'app/shared/model/fecha-entrega.model';
 @Component({
     providers: [JhiMainComponent],
     selector: 'jhi-navbar',
@@ -52,6 +54,7 @@ import { AcabadosService } from 'app/entities/acabados';
 })
 export class NavbarComponent implements AfterViewInit, OnInit {
     inProduction: boolean;
+    fecha_entrega: IFecha_entrega;
     isNavbarCollapsed: boolean;
     languages: any[];
     isSaving: boolean;
@@ -96,6 +99,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         protected acabadosService: AcabadosService,
         private loginService: LoginService,
+        public fecha_entregaService: Fecha_entregaService,
         private languageService: JhiLanguageService,
         private languageHelper: JhiLanguageHelper,
         public dimensionesProductoTipoService: DimensionesProductoTipoService,
@@ -145,6 +149,40 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('.logo-img').css({ background: 'none' });
             }
         }, 10);
+
+        this.fecha_entregaService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                this.presupuestoPedidoService.fechaBarraAzul = data.body[0]['fecha'];
+                $('#inputParaCambiarFecha').val(data.body[0]['fecha']);
+            });
+    }
+
+    public cambiarFechaEntregaBase() {
+        var val = $('#inputParaCambiarFecha').val();
+        var hola = {
+            id: 1,
+            fecha: val.toString()
+        };
+        this.presupuestoPedidoService.fechaBarraAzul = val;
+        this.subscribeToSaveResponse1000(this.fecha_entregaService.update(hola));
+    }
+
+    protected subscribeToSaveResponse1000(result: Observable<HttpResponse<IFecha_entrega>>) {
+        result.subscribe(
+            (res: HttpResponse<IFecha_entrega>) => this.onSaveSuccess1000(),
+            (res: HttpErrorResponse) => this.onSaveError1000()
+        );
+    }
+
+    protected onSaveSuccess1000() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError1000() {
+        this.isSaving = false;
     }
     public estoesunaprueba() {
         var account = this.accountService.userIdentity;
@@ -461,7 +499,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                     if (todoCarr != undefined) {
                         if (todoCarr[1].length == undefined) {
                             prodCarr[contProd] = todoCarr;
-                            oberser = todoCarr[1]['observaciones'];
+                            if (i == 1) {
+                                oberser = todoCarr[1]['observaciones'];
+                            }
                             contProd++;
                         } else {
                             oberser = todoCarr[1]['observaciones'];

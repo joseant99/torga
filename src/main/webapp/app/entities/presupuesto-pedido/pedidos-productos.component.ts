@@ -789,7 +789,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                         $('#textoObservaciones').css({ display: 'block' });
                         if (toma[i]['presupuestoPedido']['observaciones'] != null && i == 0) {
                             $('#divobservacionesparaimprimir').append(
-                                '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv0"><div style="float:left;width:40%;margin-left:100px;height:333px;" id="imagen0"> <img id="imagenPresupues" style="z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/OBSERVACIONES.jpg"></div><div style="float:right;width:25%;font-size:12px;letter-spacing:1px;" id="datosMeter0"><p style="font-size:16px;">OBSERVACIONES<strong><p id="pimprimirdatostexto">' +
+                                '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv0"><div style="float:left;width:40%;margin-left:100px;height:333px;" id="imagen0"> <img id="imagenPresupues" style="z-index:100;max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/OBSERVACIONES.jpg"></div><div style="float:right;width:25%;font-size:12px;letter-spacing:1px;" id="datosMeter0"><p style="font-size:16px;">OBSERVACIONES<strong><p id="pimprimirdatostexto" style="color:red">' +
                                     toma[i]['presupuestoPedido']['observaciones'] +
                                     '</p></div></div>'
                             );

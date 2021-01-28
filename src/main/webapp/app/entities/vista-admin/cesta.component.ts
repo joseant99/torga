@@ -11977,7 +11977,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                     '</p>'
             );
             $('#textoCesta' + cont).append(
-                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()">ELIMINAR</a></p>'
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()"><u style="font-size:16px">ELIMINAR</u></a></p>'
             );
 
             this.estaobservacion = 1;
@@ -12342,7 +12342,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 '</p>'
                         );
                         $('#textoCesta' + cont).append(
-                            '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
+                            '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv" class="eliminarArchivosAdjuntosP"><a onclick="quitarArchivosPedido()"><u style="font-size:16px">ELIMINAR<u></a></p>'
                         );
                         this.adjuntoya = 1;
                         var nombrearch = '';
@@ -12376,6 +12376,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 nombrearch = nombrearch + '' + this.arrayNombresArchivos[n];
                             } else {
                                 nombrearch = nombrearch + '%' + this.arrayNombresArchivos[n];
+                                $('#textoCesta' + cont + ' .eliminarArchivosAdjuntosP').remove();
                                 $('#textoCesta' + cont).append(
                                     '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo ' +
                                         (n + 1) +
@@ -12383,10 +12384,10 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         dato_archivo.name +
                                         '</p>'
                                 );
+                                $('#textoCesta' + cont).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv" class="eliminarArchivosAdjuntosP"><a onclick="quitarArchivosPedido()"><u style="font-size:16px">ELIMINAR</u></a></p>'
+                                );
                             }
-                            $('#textoCesta' + cont).append(
-                                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
-                            );
                             var sesion = JSON.parse(sessionStorage.getItem('prod1'));
                             sesion[1]['archivosAdjuntos'] = nombrearch;
                             sessionStorage.setItem('prod1', JSON.stringify(sesion));
@@ -12471,7 +12472,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
             );
             $('#textAreaObs').val(texto);
             $('#textoCesta' + cont).append(
-                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()">ELIMINAR</a></p>'
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarObservacionesPedido()"><u style="font-size:16px">ELIMINAR</u></a></p>'
             );
         }
         if (es1 == 1) {
@@ -12507,7 +12508,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                 );
             }
             $('#textoCesta' + cont).append(
-                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()">ELIMINAR</a></p>'
+                '<p style="letter-spacing: 1px;font-weight: 500;font-size: 16px;margin-left: 28%;" id="textobserdiv"><a onclick="quitarArchivosPedido()"><u style="font-size:16px">ELIMINAR</u></a></p>'
             );
             $('#textAreaObs').val(texto);
         }

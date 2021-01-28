@@ -972,7 +972,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.cogidoTirador = 'APARADORES';
             this.tipoProductos = 11;
         }
-
+        if (id == 55) {
+            $('.divPrimerDivDisenoPropio').css({ display: 'block' });
+            $('#textodivsuperiorquenosecambia').text('DISEÑO PROPIO');
+            $('#textodivsuperiorquenosecambia1').text('DISEÑO PROPIO');
+        }
         if (id == 10) {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();

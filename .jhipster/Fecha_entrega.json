@@ -1,0 +1,18 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20210128064454",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "fecha_entrega",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

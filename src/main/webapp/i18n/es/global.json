@@ -74,6 +74,7 @@
                 "fPago": "F Pago",
                 "repreGCompra": "Repre G Compra",
                 "usb": "Usb",
+                "fechaEntrega": "Fecha Entrega",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

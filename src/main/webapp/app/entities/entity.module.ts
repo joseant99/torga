@@ -55,6 +55,7 @@ import { TorgaPedidosFPagoModule } from './f-pago/f-pago.module';
 import { TorgaPedidosRepreGCompraModule } from './repre-g-compra/repre-g-compra.module';
 import { TorgaPedidosZonasModule } from './zonas/zonas.module';
 import { TorgaPedidosTransportistaTablaModule } from './transportista-tabla/transportista-tabla.module';
+import { TorgaPedidosFecha_entregaModule } from './fecha-entrega/fecha-entrega.module';
 
 @NgModule({
     // prettier-ignore
@@ -113,6 +114,7 @@ import { TorgaPedidosTransportistaTablaModule } from './transportista-tabla/tran
         TorgaPedidosIvaProductoTiendaModule,
         TorgaPedidosCajeadoModule,
         TorgaPedidosEnmarcadosModule,
+        TorgaPedidosFecha_entregaModule,
         TorgaPedidosDatosUsuarioModule
     ],
     declarations: [],

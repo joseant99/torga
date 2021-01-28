@@ -112,7 +112,8 @@
     <include file="config/liquibase/changelog/20200703084121_added_entity_FPago.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200703092738_added_entity_RepreGCompra.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200707062120_added_entity_Usb.xml" relativeToChangelogFile="false"/> 
-    <include file="config/liquibase/changelog/20200707062120_added_entity_constraints_Usb.xml" relativeToChangelogFile="false"/>    
+    <include file="config/liquibase/changelog/20200707062120_added_entity_constraints_Usb.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210128064454_added_entity_Fecha_entrega.xml" relativeToChangelogFile="false"/> 
 </databaseChangeLog> 
 
 

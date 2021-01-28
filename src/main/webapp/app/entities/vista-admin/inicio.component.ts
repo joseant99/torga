@@ -69,35 +69,14 @@ export class inicioComponent implements OnInit, AfterViewInit {
             this.currentAccount = account;
         });
         var item = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-        this.navbarComponent.presupuestoPedidoService.fecha().subscribe(data => {
-            var fecha = data.body[0];
-            var hola;
-            hola = fecha.toString();
-            var fechaPartes = hola.split('/');
-            var date2 = new Date(fechaPartes[2] + '-' + fechaPartes[1] + '-' + fechaPartes[0] + 'T03:24:00');
-            const week = [];
-            const weekFormat = [];
-
-            if (date2.getDay() == 0) {
-                //En los casos en que es domingo, restar como si fuera septimo dia y no cero
-                date2.setDate(date2.getDate() - 7 + 1);
-            } else {
-                date2.setDate(date2.getDate() - date2.getDay() + 1);
-            }
-
-            for (let i = 0; i < 7; i++) {
-                week.push(new Date(date2));
-                date2.setDate(date2.getDate() + 1);
-            }
-            console.log(week[0]);
-            let year = week[0].getFullYear();
-            let month = (1 + week[0].getMonth()).toString().padStart(2, '0');
-            let day = week[0]
-                .getDate()
-                .toString()
-                .padStart(2, '0');
-            this.navbarComponent.presupuestoPedidoService.fechaBarraAzul = day + '/' + month + '/' + year;
-        });
+        this.navbarComponent.fecha_entregaService
+            .query({
+                size: 100000
+            })
+            .subscribe(data => {
+                this.navbarComponent.presupuestoPedidoService.fechaBarraAzul = data.body[0]['fecha'];
+                $('#inputParaCambiarFecha').val(data.body[0]['fecha']);
+            });
         $('#modalCambiar1A').css({ 'background-color': 'black' });
         $('#modalCambiar1B').css({ 'background-color': 'black' });
         $('#modalCambiar1C').css({ 'background-color': 'black' });
