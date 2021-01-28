@@ -228,6 +228,13 @@ $("#divDentroCalcu").scroll(function() {
 			for(let i = id;i<15;i++){
 				var prod = sessionStorage.getItem("prod"+(i+1));
 				if(prod != undefined){
+					var html = $("#esteDiv" + (i+1)).html();
+					$("#esteDiv" + i).html(html);
+					$("#esteDiv" + i + " #cuerpo" +(i+1)).attr("id","cuerpo"+i);
+					$("#esteDiv" + i + " #textoCesta" +(i+1)).attr("id","textoCesta"+i);
+					$("#esteDiv" + (i+1)).empty();
+					$("#esteDiv" + i + " #textoCesta" +i +" #textoeliminarprod").remove();
+					$("#esteDiv" + i + " #textoCesta" +i).append('<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +i +')" style=""><a><u>ELIMINAR</u></a></span> </p>');
 					sessionStorage.removeItem("prod"+(i+1));
 					sessionStorage.setItem("prod"+(i), prod);
 				}	

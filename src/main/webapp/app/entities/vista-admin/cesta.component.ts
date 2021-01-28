@@ -8217,7 +8217,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
                         $('#cestaTotal').text(cestaTodo.toFixed(2));
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
+                            '<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;text-align: center;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );
@@ -11751,7 +11751,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;margin-left: 28%;"><span onclick="borrarProdCesta(' +
+                            '<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;margin-left: 28%;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );
@@ -11810,7 +11810,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
 
                         $('#textoCesta' + i).append(
-                            '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                            '<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
                                 i +
                                 ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                         );
@@ -11918,14 +11918,14 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             }
                             if (screen.width < 800) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                    '<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
                                         i +
                                         ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                                 );
                             }
                             if (screen.width >= 800) {
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
+                                    '<p id="textoeliminarprod" style="letter-spacing: 1px;font-weight: 300;font-size: 16px;"><span onclick="borrarProdCesta(' +
                                         i +
                                         ')" style=""><a><u>ELIMINAR</u></a></span> </p>'
                                 );
