@@ -8314,7 +8314,13 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         if (sesion[1]['productosDormitorio']['id'] == 246) {
                             nombreCargarImagen = 'NT079-NT094';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 413) {
+                            nombreCargarImagen = 'NT079-NT094';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 282) {
+                            nombreCargarImagen = 'NT095-NT110';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 414) {
                             nombreCargarImagen = 'NT095-NT110';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 247) {
@@ -11643,7 +11649,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 idProd != 357 &&
                                 idProd != 358 &&
                                 idProd != 359 &&
-                                idProd != 409
+                                idProd != 409 &&
+                                idProd != 413 &&
+                                idProd != 414
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
@@ -12289,15 +12297,29 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
     public pushFileToStorageExcelftp() {
         var dato_archivo = $('#inputfilecoger').prop('files')[0];
-        this.vistaadminService.pushFileToStorageExcelftp(dato_archivo, dato_archivo.name).subscribe(event => {
+        var res;
+        res = dato_archivo.name.replace('Ñ', 'N');
+        res = res.replace('Á', 'A');
+        res = res.replace('É', 'E');
+        res = res.replace('Í', 'I');
+        res = res.replace('Ó', 'O');
+        res = res.replace('Ú', 'U');
+        res = res.replace('ñ', 'n');
+        res = res.replace('á', 'a');
+        res = res.replace('é', 'e');
+        res = res.replace('í', 'i');
+        res = res.replace('ó', 'o');
+        res = res.replace('ú', 'u');
+
+        this.vistaadminService.pushFileToStorageExcelftp(dato_archivo, res).subscribe(event => {
             if (event['status'] == 200) {
                 console.log(event);
                 var array = this.arrayNombresArchivos;
                 if (event.type == 4) {
                     if (array.length == 0) {
-                        array[0] = dato_archivo.name;
+                        array[0] = res;
                     } else {
-                        array[array.length] = dato_archivo.name;
+                        array[array.length] = res;
                     }
                     this.arrayNombresArchivos = array;
                     var adjuntoya = this.adjuntoya;
@@ -12338,7 +12360,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         );
                         $('#textoCesta' + cont).append(
                             '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo 1: ' +
-                                dato_archivo.name +
+                                res +
                                 '</p>'
                         );
                         $('#textoCesta' + cont).append(
@@ -12381,7 +12403,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '<p style="letter-spacing: 1px;font-weight: 500;font-size: 12px;margin-left: 28%;color:red" id="textobserdiv2">Archivo ' +
                                         (n + 1) +
                                         ': ' +
-                                        dato_archivo.name +
+                                        res +
                                         '</p>'
                                 );
                                 $('#textoCesta' + cont).append(
@@ -12476,6 +12498,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
             );
         }
         if (es1 == 1) {
+            cont++;
             cont++;
             $('#modalCesta .modal-body').append(
                 '<div class="primerDivPresu" style="margin-top:50px;float:left;width:100%;margin-bottom:40px;" id="esteDiv' +

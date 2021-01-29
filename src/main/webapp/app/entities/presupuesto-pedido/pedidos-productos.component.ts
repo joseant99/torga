@@ -11912,7 +11912,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 357 &&
                                                     idProd != 358 &&
                                                     idProd != 359 &&
-                                                    idProd != 409
+                                                    idProd != 409 &&
+                                                    idProd != 413 &&
+                                                    idProd != 414
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +
@@ -11985,6 +11987,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 246) {
                                                     nombreCargarImagen = 'NT079-NT094';
                                                 }
+                                                if (idProdNombre == 413) {
+                                                    nombreCargarImagen = 'NT079-NT094';
+                                                }
                                                 if (idProdNombre == 18) {
                                                     nombreCargarImagen = 'NH200-NH210';
                                                 }
@@ -12004,6 +12009,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NH233';
                                                 }
                                                 if (idProdNombre == 282) {
+                                                    nombreCargarImagen = 'NT095-NT110';
+                                                }
+                                                if (idProdNombre == 414) {
                                                     nombreCargarImagen = 'NT095-NT110';
                                                 }
                                                 if (idProdNombre == 247) {
@@ -13818,7 +13826,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             if (idProdNombre == 246) {
                 nombreCargarImagen = 'NT079-NT094';
             }
+            if (idProdNombre == 413) {
+                nombreCargarImagen = 'NT079-NT094';
+            }
             if (idProdNombre == 282) {
+                nombreCargarImagen = 'NT095-NT110';
+            }
+            if (idProdNombre == 414) {
                 nombreCargarImagen = 'NT095-NT110';
             }
             if (idProdNombre == 247) {

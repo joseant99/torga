@@ -3883,7 +3883,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 });
                 var arrayUsb = [];
                 var contUsb = 0;
-                if (idProd == 281 || idProd == 282 || idProd == 246) {
+                if (idProd == 281 || idProd == 282 || idProd == 246 || idProd == 413 || idProd == 414) {
                     $('#elegirLado').css({ display: 'block' });
                 }
                 if (
@@ -3915,7 +3915,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     idProd == 272 ||
                     idProd == 269 ||
                     idProd == 270 ||
-                    idProd == 268
+                    idProd == 268 ||
+                    idProd == 413 ||
+                    idProd == 414
                 ) {
                     this.usbService
                         .query({
@@ -8770,7 +8772,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                 idProd != 282 &&
                                 idProd != 340 &&
                                 idProd != 236 &&
-                                idProd != 237
+                                idProd != 237 &&
+                                idProd != 413 &&
+                                idProd != 414
                             ) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -8920,7 +8924,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         idProd != 231 &&
                         idProd != 232 &&
                         idProd != 234 &&
-                        idProd != 235
+                        idProd != 235 &&
+                        idProd != 413 &&
+                        idProd != 414
                     ) {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
@@ -9085,7 +9091,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 413 &&
+                    idProd != 414
                 ) {
                     this.productosDormitorioService.categoria(2).subscribe(data => {
                         console.log(data.body);
@@ -9881,7 +9889,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             });
             var arrayUsb = [];
             var contUsb = 0;
-            if (idProd == 281 || idProd == 282 || idProd == 246) {
+            if (idProd == 281 || idProd == 282 || idProd == 246 || idProd == 413 || idProd == 414) {
                 $('#elegirLado').css({ display: 'block' });
             }
             if (
@@ -9913,7 +9921,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd == 272 ||
                 idProd == 269 ||
                 idProd == 270 ||
-                idProd == 268
+                idProd == 268 ||
+                idProd == 413 ||
+                idProd == 414
             ) {
                 this.usbService
                     .query({
@@ -14768,7 +14778,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             idProd != 282 &&
                             idProd != 340 &&
                             idProd != 236 &&
-                            idProd != 237
+                            idProd != 237 &&
+                            idProd != 413 &&
+                            idProd != 414
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -14918,7 +14930,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 413 &&
+                    idProd != 414
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -15083,7 +15097,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd != 231 &&
                 idProd != 232 &&
                 idProd != 234 &&
-                idProd != 235
+                idProd != 235 &&
+                idProd != 413 &&
+                idProd != 414
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -15995,7 +16011,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             });
             var arrayUsb = [];
             var contUsb = 0;
-            if (idProd == 281 || idProd == 282 || idProd == 246) {
+            if (idProd == 281 || idProd == 282 || idProd == 246 || idProd == 413 || idProd == 414) {
                 $('#elegirLado').css({ display: 'block' });
             }
             if (
@@ -16027,7 +16043,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd == 272 ||
                 idProd == 269 ||
                 idProd == 270 ||
-                idProd == 268
+                idProd == 268 ||
+                idProd == 413 ||
+                idProd == 414
             ) {
                 this.usbService
                     .query({
@@ -20882,7 +20900,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             idProd != 282 &&
                             idProd != 340 &&
                             idProd != 236 &&
-                            idProd != 237
+                            idProd != 237 &&
+                            idProd != 413 &&
+                            idProd != 414
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -21032,7 +21052,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 413 &&
+                    idProd != 414
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -21197,7 +21219,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd != 231 &&
                 idProd != 232 &&
                 idProd != 234 &&
-                idProd != 235
+                idProd != 235 &&
+                idProd != 413 &&
+                idProd != 414
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -22119,7 +22143,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             });
             var arrayUsb = [];
             var contUsb = 0;
-            if (idProd == 281 || idProd == 282 || idProd == 246) {
+            if (idProd == 281 || idProd == 282 || idProd == 246 || idProd == 413 || idProd == 414) {
                 $('#elegirLado').css({ display: 'block' });
             }
             if (
@@ -22151,7 +22175,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd == 272 ||
                 idProd == 269 ||
                 idProd == 270 ||
-                idProd == 268
+                idProd == 268 ||
+                idProd == 413 ||
+                idProd == 414
             ) {
                 this.usbService
                     .query({
@@ -27006,7 +27032,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             idProd != 282 &&
                             idProd != 340 &&
                             idProd != 236 &&
-                            idProd != 237
+                            idProd != 237 &&
+                            idProd != 413 &&
+                            idProd != 414
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -27156,7 +27184,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 413 &&
+                    idProd != 414
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -27321,7 +27351,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd != 231 &&
                 idProd != 232 &&
                 idProd != 234 &&
-                idProd != 235
+                idProd != 235 &&
+                idProd != 413 &&
+                idProd != 414
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -30754,7 +30786,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             idProd != '231' &&
             idProd != '232' &&
             idProd != '234' &&
-            idProd != '235'
+            idProd != '235' &&
+            idProd != '413' &&
+            idProd != '414'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;
@@ -32946,7 +32980,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     if (
                         value['productosDormitorio']['id'] == '281' ||
                         value['productosDormitorio']['id'] == '246' ||
-                        value['productosDormitorio']['id'] == '282'
+                        value['productosDormitorio']['id'] == '282' ||
+                        value['productosDormitorio']['id'] == '413' ||
+                        value['productosDormitorio']['id'] == '414'
                     ) {
                         if ($('#lado1').is(':checked')) {
                             direccion = 'A la derecha';
@@ -32967,7 +33003,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     if (
                         value['productosDormitorio']['id'] == '281' ||
                         value['productosDormitorio']['id'] == '246' ||
-                        value['productosDormitorio']['id'] == '282'
+                        value['productosDormitorio']['id'] == '282' ||
+                        value['productosDormitorio']['id'] == '413' ||
+                        value['productosDormitorio']['id'] == '414'
                     ) {
                         value['direccion'] = direccion;
                     }

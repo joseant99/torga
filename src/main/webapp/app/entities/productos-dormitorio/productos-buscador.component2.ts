@@ -1379,6 +1379,21 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
     }
 
+    public siPresupuestadoMueble() {
+        $('.divSiPresupuestadoMueble').attr('id', 'simplepruebaani');
+        $('.divSiPresupuestadoMueble').css({ display: 'block' });
+        setTimeout(function() {
+            $('.divPrimerDivDisenoPropio').css({ display: 'none' });
+        }, 1000);
+    }
+    public noPresupuestadoMueble() {
+        $('.divSegundoDivDisenoPropio').attr('id', 'simplepruebaani');
+        $('.divSegundoDivDisenoPropio').css({ display: 'block' });
+        setTimeout(function() {
+            $('.divSiPresupuestadoMueble').css({ display: 'none' });
+        }, 1000);
+    }
+
     public quitarnone(id) {
         if (id == 1) {
             $('#calcuBatientes #niveladoresCalcu').css({ display: 'block' });
@@ -20181,6 +20196,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 ) {
                     this.singulares = datos;
                 }
+                if (datos['productosDormitorio']['categoriasDormi']['id'] == 15) {
+                    $('#solomesitascant').css({ display: 'block' });
+                    $('#selectCantidad').val('1');
+                } else {
+                    $('#solomesitascant').css({ display: 'none' });
+                    $('#selectCantidad').val('1');
+                }
                 var producto = datos.productosDormitorio.id;
                 var precioPunto = parseFloat(this.precioPunto);
                 var iva = this.iva;
@@ -33327,6 +33349,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     console.log(prod);
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
+                    var cantidad = $('#selectCantidad').val();
+                    if (cantidad != 1) {
+                        for (let l = 1; l < cantidad; l++) {
+                            sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+                            contadorDimen++;
+                        }
+                    }
                 }
             });
         }

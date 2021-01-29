@@ -8713,7 +8713,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                         if (sesion[1]['productosDormitorio']['id'] == 246) {
                             nombreCargarImagen = 'NT079-NT094';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 413) {
+                            nombreCargarImagen = 'NT079-NT094';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 282) {
+                            nombreCargarImagen = 'NT095-NT110';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 414) {
                             nombreCargarImagen = 'NT095-NT110';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 247) {
@@ -12033,7 +12039,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 idProd != 236 &&
                                 idProd != 237 &&
                                 idProd != 339 &&
-                                idProd != 81
+                                idProd != 81 &&
+                                idProd != 413 &&
+                                idProd != 414
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
@@ -13770,7 +13778,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['productosDormitorio']['id'] == 279 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 280 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 281 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 282
+                                prodCarr[m][1]['productosDormitorio']['id'] == 282 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 413 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 414
                             ) {
                                 if (prodCarr[m][1]['usb'] != undefined) {
                                     if (prodCarr[m][1]['usb']['mensaje'] == 'Con USB Izquierda') {
@@ -13885,7 +13895,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['productosDormitorio']['id'] == 251 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 252 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 255 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 256
+                                prodCarr[m][1]['productosDormitorio']['id'] == 256 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 413 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 414
                             ) {
                                 if (prodCarr[m][1]['iluminacion'] != undefined) {
                                     prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -20,7 +20,7 @@ import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
     selector: 'jhi-pedidos-usuario',
     templateUrl: './pedidos-usuario.component.html'
 })
-export class PedidosUsuarioComponent implements OnInit, OnDestroy {
+export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit {
     currentAccount: any;
     presupuestoPedidos: IPresupuestoPedido[];
     error: any;
@@ -65,6 +65,14 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy {
             this.reverse = data.pagingParams.ascending;
             this.predicate = data.pagingParams.predicate;
         });
+    }
+    ngAfterViewInit() {
+        var account = this.accountService['userIdentity'];
+        if (account.authorities.indexOf('ROLE_ADMIN') == -1) {
+            setTimeout(function() {
+                $('#soloAbrirModalNoAdmin')[0].click();
+            }, 1000);
+        }
     }
 
     public anadirValorPunto() {
