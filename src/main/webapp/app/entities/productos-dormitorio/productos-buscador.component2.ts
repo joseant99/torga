@@ -145,6 +145,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     alturaArray: any;
     alturaseleccionada: any;
     idApoyoSecundario: any;
+    noArchivosAdjuntosMueble1: any;
+    noDescripcionAdicionalMueble1: any;
+    arrayNombresArchivos: any;
+    puntosmetidosxd: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -1382,16 +1386,139 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     public siPresupuestadoMueble() {
         $('.divSiPresupuestadoMueble').attr('id', 'simplepruebaani');
         $('.divSiPresupuestadoMueble').css({ display: 'block' });
-        setTimeout(function() {
-            $('.divPrimerDivDisenoPropio').css({ display: 'none' });
-        }, 1000);
+        $('.divPrimerDivDisenoPropio').css({ display: 'none' });
     }
+
+    public noArchivosAdjuntosMueble() {
+        $('.divTercerDivDisenoPropio').attr('id', 'simplepruebaani');
+        $('.divSiArchivosAdjMueble').css({ display: 'none' });
+        $('.divTercerDivDisenoPropio').css({ display: 'block' });
+        $('.divSegundoDivDisenoPropio').css({ display: 'none' });
+        if (this.arrayNombresArchivos.length != 0) {
+            this.noArchivosAdjuntosMueble1 = 1;
+        } else {
+            this.noArchivosAdjuntosMueble1 = 0;
+        }
+    }
+
+    public siArchivosAdjuntosMueble() {
+        $('.divSiArchivosAdjMueble').attr('id', 'simplepruebaani');
+        $('.divSiArchivosAdjMueble').css({ display: 'block' });
+        $('.divSegundoDivDisenoPropio').css({ display: 'none' });
+    }
+
+    public noDescripcionMueble() {
+        $('.divCuartoDivDisenoPropio').attr('id', 'simplepruebaani');
+        $('.divCuartoDivDisenoPropio').css({ display: 'block' });
+        $('.divSiMeterDescripcion').css({ display: 'none' });
+        $('.divTercerDivDisenoPropio').css({ display: 'none' });
+        var texto = $('#textAreaDescripcion').val();
+        if (texto != undefined && texto != null && texto != '') {
+            this.noDescripcionAdicionalMueble1 = 1;
+        } else {
+            this.noDescripcionAdicionalMueble1 = 0;
+        }
+        if (this.noDescripcionAdicionalMueble1 == 0 && this.noArchivosAdjuntosMueble1 == 0) {
+            $('#nosepuedemostrar').css({ display: 'block' });
+            $('#sisepuedemostrar').css({ display: 'none' });
+        } else {
+            $('#sisepuedemostrar').css({ display: 'block' });
+            $('#nosepuedemostrar').css({ display: 'none' });
+        }
+    }
+
+    public pushFileToStorageExcelftp12() {
+        var dato_archivo = $('#inputfilecoger123').prop('files')[0];
+        var res;
+        res = dato_archivo.name.replace('Ñ', 'N');
+        res = res.replace('Á', 'A');
+        res = res.replace('É', 'E');
+        res = res.replace('Í', 'I');
+        res = res.replace('Ó', 'O');
+        res = res.replace('Ú', 'U');
+        res = res.replace('ñ', 'n');
+        res = res.replace('á', 'a');
+        res = res.replace('é', 'e');
+        res = res.replace('í', 'i');
+        res = res.replace('ó', 'o');
+        res = res.replace('ú', 'u');
+
+        this.vistaadminService.pushFileToStorageExcelftp12(dato_archivo, res).subscribe(event => {
+            if (event['status'] == 200) {
+                console.log(event);
+                var array = this.arrayNombresArchivos;
+                if (event.type == 4) {
+                    if (array.length == 0) {
+                        array[0] = res;
+                    } else {
+                        array[array.length] = res;
+                    }
+                    $('#tieneAlMenos1archivo').css({ display: 'block' });
+                    this.arrayNombresArchivos = array;
+                }
+            }
+        });
+    }
+
     public noPresupuestadoMueble() {
         $('.divSegundoDivDisenoPropio').attr('id', 'simplepruebaani');
         $('.divSegundoDivDisenoPropio').css({ display: 'block' });
-        setTimeout(function() {
-            $('.divSiPresupuestadoMueble').css({ display: 'none' });
-        }, 1000);
+        $('.divPrimerDivDisenoPropio').css({ display: 'none' });
+        $('.divSiPresupuestadoMueble').css({ display: 'none' });
+        var texto = $('#puntosDisenoPropio').val();
+        if (texto != undefined && texto != null && texto != '') {
+            this.puntosmetidosxd = 1;
+        } else {
+            this.puntosmetidosxd = 0;
+        }
+    }
+
+    public estoEsEnviarAlCarro() {
+        this.productosDormitorioService.categoria(32).subscribe(data => {
+            var contador = 1;
+            for (let k = 1; k < sessionStorage.length; k++) {
+                if (sessionStorage['prod' + k] != null) {
+                    contador++;
+                }
+            }
+            console.log(data.body);
+            var descripcion;
+            var arrayArchivos;
+            var puntosDisenoPropio;
+            if (this.noDescripcionAdicionalMueble1 != 0) {
+                descripcion = $('#textAreaDescripcion').val();
+            }
+            if (this.noArchivosAdjuntosMueble1 != 0) {
+                arrayArchivos = this.arrayNombresArchivos;
+            }
+            if (this.puntosmetidosxd != 0) {
+                puntosDisenoPropio = $('#puntosDisenoPropio').val();
+            }
+            var prod = [];
+            var hola = {};
+            prod[1] = hola;
+            prod[1]['productosDormitorio'] = data.body[0];
+            prod[1]['descripcion'] = descripcion;
+            prod[1]['arrayArchivos'] = arrayArchivos;
+            prod[1]['puntosDisenoPropio'] = puntosDisenoPropio;
+            var contadorDimen = contador;
+            sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+            for (let i = 1; i <= 100; i++) {
+                var sesion = JSON.parse(sessionStorage.getItem('prod' + i));
+                if (sesion != null) {
+                    this.productosDormitorioService.numeroCesta = i;
+                    $('#posicion0').text(i);
+                    console.log(sessionStorage);
+                }
+            }
+        });
+        this.borrarProdCalculadora();
+    }
+
+    public siDescripcionMueble() {
+        $('.divSiMeterDescripcion').attr('id', 'simplepruebaani');
+        $('.divSiMeterDescripcion').css({ display: 'block' });
+        $('.divTercerDivDisenoPropio').css({ display: 'none' });
     }
 
     public quitarnone(id) {
@@ -29317,7 +29444,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             idProd != '232' &&
             idProd != '234' &&
             idProd != '235' &&
-            idProd != '332'
+            idProd != '332' &&
+            idProd != '409'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;
@@ -33662,6 +33790,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             elem[0].style.setProperty('padding-top', '20px', 'important');
             elem[0].style.setProperty('padding-left', '80px', 'important');
         }
+        this.arrayNombresArchivos = [];
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();
         this.armariosDormitorioOcultaComponent.loadAll();

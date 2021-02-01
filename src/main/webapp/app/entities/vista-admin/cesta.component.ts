@@ -344,6 +344,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                 if (sesion[1]['productosDormitorio'] != undefined) {
                     var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
                     console.log(nombre);
+
                     if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                         $('#modalCesta .modal-body').append(
                             '<div style="float: left;width: 100%;text-align: center;height:250px;position:relative;" class="cuerpoArmario" id="cuerpo' +

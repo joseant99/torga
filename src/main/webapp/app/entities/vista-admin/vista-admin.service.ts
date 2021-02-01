@@ -18,6 +18,7 @@ export class VistaAdminService {
     public resourceUrlUploadExcel = SERVER_API_URL + 'api/uploadFile/';
     public resourceUrlUploadExcel1 = SERVER_API_URL + 'api/uploadFile1/';
     public resourceUrlUploadExcelftp = SERVER_API_URL + 'api/uploadFileFTP/';
+    public resourceUrlUploadExcelftp1 = SERVER_API_URL + 'api/uploadFileFTP1/';
     public resourceUrlUploadExcel2 = SERVER_API_URL + 'api/uploadFile2/';
     public resourceUrlCSV = SERVER_API_URL + '/api/insertPedidosCSV/';
     public resourceUrlExistConfirmacion = SERVER_API_URL + '/api/existeConfirmacion';
@@ -58,6 +59,19 @@ export class VistaAdminService {
         formdata.append('file', file);
         formdata.append('name', name);
         const req = new HttpRequest('POST', this.resourceUrlUploadExcelftp, formdata, {
+            reportProgress: true,
+            responseType: 'text'
+        });
+
+        return this.http.request(req);
+    }
+
+    pushFileToStorageExcelftp12(file: File, name: any): Observable<HttpEvent<{}>> {
+        const formdata: FormData = new FormData();
+
+        formdata.append('file', file);
+        formdata.append('name', name);
+        const req = new HttpRequest('POST', this.resourceUrlUploadExcelftp1, formdata, {
             reportProgress: true,
             responseType: 'text'
         });

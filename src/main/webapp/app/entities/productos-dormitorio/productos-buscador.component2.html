@@ -1967,9 +1967,9 @@
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(20)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/comedor-15.jpeg">
         	</div>
-        	<!-- <div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(55)" id="pruebahoverdiv">
+        	<div *jhiHasAnyAuthority="'ROLE_ADMIN'" style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(55)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/DISENO PROPIO.jpg">
-        	</div> -->
+        	</div>
         </div>
         <!-- 
         <form style="margin-top:5%;margin-bottom:2%;" id="formcomebus">
@@ -2164,12 +2164,12 @@
     	 <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(1)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textodivsuperiorquenosecambia"></span></div>
     	
 			<!-- <p style="text-align:center;margin-top: 9%;display:none" id="inputBusca"><input style="text-align:center" list="listaAnchos1" id="anchosSelect1" name="anchos1" type="text" class="inputbuscaarticulos"/><select class="selectbuscaarticulos" id="anchosSelect1" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select><button style="width: 140px;margin-left: 20px;" id="botonbuscarcargardimen" (click)="cargarDimen()">Buscar</button></p>
-   		 --><div style="margin-top:9%;width:90%;margin-left:10%;" id="divdentrodeloscodigos">
+   		 --><div style="margin-top:15%;width:90%;margin-left:10%;" id="divdentrodeloscodigos">
 	   			<div *ngFor="let codigo of codigoparadivs" id="divcodigoarituclos" (click)="cargarDimen(codigo)" class="divcodigometerfondo">
 		    		<span>{{codigo}}</span>
 		    	</div>
 	    	</div>
-	    	<div style="margin-top:9%;width:90%;margin-left:10%;display:none" class="divdentrogrosortablero">
+	    	<div style="margin-top:15%;width:90%;margin-left:10%;display:none" class="divdentrogrosortablero">
 	    		<p style="width:100%;text-align:center;font-size:25px;">SELECIONE EL GROSOR DEL TABLERO</p>
 	   			<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterAnchoCalculadora('12 mm')">
 		    		<span>12 mm</span>
@@ -2186,17 +2186,50 @@
 		    	<p style="width:100%;text-align:center;font-size:25px;">&#191;Te ha presupuestado el mueble fabrica <br>y ya sabes los puntos que supone?</p>
 		    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:120px;font-size:22px;margin-right:15%;" (click)="siPresupuestadoMueble()">SI</button><button style="width:120px;font-size:22px" (click)="noPresupuestadoMueble()">NO</button></p>
 	    	</div>
-	    	<div style="margin-top:9%;width:100%;display:none" class="divSiPresupuestadoMueble">
+	    	<div style="width:100%;display:none" class="divSiPresupuestadoMueble">
 	    		<p style="width:100%;text-align:center;font-size:25px;">ESCRIBE LOS PUNTOS</p>
-	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:25px;"><input type="number"></p>
-	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:25px;"><button style="width: 285px;font-size: 24px;height: 55px;" (click)="noPresupuestadoMueble()">Pasar al siguiente paso</button></p>
+	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:25px;"><input type="number" id="puntosDisenoPropio"></p>
+	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:25px;"><button style="width: 285px;font-size: 24px;height: 55px;" (click)="noPresupuestadoMueble()">SIGUIENTE PASO</button></p>
 	    	</div>
-	    	<div style="margin-top:9%;width:100%;display:none" class="divSegundoDivDisenoPropio">
+	    	<div style="width:100%;display:none" class="divSegundoDivDisenoPropio">
 		    	<p style="width:100%;text-align:center;font-size:25px;">&#191;Necesitas adjuntar uno o varios archivos para que <br>podamos dise&ntilde;arlo y fabricarlo?</p>
-		    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:120px;font-size:22px;margin-right:15%;">SI</button><button style="width:120px;font-size:22px">NO</button></p>
+		    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:120px;font-size:22px;margin-right:15%;" (click)="siArchivosAdjuntosMueble()">SI</button><button style="width:120px;font-size:22px" (click)="noArchivosAdjuntosMueble()">NO</button></p>
+	    	</div>
+	    	<div style="width:100%;display:none" class="divSiArchivosAdjMueble">
+	    		<p style="width:100%;text-align:center;font-size:25px;">ADJUNTAR ARCHIVOS</p>
+	    		<p style="width:100%;text-align:center;font-size:18px;color:red" *ngFor="let archivo of arrayNombresArchivos;">{{archivo}}</p>
+	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:25px;">
+	    			<input type="file" id="inputfilecoger123" (change)="pushFileToStorageExcelftp12()" style="display: none;" />
+					<input type="button" value="ADJUNTAR" onclick="document.getElementById('inputfilecoger123').click();" />
+	    		
+	    		</p>
+	    		<p style="width:100%;text-align:center;font-size:25px;margin-top:50px;display:none;" id="tieneAlMenos1archivo"><button style="width: 285px;font-size: 24px;height: 55px;" (click)="noArchivosAdjuntosMueble()">SIGUIENTE PASO</button></p>
+	    	</div>
+	    	<div style="width:100%;display:none" class="divTercerDivDisenoPropio">
+		    	<p style="width:100%;text-align:center;font-size:25px;">&#191;Necesitas escribir alguna descripci&oacute;n adicional?</p>
+		    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:120px;font-size:22px;margin-right:15%;" (click)="siDescripcionMueble()">SI</button><button style="width:120px;font-size:22px" (click)="noDescripcionMueble()">NO</button></p>
 	    	</div>
 	    	
-	    	<div style="margin-top:9%;width:90%;margin-left:10%;display:none" class="divdentrocanteadotablero">
+	    	<div style="width:100%;display:none" class="divSiMeterDescripcion">
+		    	<p style="width:100%;text-align:center;font-size:25px;">ESCRIBIR DESCRIPCI&Oacute;N</p>
+		    	<p style="width:100%;text-align:center;margin-top:5%;"><textarea rows="4" cols="55" id="textAreaDescripcion"></textarea></p>
+		   		<p style="width:100%;text-align:center;font-size:25px;margin-top:50px;"><button style="width: 285px;font-size: 24px;height: 55px;" (click)="noDescripcionMueble()">SIGUIENTE PASO</button></p>
+		    	
+	    	</div>
+	    	
+	    	
+	    	<div style="width:100%;display:none" class="divCuartoDivDisenoPropio">
+	    		<div id="sisepuedemostrar" style="display:none">
+			    	<p style="width:100%;text-align:center;font-size:25px;" >ESTUPENDO! YA LO TENEMOS TODO</p>
+			    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:255px;font-size:22px;height:55px;" (click)="estoEsEnviarAlCarro()" data-target="#modalEnviadoCarrito">MANDAR AL CARRO</button></p>
+		    	</div>
+		    	<div id="nosepuedemostrar" style="display:none">
+			    	<p style="width:100%;text-align:center;font-size:25px;">NO TENEMOS DATOS SUFICIENTES, ADJUNTA ALG&Uacute;N ARCHIVO O A&Ntilde;ADE UNA DESCRIPCION.</p>
+			    	<p style="width:100%;text-align:center;margin-top:5%;"><button style="width:255px;font-size:22px;height: 55px;">VOLVER AL INICIO</button></p>
+		    	</div>
+	    	</div>
+	    	
+	    	<div style="margin-top:15%;width:90%;margin-left:10%;display:none" class="divdentrocanteadotablero">
 	    		<p style="width:100%;text-align:center;font-size:25px;">CANTEADO</p>
 	   			<div style="margin-left:40%" id="divcodigoarituclos" class="divcodigometerfondo123" (click)="meterCanteadoCalculadora('SI')">
 		    		<span>SI</span>
@@ -2205,13 +2238,13 @@
 		    		<span>NO</span>
 		    	</div>
 	    	</div>
-	    	<div style="margin-top:9%;width:90%;padding-left:10%;display:none" class="divdentrodelosAncho">
+	    	<div style="margin-top:15%;width:90%;padding-left:10%;display:none" class="divdentrodelosAncho">
 	    		<p style="width:100%;text-align:center;font-size:25px;">ESCOGE UN ANCHO</p>
 	   			<div *ngFor="let codigo of anchoTablero" id="divcodigoarituclos" (click)="meterAnchoEstantCalculadora(codigo)" class="divcodigometerfondo">
 		    		<span>{{codigo}}</span>
 		    	</div>
 	    	</div>
-	    	<div style="margin-top:9%;width:90%;padding-left:10%;display:none" class="divdentrodelosAlto">
+	    	<div style="margin-top:15%;width:90%;padding-left:10%;display:none" class="divdentrodelosAlto">
 	    		<p style="width:100%;text-align:center;font-size:25px;">ESCOGE UN ALTO</p>
 	   			<div *ngFor="let codigo of altoTablero" id="divcodigoarituclos" (click)="meterAltoEstantCalculadora(codigo)" class="divcodigometerfondo">
 		    		<span>{{codigo}}</span>

@@ -24021,7 +24021,7 @@ export class JhiMainComponent implements OnInit {
                         '" style="margin-left:10px"></span></p>'
                 );
             }
-            if (u == 1) {
+            if (u == 2) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
@@ -24032,7 +24032,7 @@ export class JhiMainComponent implements OnInit {
                         '" style="margin-left:10px"></span></p>'
                 );
             }
-            if (u == 2) {
+            if (u == 3) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
