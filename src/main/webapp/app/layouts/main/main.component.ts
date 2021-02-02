@@ -16153,7 +16153,7 @@ export class JhiMainComponent implements OnInit {
             }
             if (k == 9) {
                 $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 8 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 9 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
