@@ -761,6 +761,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public elegirBusqueda(id) {
+        this.codigoparadivs = [];
         $('.divdentrogrosortablero').css({ display: 'none' });
         $('.divdentrocanteadotablero').css({ display: 'none' });
         $('.divdentrodelosAncho').css({ display: 'none' });
@@ -792,6 +793,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         this.usb = undefined;
         $('#precioDimension').empty();
         $('#nombreMesita').empty();
+        $('#textAreaDescripcion').val('');
+        this.arrayNombresArchivos = [];
+        $('#puntosDisenoPropio').val('');
+        $('.divseleccionarcodigo').css({ display: 'none' });
+        $('.divPrimerDivDisenoPropio').css({ display: 'none' });
+        $('.divSiPresupuestadoMueble').css({ display: 'none' });
+        $('.divSegundoDivDisenoPropio').css({ display: 'none' });
+        $('.divSiArchivosAdjMueble').css({ display: 'none' });
+        $('.divTercerDivDisenoPropio').css({ display: 'none' });
+        $('.divSiMeterDescripcion').css({ display: 'none' });
+        $('.divCuartoDivDisenoPropio').css({ display: 'none' });
         $('#articulosEspeciales').css({ display: 'none' });
         $('#euroCalculadora').css({ display: 'none' });
         $('.vestidoresDivInputCodigo').css({ display: 'none' });
@@ -856,10 +868,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             const elem7 = $('.divseleccionarcodigoEscogerMedidaEspecialAncho1 #divprincipalhuecomenmen');
             elem7[0].style.setProperty('padding-bottom', '25px', 'important');
         }
-        $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
-        $('#inputBusca').css({ display: 'block' });
-        $('.divseleccionarcodigo').css({ display: 'block' });
-        $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+        var account = this.accountService.userIdentity;
+        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+        } else {
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('#inputBusca').css({ display: 'block' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+        }
+
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
             $('html, body').animate({ scrollTop: 0 });
@@ -1474,7 +1494,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     }
 
     public estoEsEnviarAlCarro() {
-        this.productosDormitorioService.categoria(32).subscribe(data => {
+        this.dimensionesProductoTipoService.findProducto(415).subscribe(data => {
             var contador = 1;
             for (let k = 1; k < sessionStorage.length; k++) {
                 if (sessionStorage['prod' + k] != null) {
@@ -1496,8 +1516,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             var prod = [];
             var hola = {};
-            prod[1] = hola;
-            prod[1]['productosDormitorio'] = data.body[0];
+            prod[1] = data.body[0];
             prod[1]['descripcion'] = descripcion;
             prod[1]['arrayArchivos'] = arrayArchivos;
             prod[1]['puntosDisenoPropio'] = puntosDisenoPropio;
@@ -1511,6 +1530,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     console.log(sessionStorage);
                 }
             }
+            $('#textAreaDescripcion').val('');
+            this.arrayNombresArchivos = [];
+            $('#puntosDisenoPropio').val('');
         });
         this.borrarProdCalculadora();
     }
@@ -26245,6 +26267,15 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     public escogidaLuz(id) {}
     public cargarComposicion() {}
     public borrarProdCalculadora() {
+        $('.divseleccionarcodigo').css({ display: 'none' });
+        $('.divPrimerDivDisenoPropio').css({ display: 'none' });
+        $('.divSiPresupuestadoMueble').css({ display: 'none' });
+        $('.divSegundoDivDisenoPropio').css({ display: 'none' });
+        $('.divSiArchivosAdjMueble').css({ display: 'none' });
+        $('.divTercerDivDisenoPropio').css({ display: 'none' });
+        $('.divSiMeterDescripcion').css({ display: 'none' });
+        $('.divCuartoDivDisenoPropio').css({ display: 'none' });
+
         $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
         $('#page-heading').css({ display: 'block' });
         $('#calculadoraCarrito').css({ display: 'none' });

@@ -13933,6 +13933,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
                                 }
                             }
+                            if (prodCarr[m][1]['productosDormitorio']['id'] == 415) {
+                                if (prodCarr[m][1]['descripcion'] != undefined) {
+                                    prodPrePed['observaciones'] = prodCarr[m][1]['descripcion'];
+                                }
+                                if (prodCarr[m][1]['puntosDisenoPropio'] != undefined) {
+                                    prodPrePed['precioTotal'] = prodCarr[m][1]['puntosDisenoPropio'];
+                                }
+
+                                if (prodCarr[m][1]['arrayArchivos'] != undefined) {
+                                    var nombreArch = '';
+                                    for (let n = 0; n < prodCarr[m][1]['arrayArchivos'].length; n++) {
+                                        if (n == 0) {
+                                            nombreArch = prodCarr[m][1]['arrayArchivos'][n];
+                                        } else {
+                                            nombreArch = nombreArch + '%' + prodCarr[m][1]['arrayArchivos'][n];
+                                        }
+                                    }
+                                    prodPrePed['nombreArchivo'] = nombreArch;
+                                }
+                            }
                             prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
                             prodPrePed['alto'] = prodCarr[m][1]['alto'];
                             prodPrePed['fondo'] = prodCarr[m][1]['fondo'];

@@ -12911,25 +12911,28 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 contador++;
                                                 contadorMeterImagenYTodo++;
                                             }
-                                            var precioTotProd = productos[w]['precioTotal'];
                                             var subTotal = parseFloat($('#precioSubtotal').text());
-                                            subTotal = subTotal + precioTotProd;
-                                            if (productos[w - 1] != undefined) {
-                                                if (
-                                                    productos[w - 1]['productosDormitorio'] != null &&
-                                                    productos[w - 1]['productosDormitorio'] != '' &&
-                                                    productos[w - 1]['productosDormitorio'] != undefined
-                                                ) {
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
+                                            if (productos[w]['precioTotal'] != undefined) {
+                                                var precioTotProd = productos[w]['precioTotal'];
+                                                subTotal = subTotal + precioTotProd;
+                                                if (productos[w - 1] != undefined) {
+                                                    if (
+                                                        productos[w - 1]['productosDormitorio'] != null &&
+                                                        productos[w - 1]['productosDormitorio'] != '' &&
+                                                        productos[w - 1]['productosDormitorio'] != undefined
+                                                    ) {
+                                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(
+                                                            precioTotProd.toFixed(0)
+                                                        );
+                                                    } else {
+                                                        $('.' + productos[i]['id'] + 'Datos #precioTotal' + (i - 1)).text(
+                                                            precioTotProd.toFixed(0)
+                                                        );
+                                                    }
                                                 } else {
-                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + (i - 1)).text(
-                                                        precioTotProd.toFixed(0)
-                                                    );
+                                                    $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                                 }
-                                            } else {
-                                                $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                             }
-
                                             $('#precioSubtotal').text(subTotal.toFixed(0));
                                             $('#totalDescuentoTexto').text(subTotal.toFixed(0));
                                             $('#divimprimirtotalapagar' + i).text(subTotal.toFixed(0));
@@ -13142,12 +13145,44 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 console.log(total);
                                                 total = total - precioFloat;
                                             }
-                                            if (observaciones != undefined) {
-                                                $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Observaciones</span>: &nbsp;&nbsp;&nbsp; <span id="textareaobservaciones">' +
-                                                        observaciones +
-                                                        '</span></p>'
+                                            if (productos[i]['productosDormitorio']['id'] != 415) {
+                                                if (observaciones != undefined) {
+                                                    $('.' + productos[i]['id'] + 'Datos').append(
+                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Observaciones</span>: &nbsp;&nbsp;&nbsp; <span id="textareaobservaciones">' +
+                                                            observaciones +
+                                                            '</span></p>'
+                                                    );
+                                                }
+                                            } else {
+                                                $('#imagen' + w).append(
+                                                    '<img id="imagenPresupues" style="z-index:' +
+                                                        (100 - i) +
+                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/PROPIO.jpg">'
                                                 );
+                                                if (productos[i]['nombreArchivo'] != undefined) {
+                                                    var nombreArch = productos[i]['nombreArchivo'];
+                                                    var arrayNombreArch = [];
+                                                    arrayNombreArch = nombreArch.split('%');
+                                                    $('.' + productos[i]['id'] + 'Datos').append(
+                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Archivos Adjuntos</span></p>'
+                                                    );
+                                                    for (let j = 0; j < arrayNombreArch.length; j++) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><a style="color: #007bff;" href="https://pedidostorga:Torga56pedidos123.@pedidospdftorga.com/confirmaciones/disePropio1/' +
+                                                                arrayNombreArch[j] +
+                                                                '">' +
+                                                                arrayNombreArch[j] +
+                                                                '</a></p>'
+                                                        );
+                                                    }
+                                                }
+                                                if (observaciones != undefined) {
+                                                    $('.' + productos[i]['id'] + 'Datos').append(
+                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Descripcion</span>: &nbsp;&nbsp;&nbsp; <span id="textareaobservaciones">' +
+                                                            observaciones +
+                                                            '</span></p>'
+                                                    );
+                                                }
                                             }
                                         }
                                         acaComprobar = 1;

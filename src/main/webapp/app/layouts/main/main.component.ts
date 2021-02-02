@@ -39,6 +39,26 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
+        if (idProd == 215) {
+            if (o == 0) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Tapa :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Patas :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
         if (idProd == 353) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
@@ -548,6 +568,30 @@ export class JhiMainComponent implements OnInit {
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                         (k + 1) +
                         ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 215) {
+            if (k == 0) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Tapa :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Patas :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
