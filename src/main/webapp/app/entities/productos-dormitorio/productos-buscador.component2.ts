@@ -1633,6 +1633,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public medidaEstandar() {
         $('.divseleccionarcodigo').css({ display: 'block' });
+        $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
         $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
     }
 
@@ -1650,6 +1651,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     var cont = 0;
                     var cont1 = 0;
                     var altura;
+                    var nombre = '';
                     for (let i = 0; i < data.body['length']; i++) {
                         if (
                             data.body[i][0]['id'] != 15 &&
@@ -1674,11 +1676,22 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             if (data.body[i][0]['id'] != array[cont1]['id']) {
                                 cont1++;
                                 array[cont1] = data.body[i][0];
+                                nombre = '';
                             }
 
                             if (altura != data.body[i][1]) {
                                 cont++;
                                 altura = data.body[i][1];
+                                nombre = '';
+                            }
+
+                            if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                                if (nombre == '') {
+                                    nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                                } else {
+                                    nombre = nombre + '-' + data.body[i][2];
+                                }
+                                array[cont1]['imagenNombre'] = nombre;
                             }
                             array1[cont] = data.body[i][1];
                         }
@@ -1695,6 +1708,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     var cont = 0;
                     var cont1 = 0;
                     var altura;
+                    var nombre = '';
                     for (let i = 0; i < data.body['length']; i++) {
                         if (
                             data.body[i][0]['id'] != 15 &&
@@ -1719,12 +1733,24 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             if (data.body[i][0]['id'] != array[cont1]['id']) {
                                 cont1++;
                                 array[cont1] = data.body[i][0];
+                                nombre = '';
                             }
 
                             if (altura != data.body[i][1]) {
                                 cont++;
                                 altura = data.body[i][1];
+                                nombre = '';
                             }
+
+                            if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                                if (nombre == '') {
+                                    nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                                } else {
+                                    nombre = nombre + '-' + data.body[i][2];
+                                }
+                                array[cont1]['imagenNombre'] = nombre;
+                            }
+
                             array1[cont] = data.body[i][1];
                         }
                     }
@@ -1741,6 +1767,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 var cont = 0;
                 var cont1 = 0;
                 var altura;
+                var nombre = '';
                 for (let i = 0; i < data.body['length']; i++) {
                     if (
                         data.body[i][0]['id'] != 15 &&
@@ -1765,12 +1792,24 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         if (data.body[i][0]['id'] != array[cont1]['id']) {
                             cont1++;
                             array[cont1] = data.body[i][0];
+                            nombre = '';
                         }
 
                         if (altura != data.body[i][1]) {
                             cont++;
                             altura = data.body[i][1];
+                            nombre = '';
                         }
+
+                        if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                            if (nombre == '') {
+                                nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                            } else {
+                                nombre = nombre + '-' + data.body[i][2];
+                            }
+                            array[cont1]['imagenNombre'] = nombre;
+                        }
+
                         array1[0] = data.body[i][1];
                     }
                 }
@@ -4144,7 +4183,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         '" style="margin-left:10px"></span></p>'
                                 );
                             }
-                            if (u == 1) {
+                            if (u == 2) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +

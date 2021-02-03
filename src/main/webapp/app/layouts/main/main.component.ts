@@ -13617,7 +13617,7 @@ export class JhiMainComponent implements OnInit {
             }
             if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -13644,7 +13644,7 @@ export class JhiMainComponent implements OnInit {
             }
             if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Cristal :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +

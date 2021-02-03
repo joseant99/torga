@@ -178,6 +178,25 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
         arrayBueno[1694] = 32;
+        arrayBueno[3239] = 6;
+        arrayBueno[3240] = 7;
+        arrayBueno[3241] = 8;
+        arrayBueno[3242] = 10;
+        arrayBueno[3243] = 16;
+        arrayBueno[3244] = 17;
+        arrayBueno[3245] = 19;
+        arrayBueno[3246] = 20;
+        arrayBueno[3247] = 24;
+        arrayBueno[3248] = 27;
+        arrayBueno[3249] = 28;
+        arrayBueno[3250] = 31;
+        arrayBueno[3251] = 33;
+        arrayBueno[3252] = 35;
+        arrayBueno[3253] = 37;
+        arrayBueno[3254] = 40;
+        arrayBueno[3255] = 41;
+        arrayBueno[3256] = 44;
+        arrayBueno[3257] = 46;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         if (filtro == 'TODOS') {
@@ -371,11 +390,22 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
                     }
                 } else {
                     if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                        for (let k = 0; k < todos.length; k++) {
-                            if (todos[k]['user'] != null) {
-                                if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
-                                    cogidos[contador] = value;
-                                    contador++;
+                        if (idUsu == 85 || idUsu == 84 || idUsu == 1073) {
+                            for (let k = 0; k < todos.length; k++) {
+                                if (todos[k]['user'] != null) {
+                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                        cogidos[contador] = value;
+                                        contador++;
+                                    }
+                                }
+                            }
+                        } else {
+                            for (let k = 0; k < todos.length; k++) {
+                                if (todos[k]['user'] != null) {
+                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1 && value['web'] != null) {
+                                        cogidos[contador] = value;
+                                        contador++;
+                                    }
                                 }
                             }
                         }
@@ -740,6 +770,25 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
         arrayBueno[1694] = 32;
+        arrayBueno[3239] = 6;
+        arrayBueno[3240] = 7;
+        arrayBueno[3241] = 8;
+        arrayBueno[3242] = 10;
+        arrayBueno[3243] = 16;
+        arrayBueno[3244] = 17;
+        arrayBueno[3245] = 19;
+        arrayBueno[3246] = 20;
+        arrayBueno[3247] = 24;
+        arrayBueno[3248] = 27;
+        arrayBueno[3249] = 28;
+        arrayBueno[3250] = 31;
+        arrayBueno[3251] = 33;
+        arrayBueno[3252] = 35;
+        arrayBueno[3253] = 37;
+        arrayBueno[3254] = 40;
+        arrayBueno[3255] = 41;
+        arrayBueno[3256] = 44;
+        arrayBueno[3257] = 46;
         this.numeroPagina = 1;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;

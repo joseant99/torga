@@ -858,8 +858,8 @@
                        
     </div>
      
-    <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="text" id="inputParaCambiarFecha" style="text-align: center;margin-top: 50px;margin-left: 50px;" (change)="cambiarFechaEntregaBase()">
-    
+    <input *jhiHasAnyAuthority="'ROLE_ADMIN'" type="text" id="inputParaCambiarFecha">
+    <button *jhiHasAnyAuthority="'ROLE_ADMIN'"  style="text-align: center;margin-top: 50px;margin-left: 45px;" (click)="cambiarFechaEntregaBase()">Guardar</button>
     <div *jhiHasAnyAuthority="'ROLE_ADMIN'" class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"    [ngSwitch]="isAuthenticated()" style="margin-top:500px;POSITION:FIXED">
       
         <ul class="navbar-nav ml-auto" style=" display: block;">

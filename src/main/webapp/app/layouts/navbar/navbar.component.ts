@@ -226,6 +226,25 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         arrayBueno[1188] = 34;
         arrayBueno[1410] = 5;
         arrayBueno[1694] = 32;
+        arrayBueno[3239] = 6;
+        arrayBueno[3240] = 7;
+        arrayBueno[3241] = 8;
+        arrayBueno[3242] = 10;
+        arrayBueno[3243] = 16;
+        arrayBueno[3244] = 17;
+        arrayBueno[3245] = 19;
+        arrayBueno[3246] = 20;
+        arrayBueno[3247] = 24;
+        arrayBueno[3248] = 27;
+        arrayBueno[3249] = 28;
+        arrayBueno[3250] = 31;
+        arrayBueno[3251] = 33;
+        arrayBueno[3252] = 35;
+        arrayBueno[3253] = 37;
+        arrayBueno[3254] = 40;
+        arrayBueno[3255] = 41;
+        arrayBueno[3256] = 44;
+        arrayBueno[3257] = 46;
         var arrayNombreFiscal = [];
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService
