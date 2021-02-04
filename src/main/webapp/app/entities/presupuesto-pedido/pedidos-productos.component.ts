@@ -12038,7 +12038,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NT182-NT189';
                                                 }
                                                 if (idProdNombre == 258) {
-                                                    nombreCargarImagen = 'NT182-NT189';
+                                                    nombreCargarImagen = 'NT186-NT189';
                                                 }
                                                 if (idProdNombre == 256) {
                                                     nombreCargarImagen = 'NT190-NT209';
@@ -13085,15 +13085,30 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             if (apoyo != undefined) {
                                                 if (productos[i]['pilotoApoyo'] != 8 && productos[i]['pilotoApoyo'] != 9) {
-                                                    $('.' + productos[i]['id'] + 'Datos').append(
-                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                            apoyo['productoApoyo']['nombre'] +
-                                                            '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                            i +
-                                                            '">' +
-                                                            apoyo['precio'] +
-                                                            '</span> pp</p>'
-                                                    );
+                                                    if (
+                                                        productos[i]['textoEspecial'] != undefined &&
+                                                        productos[i]['textoEspecial'] != null
+                                                    ) {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                apoyo['productoApoyo']['nombre'] +
+                                                                '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                i +
+                                                                '">' +
+                                                                apoyo['precio'] +
+                                                                '</span> pp</p>'
+                                                        );
+                                                    } else {
+                                                        $('.' + productos[i]['id'] + 'Datos').append(
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                apoyo['productoApoyo']['nombre'] +
+                                                                '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                i +
+                                                                '">' +
+                                                                apoyo['precio'] +
+                                                                '</span> pp</p>'
+                                                        );
+                                                    }
                                                 } else {
                                                     if (productos[i]['pilotoApoyo'] == 8) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(

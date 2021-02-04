@@ -1024,6 +1024,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             for (let i = 422; i < 455; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1174,6 +1177,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             for (let i = 374; i < 422; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1642,7 +1648,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
         $('.divseleccionarcodigoCategorias').attr('id', 'simplepruebaani');
         var tipo = this.tipoProductos;
-        if (tipo != 22 && tipo != 14 && tipo != 15) {
+        if (tipo != 22 && tipo != 14 && tipo != 15 && tipo != 19 && tipo != 28) {
             if (tipo != 19) {
                 this.productosDormitorioService.categoria12(tipo).subscribe(data => {
                     var array = [];
@@ -1664,7 +1670,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             data.body[i][0]['id'] != 409 &&
                             data.body[i][0]['id'] != 403 &&
                             data.body[i][0]['id'] != 32 &&
-                            data.body[i][0]['id'] != 211 &&
                             data.body[i][0]['id'] != 212
                         ) {
                             data.body[i][0]['altura'] = data.body[i][1];
@@ -1780,7 +1785,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         data.body[i][0]['id'] != 409 &&
                         data.body[i][0]['id'] != 403 &&
                         data.body[i][0]['id'] != 32 &&
-                        data.body[i][0]['id'] != 211 &&
                         data.body[i][0]['id'] != 212
                     ) {
                         data.body[i][0]['altura'] = data.body[i][1];
@@ -7256,6 +7260,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     $('#datos1').append(
                         '<p style="width:100%;"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo1" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
+                    $('#datos1').append(
+                        '<p style="width:100%;display:none" id="apoyoMostrarMensajeSoloEspecial"><strong>Incremento Especial Apoyo:</strong> +30%</p>'
+                    );
+
                     // $('#datos1').append(
                     //   '<p style="width:100%;">Al ser un modulo especial, el apoyo tiene que ser seleccionado aparte.</p>'
                     // );
@@ -19428,6 +19436,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     $('#datos1').append(
                         '<p style="width:100%;"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo2" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
+                    $('#datos1').append(
+                        '<p style="width:100%;display:none" id="apoyoMostrarMensajeSoloEspecial"><strong>Incremento Especial Apoyo:</strong> +30%</p>'
+                    );
                 }
             });
             for (let h = 0; h < 14; h++) {
@@ -30940,6 +30951,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) != 375
         ) {
             this.tiposApoyoService.findBus(idApoyo).subscribe(data => {
+                $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'none' });
                 datos = data['body'];
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
@@ -30955,6 +30967,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     } else {
                                         var precio = precio;
                                     }
+                                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     precio = precio * 1.3;
                                     precio = Math.ceil(precio);
                                     var totalfloat = parseFloat(precioDimension);
@@ -30995,6 +31008,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     } else {
                                         var precio = precio;
                                     }
+                                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     precio = precio * 1.3;
                                     precio = Math.ceil(precio);
                                     var totalfloat = parseFloat(precioDimension);
@@ -31037,6 +31051,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     } else {
                                         var precio = precio;
                                     }
+                                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     precio = precio * 1.3;
                                     precio = Math.ceil(precio);
                                     var totalfloat = parseFloat(precioDimension);
@@ -31076,6 +31091,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     } else {
                                         var precio = precio;
                                     }
+                                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     precio = precio * 1.3;
                                     precio = Math.ceil(precio);
                                     var totalfloat = parseFloat(precioDimension);
@@ -31195,6 +31211,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 } else {
                                     var precio = precio;
                                 }
+                                $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                 precio = precio * 1.3;
                                 precio = Math.ceil(precio);
                                 var totalfloat = parseFloat(precioDimension);
@@ -31366,6 +31383,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 } else {
                                     var precio = precio;
                                 }
+                                $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                 precio = precio * 1.3;
                                 precio = Math.ceil(precio);
                                 var totalfloat = parseFloat(precioDimension);
@@ -31948,6 +31966,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         ) {
             if (idApoyo == 17 || idApoyo == 18) {
                 this.tiposApoyoService.findBus2(idApoyo, hbueno).subscribe(data => {
+                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                     datos = data['body'];
                     console.log(datos);
                     $.each(datos, function(index, value) {
@@ -32403,6 +32422,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 });
             } else {
                 this.tiposApoyoService.findBus(idApoyo).subscribe(data => {
+                    $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'none' });
                     datos = data['body'];
                     console.log(datos);
                     $.each(datos, function(index, value) {
@@ -33513,6 +33533,37 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             direccion = 'A la izquierda';
                             console.log('gg');
                             console.log(direccion);
+                        }
+                    }
+                    if (value['mensajeEspecial'] != undefined) {
+                        const precioApoyo = $('#precioApoyo').text();
+                        if (value['mensajeEspecial'] == 'Ancho especial') {
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
+                        }
+                        if (value['mensajeEspecial'] == 'Fondo especial') {
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 16) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
+                            if (apoyoBueno[1]['productoApoyo']['id'] == 403) {
+                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            }
                         }
                     }
                     if (value['mensaje'] == 'Medidas Especiales') {

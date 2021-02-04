@@ -3316,6 +3316,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     }
 
     public cargarDimen(codigo) {
+        $('#noLuz25').prop('checked', true);
+        $('#textareaobservaciones').css({ display: 'none' });
+        $('#textareaobservaciones').val('');
         var uid = this.uid;
         if (uid == 0) {
             this.uid = 1;

@@ -161,6 +161,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
     ) {}
 
     ngOnInit() {
+        $('body').css({ 'overflow-y': 'scroll' });
         var bottomModulos = [];
         bottomModulos[2] = 'bottom:0px;';
         bottomModulos[3] = 'bottom:0px;';
@@ -8393,11 +8394,24 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '</p>'
                             );
                         }
-                        $('#textoCesta' + i).append(
-                            '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
-                                sesion[1]['ancho'] +
-                                '</p>'
-                        );
+                        if (sesion[1]['mensajeEspecial'] != undefined) {
+                            if (sesion[1]['mensajeEspecial'] == 'Ancho especial') {
+                                $('#textoCesta' + i).append(
+                                    '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho Especial:</span> ' +
+                                        sesion[1]['ancho'] +
+                                        '</p>'
+                                );
+                                $('#textoCesta' + i).append(
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                );
+                            }
+                        } else {
+                            $('#textoCesta' + i).append(
+                                '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
+                                    sesion[1]['ancho'] +
+                                    '</p>'
+                            );
+                        }
 
                         var nombreCargarImagen;
                         if (sesion[1]['productosDormitorio']['id'] == 277) {
@@ -8461,10 +8475,10 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             nombreCargarImagen = 'NT177-NT181';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 257) {
-                            nombreCargarImagen = 'NT182-NT189';
+                            nombreCargarImagen = 'NT182-NT185';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 258) {
-                            nombreCargarImagen = 'NT182-NT189';
+                            nombreCargarImagen = 'NT186-NT189';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 256) {
                             nombreCargarImagen = 'NT190-NT209';
@@ -9310,17 +9324,43 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             var cogerPrecio = parseFloat(sesion[1]['todoSumadoPrecio']);
                             $('#cestaTotal').text(cogerPrecio);
                         }
-                        $('#textoCesta' + i).append(
-                            '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Alto:</span> ' +
-                                sesion[1]['alto'] +
-                                '</p>'
-                        );
-                        if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
+                        if (sesion[1]['mensajeEspecial'] != undefined) {
+                            if (sesion[1]['mensajeEspecial'] == 'Alto especial') {
+                                $('#textoCesta' + i).append(
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Alto especial:</span> ' +
+                                        sesion[1]['alto'] +
+                                        '</p>'
+                                );
+                                $('#textoCesta' + i).append(
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                );
+                            }
+                        } else {
                             $('#textoCesta' + i).append(
-                                '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
-                                    sesion[1]['fondo'] +
+                                '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Alto:</span> ' +
+                                    sesion[1]['alto'] +
                                     '</p>'
                             );
+                        }
+                        if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
+                            if (sesion[1]['mensajeEspecial'] != undefined) {
+                                if (sesion[1]['mensajeEspecial'] == 'Alto especial') {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
+                                            sesion[1]['fondo'] +
+                                            '</p>'
+                                    );
+                                    $('#textoCesta' + i).append(
+                                        '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                    );
+                                }
+                            } else {
+                                $('#textoCesta' + i).append(
+                                    '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo especial:</span> ' +
+                                        sesion[1]['fondo'] +
+                                        '</p>'
+                                );
+                            }
                         }
                         if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] == 31) {
                             $('#textoCesta' + i).append(
@@ -11841,6 +11881,14 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                                 ' PP</i></p>'
                                         );
                                     }
+                                }
+
+                                if (sesion[1]['apoyo']['especial'] != undefined) {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                                            sesion[1]['apoyo']['especial'] +
+                                            ':</span></p>'
+                                    );
                                 }
                             }
                             if (sesion[1]['iluminacion'] != undefined) {

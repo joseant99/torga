@@ -412,6 +412,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     }
 
     open(ruta, bool, content) {
+        $('body').removeAttr('style');
         if (ruta != 'cesta') {
             sessionStorage.setItem('ruta', ruta);
         }
@@ -12337,6 +12338,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }
     }
     open1(ruta, bool, content, id, nombreId) {
+        $('body').removeAttr('style');
         if (ruta != 'cesta') {
             sessionStorage.setItem('ruta', ruta);
         }
@@ -13766,8 +13768,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     };
                                 }
                             } else {
+                                if (prodCarr[m][1]['canteado'] != 'SI') {
+                                    var dimensolotablero = {
+                                        id: 1182,
+                                        mensaje: 'TANA19SC',
+                                        ancho: 10,
+                                        fondo: 10,
+                                        alto: 10
+                                    };
+                                } else {
+                                    var dimensolotablero = {
+                                        id: 1183,
+                                        mensaje: 'TANA194L',
+                                        ancho: 10,
+                                        fondo: 10,
+                                        alto: 10
+                                    };
+                                }
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                    dimensionProductoTipo: dimensolotablero,
                                     presupuestoPedido: prueba1,
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
