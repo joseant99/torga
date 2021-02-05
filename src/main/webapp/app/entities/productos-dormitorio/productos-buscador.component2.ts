@@ -540,13 +540,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     public volveratras(id) {
         this.uid = 0;
         if (id == 1) {
-            $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
-            $('#page-heading').css({ display: 'block' });
-            $('body').removeAttr('style');
-            setTimeout(function() {
-                $('.divseleccionarcodigo').css({ display: 'none' });
-                $('html, body').animate({ scrollTop: 0 });
-            }, 1200);
+            if (this.tipoProductos != 28 && this.tipoProductos != 19 && this.tipoProductos != 22 && this.tipoProductos != 55) {
+                $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+                $('body').removeAttr('style');
+                setTimeout(function() {
+                    $('.divseleccionarcodigo').css({ display: 'none' });
+                    $('html, body').animate({ scrollTop: 0 });
+                }, 1200);
+            } else {
+                $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
+                $('#page-heading').css({ display: 'block' });
+                $('body').removeAttr('style');
+                setTimeout(function() {
+                    $('.divseleccionarcodigo').css({ display: 'none' });
+                    $('html, body').animate({ scrollTop: 0 });
+                }, 1200);
+            }
         }
 
         if (id == 2) {
@@ -690,6 +700,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divseleccionarcodigoEscogerMedidaEspecialAncho').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+            }, 1200);
+        }
+        if (id == 100) {
+            $('.divBuscadorArticulos').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
+            $('.divseleccionarcodigoRutaNueva').removeAttr('id');
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divBuscadorArticulos').css({ display: 'none' });
                 $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
@@ -869,16 +891,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             elem7[0].style.setProperty('padding-bottom', '25px', 'important');
         }
         var account = this.accountService.userIdentity;
-        if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('#inputBusca').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
-        } else {
-            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
-            $('#inputBusca').css({ display: 'block' });
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
-        }
+
+        $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+        $('#inputBusca').css({ display: 'block' });
+        $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
 
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
@@ -997,9 +1013,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.tipoProductos = 11;
         }
         if (id == 55) {
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             $('.divPrimerDivDisenoPropio').css({ display: 'block' });
             $('#textodivsuperiorquenosecambia').text('DISEÑO PROPIO');
             $('#textodivsuperiorquenosecambia1').text('DISEÑO PROPIO');
+            this.tipoProductos = 55;
         }
         if (id == 10) {
             $('#inputBusca').css({ display: 'block' });
@@ -1199,6 +1219,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             for (let i = 422; i < 455; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1267,6 +1290,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             for (let i = 493; i < 512; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1663,8 +1689,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             data.body[i][0]['id'] != 15 &&
                             data.body[i][0]['id'] != 16 &&
                             data.body[i][0]['id'] != 412 &&
-                            data.body[i][0]['id'] != 404 &&
-                            data.body[i][0]['id'] != 405 &&
                             data.body[i][0]['id'] != 406 &&
                             data.body[i][0]['id'] != 407 &&
                             data.body[i][0]['id'] != 409 &&
@@ -1719,8 +1743,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             data.body[i][0]['id'] != 15 &&
                             data.body[i][0]['id'] != 16 &&
                             data.body[i][0]['id'] != 412 &&
-                            data.body[i][0]['id'] != 404 &&
-                            data.body[i][0]['id'] != 405 &&
                             data.body[i][0]['id'] != 406 &&
                             data.body[i][0]['id'] != 407 &&
                             data.body[i][0]['id'] != 409 &&
@@ -1778,8 +1800,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         data.body[i][0]['id'] != 15 &&
                         data.body[i][0]['id'] != 16 &&
                         data.body[i][0]['id'] != 412 &&
-                        data.body[i][0]['id'] != 404 &&
-                        data.body[i][0]['id'] != 405 &&
                         data.body[i][0]['id'] != 406 &&
                         data.body[i][0]['id'] != 407 &&
                         data.body[i][0]['id'] != 409 &&
@@ -1836,6 +1856,27 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'block' });
         $('.divseleccionarcodigoCategorias').css({ display: 'none' });
         $('.divseleccionarcodigoEscogerTipoEspecial').attr('id', 'simplepruebaani');
+        $('.anchoEspecialDivSePuedeQuitarApo').css({ display: 'block' });
+        $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'block' });
+        $('.altoEspecialDivSePuedeQuitarApo').css({ display: 'block' });
+        if (id == 18) {
+            $('.altoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 404) {
+            $('.anchoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 405) {
+            $('.anchoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 171) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 172) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 173) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
     }
 
     public tipoEspecialCogido(id) {
@@ -1844,6 +1885,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var cont = 0;
         var min;
         var max;
+        this.especiales = [];
         if (id == 1) {
             this.medidasEspecialesService.findProd(idProd, this.alturaseleccionada).subscribe(data => {
                 console.log(data.body);
@@ -1851,16 +1893,32 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 max = data.body[0]['max'];
                 var entro1vez = 0;
                 this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
-                    for (let i = min; i <= max; i++) {
-                        entro1vez = 0;
-                        for (let u = 0; u < data.body['length']; u++) {
-                            if (data.body[u]['ancho'] == i) {
-                                entro1vez = 1;
+                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                        for (let i = min; i <= max; i++) {
+                            entro1vez = 0;
+                            for (let u = 0; u < data.body['length']; u++) {
+                                if (data.body[u]['ancho'] == i) {
+                                    entro1vez = 1;
+                                }
+                            }
+                            if (entro1vez != 1) {
+                                array[cont] = i;
+                                cont++;
                             }
                         }
-                        if (entro1vez != 1) {
-                            array[cont] = i;
-                            cont++;
+                    } else {
+                        for (let i = min; i <= max; ) {
+                            entro1vez = 0;
+                            for (let u = 0; u < data.body['length']; u++) {
+                                if (data.body[u]['ancho'] == i) {
+                                    entro1vez = 1;
+                                }
+                            }
+                            if (entro1vez != 1) {
+                                array[cont] = i;
+                                cont++;
+                            }
+                            i = i + 0.5;
                         }
                     }
                 });
@@ -1879,9 +1937,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.medidasEspecialesService.findProd1(idProd, this.alturaseleccionada).subscribe(data => {
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
-                for (let i = min; i <= max; i++) {
-                    array[cont] = i;
-                    cont++;
+                if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                    for (let i = min; i <= max; i++) {
+                        array[cont] = i;
+                        cont++;
+                    }
+                } else {
+                    for (let i = min; i <= max; ) {
+                        array[cont] = i;
+                        cont++;
+                        i = i + 0.5;
+                    }
                 }
                 this.especiales = array;
                 console.log(this.especiales);
@@ -1898,9 +1964,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             this.medidasEspecialesService.findProd2(idProd, this.alturaseleccionada).subscribe(data => {
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
-                for (let i = min; i <= max; i++) {
-                    array[cont] = i;
-                    cont++;
+                if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                    for (let i = min; i <= max; i++) {
+                        array[cont] = i;
+                        cont++;
+                    }
+                } else {
+                    for (let i = min; i <= max; ) {
+                        array[cont] = i;
+                        cont++;
+                        i = i + 0.5;
+                    }
                 }
                 this.especiales = array;
                 console.log(this.especiales);
@@ -1928,7 +2002,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen10(codigo) {
         $('#botonbuscarcargardimen').attr('disabled', 'disabled');
-
+        $('#volverAtras100MeterCasa').css({ display: 'block' });
+        $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
         var precioTienda1;
         $('#total').text(0);
@@ -3418,7 +3493,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -8128,7 +8203,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen11(codigo) {
         $('#botonbuscarcargardimen').attr('disabled', 'disabled');
-
+        $('#volverAtras100MeterCasa').css({ display: 'block' });
+        $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
         var precioTienda1;
         $('#total').text(0);
@@ -9608,7 +9684,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         u +
                                         '"><span style="font-weight:600">' +
                                         u +
-                                        ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                        ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                         u +
                                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                         u +
@@ -14109,7 +14185,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen12(codigo) {
         $('#botonbuscarcargardimen').attr('disabled', 'disabled');
-
+        $('#volverAtras100MeterCasa').css({ display: 'block' });
+        $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
         var precioTienda1;
         $('#total').text(0);
@@ -20238,6 +20315,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen(codigo) {
         $('#noLuz25').prop('checked', true);
+        $('#volverAtras100MeterCasa').css({ display: 'none' });
+        $('#volverAtras1MeterCasa').css({ display: 'block' });
         $('#textareaobservaciones').css({ display: 'none' });
         $('#textareaobservaciones').val('');
         var uid = this.uid;
@@ -21774,7 +21853,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                             u +
                                             '"><span style="font-weight:600">' +
                                             u +
-                                            ' Puerta DCH</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            ' Puerta IZQ</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                                             u +
                                             '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                                             u +

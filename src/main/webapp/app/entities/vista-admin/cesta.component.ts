@@ -11887,7 +11887,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                             sesion[1]['apoyo']['especial'] +
-                                            ':</span></p>'
+                                            '</span></p>'
                                     );
                                 }
                             }

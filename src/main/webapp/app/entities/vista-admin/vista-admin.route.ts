@@ -4,6 +4,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@a
 import { UserRouteAccessService } from 'app/core';
 import { VistaAdminComponent } from './vista-admin.component';
 import { inicioComponent } from './inicio.component';
+import { descargasvideosComponent } from './descargasvideos.component';
 import { cestaComponent } from './cesta.component';
 import { VistaAdminService } from './vista-admin.service';
 import { UploadPopupComponent } from './vista-admin-upload.component';
@@ -26,6 +27,15 @@ export const vistadminRoute: Routes = [
     {
         path: 'inicio',
         component: inicioComponent,
+        data: {
+            authorities: [],
+            pageTitle: 'torgaPedidosApp.admin.home.title'
+        },
+        canActivate: [UserRouteAccessService]
+    },
+    {
+        path: 'descargasvideos',
+        component: descargasvideosComponent,
         data: {
             authorities: [],
             pageTitle: 'torgaPedidosApp.admin.home.title'

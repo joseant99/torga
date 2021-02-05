@@ -12,6 +12,7 @@ import {
     UploadPopupComponent,
     UploadDialogComponent,
     inicioComponent,
+    descargasvideosComponent,
     cestaComponent
 } from './';
 
@@ -26,10 +27,24 @@ const ENTITY_STATES = [...vistadminRoute, ...adminPopupRoute];
         BrowserAnimationsModule,
         RouterModule.forChild(ENTITY_STATES)
     ],
-    declarations: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent, inicioComponent, cestaComponent],
+    declarations: [
+        VistaAdminComponent,
+        UploadPopupComponent,
+        UploadDialogComponent,
+        inicioComponent,
+        cestaComponent,
+        descargasvideosComponent
+    ],
     exports: [MatSortModule],
     providers: [{ provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() }],
-    entryComponents: [VistaAdminComponent, UploadPopupComponent, UploadDialogComponent, inicioComponent, cestaComponent],
+    entryComponents: [
+        VistaAdminComponent,
+        UploadPopupComponent,
+        UploadDialogComponent,
+        inicioComponent,
+        cestaComponent,
+        descargasvideosComponent
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TorgaPedidosVistaAdminModule {}

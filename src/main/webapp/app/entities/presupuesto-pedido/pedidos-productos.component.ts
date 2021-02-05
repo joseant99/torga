@@ -837,7 +837,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             ancho: data.body[i]['ancho'],
                                             alto: data.body[i]['alto'],
                                             fondo: data.body[i]['fondo'],
-                                            codigo: data.body[i]['codigo']
+                                            mensaje: data.body[i]['codigo']
                                         };
                                         var todo = {
                                             productosDormitorio: uno,
@@ -12035,7 +12035,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NT177-NT181';
                                                 }
                                                 if (idProdNombre == 257) {
-                                                    nombreCargarImagen = 'NT182-NT189';
+                                                    nombreCargarImagen = 'NT182-NT185';
                                                 }
                                                 if (idProdNombre == 258) {
                                                     nombreCargarImagen = 'NT186-NT189';
@@ -13082,22 +13082,95 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                             }
-
+                                            if (productos[i]['textoEspecial'] != undefined && productos[i]['textoEspecial'] != null) {
+                                                if (productos[i]['textoEspecial'] == 'Ancho especial') {
+                                                    $('#anchoSoloSecambiaEspecial').text('Ancho especial');
+                                                }
+                                                if (productos[i]['textoEspecial'] == 'Alto especial') {
+                                                    $('#altoSoloSecambiaEspecial').text('Ancho especial');
+                                                }
+                                                if (productos[i]['textoEspecial'] == 'Fondo especial') {
+                                                    $('#fondoSoloSecambiaEspecial').text('Ancho especial');
+                                                }
+                                            }
                                             if (apoyo != undefined) {
                                                 if (productos[i]['pilotoApoyo'] != 8 && productos[i]['pilotoApoyo'] != 9) {
                                                     if (
                                                         productos[i]['textoEspecial'] != undefined &&
                                                         productos[i]['textoEspecial'] != null
                                                     ) {
-                                                        $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                                                                apoyo['productoApoyo']['nombre'] +
-                                                                '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                i +
-                                                                '">' +
-                                                                apoyo['precio'] +
-                                                                '</span> pp</p>'
-                                                        );
+                                                        if (productos[i]['textoEspecial'] == 'Ancho especial') {
+                                                            if (productos[i]['pilotoApoyo'] != 6 && productos[i]['pilotoApoyo'] != 1) {
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                        apoyo['productoApoyo']['nombre'] +
+                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                        i +
+                                                                        '">' +
+                                                                        apoyo['precio'] +
+                                                                        '</span> pp</p>'
+                                                                );
+                                                            } else {
+                                                                var totalfloatApoyo = apoyo['precio'] * 1.3;
+                                                                totalfloatApoyo = Math.ceil(totalfloatApoyo);
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                        apoyo['productoApoyo']['nombre'] +
+                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                        i +
+                                                                        '">' +
+                                                                        totalfloatApoyo +
+                                                                        '</span> pp</p>'
+                                                                );
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
+                                                                );
+                                                            }
+                                                        }
+                                                        if (productos[i]['textoEspecial'] == 'Fondo especial') {
+                                                            if (
+                                                                productos[i]['pilotoApoyo'] != 6 &&
+                                                                productos[i]['pilotoApoyo'] != 1 &&
+                                                                productos[i]['pilotoApoyo'] != 3 &&
+                                                                productos[i]['pilotoApoyo'] != 7
+                                                            ) {
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                        apoyo['productoApoyo']['nombre'] +
+                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                        i +
+                                                                        '">' +
+                                                                        apoyo['precio'] +
+                                                                        '</span> pp</p>'
+                                                                );
+                                                            } else {
+                                                                var totalfloatApoyo = apoyo['precio'] * 1.3;
+                                                                totalfloatApoyo = Math.ceil(totalfloatApoyo);
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                        apoyo['productoApoyo']['nombre'] +
+                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                        i +
+                                                                        '">' +
+                                                                        totalfloatApoyo +
+                                                                        '</span> pp</p>'
+                                                                );
+                                                                $('.' + productos[i]['id'] + 'Datos').append(
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
+                                                                );
+                                                            }
+                                                        }
+                                                        if (productos[i]['textoEspecial'] == 'Alto especial') {
+                                                            $('.' + productos[i]['id'] + 'Datos').append(
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                    apoyo['productoApoyo']['nombre'] +
+                                                                    '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
+                                                                    i +
+                                                                    '">' +
+                                                                    apoyo['precio'] +
+                                                                    '</span> pp</p>'
+                                                            );
+                                                        }
                                                     } else {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
                                                             '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
@@ -13906,10 +13979,10 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 nombreCargarImagen = 'NT177-NT181';
             }
             if (idProdNombre == 257) {
-                nombreCargarImagen = 'NT182-NT189';
+                nombreCargarImagen = 'NT182-NT185';
             }
             if (idProdNombre == 258) {
-                nombreCargarImagen = 'NT182-NT189';
+                nombreCargarImagen = 'NT186-NT189';
             }
             if (idProdNombre == 256) {
                 nombreCargarImagen = 'NT190-NT209';
