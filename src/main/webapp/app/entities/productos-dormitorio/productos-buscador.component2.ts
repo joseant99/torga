@@ -20504,7 +20504,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 ) {
                     this.singulares = datos;
                 }
-                if (datos['productosDormitorio']['categoriasDormi']['id'] == 15) {
+                if (
+                    datos['productosDormitorio']['categoriasDormi']['id'] == 15 ||
+                    datos['productosDormitorio']['categoriasDormi']['id'] == 8
+                ) {
                     $('#solomesitascant').css({ display: 'block' });
                     $('#selectCantidad').val('1');
                 } else {

@@ -978,6 +978,15 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             ' pp</span></p>'
                                                     );
                                                 }
+                                                if (datosInteriores[p]['observacion'] != null) {
+                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                        '<p id="pimprimirdatostexto"><strong>Observaciones Interior ' +
+                                                            datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                            ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                            datosInteriores[p]['observacion'] +
+                                                            '</span></p>'
+                                                    );
+                                                }
                                             }
                                             if ('1 CUERPO TIPO 1' == nombre) {
                                                 if (screen.width >= 800) {

@@ -296,7 +296,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#anchosSelect').val('');
         $('#alturaSelect').val('');
         $('#textoTituloInterior').text('');
-
+        for (let s = 0; s < todo[1]['interiores'].length; s++) {
+            var textoObser = $('#textareaobservacionesInt' + s).val();
+            if (textoObser != null && textoObser != '' && textoObser != undefined) {
+                todo[1]['observacionesInteriores' + s] = textoObser;
+            }
+        }
         todo[1]['precioCasco'] = precioCasco.split(' ')[0];
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {

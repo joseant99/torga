@@ -13176,6 +13176,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (prodCarr[m][1]['interiores'] != undefined) {
                                 for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
                                     var interiores;
+                                    var observaInt = null;
+                                    if (
+                                        prodCarr[m][1]['observacionesInteriores' + x] != undefined &&
+                                        prodCarr[m][1]['observacionesInteriores' + x] != null &&
+                                        prodCarr[m][1]['observacionesInteriores' + x] != ''
+                                    ) {
+                                        observaInt = prodCarr[m][1]['observacionesInteriores' + x];
+                                    }
                                     if (screen.width >= 800) {
                                         for (let ve = 0; ve <= 100005; ve++) {
                                             if (ve == 100005) {
@@ -13195,6 +13203,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                         orden: x,
                                                         mensajeLuz: 'Sin luz',
+                                                        observacion: observaInt,
                                                         terminacion: terminacioninterior
                                                     };
                                                 } else {
@@ -13213,6 +13222,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                         orden: x,
                                                         terminacion: terminacioninterior,
+                                                        observacion: observaInt,
                                                         mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
                                                     };
                                                 }

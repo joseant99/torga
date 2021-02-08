@@ -34,6 +34,9 @@ public class PresupuestoArmarioInteriores implements Serializable {
     
     @Column(name = "terminacion")
     private String terminacion;
+    
+    @Column(name = "observacion")
+    private String observacion;
    
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -89,6 +92,19 @@ public class PresupuestoArmarioInteriores implements Serializable {
 
     public void setTerminacion(String terminacion) {
         this.terminacion = terminacion;
+    }
+    
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public PresupuestoArmarioInteriores observacion(String observacion) {
+        this.observacion = observacion;
+        return this;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
     }
     
     public Float getOrden() {
