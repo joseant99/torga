@@ -870,6 +870,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
                                                 'nombre'
                                             ].toLowerCase();
+
                                             $('#datosMeter' + (cont - 1) + ' #primeroint').append(
                                                 '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                                                     casco +
@@ -887,6 +888,21 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     interiorAca +
                                                     '</p>'
                                             );
+
+                                            if (
+                                                data.body[0]['presupuestoArmario']['acabadosTirador'] != null &&
+                                                data.body[0]['presupuestoArmario']['acabadosTirador'] != undefined
+                                            ) {
+                                                var tiradorAca = data.body[0]['presupuestoArmario']['acabadosTirador'][
+                                                    'nombre'
+                                                ].toLowerCase();
+                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                    '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Tiradores y perfiles</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        tiradorAca +
+                                                        '</p>'
+                                                );
+                                            }
+
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
                                             var precioTodo1 = 0;
                                             for (let p = 0; p < datosInteriores.length; p++) {

@@ -2075,6 +2075,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     }
 
     public elegirBusqueda(id) {
+        $('#observacionesArticulo').css({ display: 'block' });
         $('.divConfiguracionestant').css({ display: 'none' });
         $('#botonCalculadoraTablero').attr('class', 'displayBoton');
         $('#imagenAcabadoPrincipal123').empty();
@@ -2208,6 +2209,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             if (screen.width < 800) {
                 $('#productosPrincipal').css({ height: '5750px' });
             }
+            $('#observacionesArticulo').css({ display: 'none' });
             $('#calcuBatientes').css({ display: 'block' });
             $('#modalesBatientes').css({ display: 'block' });
             $('.armariosDivInputCodigo #botonOkAnchos').removeAttr('disabled');
@@ -2239,6 +2241,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
         if (id == 3) {
             $('#calcuOculta').css({ display: 'block' });
+            $('#observacionesArticulo').css({ display: 'none' });
             if (screen.width < 800) {
                 $('#productosPrincipal').css({ height: '5750px' });
             }
@@ -2276,6 +2279,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         if (id == 4) {
             $('.armariosVistaDivInputCodigo').css({ display: 'block' });
             $('#calcuVista').css({ display: 'block' });
+            $('#observacionesArticulo').css({ display: 'none' });
             if (screen.width < 800) {
                 $('#productosPrincipal').css({ height: '2350px' });
             }
@@ -2599,7 +2603,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#textodivsuperiorquenosecambia').text('MESAS');
             $('#textodivsuperiorquenosecambia1').text('MESAS');
         }
-
+        var account = this.accountService['userIdentity'];
         if (id == 21) {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
@@ -2632,14 +2636,21 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('CAMAS');
             $('.cajon1incremento').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '20%' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+
             this.tipoProductos = 4;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
@@ -2680,9 +2691,15 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '20%' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             this.tipoProductos = 5;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
@@ -2722,9 +2739,15 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('.cajon1incremento').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '5%' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             this.tipoProductos = 1;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
@@ -2764,9 +2787,15 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('.cajon1incremento').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '5%' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             this.tipoProductos = 3;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
@@ -2811,9 +2840,15 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             this.tipoProductos = 26;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });
@@ -2853,9 +2888,15 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
             this.tipoProductos = 25;
             setTimeout(function() {
                 $('#page-heading').css({ display: 'none' });

@@ -9119,8 +9119,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 1) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 } else {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9128,8 +9130,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 } else {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9137,8 +9141,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 } else {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9146,15 +9152,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9163,8 +9173,10 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 1) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 } else {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9172,15 +9184,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9188,21 +9204,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 5) {
                     meterInt[6] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 6) {
                     meterInt[5] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9210,15 +9232,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9226,15 +9252,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 1) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9242,15 +9272,19 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 1) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9259,21 +9293,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 1) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 5) {
                     meterInt[6] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 6) {
                     meterInt[5] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9282,21 +9322,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[5] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 5) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9305,21 +9351,27 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[5] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 5) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -9328,27 +9380,35 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             if (nombre == 388 || nombre == 387 || nombre == 389 || nombre == 390) {
                 if (id == 0) {
                     meterInt[1] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 1) {
                     meterInt[0] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 2) {
                     meterInt[3] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 3) {
                     meterInt[2] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 4) {
                     meterInt[5] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 5) {
                     meterInt[4] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 6) {
                     meterInt[7] = buenInt;
+                    $('#divPuerta' + (id + 1) + ' #inputs').css({ display: 'block' });
                 }
                 if (id == 7) {
                     meterInt[6] = buenInt;
+                    $('#divPuerta' + (id - 1) + ' #inputs').css({ display: 'block' });
                 }
             }
         }
@@ -18279,7 +18339,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 pue123['acabado0'] = acabados[w];
                 todo['puertas'][id] = pue123;
                 this.armarioCogido = todo;
-
                 if (texto == '3 PUERTAS IZQUIERDA') {
                     if (id == 1) {
                         var comprobar = $('#inputPuertas1').val();
@@ -25289,7 +25348,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             this.saberPuerta = 1;
             var tipo = id % 2 ? 'Par' : 'Impar';
             if (texto == '1 PUERTA') {
-                alert(comprobar);
                 if (nombre == 'Cristal Bronce') {
                     if (tipo == 'Par') {
                         src = '../../../content/images/ar/peque/5. PUERTA ALUMINIO/peque_puertaaluminio_cristal_bronce_optimized.png';

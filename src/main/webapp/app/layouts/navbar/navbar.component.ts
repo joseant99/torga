@@ -13596,6 +13596,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 acabadosInterior: prodCarr[m][1]['acabadoInterior'],
                                 acabados: prodCarr[m][1]['acabadoTrasera'],
                                 acabadosCasco: prodCarr[m][1]['acabadoCasco'],
+                                acabadosTirador: prodCarr[m][1]['acabadoTirador'],
                                 niveladores: prodCarr[m][1]['niveladores'],
                                 enmarcados: prodCarr[m][1]['enmarcado'],
                                 cajeado: prodCarr[m][1]['cajeado'],
