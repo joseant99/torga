@@ -110,6 +110,20 @@ public class TiposApoyoResource {
         Collection<TiposApoyo> page = tiposApoyoRepository.findAncho3(id,ancho);
         return ResponseEntity.ok().body(page);
     }
+    
+    /**
+     * GET  /cascos : get all the cascos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of cascos in body
+     */
+    @GetMapping("/tipos-apoyos-id4/{id}/{ancho}")
+    @Timed
+    public ResponseEntity<Collection<TiposApoyo>> getAllCascosBus4( @PathVariable("id") Long id ,@PathVariable("ancho") Float ancho) {
+        log.debug("REST request to get a page of Cascos");
+        Collection<TiposApoyo> page = tiposApoyoRepository.findAncho4(id,ancho);
+        return ResponseEntity.ok().body(page);
+    }
     /**
      * GET  /cascos : get all the cascos.
      *

@@ -2636,10 +2636,16 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('CAMAS');
             $('.cajon1incremento').css({ display: 'none' });
-
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            $('.fondoclasequitarposible').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
@@ -2682,15 +2688,22 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('CANAPES Y BAÑERAS');
             $('.cajon1incremento').css({ display: 'none' });
+            $('.fondoclasequitarposible').css({ display: 'none' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '20%' });
 
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             this.tipoProductos = 5;
             setTimeout(function() {
@@ -2730,11 +2743,18 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.cajon1incremento').css({ display: 'block' });
+            $('.fondoclasequitarposible').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '5%' });
 
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             this.tipoProductos = 1;
             setTimeout(function() {
@@ -2774,11 +2794,18 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.cajon1incremento').css({ display: 'block' });
+            $('.fondoclasequitarposible').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '5%' });
 
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             this.tipoProductos = 3;
             setTimeout(function() {
@@ -2820,14 +2847,21 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }, 1000);
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('.cajon1incremento').css({ display: 'block' });
+            $('.fondoclasequitarposible').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '5%' });
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
 
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             this.tipoProductos = 26;
             setTimeout(function() {
@@ -2863,15 +2897,22 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.codigoparadivs = arrayGG;
             $('#textodivsuperiorquenosecambia').text('AUXILIARES');
             $('.cajon1incremento').css({ display: 'none' });
+            $('.fondoclasequitarposible').css({ display: 'block' });
             $('.anchoquitarmargin').css({ 'margin-left': '20%' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
             $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
             $('#inputBusca').css({ display: 'block' });
 
-            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
+            } else {
+                $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+                $('.divseleccionarcodigo').css({ display: 'block' });
+                $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            }
 
             this.tipoProductos = 25;
             setTimeout(function() {
@@ -2906,6 +2947,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 var cont = 0;
                 var cont1 = 0;
                 var altura;
+                var nombre = '';
                 for (let i = 0; i < data.body['length']; i++) {
                     if (
                         data.body[i][0]['id'] != 15 &&
@@ -2930,12 +2972,24 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         if (data.body[i][0]['id'] != array[cont1]['id']) {
                             cont1++;
                             array[cont1] = data.body[i][0];
+                            nombre = '';
                         }
 
                         if (altura != data.body[i][1]) {
                             cont++;
                             altura = data.body[i][1];
+                            nombre = '';
                         }
+
+                        if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                            if (nombre == '') {
+                                nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                            } else {
+                                nombre = nombre + '-' + data.body[i][2];
+                            }
+                            array[cont1]['imagenNombre'] = nombre;
+                        }
+
                         array1[0] = data.body[i][1];
                     }
                 }
@@ -2957,6 +3011,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 var cont = 0;
                 var cont1 = 0;
                 var altura;
+                var nombre = '';
                 for (let i = 0; i < data.body['length']; i++) {
                     if (
                         data.body[i][0]['id'] != 15 &&
@@ -2970,14 +3025,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         data.body[i][0]['id'] != 403 &&
                         data.body[i][0]['id'] != 32 &&
                         data.body[i][0]['id'] != 211 &&
-                        data.body[i][0]['id'] != 212 &&
-                        data.body[i][0]['id'] != 248 &&
-                        data.body[i][0]['id'] != 252 &&
-                        data.body[i][0]['id'] != 256 &&
-                        data.body[i][0]['id'] != 260 &&
-                        data.body[i][0]['id'] != 264 &&
-                        data.body[i][0]['id'] != 268 &&
-                        data.body[i][0]['id'] != 272
+                        data.body[i][0]['id'] != 212
                     ) {
                         data.body[i][0]['altura'] = data.body[i][1];
                         if (i == 0) {
@@ -2988,12 +3036,24 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         if (data.body[i][0]['id'] != array[cont1]['id']) {
                             cont1++;
                             array[cont1] = data.body[i][0];
+                            nombre = '';
                         }
 
                         if (altura != data.body[i][1]) {
                             cont++;
                             altura = data.body[i][1];
+                            nombre = '';
                         }
+
+                        if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                            if (nombre == '') {
+                                nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                            } else {
+                                nombre = nombre + '-' + data.body[i][2];
+                            }
+                            array[cont1]['imagenNombre'] = nombre;
+                        }
+
                         array1[0] = data.body[i][1];
                     }
                 }
@@ -3002,6 +3062,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 }
                 this.alturaArray = array1;
                 this.modulosBajos = array;
+                console.log(this.modulosBajos);
                 console.log(array);
                 setTimeout(function() {
                     $('#palturaparaquitarlomesas').css({ display: 'none' });
@@ -3130,10 +3191,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             });
         }
         if (id == 2) {
-            this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
-                this.anchos = data.body;
-            });
             this.medidasEspecialesService.findProd1(idProd, this.alturaseleccionada).subscribe(data => {
+                this.dimensionesProductoTipoService.findProductoEspecial(idProd).subscribe(data => {
+                    this.anchos = data.body;
+                });
                 min = data.body[0]['min'];
                 max = data.body[0]['max'];
                 for (let i = min; i <= max; i++) {
@@ -3154,6 +3215,33 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').css({ display: 'block' });
                 $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
                 $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').attr('id', 'simplepruebaani');
+            });
+        }
+        if (id == 4) {
+            this.medidasEspecialesService.findProd2(idProd, this.alturaseleccionada).subscribe(data => {
+                this.dimensionesProductoTipoService.findProductoEspecial(idProd).subscribe(data => {
+                    this.anchos = data.body;
+                });
+                min = data.body[0]['min'];
+                max = data.body[0]['max'];
+                if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                    for (let i = min; i <= max; i++) {
+                        array[cont] = i;
+                        cont++;
+                    }
+                } else {
+                    for (let i = min; i <= max; ) {
+                        array[cont] = i;
+                        cont++;
+                        i = i + 0.5;
+                    }
+                }
+                this.especiales = array;
+                console.log(this.especiales);
+                $('.divseleccionarcodigoEscogerMedidaEspecialFondo #textoEspecial').text('FONDO ESPECIAL');
+                $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'block' });
+                $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                $('.divseleccionarcodigoEscogerMedidaEspecialFondo').attr('id', 'simplepruebaani');
             });
         }
     }
@@ -9436,7 +9524,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').css({ display: 'none' });
@@ -15440,7 +15528,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'none' });
@@ -21579,7 +21667,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').css({ display: 'none' });
             $('#calculadoraCarrito').removeAttr('style');
             $('#calculadoraCarrito').attr('style');
-            $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+            $('#calculadoraCarrito').css({ 'padding-top': '170px' });
             $('.divBuscadorArticulos').css({ height: '100%' });
             $('#calculadoraCarrito').css({ width: '25%' });
             $('.divseleccionarcodigoEscogerMedidaEspecialAncho').css({ display: 'none' });
@@ -32024,11 +32112,12 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 contadorApoyo++;
             }
         }
+        var hbueno = h;
         if (idApoyo == 18) {
-            var hbueno = parseFloat(h) - 5;
+            hbueno = parseFloat(h) - 5;
         }
         if (idApoyo == 17) {
-            var hbueno = parseFloat(h) - 12.5;
+            hbueno = parseFloat(h) - 12.5;
         }
         var apoyoDentro = 0;
         if (
@@ -32049,7 +32138,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             parseFloat(idProd) != 374 &&
             parseFloat(idProd) != 375
         ) {
-            this.tiposApoyoService.findBus2(idApoyo, hbueno).subscribe(data => {
+            this.tiposApoyoService.findBus4(idApoyo, hbueno).subscribe(data => {
                 datos = data['body'];
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {

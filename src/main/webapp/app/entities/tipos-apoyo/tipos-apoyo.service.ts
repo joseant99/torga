@@ -48,4 +48,8 @@ export class TiposApoyoService {
     findBus2(id: any, ancho: any): Observable<EntityArrayResponseType> {
         return this.http.get<ITiposApoyo[]>(`${this.resourceUrl}-id2/${id}/${ancho}`, { observe: 'response' });
     }
+
+    findBus4(id: any, ancho: any): Observable<EntityArrayResponseType> {
+        return this.http.get<ITiposApoyo[]>(`${this.resourceUrl}-id4/${id}/${ancho}`, { observe: 'response' });
+    }
 }

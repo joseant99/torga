@@ -8383,21 +8383,21 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             $('#textoCesta' + i).append(
                                 '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight: 600;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span><strong style="font-weight: 600;">TOTAL: <span id="precioTodoProd' +
                                     i +
-                                    '"><strong style="font-weight: 600;">TOTAL: ' +
+                                    '">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</strong></span><strong style="font-weight: 600;"> pp </strong></i></p>'
+                                    '</span></strong></span><strong style="font-weight: 600;"> pp </strong></i></p>'
                             );
                         } else {
                             $('#textoCesta' + i).append(
                                 '<p id="nombreMueble" style="letter-spacing: 1px;font-weight: 300;margin-left: 28%;"><strong style="font-weight: 600;">' +
                                     sesion[1]['productosDormitorio']['nombre'].toUpperCase() +
-                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span id="precioTodoProd' +
+                                    '</strong><i id="precioMueble" style="float:right;margin-right:40%"><span><strong style="font-weight: 600;">TOTAL: <span id="precioTodoProd' +
                                     i +
-                                    '"><strong style="font-weight: 600;">TOTAL: ' +
+                                    '">' +
                                     sesion[1]['todoSumadoPrecio'] +
-                                    '</strong></span><strong style="font-weight:600"> pp </strong></i></p>'
+                                    '</span></strong></span><strong style="font-weight:600"> pp </strong></i></p>'
                             );
                         }
                         if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
@@ -8416,6 +8416,12 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 );
                                 $('#textoCesta' + i).append(
                                     '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                );
+                            } else {
+                                $('#textoCesta' + i).append(
+                                    '<p id="anchoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Ancho:</span> ' +
+                                        sesion[1]['ancho'] +
+                                        '</p>'
                                 );
                             }
                         } else {
@@ -9347,6 +9353,12 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 $('#textoCesta' + i).append(
                                     '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
                                 );
+                            } else {
+                                $('#textoCesta' + i).append(
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Alto:</span> ' +
+                                        sesion[1]['alto'] +
+                                        '</p>'
+                                );
                             }
                         } else {
                             $('#textoCesta' + i).append(
@@ -9357,19 +9369,25 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         }
                         if (sesion[1]['productosDormitorio']['categoriasDormi']['id'] != 31) {
                             if (sesion[1]['mensajeEspecial'] != undefined) {
-                                if (sesion[1]['mensajeEspecial'] == 'Alto especial') {
+                                if (sesion[1]['mensajeEspecial'] == 'Fondo especial') {
                                     $('#textoCesta' + i).append(
-                                        '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
+                                        '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo especial:</span> ' +
                                             sesion[1]['fondo'] +
                                             '</p>'
                                     );
                                     $('#textoCesta' + i).append(
                                         '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
                                     );
+                                } else {
+                                    $('#textoCesta' + i).append(
+                                        '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
+                                            sesion[1]['fondo'] +
+                                            '</p>'
+                                    );
                                 }
                             } else {
                                 $('#textoCesta' + i).append(
-                                    '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo especial:</span> ' +
+                                    '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
                                         sesion[1]['fondo'] +
                                         '</p>'
                                 );

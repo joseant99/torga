@@ -20217,7 +20217,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var ancho1 = $('#cogerAnchoEstant').val();
         var caje = $('#anchodetablerocanteado').text();
         var grosor = $('#anchodetablerogrosor').text();
-
+        $('#solomesitascant').css({ display: 'block' });
+        $('#selectCantidad').val('1');
         var prueba = parseFloat($('#altoTableCalcu').text());
         var prueba1 = parseFloat($('#anchoTableCalcu').text());
         var acabados = [];
@@ -33824,6 +33825,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         console.log(prod);
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
         contadorDimen++;
+        var cantidad = $('#selectCantidad').val();
+        if (cantidad != 1) {
+            for (let l = 1; l < cantidad; l++) {
+                sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+                contadorDimen++;
+            }
+        }
 
         this.usb = undefined;
         for (let i = 1; i <= 100; i++) {

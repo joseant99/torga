@@ -3986,6 +3986,7 @@ ui bootstrap tweaks
         bottom: 0;
         display: block;
         z-index: 0;
+        padding-bottom: 50px;
     }
     #imagenFOndoMueble {
         height: 115%;

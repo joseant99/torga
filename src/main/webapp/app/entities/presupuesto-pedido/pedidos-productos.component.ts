@@ -957,31 +957,59 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     $('#ivaPrecioQuitar').text(ivaTodo.toFixed(0) + ' pp');
                                                     $('#precioIvaSumado').text((ivaTodo + precioTotal).toFixed(0) + ' pp');
                                                 }
-
+                                                var mai = [
+                                                    'A',
+                                                    'B',
+                                                    'C',
+                                                    'D',
+                                                    'E',
+                                                    'F',
+                                                    'G',
+                                                    'H',
+                                                    'I',
+                                                    'J',
+                                                    'K',
+                                                    'L',
+                                                    'M',
+                                                    'N',
+                                                    'O',
+                                                    'P',
+                                                    'Q',
+                                                    'R',
+                                                    'S',
+                                                    'U',
+                                                    'V',
+                                                    'W',
+                                                    'X',
+                                                    'Y',
+                                                    'Z'
+                                                ];
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
+
+                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                    '<p id="pimprimirdatostexto"><strong>Hueco ' +
+                                                        mai[p] +
+                                                        ': ' +
+                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                        '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
+                                                        datosInteriores[p]['precio'] +
+                                                        ' pp</span></p>'
+                                                );
+
                                                 if (datosInteriores[p]['mensajeLuz'] != null) {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Interior ' +
-                                                            datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                            '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                        '<p id="pimprimirdatostexto"><strong>Iluminacion ' +
+                                                            mai[p] +
+                                                            ': </strong><span>' +
                                                             datosInteriores[p]['mensajeLuz'] +
-                                                            '</span><span>+ ' +
-                                                            datosInteriores[p]['precio'] +
-                                                            ' pp</span></p>'
-                                                    );
-                                                } else {
-                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Interior ' +
-                                                            datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                            '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                            datosInteriores[p]['precio'] +
-                                                            ' pp</span></p>'
+                                                            '</span></p>'
                                                     );
                                                 }
+
                                                 if (datosInteriores[p]['observacion'] != null) {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Observaciones Interior ' +
-                                                            datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                        '<p id="pimprimirdatostexto"><strong>Observaciones Hueco ' +
+                                                            mai[p] +
                                                             ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
                                                             datosInteriores[p]['observacion'] +
                                                             '</span></p>'
@@ -2123,8 +2151,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 $('#datosMeter' + (cont - 1) + ' #segundopuerta').append(
                                                     '<p id="pimprimirdatostexto"><strong>Puerta ' +
                                                         (p + 1) +
-                                                        ' ' +
-                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                        ': ' +
+                                                        datosInteriores[p]['terminacion'] +
                                                         '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
                                                         datosInteriores[p]['precio'] +
                                                         ' pp</span></p>'
@@ -13109,13 +13137,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
                                             if (productos[i]['textoEspecial'] != undefined && productos[i]['textoEspecial'] != null) {
                                                 if (productos[i]['textoEspecial'] == 'Ancho especial') {
-                                                    $('#anchoSoloSecambiaEspecial').text('Ancho especial');
+                                                    $('.' + productos[w]['id'] + 'Datos #anchoSoloSecambiaEspecial').text('Ancho especial');
                                                 }
                                                 if (productos[i]['textoEspecial'] == 'Alto especial') {
-                                                    $('#altoSoloSecambiaEspecial').text('Ancho especial');
+                                                    $('.' + productos[w]['id'] + 'Datos #altoSoloSecambiaEspecial').text('Alto especial');
                                                 }
                                                 if (productos[i]['textoEspecial'] == 'Fondo especial') {
-                                                    $('#fondoSoloSecambiaEspecial').text('Ancho especial');
+                                                    $('.' + productos[w]['id'] + 'Datos #fondoSoloSecambiaEspecial').text('Fondo especial');
                                                 }
                                             }
                                             if (apoyo != undefined) {
