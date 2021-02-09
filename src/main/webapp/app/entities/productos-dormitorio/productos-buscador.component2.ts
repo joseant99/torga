@@ -33651,31 +33651,35 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     if (value['mensajeEspecial'] != undefined) {
                         const precioApoyo = $('#precioApoyo').text();
                         if (value['mensajeEspecial'] == 'Ancho especial') {
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
-                            }
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            if (apoyoBueno[1] != undefined) {
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
                             }
                         }
                         if (value['mensajeEspecial'] == 'Fondo especial') {
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
-                            }
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
-                            }
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 16) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
-                            }
-                            if (apoyoBueno[1]['productoApoyo']['id'] == 403) {
-                                apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
-                                apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                            if (apoyoBueno[1] != undefined) {
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 16) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 403) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
                             }
                         }
                     }
