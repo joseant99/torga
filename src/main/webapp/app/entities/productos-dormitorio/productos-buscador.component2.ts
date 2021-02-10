@@ -935,6 +935,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#nombreMesita').text('ESTANTERIA A MEDIDA');
             $('#estanteriaDiv').css({ display: 'block' });
         }
+        $('#diviframeprueba').css({ display: 'none' });
+        if (id == 70) {
+        }
 
         if (id == 2) {
             $('.armariosDivInputCodigo').css({ display: 'block' });
@@ -30882,12 +30885,12 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 });
             });
         }
-        var bien = 0;
+        var bien = 2;
         for (let y = 0; y <= 15; y++) {
             var yeah = $('#datos1 #acabado' + y).html();
             if (yeah != undefined) {
                 var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
-                if (nombreAcabado != '') {
+                if (nombreAcabado != '' && bien != 0) {
                     bien = 1;
                 } else {
                     bien = 0;

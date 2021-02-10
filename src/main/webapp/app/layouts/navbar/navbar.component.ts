@@ -13606,7 +13606,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 acabadosInterior: prodCarr[m][1]['acabadoInterior'],
                                 acabados: prodCarr[m][1]['acabadoTrasera'],
                                 acabadosCasco: prodCarr[m][1]['acabadoCasco'],
-                                acabadosTirador: prodCarr[m][1]['acabadoTirador'],
                                 niveladores: prodCarr[m][1]['niveladores'],
                                 enmarcados: prodCarr[m][1]['enmarcado'],
                                 cajeado: prodCarr[m][1]['cajeado'],
@@ -13799,11 +13798,12 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 }
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                                    dimensionProductoTipo: dimensolotablero,
+                                    dimensionesProductoTipo: dimensolotablero,
                                     presupuestoPedido: prueba1,
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
                                     grosor: prodCarr[m][1]['grosor'],
+                                    fondo: prodCarr[m][1]['grosor'],
                                     alto: prodCarr[m][1]['alto'],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
