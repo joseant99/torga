@@ -2132,6 +2132,16 @@
 	    	</div>
     </div>
     
+    <div class="divseleccionarcodigoEscogerMedidaEspecialAncho2" style="display:none;top: 0;bottom: 0;height: 100%;">
+    	<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;z-index:10;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(57)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras10MeterCasa" (click)="volveratras(4)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras11MeterCasa" (click)="volveratras(5)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras12MeterCasa" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textoStrongNativ">ANCHO</span></div>
+    		<div style="margin-top:9%;width:75%;margin-left:15%;" id="divdentrodeloscodigos">
+    			<p style="text-align:center;width:100%;font-size: 24px;">Selecciona Ancho Definido</p>
+	   			<div *ngFor="let codigo of anchos" id="divcodigoarituclos" class="divcodigometerfondo" (click)="cargarDimen10(codigo)">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+    </div>
+    
     
     
     
@@ -2295,7 +2305,7 @@
 	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
 	    		
 	    	</div>
-	    	<button id="botonmencambiarvista" (click)="cambiarvistaBat()" style="position: absolute;right: 50px;top: 580px;z-index:120;">Cambiar Vista</button>
+	    	<button id="botonmencambiarvista" (click)="cambiarvistaBat()" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
     	</div>
     	<div style="width:100%" id="imagenInteriorPuertas">
     	<h2 style="text-align:center" id="textoImagenInterior"></h2>
@@ -2416,7 +2426,7 @@
 	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
 	    		
 	    	</div> 
-	    	<button id="botonmencambiarvista" (click)="cambiarvistaOcu()" style="position: absolute;right: 50px;top: 580px;z-index:120;">Cambiar Vista</button>
+	    	<button id="botonmencambiarvista" (click)="cambiarvistaOcu()" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
     	</div>
     	<div style="width:100%" id="imagenInteriorPuertas">
     	<h2 style="text-align:center" id="textoImagenInterior"></h2>
@@ -2490,7 +2500,7 @@
 	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
 	    		
 	    	</div>
-	    	<button id="botonmencambiarvista" (click)="cambiarvistaVis()" style="position: absolute;right: 50px;top: 580px;z-index:120;">Cambiar Vista</button>
+	    	<button id="botonmencambiarvista" (click)="cambiarvistaVis()" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
     	</div>
     	<div style="width:100%" id="imagenInteriorPuertas">
     	<h2 style="text-align:center" id="textoImagenInterior"></h2>
@@ -3143,7 +3153,16 @@
 			
 										</form>
 									</div>
-				    				
+				    				<div style="margin-top:5px;float:left;margin-top:15px;margin-bottom:35px;">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600">OBSERVACIONES HUECO {{this.armariosDormitorioOcultaComponent.arrayLetras[u]}}</span>
+										<form style="margin-top:15px">
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%" >Si</label>
+											<input type="radio" id="siObsOcu{{u}}" name="siObs" value="Si" (click)="quieroObservacionEnHuecoOcu(u)"></p>
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%">No</label>
+											<input type="radio" id="noObsOcu{{u}}" name="siObs" value="No" checked (click)="noquieroObservacionEnHuecoOcu(u)"></p>
+										</form>
+										<textarea id="textareaobservacionesIntOcu{{u}}" name="w3review" rows="4" cols="40" style="display:none"></textarea>
+									</div>
 				    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
 				    			--></div>
 				    			
@@ -3290,7 +3309,16 @@
 			
 										</form>
 									</div>
-				    				
+				    				<div style="margin-top:5px;float:left;margin-top:15px;margin-bottom:35px;">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600">OBSERVACIONES HUECO {{this.armariosDormitorioVistaComponent.arrayLetras[u]}}</span>
+										<form style="margin-top:15px">
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%" >Si</label>
+											<input type="radio" id="siObsVis{{u}}" name="siObs" value="Si" (click)="quieroObservacionEnHuecoVis(u)"></p>
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%">No</label>
+											<input type="radio" id="noObsVis{{u}}" name="siObs" value="No" checked (click)="noquieroObservacionEnHuecoVis(u)"></p>
+										</form>
+										<textarea id="textareaobservacionesIntVis{{u}}" name="w3review" rows="4" cols="40" style="display:none"></textarea>
+									</div>
 				    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
 				    			--></div>
 				    			

@@ -8602,7 +8602,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         if (sesion[1]['productosDormitorio']['id'] == 13) {
                             nombreCargarImagen = 'NX049-NX052';
                         }
-                        if (sesion[1]['productosDormitorio']['id'] == 229) {
+                        if (sesion[1]['productosDormitorio']['id'] == 376) {
                             nombreCargarImagen = 'NX053';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 238) {
@@ -9390,6 +9390,16 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Fondo:</span> ' +
                                         sesion[1]['fondo'] +
                                         '</p>'
+                                );
+                            }
+                        }
+                        if (sesion[1]['mensajeEspecial'] != undefined) {
+                            if (sesion[1]['mensajeEspecial'] == 'Incremento 1 cajon') {
+                                $('#textoCesta' + i).append(
+                                    '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento 1 cajon:</span></p>'
+                                );
+                                $('#textoCesta' + i).append(
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
                                 );
                             }
                         }

@@ -14353,6 +14353,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     presupuestoPedido: prueba1,
                                     dimensionesProductoTipo: dimen,
+                                    ancho: dimen['ancho'],
+                                    alto: dimen['alto'],
+                                    fondo: dimen['fondo'],
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio']
                                 };
                                 if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 2) {
@@ -14382,6 +14385,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                         presupuestoPedido: prueba1,
                                         dimensionesProductoTipo: dimen,
+                                        ancho: dimen['ancho'],
+                                        alto: dimen['alto'],
+                                        fondo: dimen['fondo'],
                                         precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                         pilotoApoyo: meterpilotoapoyo
                                     };

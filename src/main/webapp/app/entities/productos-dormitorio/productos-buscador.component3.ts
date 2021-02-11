@@ -148,6 +148,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     alturaArray: any;
     alturaseleccionada: any;
     idApoyoSecundario: any;
+    anchofondoespecial: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -2933,6 +2934,20 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         $('#textareaobservacionesInt' + u).css({ display: 'none' });
         $('#textareaobservacionesInt' + u).val('');
     }
+    public quieroObservacionEnHuecoOcu(u) {
+        $('#textareaobservacionesIntOcu' + u).css({ display: 'block' });
+    }
+    public noquieroObservacionEnHuecoOcu(u) {
+        $('#textareaobservacionesIntOcu' + u).css({ display: 'none' });
+        $('#textareaobservacionesIntOcu' + u).val('');
+    }
+    public quieroObservacionEnHuecoVis(u) {
+        $('#textareaobservacionesIntVis' + u).css({ display: 'block' });
+    }
+    public noquieroObservacionEnHuecoVis(u) {
+        $('#textareaobservacionesIntVis' + u).css({ display: 'none' });
+        $('#textareaobservacionesIntVis' + u).val('');
+    }
 
     public medidaEspecial() {
         $('.divseleccionarcodigoCategorias').css({ display: 'block' });
@@ -3184,6 +3199,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 });
                 this.especiales = array;
                 console.log(this.especiales);
+                this.anchofondoespecial = 0;
                 $('.divseleccionarcodigoEscogerMedidaEspecial #textoEspecial').text('ANCHO ESPECIAL');
                 $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'block' });
                 $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
@@ -3238,6 +3254,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 }
                 this.especiales = array;
                 console.log(this.especiales);
+                this.anchofondoespecial = 1;
                 $('.divseleccionarcodigoEscogerMedidaEspecialFondo #textoEspecial').text('FONDO ESPECIAL');
                 $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'block' });
                 $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
@@ -3255,9 +3272,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
     public fondocogidaEspecial(codigo) {
         this.fondos = codigo;
-        $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').css({ display: 'block' });
+        $('.divseleccionarcodigoEscogerMedidaEspecialAncho2').css({ display: 'block' });
         $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'none' });
-        $('.divseleccionarcodigoEscogerMedidaEspecialAncho1').attr('id', 'simplepruebaani');
+        $('.divseleccionarcodigoEscogerMedidaEspecialAncho2').attr('id', 'simplepruebaani');
     }
 
     public quitarnone(id) {
@@ -9638,7 +9655,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     '</span></p>'
             );
             $('#datos1').append(
-                '<p style="width:100%"><span style="font-weight:600">Ancho Especial: </span><span class="' +
+                '<p style="width:100%"><span style="font-weight:600">Ancho : </span><span class="' +
                     datos['id'] +
                     '" id="ancho1">' +
                     codigo +
@@ -15509,6 +15526,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var productoTocho;
         nombre = codigo;
         $('.divBuscadorArticulos').attr('id', 'simplepruebaani1');
+        $('.divseleccionarcodigoEscogerMedidaEspecialAncho2').css({ display: 'none' });
         $('.divBuscadorArticulos').css({ display: 'block' });
         if (screen.width < 800) {
             $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'margin-bottom': '60px' });
@@ -15547,24 +15565,35 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }, 1000);
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
-            for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
-                    var datos = data.body[i];
-                    data.body[i]['ancho'] = codigo;
-                    data.body[i]['mensajeEspecial'] = 'Ancho especial';
-                    cogidoggmenez = 1;
+            if (this.anchofondoespecial == 0) {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['ancho'] = codigo;
+                        data.body[i]['mensajeEspecial'] = 'Ancho especial';
+                        cogidoggmenez = 1;
+                    }
+                }
+                if (cogidoggmenez == 0) {
+                    var length = data.body['length'];
+                    if (data.body[length - 1]['ancho'] < codigo && cogidoggmenez == 0) {
+                        var datos = data.body[length - 1];
+                        data.body[length - 1]['ancho'] = codigo;
+                        data.body[length - 1]['mensajeEspecial'] = 'Ancho especial';
+                        cogidoggmenez = 1;
+                    }
                 }
             }
-            if (cogidoggmenez == 0) {
-                var length = data.body['length'];
-                if (data.body[length - 1]['ancho'] < codigo && cogidoggmenez == 0) {
-                    var datos = data.body[length - 1];
-                    data.body[length - 1]['ancho'] = codigo;
-                    data.body[length - 1]['mensajeEspecial'] = 'Ancho especial';
-                    cogidoggmenez = 1;
+            if (this.anchofondoespecial == 1) {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['fondo'] = this.fondos;
+                        data.body[i]['mensajeEspecial'] = 'Fondo especial';
+                        cogidoggmenez = 1;
+                    }
                 }
             }
-
             var todosLosDatos = data.body;
             if (
                 datos['productosDormitorio']['categoriasDormi']['id'] == 8 ||
@@ -15759,20 +15788,40 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     datos['mensaje'] +
                     '</span></p>'
             );
-            $('#datos1').append(
-                '<p style="width:100%"><span style="font-weight:600">Ancho Especial: </span><span class="' +
-                    datos['id'] +
-                    '" id="ancho1">' +
-                    codigo +
-                    '</span></p>'
-            );
+            if (this.anchofondoespecial == 0) {
+                $('#datos1').append(
+                    '<p style="width:100%"><span style="font-weight:600">Ancho Especial: </span><span class="' +
+                        datos['id'] +
+                        '" id="ancho1">' +
+                        codigo +
+                        '</span></p>'
+                );
+            }
+            if (this.anchofondoespecial == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%"><span style="font-weight:600">Ancho: </span><span class="' +
+                        datos['id'] +
+                        '" id="ancho1">' +
+                        datos['ancho'] +
+                        '</span></p>'
+                );
+            }
 
             $('#datos1').append('<p style="width:100%"><span style="font-weight:600">Alto : </span><span>' + datos['alto'] + '</span></p>');
-            $('#datos1').append(
-                '<p style="width:100%"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
-                    datos['fondo'] +
-                    '</span></p>'
-            );
+            if (this.anchofondoespecial == 0) {
+                $('#datos1').append(
+                    '<p style="width:100%"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
+                        datos['fondo'] +
+                        '</span></p>'
+                );
+            }
+            if (this.anchofondoespecial == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%"><span style="font-weight:600">Fondo especial: </span><span id="fondoDatosDimen">' +
+                        codigo +
+                        '</span></p>'
+                );
+            }
             $('#datos1').append(
                 '<p style="width:100%"><span style="font-weight:600">Incremento Especial </span><span>+' + preciocajon + '</span></p>'
             );
@@ -32115,6 +32164,60 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var hbueno = h;
         if (idApoyo == 18) {
             hbueno = parseFloat(h) - 5;
+            if (parseFloat(h) > 70) {
+                if (
+                    parseFloat(idProd) == 1 ||
+                    parseFloat(idProd) == 2 ||
+                    parseFloat(idProd) == 3 ||
+                    parseFloat(idProd) == 4 ||
+                    parseFloat(idProd) == 5 ||
+                    parseFloat(idProd) == 6 ||
+                    parseFloat(idProd) == 7 ||
+                    parseFloat(idProd) == 8 ||
+                    parseFloat(idProd) == 9 ||
+                    parseFloat(idProd) == 238 ||
+                    parseFloat(idProd) == 239 ||
+                    parseFloat(idProd) == 240
+                ) {
+                    hbueno = 65;
+                }
+            }
+            if (parseFloat(h) > 72.5) {
+                if (
+                    parseFloat(idProd) == 10 ||
+                    parseFloat(idProd) == 11 ||
+                    parseFloat(idProd) == 12 ||
+                    parseFloat(idProd) == 13 ||
+                    parseFloat(idProd) == 241
+                ) {
+                    hbueno = 66.9;
+                }
+            }
+            if (parseFloat(h) > 108.1) {
+                if (parseFloat(idProd) == 242 || parseFloat(idProd) == 243 || parseFloat(idProd) == 244) {
+                    hbueno = 103.1;
+                }
+            }
+            if (parseFloat(h) > 110.5) {
+                if (parseFloat(idProd) == 245) {
+                    hbueno = 105.5;
+                }
+            }
+            if (parseFloat(h) > 108.11) {
+                if (parseFloat(idProd) == 233) {
+                    hbueno = 103.11;
+                }
+            }
+            if (parseFloat(h) > 85) {
+                if (parseFloat(idProd) == 236) {
+                    hbueno = 80;
+                }
+            }
+            if (parseFloat(h) > 125) {
+                if (parseFloat(idProd) == 237) {
+                    hbueno = 120;
+                }
+            }
         }
         if (idApoyo == 17) {
             hbueno = parseFloat(h) - 12.5;
@@ -32140,6 +32243,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         ) {
             this.tiposApoyoService.findBus4(idApoyo, hbueno).subscribe(data => {
                 datos = data['body'];
+                var anchofondoespecial = this.anchofondoespecial;
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {
@@ -32153,6 +32257,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                         var precio = precio * 1.21;
                                     } else {
                                         var precio = precio;
+                                    }
+                                    if (anchofondoespecial == 1) {
+                                        precio = precio * 1.3;
+                                        precio = Math.ceil(precio);
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32191,6 +32299,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                         var precio = precio * 1.21;
                                     } else {
                                         var precio = precio;
+                                    }
+                                    if (anchofondoespecial == 1) {
+                                        precio = precio * 1.3;
+                                        precio = Math.ceil(precio);
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32232,6 +32344,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                     } else {
                                         var precio = precio;
                                     }
+                                    if (anchofondoespecial == 1) {
+                                        precio = precio * 1.3;
+                                        precio = Math.ceil(precio);
+                                    }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
                                     $('#precioDimension').text(totalfloat.toFixed(0));
@@ -32268,6 +32384,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                         var precio = precio * 1.21;
                                     } else {
                                         var precio = precio;
+                                    }
+                                    if (anchofondoespecial == 1) {
+                                        precio = precio * 1.3;
+                                        precio = Math.ceil(precio);
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;

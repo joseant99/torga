@@ -12196,7 +12196,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 13) {
                                                     nombreCargarImagen = 'NX049-NX052';
                                                 }
-                                                if (idProdNombre == 229) {
+                                                if (idProdNombre == 376) {
                                                     nombreCargarImagen = 'NX053';
                                                 }
                                                 if (idProdNombre == 238) {
@@ -14140,7 +14140,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
             if (idProdNombre == 13) {
                 nombreCargarImagen = 'NX049-NX052';
             }
-            if (idProdNombre == 229) {
+            if (idProdNombre == 376) {
                 nombreCargarImagen = 'NX053';
             }
             if (idProdNombre == 239) {
