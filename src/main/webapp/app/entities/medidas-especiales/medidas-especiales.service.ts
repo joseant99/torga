@@ -47,4 +47,13 @@ export class MedidasEspecialesService {
     findProd2(id: any, altura: any): Observable<EntityResponseType> {
         return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus2/${id}/${altura}`, { observe: 'response' });
     }
+    findProdMesa(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus-mesa/${id}/${altura}`, { observe: 'response' });
+    }
+    findProd1Mesa(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus1-mesa/${id}/${altura}`, { observe: 'response' });
+    }
+    findProd2Mesa(id: any, altura: any): Observable<EntityResponseType> {
+        return this.http.get<IMedidasEspeciales>(`${this.resourceUrl}-bus2-mesa/${id}/${altura}`, { observe: 'response' });
+    }
 }

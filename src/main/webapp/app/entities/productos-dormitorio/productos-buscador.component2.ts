@@ -1319,9 +1319,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#inputBusca').css({ display: 'block' });
             $('#producto #listaAnchos1').remove();
             $('#producto').append('<datalist id="listaAnchos1"></datalist>');
-            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
             for (let i = 493; i < 512; i++) {
                 if (i >= 100) {
                     $('#listaAnchos1').append('<option value="NH' + i + '">NH' + i + '</option>');
@@ -1704,63 +1701,123 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
         $('.divseleccionarcodigoCategorias').attr('id', 'simplepruebaani');
         var tipo = this.tipoProductos;
-        if (tipo != 22 && tipo != 14 && tipo != 15 && tipo != 19 && tipo != 28) {
-            if (tipo != 19) {
-                this.productosDormitorioService.categoria12(tipo).subscribe(data => {
-                    var array = [];
-                    var array1 = [];
-                    var objeto = {};
-                    var cont = 0;
-                    var cont1 = 0;
-                    var altura;
-                    var nombre = '';
-                    for (let i = 0; i < data.body['length']; i++) {
-                        if (
-                            data.body[i][0]['id'] != 15 &&
-                            data.body[i][0]['id'] != 16 &&
-                            data.body[i][0]['id'] != 412 &&
-                            data.body[i][0]['id'] != 406 &&
-                            data.body[i][0]['id'] != 407 &&
-                            data.body[i][0]['id'] != 409 &&
-                            data.body[i][0]['id'] != 403 &&
-                            data.body[i][0]['id'] != 32 &&
-                            data.body[i][0]['id'] != 212
-                        ) {
-                            data.body[i][0]['altura'] = data.body[i][1];
-                            if (i == 0) {
-                                altura = data.body[i][1];
-                                array[i] = data.body[i][0];
-                            }
-
-                            if (data.body[i][0]['id'] != array[cont1]['id']) {
-                                cont1++;
-                                array[cont1] = data.body[i][0];
-                                nombre = '';
-                            }
-
-                            if (altura != data.body[i][1]) {
-                                cont++;
-                                altura = data.body[i][1];
-                                nombre = '';
-                            }
-
-                            if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
-                                if (nombre == '') {
-                                    nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
-                                } else {
-                                    nombre = nombre + '-' + data.body[i][2];
+        if (tipo != 22) {
+            if (tipo != 14 && tipo != 15 && tipo != 19 && tipo != 28) {
+                if (tipo != 19) {
+                    this.productosDormitorioService.categoria12(tipo).subscribe(data => {
+                        var array = [];
+                        var array1 = [];
+                        var objeto = {};
+                        var cont = 0;
+                        var cont1 = 0;
+                        var altura;
+                        var nombre = '';
+                        for (let i = 0; i < data.body['length']; i++) {
+                            if (
+                                data.body[i][0]['id'] != 15 &&
+                                data.body[i][0]['id'] != 16 &&
+                                data.body[i][0]['id'] != 412 &&
+                                data.body[i][0]['id'] != 406 &&
+                                data.body[i][0]['id'] != 407 &&
+                                data.body[i][0]['id'] != 409 &&
+                                data.body[i][0]['id'] != 403 &&
+                                data.body[i][0]['id'] != 32 &&
+                                data.body[i][0]['id'] != 212
+                            ) {
+                                data.body[i][0]['altura'] = data.body[i][1];
+                                if (i == 0) {
+                                    altura = data.body[i][1];
+                                    array[i] = data.body[i][0];
                                 }
-                                array[cont1]['imagenNombre'] = nombre;
+
+                                if (data.body[i][0]['id'] != array[cont1]['id']) {
+                                    cont1++;
+                                    array[cont1] = data.body[i][0];
+                                    nombre = '';
+                                }
+
+                                if (altura != data.body[i][1]) {
+                                    cont++;
+                                    altura = data.body[i][1];
+                                    nombre = '';
+                                }
+
+                                if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                                    if (nombre == '') {
+                                        nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                                    } else {
+                                        nombre = nombre + '-' + data.body[i][2];
+                                    }
+                                    array[cont1]['imagenNombre'] = nombre;
+                                    array[cont1]['mensaje'] = data.body[i][2];
+                                }
+                                array1[cont] = data.body[i][1];
                             }
-                            array1[cont] = data.body[i][1];
                         }
-                    }
-                    this.alturaArray = array1;
-                    this.modulosBajos = array;
-                    console.log(array);
-                });
+                        this.alturaArray = array1;
+                        this.modulosBajos = array;
+                        console.log(array);
+                    });
+                } else {
+                    this.productosDormitorioService.categoria13(tipo).subscribe(data => {
+                        var array = [];
+                        var array1 = [];
+                        var objeto = {};
+                        var cont = 0;
+                        var cont1 = 0;
+                        var altura;
+                        var nombre = '';
+                        for (let i = 0; i < data.body['length']; i++) {
+                            if (
+                                data.body[i][0]['id'] != 15 &&
+                                data.body[i][0]['id'] != 16 &&
+                                data.body[i][0]['id'] != 412 &&
+                                data.body[i][0]['id'] != 406 &&
+                                data.body[i][0]['id'] != 407 &&
+                                data.body[i][0]['id'] != 409 &&
+                                data.body[i][0]['id'] != 403 &&
+                                data.body[i][0]['id'] != 32 &&
+                                data.body[i][0]['id'] != 211 &&
+                                data.body[i][0]['id'] != 212
+                            ) {
+                                data.body[i][0]['altura'] = data.body[i][1];
+                                if (i == 0) {
+                                    altura = data.body[i][1];
+                                    array[i] = data.body[i][0];
+                                }
+
+                                if (data.body[i][0]['id'] != array[cont1]['id']) {
+                                    cont1++;
+                                    array[cont1] = data.body[i][0];
+                                    nombre = '';
+                                }
+
+                                if (altura != data.body[i][1]) {
+                                    cont++;
+                                    altura = data.body[i][1];
+                                    nombre = '';
+                                }
+
+                                if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                                    if (nombre == '') {
+                                        nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
+                                    } else {
+                                        nombre = nombre + '-' + data.body[i][2];
+                                    }
+                                    array[cont1]['imagenNombre'] = nombre;
+                                    array[cont1]['mensaje'] = data.body[i][2];
+                                }
+
+                                array1[cont] = data.body[i][1];
+                            }
+                        }
+                        this.alturaArray = array1;
+                        this.modulosBajos = array;
+                        console.log(array);
+                    });
+                }
             } else {
-                this.productosDormitorioService.categoria13(tipo).subscribe(data => {
+                this.productosDormitorioService.categoria14(tipo).subscribe(data => {
                     var array = [];
                     var array1 = [];
                     var objeto = {};
@@ -1778,7 +1835,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             data.body[i][0]['id'] != 409 &&
                             data.body[i][0]['id'] != 403 &&
                             data.body[i][0]['id'] != 32 &&
-                            data.body[i][0]['id'] != 211 &&
                             data.body[i][0]['id'] != 212
                         ) {
                             data.body[i][0]['altura'] = data.body[i][1];
@@ -1806,14 +1862,21 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     nombre = nombre + '-' + data.body[i][2];
                                 }
                                 array[cont1]['imagenNombre'] = nombre;
+                                array[cont1]['mensaje'] = data.body[i][2];
                             }
 
-                            array1[cont] = data.body[i][1];
+                            array1[0] = data.body[i][1];
                         }
+                    }
+                    for (let u = 0; u < array.length; u++) {
+                        array[u]['altura'] = array1[0];
                     }
                     this.alturaArray = array1;
                     this.modulosBajos = array;
                     console.log(array);
+                    setTimeout(function() {
+                        $('#palturaparaquitarlomesas').css({ display: 'none' });
+                    }, 100);
                 });
             }
         } else {
@@ -1843,7 +1906,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             array[i] = data.body[i][0];
                         }
 
-                        if (data.body[i][0]['id'] != array[cont1]['id']) {
+                        if (i != 0) {
                             cont1++;
                             array[cont1] = data.body[i][0];
                             nombre = '';
@@ -1855,13 +1918,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             nombre = '';
                         }
 
-                        if (data.body[i][0]['id'] == array[cont1]['id'] && altura == data.body[i][1]) {
+                        if (altura == data.body[i][1]) {
                             if (nombre == '') {
                                 nombre = '../../../content/images/comedores/ESPECIALES/' + data.body[i][2];
                             } else {
                                 nombre = nombre + '-' + data.body[i][2];
                             }
                             array[cont1]['imagenNombre'] = nombre;
+                            array[cont1]['mensaje'] = data.body[i][2];
                         }
 
                         array1[0] = data.body[i][1];
@@ -1870,8 +1934,26 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 for (let u = 0; u < array.length; u++) {
                     array[u]['altura'] = array1[0];
                 }
+                var realArray = [];
+                realArray = array;
+                var mes1 = array[0];
+                var mes2 = array[1];
+                var mes3 = array[2];
+                var mes4 = array[3];
+                var mes5 = array[4];
+                var mes6 = array[5];
+                var mes7 = array[6];
+                var mes8 = array[7];
+                realArray[0] = mes1;
+                realArray[1] = mes3;
+                realArray[2] = mes2;
+                realArray[3] = mes4;
+                realArray[4] = mes5;
+                realArray[5] = mes7;
+                realArray[6] = mes6;
+                realArray[7] = mes8;
                 this.alturaArray = array1;
-                this.modulosBajos = array;
+                this.modulosBajos = realArray;
                 console.log(array);
                 setTimeout(function() {
                     $('#palturaparaquitarlomesas').css({ display: 'none' });
@@ -1880,8 +1962,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
     }
 
-    public paso1cogerespecial(id, altura) {
+    public paso1cogerespecial(id, altura, mensaje) {
         this.alturaseleccionada = altura;
+        this.numeroInteriorArmario = mensaje;
         this.idDelProducto = id;
         $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'block' });
         $('.divseleccionarcodigoCategorias').css({ display: 'none' });
@@ -1911,108 +1994,437 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public tipoEspecialCogido(id) {
         var idProd = this.idDelProducto;
+        var tipo = this.tipoProductos;
+        var mensaje = this.numeroInteriorArmario;
         var array = [];
         var cont = 0;
         var min;
         var max;
         this.especiales = [];
-        if (id == 1) {
-            this.medidasEspecialesService.findProd(idProd, this.alturaseleccionada).subscribe(data => {
-                console.log(data.body);
-                min = data.body[0]['min'];
-                max = data.body[0]['max'];
-                var entro1vez = 0;
-                this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
-                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
-                        for (let i = min; i <= max; i++) {
-                            entro1vez = 0;
-                            for (let u = 0; u < data.body['length']; u++) {
-                                if (data.body[u]['ancho'] == i) {
-                                    entro1vez = 1;
+        if (tipo != 22) {
+            if (id == 1) {
+                this.medidasEspecialesService.findProd(idProd, this.alturaseleccionada).subscribe(data => {
+                    console.log(data.body);
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    var entro1vez = 0;
+                    this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
+                        if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                            for (let i = min; i <= max; i++) {
+                                entro1vez = 0;
+                                for (let u = 0; u < data.body['length']; u++) {
+                                    if (data.body[u]['ancho'] == i) {
+                                        entro1vez = 1;
+                                    }
+                                }
+                                if (entro1vez != 1) {
+                                    array[cont] = i;
+                                    cont++;
                                 }
                             }
-                            if (entro1vez != 1) {
-                                array[cont] = i;
-                                cont++;
+                        } else {
+                            for (let i = min; i <= max; ) {
+                                entro1vez = 0;
+                                for (let u = 0; u < data.body['length']; u++) {
+                                    if (data.body[u]['ancho'] == i) {
+                                        entro1vez = 1;
+                                    }
+                                }
+                                if (entro1vez != 1) {
+                                    array[cont] = i;
+                                    cont++;
+                                }
+                                i = i + 0.5;
                             }
+                        }
+                    });
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecial #textoEspecial').text('ANCHO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecial').attr('id', 'simplepruebaani');
+                });
+            }
+            if (id == 2) {
+                this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
+                    this.anchos = data.body;
+                });
+                this.medidasEspecialesService.findProd1(idProd, this.alturaseleccionada).subscribe(data => {
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                        for (let i = min; i <= max; i++) {
+                            array[cont] = i;
+                            cont++;
                         }
                     } else {
                         for (let i = min; i <= max; ) {
-                            entro1vez = 0;
-                            for (let u = 0; u < data.body['length']; u++) {
-                                if (data.body[u]['ancho'] == i) {
-                                    entro1vez = 1;
-                                }
-                            }
-                            if (entro1vez != 1) {
-                                array[cont] = i;
-                                cont++;
-                            }
+                            array[cont] = i;
+                            cont++;
                             i = i + 0.5;
                         }
                     }
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura #textoEspecial').text('ALTO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura').attr('id', 'simplepruebaani');
                 });
-                this.especiales = array;
-                console.log(this.especiales);
-                $('.divseleccionarcodigoEscogerMedidaEspecial #textoEspecial').text('ANCHO ESPECIAL');
-                $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'block' });
-                $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
-                $('.divseleccionarcodigoEscogerMedidaEspecial').attr('id', 'simplepruebaani');
-            });
-        }
-        if (id == 2) {
-            this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
-                this.anchos = data.body;
-            });
-            this.medidasEspecialesService.findProd1(idProd, this.alturaseleccionada).subscribe(data => {
-                min = data.body[0]['min'];
-                max = data.body[0]['max'];
-                if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
-                    for (let i = min; i <= max; i++) {
-                        array[cont] = i;
-                        cont++;
+            }
+            if (id == 3) {
+                this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
+                    this.anchos = data.body;
+                });
+                this.medidasEspecialesService.findProd2(idProd, this.alturaseleccionada).subscribe(data => {
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                        for (let i = min; i <= max; i++) {
+                            array[cont] = i;
+                            cont++;
+                        }
+                    } else {
+                        for (let i = min; i <= max; ) {
+                            array[cont] = i;
+                            cont++;
+                            i = i + 0.5;
+                        }
                     }
-                } else {
-                    for (let i = min; i <= max; ) {
-                        array[cont] = i;
-                        cont++;
-                        i = i + 0.5;
-                    }
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo #textoEspecial').text('FONDO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo').attr('id', 'simplepruebaani');
+                });
+            }
+        } else {
+            if (id == 1) {
+                var idMensa = 0;
+                if (mensaje == 'NH493') {
+                    idMensa = 716;
                 }
-                this.especiales = array;
-                console.log(this.especiales);
-                $('.divseleccionarcodigoEscogerMedidaEspecialAltura #textoEspecial').text('ALTO ESPECIAL');
-                $('.divseleccionarcodigoEscogerMedidaEspecialAltura').css({ display: 'block' });
-                $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
-                $('.divseleccionarcodigoEscogerMedidaEspecialAltura').attr('id', 'simplepruebaani');
-            });
-        }
-        if (id == 3) {
-            this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
-                this.anchos = data.body;
-            });
-            this.medidasEspecialesService.findProd2(idProd, this.alturaseleccionada).subscribe(data => {
-                min = data.body[0]['min'];
-                max = data.body[0]['max'];
-                if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
-                    for (let i = min; i <= max; i++) {
-                        array[cont] = i;
-                        cont++;
-                    }
-                } else {
-                    for (let i = min; i <= max; ) {
-                        array[cont] = i;
-                        cont++;
-                        i = i + 0.5;
-                    }
+                if (mensaje == 'NH494') {
+                    idMensa = 718;
                 }
-                this.especiales = array;
-                console.log(this.especiales);
-                $('.divseleccionarcodigoEscogerMedidaEspecialFondo #textoEspecial').text('FONDO ESPECIAL');
-                $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'block' });
-                $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
-                $('.divseleccionarcodigoEscogerMedidaEspecialFondo').attr('id', 'simplepruebaani');
-            });
+                if (mensaje == 'NH495') {
+                    idMensa = 717;
+                }
+                if (mensaje == 'NH496') {
+                    idMensa = 719;
+                }
+                if (mensaje == 'NH497') {
+                    idMensa = 720;
+                }
+                if (mensaje == 'NH498') {
+                    idMensa = 722;
+                }
+                if (mensaje == 'NH499') {
+                    idMensa = 721;
+                }
+                if (mensaje == 'NH500') {
+                    idMensa = 723;
+                }
+                if (mensaje == 'NH501') {
+                    idMensa = 724;
+                }
+                if (mensaje == 'NH502') {
+                    idMensa = 725;
+                }
+                if (mensaje == 'NH503') {
+                    idMensa = 726;
+                }
+                if (mensaje == 'NH504') {
+                    idMensa = 727;
+                }
+                if (mensaje == 'NH505') {
+                    idMensa = 728;
+                }
+                if (mensaje == 'NH506') {
+                    idMensa = 729;
+                }
+                if (mensaje == 'NH507') {
+                    idMensa = 730;
+                }
+                if (mensaje == 'NH508') {
+                    idMensa = 731;
+                }
+                if (mensaje == 'NH509') {
+                    idMensa = 732;
+                }
+                if (mensaje == 'NH510') {
+                    idMensa = 733;
+                }
+                if (mensaje == 'NH511') {
+                    idMensa = 734;
+                }
+                this.medidasEspecialesService.findProdMesa(idMensa, this.alturaseleccionada).subscribe(data => {
+                    console.log(data.body);
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    var entro1vez = 0;
+                    this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
+                        if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                            for (let i = min; i <= max; i++) {
+                                entro1vez = 0;
+                                for (let u = 0; u < data.body['length']; u++) {
+                                    if (data.body[u]['ancho'] == i) {
+                                        entro1vez = 1;
+                                    }
+                                }
+                                if (entro1vez != 1) {
+                                    array[cont] = i;
+                                    cont++;
+                                }
+                            }
+                        } else {
+                            for (let i = min; i <= max; ) {
+                                entro1vez = 0;
+                                for (let u = 0; u < data.body['length']; u++) {
+                                    if (data.body[u]['ancho'] == i) {
+                                        entro1vez = 1;
+                                    }
+                                }
+                                if (entro1vez != 1) {
+                                    array[cont] = i;
+                                    cont++;
+                                }
+                                i = i + 0.5;
+                            }
+                        }
+                    });
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecial #textoEspecial').text('ANCHO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecial').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecial').attr('id', 'simplepruebaani');
+                });
+            }
+            if (id == 2) {
+                var idMensa = 0;
+                var anchoMesa = 0;
+                if (mensaje == 'NH493') {
+                    idMensa = 735;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH494') {
+                    idMensa = 737;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH495') {
+                    idMensa = 736;
+                    anchoMesa = 150;
+                }
+                if (mensaje == 'NH496') {
+                    idMensa = 738;
+                    anchoMesa = 150;
+                }
+                if (mensaje == 'NH497') {
+                    idMensa = 739;
+                    anchoMesa = 140;
+                }
+                if (mensaje == 'NH498') {
+                    idMensa = 741;
+                    anchoMesa = 140;
+                }
+                if (mensaje == 'NH499') {
+                    idMensa = 740;
+                    anchoMesa = 160;
+                }
+                if (mensaje == 'NH500') {
+                    idMensa = 742;
+                    anchoMesa = 160;
+                }
+                if (mensaje == 'NH501') {
+                    idMensa = 743;
+                    anchoMesa = 120;
+                }
+                if (mensaje == 'NH502') {
+                    idMensa = 744;
+                    anchoMesa = 110;
+                }
+                if (mensaje == 'NH503') {
+                    idMensa = 745;
+                    anchoMesa = 115;
+                }
+                if (mensaje == 'NH504') {
+                    idMensa = 746;
+                    anchoMesa = 60;
+                }
+                if (mensaje == 'NH505') {
+                    idMensa = 747;
+                    anchoMesa = 80;
+                }
+                if (mensaje == 'NH506') {
+                    idMensa = 748;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH507') {
+                    idMensa = 749;
+                    anchoMesa = 120;
+                }
+                if (mensaje == 'NH508') {
+                    idMensa = 750;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH509') {
+                    idMensa = 751;
+                    anchoMesa = 70;
+                }
+                if (mensaje == 'NH510') {
+                    idMensa = 752;
+                    anchoMesa = 80;
+                }
+                if (mensaje == 'NH511') {
+                    idMensa = 753;
+                    anchoMesa = 65;
+                }
+                this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
+                    for (let w = 0; w < data.body.length; w++) {
+                        if (anchoMesa == data.body[w]) {
+                            var arrayancho = [];
+                            arrayancho[0] = data.body[w];
+                            this.anchos = arrayancho;
+                        }
+                    }
+                });
+                this.medidasEspecialesService.findProd1Mesa(idMensa, this.alturaseleccionada).subscribe(data => {
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                        for (let i = min; i <= max; i++) {
+                            array[cont] = i;
+                            cont++;
+                        }
+                    } else {
+                        for (let i = min; i <= max; ) {
+                            array[cont] = i;
+                            cont++;
+                            i = i + 0.5;
+                        }
+                    }
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura #textoEspecial').text('ALTO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecialAltura').attr('id', 'simplepruebaani');
+                });
+            }
+            if (id == 3) {
+                var idMensa = 0;
+                var anchoMesa = 0;
+                if (mensaje == 'NH493') {
+                    idMensa = 754;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH494') {
+                    idMensa = 756;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH495') {
+                    idMensa = 755;
+                    anchoMesa = 150;
+                }
+                if (mensaje == 'NH496') {
+                    idMensa = 757;
+                    anchoMesa = 150;
+                }
+                if (mensaje == 'NH497') {
+                    idMensa = 758;
+                    anchoMesa = 140;
+                }
+                if (mensaje == 'NH498') {
+                    idMensa = 760;
+                    anchoMesa = 140;
+                }
+                if (mensaje == 'NH499') {
+                    idMensa = 759;
+                    anchoMesa = 160;
+                }
+                if (mensaje == 'NH500') {
+                    idMensa = 761;
+                    anchoMesa = 160;
+                }
+                if (mensaje == 'NH501') {
+                    idMensa = 762;
+                    anchoMesa = 120;
+                }
+                if (mensaje == 'NH502') {
+                    idMensa = 763;
+                    anchoMesa = 110;
+                }
+                if (mensaje == 'NH503') {
+                    idMensa = 764;
+                    anchoMesa = 115;
+                }
+                if (mensaje == 'NH504') {
+                    idMensa = 765;
+                    anchoMesa = 60;
+                }
+                if (mensaje == 'NH505') {
+                    idMensa = 766;
+                    anchoMesa = 80;
+                }
+                if (mensaje == 'NH506') {
+                    idMensa = 767;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH507') {
+                    idMensa = 768;
+                    anchoMesa = 120;
+                }
+                if (mensaje == 'NH508') {
+                    idMensa = 769;
+                    anchoMesa = 130;
+                }
+                if (mensaje == 'NH509') {
+                    idMensa = 770;
+                    anchoMesa = 70;
+                }
+                if (mensaje == 'NH510') {
+                    idMensa = 771;
+                    anchoMesa = 80;
+                }
+                if (mensaje == 'NH511') {
+                    idMensa = 772;
+                    anchoMesa = 65;
+                }
+                this.dimensionesProductoTipoService.findProductoEspecial(this.idDelProducto).subscribe(data => {
+                    for (let w = 0; w < data.body.length; w++) {
+                        if (anchoMesa == data.body[w]) {
+                            var arrayancho = [];
+                            arrayancho[0] = data.body[w];
+                            this.anchos = arrayancho;
+                        }
+                    }
+                });
+                this.medidasEspecialesService.findProd2Mesa(idMensa, this.alturaseleccionada).subscribe(data => {
+                    min = data.body[0]['min'];
+                    max = data.body[0]['max'];
+                    if (idProd != 17 && idProd != 18 && idProd != 404 && idProd != 405) {
+                        for (let i = min; i <= max; i++) {
+                            array[cont] = i;
+                            cont++;
+                        }
+                    } else {
+                        for (let i = min; i <= max; ) {
+                            array[cont] = i;
+                            cont++;
+                            i = i + 0.5;
+                        }
+                    }
+                    this.especiales = array;
+                    console.log(this.especiales);
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo #textoEspecial').text('FONDO ESPECIAL');
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo').css({ display: 'block' });
+                    $('.divseleccionarcodigoEscogerTipoEspecial').css({ display: 'none' });
+                    $('.divseleccionarcodigoEscogerMedidaEspecialFondo').attr('id', 'simplepruebaani');
+                });
+            }
         }
     }
 
@@ -2035,6 +2447,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#volverAtras100MeterCasa').css({ display: 'block' });
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
+        var tipoSiesMesa = this.tipoProductos;
+        var mensajeSoloMesa = this.numeroInteriorArmario;
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
@@ -2156,12 +2570,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }, 1000);
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
-            for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
-                    var datos = data.body[i];
-                    data.body[i]['ancho'] = codigo;
-                    data.body[i]['mensajeEspecial'] = 'Ancho especial';
-                    cogidoggmenez = 1;
+            if (tipoSiesMesa != 22) {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['ancho'] = codigo;
+                        data.body[i]['mensajeEspecial'] = 'Ancho especial';
+                        cogidoggmenez = 1;
+                    }
+                }
+            } else {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['mensaje'] == mensajeSoloMesa && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['ancho'] = codigo;
+                        data.body[i]['mensajeEspecial'] = 'Ancho especial';
+                        cogidoggmenez = 1;
+                    }
                 }
             }
             if (cogidoggmenez == 0) {
@@ -8236,6 +8661,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#volverAtras100MeterCasa').css({ display: 'block' });
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
+        var tipoSiesMesa = this.tipoProductos;
+        var mensajeSoloMesa = this.numeroInteriorArmario;
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
@@ -8357,12 +8784,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }, 1000);
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
-            for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
-                    var datos = data.body[i];
-                    data.body[i]['alto'] = this.alturas;
-                    data.body[i]['mensajeEspecial'] = 'Alto especial';
-                    cogidoggmenez = 1;
+            if (tipoSiesMesa != 22) {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['alto'] = this.alturas;
+                        data.body[i]['mensajeEspecial'] = 'Alto especial';
+                        cogidoggmenez = 1;
+                    }
+                }
+            } else {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['mensaje'] == mensajeSoloMesa && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['alto'] = this.alturas;
+                        data.body[i]['mensajeEspecial'] = 'Alto especial';
+                        cogidoggmenez = 1;
+                    }
                 }
             }
 
@@ -14218,6 +14656,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#volverAtras100MeterCasa').css({ display: 'block' });
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
+        var tipoSiesMesa = this.tipoProductos;
+        var mensajeSoloMesa = this.numeroInteriorArmario;
         var precioTienda1;
         $('#total').text(0);
         $('.divBuscadorArticulos').css({ display: 'block' });
@@ -14339,13 +14779,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }, 1000);
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
-
-            for (let i = 0; i < data.body['length']; i++) {
-                if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
-                    var datos = data.body[i];
-                    data.body[i]['fondo'] = this.fondos;
-                    data.body[i]['mensajeEspecial'] = 'Fondo especial';
-                    cogidoggmenez = 1;
+            if (tipoSiesMesa != 22) {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['ancho'] == codigo && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['fondo'] = this.fondos;
+                        data.body[i]['mensajeEspecial'] = 'Fondo especial';
+                        cogidoggmenez = 1;
+                    }
+                }
+            } else {
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['mensaje'] == mensajeSoloMesa && cogidoggmenez == 0) {
+                        var datos = data.body[i];
+                        data.body[i]['fondo'] = this.fondos;
+                        data.body[i]['mensajeEspecial'] = 'Fondo especial';
+                        cogidoggmenez = 1;
+                    }
                 }
             }
             var todosLosDatos = data.body;

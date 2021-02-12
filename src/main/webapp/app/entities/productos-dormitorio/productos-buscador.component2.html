@@ -2093,7 +2093,7 @@
 			<div  *ngFor="let codigo1 of alturaArray" style="float:left;width:100%;margin-top: 15px;margin-bottom: 85px;">
 				<p style="width:100%;text-align:center;font-size:60px;letter-spacing: 4px;margin-bottom: 10%;margin-top: 265px;" id="palturaparaquitarlomesas">ALTURA {{codigo1}}</p>
 				<div *ngFor="let codigo of modulosBajos">
-		        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" *ngIf="codigo1 === codigo.altura" id="pruebahoverdiv" (click)="paso1cogerespecial(codigo.id,codigo.altura)">
+		        	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" *ngIf="codigo1 === codigo.altura" id="pruebahoverdiv" (click)="paso1cogerespecial(codigo.id,codigo.altura,codigo.mensaje)">
 		        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="{{codigo.imagenNombre}}.jpg">
 		        	</div>
 	        	</div>

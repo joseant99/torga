@@ -42,8 +42,8 @@ export class DimensionesProductoTipoService {
     findProducto(id: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-prod/${id}`, { observe: 'response' });
     }
-    findProductoEspecial(id: any): Observable<EntityResponseType> {
-        return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-buscado-prod1/${id}`, { observe: 'response' });
+    findProductoEspecial(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IDimensionesProductoTipo[]>(`${this.resourceUrl}-buscado-prod1/${id}`, { observe: 'response' });
     }
     findFiltro(id: number, ancho: any): Observable<EntityResponseType> {
         return this.http.get<IDimensionesProductoTipo>(`${this.resourceUrl}-filtrado/${id}/${ancho}`, { observe: 'response' });

@@ -21,4 +21,10 @@ public interface MedidasEspecialesRepository extends JpaRepository<MedidasEspeci
 	Collection<MedidasEspeciales> findByProd1(Long id,Float altura);
 	@Query("Select u from MedidasEspeciales u where u.productosDormitorio.id = ?1 and u.fondo = 1 and u.altura = ?2 order by u.id")
 	Collection<MedidasEspeciales> findByProd2(Long id,Float altura);
+	@Query("Select u from MedidasEspeciales u where u.id = ?1 and u.ancho = 1 and u.altura = ?2 order by u.id")
+	Collection<MedidasEspeciales> findByProdMesa(Long id,Float altura);
+	@Query("Select u from MedidasEspeciales u where u.id = ?1 and u.alto = 1 and u.altura = ?2 order by u.id")
+	Collection<MedidasEspeciales> findByProd1Mesa(Long id,Float altura);
+	@Query("Select u from MedidasEspeciales u where u.id = ?1 and u.fondo = 1 and u.altura = ?2 order by u.id")
+	Collection<MedidasEspeciales> findByProd2Mesa(Long id,Float altura);
 }

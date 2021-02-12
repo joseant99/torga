@@ -139,6 +139,48 @@ public class MedidasEspecialesResource {
         Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd2(id,altura);
         return ResponseEntity.ok().body(page);
     }
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus-mesa/{id}/{altura}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProdsMesa(@PathVariable Long id, @PathVariable Float altura) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProdMesa(id,altura);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus1-mesa/{id}/{altura}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds1Mesa(@PathVariable Long id, @PathVariable Float altura) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd1Mesa(id,altura);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    /**
+     * GET  /medidas-especiales : get all the medidasEspeciales.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of medidasEspeciales in body
+     */
+    @GetMapping("/medidas-especiales-bus2-mesa/{id}/{altura}")
+    @Timed
+    public ResponseEntity<Collection<MedidasEspeciales>> getAllMedidasEspecialesProds2Mesa(@PathVariable Long id, @PathVariable Float altura) {
+        log.debug("REST request to get a page of MedidasEspeciales");
+        Collection<MedidasEspeciales> page = medidasEspecialesRepository.findByProd2Mesa(id,altura);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /medidas-especiales/:id : get the "id" medidasEspeciales.
