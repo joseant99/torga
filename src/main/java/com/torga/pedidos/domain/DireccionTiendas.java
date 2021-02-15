@@ -46,7 +46,7 @@ public class DireccionTiendas implements Serializable {
     @Column(name = "nombre")
     private String nombre;
     
-    @Column(name = "tipoDir")
+    @Column(name = "tipo_dir")
     private String tipoDir;
     
     @Column(name = "email")

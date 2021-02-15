@@ -149,6 +149,12 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     alturaseleccionada: any;
     idApoyoSecundario: any;
     anchofondoespecial: any;
+    adicionalesArray: any;
+    adicionalesArray0: any;
+    adicionalesArray1: any;
+    adicionalesArray2: any;
+    adicionalesArray3: any;
+    adicionalesArray4: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -1096,6 +1102,323 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.classintdivmen19').css({ display: 'block' });
                 $('.classintdivmen20').css({ display: 'block' });
                 $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+    }
+
+    public adcionaltipoFuncion(id) {
+        var huecoPinta = this.armariosDormitorioComponent.huecoPinta;
+
+        var precio = 0;
+
+        var array = [];
+        if (huecoPinta == 1) {
+            array = this.adicionalesArray0;
+        }
+        if (huecoPinta == 2) {
+            array = this.adicionalesArray1;
+        }
+        if (huecoPinta == 3) {
+            array = this.adicionalesArray2;
+        }
+        if (huecoPinta == 4) {
+            array = this.adicionalesArray3;
+        }
+        if (huecoPinta == 5) {
+            array = this.adicionalesArray4;
+        }
+        var cont = array.length;
+        var arraymeter = '';
+        if (id == 0) {
+            precio = precio + 40;
+            arraymeter = 'ESTANTE MADERA ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ESTANTE MADERA ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
+        }
+        if (id == 1) {
+            precio = precio + 50;
+            arraymeter = 'ESTANTE DE CRISTAL ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ESTANTE DE CRISTAL ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
+        }
+        if (id == 2) {
+            precio = precio + 15;
+            arraymeter = 'BARRA DE COLGAR ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'BARRA DE COLGAR ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
+        }
+        if (id == 3) {
+            precio = precio + 90;
+            arraymeter = '1 CAJON ADICIONAL DE SUELO';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                '1 CAJON ADICIONAL DE SUELO'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+        }
+        if (id == 4) {
+            precio = precio + 48;
+            arraymeter = 'CAMISERO DE 1 ALTURA';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 1 ALTURA');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
+        }
+        if (id == 5) {
+            precio = precio + 96;
+            arraymeter = 'CAMISERO DE 2 ALTURAS';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 2 ALTURAS');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
+        }
+        if (id == 6) {
+            precio = precio + 144;
+            arraymeter = 'CAMISERO DE 3 ALTURAS';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 3 ALTURAS');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
+        }
+        if (id == 7) {
+            precio = precio + 205;
+            arraymeter = 'ZAPATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ZAPATERO LATERAL EXTRAIBLE'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('205 PP');
+        }
+        if (id == 8) {
+            precio = precio + 80;
+            arraymeter = 'PANTALONERO EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('PANTALONERO EXTRAIBLE');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
+        }
+        if (id == 9) {
+            precio = precio + 80;
+            arraymeter = 'CORBATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'CORBATERO LATERAL EXTRAIBLE'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
+        }
+
+        for (let i = 0; i <= cont; i++) {
+            if (array[i] == undefined) {
+                array[i] = arraymeter;
+            }
+        }
+        var otroarray = [];
+        if (huecoPinta == 1) {
+            this.adicionalesArray0 = array;
+        }
+        if (huecoPinta == 2) {
+            this.adicionalesArray1 = array;
+        }
+        if (huecoPinta == 3) {
+            this.adicionalesArray2 = array;
+        }
+        if (huecoPinta == 4) {
+            this.adicionalesArray3 = array;
+        }
+        if (huecoPinta == 5) {
+            this.adicionalesArray4 = array;
+        }
+        var prec = $('#precioInt' + (huecoPinta - 1)).text();
+        prec = prec.split(' ')[1];
+        var precio1 = parseFloat(prec);
+        $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 + precio) + ' pp');
+        console.log(this.adicionalesArray0);
+    }
+
+    public eliminarAdicionales(u, id) {
+        var array = [];
+        var nuevoarray = [];
+        var huecoPinta = u + 1;
+        var cont = 0;
+        if (huecoPinta == 1) {
+            array = this.adicionalesArray0;
+        }
+        if (huecoPinta == 2) {
+            array = this.adicionalesArray1;
+        }
+        if (huecoPinta == 3) {
+            array = this.adicionalesArray2;
+        }
+        if (huecoPinta == 4) {
+            array = this.adicionalesArray3;
+        }
+        if (huecoPinta == 5) {
+            array = this.adicionalesArray4;
+        }
+        for (let i = 0; i < array.length; i++) {
+            if (i != id - 1) {
+                nuevoarray[cont] = array[i];
+                cont++;
+            } else {
+                var prec = $('#precioInt' + (huecoPinta - 1)).text();
+                prec = prec.split(' ')[1];
+                var precio1 = parseFloat(prec);
+                var precio = 0;
+                if (array[i] == 'ESTANTE MADERA ADICIONAL') {
+                    precio = 40;
+                }
+                if (array[i] == 'ESTANTE DE CRISTAL ADICIONAL') {
+                    precio = 50;
+                }
+                if (array[i] == 'BARRA DE COLGAR ADICIONAL') {
+                    precio = 15;
+                }
+                if (array[i] == '1 CAJON ADICIONAL DE SUELO') {
+                    precio = 90;
+                }
+                if (array[i] == 'CAMISERO DE 1 ALTURA') {
+                    precio = 48;
+                }
+                if (array[i] == 'CAMISERO DE 2 ALTURAS') {
+                    precio = 96;
+                }
+                if (array[i] == 'CAMISERO DE 3 ALTURAS') {
+                    precio = 144;
+                }
+                if (array[i] == 'ZAPATERO LATERAL EXTRAIBLE') {
+                    precio = 205;
+                }
+                $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 - precio) + ' pp');
+            }
+        }
+
+        if (huecoPinta == 1) {
+            this.adicionalesArray0 = nuevoarray;
+        }
+        if (huecoPinta == 2) {
+            this.adicionalesArray1 = nuevoarray;
+        }
+        if (huecoPinta == 3) {
+            this.adicionalesArray2 = nuevoarray;
+        }
+        if (huecoPinta == 4) {
+            this.adicionalesArray3 = nuevoarray;
+        }
+        if (huecoPinta == 5) {
+            this.adicionalesArray4 = nuevoarray;
+        }
+        var precio = 0;
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8').css({ display: 'none' });
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7 #preciosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8 #textosolo').text('');
+        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8 #preciosolo').text('');
+        for (let w = 0; w < nuevoarray.length; w++) {
+            var cont = w;
+
+            if (nuevoarray[w] == 'ESTANTE MADERA ADICIONAL') {
+                precio = precio + 40;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'ESTANTE MADERA ADICIONAL'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
+            }
+            if (nuevoarray[w] == 'ESTANTE DE CRISTAL ADICIONAL') {
+                precio = precio + 50;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'ESTANTE DE CRISTAL ADICIONAL'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
+            }
+            if (nuevoarray[w] == 'BARRA DE COLGAR ADICIONAL') {
+                precio = precio + 15;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'BARRA DE COLGAR ADICIONAL'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
+            }
+            if (nuevoarray[w] == '1 CAJON ADICIONAL DE SUELO') {
+                precio = precio + 90;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    '1 CAJON ADICIONAL DE SUELO'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+            }
+            if (nuevoarray[w] == 'CAMISERO DE 1 ALTURA') {
+                precio = precio + 48;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 1 ALTURA'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
+            }
+            if (nuevoarray[w] == 'CAMISERO DE 2 ALTURAS') {
+                precio = precio + 96;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 2 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
+            }
+            if (nuevoarray[w] == 'CAMISERO DE 3 ALTURAS') {
+                precio = precio + 144;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 3 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
+            }
+            if (nuevoarray[w] == 'ZAPATERO LATERAL EXTRAIBLE') {
+                precio = precio + 205;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'ZAPATERO LATERAL EXTRAIBLE'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('205 PP');
+            }
+            if (nuevoarray[w] == 'PANTALONERO EXTRAIBLE') {
+                precio = precio + 80;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'PANTALONERO EXTRAIBLE'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
+            }
+            if (nuevoarray[w] == 'CORBATERO LATERAL EXTRAIBLE') {
+                precio = precio + 80;
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CORBATERO LATERAL EXTRAIBLE'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
             }
         }
     }
@@ -15054,6 +15377,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     $('#datos1').append(
                         '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
                     );
+                    $('#datos1').append(
+                        '<p style="width:100%;display:none" id="apoyoMostrarMensajeSoloEspecial"><strong>Incremento Especial Apoyo:</strong> +30%</p>'
+                    );
                 }
             });
             for (let h = 0; h < 14; h++) {
@@ -21207,6 +21533,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
                     $('#datos1').append(
                         '<p style="width:100%"><input id="apoyoCalculadoraTexto" data-toggle="modal" data-target="#modalApoyo1" height="30px" border="0" width="200px" style="margin-left:20px;text-align:center" readonly="readonly"/></p>'
+                    );
+                    $('#datos1').append(
+                        '<p style="width:100%;display:none" id="apoyoMostrarMensajeSoloEspecial"><strong>Incremento Especial Apoyo:</strong> +30%</p>'
                     );
                 }
             });
@@ -31122,6 +31451,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     }
 
     public apoyoCogido(id) {
+        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'none' });
         $('#iluminacion').removeAttr('style');
         $('#apoyoDatosTexto').remove();
         var precioTienda = this.precioTienda;
@@ -32073,6 +32403,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     }
 
     public apoyoCogido1(id) {
+        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'none' });
         $('#iluminacion').removeAttr('style');
         $('#apoyoDatosTexto').remove();
         var precioTienda = this.precioTienda;
@@ -32234,6 +32565,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                     if (anchofondoespecial == 1) {
                                         precio = precio * 1.3;
                                         precio = Math.ceil(precio);
+                                        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32276,6 +32608,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                     if (anchofondoespecial == 1) {
                                         precio = precio * 1.3;
                                         precio = Math.ceil(precio);
+                                        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32320,6 +32653,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                     if (anchofondoespecial == 1) {
                                         precio = precio * 1.3;
                                         precio = Math.ceil(precio);
+                                        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32361,6 +32695,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                     if (anchofondoespecial == 1) {
                                         precio = precio * 1.3;
                                         precio = Math.ceil(precio);
+                                        $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                     }
                                     var totalfloat = parseFloat(precioDimension);
                                     totalfloat = totalfloat + precio;
@@ -32481,6 +32816,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                                 }
                                 precio = precio * 1.3;
                                 precio = Math.ceil(precio);
+                                $('#apoyoMostrarMensajeSoloEspecial').css({ display: 'block' });
                                 var totalfloat = parseFloat(precioDimension);
                                 totalfloat = totalfloat + precio;
                                 $('#precioDimension').text(totalfloat.toFixed(0));
@@ -33204,6 +33540,41 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             console.log(direccion);
                         }
                     }
+                    if (value['mensajeEspecial'] != undefined) {
+                        const precioApoyo = $('#precioApoyo').text();
+                        if (value['mensajeEspecial'] == 'Ancho especial') {
+                            if (apoyoBueno[1] != undefined) {
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                            }
+                        }
+                        if (value['mensajeEspecial'] == 'Fondo especial') {
+                            if (apoyoBueno[1] != undefined) {
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 18) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 17) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 16) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                                if (apoyoBueno[1]['productoApoyo']['id'] == 403) {
+                                    apoyoBueno[1]['precio'] = precioApoyo.split(' ')[1];
+                                    apoyoBueno[1]['especial'] = 'Incremento Apoyo Especial: +30%';
+                                }
+                            }
+                        }
+                    }
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;
                         value['alto'] = alto;
@@ -33543,6 +33914,13 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        this.adicionalesArray0 = [];
+        this.adicionalesArray1 = [];
+        this.adicionalesArray2 = [];
+        this.adicionalesArray3 = [];
+        this.adicionalesArray4 = [];
+        this.adicionalesArray = [];
+
         var productos = [];
         var apoyos = [];
         this.posicionEstanteria = 0;

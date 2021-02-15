@@ -176,6 +176,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     codigoparadivsAncho: any;
     estoesunapruebamen: any;
     esteeselfondonuevo: any;
+    adcionaltipo: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,

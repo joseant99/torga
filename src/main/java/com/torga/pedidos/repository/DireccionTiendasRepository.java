@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface DireccionTiendasRepository extends JpaRepository<DireccionTiendas, Long> {
-	@Query("Select u from DireccionTiendas u where u.datosUsuario.id = ?1 order by u.id")
+	@Query("Select u from DireccionTiendas u where u.datosUsuario.id = ?1 and u.tipoDir != 'COMERCIAL' order by u.id")
 	Collection<DireccionTiendas> findByCategoriaDormi(Long id);
 }

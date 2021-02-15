@@ -13803,10 +13803,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
                                     grosor: prodCarr[m][1]['grosor'],
-                                    fondo: prodCarr[m][1]['grosor'],
+                                    fondo: prodCarr[m][1]['grosor'].split(' ')[0],
                                     alto: prodCarr[m][1]['alto'],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
+                                prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];
                             }
                             var pilotousvar = '';
                             if (
@@ -14399,9 +14400,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
                                     grosor: prodCarr[m][1]['grosor'],
+                                    fondo: prodCarr[m][1]['grosor'].split(' ')[0],
                                     alto: prodCarr[m][1]['alto'],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
+                                prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];
                             }
                             if (prodCarr[m][1]['obsertext'] != undefined) {
                                 prodPrePed['observaciones'] = prodCarr[m][1]['obsertext'];
