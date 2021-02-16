@@ -177,6 +177,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     estoesunapruebamen: any;
     esteeselfondonuevo: any;
     adcionaltipo: any;
+    adicionalesArray0: any;
+    adicionalesArray1: any;
+    adicionalesArray2: any;
+    adicionalesArray3: any;
+    adicionalesArray4: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -278,6 +283,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
             precio = precio.split(' ')[1];
             todo[1]['interiores'][i]['precio'] = precio;
+            if (i == 0) {
+                if (this.adicionalesArray0 != undefined) {
+                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray0;
+                }
+            }
+            if (i == 1) {
+                if (this.adicionalesArray1 != undefined) {
+                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray1;
+                }
+            }
+            if (i == 2) {
+                if (this.adicionalesArray2 != undefined) {
+                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray2;
+                }
+            }
+            if (i == 3) {
+                if (this.adicionalesArray3 != undefined) {
+                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray3;
+                }
+            }
+            if (i == 4) {
+                if (this.adicionalesArray4 != undefined) {
+                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray4;
+                }
+            }
         }
 
         for (let i = 0; i < todo[1]['puertas'].length; i++) {

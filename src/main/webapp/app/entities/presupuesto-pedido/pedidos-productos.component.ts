@@ -1015,6 +1015,15 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             '</span></p>'
                                                     );
                                                 }
+                                                if (datosInteriores[p]['adicionales'] != null) {
+                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                        '<p id="pimprimirdatostexto"><strong>Adicionales Hueco ' +
+                                                            mai[p] +
+                                                            ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                            datosInteriores[p]['adicionales'] +
+                                                            '</span></p>'
+                                                    );
+                                                }
                                             }
                                             if ('1 CUERPO TIPO 1' == nombre) {
                                                 if (screen.width >= 800) {
@@ -13135,15 +13144,15 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                                 $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text(precioTotProd.toFixed(0));
                                             }
-                                            if (productos[i]['textoEspecial'] != undefined && productos[i]['textoEspecial'] != null) {
-                                                if (productos[i]['textoEspecial'] == 'Ancho especial') {
-                                                    $('.' + productos[w]['id'] + 'Datos #anchoSoloSecambiaEspecial').text('Ancho especial');
+                                            if (productos[w]['textoEspecial'] != undefined && productos[w]['textoEspecial'] != null) {
+                                                if (productos[w]['textoEspecial'] == 'Ancho especial') {
+                                                    $('#datosMeter' + w + ' #anchoSoloSecambiaEspecial').text('Ancho especial');
                                                 }
-                                                if (productos[i]['textoEspecial'] == 'Alto especial') {
-                                                    $('.' + productos[w]['id'] + 'Datos #altoSoloSecambiaEspecial').text('Alto especial');
+                                                if (productos[w]['textoEspecial'] == 'Alto especial') {
+                                                    $('#datosMeter' + w + '  #altoSoloSecambiaEspecial').text('Alto especial');
                                                 }
-                                                if (productos[i]['textoEspecial'] == 'Fondo especial') {
-                                                    $('.' + productos[w]['id'] + 'Datos #fondoSoloSecambiaEspecial').text('Fondo especial');
+                                                if (productos[w]['textoEspecial'] == 'Fondo especial') {
+                                                    $('#datosMeter' + w + '  #fondoSoloSecambiaEspecial').text('Fondo especial');
                                                 }
                                             }
                                             if (apoyo != undefined) {

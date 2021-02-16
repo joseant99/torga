@@ -1220,18 +1220,23 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var otroarray = [];
         if (huecoPinta == 1) {
             this.adicionalesArray0 = array;
+            this.armariosDormitorioComponent.adicionalesArray0 = array;
         }
         if (huecoPinta == 2) {
             this.adicionalesArray1 = array;
+            this.armariosDormitorioComponent.adicionalesArray1 = array;
         }
         if (huecoPinta == 3) {
             this.adicionalesArray2 = array;
+            this.armariosDormitorioComponent.adicionalesArray2 = array;
         }
         if (huecoPinta == 4) {
             this.adicionalesArray3 = array;
+            this.armariosDormitorioComponent.adicionalesArray3 = array;
         }
         if (huecoPinta == 5) {
             this.adicionalesArray4 = array;
+            this.armariosDormitorioComponent.adicionalesArray4 = array;
         }
         var prec = $('#precioInt' + (huecoPinta - 1)).text();
         prec = prec.split(' ')[1];
@@ -1293,24 +1298,35 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 if (array[i] == 'ZAPATERO LATERAL EXTRAIBLE') {
                     precio = 205;
                 }
+                if (array[i] == 'PANTALONERO EXTRAIBLE') {
+                    precio = 80;
+                }
+                if (array[i] == 'CORBATERO LATERAL EXTRAIBLE') {
+                    precio = 80;
+                }
                 $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 - precio) + ' pp');
             }
         }
 
         if (huecoPinta == 1) {
             this.adicionalesArray0 = nuevoarray;
+            this.armariosDormitorioComponent.adicionalesArray0 = nuevoarray;
         }
         if (huecoPinta == 2) {
             this.adicionalesArray1 = nuevoarray;
+            this.armariosDormitorioComponent.adicionalesArray1 = nuevoarray;
         }
         if (huecoPinta == 3) {
             this.adicionalesArray2 = nuevoarray;
+            this.armariosDormitorioComponent.adicionalesArray2 = nuevoarray;
         }
         if (huecoPinta == 4) {
             this.adicionalesArray3 = nuevoarray;
+            this.armariosDormitorioComponent.adicionalesArray3 = nuevoarray;
         }
         if (huecoPinta == 5) {
             this.adicionalesArray4 = nuevoarray;
+            this.armariosDormitorioComponent.adicionalesArray4 = nuevoarray;
         }
         var precio = 0;
         $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1').css({ display: 'none' });
@@ -1890,6 +1906,23 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#volverAtras1MeterCasa').css({ display: 'none' });
             $('#codigoArmariosVistaDivs').css({ display: 'none' });
             $('.armariosDivTodo2').removeAttr('id');
+            $('html, body').animate({ scrollTop: 0 });
+        }, 1000);
+    }
+
+    public meterinputabrirarmariosRincon(id) {
+        $('#inputCodigoRincon').val(id);
+        $('.armariosRinconDivInputCodigo  #divprincipalhuecomenmen #volverAtras1MeterCasa').css({ display: 'none' });
+        $('.armariosRinconDivInputCodigo #volverAtras2').css({ display: 'block' });
+        $('.armariosDivTodo4').attr('id', 'simplepruebaani');
+        this.rinconDormitorioComponent.abrirArmariosTodos();
+        $('.armariosDivTodo4 #divaltoocogidomen').css({ display: 'block' });
+        $('.cuerpoImagenPuertas').css({ display: 'none' });
+
+        setTimeout(function() {
+            $('#volverAtras1MeterCasa').css({ display: 'none' });
+            $('#codigoArmariosRinconDivs').css({ display: 'none' });
+            $('.armariosDivTodo4').removeAttr('id');
             $('html, body').animate({ scrollTop: 0 });
         }, 1000);
     }
@@ -2652,12 +2685,32 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
         }
         if (id == 7) {
-            $('.armariosRinconDivInputCodigo').css({ display: 'block' });
             $('#calcuRincon').css({ display: 'block' });
             $('#modalesRincon').css({ display: 'block' });
+            $('.armariosRinconDivInputCodigo').css({ display: 'block' });
             if (screen.width < 800) {
-                $('#productosPrincipal').css({ height: '2350px' });
+                $('#productosPrincipal').css({ height: '5750px' });
             }
+            $('#observacionesArticulo').css({ display: 'none' });
+            $('.armariosRinconDivInputCodigo #botonOkAnchos').removeAttr('disabled');
+            for (let i = 277; i <= 314; i++) {
+                if (i > 99) {
+                    arrayGG[contdivarray] = 'NB' + i;
+                    contdivarray++;
+                }
+            }
+            this.codigoparadivs = arrayGG;
+            $('.armariosRinconDivInputCodigo #textodivsuperiorquenosecambia12').text('ARMARIOS RINCON');
+            $('.armariosRinconDivInputCodigo').attr('id', 'simplepruebaani');
+            $('#codigoArmariosRinconDivs').removeAttr('style');
+            $('#codigoArmariosRinconDivs').css({ 'margin-top': '5%' });
+            $('#codigoArmariosRinconDivs').css({ width: '90%' });
+            $('#codigoArmariosRinconDivs').css({ 'margin-left': '10%' });
+
+            setTimeout(function() {
+                $('html, body').animate({ scrollTop: 0 });
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
         }
         if (id == 8) {
             $('#inputBusca').css({ display: 'block' });

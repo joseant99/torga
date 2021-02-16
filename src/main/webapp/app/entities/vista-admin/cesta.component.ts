@@ -8138,6 +8138,23 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                             sesion[1]['interiores'][w]['precio'] +
                                             ' pp</i></p>'
                                     );
+                                    if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
+                                        var nombreAdicional = '';
+                                        for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
+                                            if (qw != 0) {
+                                                nombreAdicional = nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
+                                            } else {
+                                                nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                                            }
+                                        }
+                                        $('#textoCesta' + i).append(
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
+                                                (w + 1) +
+                                                '</span>: ' +
+                                                nombreAdicional +
+                                                ' </p>'
+                                        );
+                                    }
                                     if (
                                         sesion[1]['observacionesInteriores' + w] != undefined &&
                                         sesion[1]['observacionesInteriores' + w] != null &&

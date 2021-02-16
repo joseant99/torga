@@ -13184,6 +13184,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     ) {
                                         observaInt = prodCarr[m][1]['observacionesInteriores' + x];
                                     }
+                                    var adicionales = null;
+                                    if (prodCarr[m][1]['interiores'][x]['adicionales'] != undefined) {
+                                        for (let me = 0; me < prodCarr[m][1]['interiores'][x]['adicionales'].length; me++) {
+                                            if (me != 0) {
+                                                adicionales = adicionales + ' + ' + prodCarr[m][1]['interiores'][x]['adicionales'][me];
+                                            } else {
+                                                adicionales = prodCarr[m][1]['interiores'][x]['adicionales'][me];
+                                            }
+                                        }
+                                    }
+
                                     if (screen.width >= 800) {
                                         for (let ve = 0; ve <= 100005; ve++) {
                                             if (ve == 100005) {
@@ -13204,6 +13215,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         orden: x,
                                                         mensajeLuz: 'Sin luz',
                                                         observacion: observaInt,
+                                                        adicionales: adicionales,
                                                         terminacion: terminacioninterior
                                                     };
                                                 } else {
@@ -13223,6 +13235,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         orden: x,
                                                         terminacion: terminacioninterior,
                                                         observacion: observaInt,
+                                                        adicionales: adicionales,
                                                         mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
                                                     };
                                                 }
@@ -13250,6 +13263,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                         orden: x,
                                                         mensajeLuz: 'Sin luz',
+                                                        observacion: observaInt,
+                                                        adicionales: adicionales,
                                                         terminacion: terminacioninterior
                                                     };
                                                 } else {
@@ -13259,6 +13274,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                         orden: x,
                                                         mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
+                                                        observacion: observaInt,
+                                                        adicionales: adicionales,
                                                         terminacion: terminacioninterior
                                                     };
                                                 }
@@ -13299,7 +13316,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     if (
                                         prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
                                         prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones'
+                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones' &&
+                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales' &&
+                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales DER'
                                     ) {
                                         var terminacionpuerta = '';
                                         prodCarr[m][1]['acabadoTirador'];
@@ -13398,6 +13417,30 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 var terminacionpuerta = '';
                                                 if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
                                                     terminacionpuerta = 'B 2 plafones';
+                                                    puertas = {
+                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                        presupuestoArmario: presupuestoArmario,
+                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                        orden: x,
+                                                        terminacion: terminacionpuerta
+                                                    };
+                                                }
+                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                                    terminacionpuerta = 'E 2 pla. vert. izq';
+                                                    puertas = {
+                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                        presupuestoArmario: presupuestoArmario,
+                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                        orden: x,
+                                                        terminacion: terminacionpuerta
+                                                    };
+                                                }
+                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                                    terminacionpuerta = 'H 2 pla. vert. dch.';
                                                     puertas = {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
@@ -13539,10 +13582,49 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 if (prodCarr[m][1]['especial'] != 0) {
                     if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
                         idProdCar = numeroProductos[0];
-                        prodPrePed = {
-                            productosDormitorio: prodCarr[m][1]['productosDormitorio'],
-                            presupuestoPedido: prueba1
-                        };
+                        var obserInt = '';
+                        for (let qw = 0; qw < prodCarr[m][1]['interiores'].length; qw++) {
+                            var hueco = '';
+                            if (qw == 0) {
+                                hueco = 'Hueco A: ';
+                            }
+                            if (qw == 1) {
+                                hueco = 'Hueco B: ';
+                            }
+                            if (qw == 2) {
+                                hueco = 'Hueco C: ';
+                            }
+                            if (qw == 3) {
+                                hueco = 'Hueco D: ';
+                            }
+                            if (qw == 4) {
+                                hueco = 'Hueco E: ';
+                            }
+                            if (qw == 5) {
+                                hueco = 'Hueco F: ';
+                            }
+                            if (prodCarr[m][1]['interiores'][qw]['adicionales'] != undefined) {
+                                for (let me = 0; me < prodCarr[m][1]['interiores'][qw]['adicionales'].length; me++) {
+                                    if (me != 0) {
+                                        obserInt = obserInt + ' + ' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
+                                    } else {
+                                        obserInt = hueco + '' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
+                                    }
+                                }
+                            }
+                        }
+                        if (obserInt != '') {
+                            prodPrePed = {
+                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                observaciones: obserInt,
+                                presupuestoPedido: prueba1
+                            };
+                        } else {
+                            prodPrePed = {
+                                productosDormitorio: prodCarr[m][1]['productosDormitorio'],
+                                presupuestoPedido: prueba1
+                            };
+                        }
 
                         this.productosPresupuestoPedidos = prodPrePed;
                         this.subscribeToSaveResponse1(this.productosPresupuestoPedidosService.create(this.productosPresupuestoPedidos));

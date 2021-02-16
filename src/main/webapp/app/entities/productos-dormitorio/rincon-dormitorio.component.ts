@@ -3933,6 +3933,8 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 $('#producto').append('<datalist id="listaAltura12"></datalist>');
                 $('#armariosCogidos').attr('class', data.body[0].armario.id);
                 var array = [];
+                var arrayAlto = [];
+                var contalto = 0;
                 array[0] = data.body[0].armario;
                 this.armarioService.todo = array;
                 for (let i = data.body[0].anchoMin; i <= data.body[0].anchoMax; i++) {
@@ -3941,7 +3943,10 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 for (let i = data.body[0].altoMin; i <= data.body[0].altoMax; i++) {
                     $('#listaAltura12').append('<option value="' + i + '">' + i + '</option>');
                     $('.classaltoArmarioRin').append('<option value="' + i + '">' + i + '</option>');
+                    arrayAlto[contalto] = i;
+                    contalto++;
                 }
+                this.cascoService.alto = arrayAlto;
             });
             $('.armariosDivTodoRincon').css({ display: 'block' });
             $('#inputCodigoRincon').attr('readonly', 'readonly');
