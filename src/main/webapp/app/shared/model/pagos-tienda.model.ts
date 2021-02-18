@@ -6,6 +6,9 @@ export interface IPagosTienda {
     pago?: string;
     descuento?: string;
     precioTienda?: number;
+    fecha?: string;
+    numero?: number;
+    valoracion?: number;
     datosUsuario?: IDatosUsuario;
     pagosTorgaTiendas?: IPagosTorgaTiendas[];
 }
@@ -16,6 +19,9 @@ export class PagosTienda implements IPagosTienda {
         public pago?: string,
         public descuento?: string,
         public precioTienda?: number,
+        public fecha?: string,
+        public numero?: number,
+        public valoracion?: number,
         public datosUsuario?: IDatosUsuario,
         public pagosTorgaTiendas?: IPagosTorgaTiendas[]
     ) {}

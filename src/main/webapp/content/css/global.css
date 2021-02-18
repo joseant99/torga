@@ -21,6 +21,9 @@ a {
     color: #533f03;
     font-weight: bold;
 }
+.classintdivmen25 {
+    display: none;
+}
 
 .blink {
     animation: blink-animation 1s steps(5, start) infinite;

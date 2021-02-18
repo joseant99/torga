@@ -1479,7 +1479,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
                                 if (screen.width >= 800) {
                                     $('#cuerpo' + i).append(
-                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 25%; margin-top: 140px;" src="../../../content/images/nodisponible.png">'
+                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 28%; margin-top: 180px;" src="../../../content/images/nodisponible.png">'
                                     );
                                 }
                             }
@@ -8082,9 +8082,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             $('#textoCesta' + i).append(
                                 '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Codigo</span>: ' +
                                     sesion[1]['codigo'] +
-                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                    sesion[1]['precioCasco'] +
-                                    ' pp</i></p>'
+                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
                             );
                             $('#textoCesta' + i).append(
                                 '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Ancho:</span> ' +
@@ -8127,46 +8125,93 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                             }
-                            if (sesion[1]['interiores'] != undefined) {
-                                for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
-                                    $('#textoCesta' + i).append(
-                                        '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Interior ' +
-                                            (w + 1) +
-                                            '</span>: ' +
-                                            sesion[1]['interiores'][w]['nombre'] +
-                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                            sesion[1]['interiores'][w]['precio'] +
-                                            ' pp</i></p>'
-                                    );
-                                    if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
-                                        var nombreAdicional = '';
-                                        for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
-                                            if (qw != 0) {
-                                                nombreAdicional = nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
-                                            } else {
-                                                nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                            if (nombreArmario != 'Armario Rincon') {
+                                if (sesion[1]['interiores'] != undefined) {
+                                    for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Interior ' +
+                                                (w + 1) +
+                                                '</span>: ' +
+                                                sesion[1]['interiores'][w]['nombre'] +
+                                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
+                                        );
+                                        if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
+                                            var nombreAdicional = '';
+                                            for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
+                                                if (qw != 0) {
+                                                    nombreAdicional =
+                                                        nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
+                                                } else {
+                                                    nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                                                }
                                             }
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
+                                                    (w + 1) +
+                                                    '</span>: ' +
+                                                    nombreAdicional +
+                                                    ' </p>'
+                                            );
                                         }
-                                        $('#textoCesta' + i).append(
-                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
-                                                (w + 1) +
-                                                '</span>: ' +
-                                                nombreAdicional +
-                                                ' </p>'
-                                        );
+                                        if (
+                                            sesion[1]['observacionesInteriores' + w] != undefined &&
+                                            sesion[1]['observacionesInteriores' + w] != null &&
+                                            sesion[1]['observacionesInteriores' + w] != ''
+                                        ) {
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Observaciones Interior ' +
+                                                    (w + 1) +
+                                                    '</span>: ' +
+                                                    sesion[1]['observacionesInteriores' + w] +
+                                                    '</p>'
+                                            );
+                                        }
                                     }
-                                    if (
-                                        sesion[1]['observacionesInteriores' + w] != undefined &&
-                                        sesion[1]['observacionesInteriores' + w] != null &&
-                                        sesion[1]['observacionesInteriores' + w] != ''
-                                    ) {
+                                }
+                            } else {
+                                if (sesion[1]['interiores'] != undefined) {
+                                    for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Observaciones Interior ' +
-                                                (w + 1) +
-                                                '</span>: ' +
-                                                sesion[1]['observacionesInteriores' + w] +
-                                                '</p>'
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Hueco </span></p>'
                                         );
+                                        if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
+                                            var nombreAdicional = '';
+                                            for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
+                                                if (qw != 0) {
+                                                    nombreAdicional =
+                                                        nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
+                                                } else {
+                                                    nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                                                }
+                                            }
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
+                                                    (w + 1) +
+                                                    '</span>: ' +
+                                                    nombreAdicional +
+                                                    ' </p>'
+                                            );
+                                        }
+                                        if (sesion[1]['interiores'][w]['luz'] != undefined) {
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Luz ' +
+                                                    (w + 1) +
+                                                    '</span>: Si</p>'
+                                            );
+                                        }
+                                        if (
+                                            sesion[1]['observacionesInteriores' + w] != undefined &&
+                                            sesion[1]['observacionesInteriores' + w] != null &&
+                                            sesion[1]['observacionesInteriores' + w] != ''
+                                        ) {
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Observaciones Interior ' +
+                                                    (w + 1) +
+                                                    '</span>: ' +
+                                                    sesion[1]['observacionesInteriores' + w] +
+                                                    '</p>'
+                                            );
+                                        }
                                     }
                                 }
                             }
@@ -8177,9 +8222,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                             (w + 1) +
                                             '</span>: ' +
                                             sesion[1]['puertas'][w]['nombre'] +
-                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                            sesion[1]['puertas'][w]['precio'] +
-                                            ' pp</i></p>'
+                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
                                     );
                                     for (let k = 0; k < 5; k++) {
                                         if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
@@ -8197,9 +8240,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
                             if (sesion[1]['niveladores'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: SI <i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                        sesion[1]['niveladores']['precio'] +
-                                        ' pp</i></p>'
+                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: SI <i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
                                 );
                             } else {
                                 $('#textoCesta' + i).append(
@@ -8210,9 +8251,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 $('#textoCesta' + i).append(
                                     '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Cajeado</span>: ' +
                                         sesion[1]['cajeado']['tipo'] +
-                                        '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                        sesion[1]['cajeado']['precio'] +
-                                        ' pp</i></p>'
+                                        '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
                                 );
                                 if (sesion[1]['cajeado']['medA'] != undefined) {
                                     $('#textoCesta' + i).append(
@@ -8245,9 +8284,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Enmarcado:</span> ' +
                                             sesion[1]['enmarcado']['codigo'] +
-                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%">+ ' +
-                                            sesion[1]['enmarcado']['precio'] +
-                                            ' pp</i></p>'
+                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
                                     );
                                     if (sesion[1]['enmarcado']['medA'] != undefined) {
                                         $('#textoCesta' + i).append(
@@ -8432,7 +8469,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial:</span><span> 30%</span></p>'
                                 );
                             } else {
                                 $('#textoCesta' + i).append(
@@ -8475,13 +8512,13 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             nombreCargarImagen = 'NT079-NT094';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 413) {
-                            nombreCargarImagen = 'NT079-NT094';
+                            nombreCargarImagen = 'NT087-NT094';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 282) {
                             nombreCargarImagen = 'NT095-NT110';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 414) {
-                            nombreCargarImagen = 'NT095-NT110';
+                            nombreCargarImagen = 'NT103-NT110';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 247) {
                             nombreCargarImagen = 'NT111-NT115';
@@ -9368,7 +9405,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>30%</span></p>'
                                 );
                             } else {
                                 $('#textoCesta' + i).append(
@@ -9393,7 +9430,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                             '</p>'
                                     );
                                     $('#textoCesta' + i).append(
-                                        '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                        '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>30%</span></p>'
                                     );
                                 } else {
                                     $('#textoCesta' + i).append(
@@ -9416,7 +9453,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento 1 cajon:</span></p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: +30%</span></p>'
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial</span></p>'
                                 );
                             }
                         }
@@ -11876,32 +11913,24 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
                                             sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                            '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                            sesion[1]['apoyo']['precio'] +
-                                            ' PP</i></p>'
+                                            '</p>'
                                     );
                                 } else {
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                                sesion[1]['apoyo']['precio'] +
-                                                ' PP</i></p>'
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble</p>'
                                         );
                                     }
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                                sesion[1]['apoyo']['precio'] +
-                                                ' PP</i></p>'
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble </p>'
                                         );
                                     }
                                 }
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Iluminacion</span>: SI <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['iluminacion']['precio'] +
-                                        ' PP</i></p>'
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Iluminacion</span>: SI </p>'
                                 );
                             }
 
@@ -11909,9 +11938,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 $('#textoCesta' + i).append(
                                     '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                         sesion[1]['usb']['mensaje'] +
-                                        '</span>: <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['usb']['precio'] +
-                                        ' PP</i></p>'
+                                        '</span></p>'
                                 );
                             }
                         } else {
@@ -11920,23 +11947,17 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     $('#textoCesta' + i).append(
                                         '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span> ' +
                                             sesion[1]['apoyo']['productoApoyo']['nombre'] +
-                                            '<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                            sesion[1]['apoyo']['precio'] +
-                                            ' PP</i></p>'
+                                            '</p>'
                                     );
                                 } else {
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 411) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble<i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                                sesion[1]['apoyo']['precio'] +
-                                                ' PP</i></p>'
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Zocalo del mismo ancho del mueble</p>'
                                         );
                                     }
                                     if (sesion[1]['apoyo']['apoyoSecundario'] == 412) {
                                         $('#textoCesta' + i).append(
-                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                                sesion[1]['apoyo']['precio'] +
-                                                ' PP</i></p>'
+                                            '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Apoyo:</span>Bancada del mismo ancho del mueble </p>'
                                         );
                                     }
                                 }
@@ -11951,18 +11972,14 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             }
                             if (sesion[1]['iluminacion'] != undefined) {
                                 $('#textoCesta' + i).append(
-                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Iluminacion</span>: SI <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['iluminacion']['precio'] +
-                                        ' PP</i></p>'
+                                    '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Iluminacion</span>: SI </p>'
                                 );
                             }
                             if (sesion[1]['usb'] != undefined) {
                                 $('#textoCesta' + i).append(
                                     '<p id="apoyoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                                         sesion[1]['usb']['mensaje'] +
-                                        '</span>: <i id="apoyoPrecioCesta" style="float:right;font-size:15px;margin-right:40%">+ ' +
-                                        sesion[1]['usb']['precio'] +
-                                        ' PP</i></p>'
+                                        '</span></p>'
                                 );
                             }
                         }

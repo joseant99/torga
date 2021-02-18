@@ -1990,6 +1990,21 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         if (id == 173) {
             $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
         }
+        if (id == 207) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 208) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 209) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 210) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
+        if (id == 211) {
+            $('.fondoEspecialDivSePuedeQuitarApo').css({ display: 'none' });
+        }
     }
 
     public tipoEspecialCogido(id) {

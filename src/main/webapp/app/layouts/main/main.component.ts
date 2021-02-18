@@ -456,6 +456,15 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
+            if (k == 9) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 8 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
         }
         if (idProd == 339) {
             if (k == 1) {
@@ -2159,21 +2168,12 @@ export class JhiMainComponent implements OnInit {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                         (o + 1) +
-                        ' Cubo :</span> ' +
-                        acabados[o] +
-                        '</p>'
-                );
-            }
-            if (o == 4) {
-                $('#textoCesta' + i).append(
-                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
-                        (o + 1) +
                         ' Cajon CEN :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
             }
-            if (o == 5) {
+            if (o == 4) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                         (o + 1) +
@@ -7851,6 +7851,13 @@ export class JhiMainComponent implements OnInit {
                         '</p>'
                 );
             }
+            if (o == 8) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 7 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
         }
         if (idProd == 282) {
             if (o == 0) {
@@ -7967,7 +7974,7 @@ export class JhiMainComponent implements OnInit {
                         '</p>'
                 );
             }
-            if (o == 7) {
+            if (o == 8) {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 8 :</span> ' +
                         acabados[o] +
@@ -9472,17 +9479,6 @@ export class JhiMainComponent implements OnInit {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                         (k + 1) +
-                        ' Cubo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
-                        contador +
-                        '">' +
-                        acabados[k]['acabados']['nombre'] +
-                        '</span></p>'
-                );
-            }
-            if (k == 4) {
-                $('.' + productos[i]['id'] + 'Datos').append(
-                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
-                        (k + 1) +
                         ' Cajon CEN :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
@@ -9490,7 +9486,7 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
-            if (k == 5) {
+            if (k == 4) {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                         (k + 1) +
@@ -17503,19 +17499,6 @@ export class JhiMainComponent implements OnInit {
                         u +
                         '"><span style="font-weight:600">' +
                         u +
-                        ' Cubo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                        u +
-                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                        u +
-                        '" style="margin-left:10px"></span></p>'
-                );
-            }
-            if (u == 5) {
-                $('#datos1').append(
-                    '<p style="width:100%" id="acabado' +
-                        u +
-                        '"><span style="font-weight:600">' +
-                        u +
                         ' Cajon CEN</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
@@ -17523,7 +17506,7 @@ export class JhiMainComponent implements OnInit {
                         '" style="margin-left:10px"></span></p>'
                 );
             }
-            if (u == 6) {
+            if (u == 5) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +
@@ -23332,6 +23315,17 @@ export class JhiMainComponent implements OnInit {
                     '<p style="width:100%" id="acabado' +
                         u +
                         '"><span style="font-weight:600">Plafon 7</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 9) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">Plafon 8</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

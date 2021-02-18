@@ -31,7 +31,16 @@ public class PagosTienda implements Serializable {
 
     @Column(name = "descuento")
     private String descuento;
+    
+    @Column(name = "fecha")
+    private String fecha;
+    
+    @Column(name = "numero")
+    private Integer numero;
 
+    @Column(name = "valoracion")
+    private Float valoracion;
+    
     @Column(name = "precio_tienda")
     private Float precioTienda;
 
@@ -78,6 +87,32 @@ public class PagosTienda implements Serializable {
     public void setDescuento(String descuento) {
         this.descuento = descuento;
     }
+    
+    public String getFecha() {
+        return fecha;
+    }
+
+    public PagosTienda fecha(String fecha) {
+        this.fecha = fecha;
+        return this;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+    
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public PagosTienda numero(Integer numero) {
+        this.numero = numero;
+        return this;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
 
     public Float getPrecioTienda() {
         return precioTienda;
@@ -90,6 +125,19 @@ public class PagosTienda implements Serializable {
 
     public void setPrecioTienda(Float precioTienda) {
         this.precioTienda = precioTienda;
+    }
+    
+    public Float getValoracion() {
+        return valoracion;
+    }
+
+    public PagosTienda valoracion(Float valoracion) {
+        this.valoracion = valoracion;
+        return this;
+    }
+
+    public void setValoracion(Float valoracion) {
+        this.valoracion = valoracion;
     }
 
     public DatosUsuario getDatosUsuario() {

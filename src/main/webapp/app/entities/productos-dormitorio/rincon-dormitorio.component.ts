@@ -166,6 +166,12 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
     precioInterior3: any;
     precioInterior4: any;
     precioInterior5: any;
+    adcionaltipo: any;
+    adicionalesArray0: any;
+    adicionalesArray1: any;
+    adicionalesArray2: any;
+    adicionalesArray3: any;
+    adicionalesArray4: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -184,7 +190,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         protected productosPresupuestoPedidosService: ProductosPresupuestoPedidosService,
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected userService: UserService,
-        protected cascoService: CascoService,
+        public cascoService: CascoService,
         protected interioresArmariosService: InterioresArmariosService,
         protected dimensionesProductoService: DimensionesProductoService,
         public armarioService: ArmarioService,
@@ -262,7 +268,9 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         var conta = 0;
         var todo = [];
         todo[1] = this.armarioCogido;
-
+        if (this.adicionalesArray0 != undefined) {
+            todo[1]['interiores'][0]['adicionales'] = this.adicionalesArray0;
+        }
         for (let i = 0; i < todo[1]['puertas'].length; i++) {
             var precio = $('#calculadoraCarrito #productoCalculadora1 #precioPuerta' + i).text();
             precio = precio.split(' ')[1];
@@ -335,6 +343,19 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 console.log(sessionStorage);
             }
         }
+
+        $('.armariosDivTodo4').attr('id', 'simplepruebaani2');
+        $('#page-heading').css({ display: 'block' });
+        $('#calculadoraCarrito').css({ display: 'none' });
+        $('body').removeAttr('style');
+        setTimeout(function() {
+            $('.armariosDivTodo4').css({ display: 'none' });
+            $('.armariosDivTodo4').removeAttr('id');
+            $('.armariosRinconDivInputCodigo').removeAttr('id');
+            $('#simplepruebaani').css({ display: 'none' });
+            $('.armariosRinconDivInputCodigo').css({ display: 'none' });
+            $('html, body').animate({ scrollTop: 0 });
+        }, 1200);
     }
 
     public generarPresupuesto() {
@@ -843,7 +864,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         $('#alturaSelect12').attr('readonly', 'readonly');
         $('#anchosSelect12').css({ border: '0.5px solid' });
         $('#alturaSelect12').css({ border: '0.5px solid' });
-        var alto = $('#alturaSelect12').val();
+        var alto = $('#alturaSelect10').val();
         var armariosTodos = this.armarioService.todo;
         var classe = $('#armariosCogidos').attr('class');
         var codigo = $('#inputCodigoRincon').val();
@@ -962,14 +983,16 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             $('#nombreMesitaArma').text(elBuenNombreArmario);
             $('#nombreMesitaArma').css({ display: 'block' });
 
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Ancho: ' + ancho + '<p/>');
-            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
-                '<p style="width:100%">Fondo: ' + $('#inputFondoBatientes').val() + '<p/>'
+                '<p style="width:100%">Ancho: ' + data.body[0]['anchoMax'] + '<p/>'
             );
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Altura: ' + alto + '<p/>');
+            $('#calculadoraCarrito #productoCalculadora1 #datos1').append('<p style="width:100%">Fondo: 61<p/>');
             $('#calculadoraCarrito #productoCalculadora1 #datos1').append(
                 '<p style="width:100%">Codigo: ' + data.body[0]['codigo'] + '<p/>'
             );
+            armariosTodos[0]['ancho'] = data.body[0]['anchoMax'];
+            this.armarioCogido = armariosTodos[0];
         });
         var mai = [
             'A',
@@ -1042,6 +1065,24 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         puertas = parseFloat(texto.split(' ')[0]);
         var huecos = 0;
         huecos = parseFloat(texto.split(' ')[3]);
+        this.acaProdService.findAca(42).subscribe(data => {
+            this.todos = data.body[0]['acabados'];
+            this.acabadosTrasera = data.body[0]['acabados'];
+        });
+        this.acaProdService.findAca(122).subscribe(data => {
+            this.acabadosInteriores = data.body[0]['acabados'];
+        });
+        var array = [];
+        var arrayPuertas = [];
+        for (let j = 0; j < 1; j++) {
+            array[j] = j;
+        }
+        for (let k = 0; k < 2; k++) {
+            arrayPuertas[k] = k + 1;
+        }
+        this.arraySaberPuertas = arrayPuertas;
+        this.arraySaberHuecos = array;
+
         if (!isNaN(huecos)) {
             var perfecto = puertas / huecos;
             var dimens = this.dimenArmarios;
@@ -1051,7 +1092,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             for (let j = 0; j < huecos; j++) {
                 array[j] = j;
             }
-            for (let k = 0; k < puertas; k++) {
+            for (let k = 0; k < 2; k++) {
                 arrayPuertas[k] = k + 1;
             }
             this.arraySaberPuertas = arrayPuertas;
@@ -3948,7 +3989,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 }
                 this.cascoService.alto = arrayAlto;
             });
-            $('.armariosDivTodoRincon').css({ display: 'block' });
+            $('.armariosDivTodo4').css({ display: 'block' });
             $('#inputCodigoRincon').attr('readonly', 'readonly');
             $('#inputCodigoRincon').attr('style');
             $('#inputCodigoRincon').css({ 'background-color': '#f0f0f0' });
@@ -8653,6 +8694,18 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             $('#calcuRincon #interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
                 this.productosDormitorioModal = data.body;
+                var todosLosInteriores = this.productosDormitorioModal;
+                var buenInt;
+                for (let o = 0; o < todosLosInteriores.length; o++) {
+                    if (todosLosInteriores[o]['nombre'] == 300) {
+                        buenInt = todosLosInteriores[o];
+                    }
+                }
+                var meterInt = [];
+                meterInt[0] = buenInt;
+                var todo = this.armarioCogido;
+                todo['interiores'] = meterInt;
+                this.armarioCogido = todo;
             });
             this.productosDormitorioService.categoria(10).subscribe(data => {
                 for (let i = 0; i < data.body['length']; i++) {
@@ -27401,7 +27454,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         var arrayPuertas = this.arraySaberPuertas;
         var arrayHuecos = this.arraySaberHuecos;
         var mejorArmario = this.armarioCogido;
-        if (mejorArmario['puertas'].length == puertasQueTiene) {
+        if (mejorArmario['puertas'].length == 2) {
             $('#botonCalculadoraRincon').css({ display: 'block' });
         }
     }

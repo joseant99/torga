@@ -827,7 +827,7 @@
 		          <div (click)="adcionaltipoFuncion(7)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva08.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
 		          <div (click)="adcionaltipoFuncion(8)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva09.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
 		          <div (click)="adcionaltipoFuncion(9)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva10.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
-		          
+		          <div (click)="adcionaltipoFuncion(10)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva10.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -962,7 +962,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of this.rinconDormitorioComponent.todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoCasco(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		          <div *ngFor="let aca of todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoCasco(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -981,7 +981,36 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of this.rinconDormitorioComponent.todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoTrasera(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		          <div *ngFor="let aca of todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoTrasera(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		      
+		    </div>
+	  </div>
+	  <div class="modal fade" id="modalAdicionalesArmario" role="dialog" style="z-index: 1000000000000;">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content" id="modalcontenidoCss">
+		        <div class="modal-header">
+		          <h4 class="modal-title">Escoge un interior</h4>
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">	          
+		          <div (click)="adcionaltipoFuncion1(0)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva01.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(1)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva02.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(2)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva03.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(3)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva04.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(4)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva05.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(5)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva06.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(6)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva07.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(7)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva08.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(8)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva09.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(9)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva10.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
+		          <div (click)="adcionaltipoFuncion1(10)" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo" src="../../../content/images/comedores/diapositiva10.jpeg" class="tirador" style="max-height: 100%;max-width: 100%;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px"></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1000,7 +1029,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of  this.rinconDormitorioComponent.todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoInterior(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		          <div *ngFor="let aca of todos" class="acabadosModal" id="tirador0" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoInterior(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1019,7 +1048,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of  this.rinconDormitorioComponent.todos" class="acabadosModal" id="perfil{{aca.id}}" data-dismiss="modal"><img title="Foto de linea de codigo" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoTiradorBueno(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
+		          <div *ngFor="let aca of todos" class="acabadosModal" id="perfil{{aca.id}}" data-dismiss="modal"><img title="Foto de linea de codigo" class="tirador" (click)="this.rinconDormitorioComponent.cambiarAcabadoTiradorBueno(aca.nombre)" [src]="'data:' + aca.imagenFondoContentType + ';base64,' + aca.imagenFondo" style="max-height: 100%;max-width: 100%;" height="250px" width="130px" alt="productosDormitorio image"/><p style="letter-spacing:1px;font-weight:300;font-size:17px"><strong>{{aca.nombre}}</strong></p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1956,7 +1985,7 @@
         	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(2)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" data-toggle="modal" data-target="#modalNoSePuedeVer" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv" *jhiHasAnyAuthority="'ROLE_ADMIN'">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
         	</div>
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(3)" id="pruebahoverdiv">
@@ -2525,7 +2554,7 @@
 	    
 	    <div style="margin-top:5%;width:90%;margin-left:10%;display:none;position:absolute;height: 220px;" class="divaltoocogidomen">
     		<h2 style="text-align:center;letter-spacing:3px">Selecciona el alto</h2><BR><BR>
-	   			<div *ngFor="let codigo of this.rinconDormitorioComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo">
+	   			<div *ngFor="let codigo of this.rinconDormitorioComponent.cascoService.alto" id="divcodigoarituclos" class="divcodigometerfondo" (click)="fondoNoQuiereCambiarRincon(codigo)">
 		    		<span>{{codigo}}</span>
 		    	</div>
 		    	<input style="display:none" id="alturaSelect10">
@@ -3093,14 +3122,68 @@
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados"> </div></p></a>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesRincon #modalTraseraAcabados"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 60px;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados1"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 40px;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados2"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 15px;width:25%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalesRincon #modalTraseraAcabados"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados1"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 40px;width:30%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalesRincon #modalInterioresAcabados2"> </div></p></a>
 		    					
 							</div>
 				    			
 				    		<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
+				    			<div style="width:100%;float:left" *ngFor="let interior of this.rinconDormitorioComponent.arraySaberHuecos;let u=index">
+						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">HUECO </strong><span style="float:right" id="precioInt{{u}}">+ 0 pp</span></p>
+						    		<div style="margin-top:5px;float:left;margin-top:30px;margin-bottom:35px;width:100%;" id="divAdicionalesInterior{{u}}" *jhiHasAnyAuthority="'ROLE_ADMIN'">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;margin-bottom:15px;">ADICIONALES <span id="precioTotalAdicionales{{u}}" style="display:none">0</span>PP</span>
+										<button style="margin-top:15px" data-toggle="modal" data-target="#modalesRincon #modalAdicionalesArmario" >NECESITO UN ARTICULO ADICIONAL</button>
+										<div id="divHuecoAdicionales">
+											<p id="textoadicional1" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,1)">ELIMINAR</span></p>
+											<p id="textoadicional2" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,2)">ELIMINAR</span></p>
+											<p id="textoadicional3" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,3)">ELIMINAR</span></p>
+											<p id="textoadicional4" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,4)">ELIMINAR</span></p>
+											<p id="textoadicional5" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,5)">ELIMINAR</span></p>
+											<p id="textoadicional6" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,6)">ELIMINAR</span></p>
+											<p id="textoadicional7" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,7)">ELIMINAR</span></p>
+											<p id="textoadicional8" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales1(u,8)">ELIMINAR</span></p>
+										</div>
+									</div>
+						    		
+						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
+						    			<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;margin-top: 10px;margin-bottom: 15px;float: left;width: 100%;">LUCES</span>
+										<form>
+											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>IZQUIERDA</label>
+											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.rinconDormitorioComponent.luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
+											  
+											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>DERECHA</label>
+											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.rinconDormitorioComponent.luzInteriores(u,1)"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
+											  
+											  
+											  <label for="luz2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN LOS DOS<br>COSTADOS</label>
+											  <input type="radio" id="luz2" name="todoluz" value="luz2" style="margin-left: 9%;" (click)="this.rinconDormitorioComponent.luzInteriores(u,2)"><span id="precioLuz{{u}}2" STYLE="display:none;float:right">+ 200 pp</span><br>
+											  
+											  <label for="luz3" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">SIN LUZ</label>
+											  <input type="radio" id="luz3" name="todoluz" value="luz3" style="margin-left: 34%;" (click)="this.rinconDormitorioComponent.luzInteriores(u,0)" checked><br>
+			
+										</form>
+									</div>
+									<div style="margin-top:5px;float:left;margin-top:15px;margin-bottom:35px;">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;">OBSERVACIONES HUECO</span>
+										<form style="margin-top:15px">
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%" >Si</label>
+											<input type="radio" id="siObs{{u}}" name="siObs" value="Si" (click)="quieroObservacionEnHueco(u)"></p>
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%">No</label>
+											<input type="radio" id="noObs{{u}}" name="siObs" value="No" checked (click)="noquieroObservacionEnHueco(u)"></p>
+										</form>
+										<textarea id="textareaobservacionesInt{{u}}" name="w3review" rows="4" cols="40" style="display:none"></textarea>
+									</div>
+				    				
+				    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
+				    			--></div>
+				    			
+				    			
+				    			
+				    			
+				    			
+				    			
 				    			<div style="width:100%;float:left;margin-top:20px" *ngFor="let interior of this.rinconDormitorioComponent.arraySaberPuertas;let u=index" id="divPuerta{{u}}">
 					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuertaGG{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
 					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:155px;margin-left:10px;text-align:center;float:right;margin-right:14%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.rinconDormitorioComponent.guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalesRincon #modalPuertasArmario" readonly="readonly"/></p>
@@ -3119,7 +3202,7 @@
 												<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('derecha')"id="derechaTirador" value="OPCION 2" readonly="readonly"/>
 							    			</div>-->
 				    		</div>
-				    		<button style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;display:none"  data-toggle="modal" id="botonCalculadoraRincon" data-target="#modalEnviadoCarrito" (click)="this.rinconDormitorioComponent.enviarCarrito()">Mandar al carro</button>
+				    		<button style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;display:none;color:white;"  data-toggle="modal" id="botonCalculadoraRincon" data-target="#modalEnviadoCarrito" (click)="this.rinconDormitorioComponent.enviarCarrito()">Mandar al carro</button>
 						</div>
 						
 						<div id="calcuOculta" style="display:none">

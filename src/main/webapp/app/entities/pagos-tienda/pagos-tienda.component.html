@@ -1,10 +1,10 @@
 <div>
-    <h2 id="page-heading">
-        <span jhiTranslate="torgaPedidosApp.pagosTienda.home.title">Pagos Tiendas</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pagos-tienda" [routerLink]="['/pagos-tienda/new']">
+    <h2 id="page-heading" style="margin-top:5%">
+        <span>GESTION</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pagos-tienda" (click)="actualizarNumeros()">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="torgaPedidosApp.pagosTienda.home.createLabel">
-            Create new Pagos Tienda
+            <span >
+            Actualizar
             </span>
         </button>
     </h2>
@@ -14,49 +14,17 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="pago"><span jhiTranslate="torgaPedidosApp.pagosTienda.pago">Pago</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="descuento"><span jhiTranslate="torgaPedidosApp.pagosTienda.descuento">Descuento</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="precioTienda"><span jhiTranslate="torgaPedidosApp.pagosTienda.precioTienda">Precio Tienda</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="datosUsuario.id"><span jhiTranslate="torgaPedidosApp.pagosTienda.datosUsuario">Datos Usuario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th></th>
+            <th><span >Fecha</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th><span>Pedidos</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th><span>valoracion</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let pagosTienda of pagosTiendas ;trackBy: trackId">
-                <td><a [routerLink]="['/pagos-tienda', pagosTienda.id, 'view' ]">{{pagosTienda.id}}</a></td>
-                <td>{{pagosTienda.pago}}</td>
-                <td>{{pagosTienda.descuento}}</td>
-                <td>{{pagosTienda.precioTienda}}</td>
-                <td>
-                    <div *ngIf="pagosTienda.datosUsuario">
-                        <a [routerLink]="['../datos-usuario', pagosTienda.datosUsuario?.id, 'view' ]" >{{pagosTienda.datosUsuario?.id}}</a>
-                    </div>
-                </td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                [routerLink]="['/pagos-tienda', pagosTienda.id, 'view' ]"
-                                class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/pagos-tienda', pagosTienda.id, 'edit']"
-                                class="btn btn-primary btn-sm">
-                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'pagos-tienda/'+ pagosTienda.id + '/delete'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
-                            <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </td>
+                <td><a [routerLink]="['/pagos-tienda', pagosTienda.id, 'view' ]">{{pagosTienda.fecha}}</a></td>
+                <td>{{pagosTienda.numero}}</td>
+                <td>{{pagosTienda.valoracion}}</td>
             </tr>
             </tbody>
         </table>

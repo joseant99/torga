@@ -52,6 +52,9 @@ public class PresupuestoPedido implements Serializable {
     
     @Column(name = "esta_factura")
     private Integer estafactura;
+    
+    @Column(name = "sumado")
+    private Integer sumado;
 
     @Column(name = "puntos")
     private Float puntos;
@@ -182,6 +185,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setCreado(Integer creado) {
         this.creado = creado;
+    }
+    
+    public Integer getSumado() {
+        return sumado;
+    }
+
+    public PresupuestoPedido sumado(Integer sumado) {
+        this.sumado = sumado;
+        return this;
+    }
+
+    public void setSumado(Integer sumado) {
+        this.sumado = sumado;
     }
     
     public Integer getWeb() {

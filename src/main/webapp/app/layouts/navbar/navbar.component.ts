@@ -494,6 +494,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     public generarPresupuesto() {
         $('#todometerFondo').css({ display: 'block' });
+        var todoElPrecio = parseFloat($('#cestaTotal').text());
         //$('#modalCesta').attr('class', 'modal fade show');
         //$('#modalConfirmarCreacionPresu').attr('class', 'modal fade show');
         //$('#modalCesta').css({ display: 'none' });
@@ -685,6 +686,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 prueba['modificado'] = 1;
                 prueba['creado'] = creado;
                 prueba['observaciones'] = oberser;
+                prueba['sumado'] = 0;
+                prueba['puntos'] = todoElPrecio;
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
 
@@ -14217,6 +14220,18 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                 ) {
                                                     if (this.acabadosService.todos[j]['nombre'] == 450) {
                                                         acatipocabecero = this.acabadosService.todos[j];
+                                                        for (let ve = 0; ve <= 10000500; ve++) {
+                                                            if (ve == 10000500) {
+                                                                const acabados1 = {
+                                                                    acabados: acatipocabecero,
+                                                                    productosPresupuestoPedidos: prodAca[m],
+                                                                    orden: 0
+                                                                };
+                                                                this.subscribeToSaveResponse2(
+                                                                    this.acabadosProductosPresupuestoPedidoService.create(acabados1)
+                                                                );
+                                                            }
+                                                        }
                                                     }
                                                 }
                                                 if (

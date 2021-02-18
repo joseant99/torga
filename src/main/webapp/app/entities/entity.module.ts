@@ -38,6 +38,7 @@ import { TorgaPedidosRepresentanteTiendaModule } from './representante-tienda/re
 import { TorgaPedidosContactoFabricaModule } from './contacto-fabrica/contacto-fabrica.module';
 import { TorgaPedidosImagenesContactoFabricaModule } from './imagenes-contacto-fabrica/imagenes-contacto-fabrica.module';
 import { TorgaPedidosPagosTorgaTiendasModule } from './pagos-torga-tiendas/pagos-torga-tiendas.module';
+import { TorgaPedidosPagosTiendaModule } from './pagos-tienda/pagos-tienda.module';
 import { TorgaPedidosPuertasModule } from './puertas/puertas.module';
 import { TorgaPedidosArmarioModule } from './armario/armario.module';
 import { TorgaPedidosPrecioFinalPresuModule } from './precio-final-presu/precio-final-presu.module';
@@ -80,6 +81,7 @@ import { TorgaPedidosFecha_entregaModule } from './fecha-entrega/fecha-entrega.m
         TorgaPedidosMedEspProductoPedidoPresuModule,
         TorgaPedidosCascoModule,
         TorgaPedidosNiveladoresModule,
+        TorgaPedidosPagosTiendaModule,
         TorgaPedidosPuertasPreciosModule,
         TorgaPedidosUsbModule,
         TorgaPedidosInterioresArmarioNuevosModule,

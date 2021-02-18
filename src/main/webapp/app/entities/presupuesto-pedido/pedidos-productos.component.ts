@@ -907,16 +907,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var precioTodo1 = 0;
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 if (p == 0) {
-                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><span style="font-weight:600">Casco</span>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>+ ' +
-                                                            datosInteriores[p]['presupuestoArmario']['cascoPrecio'] +
-                                                            ' pp</span></p>'
-                                                    );
                                                     if (data.body[0]['presupuestoArmario']['niveladores']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Niveladores</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                data.body[0]['presupuestoArmario']['niveladores']['precio'] +
-                                                                '</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Niveladores</span> : Si</p>'
                                                         );
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
@@ -925,9 +918,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['cajeado']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Cajeado</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                data.body[0]['presupuestoArmario']['cajeado']['precio'] +
-                                                                '</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Cajeado</span> : Si</p>'
                                                         );
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
@@ -936,9 +927,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                     if (data.body[0]['presupuestoArmario']['enmarcados']['id'] != 25000) {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Enmarcados</span> : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                                data.body[0]['presupuestoArmario']['enmarcados']['precio'] +
-                                                                '</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Enmarcados</span> : Si</p>'
                                                         );
                                                     } else {
                                                         $('#datosMeter' + (cont - 1) + ' #primeroint').append(
@@ -985,44 +974,70 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     'Z'
                                                 ];
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
-
-                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                    '<p id="pimprimirdatostexto"><strong>Hueco ' +
-                                                        mai[p] +
-                                                        ': ' +
-                                                        datosInteriores[p]['productosDormitorio']['nombre'] +
-                                                        '&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                        datosInteriores[p]['precio'] +
-                                                        ' pp</span></p>'
-                                                );
-
-                                                if (datosInteriores[p]['mensajeLuz'] != null) {
+                                                if (datosInteriores[p]['presupuestoArmario']['armario']['id'] != 154) {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Iluminacion ' +
+                                                        '<p id="pimprimirdatostexto"><strong>Hueco ' +
                                                             mai[p] +
-                                                            ': </strong><span>' +
-                                                            datosInteriores[p]['mensajeLuz'] +
-                                                            '</span></p>'
+                                                            ': Interior ' +
+                                                            datosInteriores[p]['productosDormitorio']['nombre'] +
+                                                            '&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>'
                                                     );
-                                                }
 
-                                                if (datosInteriores[p]['observacion'] != null) {
+                                                    if (datosInteriores[p]['mensajeLuz'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Iluminacion ' +
+                                                                mai[p] +
+                                                                ': </strong><span>' +
+                                                                datosInteriores[p]['mensajeLuz'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+
+                                                    if (datosInteriores[p]['observacion'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Observaciones Hueco ' +
+                                                                mai[p] +
+                                                                ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                                datosInteriores[p]['observacion'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                    if (datosInteriores[p]['adicionales'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Adicionales Hueco ' +
+                                                                mai[p] +
+                                                                ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                                datosInteriores[p]['adicionales'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                } else {
                                                     $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Observaciones Hueco ' +
-                                                            mai[p] +
-                                                            ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
-                                                            datosInteriores[p]['observacion'] +
-                                                            '</span></p>'
+                                                        '<p id="pimprimirdatostexto"><strong>Hueco</strong></p>'
                                                     );
-                                                }
-                                                if (datosInteriores[p]['adicionales'] != null) {
-                                                    $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                        '<p id="pimprimirdatostexto"><strong>Adicionales Hueco ' +
-                                                            mai[p] +
-                                                            ':&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
-                                                            datosInteriores[p]['adicionales'] +
-                                                            '</span></p>'
-                                                    );
+
+                                                    if (datosInteriores[p]['mensajeLuz'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Iluminacion Hueco: </strong><span>' +
+                                                                datosInteriores[p]['mensajeLuz'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+
+                                                    if (datosInteriores[p]['observacion'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Observaciones Hueco :&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                                datosInteriores[p]['observacion'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
+                                                    if (datosInteriores[p]['adicionales'] != null) {
+                                                        $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                            '<p id="pimprimirdatostexto"><strong>Adicionales Hueco :&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>' +
+                                                                datosInteriores[p]['adicionales'] +
+                                                                '</span></p>'
+                                                        );
+                                                    }
                                                 }
                                             }
                                             if ('1 CUERPO TIPO 1' == nombre) {
@@ -1046,18 +1061,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             if ('Armario rincon' == nombre) {
                                                 if (screen.width >= 800) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
                                                     );
                                                 }
                                                 if (screen.width < 800) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
                                                     );
                                                     if (screen.width < 800) {
                                                         var elem1 = $('#datosMeter' + (cont - 1));
                                                         elem1[0].style.setProperty('padding-left', '0%', 'important');
                                                         elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
                                                     }
                                                 }
                                             }
@@ -2162,9 +2176,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         (p + 1) +
                                                         ': ' +
                                                         datosInteriores[p]['terminacion'] +
-                                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><span>+ ' +
-                                                        datosInteriores[p]['precio'] +
-                                                        ' pp</span></p>'
+                                                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>'
                                                 );
                                                 for (let j = 0; j < 5; j++) {
                                                     if (j == 0) {
@@ -2194,18 +2206,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             if ('Armario Rincon' == nombre) {
                                                 if (screen.width >= 800) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
+                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
                                                     );
                                                 }
                                                 if (screen.width < 800) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 25%;" src="../../../content/images/nodisponible.png">'
+                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
                                                     );
                                                     if (screen.width < 800) {
                                                         var elem1 = $('#datosMeter' + (cont - 1));
                                                         elem1[0].style.setProperty('padding-left', '0%', 'important');
                                                         elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                        elem1[0].style.setProperty('margin-top', '15%', 'important');
                                                     }
                                                 }
                                             }
@@ -12043,7 +12054,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NT079-NT094';
                                                 }
                                                 if (idProdNombre == 413) {
-                                                    nombreCargarImagen = 'NT079-NT094';
+                                                    nombreCargarImagen = 'NT087-NT094';
                                                 }
                                                 if (idProdNombre == 18) {
                                                     nombreCargarImagen = 'NH200-NH210';
@@ -12067,7 +12078,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NT095-NT110';
                                                 }
                                                 if (idProdNombre == 414) {
-                                                    nombreCargarImagen = 'NT095-NT110';
+                                                    nombreCargarImagen = 'NT103-NT110';
                                                 }
                                                 if (idProdNombre == 247) {
                                                     nombreCargarImagen = 'NT111-NT115';
@@ -13103,11 +13114,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             if (luz != undefined) {
                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Luz</span>: &nbsp;&nbsp;&nbsp; <span id="precioLuz' +
-                                                        i +
-                                                        '">' +
-                                                        luz['precio'] +
-                                                        '</span> pp</p>'
+                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Luz</span>: Si</p>'
                                                 );
                                                 var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
                                                 if (precioTotal != '') {
@@ -13127,11 +13134,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                                                         usb['mensaje'] +
-                                                        '</span>: &nbsp;&nbsp;&nbsp; <span id="precioUsb' +
-                                                        i +
-                                                        '">' +
-                                                        usb['precio'] +
-                                                        '</span> pp</p>'
+                                                        '</span>: Si</p>'
                                                 );
                                                 var precioTotal = $('.' + productos[i]['id'] + 'Datos #precioTotal' + i).text();
                                                 var precioFloat = 0;
@@ -13164,25 +13167,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         if (productos[i]['textoEspecial'] == 'Ancho especial') {
                                                             if (productos[i]['pilotoApoyo'] != 6 && productos[i]['pilotoApoyo'] != 1) {
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                        i +
-                                                                        '">' +
-                                                                        apoyo['precio'] +
-                                                                        '</span> pp</p>'
+                                                                        '</span></p>'
                                                                 );
                                                             } else {
                                                                 var totalfloatApoyo = apoyo['precio'] * 1.3;
                                                                 totalfloatApoyo = Math.ceil(totalfloatApoyo);
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                        i +
-                                                                        '">' +
-                                                                        totalfloatApoyo +
-                                                                        '</span> pp</p>'
+                                                                        '</span></p>'
                                                                 );
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
@@ -13197,25 +13192,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 productos[i]['pilotoApoyo'] != 7
                                                             ) {
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                        i +
-                                                                        '">' +
-                                                                        apoyo['precio'] +
-                                                                        '</span> pp</p>'
+                                                                        '</span></p>'
                                                                 );
                                                             } else {
                                                                 var totalfloatApoyo = apoyo['precio'] * 1.3;
                                                                 totalfloatApoyo = Math.ceil(totalfloatApoyo);
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                        i +
-                                                                        '">' +
-                                                                        totalfloatApoyo +
-                                                                        '</span> pp</p>'
+                                                                        '</span></p>'
                                                                 );
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
@@ -13224,44 +13211,28 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         }
                                                         if (productos[i]['textoEspecial'] == 'Alto especial') {
                                                             $('.' + productos[i]['id'] + 'Datos').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                     apoyo['productoApoyo']['nombre'] +
-                                                                    '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                    i +
-                                                                    '">' +
-                                                                    apoyo['precio'] +
-                                                                    '</span> pp</p>'
+                                                                    '</span></p>'
                                                             );
                                                         }
                                                     } else {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
                                                                 apoyo['productoApoyo']['nombre'] +
-                                                                '</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                i +
-                                                                '">' +
-                                                                apoyo['precio'] +
-                                                                '</span> pp</p>'
+                                                                '</span></p>'
                                                         );
                                                     }
                                                 } else {
                                                     if (productos[i]['pilotoApoyo'] == 8) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Zocalo del mismo ancho del mueble</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                i +
-                                                                '">' +
-                                                                apoyo['precio'] +
-                                                                '</span> pp</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: Zocalo del mismo ancho del mueble</span>/p>'
                                                         );
                                                     }
 
                                                     if (productos[i]['pilotoApoyo'] == 9) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Bancada del mismo ancho del mueble</span>&nbsp;&nbsp;&nbsp; <span id="precioApoyo' +
-                                                                i +
-                                                                '">' +
-                                                                apoyo['precio'] +
-                                                                '</span> pp</p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: Bancada del mismo ancho del mueble</span></p>'
                                                         );
                                                     }
                                                 }
@@ -14005,13 +13976,13 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                 nombreCargarImagen = 'NT079-NT094';
             }
             if (idProdNombre == 413) {
-                nombreCargarImagen = 'NT079-NT094';
+                nombreCargarImagen = 'NT087-NT094';
             }
             if (idProdNombre == 282) {
                 nombreCargarImagen = 'NT095-NT110';
             }
             if (idProdNombre == 414) {
-                nombreCargarImagen = 'NT095-NT110';
+                nombreCargarImagen = 'NT103-NT110';
             }
             if (idProdNombre == 247) {
                 nombreCargarImagen = 'NT111-NT115';
