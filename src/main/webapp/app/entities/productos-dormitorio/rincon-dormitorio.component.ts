@@ -16535,6 +16535,13 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 });
             }
         });
+
+        var arrayPuertas = this.arraySaberPuertas;
+        var arrayHuecos = this.arraySaberHuecos;
+        var mejorArmario = this.armarioCogido;
+        if (mejorArmario['puertas'].length == 2) {
+            $('#botonCalculadoraRincon').css({ display: 'block' });
+        }
     }
     public cambioAcabadoImagenPue(nombre) {
         var id = this.idPuertaInput;

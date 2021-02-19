@@ -56,7 +56,16 @@ export class DatosUsuarioService {
     query13(nombre: any): Observable<EntityArrayResponseType> {
         return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-id99/${nombre}`, { observe: 'response' });
     }
+
+    query139(nombre: any, id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-id999/${nombre}/${id}`, { observe: 'response' });
+    }
+
     reprebuscar(id: any): Observable<EntityArrayResponseType> {
         return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-reprebus12/${id}`, { observe: 'response' });
+    }
+
+    findCogerTodos(): Observable<EntityResponseType> {
+        return this.http.get<IDatosUsuario>(`${this.resourceUrl}-todos`, { observe: 'response' });
     }
 }

@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { ITEMS_PER_PAGE } from 'app/shared';
 import { PagosTiendaService } from './pagos-tienda.service';
 import { PresupuestoPedidoService } from '../presupuesto-pedido/presupuesto-pedido.service';
+import { IPresupuestoPedido } from 'app/shared/model/presupuesto-pedido.model';
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
 @Component({
     selector: 'jhi-pagos-tienda',
@@ -31,6 +32,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
     previousPage: any;
     reverse: any;
     isSaving: any;
+    todastiendas: any;
 
     constructor(
         protected pagosTiendaService: PagosTiendaService,
@@ -53,6 +55,9 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        this.datosUsuarioService.findCogerTodos().subscribe(data => {
+            this.todastiendas = data.body;
+        });
         this.pagosTiendaService
             .query({
                 page: this.page - 1,
@@ -92,12 +97,60 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
         result.subscribe((res: HttpResponse<IPagosTienda>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
 
+    protected subscribeToSaveResponse1(result: Observable<HttpResponse<IPresupuestoPedido>>) {
+        result.subscribe((res: HttpResponse<IPresupuestoPedido>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
     protected onSaveSuccess() {
         this.isSaving = false;
     }
 
     public actualizarNumeros() {
-        console.log(this.pagosTiendas);
+        var tiendas = this.todastiendas;
+        var pagostiendas = this.pagosTiendas;
+        this.presupuestoPedidoService.sumado().subscribe(data => {
+            for (let i = 0; i < pagostiendas.length; i++) {
+                var todoSumado = 0;
+                var precio = pagostiendas[i]['valoracion'];
+                var cont = pagostiendas[i]['numero'];
+                for (let j = 0; j < data.body.length; j++) {
+                    if (data.body[j]['fecha_pedido'] == pagostiendas[i]['fecha']) {
+                        var puntos = 0;
+                        for (let w = 0; w < tiendas.length; w++) {
+                            if (tiendas[w]['user'] != null && tiendas[w]['user'] != undefined) {
+                                if (tiendas[w]['user']['id'] == data.body[j]['user']['id']) {
+                                    var zona = tiendas[w]['zonas']['id'];
+                                    if (zona == 1) {
+                                        puntos = data.body[j]['puntos'] * 0.58;
+                                    }
+                                    if (zona == 2) {
+                                        puntos = data.body[j]['puntos'] * 0.61;
+                                    }
+                                    if (zona == 3) {
+                                        puntos = data.body[j]['puntos'] * 0.61;
+                                    }
+                                    if (zona == 4) {
+                                        puntos = data.body[j]['puntos'] * 0.61;
+                                    }
+                                    if (zona == 0) {
+                                        puntos = data.body[j]['puntos'] * 1;
+                                    }
+                                }
+                            }
+                        }
+                        todoSumado = 1;
+                        precio = precio + puntos;
+                        cont++;
+                        data.body[j]['sumado'] = 1;
+                        this.subscribeToSaveResponse1(this.presupuestoPedidoService.update(data.body[j]));
+                    }
+                }
+                pagostiendas[i]['numero'] = cont;
+                pagostiendas[i]['valoracion'] = parseFloat(precio.toFixed(2));
+                this.subscribeToSaveResponse(this.pagosTiendaService.update(pagostiendas[i]));
+            }
+            console.log(data.body);
+        });
     }
 
     protected onSaveError() {

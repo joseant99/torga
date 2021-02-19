@@ -8,7 +8,6 @@
             </span>
         </button>
     </h2>
-    <jhi-alert></jhi-alert>
     <br/>
     <div class="table-responsive" *ngIf="pagosTiendas">
         <table class="table table-striped">
@@ -24,7 +23,7 @@
             <tr *ngFor="let pagosTienda of pagosTiendas ;trackBy: trackId">
                 <td><a [routerLink]="['/pagos-tienda', pagosTienda.id, 'view' ]">{{pagosTienda.fecha}}</a></td>
                 <td>{{pagosTienda.numero}}</td>
-                <td>{{pagosTienda.valoracion}}</td>
+                <td>{{pagosTienda.valoracion}} &euro;</td>
             </tr>
             </tbody>
         </table>

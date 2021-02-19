@@ -35,4 +35,7 @@ public interface PresupuestoPedidoRepository extends JpaRepository<PresupuestoPe
     @Query("Select u.fecha_prevista from PresupuestoPedido u where u.pedido = 1 and u.id = (Select max(o.id) from PresupuestoPedido o where o.fecha_prevista is not null)")
 	Collection<PresupuestoPedido> sacarUltimaFecha();
     
+    @Query("Select u from PresupuestoPedido u where u.pedido = 1 and u.sumado = 0")
+	Collection<PresupuestoPedido> busquedaSumado0();
+    
 }

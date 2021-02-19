@@ -80,7 +80,12 @@
 		        <div class="modal-body" id="modaldivcreacionpresupuesto">
 			        <div id="div1nombrefiscalcesta">
 			        	<div *jhiHasAnyAuthority="'ROLE_REPRESENTATE'">
+			        	<p style="width:100%;text-align:center" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'">Escoge un nombre Fiscal</p>
 			        	<p *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" style="text-align:center"><select  id="selectTiendaDelNav" (change)="hacerquecargelastiendas()" style="display:none;height:50px;width:260px;margin-right:35px"><option value="0"></option></select></p>
+			        	<p style="width:100%;text-align:center" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'">O</p>
+			        	<p style="width:100%;text-align:center" *jhiHasAnyAuthority="'ROLE_REPRESENTATE'">Introduce un nombre Fiscal</p>
+			        	<p *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" style="width:100%;text-align:center"><input id="nombrefiscalinputcesta1" style="width:200px" type="text"></p>
+				        <p *jhiHasAnyAuthority="'ROLE_REPRESENTATE'" style="width:100%;text-align:center"><button (click)="consultarNombreFiscal1()">BUSCAR</button></p>
 				        	<div style="float:left;margin-left:3%;width: 500px;border: 1px solid;padding-top: 20px;background-color: white;margin-top: 2%;" id="arraynombrefiscaldiv" *ngFor="let array of arrayNombreFiscal" (click)="meterCuadroDireccion(array.id)">
 						        <p>Codigo: {{array.codigo}}</p>
 						        <p>Nombre Fiscal: {{array.nombreFiscal}}</p>

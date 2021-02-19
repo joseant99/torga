@@ -152,11 +152,26 @@ public class DatosUsuarioResource {
         return ResponseEntity.ok().body(page);
     }
     
+    @GetMapping("/datos-usuarios-id999/{nombre}/{id}")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId999(@PathVariable String nombre,@PathVariable Long id) {
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquing999(nombre,id);
+        return ResponseEntity.ok().body(page);
+    }
+    
     @GetMapping("/datos-usuarios-id1")
     @Timed
     public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId1() {
         log.debug("REST request to get a page of DatosUsuarios");
         Collection<DatosUsuario> page = datosUsuarioRepository.busquing();
+        return ResponseEntity.ok().body(page);
+    }
+    
+    @GetMapping("/datos-usuarios-todos")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuariosId12() {
+        log.debug("REST request to get a page of DatosUsuarios");
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquingTODOS();
         return ResponseEntity.ok().body(page);
     }
 

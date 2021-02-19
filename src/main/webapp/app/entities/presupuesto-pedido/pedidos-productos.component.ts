@@ -13167,17 +13167,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         if (productos[i]['textoEspecial'] == 'Ancho especial') {
                                                             if (productos[i]['pilotoApoyo'] != 6 && productos[i]['pilotoApoyo'] != 1) {
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span></p>'
+                                                                        '</p>'
                                                                 );
                                                             } else {
                                                                 var totalfloatApoyo = apoyo['precio'] * 1.3;
                                                                 totalfloatApoyo = Math.ceil(totalfloatApoyo);
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span></p>'
+                                                                        '</p>'
                                                                 );
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
@@ -13192,17 +13192,17 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                                 productos[i]['pilotoApoyo'] != 7
                                                             ) {
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span></p>'
+                                                                        '</p>'
                                                                 );
                                                             } else {
                                                                 var totalfloatApoyo = apoyo['precio'] * 1.3;
                                                                 totalfloatApoyo = Math.ceil(totalfloatApoyo);
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
-                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                         apoyo['productoApoyo']['nombre'] +
-                                                                        '</span></p>'
+                                                                        '</p>'
                                                                 );
                                                                 $('.' + productos[i]['id'] + 'Datos').append(
                                                                     '<p id="pimprimirdatostexto"><span style="font-weight:600">Incremento apoyo especial 30%</span></p>'
@@ -13211,28 +13211,28 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         }
                                                         if (productos[i]['textoEspecial'] == 'Alto especial') {
                                                             $('.' + productos[i]['id'] + 'Datos').append(
-                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                                '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                     apoyo['productoApoyo']['nombre'] +
-                                                                    '</span></p>'
+                                                                    '</p>'
                                                             );
                                                         }
                                                     } else {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: ' +
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>' +
                                                                 apoyo['productoApoyo']['nombre'] +
-                                                                '</span></p>'
+                                                                '</p>'
                                                         );
                                                     }
                                                 } else {
                                                     if (productos[i]['pilotoApoyo'] == 8) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: Zocalo del mismo ancho del mueble</span>/p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>Zocalo del mismo ancho del mueble/p>'
                                                         );
                                                     }
 
                                                     if (productos[i]['pilotoApoyo'] == 9) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: Bancada del mismo ancho del mueble</span></p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>Bancada del mismo ancho del mueble</p>'
                                                         );
                                                     }
                                                 }

@@ -155,6 +155,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     adicionalesArray2: any;
     adicionalesArray3: any;
     adicionalesArray4: any;
+    precioAdicionalesInt: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -1129,8 +1130,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         var cont = array.length;
         var arraymeter = '';
+        var preciollamadogg = this.precioAdicionalesInt;
         if (id == 0) {
             precio = precio + 40;
+            preciollamadogg = preciollamadogg + 40;
             arraymeter = 'ESTANTE MADERA ADICIONAL';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1140,6 +1143,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 1) {
             precio = precio + 50;
+            preciollamadogg = preciollamadogg + 50;
             arraymeter = 'ESTANTE DE CRISTAL ADICIONAL';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1149,6 +1153,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 2) {
             precio = precio + 15;
+            preciollamadogg = preciollamadogg + 15;
             arraymeter = 'BARRA DE COLGAR ADICIONAL';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1158,6 +1163,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 3) {
             precio = precio + 90;
+            preciollamadogg = preciollamadogg + 90;
             arraymeter = '1 CAJON ADICIONAL DE SUELO';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1166,6 +1172,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
         }
         if (id == 4) {
+            preciollamadogg = preciollamadogg + 90;
             precio = precio + 90;
             arraymeter = '1 CAJON SUSPENDIDO';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
@@ -1176,6 +1183,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 5) {
             precio = precio + 48;
+            preciollamadogg = preciollamadogg + 48;
             arraymeter = 'CAMISERO DE 1 ALTURA';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 1 ALTURA');
@@ -1183,6 +1191,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 6) {
             precio = precio + 96;
+            preciollamadogg = preciollamadogg + 96;
             arraymeter = 'CAMISERO DE 2 ALTURAS';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 2 ALTURAS');
@@ -1190,6 +1199,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 7) {
             precio = precio + 144;
+            preciollamadogg = preciollamadogg + 144;
             arraymeter = 'CAMISERO DE 3 ALTURAS';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 3 ALTURAS');
@@ -1197,6 +1207,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 8) {
             precio = precio + 205;
+            preciollamadogg = preciollamadogg + 205;
             arraymeter = 'ZAPATERO LATERAL EXTRAIBLE';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1206,6 +1217,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 9) {
             precio = precio + 80;
+            preciollamadogg = preciollamadogg + 80;
             arraymeter = 'PANTALONERO EXTRAIBLE';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('PANTALONERO EXTRAIBLE');
@@ -1213,6 +1225,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         }
         if (id == 10) {
             precio = precio + 80;
+            preciollamadogg = preciollamadogg + 80;
             arraymeter = 'CORBATERO LATERAL EXTRAIBLE';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
@@ -1247,6 +1260,8 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             this.adicionalesArray4 = array;
             this.armariosDormitorioComponent.adicionalesArray4 = array;
         }
+        this.precioAdicionalesInt = preciollamadogg;
+        this.armariosDormitorioComponent.precioAdicionalesInt = preciollamadogg;
         var prec = $('#precioInt' + (huecoPinta - 1)).text();
         prec = prec.split(' ')[1];
         var precio1 = parseFloat(prec);
@@ -1414,6 +1429,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var array = [];
         var nuevoarray = [];
         var huecoPinta = u + 1;
+        var preciollamadogg = this.precioAdicionalesInt;
         var cont = 0;
         if (huecoPinta == 1) {
             array = this.adicionalesArray0;
@@ -1472,10 +1488,12 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 if (array[i] == '1 CAJON SUSPENDIDO') {
                     precio = 110;
                 }
+                preciollamadogg = preciollamadogg - precio;
                 $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 - precio) + ' pp');
             }
         }
-
+        this.precioAdicionalesInt = preciollamadogg;
+        this.armariosDormitorioComponent.precioAdicionalesInt = preciollamadogg;
         if (huecoPinta == 1) {
             this.adicionalesArray0 = nuevoarray;
             this.armariosDormitorioComponent.adicionalesArray0 = nuevoarray;
@@ -1883,6 +1901,35 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
+
+        if (id == 1000) {
+            $('.armariosDivTodo4').attr('id', 'simplepruebaani2');
+            $('.armariosRinconDivInputCodigo').attr('id', 'simplepruebaani2');
+            $('#page-heading').css({ display: 'block' });
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.armariosDivTodo4').css({ display: 'none' });
+                $('.armariosDivTodo4').removeAttr('id');
+                $('.armariosRinconDivInputCodigo').removeAttr('id');
+                $('#simplepruebaani').css({ display: 'none' });
+                $('.armariosRinconDivInputCodigo').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+            }, 1200);
+        }
+        if (id == 1001) {
+            $('.armariosDivTodo4').attr('id', 'simplepruebaani2');
+            $('.armariosRinconDivInputCodigo #codigoArmariosRinconDivs').css({ display: 'block' });
+            $('.armariosRinconDivInputCodigo #divprincipalhuecomenmen #volverAtras1MeterCasa').css({ display: 'block' });
+            $('.armariosRinconDivInputCodigo #volverAtras2').css({ display: 'none' });
+            $('body').removeAttr('style');
+
+            setTimeout(function() {
+                $('.armariosDivTodo4').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('.armariosDivTodo4').removeAttr('id');
+            }, 1200);
+        }
         if (id == 4) {
             $('.armariosDivTodo').attr('id', 'simplepruebaani2');
             $('#codigoArmariosBatientesDivs').css({ display: 'block' });
@@ -2090,6 +2137,22 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('.armariosVistaDivInputCodigo').removeAttr('id');
                 $('#simplepruebaani').css({ display: 'none' });
                 $('.armariosVistaDivInputCodigo').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+            }, 1200);
+        }
+
+        if (id == 1002) {
+            $('.armariosRinconDivInputCodigo').css({ display: 'none' });
+            $('.armariosDivTodo4').attr('id', 'simplepruebaani2');
+            $('#page-heading').css({ display: 'block' });
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.armariosDivTodo4').css({ display: 'none' });
+                $('.armariosDivTodo4').removeAttr('id');
+                $('.armariosRinconDivInputCodigo').removeAttr('id');
+                $('#simplepruebaani').css({ display: 'none' });
+                $('.armariosRinconDivInputCodigo').css({ display: 'none' });
                 $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
@@ -34415,7 +34478,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         this.adicionalesArray3 = [];
         this.adicionalesArray4 = [];
         this.adicionalesArray = [];
-
+        this.precioAdicionalesInt = 0;
         var productos = [];
         var apoyos = [];
         this.posicionEstanteria = 0;
