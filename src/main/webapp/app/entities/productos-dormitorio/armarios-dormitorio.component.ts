@@ -3493,7 +3493,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         }
     }
 
-    public luzInteriores(id, lol) {
+    public luzInteriores(id, lol, como) {
         var precioDimen = parseFloat($('#precioDimension').text());
 
         var todo = this.armarioCogido;

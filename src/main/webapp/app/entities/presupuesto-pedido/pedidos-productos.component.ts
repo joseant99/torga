@@ -13226,7 +13226,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 } else {
                                                     if (productos[i]['pilotoApoyo'] == 8) {
                                                         $('.' + productos[i]['id'] + 'Datos').append(
-                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>Zocalo del mismo ancho del mueble/p>'
+                                                            '<p id="pimprimirdatostexto"><span style="font-weight:600">Apoyo: </span>Zocalo del mismo ancho del mueble</p>'
                                                         );
                                                     }
 
