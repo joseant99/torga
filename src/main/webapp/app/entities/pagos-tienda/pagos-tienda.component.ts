@@ -66,6 +66,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
             })
             .subscribe(
                 (res: HttpResponse<IPagosTienda[]>) => {
+                    res.body.reverse();
                     this.paginatePagosTiendas(res.body, res.headers);
                     var d = new Date();
                     var month = d.getMonth() + 1;

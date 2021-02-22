@@ -12440,6 +12440,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
         arrayBueno[3255] = 41;
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
+        arrayBueno[3259] = 73;
         var arrayNombreFiscal = [];
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService

@@ -13239,6 +13239,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         terminacion: terminacioninterior,
                                                         observacion: observaInt,
                                                         adicionales: adicionales,
+                                                        posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
                                                         mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
                                                     };
                                                 }
@@ -13276,6 +13277,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['interiores'][x],
                                                         orden: x,
+                                                        posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
                                                         mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
                                                         observacion: observaInt,
                                                         adicionales: adicionales,
@@ -13615,6 +13617,16 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     }
                                 }
                             }
+                        }
+                        var obsEnmarcado = '';
+                        if (prodCarr[m][1]['enmarcado'] != undefined) {
+                            obsEnmarcado = prodCarr[m][1]['enmarcado']['observaciones'];
+                            obserInt = obserInt + ' Enmarcado:' + obsEnmarcado;
+                        }
+                        var obsCajeado = '';
+                        if (prodCarr[m][1]['cajeado'] != undefined) {
+                            obsCajeado = prodCarr[m][1]['cajeado']['observaciones'];
+                            obserInt = obserInt + ' Cajeado:' + obsCajeado;
                         }
                         if (obserInt != '') {
                             prodPrePed = {

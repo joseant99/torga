@@ -32,6 +32,9 @@ public class PresupuestoArmarioInteriores implements Serializable {
     @Column(name = "mensaje_luz")
     private String mensajeLuz;
     
+    @Column(name = "posicion_luz")
+    private String posicionLuz;
+    
     @Column(name = "terminacion")
     private String terminacion;
     
@@ -82,6 +85,19 @@ public class PresupuestoArmarioInteriores implements Serializable {
 
     public void setMensajeLuz(String mensajeLuz) {
         this.mensajeLuz = mensajeLuz;
+    }
+    
+    public String getPosicionLuz() {
+        return posicionLuz;
+    }
+
+    public PresupuestoArmarioInteriores posicionLuz(String posicionLuz) {
+        this.posicionLuz = posicionLuz;
+        return this;
+    }
+
+    public void setPosicionLuz(String posicionLuz) {
+        this.posicionLuz = posicionLuz;
     }
     
     public String getTerminacion() {
