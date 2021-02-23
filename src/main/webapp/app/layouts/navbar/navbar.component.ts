@@ -13382,37 +13382,85 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         if (prodCarr[m][1]['puertas'][x]['id'] == 401) {
                                             terminacionpuerta = 'J 2 pla. vert. dch. luna ancha';
                                         }
+                                        if (
+                                            prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA VISTA' &&
+                                            prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA VISTA' &&
+                                            prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA' &&
+                                            prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA'
+                                        ) {
+                                            if (screen.width >= 800) {
+                                                for (let ve = 0; ve <= 100005; ve++) {
+                                                    if (ve == 100005) {
+                                                        puertas = {
+                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                            presupuestoArmario: presupuestoArmario,
+                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                            orden: x,
+                                                            terminacion: terminacionpuerta
+                                                        };
 
-                                        if (screen.width >= 800) {
-                                            for (let ve = 0; ve <= 100005; ve++) {
-                                                if (ve == 100005) {
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-
-                                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                                        this.subscribeToSaveResponse1(
+                                                            this.presupuestoArmarioPuertasService.create(puertas)
+                                                        );
+                                                    }
                                                 }
                                             }
-                                        }
 
-                                        if (screen.width < 800) {
-                                            for (let ve = 0; ve <= 100005; ve++) {
-                                                if (ve == 100005) {
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
+                                            if (screen.width < 800) {
+                                                for (let ve = 0; ve <= 100005; ve++) {
+                                                    if (ve == 100005) {
+                                                        puertas = {
+                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                            presupuestoArmario: presupuestoArmario,
+                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                            orden: x,
+                                                            terminacion: terminacionpuerta
+                                                        };
 
-                                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                                        this.subscribeToSaveResponse1(
+                                                            this.presupuestoArmarioPuertasService.create(puertas)
+                                                        );
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            if (screen.width >= 800) {
+                                                for (let ve = 0; ve <= 100005; ve++) {
+                                                    if (ve == 100005) {
+                                                        puertas = {
+                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                            presupuestoArmario: presupuestoArmario,
+                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                            orden: x,
+                                                            terminacion: terminacionpuerta
+                                                        };
+
+                                                        this.subscribeToSaveResponse1(
+                                                            this.presupuestoArmarioPuertasService.create(puertas)
+                                                        );
+                                                    }
+                                                }
+                                            }
+
+                                            if (screen.width < 800) {
+                                                for (let ve = 0; ve <= 100005; ve++) {
+                                                    if (ve == 100005) {
+                                                        puertas = {
+                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                            presupuestoArmario: presupuestoArmario,
+                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                            orden: x,
+                                                            terminacion: terminacionpuerta
+                                                        };
+
+                                                        this.subscribeToSaveResponse1(
+                                                            this.presupuestoArmarioPuertasService.create(puertas)
+                                                        );
+                                                    }
                                                 }
                                             }
                                         }
@@ -13426,8 +13474,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
                                                         orden: x,
                                                         terminacion: terminacionpuerta
                                                     };
@@ -13438,8 +13486,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
                                                         orden: x,
                                                         terminacion: terminacionpuerta
                                                     };
@@ -13450,8 +13498,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
+                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
                                                         orden: x,
                                                         terminacion: terminacionpuerta
                                                     };
@@ -13463,9 +13511,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
+                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                                        acabados2: prodCarr[m][1]['acabado2Puerta' + x],
                                                         orden: x,
                                                         terminacion: terminacionpuerta
                                                     };
@@ -13477,11 +13525,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                                         precio: prodCarr[m][1]['puertas'][x]['precio'],
                                                         presupuestoArmario: presupuestoArmario,
                                                         productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                        acabados1: prodCarr[m][1]['puertas'][x]['acabado1'],
-                                                        acabados2: prodCarr[m][1]['puertas'][x]['acabado2'],
-                                                        acabados3: prodCarr[m][1]['puertas'][x]['acabado3'],
-                                                        acabados4: prodCarr[m][1]['puertas'][x]['acabado4'],
+                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                                        acabados2: prodCarr[m][1]['acabado2Puerta' + x],
+                                                        acabados3: prodCarr[m][1]['acabado3Puerta' + x],
+                                                        acabados4: prodCarr[m][1]['acabado4Puerta' + x],
                                                         orden: x,
                                                         terminacion: terminacionpuerta
                                                     };

@@ -66,6 +66,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
             })
             .subscribe(
                 (res: HttpResponse<IPagosTienda[]>) => {
+                    var todoantes = res.body;
                     res.body.reverse();
                     this.paginatePagosTiendas(res.body, res.headers);
                     var d = new Date();
@@ -75,7 +76,8 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
                     var crear = 0;
                     var output = (day < 10 ? '0' : '') + day + '/' + (month < 10 ? '0' : '') + month + '/' + d.getFullYear();
                     console.log(output);
-                    for (let i = 0; i < res.body.length; i++) {
+
+                    for (let i = 0; i < todoantes.length; i++) {
                         if (res.body[i]['fecha'] == output) {
                             crear = 0;
                         } else {

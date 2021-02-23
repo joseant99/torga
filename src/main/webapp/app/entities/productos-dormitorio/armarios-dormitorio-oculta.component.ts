@@ -880,12 +880,14 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#2acaPuerta' + id + ' #PuertaAcabado3').text(nombre);
                 var arrayParaVer = this.puertasParaArray;
                 arrayParaVer[id]['acabado1'] = acabados[w];
+                arrayParaVer['acabado1Puerta' + id] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
         }
         var array1 = this.armarioCogido;
         array1['puertas'] = this.puertasParaArray;
+        array1['acabado1Puerta' + id] = this.puertasParaArray['acabado1Puerta' + id];
         this.armarioCogido = array1;
 
         var nombreDeLaPuerta = $('#divPuerta' + id + ' #inputPuertas' + id).val();
@@ -920,12 +922,14 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#3acaPuerta' + id + ' #PuertaAcabado4').text(nombre);
                 var arrayParaVer = this.puertasParaArray;
                 arrayParaVer[id]['acabado2'] = acabados[w];
+                arrayParaVer['acabado2Puerta' + id] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
         }
         var array1 = this.armarioCogido;
         array1['puertas'] = this.puertasParaArray;
+        array1['acabado2Puerta' + id] = this.puertasParaArray['acabado2Puerta' + id];
         this.armarioCogido = array1;
         var nombreDeLaPuerta = $('#divPuerta' + id + ' #inputPuertas' + id).val();
         var arrayPuertas = this.arraySaberPuertas;
@@ -958,12 +962,14 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#4acaPuerta' + id + ' #PuertaAcabado5').text(nombre);
                 var arrayParaVer = this.puertasParaArray;
                 arrayParaVer[id]['acabado3'] = acabados[w];
+                arrayParaVer[id]['acabado3'] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
         }
         var array1 = this.armarioCogido;
         array1['puertas'] = this.puertasParaArray;
+        array1['acabado3Puerta' + id] = this.puertasParaArray['acabado3Puerta' + id];
         this.armarioCogido = array1;
     }
     public cambioAcabadoImagenPue4(nombre) {
@@ -984,12 +990,14 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#5acaPuerta' + id + ' #PuertaAcabado6').text(nombre);
                 var arrayParaVer = this.puertasParaArray;
                 arrayParaVer[id]['acabado4'] = acabados[w];
+                arrayParaVer['acabado4Puerta' + id] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
         }
         var array1 = this.armarioCogido;
         array1['puertas'] = this.puertasParaArray;
+        array1['acabado4Puerta' + id] = this.puertasParaArray['acabado4Puerta' + id];
         this.armarioCogido = array1;
 
         var nombreDeLaPuerta = $('#divPuerta' + id + ' #inputPuertas' + id).val();
@@ -8007,10 +8015,10 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
             }
         }
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Ancha DER') {
-            var idPuerta = 400;
+            var idPuerta = 401;
         }
         if (nombre == 'Puerta 2 Plafones Verticales Cristal Estrecha DER') {
-            var idPuerta = 401;
+            var idPuerta = 400;
         }
         var paraprobarelarray = [];
         var interTodos = this.puertasModal;
@@ -11280,12 +11288,14 @@ export class ArmariosDormitorioOcultaComponent implements OnInit, OnDestroy, Aft
                 $('#PuertaAcabado' + id).text(nombre);
                 var arrayParaVer = this.puertasParaArray;
                 arrayParaVer[id]['acabado0'] = acabados[w];
+                arrayParaVer['acabado0Puerta' + id] = acabados[w];
                 this.puertasParaArray = arrayParaVer;
                 console.log(this.puertasParaArray);
             }
         }
         var array1 = this.armarioCogido;
         array1['puertas'] = this.puertasParaArray;
+        array1['acabado0Puerta' + id] = this.puertasParaArray['acabado0Puerta' + id];
         this.armarioCogido = array1;
         $('#puertaTiradorImagen').remove();
         var texto = this.textoArmario;

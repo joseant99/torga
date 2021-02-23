@@ -7793,6 +7793,13 @@ export class JhiMainComponent implements OnInit {
                         '</p>'
                 );
             }
+            if (o == 7) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Plafon 7 :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
         }
         if (idProd == 413) {
             if (o == 0) {
@@ -16351,6 +16358,15 @@ export class JhiMainComponent implements OnInit {
                         '</span></p>'
                 );
             }
+            if (k == 8) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">Plafon 7 :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
         }
 
         if (idProd == 282) {
@@ -23225,6 +23241,17 @@ export class JhiMainComponent implements OnInit {
                     '<p style="width:100%" id="acabado' +
                         u +
                         '"><span style="font-weight:600">Plafon 6</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 8) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">Plafon 7</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

@@ -1082,7 +1082,98 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
         }
         this.arraySaberPuertas = arrayPuertas;
         this.arraySaberHuecos = array;
+        $('.armariosDivTodo4 #imagenesArmario1').append(
+            '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+        );
+        if (
+            codigo == 'NB277' ||
+            codigo == 'NB278' ||
+            codigo == 'NB279' ||
+            codigo == 'NB280' ||
+            codigo == 'NB289' ||
+            codigo == 'NB290' ||
+            codigo == 'NB291' ||
+            codigo == 'NB292' ||
+            codigo == 'NB301' ||
+            codigo == 'NB302' ||
+            codigo == 'NB303' ||
+            codigo == 'NB304' ||
+            codigo == 'NB313' ||
+            codigo == 'NB314' ||
+            codigo == 'NB315' ||
+            codigo == 'NB316'
+        ) {
+            $('.armariosDivTodo4 #imagenesArmario1 #imagenesArmario').append(
+                '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior1rincon.jpeg">'
+            );
+        }
 
+        if (
+            codigo == 'NB281' ||
+            codigo == 'NB282' ||
+            codigo == 'NB283' ||
+            codigo == 'NB284' ||
+            codigo == 'NB293' ||
+            codigo == 'NB294' ||
+            codigo == 'NB295' ||
+            codigo == 'NB296' ||
+            codigo == 'NB305' ||
+            codigo == 'NB306' ||
+            codigo == 'NB307' ||
+            codigo == 'NB308' ||
+            codigo == 'NB317' ||
+            codigo == 'NB318' ||
+            codigo == 'NB319' ||
+            codigo == 'NB320'
+        ) {
+            $('.armariosDivTodo4 #imagenesArmario1 #imagenesArmario').append(
+                '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior2rincon.jpeg">'
+            );
+        }
+
+        if (
+            codigo == 'NB285' ||
+            codigo == 'NB286' ||
+            codigo == 'NB287' ||
+            codigo == 'NB288' ||
+            codigo == 'NB297' ||
+            codigo == 'NB298' ||
+            codigo == 'NB299' ||
+            codigo == 'NB300' ||
+            codigo == 'NB309' ||
+            codigo == 'NB310' ||
+            codigo == 'NB311' ||
+            codigo == 'NB312' ||
+            codigo == 'NB321' ||
+            codigo == 'NB322' ||
+            codigo == 'NB323' ||
+            codigo == 'NB324'
+        ) {
+            $('.armariosDivTodo4 #imagenesArmario1 #imagenesArmario').append(
+                '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior2rincon.jpeg">'
+            );
+        }
+
+        $('.armariosDivTodo4 #imagenesArmario2').append(
+            '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+        );
+        $('.armariosDivTodo4 #imagenesArmario2 #imagenesArmario').append(
+            '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/rinconpuertas.jpeg">'
+        );
+        var elem1 = $('.armariosDivTodo4 #imagenesArmario2');
+        elem1[0].style.setProperty('margin-top', '550px', 'important');
+        if (screen.width < 800) {
+            $('.armariosDivTodo4 .armariosDivTodo4 #imagenesArmario2').css({ zoom: '45%' });
+            $('.armariosDivTodo4 .armariosDivTodo4 #imagenesArmario1').css({ zoom: '45%' });
+            $('.armariosDivTodo4 .armariosDivTodo4 #imagenesArmario2').css({ 'margin-left': '-28%' });
+            $('.armariosDivTodo4 .armariosDivTodo4 #imagenesArmario1').css({ 'margin-left': '-28%' });
+        }
+        if (screen.width > 800) {
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-top': '-5%' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-top': '-5%' });
+            $('.cuerpoImagenPuertas #imagenesArmario2').css({ 'margin-left': '3%' });
+            $('.cuerpoImagenPuertas #imagenesArmario1').css({ 'margin-left': '3%' });
+        }
         if (!isNaN(huecos)) {
             var perfecto = puertas / huecos;
             var dimens = this.dimenArmarios;
@@ -1097,6 +1188,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             }
             this.arraySaberPuertas = arrayPuertas;
             this.arraySaberHuecos = array;
+
             if (perfecto == huecos) {
                 for (let i = 0; i < huecos; i++) {
                     var dimensiones = dimens[puertas + ' puertas'];
@@ -1255,12 +1347,27 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
                 arrayPuertas[0] = '1';
                 arrayPuertas[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
-                $('.armariosDivTodoRincon #imagenesArmario1').append(
-                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+                $('.armariosDivTodo4 #imagenesArmario1').append(
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
                 );
-                $('.armariosDivTodoRincon #imagenesArmario2').append(
-                    '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;" src="../../../content/images/nodisponible.png">'
+
+                $('.armariosDivTodo4 #imagenesArmario1 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior1rincon.jpeg">'
                 );
+                $('.armariosDivTodo4 #imagenesArmario2').append(
+                    '<p style="width:100%;margin-top:7%;margin-left: 35%;" id="imagenesArmario" class="puerta1"></p>'
+                );
+                $('.armariosDivTodo4 #imagenesArmario2 #imagenesArmario').append(
+                    '<img  style="position:absolute;width: 650px;height: 650px;z-index:102" src="../../../content/images/pruebaarmarios/ARMARIOS/rinconpuertas.jpeg">'
+                );
+                var elem1 = $('.armariosDivTodo4 #imagenesArmario2');
+                elem1[0].style.setProperty('margin-top', '550px', 'important');
+                if (screen.width < 800) {
+                    $('.armariosDivTodo4 #imagenesArmario2').css({ zoom: '45%' });
+                    $('.armariosDivTodo4 #imagenesArmario1').css({ zoom: '45%' });
+                    $('.armariosDivTodo4 #imagenesArmario2').css({ 'margin-left': '-28%' });
+                    $('.armariosDivTodo4 #imagenesArmario1').css({ 'margin-left': '-28%' });
+                }
                 this.arraySaberHuecos = array;
                 $('#acabadosTodo').removeAttr('class');
                 $('#acabadosTodo').removeAttr('class');

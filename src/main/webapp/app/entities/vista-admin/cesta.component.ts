@@ -8215,29 +8215,58 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     }
                                 }
                             }
-                            if (sesion[1]['puertas'] != undefined) {
-                                for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
-                                    $('#textoCesta' + i).append(
-                                        '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Puerta ' +
-                                            (w + 1) +
-                                            '</span>: ' +
-                                            sesion[1]['puertas'][w]['nombre'] +
-                                            '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
-                                    );
-                                    for (let k = 0; k < 5; k++) {
-                                        if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
-                                            $('#textoCesta' + i).append(
-                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Plafon ' +
-                                                    (k + 1) +
-                                                    '</span>: ' +
-                                                    sesion[1]['puertas'][w]['acabado' + k]['nombre'] +
-                                                    '</p>'
-                                            );
+                            if (
+                                sesion[1]['mensaje'] != '2 PUERTAS CORREDERA VISTA' &&
+                                sesion[1]['mensaje'] != '3 PUERTAS CORREDERA VISTA' &&
+                                sesion[1]['mensaje'] != '2 PUERTAS CORREDERA' &&
+                                sesion[1]['mensaje'] != '3 PUERTAS CORREDERA'
+                            ) {
+                                if (sesion[1]['puertas'] != undefined) {
+                                    for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Puerta ' +
+                                                (w + 1) +
+                                                '</span>: ' +
+                                                sesion[1]['puertas'][w]['nombre'] +
+                                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
+                                        );
+                                        for (let k = 0; k < 5; k++) {
+                                            if (sesion[1]['puertas'][w]['acabado' + k] != undefined) {
+                                                $('#textoCesta' + i).append(
+                                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Plafon ' +
+                                                        (k + 1) +
+                                                        '</span>: ' +
+                                                        sesion[1]['puertas'][w]['acabado' + k]['nombre'] +
+                                                        '</p>'
+                                                );
+                                            }
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (sesion[1]['puertas'] != undefined) {
+                                    for (let w = 0; w < sesion[1]['puertas']['length']; w++) {
+                                        $('#textoCesta' + i).append(
+                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Puerta ' +
+                                                (w + 1) +
+                                                '</span>: ' +
+                                                sesion[1]['puertas'][w]['nombre'] +
+                                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
+                                        );
+                                        for (let k = 0; k < 5; k++) {
+                                            if (sesion[1]['acabado' + k + 'Puerta' + w] != undefined) {
+                                                $('#textoCesta' + i).append(
+                                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Plafon ' +
+                                                        (k + 1) +
+                                                        '</span>: ' +
+                                                        sesion[1]['acabado' + k + 'Puerta' + w]['nombre'] +
+                                                        '</p>'
+                                                );
+                                            }
                                         }
                                     }
                                 }
                             }
-
                             if (sesion[1]['niveladores'] != undefined) {
                                 $('#textoCesta' + i).append(
                                     '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Niveladores</span>: SI <i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'

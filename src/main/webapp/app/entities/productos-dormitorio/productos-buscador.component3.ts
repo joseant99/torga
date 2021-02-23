@@ -273,6 +273,18 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.armariosDivTodo2 .cuerpoImagenPuertas #imagenesArmario1').attr('class', 'estanpuestolosinteriores');
         }
     }
+    public cambiarvistaRincon() {
+        var clase = $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario1').attr('class');
+        if (clase == 'estanpuestolosinteriores') {
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario1').css({ display: 'none' });
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario2').css({ display: 'block' });
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario1').attr('class', 'estanlaspuestas');
+        } else {
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario1').css({ display: 'block' });
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario2').css({ display: 'none' });
+            $('.armariosDivTodo4 .cuerpoImagenPuertas #imagenesArmario1').attr('class', 'estanpuestolosinteriores');
+        }
+    }
     public iniciarAni() {
         $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
         $('#inputBusca').css({ display: 'block' });
