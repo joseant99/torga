@@ -1,7 +1,22 @@
 <div>
+	<div class="modal fade" id="modalCuadroMensajito" role="dialog" style="margin-top:10%;z-index: 1000000000000;">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-body">
+				<p STYLE="TEXT-ALIGN:CENTER">SE HA ACTUALIZADO CORRECTAMENTE</p>
+	        </div>
+	        <div class="modal-footer">
+	          <p style="text-align:center;width:100%"><button type="button" class="btn btn-default" data-dismiss="modal">OK</button></p>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
     <h2 id="page-heading" style="margin-top:5%">
         <span>GESTION</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pagos-tienda" (click)="actualizarNumeros()">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pagos-tienda" (click)="actualizarNumeros()" data-toggle="modal" data-target="#modalCuadroMensajito" disabled>
             <fa-icon [icon]="'plus'"></fa-icon>
             <span >
             Actualizar

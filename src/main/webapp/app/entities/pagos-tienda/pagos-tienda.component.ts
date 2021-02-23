@@ -57,6 +57,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
     loadAll() {
         this.datosUsuarioService.findCogerTodos().subscribe(data => {
             this.todastiendas = data.body;
+            $('#jh-create-entity').removeAttr('disabled');
         });
         this.pagosTiendaService
             .query({
@@ -67,8 +68,6 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
             .subscribe(
                 (res: HttpResponse<IPagosTienda[]>) => {
                     var todoantes = res.body;
-                    res.body.reverse();
-                    this.paginatePagosTiendas(res.body, res.headers);
                     var d = new Date();
                     var month = d.getMonth() + 1;
                     var day = d.getDate();
@@ -92,6 +91,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
                         };
                         this.subscribeToSaveResponse(this.pagosTiendaService.create(meterla));
                     }
+                    this.paginatePagosTiendas(res.body, res.headers);
                 },
                 (res: HttpErrorResponse) => this.onError(res.message)
             );
@@ -221,7 +221,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
         this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
         this.queryCount = this.totalItems;
-        this.pagosTiendas = data;
+        this.pagosTiendas = data.reverse();
     }
 
     protected onError(errorMessage: string) {
