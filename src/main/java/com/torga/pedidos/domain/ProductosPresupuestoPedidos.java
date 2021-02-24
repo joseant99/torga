@@ -82,6 +82,9 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "observaciones")
     private String observaciones;
     
+    @Column(name = "precio_especial")
+    private String precioEspecial;
+    
     @ManyToOne
     @JsonIgnoreProperties("")
     private Usb usb;
@@ -136,6 +139,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+    
+    public String getPrecioEspecial() {
+        return precioEspecial;
+    }
+
+    public ProductosPresupuestoPedidos precioEspecial(String precioEspecial) {
+        this.precioEspecial = precioEspecial;
+        return this;
+    }
+
+    public void setPrecioEspecial(String precioEspecial) {
+        this.precioEspecial = precioEspecial;
     }
     
     public String getAncho() {

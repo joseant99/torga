@@ -62,11 +62,11 @@
 			    		<p style="font-size:16px;"><strong>{{productosPresupuestoPedidos.productosDormitorio?.nombre}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i  style="float:right;margin-right:20%;FONT-WEIGHT:600">TOTAL: <span id="precioTotal{{i}}">{{productosPresupuestoPedidos.dimensionesProductoTipo?.precio}}</span> pp</i></strong><i id="precioFabrica{{i}}" style="display:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;198<strong>&euro;</strong></i><i id="precioGanancias{{i}}" style="display:none"></i></p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600">Codigo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.mensaje}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600" id="anchoSoloSecambiaEspecial">Ancho</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.ancho}}</p>
-			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Ancho especial'"><span style="font-weight:600">Incremento especial</span> 30%</p>
+			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Ancho especial'"><span style="font-weight:600">Incremento especial</span> {{productosPresupuestoPedidos.precioEspecial}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600" id="altoSoloSecambiaEspecial">Alto</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.alto}}</p>
-			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Alto especial'"><span style="font-weight:600">Incremento especial</span> 30%</p>
+			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Alto especial'"><span style="font-weight:600">Incremento especial</span> {{productosPresupuestoPedidos.precioEspecial}}</p>
 			    		<p id="pimprimirdatostexto"><span style="font-weight:600" id="fondoSoloSecambiaEspecial">Fondo</span> &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.fondo}}</p>
-			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Fondo especial'"><span style="font-weight:600">Incremento especial</span> 30%</p>
+			    		<p id="pimprimirdatostexto" *ngIf="productosPresupuestoPedidos.textoEspecial === 'Fondo especial'"><span style="font-weight:600">Incremento especial</span> {{productosPresupuestoPedidos.precioEspecial}}</p>
 			    		<div *ngIf="productosPresupuestoPedidos.dimensionesProductoTipo.incremento !== undefined">
 			    			<p>Incremento del 30% &nbsp;&nbsp;&nbsp;{{productosPresupuestoPedidos.dimensionesProductoTipo?.incremento}} PP</p>
 			    		</div>

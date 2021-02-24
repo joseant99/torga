@@ -156,6 +156,8 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
     adicionalesArray3: any;
     adicionalesArray4: any;
     precioAdicionalesInt: any;
+    anchoTablero: any;
+    altoTablero: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -2267,6 +2269,290 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 $('html, body').animate({ scrollTop: 0 });
             }, 1200);
         }
+        if (id == 120) {
+            $('#page-heading').css({ display: 'block' });
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
+            setTimeout(function() {
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('.divdentrogrosortablero').css({ display: 'none' });
+            }, 1200);
+        }
+        if (id == 121) {
+            $('.divdentrocanteadotablero').attr('id', 'simplepruebaani2');
+            $('.divdentrogrosortablero').css({ display: 'block' });
+            $('.divdentrogrosortablero').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrocanteadotablero').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('.divseleccionarcodigo #volverAtras121MeterCasa').css({ display: 'none' });
+                $('.divseleccionarcodigo #volverAtras120MeterCasa').css({ display: 'block' });
+            }, 1200);
+        }
+        if (id == 122) {
+            $('.divdentrodelosAncho').attr('id', 'simplepruebaani2');
+            $('.divdentrocanteadotablero').css({ display: 'block' });
+            $('.divdentrocanteadotablero').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrodelosAncho').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('.divseleccionarcodigo #volverAtras122MeterCasa').css({ display: 'none' });
+                $('.divseleccionarcodigo #volverAtras121MeterCasa').css({ display: 'block' });
+            }, 1200);
+        }
+        if (id == 123) {
+            $('.divdentrodelosAlto').attr('id', 'simplepruebaani2');
+            $('.divdentrodelosAncho').css({ display: 'block' });
+            $('.divdentrodelosAncho').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divdentrodelosAlto').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+                $('.divseleccionarcodigo #volverAtras123MeterCasa').css({ display: 'none' });
+                $('.divseleccionarcodigo #volverAtras122MeterCasa').css({ display: 'block' });
+            }, 1200);
+        }
+        if (id == 125) {
+            $('.divdentrodelosAlto').css({ display: 'block' });
+            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divseleccionarcodigo').removeAttr('id');
+            $('#calculadoraCarrito').css({ display: 'none' });
+            $('body').removeAttr('style');
+            setTimeout(function() {
+                $('.divBuscadorArticulos').css({ display: 'none' });
+                $('html, body').animate({ scrollTop: 0 });
+            }, 1200);
+        }
+    }
+
+    public meterAnchoCalculadora(id) {
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2375px' });
+        }
+        var ancho = id;
+        $('#nombreMesita').text('Tablero a Medida');
+        $('#grosorTableCalcu').text(ancho.toString());
+        $('#h4canteado').css({ display: 'block' });
+        $('#pcanteado').css({ display: 'block' });
+        $('#pgrosorcalcu').css({ display: 'block' });
+        $('#cogerAnchoEstant').empty();
+        $('#datos1').append('<p id="anchodetablerogrosor" style="display:none">' + ancho + '</p>');
+        var array = [];
+        var cont = 0;
+        if (ancho == '12 mm') {
+            $('#cogerAnchoEstant').append('<option></option>');
+            for (let i = 10; i <= 260; ) {
+                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+                array[cont] = i;
+                cont++;
+                i = i + 0.5;
+            }
+        } else {
+            $('#cogerAnchoEstant').append('<option></option>');
+            for (let i = 10; i <= 280; ) {
+                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
+                array[cont] = i;
+                cont++;
+                i = i + 0.5;
+            }
+        }
+        $('.divdentrocanteadotablero').attr('id', 'simplepruebaani');
+        $('.divdentrocanteadotablero').css({ display: 'block' });
+        $('.divdentrogrosortablero').css({ display: 'none' });
+        setTimeout(function() {
+            $('.divseleccionarcodigo #volverAtras121MeterCasa').css({ display: 'block' });
+            $('.divseleccionarcodigo #volverAtras1MeterCasa').css({ display: 'none' });
+            $('.divseleccionarcodigo #volverAtras120MeterCasa').css({ display: 'none' });
+        }, 1000);
+
+        this.anchoTablero = array;
+    }
+
+    public meterCanteadoCalculadora(id) {
+        var ancho = id;
+        $('#canteadoTableCalcu').text(ancho.toString());
+        $('#datos1').append('<p id="anchodetablerocanteado" style="display:none">' + ancho + '</p>');
+        $('#h4ancho').css({ display: 'block' });
+        $('#pAnchoEstant').css({ display: 'block' });
+        $('#pcanteadocalcu').css({ display: 'block' });
+        $('.divdentrodelosAncho').attr('id', 'simplepruebaani');
+        $('.divdentrodelosAncho').css({ display: 'block' });
+        $('.divdentrocanteadotablero').css({ display: 'none' });
+        $('.divseleccionarcodigo #volverAtras122MeterCasa').css({ display: 'block' });
+        $('.divseleccionarcodigo #volverAtras121MeterCasa').css({ display: 'none' });
+        setTimeout(function() {
+            $('.divdentrocanteadotablero').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public meterAnchoEstantCalculadora(id) {
+        var ancho = id;
+        $('html, body').animate({ scrollTop: 0 });
+        $('#panchocalcu').css({ display: 'block' });
+        $('#anchoTableCalcu').text(ancho.toString());
+        $('#h4alto').css({ display: 'block' });
+        $('#pAltoEstant').css({ display: 'block' });
+        $('#cogerAltoEstant').empty();
+        $('#cogerAltoEstant').append('<option></option>');
+        var array = [];
+        var cont = 0;
+        for (let i = 10; i <= 200; ) {
+            $('#cogerAltoEstant').append('<option>' + i + '</option>');
+            array[cont] = i;
+            cont++;
+            i = i + 0.5;
+        }
+        this.altoTablero = array;
+        $('.divdentrodelosAlto').attr('id', 'simplepruebaani');
+        $('.divdentrodelosAlto').css({ display: 'block' });
+        $('.divseleccionarcodigo #volverAtras123MeterCasa').css({ display: 'block' });
+        $('.divseleccionarcodigo #volverAtras122MeterCasa').css({ display: 'none' });
+        setTimeout(function() {
+            $('.divdentrodelosAncho').css({ display: 'none' });
+        }, 1000);
+    }
+
+    public meterAltoEstantCalculadora(id) {
+        $('html, body').animate({ scrollTop: 0 });
+        var ancho = id;
+        $('#paltocalcu').css({ display: 'block' });
+        $('#nombreMesita').attr('class', 408);
+        $('#altoTableCalcu').text(ancho.toString());
+        var ancho1 = $('#cogerAnchoEstant').val();
+        var caje = $('#anchodetablerocanteado').text();
+        var grosor = $('#anchodetablerogrosor').text();
+        $('#solomesitascant').css({ display: 'block' });
+        $('#selectCantidad').val('1');
+        var prueba = parseFloat($('#altoTableCalcu').text());
+        var prueba1 = parseFloat($('#anchoTableCalcu').text());
+        var acabados = [];
+        this.acabadosService
+            .query({
+                size: 1000
+            })
+            .subscribe(data => {
+                for (let i = 0; i < data.body.length; i++) {
+                    acabados[i] = data.body[i];
+                }
+                this.acabadosService.todos = acabados;
+            });
+        this.acabados = acabados;
+        this.acabados1 = acabados;
+        var cuenta;
+        var aux = 0;
+        aux = prueba * prueba1;
+        aux = aux / 10000;
+        $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
+        $('.divBuscadorArticulos #volverAtras125MeterCasa').css({ display: 'block' });
+        if (grosor == '30 mm') {
+            if (caje == 'SI') {
+                aux = aux * 85;
+            } else {
+                aux = aux * 80;
+            }
+        } else {
+            if (caje == 'SI') {
+                aux = aux * 55;
+            } else {
+                aux = aux * 51;
+            }
+        }
+        if (screen.width < 800) {
+            $('#productosPrincipal').css({ height: '2675' });
+        }
+        $('#textprecioCalculadoraazul').css({ display: 'block' });
+        $('#precioDimension').text(Math.ceil(aux));
+
+        this.acaProdService.findAca(408).subscribe(data => {
+            this.estanteria = data.body[0]['productosDormitorio'];
+            var imagen;
+            imagen = data.body[0]['imagen'];
+            $('#datos1Tablero').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
+            $('#datos1Tablero').append(
+                '<p style="width:100%" id="acabado' +
+                    1 +
+                    '"><span style="font-weight:600">' +
+                    1 +
+                    ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                    1 +
+                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                    1 +
+                    '" style="margin-left:10px"></span></p>'
+            );
+
+            $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
+            $('#acabados #imagenAcabadoPrincipal').append(
+                '<img id="imagenAcabado" src="data:image/gif;base64,' +
+                    imagen +
+                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
+            );
+            var i = 0;
+
+            for (let m = 0; m < data.body[0]['acabados'].length; m++) {
+                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
+                    '<img  src="data:image/gif;base64,' +
+                        data.body[0]['acabados'][m]['imagenFondo'] +
+                        '" id="imagenAcabado' +
+                        i +
+                        '" class="' +
+                        data.body[0]['acabados'][m]['id'] +
+                        '" height="250px" width="130px" style="">'
+                );
+                this.acaProdService.todos = data.body[0]['acabados'][m];
+                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
+                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
+                        data.body[0]['acabados'][m]['nombre'] +
+                        '</strong></p>'
+                );
+
+                i++;
+            }
+            $('.divBuscadorArticulos').attr('id', 'simplepruebaani1');
+            $('.divBuscadorArticulos').css({ display: 'block' });
+            if (screen.width < 800) {
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'margin-bottom': '60px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'border-bottom': '1px solid' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-bottom': '0px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ position: 'fixed' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ width: '100%' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'background-color': 'white' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ top: '0' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'text-align': 'center' });
+                $('.divBuscadorArticulos #divprincipalhuecomenmen').css({ 'z-index': '1000' });
+                $('body').attr('style');
+                $('body').css({ 'overflow-y': 'hidden' });
+            }
+            setTimeout(function() {
+                $('.divseleccionarcodigo').css({ display: 'none' });
+                $('#calculadoraCarrito').removeAttr('style');
+                $('#calculadoraCarrito').attr('style');
+                $('#calculadoraCarrito').css({ 'padding-top': '170px' });
+                $('.divBuscadorArticulos').css({ height: '100%' });
+                $('#calculadoraCarrito').css({ width: '25%' });
+                $('.divdentrodelosAlto').css({ display: 'none' });
+                if (screen.width < 800) {
+                    $('#calculadoraCarrito').css({ width: '100%' });
+                    $('#calculadoraCarrito').css({ height: '40%' });
+                    $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                    $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                    const elem = $('#textprecioCalculadoraazul');
+                    elem[0].style.setProperty('bottom', '0px', 'important');
+                    elem[0].style.setProperty('height', '55px', 'important');
+                    const elem1 = $('#botonCalculadora');
+                    elem1[0].style.setProperty('bottom', '0px', 'important');
+                    elem1[0].style.setProperty('height', '55px', 'important');
+                }
+            }, 1000);
+        });
     }
 
     public enviarCarritoEstanteria() {
@@ -3249,6 +3535,23 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#textodivsuperiorquenosecambia').text('MODULOS BAJOS');
             $('#textodivsuperiorquenosecambia1').text('MODULOS BAJOS');
         }
+        if (id == 30) {
+            $('.divseleccionarcodigo').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigoRutaNueva').attr('id', 'simplepruebaani');
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+            $('.divseleccionarcodigo').css({ display: 'block' });
+            $('.divdentrogrosortablero').css({ display: 'block' });
+            $('#divdentrodeloscodigos').css({ display: 'none' });
+            this.codigoparadivs = [];
+            $('.divseleccionarcodigo #volverAtras1MeterCasa').css({ display: 'none' });
+            $('.divseleccionarcodigo #volverAtras120MeterCasa').css({ display: 'block' });
+            $('#textodivsuperiorquenosecambia').text('TABLEROS A MEDIDA');
+
+            setTimeout(function() {
+                $('html, body').animate({ scrollTop: 0 });
+                $('#page-heading').css({ display: 'none' });
+            }, 1000);
+        }
 
         if (id == 9) {
             $('#inputBusca').css({ display: 'block' });
@@ -4170,145 +4473,6 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#calcuVesti #enmarcadoCalcu').css({ display: 'none' });
             $('#calcuVesti #botonesAcabadosCuerpo').css({ display: 'block' });
         }
-    }
-
-    public meterAnchoCalculadora() {
-        if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2375px' });
-        }
-        var ancho = $('#cogerAnchoestanlibre').val();
-        $('#nombreMesita').text('Tablero a Medida');
-        $('#grosorTableCalcu').text(ancho.toString());
-        $('#h4canteado').css({ display: 'block' });
-        $('#pcanteado').css({ display: 'block' });
-        $('#pgrosorcalcu').css({ display: 'block' });
-        $('#cogerAnchoEstant').empty();
-        if (ancho == '12 mm') {
-            $('#cogerAnchoEstant').append('<option></option>');
-            for (let i = 10; i <= 260; i++) {
-                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
-            }
-        } else {
-            $('#cogerAnchoEstant').append('<option></option>');
-            for (let i = 10; i <= 280; i++) {
-                $('#cogerAnchoEstant').append('<option>' + i + '</option>');
-            }
-        }
-    }
-
-    public meterCanteadoCalculadora() {
-        var ancho = $('#cogerCANTEADO').val();
-        $('#canteadoTableCalcu').text(ancho.toString());
-        $('#h4ancho').css({ display: 'block' });
-        $('#pAnchoEstant').css({ display: 'block' });
-        $('#pcanteadocalcu').css({ display: 'block' });
-    }
-
-    public meterAnchoEstantCalculadora() {
-        var ancho = $('#cogerAnchoEstant').val();
-        $('#panchocalcu').css({ display: 'block' });
-        $('#anchoTableCalcu').text(ancho.toString());
-        $('#h4alto').css({ display: 'block' });
-        $('#pAltoEstant').css({ display: 'block' });
-        $('#cogerAltoEstant').empty();
-        $('#cogerAltoEstant').append('<option></option>');
-        for (let i = 10; i <= 200; i++) {
-            $('#cogerAltoEstant').append('<option>' + i + '</option>');
-        }
-    }
-
-    public meterAltoEstantCalculadora() {
-        var ancho = $('#cogerAltoEstant').val();
-        $('#paltocalcu').css({ display: 'block' });
-        $('#nombreMesita').attr('class', 408);
-        $('#altoTableCalcu').text(ancho.toString());
-        var ancho1 = $('#cogerAnchoEstant').val();
-        var caje = $('#cogerCANTEADO').val();
-        var grosor = $('#cogerAnchoestanlibre').val();
-
-        var prueba = parseFloat($('#altoTableCalcu').text());
-        var prueba1 = parseFloat($('#anchoTableCalcu').text());
-        var acabados = [];
-        this.acabadosService
-            .query({
-                size: 1000
-            })
-            .subscribe(data => {
-                for (let i = 0; i < data.body.length; i++) {
-                    acabados[i] = data.body[i];
-                }
-                this.acabadosService.todos = acabados;
-            });
-        this.acabados = acabados;
-        this.acabados1 = acabados;
-        var cuenta;
-        var aux = 0;
-        aux = prueba * prueba1;
-        aux = aux / 10000;
-        if (grosor == '30 mm') {
-            if (caje == 'SI') {
-                aux = aux * 85;
-            } else {
-                aux = aux * 80;
-            }
-        } else {
-            if (caje == 'SI') {
-                aux = aux * 55;
-            } else {
-                aux = aux * 51;
-            }
-        }
-        if (screen.width < 800) {
-            $('#productosPrincipal').css({ height: '2675' });
-        }
-        $('#textprecioCalculadoraazul').css({ display: 'block' });
-        $('#precioDimension').text(Math.ceil(aux));
-
-        this.acaProdService.findAca(408).subscribe(data => {
-            this.estanteria = data.body[0]['productosDormitorio'];
-            var imagen;
-            imagen = data.body[0]['imagen'];
-            $('#datos1Tablero').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
-            $('#datos1Tablero').append(
-                '<p style="width:100%" id="acabado' +
-                    1 +
-                    '"><span style="font-weight:600">' +
-                    1 +
-                    ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                    1 +
-                    '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                    1 +
-                    '" style="margin-left:10px"></span></p>'
-            );
-
-            $('#acabadosTable #imagenAcabadoPrincipal123').css({ display: 'block' });
-            $('#acabadosTable #imagenAcabadoPrincipal123').append(
-                '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                    imagen +
-                    '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-            );
-            var i = 0;
-
-            for (let m = 0; m < data.body[0]['acabados'].length; m++) {
-                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
-                    '<img  src="data:image/gif;base64,' +
-                        data.body[0]['acabados'][m]['imagenFondo'] +
-                        '" id="imagenAcabado' +
-                        i +
-                        '" class="' +
-                        data.body[0]['acabados'][m]['id'] +
-                        '" height="250px" width="130px" style="">'
-                );
-                this.acaProdService.todos = data.body[0]['acabados'][m];
-                $('#myModalColores' + 1 + ' .modal-body #acabadoImagen' + i).append(
-                    '<strong><p font-size: 17px;letter-spacing:1px;font-weight:300">' +
-                        data.body[0]['acabados'][m]['nombre'] +
-                        '</strong></p>'
-                );
-
-                i++;
-            }
-        });
     }
 
     public cargarDimen(codigo) {
@@ -10489,22 +10653,24 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
             this.precioDimension = todasCuenta;
             totalfloat = parseFloat(todasCuenta.toFixed(0));
-            var preciocajon = 0;
+            var preciocajon = '';
             if (datos.productosDormitorio.categoriasDormi.id == 1) {
                 totalfloat = totalfloat + 90;
-                preciocajon = 90;
+                preciocajon = '90 pp';
                 totalfloat = Math.ceil(totalfloat);
             }
             if (datos.productosDormitorio.categoriasDormi.id == 3) {
                 totalfloat = totalfloat + 90;
-                preciocajon = 90;
+                preciocajon = '90 pp';
                 totalfloat = Math.ceil(totalfloat);
             }
             if (datos.productosDormitorio.categoriasDormi.id == 26) {
                 totalfloat = totalfloat + 120;
-                preciocajon = 120;
+                preciocajon = '120 pp';
                 totalfloat = Math.ceil(totalfloat);
             }
+
+            this.precioAdicionalesInt = preciocajon;
             this.precioDimension = totalfloat;
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             $('#total').text(totalfloat);
@@ -16518,107 +16684,107 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             var preciocajon = '';
             if (this.idDelProducto == 275) {
                 todasCuenta = todasCuenta + 66;
-                preciocajon = '66PP';
+                preciocajon = '66 pp';
             }
             if (this.idDelProducto == 276) {
                 todasCuenta = todasCuenta + 92;
-                preciocajon = '92PP';
+                preciocajon = '92 pp';
             }
             if (this.idDelProducto == 277) {
                 todasCuenta = todasCuenta + 90;
-                preciocajon = '90PP';
+                preciocajon = '90 pp';
             }
             if (this.idDelProducto == 278) {
                 todasCuenta = todasCuenta + 96;
-                preciocajon = '96PP';
+                preciocajon = '96 pp';
             }
             if (this.idDelProducto == 279) {
                 todasCuenta = todasCuenta + 102;
-                preciocajon = '102PP';
+                preciocajon = '102 pp';
             }
             if (this.idDelProducto == 280) {
                 todasCuenta = todasCuenta + 96;
-                preciocajon = '96PP';
+                preciocajon = '96 pp';
             }
             if (this.idDelProducto == 246) {
                 todasCuenta = todasCuenta + 83;
-                preciocajon = '83PP';
+                preciocajon = '83 pp';
             }
             if (this.idDelProducto == 281) {
                 todasCuenta = todasCuenta + 137;
-                preciocajon = '137PP';
+                preciocajon = '137 pp';
             }
             if (this.idDelProducto == 282) {
                 todasCuenta = todasCuenta + 98;
-                preciocajon = '98PP';
+                preciocajon = '98 pp';
             }
             if (this.idDelProducto == 247) {
                 todasCuenta = todasCuenta + 70;
-                preciocajon = '70PP';
+                preciocajon = '70 pp';
             }
             if (this.idDelProducto == 251) {
                 todasCuenta = todasCuenta + 106;
-                preciocajon = '106PP';
+                preciocajon = '106 pp';
             }
             if (this.idDelProducto == 255) {
                 todasCuenta = todasCuenta + 72;
-                preciocajon = '72PP';
+                preciocajon = '72 pp';
             }
             if (this.idDelProducto == 259) {
                 todasCuenta = todasCuenta + 125;
-                preciocajon = '125PP';
+                preciocajon = '125 pp';
             }
             if (this.idDelProducto == 263) {
                 todasCuenta = todasCuenta + 173;
-                preciocajon = '173PP';
+                preciocajon = '173 pp';
             }
             if (this.idDelProducto == 267) {
                 todasCuenta = todasCuenta + 120;
-                preciocajon = '120PP';
+                preciocajon = '120 pp';
             }
             if (this.idDelProducto == 271) {
                 todasCuenta = todasCuenta + 64;
-                preciocajon = '64PP';
+                preciocajon = '64 pp';
             }
             if (this.idDelProducto == 283) {
                 todasCuenta = todasCuenta + 51;
-                preciocajon = '51PP';
+                preciocajon = '51 pp';
             }
             if (this.idDelProducto == 284) {
                 todasCuenta = todasCuenta + 167;
-                preciocajon = '167PP';
+                preciocajon = '167 pp';
             }
             if (this.idDelProducto == 285) {
                 todasCuenta = todasCuenta + 128;
-                preciocajon = '128PP';
+                preciocajon = '128 pp';
             }
             if (this.idDelProducto == 249 || this.idDelProducto == 250) {
                 todasCuenta = todasCuenta + 18;
-                preciocajon = '18PP';
+                preciocajon = '18 pp';
             }
             if (this.idDelProducto == 253 || this.idDelProducto == 254) {
                 todasCuenta = todasCuenta + 28;
-                preciocajon = '28PP';
+                preciocajon = '28 pp';
             }
             if (this.idDelProducto == 257 || this.idDelProducto == 258) {
                 todasCuenta = todasCuenta + 29;
-                preciocajon = '29PP';
+                preciocajon = '29 pp';
             }
             if (this.idDelProducto == 261 || this.idDelProducto == 262) {
                 todasCuenta = todasCuenta + 19;
-                preciocajon = '19PP';
+                preciocajon = '19 pp';
             }
             if (this.idDelProducto == 265 || this.idDelProducto == 266) {
                 todasCuenta = todasCuenta + 24;
-                preciocajon = '24PP';
+                preciocajon = '24 pp';
             }
             if (this.idDelProducto == 273 || this.idDelProducto == 274) {
                 todasCuenta = todasCuenta + 21;
-                preciocajon = '21PP';
+                preciocajon = '21 pp';
             }
             if (this.idDelProducto == 269 || this.idDelProducto == 270) {
                 todasCuenta = todasCuenta + 19;
-                preciocajon = '19PP';
+                preciocajon = '19 pp';
             }
             this.precioDimension = todasCuenta;
             totalfloat = parseFloat(todasCuenta.toFixed(0));
@@ -16643,6 +16809,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 preciocajon = '30%';
             }
             this.precioDimension = totalfloat;
+            this.precioAdicionalesInt = preciocajon;
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             $('#total').text(totalfloat);
             $('#precioDimension').text(totalfloat);
@@ -22796,6 +22963,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 preciocajon = '30%';
             }
             this.precioDimension = totalfloat;
+            this.precioAdicionalesInt = preciocajon;
             $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
             $('#total').text(totalfloat);
             $('#precioDimension').text(totalfloat);
@@ -34020,6 +34188,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#iluminacion').css({ display: 'none' });
         var conta = 0;
+        var precioEspecialAum = this.precioAdicionalesInt;
         for (let k = 1; k < sessionStorage.length; k++) {
             if (sessionStorage['prod' + k] != null) {
                 contador++;
@@ -34111,6 +34280,8 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         }
                     }
                     if (value['mensajeEspecial'] != undefined) {
+                        value['precioAumentado'] = precioEspecialAum;
+
                         const precioApoyo = $('#precioApoyo').text();
                         if (value['mensajeEspecial'] == 'Ancho especial') {
                             if (apoyoBueno[1] != undefined) {
@@ -34294,6 +34465,13 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         console.log(prod);
         sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
         contadorDimen++;
+        var cantidad = $('#selectCantidad').val();
+        if (cantidad != 1) {
+            for (let l = 1; l < cantidad; l++) {
+                sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
+                contadorDimen++;
+            }
+        }
 
         this.usb = undefined;
         for (let i = 1; i <= 100; i++) {

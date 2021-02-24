@@ -1150,7 +1150,7 @@ export class RinconDormitorioComponent implements OnInit, OnDestroy, AfterViewIn
             codigo == 'NB324'
         ) {
             $('.armariosDivTodo4 #imagenesArmario1 #imagenesArmario').append(
-                '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior2rincon.jpeg">'
+                '<img  style="position:absolute;width: 650px;height: 650px;z-index:99" src="../../../content/images/pruebaarmarios/ARMARIOS/interior3rincon.jpeg">'
             );
         }
 

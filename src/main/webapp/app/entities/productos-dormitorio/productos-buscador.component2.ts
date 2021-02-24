@@ -34118,6 +34118,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         }
                     }
                     if (value['mensajeEspecial'] != undefined) {
+                        value['precioAumentado'] = '30 %';
                         const precioApoyo = $('#precioApoyo').text();
                         if (value['mensajeEspecial'] == 'Ancho especial') {
                             if (apoyoBueno[1] != undefined) {

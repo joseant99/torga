@@ -904,6 +904,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             }
 
                                             var nombre = data.body[0]['presupuestoArmario']['armario']['mensaje'];
+                                            var codigodelarmario = data.body[0]['presupuestoArmario']['codigo'];
                                             var precioTodo1 = 0;
                                             for (let p = 0; p < datosInteriores.length; p++) {
                                                 if (p == 0) {
@@ -1058,22 +1059,77 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     }
                                                 }
                                             }
-                                            if ('Armario rincon' == nombre) {
-                                                if (screen.width >= 800) {
+                                            if ('Armario Rincon' == nombre) {
+                                                if (
+                                                    codigodelarmario == 'NB277' ||
+                                                    codigodelarmario == 'NB278' ||
+                                                    codigodelarmario == 'NB279' ||
+                                                    codigodelarmario == 'NB280' ||
+                                                    codigodelarmario == 'NB289' ||
+                                                    codigodelarmario == 'NB290' ||
+                                                    codigodelarmario == 'NB291' ||
+                                                    codigodelarmario == 'NB292' ||
+                                                    codigodelarmario == 'NB301' ||
+                                                    codigodelarmario == 'NB302' ||
+                                                    codigodelarmario == 'NB303' ||
+                                                    codigodelarmario == 'NB304' ||
+                                                    codigodelarmario == 'NB313' ||
+                                                    codigodelarmario == 'NB314' ||
+                                                    codigodelarmario == 'NB315' ||
+                                                    codigodelarmario == 'NB316'
+                                                ) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
+                                                        '<img style="max-width: 320px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/interior1rincon.jpeg">'
                                                     );
                                                 }
-                                                if (screen.width < 800) {
+                                                if (
+                                                    codigodelarmario == 'NB281' ||
+                                                    codigodelarmario == 'NB282' ||
+                                                    codigodelarmario == 'NB283' ||
+                                                    codigodelarmario == 'NB284' ||
+                                                    codigodelarmario == 'NB293' ||
+                                                    codigodelarmario == 'NB294' ||
+                                                    codigodelarmario == 'NB295' ||
+                                                    codigodelarmario == 'NB296' ||
+                                                    codigodelarmario == 'NB305' ||
+                                                    codigodelarmario == 'NB306' ||
+                                                    codigodelarmario == 'NB307' ||
+                                                    codigodelarmario == 'NB308' ||
+                                                    codigodelarmario == 'NB317' ||
+                                                    codigodelarmario == 'NB318' ||
+                                                    codigodelarmario == 'NB319' ||
+                                                    codigodelarmario == 'NB320'
+                                                ) {
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
+                                                        '<img style="max-width: 320px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/interior2rincon.jpeg">'
                                                     );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                    }
                                                 }
+                                                if (
+                                                    codigodelarmario == 'NB285' ||
+                                                    codigodelarmario == 'NB286' ||
+                                                    codigodelarmario == 'NB287' ||
+                                                    codigodelarmario == 'NB288' ||
+                                                    codigodelarmario == 'NB297' ||
+                                                    codigodelarmario == 'NB298' ||
+                                                    codigodelarmario == 'NB299' ||
+                                                    codigodelarmario == 'NB300' ||
+                                                    codigodelarmario == 'NB309' ||
+                                                    codigodelarmario == 'NB310' ||
+                                                    codigodelarmario == 'NB311' ||
+                                                    codigodelarmario == 'NB312' ||
+                                                    codigodelarmario == 'NB321' ||
+                                                    codigodelarmario == 'NB322' ||
+                                                    codigodelarmario == 'NB323' ||
+                                                    codigodelarmario == 'NB324'
+                                                ) {
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 320px;position: absolute;z-index:50" src="../../../content/images/pruebaarmarios/ARMARIOS/interior3rincon.jpeg">'
+                                                    );
+                                                }
+
+                                                $('#imagen' + (cont - 1)).append(
+                                                    '<img style="max-width: 320px;position: absolute;z-index:50;margin-top:315px;" src="../../../content/images/pruebaarmarios/ARMARIOS/rinconpuertas.jpeg">'
+                                                );
                                             }
                                             if ('1 CUERPO TIPO 2' == nombre) {
                                                 if (screen.width >= 800) {
@@ -2203,23 +2259,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
                                                 precioTodo1 = precioTodo1 + datosInteriores[p]['precio'];
                                             }
-                                            if ('Armario Rincon' == nombre) {
-                                                if (screen.width >= 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                }
-                                                if (screen.width < 800) {
-                                                    $('#imagen' + (cont - 1)).append(
-                                                        '<img id="imagenNoDisponible" style="width: 700px;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;" src="../../../content/images/nodisponible.png">'
-                                                    );
-                                                    if (screen.width < 800) {
-                                                        var elem1 = $('#datosMeter' + (cont - 1));
-                                                        elem1[0].style.setProperty('padding-left', '0%', 'important');
-                                                        elem1[0].style.setProperty('font-size', '14px', 'important');
-                                                    }
-                                                }
-                                            }
+
                                             if ('3 PUERTAS IZQUIERDA' == nombre) {
                                                 var tipo = data.body[0]['productosDormitorio']['nombre'];
                                                 if (screen.width < 800) {

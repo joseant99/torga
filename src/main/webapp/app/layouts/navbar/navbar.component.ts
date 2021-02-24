@@ -13948,8 +13948,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
                                     grosor: prodCarr[m][1]['grosor'],
-                                    fondo: prodCarr[m][1]['grosor'].split(' ')[0],
-                                    alto: prodCarr[m][1]['alto'],
+                                    fondo: prodCarr[m][1]['alto'],
+                                    alto: prodCarr[m][1]['grosor'].split(' ')[0],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
                                 prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];
@@ -14128,6 +14128,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
                                     prodPrePed['alto'] = prodCarr[m][1]['alto'];
                                     prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
+                                    prodPrePed['precioEspecial'] = prodCarr[m][1]['precioAumentado'];
                                 }
                             }
                             if (prodCarr[m][1]['productosDormitorio']['id'] == 415) {
@@ -14153,7 +14154,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
                             prodPrePed['alto'] = prodCarr[m][1]['alto'];
                             prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
-
+                            if (prodCarr[m][1]['productosDormitorio']['id'] == 408) {
+                                prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
+                                prodPrePed['alto'] = prodCarr[m][1]['fondo'];
+                                prodPrePed['fondo'] = prodCarr[m][1]['alto'];
+                            }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;
                             prodIlu[m] = prodPrePed;
@@ -14557,8 +14562,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
                                     grosor: prodCarr[m][1]['grosor'],
-                                    fondo: prodCarr[m][1]['grosor'].split(' ')[0],
-                                    alto: prodCarr[m][1]['alto'],
+                                    fondo: prodCarr[m][1]['alto'],
+                                    alto: prodCarr[m][1]['grosor'].split(' ')[0],
                                     canteado: prodCarr[m][1]['canteado']
                                 };
                                 prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];

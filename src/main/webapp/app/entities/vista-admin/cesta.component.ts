@@ -358,6 +358,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             );
 
                             var nombreArmario = sesion[1]['mensaje'];
+                            var codigodelarmario = sesion[1]['codigo'];
                             var casco = sesion[1]['acabadoCasco']['nombre'];
                             if (sesion[1]['acabadoTrasera'] != undefined) {
                                 var trasera = sesion[1]['acabadoTrasera']['nombre'];
@@ -1471,15 +1472,93 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 }
                             }
                             if (nombreArmario == 'Armario Rincon') {
+                                $('#cuerpo' + i).append(
+                                    '<div id="izquierda" class="armarioIzquierda" style="margin-left: 700px;margin-top: 110px;float: left;"></div>'
+                                );
+                                $('#cuerpo' + i).append(
+                                    '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
+                                );
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/rinconpuertas.jpeg">'
+                                );
                                 if (screen.width < 800) {
-                                    $('#cuerpo' + i).append(
-                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 45%;width: 335px !important;float: left !important;left: -20px !important;margin-left: 5% !important;margin-top: 50%;" src="../../../content/images/nodisponible.png">'
-                                    );
+                                    const elem = $('#cuerpo' + i + ' .armarioIzquierda');
+                                    elem[0].style.setProperty('margin-left', '30px', 'important');
+                                    elem[0].style.setProperty('margin-top', '100px', 'important');
+                                    elem[0].style.setProperty('zoom', '70%', 'important');
+                                    const elem1 = $('#cuerpo' + i + ' .armarioDerecha');
+                                    elem1[0].style.setProperty('margin-left', '0px', 'important');
+                                    elem1[0].style.setProperty('margin-top', '480px', 'important');
+                                    elem1[0].style.setProperty('zoom', '70%', 'important');
+                                    const elem2 = $('#cuerpo' + i);
+                                    elem2[0].style.setProperty('height', '670px', 'important');
                                 }
 
-                                if (screen.width >= 800) {
-                                    $('#cuerpo' + i).append(
-                                        '<img id="imagenNoDisponible" style="width: 700px;position: absolute;float: left;left: 0;margin-left: 28%; margin-top: 180px;" src="../../../content/images/nodisponible.png">'
+                                if (
+                                    codigodelarmario == 'NB277' ||
+                                    codigodelarmario == 'NB278' ||
+                                    codigodelarmario == 'NB279' ||
+                                    codigodelarmario == 'NB280' ||
+                                    codigodelarmario == 'NB289' ||
+                                    codigodelarmario == 'NB290' ||
+                                    codigodelarmario == 'NB291' ||
+                                    codigodelarmario == 'NB292' ||
+                                    codigodelarmario == 'NB301' ||
+                                    codigodelarmario == 'NB302' ||
+                                    codigodelarmario == 'NB303' ||
+                                    codigodelarmario == 'NB304' ||
+                                    codigodelarmario == 'NB313' ||
+                                    codigodelarmario == 'NB314' ||
+                                    codigodelarmario == 'NB315' ||
+                                    codigodelarmario == 'NB316'
+                                ) {
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/interior1rincon.jpeg">'
+                                    );
+                                }
+                                if (
+                                    codigodelarmario == 'NB281' ||
+                                    codigodelarmario == 'NB282' ||
+                                    codigodelarmario == 'NB283' ||
+                                    codigodelarmario == 'NB284' ||
+                                    codigodelarmario == 'NB293' ||
+                                    codigodelarmario == 'NB294' ||
+                                    codigodelarmario == 'NB295' ||
+                                    codigodelarmario == 'NB296' ||
+                                    codigodelarmario == 'NB305' ||
+                                    codigodelarmario == 'NB306' ||
+                                    codigodelarmario == 'NB307' ||
+                                    codigodelarmario == 'NB308' ||
+                                    codigodelarmario == 'NB317' ||
+                                    codigodelarmario == 'NB318' ||
+                                    codigodelarmario == 'NB319' ||
+                                    codigodelarmario == 'NB320'
+                                ) {
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/interior2rincon.jpeg">'
+                                    );
+                                }
+                                if (
+                                    codigodelarmario == 'NB285' ||
+                                    codigodelarmario == 'NB286' ||
+                                    codigodelarmario == 'NB287' ||
+                                    codigodelarmario == 'NB288' ||
+                                    codigodelarmario == 'NB297' ||
+                                    codigodelarmario == 'NB298' ||
+                                    codigodelarmario == 'NB299' ||
+                                    codigodelarmario == 'NB300' ||
+                                    codigodelarmario == 'NB309' ||
+                                    codigodelarmario == 'NB310' ||
+                                    codigodelarmario == 'NB311' ||
+                                    codigodelarmario == 'NB312' ||
+                                    codigodelarmario == 'NB321' ||
+                                    codigodelarmario == 'NB322' ||
+                                    codigodelarmario == 'NB323' ||
+                                    codigodelarmario == 'NB324'
+                                ) {
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img class="puertas3Izquierda"  style="width:400px !important;height:400px !important;position:absolute;z-index: 1;" src="../../../content/images/pruebaarmarios/ARMARIOS/interior3rincon.jpeg">'
                                     );
                                 }
                             }
@@ -8498,7 +8577,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial:</span><span> 30%</span></p>'
+                                    '<p style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial:</span><span> ' +
+                                        sesion[1]['precioAumentado'] +
+                                        '</span></p>'
                                 );
                             } else {
                                 $('#textoCesta' + i).append(
@@ -9434,7 +9515,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         '</p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>30%</span></p>'
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>' +
+                                        sesion[1]['precioAumentado'] +
+                                        '</span></p>'
                                 );
                             } else {
                                 $('#textoCesta' + i).append(
@@ -9459,7 +9542,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                             '</p>'
                                     );
                                     $('#textoCesta' + i).append(
-                                        '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>30%</span></p>'
+                                        '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial: </span><span>' +
+                                            sesion[1]['precioAumentado'] +
+                                            '</span></p>'
                                     );
                                 } else {
                                     $('#textoCesta' + i).append(
@@ -9482,7 +9567,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '<p id="fondoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento 1 cajon:</span></p>'
                                 );
                                 $('#textoCesta' + i).append(
-                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial</span></p>'
+                                    '<p id="altoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Incremento Especial</span><span>' +
+                                        sesion[1]['precioAumentado'] +
+                                        '</span></p>'
                                 );
                             }
                         }

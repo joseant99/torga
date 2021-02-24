@@ -2013,10 +2013,13 @@
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(26)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-6.jpeg">
         	</div>
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(30)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/comedor-12.jpeg">
+        	</div>
         	<div style="float:left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(2)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv" *jhiHasAnyAuthority="'ROLE_ADMIN'">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(7)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
         	</div>
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="elegirBusqueda(3)" id="pruebahoverdiv">
@@ -2237,11 +2240,44 @@
     
     
     <div class="divseleccionarcodigo"  style="display:none;top: 0;bottom: 0;height: 100%;">
-    	 <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(1)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textodivsuperiorquenosecambia"></span></div>
+    	 <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(1)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras120MeterCasa" (click)="volveratras(120)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras121MeterCasa" (click)="volveratras(121)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras122MeterCasa" (click)="volveratras(122)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras123MeterCasa" (click)="volveratras(123)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%" id="textodivsuperiorquenosecambia"></span></div>
     	
 			<!-- <p style="text-align:center;margin-top: 9%;display:none" id="inputBusca"><input style="text-align:center" list="listaAnchos1" id="anchosSelect1" name="anchos1" type="text" class="inputbuscaarticulos"/><select class="selectbuscaarticulos" id="anchosSelect1" style="display:none;margin-left: 18%;width: 240px;height: 28px;"><option></option></select><button style="width: 140px;margin-left: 20px;" id="botonbuscarcargardimen" (click)="cargarDimen()">Buscar</button></p>
    		 --><div style="margin-top:15%;width:80%;margin-left:10%;" id="divdentrodeloscodigos">
 	   			<div *ngFor="let codigo of codigoparadivs" id="divcodigoarituclos" (click)="cargarDimen(codigo)" class="divcodigometerfondo">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+	    	<div style="margin-top:15%;width:90%;margin-left:10%;display:none" class="divdentrogrosortablero">
+	    		<p style="width:100%;text-align:center;font-size:25px;">SELECIONE EL GROSOR DEL TABLERO</p>
+	   			<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterAnchoCalculadora('12 mm')">
+		    		<span>12 mm</span>
+		    	</div>
+		    	<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterAnchoCalculadora('19 mm')">
+		    		<span>19 mm</span>
+		    	</div>
+		    	<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterAnchoCalculadora('30 mm')">
+		    		<span>30 mm</span>
+		    	</div>
+	    	</div>
+	    	<div style="width:90%;margin-left:10%;display:none" class="divdentrocanteadotablero">
+	    		<p style="width:100%;text-align:center;font-size:25px;">CANTEADO</p>
+	   			<div style="margin-left:40%" id="divcodigoarituclos" class="divcodigometerfondo123" (click)="meterCanteadoCalculadora('SI')">
+		    		<span>SI</span>
+		    	</div>
+		    	<div id="divcodigoarituclos" class="divcodigometerfondo" (click)="meterCanteadoCalculadora('NO')">
+		    		<span>NO</span>
+		    	</div>
+	    	</div>
+	    	<div style="width:90%;padding-left:10%;display:none" class="divdentrodelosAncho">
+	    		<p style="width:100%;text-align:center;font-size:25px;">ESCOGE UN ANCHO</p>
+	   			<div *ngFor="let codigo of anchoTablero" id="divcodigoarituclos" (click)="meterAnchoEstantCalculadora(codigo)" class="divcodigometerfondo">
+		    		<span>{{codigo}}</span>
+		    	</div>
+	    	</div>
+	    	<div style="width:90%;padding-left:10%;display:none" class="divdentrodelosAlto">
+	    		<p style="width:100%;text-align:center;font-size:25px;">ESCOGE UN ALTO</p>
+	   			<div *ngFor="let codigo of altoTablero" id="divcodigoarituclos" (click)="meterAltoEstantCalculadora(codigo)" class="divcodigometerfondo">
 		    		<span>{{codigo}}</span>
 		    	</div>
 	    	</div>
@@ -2705,7 +2741,7 @@
     
     
     <div  style="display:none;top: 0;bottom: 0;height: 1000px;" id="producto" class="divBuscadorArticulos">
-    	    <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER;z-index:1000"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(2)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textodivsuperiorquenosecambia4">CONFIGURACION</span><span id="divvolveriniciomen" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: right;border: 1px red solid;color: red;padding-top: 13px;margin-right: 10%;" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER AL INICIO</span><img src="../../../content/images/comedores/cajaroja.png" style="width:10px;display:none" id="imagenAtarmen1"></span></div>
+    	    <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER;z-index:1000"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(2)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras125MeterCasa" (click)="volveratras(125)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textodivsuperiorquenosecambia4">CONFIGURACION</span><span id="divvolveriniciomen" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: right;border: 1px red solid;color: red;padding-top: 13px;margin-right: 10%;" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER AL INICIO</span><img src="../../../content/images/comedores/cajaroja.png" style="width:10px;display:none" id="imagenAtarmen1"></span></div>
     	
    <!--   <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
         	<div class="productosColorSolo{{modulosBajos.productosDormitorio.id}}">
@@ -3714,7 +3750,7 @@
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
 				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
-				<button  id="botonCalculadoraTablero"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarritoTablero()"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
+				<button  id="botonCalculadoraTablero"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarritoTablero()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
 				<button id="botonEnviarEspecial" style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none" data-toggle="modal" data-target="#modalEnviadoCarrito1" (click)="enviarCarritoEspecial()">Enviar al carrito</button>
 				
 			</div>
