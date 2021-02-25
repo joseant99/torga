@@ -741,6 +741,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }
     }
 
+    public cargarNuevaMesita() {
+        $('.divseleccionarcodigoNuevaMesita').attr('id', 'simplepruebaani');
+        $('.divseleccionarcodigoNuevaMesita').css({ display: 'block' });
+        setTimeout(function() {
+            $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+        }, 1000);
+    }
+
     public enviarCarritoEstanteria() {
         var contador = 1;
         var conta = 0;
@@ -7639,7 +7647,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             idProd != 375 &&
                             idProd != 316 &&
                             idProd != 339 &&
-                            idProd != 81
+                            idProd != 81 &&
+                            idProd != 418
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -7789,7 +7798,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 418
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -7978,7 +7988,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 idProd != 372 &&
                 idProd != 373 &&
                 idProd != 374 &&
-                idProd != 375
+                idProd != 375 &&
+                idProd != 418
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -13841,7 +13852,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             idProd != 373 &&
                             idProd != 374 &&
                             idProd != 375 &&
-                            idProd != 316
+                            idProd != 316 &&
+                            idProd != 418
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -13991,7 +14003,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 418
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -14173,7 +14186,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 idProd != 372 &&
                 idProd != 373 &&
                 idProd != 374 &&
-                idProd != 375
+                idProd != 375 &&
+                idProd != 418
             ) {
                 this.productosDormitorioService.categoria(2).subscribe(data => {
                     console.log(data.body);
@@ -19842,7 +19856,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             idProd != 373 &&
                             idProd != 374 &&
                             idProd != 375 &&
-                            idProd != 316
+                            idProd != 316 &&
+                            idProd != 418
                         ) {
                             $('#datos1').append(
                                 '<p style="width:100%" id="acabado' +
@@ -19992,7 +20007,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 231 &&
                     idProd != 232 &&
                     idProd != 234 &&
-                    idProd != 235
+                    idProd != 235 &&
+                    idProd != 418
                 ) {
                     var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                     if (saberlo != 'A') {
@@ -20813,6 +20829,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
 
     public cargarDimen(codigo) {
         $('#noLuz25').prop('checked', true);
+        $('.divseleccionarcodigoNuevaMesita').css({ display: 'none' });
         $('#volverAtras100MeterCasa').css({ display: 'none' });
         $('#volverAtras1MeterCasa').css({ display: 'block' });
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'block' });
@@ -21258,6 +21275,13 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     u +
                                     '</button>'
                             );
+                            if (idProd == 418) {
+                                $('#acabados #imagenAcabadoPrincipal').empty();
+                                $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
+                                $('#acabados #imagenAcabadoPrincipal').append(
+                                    '<div id="imagenAcabado" class="imagenAcabadoPrincipalImg"><div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel" style="width: 600px;height: 600px;"><ol class="carousel-indicators"><li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active" style="background-color: black;"></li><li data-target="#carouselExampleIndicators1" data-slide-to="1" style="background-color: black;"></li></ol><div class="carousel-inner"><div class="carousel-item active"><img class="d-block w-100" style="margin-top:0px" src="../../../content/images/comedores/CONFIGURACION_1.jpeg" alt="First slide"></div><div class="carousel-item"><img class="d-block w-100" style="margin-top:0px" src="../../../content/images/comedores/CONFIGURACION_2.jpeg" alt="Second slide"></div></div><a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a></div></div>'
+                                );
+                            }
                             if (screen.width < 800) {
                                 $('#imagenAcabado').css({ 'margin-top': '5px' });
                                 $('#imagenAcabado').css({ 'padding-top': '5px' });
@@ -26041,7 +26065,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 idProd != 357 &&
                                 idProd != 358 &&
                                 idProd != 359 &&
-                                idProd != 409
+                                idProd != 409 &&
+                                idProd != 418
                             ) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
@@ -26194,7 +26219,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         idProd != 235 &&
                         idProd != 331 &&
                         idProd != 330 &&
-                        idProd != 409
+                        idProd != 409 &&
+                        idProd != 418
                     ) {
                         var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
                         if (saberlo != 'A') {
@@ -26379,7 +26405,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                     idProd != 375 &&
                     idProd != 331 &&
                     idProd != 330 &&
-                    idProd != 409
+                    idProd != 409 &&
+                    idProd != 418
                 ) {
                     this.productosDormitorioService.categoria(2).subscribe(data => {
                         console.log(data.body);
@@ -30108,7 +30135,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             idProd != '235' &&
             idProd != '332' &&
             idProd != '409' &&
-            idProd != '330'
+            idProd != '330' &&
+            idProd != '418'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;

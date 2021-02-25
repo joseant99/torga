@@ -12020,7 +12020,8 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     idProd != 359 &&
                                                     idProd != 409 &&
                                                     idProd != 413 &&
-                                                    idProd != 414
+                                                    idProd != 414 &&
+                                                    idProd != 418
                                                 ) {
                                                     $('.' + productos[i]['id'] + 'Datos').append(
                                                         '<p id="pimprimirdatostexto"><span style="font-weight:600">Acabado ' +

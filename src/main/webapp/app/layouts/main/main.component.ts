@@ -88,6 +88,35 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
+        if (idProd == 418) {
+            if (o == 0) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Cubo Izquierdo :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 1) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Puente :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+            if (o == 2) {
+                $('#textoCesta' + i).append(
+                    '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
+                        (o + 1) +
+                        ' Cubo Derecho :</span> ' +
+                        acabados[o] +
+                        '</p>'
+                );
+            }
+        }
         if (idProd == 354) {
             if (o == 0) {
                 $('#textoCesta' + i).append(
@@ -642,6 +671,41 @@ export class JhiMainComponent implements OnInit {
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                         (k + 1) +
                         ' Estantes :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+        }
+        if (idProd == 418) {
+            if (k == 0) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Cubo Izquierdo :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 1) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Puente :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        contador +
+                        '">' +
+                        acabados[k]['acabados']['nombre'] +
+                        '</span></p>'
+                );
+            }
+            if (k == 2) {
+                $('.' + productos[i]['id'] + 'Datos').append(
+                    '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
+                        (k + 1) +
+                        ' Cubo Derecho :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -17061,6 +17125,47 @@ export class JhiMainComponent implements OnInit {
                         '"><span style="font-weight:600">' +
                         u +
                         ' Estantes</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+        }
+        if (idProd == 418) {
+            if (u == 1) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Cubo Izquierdo</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 2) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Puente</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        u +
+                        '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                        u +
+                        '" style="margin-left:10px"></span></p>'
+                );
+            }
+            if (u == 3) {
+                $('#datos1').append(
+                    '<p style="width:100%" id="acabado' +
+                        u +
+                        '"><span style="font-weight:600">' +
+                        u +
+                        ' Cubo Derecho</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

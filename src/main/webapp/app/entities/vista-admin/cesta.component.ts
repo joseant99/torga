@@ -12012,7 +12012,8 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 idProd != 359 &&
                                 idProd != 409 &&
                                 idProd != 413 &&
-                                idProd != 414
+                                idProd != 414 &&
+                                idProd != 418
                             ) {
                                 $('#textoCesta' + i).append(
                                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">Acabado ' +
