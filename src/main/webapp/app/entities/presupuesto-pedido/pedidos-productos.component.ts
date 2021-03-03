@@ -12208,7 +12208,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 268) {
                                                     nombreCargarImagen = 'NT289-NT296';
                                                 }
-
+                                                if (idProdNombre == 418) {
+                                                    nombreCargarImagen = 'NH512';
+                                                }
                                                 if (idProdNombre == 283) {
                                                     nombreCargarImagen = 'NT297-NT314';
                                                 }

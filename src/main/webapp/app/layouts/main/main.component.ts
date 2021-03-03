@@ -3527,7 +3527,7 @@ export class JhiMainComponent implements OnInit {
                 $('#textoCesta' + i).append(
                     '<p id="acabadoCesta" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left: 28%;"><span style="font-weight:600">' +
                         (o + 1) +
-                        ' Puerta INF :</span> ' +
+                        ' Cajon INF :</span> ' +
                         acabados[o] +
                         '</p>'
                 );
@@ -11037,7 +11037,7 @@ export class JhiMainComponent implements OnInit {
                 $('.' + productos[i]['id'] + 'Datos').append(
                     '<p id="pimprimirdatostexto"><span style="font-weight:600">' +
                         (k + 1) +
-                        ' Puerta INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
+                        ' Cajon INF :</span>&nbsp;&nbsp;&nbsp; <span class="acabado' +
                         contador +
                         '">' +
                         acabados[k]['acabados']['nombre'] +
@@ -19602,7 +19602,7 @@ export class JhiMainComponent implements OnInit {
                         u +
                         '"><span style="font-weight:600">' +
                         u +
-                        ' Puerta INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                        ' Cajon INF</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
                         u +
                         '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
                         u +

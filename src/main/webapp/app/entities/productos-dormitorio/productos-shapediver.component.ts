@@ -53,9 +53,9 @@ import { JhiMainComponent } from '../../layouts/main/main.component';
         VestidoresDormitorioComponent
     ],
     selector: 'jhi-productos-dormitorio',
-    templateUrl: './productos-buscador.component2.html'
+    templateUrl: './productos-shapediver.component.html'
 })
-export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
+export class ProductosShapediverComponent implements OnInit, OnDestroy {
     currentAccount: any;
     productosDormitorios: IProductosDormitorio[];
     dimensionesProductos: IDimensionesProducto[];
@@ -20859,7 +20859,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             $('.dimensionesColor1').css({ 'background-color': 'white' });
             $('#imagenAcabado').remove();
-            $('#datos1').empty();
+            //$('#datos1').empty();
             $('#datos1').css({ display: 'block' });
             $('#acabado').css({ display: 'none' });
             var acabados = [];
@@ -21010,52 +21010,28 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 if (nombre.toUpperCase() == datos['mensaje']) {
                     var text = $('#nombreMesita').text();
                     $('#nombreMesita').text(datos['productosDormitorio']['nombre']);
-
-                    var total = $('#total').text();
-
-                    var totalfloat = parseFloat(total);
-                    var precio = parseFloat(datos['precio']);
-                    precio = precio * precioPunto;
-                    precio = Math.round(precio * 100) / 100;
-                    totalfloat = totalfloat + precio;
-                    if (iva == 1) {
-                        var todasCuenta = totalfloat * 1.21;
-                    } else {
-                        var todasCuenta = totalfloat;
-                    }
-                    var totalfloat = 0;
-                    this.precioDimension = todasCuenta;
-                    totalfloat = parseFloat(todasCuenta.toFixed(2));
-                    $('#dimensionesInput' + (cont + 1)).css({ 'background-color': '#DFDDDC' });
-                    $('#total').text(totalfloat);
-                    $('#precioDimension').text(totalfloat);
-                    var saberlo = JSON.parse(sessionStorage.getItem('seccionPrecios'));
-                    if (saberlo != 'A') {
-                        $('#euroCalculadora').css({ display: 'block' });
-                    } else {
-                        $('#ppCalculadora').css({ display: 'block' });
-                    }
                     $('#datos1').append(
-                        '<p style="width:100%"><span style="font-weight:600">Código : </span><span id="codigoMensajeDatos">' +
-                            datos['mensaje'] +
-                            '</span></p>'
-                    );
-                    $('#datos1').append(
-                        '<p style="width:100%"><span style="font-weight:600">Ancho : </span><span class="' +
+                        '<p style="width:100%;display:none"><span style="font-weight:600">Ancho Especial : </span><span class="' +
                             datos['id'] +
                             '" id="ancho1">' +
-                            datos['ancho'] +
+                            codigo +
                             '</span></p>'
                     );
 
                     $('#datos1').append(
-                        '<p style="width:100%"><span style="font-weight:600">Alto : </span><span>' + datos['alto'] + '</span></p>'
+                        '<p style="width:100%;display:none"><span style="font-weight:600">Alto : </span><span id="altoDatosDimen">' +
+                            datos['alto'] +
+                            '</span></p>'
                     );
                     $('#datos1').append(
-                        '<p style="width:100%"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
+                        '<p style="width:100%;display:none"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
                             datos['fondo'] +
                             '</span></p>'
                     );
+                    var precio = parseFloat(datos['precio']);
+                    var todasCuenta = precio;
+                    this.precioDimension = todasCuenta;
+                    $('#precioDimension').text(todasCuenta);
                 }
 
                 var idProd = producto;
@@ -21129,6 +21105,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 $('#acabado').css({ 'margin-bottom': '5%' });
                 $('#acabados').css({ width: '70%' });
                 $('#acabados').css({ 'padding-top': '35px' });
+                $('#acabados').css({ display: 'none' });
 
                 var contador = 1;
                 var contnuevo = 1;
@@ -21169,9 +21146,6 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 idProd != 92
                             ) {
                                 if (contador == 1) {
-                                    $('#acabados #imagenAcabadoPrincipal').css({ display: 'block' });
-                                    $('#acabados #imagenAcabadoPrincipalSin').css({ display: 'none' });
-
                                     if (
                                         idProd != 159 &&
                                         idProd != 158 &&
@@ -21192,23 +21166,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         idProd != 73 &&
                                         idProd != 72
                                     ) {
-                                        $('#acabados #imagenAcabadoPrincipal').append(
-                                            '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-                                        );
                                     } else {
-                                        $('#acabados #imagenAcabadoPrincipal').append(
-                                            '<img id="imagenAcabado" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                nombreCargarImagen +
-                                                '.jpeg" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-                                        );
                                     }
                                 }
                             } else {
                                 if (contador == 1) {
-                                    $('#acabados #imagenAcabadoPrincipal').css({ display: 'none' });
-                                    $('#acabados #imagenAcabadoPrincipalSin').css({ display: 'block' });
                                     if (
                                         idProd != 159 &&
                                         idProd != 158 &&
@@ -21229,17 +21191,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         idProd != 73 &&
                                         idProd != 72
                                     ) {
-                                        $('#acabados #imagenAcabadoPrincipalSin').append(
-                                            '<img id="imagenAcabado" src="data:image/gif;base64,' +
-                                                imagen +
-                                                '" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-                                        );
                                     } else {
-                                        $('#acabados #imagenAcabadoPrincipalSin').append(
-                                            '<img id="imagenAcabado" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                nombreCargarImagen +
-                                                '.jpeg" class="imagenAcabadoPrincipalImg"  width="650px" height="650px">'
-                                        );
                                     }
                                 }
                             }
@@ -30190,7 +30142,12 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
         }
     }
-
+    public shapedivercargar() {
+        $('#datos1').append('<div id="parameters"></div>');
+        $('#calculadoraCarrito').css({ display: 'block' });
+        $('#cargarApiShape')[0].click();
+        this.cargarDimen('NH007');
+    }
     public anadirCalculadora() {
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
@@ -34027,7 +33984,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             const idApoyo = $('#productoCalculadora1 #datos1 #apoyo' + i).attr('class');
             const idIluminacion = $('#productoCalculadora1 #datos1 #iluminacion' + i).attr('class');
             const ancho = $('#productoCalculadora1 #datos1 #ancho' + i).text();
-            const alto = $('#productoCalculadora1 #datos1 #alto' + i).text();
+            const alto = $('#productoCalculadora1 #datos1 #altoDatosDimen').text();
             const fondo = $('#productoCalculadora1 #datos1 #fondoDatosDimen').text();
             const precio = $('#productoCalculadora1 #datos1 #alto' + i).attr('class');
             const todasDimensiones = this.dimensionesProductoTipoService.todos;
@@ -34181,6 +34138,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             }
                         }
                     }
+                    value['ancho'] = ancho;
+                    value['alto'] = alto;
+                    value['fondo'] = fondo;
                     if (value['mensaje'] == 'Medidas Especiales') {
                         value['ancho'] = ancho;
                         value['alto'] = alto;

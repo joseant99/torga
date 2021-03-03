@@ -9484,6 +9484,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         if (sesion[1]['productosDormitorio']['id'] == 223) {
                             nombreCargarImagen = 'NH511';
                         }
+                        if (sesion[1]['productosDormitorio']['id'] == 418) {
+                            nombreCargarImagen = 'NH512';
+                        }
                         if (sesion[1]['productosDormitorio']['id'] == 222) {
                             nombreCargarImagen = 'NH507-NH510';
                         }

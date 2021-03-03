@@ -29,9 +29,9 @@
 	<script src="https://kendo.cdn.telerik.com/2017.2.621/js/jquery.min.js"></script>
 	<script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
 	<script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
-	<!-- 
+	
 	<script type="https://s3.amazonaws.com/shapediverviewer/v2/2.19.4/sdv.concat.min.js"></script>
-	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script> -->
+	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script>
     <script src="content/jquerysession.js"></script>
     
     	    <link rel="manifest" href="manifest.webapp" />
@@ -111,6 +111,7 @@
     </script>
     <script>
 		$(document).ready(function(){
+			
 		  $(".nav-tabs a").click(function(){
 		    $(this).tab('show');
 		  });
@@ -217,7 +218,7 @@ $("#divDentroCalcu").scroll(function() {
 		$("#modalCesta").modal('hide');//ocultamos el modal
 		
 	}
-	/** 
+	
 	function apiShape(){
 		$(".divBuscadorArticulos").css({"display":"block"});
 		$("#page-heading").css({"display":"none"});
@@ -233,7 +234,7 @@ $("#divDentroCalcu").scroll(function() {
 		    version: 2
 		  },
 		  // ticket for a ShapeDiver model
-		  ticket: '20f9d15ecb236b79c4c342f2714558f571d34ae17fc3678f09a4e6742f28045119010401d66d47bd2f4c0a4a5ae92be36c560606effd0a98ec6ebdcec3975a5fd947d156338ff31e4a3c142a7eb4aa864f62d3db3938be957ab118903125b434296303731c19772d5a7fc89ae42348eba26888a80fdd-75013a6ebb275765f424fa8c2b7976a5',
+		  ticket: '1e6edae557d9f6ae103e8ccc97aa07decd259dfd44da0a64162152050a749c9defba6ca880df8f6b0844d543f6b77a0829a335a0696c999512c1332500a569ee86102aae48f7816f34d48207125415c7214f8832d21b2c72b2fc07df488057bcd309e6d5313f80063467ecf6adaf34380a0775bcc488-59ce67ced07fd0eb16664c78e936be8d',
 		  modelViewUrl: 'eu-central-1',
 		  showControlsInitial: true,
 		  showSettingsInitial: false
@@ -246,6 +247,7 @@ $("#divDentroCalcu").scroll(function() {
 		var parameters;
 		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		    if (!viewerInit) {
+		      api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		      var globalDiv = document.getElementById("parameters");
 		      parameters = api.parameters.get();
 		      parameters.data.sort(function(a, b) {
@@ -258,22 +260,52 @@ $("#divDentroCalcu").scroll(function() {
 		        let param = parameters.data[i];
 		        let label = document.createElement("label");
 		        label.setAttribute("for", param.id);
+		        
+		        if(i == 8){
+		        	param["hidden"] = false;
+		        }
+		        if(i == 0){
+		        	param["name"] = "ANCHO";
+		        }
+		        if(i == 1){
+		        	param["name"] = "ALTO";
+		        }
+		        if(i == 2){
+		        	param["name"] = "FONDO";
+		        }
+		        if(i == 3){
+		        	param["hidden"] = true;
+		        }
 		        label.innerHTML = param.name;
 		        if (param.type == "Int" || param.type == "Float" || param.type == "Even" || param.type == "Odd") {
 		          paramInput = document.createElement("input");
+		          paramInput12 = document.createElement("output");
 		          paramInput.setAttribute("id", param.id);
 		          paramInput.setAttribute("type", "range");
 		          paramInput.setAttribute("min", param.min);
-		          paramInput.setAttribute("max", param.max);
-		          paramInput.setAttribute("value", param.value);
+		          paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
+		          paramInput.setAttribute("max", (param.max/10));
+		          paramInput.setAttribute("class", "rangeInputgg");
+		          paramInput.setAttribute("value", (param.value/10));
+		          paramInput12.setAttribute("id", "voydespues"+i);
 		          if (param.type == "Int") paramInput.setAttribute("step", 1);
 		          else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
 		          else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
 		          paramInput.onchange = function() {
 		            api.parameters.updateAsync({
 		              id: param.id,
-		              value: this.value
+		              value: this.value * 10
 		            });
+		            if(param["name"] == "ANCHO"){
+		            	$("#ancho1").text(this.value);
+		            }
+		            if(param["name"] == "ALTO"){
+		            	$("#altoDatosDimen").text(this.value);
+		            }
+		            if(param["name"] == "FONDO"){
+		            	$("#fondoDatosDimen").text(this.value);
+		            }
+		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		          };
 		        } else if (param.type == "Bool") {
 		          paramInput = document.createElement("input");
@@ -286,6 +318,7 @@ $("#divDentroCalcu").scroll(function() {
 		              id: param.id,
 		              value: this.checked
 		            });
+		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		          };
 		        } else if (param.type == "String") {
 		          paramInput = document.createElement("input");
@@ -297,6 +330,7 @@ $("#divDentroCalcu").scroll(function() {
 		              id: param.id,
 		              value: this.value
 		            });
+		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		          };
 		        } else if (param.type == "Color") {
 		          paramInput = document.createElement("input");
@@ -308,6 +342,7 @@ $("#divDentroCalcu").scroll(function() {
 		              id: param.id,
 		              value: this.value
 		            });
+		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		          };
 		        } else if (param.type == "StringList") {
 		          paramInput = document.createElement("select");
@@ -325,12 +360,15 @@ $("#divDentroCalcu").scroll(function() {
 		              id: param.id,
 		              value: this.value
 		            });
+		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		          };
 		        }
 		        if (param.hidden) paramDiv.setAttribute("hidden", "");
 		        paramDiv.appendChild(label);
 		        paramDiv.appendChild(paramInput);
+		        paramDiv.appendChild(paramInput12);
 		        globalDiv.appendChild(paramDiv);
+		        $("#voydespues"+i).append(param.value / 10);
 		      }
 
 		      var exports = api.exports.get();
@@ -358,7 +396,7 @@ $("#divDentroCalcu").scroll(function() {
 		      viewerInit = true;
 		    }
 		  });
-	}**/
+	}
 	function borrarProdCesta(id){
 		sessionStorage.removeItem("prod"+id);
 		console.log(id);
