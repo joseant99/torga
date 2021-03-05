@@ -219,6 +219,84 @@ $("#divDentroCalcu").scroll(function() {
 		
 	}
 	
+	function cambiardecolor(id,url){
+		var parameters = api.parameters.get();
+		if(id == 1){
+			for (let i = 0; i < parameters.data.length; i++) {
+				if(parameters.data[i]["name"] == "textura2"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				
+			}
+		}
+		if(id == 2){
+			for (let i = 0; i < parameters.data.length; i++) {
+				if(parameters.data[i]["name"] == "textura"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				if(parameters.data[i]["name"] == "textura1"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				if(parameters.data[i]["name"] == "textura7"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				if(parameters.data[i]["name"] == "textura5"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				if(parameters.data[i]["name"] == "textura4"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+			}
+		}
+		if(id == 3){
+			for (let i = 0; i < parameters.data.length; i++) {
+				if(parameters.data[i]["name"] == "textura6"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				
+			}
+		}
+		
+	}
+	
+	function saberdondeestapuesto(){
+		
+		//var camara = api.scene.camera.get();
+		//var x = camara.data["position"]["x"];
+		//if(x > 950){
+			//api.scene.camera.updateAsync({position:{x:1949.639839351793,y:camara1.data["position"]["y"],z:camara1.data["position"]["z"]}, target:{x:camara1.data["target"]["x"],y:camara1.data["target"]["y"],z:camara1.data["target"]["z"]} });
+			
+		//}else{
+			//if(x < 450){
+				//api.scene.camera.updateAsync({position:{x:-608.967833517243,y:-859.4492358330722,z:387.30463528145617}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+				
+			//}else{
+				//api.scene.camera.updateAsync({position:{x:708.28785142819,y:-859.4492358330722,z:387.30463528145617}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+			//}
+			
+		//}
+	}
 	function apiShape(){
 		$(".divBuscadorArticulos").css({"display":"block"});
 		$("#page-heading").css({"display":"none"});
@@ -234,7 +312,7 @@ $("#divDentroCalcu").scroll(function() {
 		    version: 2
 		  },
 		  // ticket for a ShapeDiver model
-		  ticket: '1e6edae557d9f6ae103e8ccc97aa07decd259dfd44da0a64162152050a749c9defba6ca880df8f6b0844d543f6b77a0829a335a0696c999512c1332500a569ee86102aae48f7816f34d48207125415c7214f8832d21b2c72b2fc07df488057bcd309e6d5313f80063467ecf6adaf34380a0775bcc488-59ce67ced07fd0eb16664c78e936be8d',
+		  ticket: '589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
 		  modelViewUrl: 'eu-central-1',
 		  showControlsInitial: true,
 		  showSettingsInitial: false
@@ -247,20 +325,40 @@ $("#divDentroCalcu").scroll(function() {
 		var parameters;
 		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		    if (!viewerInit) {
+		    	
 		      api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		      var updatedSettings = {
+		    		  scene : {
+		    			  camera : {
+		    				  rotationSpeed : 0.1,
+		    				  autoAdjust: true,
+		    				  restrictions :{
+		    					  rotation : {
+		    						  minAzimuthAngle: -75,
+		    						  minPolarAngle: 45,
+		    						  maxPolarAngle: 90,
+		    						  maxAzimuthAngle: 75
+		    						  }
+		      					}
+		      				}
+		      			}
+		      }
+		      
+		      api.updateSettingsAsync(updatedSettings);
 		      var globalDiv = document.getElementById("parameters");
 		      parameters = api.parameters.get();
 		      parameters.data.sort(function(a, b) {
 		        return a.order - b.order;
 		      });
 		      console.log(parameters.data);
+		      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
 		      for (let i = 0; i < parameters.data.length; i++) {
 		        let paramInput = null;
 		        let paramDiv = document.createElement("div");
 		        let param = parameters.data[i];
 		        let label = document.createElement("label");
 		        label.setAttribute("for", param.id);
-		        
+		        		
 		        if(i == 8){
 		        	param["hidden"] = false;
 		        }
@@ -305,7 +403,11 @@ $("#divDentroCalcu").scroll(function() {
 		            if(param["name"] == "FONDO"){
 		            	$("#fondoDatosDimen").text(this.value);
 		            }
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		            
+		            setTimeout(function() {
+		            	window.camara1 = api.scene.camera.get();
+		            }, 1500);
+		            
 		          };
 		        } else if (param.type == "Bool") {
 		          paramInput = document.createElement("input");
@@ -319,19 +421,9 @@ $("#divDentroCalcu").scroll(function() {
 		              value: this.checked
 		            });
 		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		            api.scene.camera.zoomAsync()
 		          };
-		        } else if (param.type == "String") {
-		          paramInput = document.createElement("input");
-		          paramInput.setAttribute("id", param.id);
-		          paramInput.setAttribute("type", "text");
-		          paramInput.setAttribute("value", param.value);
-		          paramInput.onchange = function() {
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.value
-		            });
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-		          };
+		        
 		        } else if (param.type == "Color") {
 		          paramInput = document.createElement("input");
 		          paramInput.setAttribute("id", param.id);
@@ -343,6 +435,7 @@ $("#divDentroCalcu").scroll(function() {
 		              value: this.value
 		            });
 		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		            api.scene.camera.zoomAsync()
 		          };
 		        } else if (param.type == "StringList") {
 		          paramInput = document.createElement("select");
@@ -360,7 +453,9 @@ $("#divDentroCalcu").scroll(function() {
 		              id: param.id,
 		              value: this.value
 		            });
+		            api.scene.camera.zoomAsync();
 		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		            
 		          };
 		        }
 		        if (param.hidden) paramDiv.setAttribute("hidden", "");
