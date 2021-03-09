@@ -111,7 +111,7 @@
     </script>
     <script>
 		$(document).ready(function(){
-			
+
 		  $(".nav-tabs a").click(function(){
 		    $(this).tab('show');
 		  });
@@ -281,22 +281,26 @@ $("#divDentroCalcu").scroll(function() {
 	}
 	
 	function saberdondeestapuesto(){
-		
-		//var camara = api.scene.camera.get();
-		//var x = camara.data["position"]["x"];
-		//if(x > 950){
-			//api.scene.camera.updateAsync({position:{x:1949.639839351793,y:camara1.data["position"]["y"],z:camara1.data["position"]["z"]}, target:{x:camara1.data["target"]["x"],y:camara1.data["target"]["y"],z:camara1.data["target"]["z"]} });
+
+		var camara1 = this.camaraposition;
+		console.log(camara1);
+		var camara = api.scene.camera.get();
+		var x = camara.data["position"]["x"];
+		if(x > 950){
+			api.scene.camera.updateAsync({position:{x:1949.639839351793,y:camara1.data["position"]["y"],z:camara1.data["position"]["z"]}, target:{x:camara1.data["target"]["x"],y:camara1.data["target"]["y"],z:camara1.data["target"]["z"]} });
 			
-		//}else{
-			//if(x < 450){
+		}else{
+			if(x < 450){
 				//api.scene.camera.updateAsync({position:{x:-608.967833517243,y:-859.4492358330722,z:387.30463528145617}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-				
-			//}else{
+				api.scene.camera.updateAsync({position:{x:-608.967833517243,y:camara1.data["position"]["y"],z:camara1.data["position"]["z"]}, target:{x:camara1.data["target"]["x"],y:camara1.data["target"]["y"],z:camara1.data["target"]["z"]} });
+			}else{
 				//api.scene.camera.updateAsync({position:{x:708.28785142819,y:-859.4492358330722,z:387.30463528145617}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-			//}
+				api.scene.camera.updateAsync({position:{x:708.28785142819,y:camara1.data["position"]["y"],z:camara1.data["position"]["z"]}, target:{x:camara1.data["target"]["x"],y:camara1.data["target"]["y"],z:camara1.data["target"]["z"]} });
+			}
 			
-		//}
+		}
 	}
+	
 	function apiShape(){
 		$(".divBuscadorArticulos").css({"display":"block"});
 		$("#page-heading").css({"display":"none"});
@@ -323,10 +327,10 @@ $("#divDentroCalcu").scroll(function() {
 		
 		var viewerInit = false;
 		var parameters;
+		
 		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		    if (!viewerInit) {
-		    	
-		      api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+		      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
 		      var updatedSettings = {
 		    		  scene : {
 		    			  camera : {
@@ -343,7 +347,7 @@ $("#divDentroCalcu").scroll(function() {
 		      				}
 		      			}
 		      }
-		      
+		     
 		      api.updateSettingsAsync(updatedSettings);
 		      var globalDiv = document.getElementById("parameters");
 		      parameters = api.parameters.get();
@@ -351,6 +355,9 @@ $("#divDentroCalcu").scroll(function() {
 		        return a.order - b.order;
 		      });
 		      console.log(parameters.data);
+		      setTimeout(function() {
+	            	window.camaraposition = api.scene.camera.get();
+	            }, 1500);
 		      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
 		      for (let i = 0; i < parameters.data.length; i++) {
 		        let paramInput = null;
@@ -405,7 +412,7 @@ $("#divDentroCalcu").scroll(function() {
 		            }
 		            
 		            setTimeout(function() {
-		            	window.camara1 = api.scene.camera.get();
+		            	window.camaraposition = api.scene.camera.get();
 		            }, 1500);
 		            
 		          };
@@ -488,10 +495,14 @@ $("#divDentroCalcu").scroll(function() {
 		        exportDiv.appendChild(exportInput);
 		        globalDiv.appendChild(exportDiv);
 		      }
+		      
 		      viewerInit = true;
+		      
 		    }
 		  });
+		
 	}
+	
 	function borrarProdCesta(id){
 		sessionStorage.removeItem("prod"+id);
 		console.log(id);
