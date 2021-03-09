@@ -20958,9 +20958,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     elem1[0].style.setProperty('height', '55px', 'important');
                 }
             }, 1000);
-            setInterval(function() {
-                console.log('a');
-            }, 2000);
+
             this.dimensionesProductoTipoService.findDimensionNombre(nombre.toUpperCase()).subscribe(data => {
                 var datos = data.body[0];
                 var todosLosDatos = data.body;
