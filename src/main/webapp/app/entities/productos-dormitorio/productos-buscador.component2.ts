@@ -20720,7 +20720,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         this.acabados1 = acabados;
         var cuenta;
         var aux = 0;
-        aux = prueba * prueba1;
+        if (prueba > 25) {
+            aux = prueba * prueba1;
+        } else {
+            aux = prueba1 * 13;
+        }
         aux = aux / 10000;
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('.divBuscadorArticulos #volverAtras125MeterCasa').css({ display: 'block' });

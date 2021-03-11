@@ -1920,10 +1920,14 @@
         <div id="idNativComedoresDiv" style="z-index:2;margin-bottom: 65px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;"><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textoStrongNativ"><strong>NATIV COMEDORES</strong></span></div>
         <div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
         	
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar()" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('91fefb7c245dc400dd995000e8108ab76cf8115a5481e4ff91ddc9e21315f47774dc317edd96bcddedeeaa80323add4dc351d8e09b10025ddd82e52ee3a0e558558af28ee084c378f9bfa1ef7f859ce7ff8157bc982e93b38d8f8e3e785b37609c16d799fc0126756049f67977f3fe0cb9341ae11f9f-d38c44092b8820e654e6286949689066')" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
         	</div>
-        	<a id="cargarApiShape" onclick="apiShape()" style="display:none">prueba</a>
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('9eb7e05dcac0002aacfa7dec0aa93909c6b60c7eaf0e4333e30c86a65eb633298203d14f93c35ec0ba8a8aac2c2ac6dd7aac98629509eef3858a57cbd935f54599aa6bd843b15ac5ed7a5894e6486a967959541da29352d608a3b5628f1560f83a3e4998db3198908d36ff6ebb2e344f55bc8a5f9432-55b00ca9169ab55708c9ec546ff744fb')" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
+        	</div>
+        	<a id="cargarApiShape" style="display:none">prueba</a>
+        	
         </div>
         <!-- 
         <form style="margin-top:5%;margin-bottom:2%;" id="formcomebus">
@@ -2546,6 +2550,7 @@
     			<div id='sdv-container' style="width: 75%;height: 700px;margin-top: 10%;margin-left: 25%;">
     			
 			    </div>
+			    <button id="mostrarBotonVolverVista" onclick="vistavueltainicio()" style="position: absolute;top: 800px;margin-left: 60%;z-index: 100000;border-radius: 30px;display:none; font-size: 25px; padding-left: 12px; padding-right: 12px;">X</button>
 			    
     		</div>
    <!--   <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
@@ -2663,6 +2668,7 @@
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
 						<a id="clicparacambiardecolor" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="setintervalfuncion" style="display:none" onclick="setIntervalfuncioncomprobar()">prueba</a>
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;">
 							
 						</div>

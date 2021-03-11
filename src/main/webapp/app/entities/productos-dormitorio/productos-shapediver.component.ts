@@ -20957,6 +20957,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     elem1[0].style.setProperty('bottom', '0px', 'important');
                     elem1[0].style.setProperty('height', '55px', 'important');
                 }
+                $('#setintervalfuncion')[0].click();
             }, 1000);
 
             this.dimensionesProductoTipoService.findDimensionNombre(nombre.toUpperCase()).subscribe(data => {
@@ -29501,20 +29502,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var idProd = '';
         idProd = $('#nombreMesita').attr('class');
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/9yvb2e0ueky4u00/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/qiuhqnn8yv3r4h4/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://www.dropbox.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/fgb2sb2z057eppl/GRAFENO.jpg?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/g5u4hlm1dqesgql/KOBE.jpg?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/5bdu2owhq5olphh/LAGO.jpg?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/66gjaw9uz6um2bc/LATTE.jpg?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/d5wt5r3ju14suin/MARE.jpg?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/zv3q8lxxpwenz5d/MARMOL%20BLANCO.JPG?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/vnehvgadm5t0k7h/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/hgujyzmvncfbr4h/NATURE.jpg?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/f9ou4exjmrj3f60/NOCE.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/ldtfoexecxdbodz/NORWAY.jpg?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/jpz6gsu7217wdlo/TABAK.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://www.dropbox.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
 
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -30163,9 +30166,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
     }
-    public shapedivercargar() {
+    public shapedivercargar(id) {
         $('#datos1').append('<div id="parameters"></div>');
         $('#calculadoraCarrito').css({ display: 'block' });
+        $('#cargarApiShape').attr('onclick', "apiShape('" + id + "')");
         $('#cargarApiShape')[0].click();
         this.cargarDimen('NH007');
     }

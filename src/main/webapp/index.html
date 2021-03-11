@@ -277,6 +277,9 @@ $("#divDentroCalcu").scroll(function() {
 				
 			}
 		}
+		setTimeout(function() {
+        	window.camaraposition = api.scene.camera.get();
+        }, 1500);
 		
 	}
 	
@@ -301,7 +304,7 @@ $("#divDentroCalcu").scroll(function() {
 		}
 	}
 	
-	function apiShape(){
+	function apiShape(id){
 		$(".divBuscadorArticulos").css({"display":"block"});
 		$("#page-heading").css({"display":"none"});
         $("#diviframeprueba").css({"display":"block"});
@@ -316,7 +319,8 @@ $("#divDentroCalcu").scroll(function() {
 		    version: 2
 		  },
 		  // ticket for a ShapeDiver model
-		  ticket: '589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+		  ticket: id,
+		  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
 		  modelViewUrl: 'eu-central-1',
 		  showControlsInitial: true,
 		  showSettingsInitial: false
@@ -327,9 +331,75 @@ $("#divDentroCalcu").scroll(function() {
 		
 		var viewerInit = false;
 		var parameters;
-		
+		var hoverEffect = {
+			active: {
+		    name: "colorHighlight",
+		    options: {
+		      color: [100, 100, 100]
+		    }
+		  }
+		};
+
+		var selectEffect = {
+		  active: {
+		    name: "colorHighlight",
+		    options: {
+			     color: [255, 0, 0]
+				    }
+			 }
+		};
+		var leftPivot, rightPivot, rotAxis, transVector;
+				var leftTrans = {
+				  scenePaths: [],
+				  transformations: [
+				    {
+				      delay: 0,
+				      duration: 500,
+				      type: "rotation",
+				      repeat: 0,
+				      //yoyo:true,
+				      rotationAxis: {
+				        x: 1,
+				        y: 0,
+				        z: 0
+				      },
+				      rotationDegree: 90,
+				      pivot: {}
+				    }
+				  ],
+				  reset: false
+				};
+				var leftTrans1 = {
+						  scenePaths: [],
+						  transformations: [
+						    {
+						      delay: 0,
+						      duration: 500,
+						      type: "rotation",
+						      repeat: 0,
+						      //yoyo:true,
+						      rotationAxis: {
+						        x: 1,
+						        y: 0,
+						        z: 0
+						      },
+						      rotationDegree: -90,
+						      pivot: {}
+						    }
+						  ],
+						  reset: false
+						};
+					var selectableGroup = {
+						  id: "select",
+						  hoverable: true,
+						  hoverEffect: hoverEffect,
+						  //selectionEffect: selectEffect,
+						  selectable: true,
+						  selectionMode: "single"
+						};
 		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		    if (!viewerInit) {
+		    	
 		      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
 		      var updatedSettings = {
 		    		  scene : {
@@ -347,6 +417,7 @@ $("#divDentroCalcu").scroll(function() {
 		      				}
 		      			}
 		      }
+		      
 		     
 		      api.updateSettingsAsync(updatedSettings);
 		      var globalDiv = document.getElementById("parameters");
@@ -355,10 +426,68 @@ $("#divDentroCalcu").scroll(function() {
 		        return a.order - b.order;
 		      });
 		      console.log(parameters.data);
+		      
 		      setTimeout(function() {
 	            	window.camaraposition = api.scene.camera.get();
 	            }, 1500);
 		      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
+
+		    	      let arrPivot = api.scene.getData({
+		    	        name: "frente"
+		    	      }).data[0].data;
+		    	      leftPivot = {
+		    	        x: arrPivot[0],
+		    	        y: arrPivot[1],
+		    	        z: arrPivot[2]
+		    	      };
+		    	      leftTrans.scenePaths = [
+		    	        api.scene.get(
+		    	          {
+		    	            name: "SDDisplayFrente",
+		    	            format: "glb"
+		    	          },
+		    	          "CommPlugin_1"
+		    	        ).data[0].scenePath
+		    	      ];
+		    	      leftTrans1.scenePaths = [
+			    	        api.scene.get(
+			    	          {
+			    	            name: "SDDisplayFrente",
+			    	            format: "glb"
+			    	          },
+			    	          "CommPlugin_1"
+			    	        ).data[0].scenePath
+			    	      ];
+		    	      leftTrans.transformations[0].pivot = leftPivot;
+		    	      leftTrans1.transformations[0].pivot = leftPivot;
+		    	      api.scene.updateInteractionGroups(selectableGroup);
+		    	      var assets = api.scene.get(
+		    	        {
+		    	          name: "SDDisplayFrente",
+		    	          format: "glb"
+		    	        },
+		    	        "CommPlugin_1"
+		    	      ).data;
+		    	      var updateObjects = [];
+		    	      let updateObject = {
+		    	        id: assets[0].id,
+		    	        duration: 0,
+		    	        interactionGroup: selectableGroup.id,
+		    	        interactionMode: "global"
+		    	      };
+		    	      updateObjects.push(updateObject);
+		    	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
+		    	      window.seadadoclic = 0;
+		    	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(){
+		    	        console.log("SELECT_ON");
+		    	          if(seadadoclic == 0){
+		    	            api.scene.setLiveTransformation([leftTrans]);
+		    	            seadadoclic = 1;
+		    	          }else{
+		    	            api.scene.setLiveTransformation([leftTrans1]);
+		    	            seadadoclic = 0;
+		    	          }
+		    	      });
 		      for (let i = 0; i < parameters.data.length; i++) {
 		        let paramInput = null;
 		        let paramDiv = document.createElement("div");
@@ -373,10 +502,10 @@ $("#divDentroCalcu").scroll(function() {
 		        	param["name"] = "ANCHO";
 		        }
 		        if(i == 1){
-		        	param["name"] = "ALTO";
+		        	param["name"] = "FONDO";
 		        }
 		        if(i == 2){
-		        	param["name"] = "FONDO";
+		        	param["name"] = "ALTO";
 		        }
 		        if(i == 3){
 		        	param["hidden"] = true;
@@ -387,7 +516,7 @@ $("#divDentroCalcu").scroll(function() {
 		          paramInput12 = document.createElement("output");
 		          paramInput.setAttribute("id", param.id);
 		          paramInput.setAttribute("type", "range");
-		          paramInput.setAttribute("min", param.min);
+		          paramInput.setAttribute("min", param.min/10);
 		          paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
 		          paramInput.setAttribute("max", (param.max/10));
 		          paramInput.setAttribute("class", "rangeInputgg");
@@ -501,6 +630,33 @@ $("#divDentroCalcu").scroll(function() {
 		    }
 		  });
 		
+		
+	}
+	function selectCallback(event) {
+		alert("a");
+	}
+	function setIntervalfuncioncomprobar(){
+		var cont = 0;
+		var id = setInterval(function(){ 
+			console.log("Hello");
+			var href = window.location.href;
+			var camara1 = this.camaraposition;
+			var camara = api.scene.camera.get();
+			if(Math.round(camara1.data["position"]["y"]) != Math.round(camara.data["position"]["y"]) && Math.round(camara1.data["position"]["z"]) != Math.round(camara.data["position"]["z"])){
+				$("#mostrarBotonVolverVista").css({"display":"block"});
+			}else{
+				$("#mostrarBotonVolverVista").css({"display":"none"});
+			}
+			if(href != 'http://localhost:9000/#/productos-shapediver'){
+				clearInterval(id);
+			}
+			
+		}, 2000);
+	}
+	function vistavueltainicio(){
+		var camara1 = this.camaraposition;
+        api.scene.camera.updateAsync(camara1.data);
+		$("#mostrarBotonVolverVista").css({"display":"none"});
 	}
 	
 	function borrarProdCesta(id){
