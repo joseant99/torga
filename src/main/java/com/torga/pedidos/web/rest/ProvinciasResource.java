@@ -1,6 +1,8 @@
 package com.torga.pedidos.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.torga.pedidos.domain.Provincias;
 import com.torga.pedidos.repository.ProvinciasRepository;
 import com.torga.pedidos.web.rest.errors.BadRequestAlertException;
@@ -89,11 +91,28 @@ public class ProvinciasResource {
      */
     @GetMapping("/provincias")
     @Timed
-    public ResponseEntity<List<Provincias>> getAllProvincias(Pageable pageable) {
+    public ResponseEntity<List<Provincias>> getAllProvincias(Pageable pageable)  {
         log.debug("REST request to get a page of Provincias");
         Page<Provincias> page = provinciasRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/provincias");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /provincias : get all the provincias.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of provincias in body
+     */
+    @GetMapping("/provincias105")
+    @Timed
+    public ResponseEntity<String> getAllProvincias105(Pageable pageable) throws JsonProcessingException {
+        log.debug("REST request to get a page of Provincias");
+        Page<Provincias> page = provinciasRepository.findAll(pageable);
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(page.getContent());
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/provincias");
+        return ResponseEntity.ok().headers(headers).body(jsonString);
     }
 
     /**

@@ -812,7 +812,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of this.armariosDormitorioComponent.productosDormitorioModal" style="float:left; width:140px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
+		          <div *ngFor="let aca of productosDormitorioModal; let i=index;" class="classintdivmen{{i}}" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)"><img title="Foto de linea de codigo" class="tirador" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1920,10 +1920,10 @@
         <div id="idNativComedoresDiv" style="z-index:2;margin-bottom: 65px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;"><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textoStrongNativ"><strong>NATIV COMEDORES</strong></span></div>
         <div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
         	
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('91fefb7c245dc400dd995000e8108ab76cf8115a5481e4ff91ddc9e21315f47774dc317edd96bcddedeeaa80323add4dc351d8e09b10025ddd82e52ee3a0e558558af28ee084c378f9bfa1ef7f859ce7ff8157bc982e93b38d8f8e3e785b37609c16d799fc0126756049f67977f3fe0cb9341ae11f9f-d38c44092b8820e654e6286949689066')" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('91fefb7c245dc400dd995000e8108ab76cf8115a5481e4ff91ddc9e21315f47774dc317edd96bcddedeeaa80323add4dc351d8e09b10025ddd82e52ee3a0e558558af28ee084c378f9bfa1ef7f859ce7ff8157bc982e93b38d8f8e3e785b37609c16d799fc0126756049f67977f3fe0cb9341ae11f9f-d38c44092b8820e654e6286949689066',0)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('9eb7e05dcac0002aacfa7dec0aa93909c6b60c7eaf0e4333e30c86a65eb633298203d14f93c35ec0ba8a8aac2c2ac6dd7aac98629509eef3858a57cbd935f54599aa6bd843b15ac5ed7a5894e6486a967959541da29352d608a3b5628f1560f83a3e4998db3198908d36ff6ebb2e344f55bc8a5f9432-55b00ca9169ab55708c9ec546ff744fb')" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('dea19e7e69ae47c1fd02879dbf60b6dfffcf8b71be9b09f6fd21021bc2e49639717bf2119036a5c2ba6bfde2d2fdad314b981337acfc1f03d8dff0e8768e514e67cad69c498f391683429d7204b027e4121416f74d259f3d4179b6e303e09ece4c3da0320d174d665a51dbc25a47f7055e6373c47402-889213d8c4b561aa110078aa2b1e5e72',1)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
         	</div>
         	<a id="cargarApiShape" style="display:none">prueba</a>
@@ -2318,15 +2318,6 @@
 		<p style="text-align:center;margin-top:3%;"><button id="botonOkAnchos" style=" width: 140px;height: 44px;font-size: 22px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()">OK</button></p>
 		   
 		<h2 style="text-align:center;margin-top: 5%;margin-bottom: 5%;" id="textoTituloInterior"></h2>
-		<div *ngIf="this.armariosDormitorioComponent.armarioService.todo != undefined" style="margin-left:25px;display:none">
-	    	<div *ngFor="let tabla of this.armariosDormitorioComponent.armarioService.todo;let u=index" style="width:40%;float:left;border:1px solid #B5BABD;margin-right:50px;margin-bottom:50px" id="armarioColorFondo{{u}}">
-	    		<div style="margin-top:25px;margin-bottom:25px;">
-		    		<p style="text-align:center"><img (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()" (click)="quitarnone(1)" title="Foto de linea de codigo"" id="armariosCogidos{{u}}" class="{{tabla.id}}" [src]="'data:' + tabla.imagenContentType + ';base64,' + tabla.imagen"  height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p style="text-align:center"><img (click)="this.armariosDormitorioComponent.carcarCascosInterioresPuertas()" (click)="quitarnone(1)" title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tabla.productosDormitorio.imagenContentType + ';base64,' + tabla.productosDormitorio.imagen" height="200px" width="500px" alt="productosDormitorio image"/></p>
-		    		<p id="textoMensajeArmario{{u}}" style="width:100%;text-align:center">{{tabla.mensaje}}</p>
-	    		</div>
-	    	</div>
-    	</div>
     	
     	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1">
     		
@@ -2334,6 +2325,7 @@
     	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
     		
     	</div> 
+    	<p id="textoMensajeArmario" style="display:none"></p>
     	<div style="width:100%" id="imagenInteriorPuertas">
     	<h2 style="text-align:center" id="textoImagenInterior"></h2>
     	<div id="imagenesLasDos"></div>
@@ -2668,7 +2660,32 @@
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
 						<a id="clicparacambiardecolor" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="clicparacambiardecolor123" onclick="cambiardecolor123(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
 						<a id="setintervalfuncion" style="display:none" onclick="setIntervalfuncioncomprobar()">prueba</a>
+						<div class="divSlider" style="display:none;">
+							<p style="float:left;width:100%;FONT-SIZE: 14px;"><strong>MEDIDAS</strong></p>
+							<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
+								<input type="range" style="margin-top: 29px;width: 85%;position:absolute;-webkit-appearance: media-volume-slider;">
+							    <span id="rs-bullet" class="rs-label">40</span>
+							    <input id="rs-range-line" class="rs-range" type="range" value="40" min="40" max="400">
+							</div>
+							<div class="range-slider" style="float: left;margin-top: 0px !important;width: 100%;margin-bottom: 60px;">
+								<input type="range" style="margin-top: 29px;width: 85%;position:absolute;-webkit-appearance: media-volume-slider;">
+							    <span id="rs-bullet1" class="rs-label">220</span>
+							    <input id="rs-range-line1" class="rs-range" type="range" value="220" min="220" max="260">
+							</div>
+							<div class="range-slider" style="float: left;margin-top: 0px !important;width: 100%;margin-bottom: 85px;">
+								<input type="range" style="margin-top: 29px;width: 85%;position:absolute;-webkit-appearance: media-volume-slider;">
+							    <span id="rs-bullet2" class="rs-label" style="left:228.8px">61</span>
+							    <input id="rs-range-line2" class="rs-range" type="range" value="61" min="50" max="70">
+							</div>
+							<div style="float:left;width:100%;">
+								<p style="width:100%;text-align:center"><button id="opcionSliderDiv1" style="display:none;float: left;margin-left: 25px;background-color: white;" onclick="cambiarVistaArmario(1)">OPCION A</button><button id="opcionSliderDiv2" style="display:none;float: left;margin-left: 25px;background-color: white;" onclick="cambiarVistaArmario(2)">OPCION B</button><button id="opcionSliderDiv3" style="display:none;float: left;margin-left: 25px;background-color: white;" onclick="cambiarVistaArmario(3)">OPCION C</button></p>
+							</div>
+						</div>
+						<div style="display:none">
+							<p *ngFor="let u of arrayTodosLosCodigosArmarios" id="codigodepsArm{{u}}" (click)="this.armariosDormitorioComponent.rellenamosArrayCambioSlider(u)">u</p>
+						</div>
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;">
 							
 						</div>
@@ -2758,7 +2775,7 @@
 						</div>
 						
 						
-						
+							
 						<div id="calcuBatientes" style="display:none">
 							<div id="niveladoresCalcu"  style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none">
 								<p style="float:left;width:100%;"><STRONG>NIVELADORES</STRONG><span id="precioNive" STYLE="FLOAT:RIGHT">+0 pp</span></p>
@@ -2777,35 +2794,37 @@
 								<p style="float:left;width:100%;"><STRONG>CAJEADO</STRONG><span id="precioCajeado" STYLE="FLOAT:RIGHT">+0 pp</span></p>
 								<form>
 									  <label for="cajeA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo A</label>
-									  <input type="radio" id="cajeA" name="cajeado" value="cajeA" (click)="this.armariosDormitorioComponent.cajeadoCargar(0)"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje0">
+									  <input type="radio" id="cajeA" name="cajeado" value="cajeA" data-toggle="modal" data-target="#modalCuadroCajeado" (click)="this.armariosDormitorioComponent.cajeadoCargar(0)"><br>
+									  <!-- <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje0">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" id="medABat0" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" id="medABat1" style="width:60px;margin-left:20px"></p>
 									  </div>
+									   -->
 									  <label for="cajeB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo B</label>
-									  <input type="radio" id="cajeB" name="cajeado" value="cajeB" (click)="this.armariosDormitorioComponent.cajeadoCargar(1)"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje1">
+									  <input type="radio" id="cajeB" name="cajeado" value="cajeB" data-toggle="modal" data-target="#modalCuadroCajeado" (click)="this.armariosDormitorioComponent.cajeadoCargar(1)"><br>
+									  <!--<div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje1">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" id="medABat0" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" id="medABat1" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="cajeC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo C</label>
-									  <input type="radio" id="cajeC" name="cajeado" value="cajeC" (click)="this.armariosDormitorioComponent.cajeadoCargar(2)"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje2">
+									  <input type="radio" id="cajeC" name="cajeado" value="cajeC" data-toggle="modal" data-target="#modalCuadroCajeado" (click)="this.armariosDormitorioComponent.cajeadoCargar(2)"><br>
+									 <!-- <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje2">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input type="number" id="medABat0" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input type="number" id="medABat1" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA C cm <input type="number" id="medABat2" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="cajeD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Cajeado Tipo D</label>
-									  <input type="radio" id="cajeD" name="cajeado" value="cajeD" (click)="this.armariosDormitorioComponent.cajeadoCargar(3)"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje3">
+									  <input type="radio" id="cajeD" name="cajeado" value="cajeD" data-toggle="modal" data-target="#modalCuadroCajeado" (click)="this.armariosDormitorioComponent.cajeadoCargar(3)"><br>
+									 <!-- <div style="margin-left:10px;font-size:13px;display:none" id="medidasCaje3">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input id="medABat0" type="number" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input id="medABat1" type="number" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="noCaje" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Cajeado</label>
 									  <input type="radio" id="noCaje" name="cajeado" value="noCaje" (click)="this.armariosDormitorioComponent.cajeadoCargar('no')" checked><br>
 									  
 	
 								</form>
+								<textarea id="textareacajeado" name="w3review" rows="4" cols="40" style="display:none;margin-bottom: 30px;"></textarea>
 							</div>
 							
 							
@@ -2813,64 +2832,93 @@
 								<p style="float:left;width:100%;"><STRONG>ENMARCADOS</STRONG><span id="precioEnmarcados" STYLE="FLOAT:RIGHT">+0 pp</span></p>
 								<form>
 									  <label for="enmaA" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo A</label>
-									  <input type="radio" id="enmaA" name="enmarcado" value="enmaA" (click)="this.armariosDormitorioComponent.enmarcadoCargar('A')"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaA">
+									  <input type="radio" id="enmaA" name="enmarcado" value="enmaA" data-toggle="modal" data-target="#modalCuadroEnmarcados" (click)="this.armariosDormitorioComponent.enmarcadoCargar('A')"><br>
+									  <!--  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaA">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input id="medABat0" type="number" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="enmaB" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo B</label>
-									  <input type="radio" id="enmaB" name="enmarcado" value="enmaB" (click)="this.armariosDormitorioComponent.enmarcadoCargar('B')"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaB">
+									  <input type="radio" id="enmaB" name="enmarcado" value="enmaB" data-toggle="modal" data-target="#modalCuadroEnmarcados" (click)="this.armariosDormitorioComponent.enmarcadoCargar('B')"><br>
+									   <!--<div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaB">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input id="medABat0" type="number" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="enmaC" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo C</label>
-									  <input type="radio" id="enmaC" name="enmarcado" value="enmaC" (click)="this.armariosDormitorioComponent.enmarcadoCargar('C')"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaC">
+									  <input type="radio" id="enmaC" name="enmarcado" value="enmaC" data-toggle="modal" data-target="#modalCuadroEnmarcados" (click)="this.armariosDormitorioComponent.enmarcadoCargar('C')"><br>
+									   <!--<div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaC">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input id="medABat0" type="number" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input id="medABat1" type="number" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="enmaD" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">Enmarcado Tipo D</label>
-									  <input type="radio" id="enmaD" name="enmarcado" value="enmaD" (click)="this.armariosDormitorioComponent.enmarcadoCargar('D')"><br>
-									  <div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaD">
+									  <input type="radio" id="enmaD" name="enmarcado" value="enmaD" data-toggle="modal" data-target="#modalCuadroEnmarcados" (click)="this.armariosDormitorioComponent.enmarcadoCargar('D')"><br>
+									   <!--<div style="margin-left:10px;font-size:13px;display:none" id="medidasEnmaD">
 									  	<p style="letter-spacing:3px">MEDIDA A cm <input id="medABat0" type="number" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA B cm <input id="medABat1" type="number" style="width:60px;margin-left:20px"></p>
 									  	<p style="letter-spacing:3px">MEDIDA C cm <input id="medABat2" type="number" style="width:60px;margin-left:20px"></p>
-									  </div>
+									  </div>-->
 									  <label for="noenma" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:30px;">Sin Enmarcado</label>
 									  <input type="radio" id="noenma" name="enmarcado" value="noenma" (click)="this.armariosDormitorioComponent.enmarcadoCargar('no')" checked><br>
 									  
 	
 								</form>
+								<textarea id="textareaenmarcado" name="w3review" rows="4" cols="40" style="display:none;margin-bottom: 30px;"></textarea>
 							</div>
 							
 							<div style="float:left;margin-left:5px;width:100%;font-size: 14px;display:none;" id="botonesAcabadosCuerpo">
 								<p style="float:left;width:100%;"><STRONG>ACABADOS</STRONG></p>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 15px;width:25%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
-								<a href="#imagenesArmario1"><p style="float: left;margin-top: 55px;width:25%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 55px;width:25%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></p></a>
-		    					<a href="#imagenesArmario1"><p style="float: left;margin-top: 40px;width:25%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 15px;width:25%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: right;margin-left: 35%;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
+								<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-bottom:30px;margin-left: 25%;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 55px;width:25%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></p></a>
+		    					<a style="color:black"><p style="float: left;margin-top: 40px;width:30%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: right;margin-left: 15%;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></p></a>
 		    					
 							</div>
 							
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
 					    			<div style="width:100%;float:left" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberHuecos;let u=index">
-						    			<p style="width:100%;float:left;margin-top:15px;"><strong class="cambiarAcabado" style="float:left">Hueco {{this.armariosDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
-						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a href="#imagenesArmario1" style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="this.armariosDormitorioComponent.cogerIDHueco(u+1)" readonly="readonly"></div></a>
-						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;">
+						    			<p style="width:100%;float:left;margin-top:15px;margin-bottom:30px;"><strong class="cambiarAcabado" style="float:left;font-size:20px">HUECO {{this.armariosDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right" id="precioInt{{u}}"></span></p>
+						    			<span style="font-size:13px;letter-spacing:3px;font-weight:600;float: left;width: 100%;text-decoration-line: underline;margin-top: 10px;margin-bottom: 15px;">OPCI&Oacute;N INTERIOR</span>
+						    			<label style="float:left;margin-top:15px;">INTERIOR </label><a style="float:left"><div type="text" style="height:50px;width:100px;margin-left:39px;text-align:center;border:1px solid black;background-color:white" id="inputInterior{{u}}" data-toggle="modal" data-target="#modalInteriorArmario" (click)="cogerIDHueco(u+1)" readonly="readonly"></div></a>
+						    		
+						    		<div style="margin-top:5px;float:left;margin-top:50px;margin-bottom:35px;width:100%;" id="divAdicionalesInterior{{u}}">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;margin-bottom:15px;">ADICIONALES <span id="precioTotalAdicionales{{u}}" style="display:none">0</span>PP</span>
+										<button style="margin-top:15px" data-toggle="modal" data-target="#modalAdicionalesArmario" (click)="cogerIDHueco(u+1)">NECESITO UN ARTICULO ADICIONAL</button>
+										<div id="divHuecoAdicionales">
+											<p id="textoadicional1" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,1)">ELIMINAR</span></p>
+											<p id="textoadicional2" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,2)">ELIMINAR</span></p>
+											<p id="textoadicional3" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,3)">ELIMINAR</span></p>
+											<p id="textoadicional4" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,4)">ELIMINAR</span></p>
+											<p id="textoadicional5" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,5)">ELIMINAR</span></p>
+											<p id="textoadicional6" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,6)">ELIMINAR</span></p>
+											<p id="textoadicional7" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,7)">ELIMINAR</span></p>
+											<p id="textoadicional8" style="margin-top:15px;display:none;float:left;width:100%"><span style="overflow: hidden;height: 50px;width: 120px;float: left;border: 1px solid;text-align: center;background-color: white;" id="textosolo"></span><span style="margin-left:5%" id="preciosolo"></span><span style="margin-left:15%;border-bottom:1px solid;" (click)="eliminarAdicionales(u,8)">ELIMINAR</span></p>
+										</div>
+									</div>
+						    		
+						    		<div id="interioresLuzDiv{{u}}"  style="float:left;margin-left:5px;width:100%;font-size: 14px; margin-top:30px;margin-bottom: 30px;">
+						    			<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;margin-top: 10px;margin-bottom: 15px;float: left;width: 100%;">LUCES</span>
 										<form>
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>IZQUIERDA</label>
-											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1,'prueba')"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
+											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1,'Luz Izquierda')"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
 											  
 											  <label for="luz1" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN UN<br>COSTADO<br>DERECHA</label>
-											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1,'prueba')"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
+											  <input type="radio" id="luz1" name="todoluz" value="luz1" style="margin-left: 25%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,1,'Luz Derecha')"><span id="precioLuz{{u}}1" STYLE="display:none;float:right">+ 120 pp</span><br>
 											  
 											  
 											  <label for="luz2" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">LUZ EN LOS DOS<br>COSTADOS</label>
-											  <input type="radio" id="luz2" name="todoluz" value="luz2" style="margin-left: 9%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,2,'prueba')"><span id="precioLuz{{u}}2" STYLE="display:none;float:right">+ 200 pp</span><br>
+											  <input type="radio" id="luz2" name="todoluz" value="luz2" style="margin-left: 9%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,2,'2 Luces')"><span id="precioLuz{{u}}2" STYLE="display:none;float:right">+ 200 pp</span><br>
 											  
 											  <label for="luz3" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">SIN LUZ</label>
-											  <input type="radio" id="luz3" name="todoluz" value="luz3" style="margin-left: 34%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,0,'prueba')" checked><br>
+											  <input type="radio" id="luz3" name="todoluz" value="luz3" style="margin-left: 34%;" (click)="this.armariosDormitorioComponent.luzInteriores(u,0,'Sin Luz')" checked><br>
 			
 										</form>
+									</div>
+									<div style="margin-top:5px;float:left;margin-top:15px;margin-bottom:35px;">
+										<span style="font-size:13px;letter-spacing:3px;font-weight:600;text-decoration-line: underline;">OBSERVACIONES HUECO {{this.armariosDormitorioComponent.arrayLetras[u]}}</span>
+										<form style="margin-top:15px">
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%" >Si</label>
+											<input type="radio" id="siObs{{u}}" name="siObs" value="Si" (click)="quieroObservacionEnHueco(u)"></p>
+											<p style="width:100%;float:left"><label style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;float:left;margin-left:20%">No</label>
+											<input type="radio" id="noObs{{u}}" name="siObs" value="No" checked (click)="noquieroObservacionEnHueco(u)"></p>
+										</form>
+										<textarea id="textareaobservacionesInt{{u}}" name="w3review" rows="4" cols="40" style="display:none"></textarea>
 									</div>
 				    				
 				    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
@@ -2880,10 +2928,10 @@
 				    			<div style="width:100%;float:left;margin-top:20px" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberPuertas;let u=index" id="divPuerta{{u}}">
 					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="margin-top:15px;float:left" id="nombrePuertaGG{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;" id="precioPuerta{{u}}"></span></p>
 					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px">TIPO</span> <input type="text" style="height:60px;width:155px;margin-left:10px;text-align:center;float:right;margin-right:14%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalPuertasArmario" readonly="readonly"/></p>
-					    			<div id="inputs" style="float:left;width:100%">
-					    				<span style="float:left;margin-top:15px" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+					    			<div id="inputs" style="float:left;width:100%;display:none">
+					    				<span style="float:left;margin-top:15px" >PLAFON</span><a ><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
 					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >ACABADO</span><a href="#imagenesArmario2"><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+					    					<span style="float:left;margin-top:15px;" >PLAFON</span><a><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
 					    				</div>
 					    			</div>
 					    			
@@ -2895,7 +2943,7 @@
 												<input type="text" style="height:60px;width:100px;margin-left:39px;text-align:center;float:left" (click)="tiradoresMostrar('derecha')"id="derechaTirador" value="OPCION 2" readonly="readonly"/>
 							    			</div>-->
 				    		</div>
-				    		<button style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none"  data-toggle="modal" id="botonCalculadoraBatientes" data-target="#modalEnviadoCarrito" (click)="this.armariosDormitorioComponent.enviarCarrito()">Mandar al carro</button>
+				    		<button style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;color:white;left: auto;display:none"  data-toggle="modal" id="botonCalculadoraBatientes" data-target="#modalEnviadoCarrito" (click)="this.armariosDormitorioComponent.enviarCarrito()">Mandar al carro</button>
 						</div>
 						
 						

@@ -183,6 +183,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     adicionalesArray3: any;
     adicionalesArray4: any;
     precioAdicionalesInt: any;
+    extraInterioresPorSi: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -704,6 +705,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.iva = JSON.parse(sessionStorage.getItem('IVA'));
         this.interioresParaArray = [];
         this.puertasParaArray = [];
+        this.extraInterioresPorSi = [];
         var segunWIDTH = [];
         segunWIDTH['1 puertas'] = 'margin-left:27%;';
         segunWIDTH['2 puertas'] = 'margin-left:27%;';
@@ -984,6 +986,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             this.armarioCogido = armariosTodos[0];
         }
         this.codigoArmario = codigo;
+        console.log(this.armarioCogido);
         var iva = this.iva;
         $('.armariosDivTodo').append('<p id="textoMensajeArmario" style="display:none">' + armariosTodos[0].mensaje + '</p>');
         $('#armarioColorFondo0').css({ 'background-color': 'white' });
@@ -3355,7 +3358,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var hueco = this.numeroDeHuecos;
         var acabados = this.todos;
         var array = this.armarioCogido;
-
+        var arrayAcabadoUrl = [];
+        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['crudo'] = "'https://www.dropbox.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://www.dropbox.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
         $('#inputAcabadoCasco').empty();
         $('#calculadoraCarrito #inputAcabadoCasco').empty();
         for (let w = 0; w < acabados.length; w++) {
@@ -3369,7 +3388,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '" style="max-width:100%;max-height:100%">'
                 );
                 $('#calculadoraCarrito #inputAcabadoCasco').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
-
+                $('#clicparacambiardecolor123').attr(
+                    'onclick',
+                    'cambiardecolor123(1,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
+                );
+                $('#clicparacambiardecolor123')[0].click();
                 array['acabadoCasco'] = acabados[w];
                 this.armarioCogido = array;
             }
@@ -3501,7 +3524,275 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#inputCodigoArmario').css({ border: '0.5px solid red' });
         }
     }
-
+    public rellenamosArrayCambioSlider(id) {
+        var idProdInt = [];
+        idProdInt[1] = 123;
+        idProdInt[2] = 124;
+        idProdInt[3] = 135;
+        idProdInt[4] = 136;
+        idProdInt[5] = 137;
+        idProdInt[6] = 138;
+        idProdInt[7] = 139;
+        idProdInt[8] = 140;
+        idProdInt[9] = 141;
+        idProdInt[10] = 142;
+        idProdInt[11] = 143;
+        idProdInt[12] = 144;
+        idProdInt[13] = 145;
+        idProdInt[14] = 146;
+        idProdInt[15] = 147;
+        idProdInt[16] = 148;
+        idProdInt[17] = 149;
+        idProdInt[18] = 150;
+        idProdInt[19] = 151;
+        idProdInt[20] = 152;
+        idProdInt[21] = 153;
+        idProdInt[22] = 154;
+        idProdInt[23] = 155;
+        idProdInt[24] = 156;
+        idProdInt[25] = 157;
+        var rangeSlider;
+        var rangeSlider1;
+        var rangeSlider2;
+        rangeSlider = $('#rs-range-line').val();
+        rangeSlider1 = $('#rs-range-line1').val();
+        rangeSlider2 = $('#rs-range-line2').val();
+        console.log(this.armarioCogido);
+        console.log(this.extraInterioresPorSi);
+        var extraInteriores = this.extraInterioresPorSi;
+        var dato = this.cascoService.dato;
+        this.cascoService.findBus1(id).subscribe(data => {
+            data.body[0]['ancho'] = rangeSlider;
+            data.body[0]['alto'] = rangeSlider1;
+            data.body[0]['fondo'] = rangeSlider2;
+            $('#precioDimension').text(data.body[0].precio);
+            this.armarioCogido = data.body[0];
+            $('#ppCalculadora').css({ display: 'block' });
+            var array = [];
+            this.cascoService.dato = this.armarioCogido;
+            this.textoArmario = data.body[0]['armario']['mensaje'];
+            var arrayPuertas = [];
+            $('#nombreMesita').text(data.body[0]['armario']['mensaje']);
+            if (data.body[0]['armario']['mensaje'] == '4 PUERTAS - 2 HUECOS GRANDES') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                array[0] = '1';
+                array[1] = '2';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '1 PUERTA') {
+                arrayPuertas[0] = '1';
+                array[0] = '1';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '2 PUERTAS') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                array[0] = '1';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '3 PUERTAS IZQUIERDA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                array[0] = '1';
+                array[1] = '2';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 0) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].a;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior1 = data.body[0].a;
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior1 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].b;
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                });
+                        }
+                    }
+                }
+            }
+            this.extraInterioresPorSi = extraInteriores;
+            this.armarioCogido['interiores'] = extraInteriores;
+            if (data.body[0]['armario']['mensaje'] == '3 PUERTAS DERECHA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                array[0] = '1';
+                array[1] = '2';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '4 PUERTAS ASIMETRICAS') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '5 PUERTAS CENTRAL') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '5 PUERTAS DERECHA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                array[3] = '4';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                array[3] = '4';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '7 PUERTAS DERECHA') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                array[3] = '4';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                array[3] = '4';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+            if (data.body[0]['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
+                arrayPuertas[0] = '1';
+                arrayPuertas[1] = '2';
+                arrayPuertas[2] = '3';
+                arrayPuertas[3] = '4';
+                arrayPuertas[4] = '5';
+                arrayPuertas[5] = '6';
+                arrayPuertas[6] = '7';
+                arrayPuertas[7] = '8';
+                array[0] = '1';
+                array[1] = '2';
+                array[2] = '3';
+                array[3] = '4';
+                this.arraySaberPuertas = arrayPuertas;
+                this.arraySaberHuecos = array;
+            }
+        });
+    }
     public luzInteriores(id, lol, como) {
         var precioDimen = parseFloat($('#precioDimension').text());
 
@@ -3751,6 +4042,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             meterInt[hueco - 1]['precioLuz'] = 200;
         }
         todo['interiores'] = meterInt;
+        var extraInterioresPorSiArray = this.extraInterioresPorSi;
+        extraInterioresPorSiArray[hueco - 1] = meterInt[hueco - 1];
+        this.extraInterioresPorSi = extraInterioresPorSiArray;
         this.armarioCogido = todo;
         puertas = parseFloat(texto.split(' ')[0]);
         var dimensiones = dimens[puertas + ' puertas'];
@@ -29082,7 +29376,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var hueco = this.numeroDeHuecos;
         var acabados = this.todos;
         var array = this.armarioCogido;
-
+        var arrayAcabadoUrl = [];
+        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['crudo'] = "'https://www.dropbox.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://www.dropbox.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
         $('#inputAcabadoTrasera').empty();
         $('#calculadoraCarrito #inputAcabadoTrasera').empty();
         for (let w = 0; w < acabados.length; w++) {
@@ -29094,7 +29404,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         '" style="max-width:100%;max-height:100%">'
                 );
                 $('#calculadoraCarrito #inputAcabadoTrasera').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
-
+                $('#clicparacambiardecolor123').attr(
+                    'onclick',
+                    'cambiardecolor123(2,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
+                );
+                $('#clicparacambiardecolor123')[0].click();
                 array['acabadoTrasera'] = acabados[w];
                 this.armarioCogido = array;
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(

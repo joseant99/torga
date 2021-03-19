@@ -149,6 +149,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     noDescripcionAdicionalMueble1: any;
     arrayNombresArchivos: any;
     puntosmetidosxd: any;
+    todos: any;
+    productosDormitorioModal: any;
+    productosDormitorioModaltodos: any;
+    arrayTodosLosCodigosArmarios: any;
+    huecoPinta: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -299,6 +304,527 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
         this.selectedFilesExcel = undefined;
     }
+
+    public cogerIDHueco(id) {
+        this.huecoPinta = id;
+        this.armariosDormitorioComponent.cogerIDHueco(id);
+        var nombreArma = $('#nombreMesita').text();
+
+        var array = [];
+        var cont = 0;
+
+        if (nombreArma == '3 PUERTAS IZQUIERDA') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '3 PUERTAS DERECHA') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '2 PUERTAS') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '1 PUERTA') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+        }
+
+        if (nombreArma == '4 PUERTAS - 2 HUECOS GRANDES') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '4 PUERTAS ASIMETRICAS') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+        }
+
+        if (nombreArma == '5 PUERTAS CENTRAL') {
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '5 PUERTAS IZQUIERDA') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '5 PUERTAS DERECHA') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '6 PUERTAS -3 HUECOS GRANDES') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '6 PUERTAS ASIMETRICAS') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+            }
+            if (id == 4) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+            }
+        }
+
+        if (nombreArma == '7 PUERTAS IZQUIERDA') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 4) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+
+        if (nombreArma == '7 PUERTAS DERECHA') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 4) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+        if (nombreArma == '7 PUERTA ASIMETRICAS') {
+            if (id == 2) {
+                $('.classintdivmen1').css({ display: 'none' });
+                $('.classintdivmen6').css({ display: 'none' });
+                $('.classintdivmen14').css({ display: 'none' });
+                $('.classintdivmen15').css({ display: 'none' });
+                $('.classintdivmen16').css({ display: 'none' });
+                $('.classintdivmen17').css({ display: 'none' });
+                $('.classintdivmen18').css({ display: 'none' });
+                $('.classintdivmen19').css({ display: 'none' });
+                $('.classintdivmen20').css({ display: 'none' });
+                $('.classintdivmen24').css({ display: 'none' });
+            }
+            if (id == 3) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 1) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+            if (id == 4) {
+                $('.classintdivmen1').css({ display: 'block' });
+                $('.classintdivmen6').css({ display: 'block' });
+                $('.classintdivmen14').css({ display: 'block' });
+                $('.classintdivmen15').css({ display: 'block' });
+                $('.classintdivmen16').css({ display: 'block' });
+                $('.classintdivmen17').css({ display: 'block' });
+                $('.classintdivmen18').css({ display: 'block' });
+                $('.classintdivmen19').css({ display: 'block' });
+                $('.classintdivmen20').css({ display: 'block' });
+                $('.classintdivmen24').css({ display: 'block' });
+            }
+        }
+    }
+
     public mostrarTexto(id) {
         if (id == 'Si') {
             $('#inputSi').css({ display: 'block' });
@@ -30166,12 +30692,95 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
     }
-    public shapedivercargar(id) {
-        $('#datos1').append('<div id="parameters"></div>');
-        $('#calculadoraCarrito').css({ display: 'block' });
-        $('#cargarApiShape').attr('onclick', "apiShape('" + id + "')");
-        $('#cargarApiShape')[0].click();
-        this.cargarDimen('NH007');
+    public shapedivercargar(id, es) {
+        if (es == 0) {
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape').attr('onclick', "apiShape('" + id + "')");
+            $('#datos1').css({ display: 'block' });
+            $('#observacionesArticulo').css({ display: 'block' });
+            $('#cargarApiShape')[0].click();
+            this.cargarDimen('NH007');
+            $('#rangoArmarios').css({ display: 'none' });
+            $('.divSlider').css({ display: 'none' });
+        }
+        if (es == 1) {
+            var arrayCodigosArmario = [];
+            for (let o = 0; o < 277; o++) {
+                var numero = o + 1;
+                var numero1;
+                if (numero < 10) {
+                    numero1 = '00' + numero;
+                } else {
+                    if (numero < 100) {
+                        numero1 = '0' + numero;
+                    } else {
+                        numero1 = o;
+                    }
+                }
+                arrayCodigosArmario[o] = 'NB' + numero1;
+            }
+            this.arrayTodosLosCodigosArmarios = arrayCodigosArmario;
+            var array = [];
+            var arrya1 = [];
+            arrya1['imagen'] = 3;
+            arrya1['imagenContentType'] = 'image/png';
+            arrya1['id'] = '';
+            array[0] = arrya1;
+            $('.divSlider').css({ display: 'block' });
+            $('#rangoArmarios').css({ display: 'block' });
+            $('#inputCodigoArmario').val('NB001');
+            $('#textoMensajeArmario').text('1 PUERTA');
+            $('#calcuBatientes').css({ display: 'block' });
+            this.armariosDormitorioComponent.armarioService.todo = array;
+            this.armariosDormitorioComponent.loadAll();
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape').attr('onclick', "apiShape('" + id + "')");
+            $('#cargarApiShape')[0].click();
+            $('.cuerpoImagenPuertas').css({ display: 'block' });
+            $('.armariosDivTodo').css({ position: 'absolute' });
+            $('#observacionesArticulo').css({ display: 'none' });
+            $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
+            if (screen.width < 800) {
+                $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+            }
+            $('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+            $('#inputFondoBatientes').val(61);
+            this.acaProdService.findAca(42).subscribe(data => {
+                this.todos = data.body[0]['acabados'];
+                this.productosDormitorioService.categoria(24).subscribe(data => {
+                    this.productosDormitorioModal = data.body;
+                    this.productosDormitorioModaltodos = data.body;
+                    this.productosDormitorioService.todos = data.body;
+
+                    this.armariosDormitorioComponent.carcarCascosInterioresPuertas();
+                });
+            });
+            setTimeout(function() {
+                $('#calculadoraCarrito').removeAttr('style');
+                $('#calculadoraCarrito').attr('style');
+                $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+                $('.divBuscadorArticulos').css({ height: '100%' });
+                $('#calculadoraCarrito').css({ width: '25%' });
+                $('.divfondoSaber').css({ display: 'none' });
+                $('.divfondoocogidomen').css({ display: 'none' });
+                $('#imagenesArmario2').css({ display: 'none' });
+                $('#datos1').css({ display: 'none' });
+                if (screen.width < 800) {
+                    $('#calculadoraCarrito').css({ width: '100%' });
+                    $('#calculadoraCarrito').css({ height: '40%' });
+                    $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                    $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                    const elem = $('#textprecioCalculadoraazul');
+                    elem[0].style.setProperty('bottom', '0px', 'important');
+                    elem[0].style.setProperty('height', '55px', 'important');
+                    const elem1 = $('#botonCalculadora');
+                    elem1[0].style.setProperty('bottom', '0px', 'important');
+                    elem1[0].style.setProperty('height', '55px', 'important');
+                }
+            }, 1000);
+        }
     }
     public anadirCalculadora() {
         $('#iluminacion').removeAttr('style');

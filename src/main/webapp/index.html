@@ -33,6 +33,7 @@
 	<script type="https://s3.amazonaws.com/shapediverviewer/v2/2.19.4/sdv.concat.min.js"></script>
 	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script>
     <script src="content/jquerysession.js"></script>
+    <script src="content/shapediverFunciones.js"></script>
     
     	    <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
@@ -111,7 +112,10 @@
     </script>
     <script>
 		$(document).ready(function(){
+			var rangeSlider = document.getElementById("rs-range-line");
+			var rangeBullet = document.getElementById("rs-bullet");
 
+			rangeSlider.addEventListener("input", showSliderValue, false);
 		  $(".nav-tabs a").click(function(){
 		    $(this).tab('show');
 		  });
@@ -218,7 +222,31 @@ $("#divDentroCalcu").scroll(function() {
 		$("#modalCesta").modal('hide');//ocultamos el modal
 		
 	}
-	
+	function cambiardecolor123(id,url){
+		var parameters = api.parameters.get();
+		if(id == 1){
+			for (let i = 0; i < parameters.data.length; i++) {
+				if(parameters.data[i]["name"] == "textura"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+				
+			}
+		}
+		if(id == 2){
+			for (let i = 0; i < parameters.data.length; i++) {
+				
+				if(parameters.data[i]["name"] == "textura1"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+			}
+		}
+	}
 	function cambiardecolor(id,url){
 		var parameters = api.parameters.get();
 		if(id == 1){
@@ -304,334 +332,7 @@ $("#divDentroCalcu").scroll(function() {
 		}
 	}
 	
-	function apiShape(id){
-		$(".divBuscadorArticulos").css({"display":"block"});
-		$("#page-heading").css({"display":"none"});
-        $("#diviframeprueba").css({"display":"block"});
-        $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
-        var _container = document.getElementById('sdv-container');
-		// viewer settings
-		var _viewerSettings = {
-		  // container to use
-		  container: _container,
-		  // when creating the viewer, we want to get back an API v2 object
-		  api: {
-		    version: 2
-		  },
-		  // ticket for a ShapeDiver model
-		  ticket: id,
-		  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
-		  modelViewUrl: 'eu-central-1',
-		  showControlsInitial: true,
-		  showSettingsInitial: false
-		};
-		
-		// create the viewer, get back an API v2 object
-		window.api = new SDVApp.ParametricViewer(_viewerSettings);
-		
-		var viewerInit = false;
-		var parameters;
-		var hoverEffect = {
-			active: {
-		    name: "colorHighlight",
-		    options: {
-		      color: [100, 100, 100]
-		    }
-		  }
-		};
-
-		var selectEffect = {
-		  active: {
-		    name: "colorHighlight",
-		    options: {
-			     color: [255, 0, 0]
-				    }
-			 }
-		};
-		var leftPivot, rightPivot, rotAxis, transVector;
-				var leftTrans = {
-				  scenePaths: [],
-				  transformations: [
-				    {
-				      delay: 0,
-				      duration: 500,
-				      type: "rotation",
-				      repeat: 0,
-				      //yoyo:true,
-				      rotationAxis: {
-				        x: 1,
-				        y: 0,
-				        z: 0
-				      },
-				      rotationDegree: 90,
-				      pivot: {}
-				    }
-				  ],
-				  reset: false
-				};
-				var leftTrans1 = {
-						  scenePaths: [],
-						  transformations: [
-						    {
-						      delay: 0,
-						      duration: 500,
-						      type: "rotation",
-						      repeat: 0,
-						      //yoyo:true,
-						      rotationAxis: {
-						        x: 1,
-						        y: 0,
-						        z: 0
-						      },
-						      rotationDegree: -90,
-						      pivot: {}
-						    }
-						  ],
-						  reset: false
-						};
-					var selectableGroup = {
-						  id: "select",
-						  hoverable: true,
-						  hoverEffect: hoverEffect,
-						  //selectionEffect: selectEffect,
-						  selectable: true,
-						  selectionMode: "single"
-						};
-		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
-		    if (!viewerInit) {
-		    	
-		      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
-		      var updatedSettings = {
-		    		  scene : {
-		    			  camera : {
-		    				  rotationSpeed : 0.1,
-		    				  autoAdjust: true,
-		    				  restrictions :{
-		    					  rotation : {
-		    						  minAzimuthAngle: -75,
-		    						  minPolarAngle: 45,
-		    						  maxPolarAngle: 90,
-		    						  maxAzimuthAngle: 75
-		    						  }
-		      					}
-		      				}
-		      			}
-		      }
-		      
-		     
-		      api.updateSettingsAsync(updatedSettings);
-		      var globalDiv = document.getElementById("parameters");
-		      parameters = api.parameters.get();
-		      parameters.data.sort(function(a, b) {
-		        return a.order - b.order;
-		      });
-		      console.log(parameters.data);
-		      
-		      setTimeout(function() {
-	            	window.camaraposition = api.scene.camera.get();
-	            }, 1500);
-		      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
-
-		    	      let arrPivot = api.scene.getData({
-		    	        name: "frente"
-		    	      }).data[0].data;
-		    	      leftPivot = {
-		    	        x: arrPivot[0],
-		    	        y: arrPivot[1],
-		    	        z: arrPivot[2]
-		    	      };
-		    	      leftTrans.scenePaths = [
-		    	        api.scene.get(
-		    	          {
-		    	            name: "SDDisplayFrente",
-		    	            format: "glb"
-		    	          },
-		    	          "CommPlugin_1"
-		    	        ).data[0].scenePath
-		    	      ];
-		    	      leftTrans1.scenePaths = [
-			    	        api.scene.get(
-			    	          {
-			    	            name: "SDDisplayFrente",
-			    	            format: "glb"
-			    	          },
-			    	          "CommPlugin_1"
-			    	        ).data[0].scenePath
-			    	      ];
-		    	      leftTrans.transformations[0].pivot = leftPivot;
-		    	      leftTrans1.transformations[0].pivot = leftPivot;
-		    	      api.scene.updateInteractionGroups(selectableGroup);
-		    	      var assets = api.scene.get(
-		    	        {
-		    	          name: "SDDisplayFrente",
-		    	          format: "glb"
-		    	        },
-		    	        "CommPlugin_1"
-		    	      ).data;
-		    	      var updateObjects = [];
-		    	      let updateObject = {
-		    	        id: assets[0].id,
-		    	        duration: 0,
-		    	        interactionGroup: selectableGroup.id,
-		    	        interactionMode: "global"
-		    	      };
-		    	      updateObjects.push(updateObject);
-		    	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
-		    	      window.seadadoclic = 0;
-		    	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(){
-		    	        console.log("SELECT_ON");
-		    	          if(seadadoclic == 0){
-		    	            api.scene.setLiveTransformation([leftTrans]);
-		    	            seadadoclic = 1;
-		    	          }else{
-		    	            api.scene.setLiveTransformation([leftTrans1]);
-		    	            seadadoclic = 0;
-		    	          }
-		    	      });
-		      for (let i = 0; i < parameters.data.length; i++) {
-		        let paramInput = null;
-		        let paramDiv = document.createElement("div");
-		        let param = parameters.data[i];
-		        let label = document.createElement("label");
-		        label.setAttribute("for", param.id);
-		        		
-		        if(i == 8){
-		        	param["hidden"] = false;
-		        }
-		        if(i == 0){
-		        	param["name"] = "ANCHO";
-		        }
-		        if(i == 1){
-		        	param["name"] = "FONDO";
-		        }
-		        if(i == 2){
-		        	param["name"] = "ALTO";
-		        }
-		        if(i == 3){
-		        	param["hidden"] = true;
-		        }
-		        label.innerHTML = param.name;
-		        if (param.type == "Int" || param.type == "Float" || param.type == "Even" || param.type == "Odd") {
-		          paramInput = document.createElement("input");
-		          paramInput12 = document.createElement("output");
-		          paramInput.setAttribute("id", param.id);
-		          paramInput.setAttribute("type", "range");
-		          paramInput.setAttribute("min", param.min/10);
-		          paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
-		          paramInput.setAttribute("max", (param.max/10));
-		          paramInput.setAttribute("class", "rangeInputgg");
-		          paramInput.setAttribute("value", (param.value/10));
-		          paramInput12.setAttribute("id", "voydespues"+i);
-		          if (param.type == "Int") paramInput.setAttribute("step", 1);
-		          else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
-		          else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
-		          paramInput.onchange = function() {
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.value * 10
-		            });
-		            if(param["name"] == "ANCHO"){
-		            	$("#ancho1").text(this.value);
-		            }
-		            if(param["name"] == "ALTO"){
-		            	$("#altoDatosDimen").text(this.value);
-		            }
-		            if(param["name"] == "FONDO"){
-		            	$("#fondoDatosDimen").text(this.value);
-		            }
-		            
-		            setTimeout(function() {
-		            	window.camaraposition = api.scene.camera.get();
-		            }, 1500);
-		            
-		          };
-		        } else if (param.type == "Bool") {
-		          paramInput = document.createElement("input");
-		          paramInput.setAttribute("id", param.id);
-		          paramInput.setAttribute("type", "checkbox");
-		          paramInput.setAttribute("checked", param.value);
-		          paramInput.onchange = function() {
-		            console.log(this);
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.checked
-		            });
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-		            api.scene.camera.zoomAsync()
-		          };
-		        
-		        } else if (param.type == "Color") {
-		          paramInput = document.createElement("input");
-		          paramInput.setAttribute("id", param.id);
-		          paramInput.setAttribute("type", "color");
-		          paramInput.setAttribute("value", param.value);
-		          paramInput.onchange = function() {
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.value
-		            });
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-		            api.scene.camera.zoomAsync()
-		          };
-		        } else if (param.type == "StringList") {
-		          paramInput = document.createElement("select");
-		          paramInput.setAttribute("id", param.id);
-		          for (let j = 0; j < param.choices.length; j++) {
-		            let option = document.createElement("option");
-		            option.setAttribute("value", j);
-		            option.setAttribute("name", param.choices[j]);
-		            option.innerHTML = param.choices[j];
-		            if (param.value == j) option.setAttribute("selected", "");
-		            paramInput.appendChild(option);
-		          }
-		          paramInput.onchange = function() {
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.value
-		            });
-		            api.scene.camera.zoomAsync();
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
-		            
-		          };
-		        }
-		        if (param.hidden) paramDiv.setAttribute("hidden", "");
-		        paramDiv.appendChild(label);
-		        paramDiv.appendChild(paramInput);
-		        paramDiv.appendChild(paramInput12);
-		        globalDiv.appendChild(paramDiv);
-		        $("#voydespues"+i).append(param.value / 10);
-		      }
-
-		      var exports = api.exports.get();
-		      for (let i = 0; i < exports.data.length; i++) {
-		        let exportAsset = exports.data[i];
-		        let exportDiv = document.createElement("div");
-		        let exportInput = document.createElement("input");
-		        exportInput.setAttribute("id", exportAsset.id);
-		        exportInput.setAttribute("type", "button");
-		        exportInput.setAttribute("name", exportAsset.name);
-		        exportInput.setAttribute("value", exportAsset.name);
-		        exportInput.onclick = function() {
-		          api.exports.requestAsync({
-		            id: this.id
-		          }).then(
-		            function(response) {
-		              let link = response.data.content[0].href;
-		              window.location = link;
-		            }
-		          );
-		        };
-		        exportDiv.appendChild(exportInput);
-		        globalDiv.appendChild(exportDiv);
-		      }
-		      
-		      viewerInit = true;
-		      
-		    }
-		  });
-		
-		
-	}
+	
 	function selectCallback(event) {
 		alert("a");
 	}

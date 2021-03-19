@@ -54,16 +54,95 @@ a {
         visibility: hidden;
     }
 }
-.form-range {
-    width: 100%;
-    height: 1.4rem;
-    padding: 0;
-    background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.range-slider {
+    margin-top: 30vh;
 }
+.rs-range {
+    margin-top: 29px;
+    width: 85%;
+    position: absolute;
+    z-index: 15;
+    background-color: transparent;
+    -webkit-appearance: media-volume-slider;
+    &:focus {
+        outline: none;
+    }
+    &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+        box-shadow: none;
+        background: #ffffff;
+        border-radius: 0px;
+        border: 0px solid #010101;
+    }
+    &::-moz-range-track {
+        width: 100%;
+        height: 1px;
+        cursor: pointer;
+        box-shadow: none;
+        background: #ffffff;
+        border-radius: 0px;
+        border: 0px solid #010101;
+    }
 
+    &::-webkit-slider-thumb {
+        box-shadow: none;
+        border: 0px solid #ffffff;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+        height: 42px;
+        width: 22px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 1);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -20px;
+    }
+    &::-moz-range-thumb {
+        box-shadow: none;
+        border: 0px solid #ffffff;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+        height: 42px;
+        width: 22px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 1);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -20px;
+    }
+    &::-moz-focus-outer {
+        border: 0;
+    }
+}
+.rs-label {
+    position: relative;
+    transform-origin: center center;
+    display: block;
+    width: 68px;
+    height: 45px;
+    position: absolute;
+    background: white;
+    border-radius: 38%;
+    line-height: 30px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+    box-sizing: border-box;
+    left: 57.8px;
+    border: 2px solid #fff;
+    margin-top: 14px;
+    margin-left: -38px;
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 24px;
+    &::after {
+        display: block;
+        font-size: 20px;
+        letter-spacing: 0.07em;
+    }
+}
 a:hover {
     color: #533f03;
     font-weight: bold;
