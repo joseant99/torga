@@ -1,0 +1,25 @@
+{
+    "torgaPedidosApp": {
+        "exposicion": {
+            "home": {
+                "title": "Exposicions",
+                "createLabel": "Crear nuevo Exposicion",
+                "createOrEditLabel": "Crear o editar Exposicion"
+            },
+            "created": "Un nuevo Exposicion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Exposicion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Exposicion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Exposicion {{ id }}?"
+            },
+            "detail": {
+                "title": "Exposicion"
+            },
+            "codCli": "Cod Cli",
+            "idDireccion": "Id Direccion",
+            "idCatalogo": "Id Catalogo",
+            "tiene": "Tiene",
+            "color": "Color"
+        }
+    }
+}

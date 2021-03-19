@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="exposicion">
+            <h2><span jhiTranslate="torgaPedidosApp.exposicion.detail.title">Exposicion</span> {{exposicion.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="torgaPedidosApp.exposicion.codCli">Cod Cli</span></dt>
+                <dd>
+                    <span>{{exposicion.codCli}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.exposicion.idDireccion">Id Direccion</span></dt>
+                <dd>
+                    <span>{{exposicion.idDireccion}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.exposicion.idCatalogo">Id Catalogo</span></dt>
+                <dd>
+                    <span>{{exposicion.idCatalogo}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.exposicion.tiene">Tiene</span></dt>
+                <dd>
+                    <span>{{exposicion.tiene}}</span>
+                </dd>
+                <dt><span jhiTranslate="torgaPedidosApp.exposicion.color">Color</span></dt>
+                <dd>
+                    <span>{{exposicion.color}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/exposicion', exposicion.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

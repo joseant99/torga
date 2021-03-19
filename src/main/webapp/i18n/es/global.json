@@ -75,6 +75,8 @@
                 "repreGCompra": "Repre G Compra",
                 "usb": "Usb",
                 "fechaEntrega": "Fecha Entrega",
+                "coordenadas": "Coordenadas",
+                "exposicion": "Exposicion",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

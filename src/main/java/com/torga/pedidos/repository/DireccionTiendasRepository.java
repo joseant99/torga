@@ -5,6 +5,7 @@ import com.torga.pedidos.domain.ProductosDormitorio;
 
 import java.util.Collection;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -17,4 +18,7 @@ import org.springframework.stereotype.Repository;
 public interface DireccionTiendasRepository extends JpaRepository<DireccionTiendas, Long> {
 	@Query("Select u from DireccionTiendas u where u.datosUsuario.id = ?1 and u.tipoDir != 'COMERCIAL' order by u.id")
 	Collection<DireccionTiendas> findByCategoriaDormi(Long id);
+	
+	@Query("Select u from DireccionTiendas u where u.tipoDir = 'COMERCIAL'")
+	Collection<DireccionTiendas> soloComerciales();
 }

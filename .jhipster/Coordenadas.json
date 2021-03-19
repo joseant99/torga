@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitud",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitud",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20210319073438",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "coordenadas",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

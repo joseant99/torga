@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-exposicion-heading" jhiTranslate="torgaPedidosApp.exposicion.home.createOrEditLabel">Create or edit a Exposicion</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!exposicion.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="exposicion.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.exposicion.codCli" for="field_codCli">Cod Cli</label>
+                    <input type="text" class="form-control" name="codCli" id="field_codCli"
+                        [(ngModel)]="exposicion.codCli" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.exposicion.idDireccion" for="field_idDireccion">Id Direccion</label>
+                    <input type="number" class="form-control" name="idDireccion" id="field_idDireccion"
+                        [(ngModel)]="exposicion.idDireccion" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.exposicion.idCatalogo" for="field_idCatalogo">Id Catalogo</label>
+                    <input type="number" class="form-control" name="idCatalogo" id="field_idCatalogo"
+                        [(ngModel)]="exposicion.idCatalogo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.exposicion.tiene" for="field_tiene">Tiene</label>
+                    <input type="number" class="form-control" name="tiene" id="field_tiene"
+                        [(ngModel)]="exposicion.tiene" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.exposicion.color" for="field_color">Color</label>
+                    <input type="text" class="form-control" name="color" id="field_color"
+                        [(ngModel)]="exposicion.color" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

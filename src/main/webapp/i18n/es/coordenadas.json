@@ -1,0 +1,23 @@
+{
+    "torgaPedidosApp": {
+        "coordenadas": {
+            "home": {
+                "title": "Coordenadas",
+                "createLabel": "Crear nuevo Coordenadas",
+                "createOrEditLabel": "Crear o editar Coordenadas"
+            },
+            "created": "Un nuevo Coordenadas ha sido creado con el identificador {{ param }}",
+            "updated": "Un Coordenadas ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Coordenadas ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Coordenadas {{ id }}?"
+            },
+            "detail": {
+                "title": "Coordenadas"
+            },
+            "cp": "Cp",
+            "latitud": "Latitud",
+            "longitud": "Longitud"
+        }
+    }
+}

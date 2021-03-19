@@ -72,6 +72,22 @@ public class DireccionTiendas implements Serializable {
     
     @Column(name = "transportista")
     private String transportista;
+    
+    @Column(name = "Url1")
+    private String url1;
+    
+    @Column(name = "Url2")
+    private String url2;
+    
+    @Column(name = "Iddirtorga")
+    private Integer idDirTorga;
+    
+    @Column(name = "Activo")
+    private Integer activo;
+    
+    @Column(name = "Importe")
+    private Double importe;
+    
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -162,6 +178,71 @@ public class DireccionTiendas implements Serializable {
 
     public void setFijo(String fijo) {
         this.fijo = fijo;
+    }
+    
+    public String getUrl1() {
+        return url1;
+    }
+
+    public DireccionTiendas Url1(String url1) {
+        this.url1 = url1;
+        return this;
+    }
+
+    public void setUrl1(String url1) {
+        this.url1 = url1;
+    }
+    
+    public String getUrl2() {
+        return url1;
+    }
+
+    public DireccionTiendas Url2(String url2) {
+        this.url2 = url2;
+        return this;
+    }
+
+    public void setUrl2(String url2) {
+        this.url2 = url2;
+    }
+    
+    public Integer getIdDirTorga() {
+        return idDirTorga;
+    }
+
+    public DireccionTiendas idDirTorga(Integer idDirTorga) {
+        this.idDirTorga = idDirTorga;
+        return this;
+    }
+
+    public void setIdDirTorga(Integer idDirTorga) {
+        this.idDirTorga = idDirTorga;
+    }
+    
+    public Integer getActivo() {
+        return activo;
+    }
+
+    public DireccionTiendas activo(Integer activo) {
+        this.activo = activo;
+        return this;
+    }
+
+    public void setActivo(Integer activo) {
+        this.activo = activo;
+    }
+    
+    public Double getImporte() {
+        return importe;
+    }
+
+    public DireccionTiendas importe(Double importe) {
+        this.importe = importe;
+        return this;
+    }
+
+    public void setImporte(Double importe) {
+        this.importe = importe;
     }
     
     public String getMovil() {

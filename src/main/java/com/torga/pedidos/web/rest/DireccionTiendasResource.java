@@ -26,6 +26,7 @@ import java.util.Optional;
  * REST controller for managing DireccionTiendas.
  */
 @RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
 public class DireccionTiendasResource {
 
@@ -94,6 +95,20 @@ public class DireccionTiendasResource {
         Page<DireccionTiendas> page = direccionTiendasRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/direccion-tiendas");
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+    
+    /**
+     * GET  /direccion-tiendas : get all the direccionTiendas.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of direccionTiendas in body
+     */
+    @GetMapping("/direccion-tiendas-solo-comerciales")
+    @Timed
+    public ResponseEntity<Collection<DireccionTiendas>> getAllDireccionTiendasSoloComerciales(Pageable pageable) {
+        log.debug("REST request to get a page of DireccionTiendas");
+        Collection<DireccionTiendas> page = direccionTiendasRepository.soloComerciales();
+        return ResponseEntity.ok().body(page);
     }
     
     /**
