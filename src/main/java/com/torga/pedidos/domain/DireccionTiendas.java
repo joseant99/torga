@@ -194,7 +194,7 @@ public class DireccionTiendas implements Serializable {
     }
     
     public String getUrl2() {
-        return url1;
+        return url2;
     }
 
     public DireccionTiendas Url2(String url2) {

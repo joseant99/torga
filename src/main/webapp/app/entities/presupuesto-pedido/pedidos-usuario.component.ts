@@ -391,7 +391,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
                     }
                 } else {
                     if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                        if (idUsu == 85 || idUsu == 84 || idUsu == 1073) {
+                        if (idUsu == 85 || idUsu == 84 || idUsu == 1073 || idUsu == 1694) {
                             for (let k = 0; k < todos.length; k++) {
                                 if (todos[k]['user'] != null) {
                                     if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
