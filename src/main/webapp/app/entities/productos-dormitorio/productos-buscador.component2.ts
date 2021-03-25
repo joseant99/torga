@@ -2470,6 +2470,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         $('#volverAtras100MeterCasa').css({ display: 'block' });
         $('.divBuscadorArticulos #volverAtras1MeterCasa').css({ display: 'none' });
         $('html, body').animate({ scrollTop: 0 });
+        var tipoAlturaCogida = this.alturaseleccionada;
         var tipoSiesMesa = this.tipoProductos;
         var mensajeSoloMesa = this.numeroInteriorArmario;
         var precioTienda1;
@@ -2593,18 +2594,29 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         }, 1000);
         this.dimensionesProductoTipoService.findProducto(this.idDelProducto).subscribe(data => {
             var cogidoggmenez = 0;
-            if (tipoSiesMesa != 22) {
-                for (let i = 0; i < data.body['length']; i++) {
-                    if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
-                        var datos = data.body[i];
-                        data.body[i]['ancho'] = codigo;
-                        data.body[i]['mensajeEspecial'] = 'Ancho especial';
-                        cogidoggmenez = 1;
+            if (tipoSiesMesa != 13 && tipoSiesMesa != 16 && tipoSiesMesa != 17) {
+                if (tipoSiesMesa != 22) {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0) {
+                            var datos = data.body[i];
+                            data.body[i]['ancho'] = codigo;
+                            data.body[i]['mensajeEspecial'] = 'Ancho especial';
+                            cogidoggmenez = 1;
+                        }
+                    }
+                } else {
+                    for (let i = 0; i < data.body['length']; i++) {
+                        if (data.body[i]['mensaje'] == mensajeSoloMesa && cogidoggmenez == 0) {
+                            var datos = data.body[i];
+                            data.body[i]['ancho'] = codigo;
+                            data.body[i]['mensajeEspecial'] = 'Ancho especial';
+                            cogidoggmenez = 1;
+                        }
                     }
                 }
             } else {
                 for (let i = 0; i < data.body['length']; i++) {
-                    if (data.body[i]['mensaje'] == mensajeSoloMesa && cogidoggmenez == 0) {
+                    if (data.body[i]['ancho'] > codigo && cogidoggmenez == 0 && data.body[i]['alto'] == tipoAlturaCogida) {
                         var datos = data.body[i];
                         data.body[i]['ancho'] = codigo;
                         data.body[i]['mensajeEspecial'] = 'Ancho especial';
@@ -20745,6 +20757,9 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#productosPrincipal').css({ height: '2675' });
         }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
+        if (aux < 35) {
+            aux = 35;
+        }
         $('#precioDimension').text(Math.ceil(aux));
 
         this.acaProdService.findAca(408).subscribe(data => {

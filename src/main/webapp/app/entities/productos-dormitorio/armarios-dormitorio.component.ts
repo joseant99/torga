@@ -3392,7 +3392,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     'onclick',
                     'cambiardecolor123(1,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
                 );
-                $('#clicparacambiardecolor123')[0].click();
+                //$('#clicparacambiardecolor123')[0].click();
                 array['acabadoCasco'] = acabados[w];
                 this.armarioCogido = array;
             }
@@ -3561,11 +3561,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         console.log(this.extraInterioresPorSi);
         var extraInteriores = this.extraInterioresPorSi;
         var dato = this.cascoService.dato;
+
         this.cascoService.findBus1(id).subscribe(data => {
             data.body[0]['ancho'] = rangeSlider;
             data.body[0]['alto'] = rangeSlider1;
             data.body[0]['fondo'] = rangeSlider2;
             $('#precioDimension').text(data.body[0].precio);
+            var precioInicio = data.body[0].precio;
             this.armarioCogido = data.body[0];
             $('#ppCalculadora').css({ display: 'block' });
             var array = [];
@@ -3582,12 +3584,61 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        this.interioresArmarioNuevosService
+                            .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                            .subscribe(data => {
+                                var todoPrecioLoco = data.body[0].a;
+                                $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                this.precioInterior1 = data.body[0].a;
+                                $('#inputInterior' + p).empty();
+                                $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                var totalPrecio = precioInicio + this.precioInterior1;
+                                precioInicio = totalPrecio;
+                                $('#precioDimension').text(totalPrecio);
+                                extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                if (p == 1) {
+                                    this.precioInterior2 = data.body[0].b;
+                                }
+                            });
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '1 PUERTA') {
                 arrayPuertas[0] = '1';
                 array[0] = '1';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (
+                            extraInteriores[p]['nombre'] != 2 &&
+                            extraInteriores[p]['nombre'] != 7 &&
+                            extraInteriores[p]['nombre'] != 15 &&
+                            extraInteriores[p]['nombre'] != 16 &&
+                            extraInteriores[p]['nombre'] != 17 &&
+                            extraInteriores[p]['nombre'] != 18 &&
+                            extraInteriores[p]['nombre'] != 19 &&
+                            extraInteriores[p]['nombre'] != 20 &&
+                            extraInteriores[p]['nombre'] != 21
+                        ) {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].a;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    this.precioInterior1 = data.body[0].a;
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '2 PUERTAS') {
                 arrayPuertas[0] = '1';
@@ -3595,6 +3646,23 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[0] = '1';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        this.interioresArmarioNuevosService
+                            .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                            .subscribe(data => {
+                                var todoPrecioLoco = data.body[0].a;
+                                $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                $('#inputInterior' + p).empty();
+                                $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                this.precioInterior1 = data.body[0].a;
+                                var totalPrecio = precioInicio + this.precioInterior1;
+                                precioInicio = totalPrecio;
+                                $('#precioDimension').text(totalPrecio);
+                                extraInteriores[p] = data.body[0]['productosDormitorio'];
+                            });
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '3 PUERTAS IZQUIERDA') {
                 arrayPuertas[0] = '1';
@@ -3623,7 +3691,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                     .subscribe(data => {
                                         var todoPrecioLoco = data.body[0].a;
                                         $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
                                         this.precioInterior1 = data.body[0].a;
+                                        var totalPrecio = precioInicio + this.precioInterior1;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
                                         extraInteriores[p] = data.body[0]['productosDormitorio'];
                                     });
                             } else {
@@ -3638,7 +3711,12 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                                 .subscribe(data => {
                                     var todoPrecioLoco = data.body[0].b;
                                     $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
-                                    this.precioInterior1 = data.body[0].b;
+                                    this.precioInterior2 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
                                     extraInteriores[p] = data.body[0]['productosDormitorio'];
                                 });
                         }
@@ -3655,6 +3733,56 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[1] = '2';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 1) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].b;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior2 = data.body[0].b;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior2;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior2 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].a;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].a;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '4 PUERTAS ASIMETRICAS') {
                 arrayPuertas[0] = '1';
@@ -3666,6 +3794,65 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 0 || p == 2) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].a;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior1 = data.body[0].a;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior1;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                        if (p == 2) {
+                                            this.precioInterior3 = data.body[0].c;
+                                            var totalPrecio = precioInicio + this.precioInterior3;
+                                            precioInicio = totalPrecio;
+                                            $('#precioDimension').text(totalPrecio);
+                                        }
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior1 = 0;
+                                $('#inputInterior' + p).empty();
+                                if (p == 2) {
+                                    this.precioInterior3 = 0;
+                                }
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior2 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '5 PUERTAS CENTRAL') {
                 arrayPuertas[0] = '1';
@@ -3678,6 +3865,62 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 1) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].b;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior2 = data.body[0].b;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior2;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior2 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].a;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].a;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 2) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
                 arrayPuertas[0] = '1';
@@ -3690,6 +3933,62 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 0) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].a;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior1 = data.body[0].a;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior1;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior1 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior2 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 2) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '5 PUERTAS DERECHA') {
                 arrayPuertas[0] = '1';
@@ -3702,6 +4001,62 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 2) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].c;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior3 = data.body[0].c;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior3 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].a;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].a;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 1) {
+                                        this.precioInterior2 = data.body[0].b;
+                                        var totalPrecio = precioInicio + this.precioInterior2;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
                 arrayPuertas[0] = '1';
@@ -3715,6 +4070,35 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[2] = '3';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        this.interioresArmarioNuevosService
+                            .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                            .subscribe(data => {
+                                var todoPrecioLoco = data.body[0].a;
+                                $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                this.precioInterior1 = data.body[0].a;
+                                $('#inputInterior' + p).empty();
+                                $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                var totalPrecio = precioInicio + this.precioInterior1;
+                                precioInicio = totalPrecio;
+                                $('#precioDimension').text(totalPrecio);
+                                extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                if (p == 2) {
+                                    this.precioInterior3 = data.body[0].c;
+                                    var totalPrecio = precioInicio + this.precioInterior3;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                }
+                                if (p == 1) {
+                                    this.precioInterior2 = data.body[0].b;
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                }
+                            });
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
                 arrayPuertas[0] = '1';
@@ -3729,6 +4113,71 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 0 || p == 3) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].a;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior1 = data.body[0].a;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior1;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                        if (p == 3) {
+                                            this.precioInterior4 = data.body[0].d;
+                                            var totalPrecio = precioInicio + this.precioInterior4;
+                                            precioInicio = totalPrecio;
+                                            $('#precioDimension').text(totalPrecio);
+                                        }
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior1 = 0;
+                                $('#inputInterior' + p).empty();
+                                if (p == 3) {
+                                    this.precioInterior4 = 0;
+                                }
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior2 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 2) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
                 arrayPuertas[0] = '1';
@@ -3744,6 +4193,68 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 0) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].a;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior1 = data.body[0].a;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior1;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior1 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior2 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 3) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                    if (p == 3) {
+                                        this.precioInterior4 = data.body[0].d;
+                                        var totalPrecio = precioInicio + this.precioInterior4;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '7 PUERTAS DERECHA') {
                 arrayPuertas[0] = '1';
@@ -3759,6 +4270,68 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 3) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].d;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior4 = data.body[0].d;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        var totalPrecio = precioInicio + this.precioInterior4;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior4 = 0;
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].b;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].b;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 3) {
+                                        this.precioInterior2 = data.body[0].b;
+                                        var totalPrecio = precioInicio + this.precioInterior2;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                    if (p == 3) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
                 arrayPuertas[0] = '1';
@@ -3774,6 +4347,68 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        if (p == 1) {
+                            if (
+                                extraInteriores[p]['nombre'] != 2 &&
+                                extraInteriores[p]['nombre'] != 7 &&
+                                extraInteriores[p]['nombre'] != 15 &&
+                                extraInteriores[p]['nombre'] != 16 &&
+                                extraInteriores[p]['nombre'] != 17 &&
+                                extraInteriores[p]['nombre'] != 18 &&
+                                extraInteriores[p]['nombre'] != 19 &&
+                                extraInteriores[p]['nombre'] != 20 &&
+                                extraInteriores[p]['nombre'] != 21
+                            ) {
+                                this.interioresArmarioNuevosService
+                                    .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                    .subscribe(data => {
+                                        var todoPrecioLoco = data.body[0].b;
+                                        $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                        this.precioInterior2 = data.body[0].b;
+                                        $('#inputInterior' + p).empty();
+                                        $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                        extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    });
+                            } else {
+                                extraInteriores[p] = undefined;
+                                $('#precioInt' + p).text('');
+                                this.precioInterior2 = 0;
+                                var totalPrecio = precioInicio + this.precioInterior2;
+                                precioInicio = totalPrecio;
+                                $('#precioDimension').text(totalPrecio);
+                                $('#inputInterior' + p).empty();
+                            }
+                        } else {
+                            this.interioresArmarioNuevosService
+                                .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                                .subscribe(data => {
+                                    var todoPrecioLoco = data.body[0].a;
+                                    $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                    this.precioInterior1 = data.body[0].a;
+                                    $('#inputInterior' + p).empty();
+                                    $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                    var totalPrecio = precioInicio + this.precioInterior1;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                    extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                    if (p == 3) {
+                                        this.precioInterior4 = data.body[0].d;
+                                        var totalPrecio = precioInicio + this.precioInterior4;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                    if (p == 2) {
+                                        this.precioInterior3 = data.body[0].c;
+                                        var totalPrecio = precioInicio + this.precioInterior3;
+                                        precioInicio = totalPrecio;
+                                        $('#precioDimension').text(totalPrecio);
+                                    }
+                                });
+                        }
+                    }
+                }
             }
             if (data.body[0]['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
                 arrayPuertas[0] = '1';
@@ -3790,6 +4425,41 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 array[3] = '4';
                 this.arraySaberPuertas = arrayPuertas;
                 this.arraySaberHuecos = array;
+                for (let p = 0; p < array.length; p++) {
+                    if (extraInteriores[p] != undefined && extraInteriores[p] != null) {
+                        this.interioresArmarioNuevosService
+                            .findBus(this.cascoService.dato.codigo, idProdInt[extraInteriores[p]['nombre']])
+                            .subscribe(data => {
+                                var todoPrecioLoco = data.body[0].a;
+                                $('#precioInt' + p).text('+ ' + todoPrecioLoco + ' pp');
+                                this.precioInterior1 = data.body[0].a;
+                                $('#inputInterior' + p).empty();
+                                $('#inputInterior' + p).text(data.body[0]['nombre']);
+                                var totalPrecio = precioInicio + this.precioInterior1;
+                                precioInicio = totalPrecio;
+                                $('#precioDimension').text(totalPrecio);
+                                extraInteriores[p] = data.body[0]['productosDormitorio'];
+                                if (p == 1) {
+                                    this.precioInterior2 = data.body[0].b;
+                                    var totalPrecio = precioInicio + this.precioInterior2;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                }
+                                if (p == 2) {
+                                    this.precioInterior3 = data.body[0].c;
+                                    var totalPrecio = precioInicio + this.precioInterior3;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                }
+                                if (p == 3) {
+                                    this.precioInterior4 = data.body[0].d;
+                                    var totalPrecio = precioInicio + this.precioInterior4;
+                                    precioInicio = totalPrecio;
+                                    $('#precioDimension').text(totalPrecio);
+                                }
+                            });
+                    }
+                }
             }
         });
     }
@@ -29408,7 +30078,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     'onclick',
                     'cambiardecolor123(2,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
                 );
-                $('#clicparacambiardecolor123')[0].click();
+                //$('#clicparacambiardecolor123')[0].click();
                 array['acabadoTrasera'] = acabados[w];
                 this.armarioCogido = array;
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(

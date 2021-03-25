@@ -2472,6 +2472,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         if (screen.width < 800) {
             $('#productosPrincipal').css({ height: '2675' });
         }
+        if (aux < 35) {
+            aux = 35;
+        }
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         $('#precioDimension').text(Math.ceil(aux));
 
