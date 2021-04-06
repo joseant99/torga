@@ -13941,18 +13941,22 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         alto: 10
                                     };
                                 }
+                                var calculadoaltoparatablero = 0;
+                                calculadoaltoparatablero = parseFloat(prodCarr[m][1]['grosor'].split(' ')[0]);
+                                calculadoaltoparatablero = calculadoaltoparatablero / 10;
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     dimensionesProductoTipo: dimensolotablero,
                                     presupuestoPedido: prueba1,
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
-                                    grosor: prodCarr[m][1]['grosor'],
+                                    grosor: prodCarr[m][1]['alto'],
                                     fondo: prodCarr[m][1]['alto'],
-                                    alto: prodCarr[m][1]['grosor'].split(' ')[0],
+                                    alto: calculadoaltoparatablero,
                                     canteado: prodCarr[m][1]['canteado']
                                 };
-                                prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];
+                                prodCarr[m][1]['fondo'] = prodCarr[m][1]['alto'];
+                                prodCarr[m][1]['alto'] = calculadoaltoparatablero;
                             }
                             var pilotousvar = '';
                             if (
@@ -14156,8 +14160,8 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
                             if (prodCarr[m][1]['productosDormitorio']['id'] == 408) {
                                 prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
-                                prodPrePed['alto'] = prodCarr[m][1]['fondo'];
-                                prodPrePed['fondo'] = prodCarr[m][1]['alto'];
+                                prodPrePed['alto'] = prodCarr[m][1]['alto'];
+                                prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
                             }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;
@@ -14556,14 +14560,17 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     };
                                 }
                             } else {
+                                var calculadoaltoparatablero = 0;
+                                calculadoaltoparatablero = parseFloat(prodCarr[m][1]['grosor'].split(' ')[0]);
+                                calculadoaltoparatablero = calculadoaltoparatablero / 10;
                                 prodPrePed = {
                                     productosDormitorio: prodCarr[m][1]['productosDormitorio'],
                                     presupuestoPedido: prueba1,
                                     precioTotal: prodCarr[m][1]['todoSumadoPrecio'],
                                     ancho: prodCarr[m][1]['ancho'],
-                                    grosor: prodCarr[m][1]['grosor'],
+                                    grosor: prodCarr[m][1]['alto'],
                                     fondo: prodCarr[m][1]['alto'],
-                                    alto: prodCarr[m][1]['grosor'].split(' ')[0],
+                                    alto: calculadoaltoparatablero,
                                     canteado: prodCarr[m][1]['canteado']
                                 };
                                 prodCarr[m][1]['fondo'] = prodCarr[m][1]['grosor'].split(' ')[0];

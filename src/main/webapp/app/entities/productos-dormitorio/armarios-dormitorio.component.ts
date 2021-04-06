@@ -3392,7 +3392,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     'onclick',
                     'cambiardecolor123(1,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
                 );
-                //$('#clicparacambiardecolor123')[0].click();
+                $('#clicparacambiardecolor123')[0].click();
                 array['acabadoCasco'] = acabados[w];
                 this.armarioCogido = array;
             }
@@ -30078,7 +30078,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     'onclick',
                     'cambiardecolor123(2,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
                 );
-                //$('#clicparacambiardecolor123')[0].click();
+                $('#clicparacambiardecolor123')[0].click();
                 array['acabadoTrasera'] = acabados[w];
                 this.armarioCogido = array;
                 $('#calculadoraCarrito #productoCalculadora1 #datos1').append(

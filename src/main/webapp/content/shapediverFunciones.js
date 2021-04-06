@@ -94,6 +94,46 @@ function apiShape(id){
 						  ],
 						  reset: false
 						};
+				var puertaIzq = {
+						  scenePaths: [],
+						  transformations: [
+						    {
+						      delay: 0,
+						      duration: 500,
+						      type: "rotation",
+						      repeat: 0,
+						      //yoyo:true,
+						      rotationAxis: {
+						        x: 0,
+						        y: 1,
+						        z: 0
+						      },
+						      rotationDegree: 90,
+						      pivot: {}
+						    }
+						  ],
+						  reset: false
+						};
+						var puertaIzq1 = {
+								  scenePaths: [],
+								  transformations: [
+								    {
+								      delay: 0,
+								      duration: 500,
+								      type: "rotation",
+								      repeat: 0,
+								      //yoyo:true,
+								      rotationAxis: {
+								        x: 0,
+								        y: 1,
+								        z: 0
+								      },
+								      rotationDegree: -90,
+								      pivot: {}
+								    }
+								  ],
+								  reset: false
+								};
 					var selectableGroup = {
 						  id: "select",
 						  hoverable: true,
@@ -392,6 +432,7 @@ function cambiarVistaArmario(tipo){
   $("#opcionSliderDiv3").css({"background-color":"white"});
   $("#opcionSliderDiv"+tipo).css({"background-color":"#A7A7A7"});
   var armario;
+  var arrayPuertas = [];
   var costadoFinal = valorAncho - 19;
   switch (true){
 	  case valorAncho <= 500:
@@ -416,6 +457,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 0;
 			  h = 1;
+			  arrayPuertas[0] = 0;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -439,6 +481,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 0;
 			  h = 1;
+			  arrayPuertas[0] = 0;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -518,6 +561,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  arrayPuertas[0] = 0;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -546,6 +590,7 @@ function cambiarVistaArmario(tipo){
 			  $("#opcionSliderDiv3").css({"display":"none"});
 			  costado = 0.75;
 	          costado1 = 0;
+	          arrayPuertas[0] = 1;
 		  }
 		  break;
 	  case valorAncho <= 1200:
@@ -572,6 +617,7 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 	          costado = 0.33;
 	          costado1 = 0;
+	          arrayPuertas[0] = 0;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -597,6 +643,7 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 			  costado = 0.75;
 	          costado1 = 0;
+	          arrayPuertas[0] = 1;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -626,6 +673,7 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 	          costado = 0.33;
 	          costado1 = 0;
+	          arrayPuertas[0] = 0;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -651,6 +699,7 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 			  costado = 0.75;
 	          costado1 = 0;
+	          arrayPuertas[0] = 1;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -680,6 +729,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  arrayPuertas[0] = 0;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -705,6 +755,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -734,6 +785,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  arrayPuertas[0] = 0;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -759,6 +811,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -813,6 +866,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -867,6 +922,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -921,6 +978,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -976,6 +1035,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1030,6 +1091,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1059,6 +1122,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1085,6 +1149,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1111,6 +1176,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 2;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1141,6 +1207,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1167,6 +1234,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1193,6 +1261,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 2;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1223,6 +1292,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1249,6 +1319,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1275,6 +1346,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 2;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1305,6 +1377,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1331,6 +1404,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1357,6 +1431,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 2;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1387,6 +1462,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1413,6 +1489,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1439,6 +1516,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
+				  arrayPuertas[0] = 2;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1495,6 +1573,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1550,6 +1630,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1605,6 +1687,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1660,6 +1744,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1715,6 +1801,8 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
+			  arrayPuertas[0] = 0;
+			  arrayPuertas[1] = 3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1746,6 +1834,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1773,6 +1862,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1800,6 +1890,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1831,6 +1922,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1858,6 +1950,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1885,6 +1978,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1916,6 +2010,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1943,6 +2038,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1970,6 +2066,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2001,6 +2098,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2028,6 +2126,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2055,6 +2154,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2086,6 +2186,7 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
+			  arrayPuertas[0] = 1;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2113,6 +2214,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 0;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2139,6 +2241,7 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
+				  arrayPuertas[0] = 3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2412,6 +2515,7 @@ function cambiarVistaArmario(tipo){
   object["costados"] = array;
   object["altura"] = alto * 10;
   object["fondo"] = fondo * 10;
+  object["1puerta"] = arrayPuertas;
   window.todounarmario = object;
   var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
   api.parameters.updateAsync({
@@ -2419,6 +2523,7 @@ function cambiarVistaArmario(tipo){
       value: JSON.stringify(object)
     });
   $("#codigodepsArm"+ codigo)[0].click();
+  console.log(JSON.stringify(object));
 }
 function showSliderValue() {
 		var rangeSlider = document.getElementById("rs-range-line");
