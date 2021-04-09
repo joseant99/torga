@@ -643,6 +643,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 var tiendaElegida = this.idDeLaTiendaCogida;
                 var referenciaCliente = $('#referenciaCliente').val();
                 var todasTiendaBuenas = this.todasLasTiendas;
+                if (referenciaCliente == '' || referenciaCliente == null) {
+                    referenciaCliente = ' ';
+                }
                 if (tiendaElegida != null && tiendaElegida != '' && referenciaCliente != null && referenciaCliente != '') {
                     for (let q = 0; q < todasTiendaBuenas.length; q++) {
                         if (todasTiendaBuenas[q]['id'] == tiendaElegida) {

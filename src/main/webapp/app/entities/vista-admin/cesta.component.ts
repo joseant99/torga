@@ -9394,6 +9394,33 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             nombreCargarImagen = 'NH419-NH421';
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 352) {
+                            nombreCargarImagen = 'NH422-NH424';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 353) {
+                            nombreCargarImagen = 'NH425-NH427';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 354) {
+                            nombreCargarImagen = 'NH428-NH430';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 355) {
+                            nombreCargarImagen = 'NH431-NH432';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 356) {
+                            nombreCargarImagen = 'NH433-NH435';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 357) {
+                            nombreCargarImagen = 'NH436-NH438';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 358) {
+                            nombreCargarImagen = 'NH439-NH441';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 359) {
+                            nombreCargarImagen = 'NH442-NH444';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 409) {
+                            nombreCargarImagen = 'NH445-NH454';
+                        }
+                        if (sesion[1]['productosDormitorio']['id'] == 352) {
                             nombreCargarImagen = sesion[1]['mensaje'];
                         }
                         if (sesion[1]['productosDormitorio']['id'] == 353) {

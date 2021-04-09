@@ -12878,7 +12878,33 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 if (idProdNombre == 375) {
                                                     nombreCargarImagen = 'NH419-NH421';
                                                 }
-
+                                                if (idProdNombre == 352) {
+                                                    nombreCargarImagen = 'NH422-NH424';
+                                                }
+                                                if (idProdNombre == 353) {
+                                                    nombreCargarImagen = 'NH425-NH427';
+                                                }
+                                                if (idProdNombre == 354) {
+                                                    nombreCargarImagen = 'NH428-NH430';
+                                                }
+                                                if (idProdNombre == 355) {
+                                                    nombreCargarImagen = 'NH431-NH432';
+                                                }
+                                                if (idProdNombre == 356) {
+                                                    nombreCargarImagen = 'NH433-NH435';
+                                                }
+                                                if (idProdNombre == 357) {
+                                                    nombreCargarImagen = 'NH436-NH438';
+                                                }
+                                                if (idProdNombre == 358) {
+                                                    nombreCargarImagen = 'NH439-NH441';
+                                                }
+                                                if (idProdNombre == 359) {
+                                                    nombreCargarImagen = 'NH442-NH444';
+                                                }
+                                                if (idProdNombre == 375) {
+                                                    nombreCargarImagen = 'NH445-NH454';
+                                                }
                                                 if (idProdNombre == 203) {
                                                     nombreCargarImagen = 'NH372-NH373';
                                                 }

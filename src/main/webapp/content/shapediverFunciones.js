@@ -144,7 +144,7 @@ function apiShape(id){
 						};
 		api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		    if (!viewerInit) {
-		    	
+		    	window.s = new THREE.Matrix4();
 		      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
 		      var updatedSettings = {
 		    		  scene : {
@@ -176,7 +176,14 @@ function apiShape(id){
 	            	window.camaraposition = api.scene.camera.get();
 	            }, 1500);
 		      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
-
+		      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object2 = api.scene.get({name: "SueloGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object3 = api.scene.get({name: "Tabica geo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object4 = api.scene.get({name: "MolduraGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
+		      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
 		    	      let arrPivot = api.scene.getData({
 		    	        name: "frente"
 		    	      }).data[0].data;
@@ -188,7 +195,7 @@ function apiShape(id){
 		    	      leftTrans.scenePaths = [
 		    	        api.scene.get(
 		    	          {
-		    	            name: "SDDisplayFrente",
+		    	            name: "FrenteGeo",
 		    	            format: "glb"
 		    	          },
 		    	          "CommPlugin_1"
@@ -197,7 +204,7 @@ function apiShape(id){
 		    	      leftTrans1.scenePaths = [
 			    	        api.scene.get(
 			    	          {
-			    	            name: "SDDisplayFrente",
+			    	            name: "FrenteGeo",
 			    	            format: "glb"
 			    	          },
 			    	          "CommPlugin_1"
@@ -208,7 +215,7 @@ function apiShape(id){
 		    	      api.scene.updateInteractionGroups(selectableGroup);
 		    	      var assets = api.scene.get(
 		    	        {
-		    	          name: "SDDisplayFrente",
+		    	          name: "FrenteGeo",
 		    	          format: "glb"
 		    	        },
 		    	        "CommPlugin_1"
@@ -262,10 +269,23 @@ function apiShape(id){
 		          paramInput.setAttribute("id", param.id);
 		          paramInput.setAttribute("type", "range");
 		          paramInput.setAttribute("min", param.min/10);
-		          paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
+		          //paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
+		          if(i == 0){
+		        	  window.currScaleX = param.value / 10;
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoAncho(this.value);");
+		          }
+		          if(i == 1){
+		        	  window.currScaleY = param.value / 10;
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoFondo(this.value);");
+		          }
+		          if(i == 2){
+		        	  window.currScaleZ = param.value / 10;
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoAlto(this.value);");
+		          }
 		          paramInput.setAttribute("max", (param.max/10));
 		          paramInput.setAttribute("class", "rangeInputgg");
 		          paramInput.setAttribute("value", (param.value/10));
+		          window.valorDef = param.value/10;
 		          paramInput12.setAttribute("id", "voydespues"+i);
 		          if (param.type == "Int") paramInput.setAttribute("step", 1);
 		          else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
@@ -377,6 +397,229 @@ function apiShape(id){
 		
 		
 	}
+	
+
+var funcionAumentarTamañoAncho = function(val) {
+	$("#voydespues0").val(val);
+	  s.elements[0] = (val*10) / (currScaleX*10);
+	  s.elements[5] = 1;
+	  s.elements[10] = 1;
+	  
+	  let updateObject = {
+	    id: object0.id,
+	    duration: 0,
+	    content: object0.content
+	  };
+	  for (let i=0; i< updateObject.content.length; i++) {
+	    updateObject.content[i].transformations = [s];
+	  }
+	  let updateObject1 = {
+			    id: object1.id,
+			    duration: 0,
+			    content: object1.content
+	  };
+	  for (let i=0; i< updateObject1.content.length; i++) {
+			    updateObject1.content[i].transformations = [s];
+	  }
+	  let updateObject2 = {
+					    id: object2.id,
+					    duration: 0,
+					    content: object2.content
+	  };
+	  for (let i=0; i< updateObject2.content.length; i++) {
+		  updateObject2.content[i].transformations = [s];
+	  }
+	  let updateObject3 = {
+			    id: object3.id,
+			    duration: 0,
+			    content: object3.content
+	};
+	for (let i=0; i< updateObject3.content.length; i++) {
+		updateObject3.content[i].transformations = [s];
+	}
+	let updateObject4 = {
+		    id: object4.id,
+		    duration: 0,
+		    content: object4.content
+	};
+	for (let i=0; i< updateObject4.content.length; i++) {
+		updateObject4.content[i].transformations = [s];
+	}
+	let updateObject5 = {
+		    id: object5.id,
+		    duration: 0,
+		    content: object5.content
+	};
+	for (let i=0; i< updateObject5.content.length; i++) {
+		updateObject5.content[i].transformations = [s];
+	}
+	let updateObject6 = {
+		    id: object6.id,
+		    duration: 0,
+		    content: object6.content
+	};
+	for (let i=0; i< updateObject6.content.length; i++) {
+		updateObject6.content[i].transformations = [s];
+	}
+	let updateObject7 = {
+		    id: object7.id,
+		    duration: 0,
+		    content: object7.content
+	};
+	for (let i=0; i< updateObject7.content.length; i++) {
+		updateObject7.content[i].transformations = [s];
+	}
+
+	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
+}
+var funcionAumentarTamañoFondo = function(val) {
+	$("#voydespues1").val(val);
+	  s.elements[0] = 1
+	  s.elements[5] = (val*10) / (currScaleY*10);
+	  s.elements[10] = 1;
+	  
+	  let updateObject = {
+	    id: object0.id,
+	    duration: 0,
+	    content: object0.content
+	  };
+	  for (let i=0; i< updateObject.content.length; i++) {
+	    updateObject.content[i].transformations = [s];
+	  }
+	  let updateObject1 = {
+			    id: object1.id,
+			    duration: 0,
+			    content: object1.content
+	  };
+	  for (let i=0; i< updateObject1.content.length; i++) {
+			    updateObject1.content[i].transformations = [s];
+	  }
+	  let updateObject2 = {
+					    id: object2.id,
+					    duration: 0,
+					    content: object2.content
+	  };
+	  for (let i=0; i< updateObject2.content.length; i++) {
+		  updateObject2.content[i].transformations = [s];
+	  }
+	  let updateObject3 = {
+			    id: object3.id,
+			    duration: 0,
+			    content: object3.content
+	};
+	for (let i=0; i< updateObject3.content.length; i++) {
+		updateObject3.content[i].transformations = [s];
+	}
+	let updateObject4 = {
+		    id: object4.id,
+		    duration: 0,
+		    content: object4.content
+	};
+	for (let i=0; i< updateObject4.content.length; i++) {
+		updateObject4.content[i].transformations = [s];
+	}
+	let updateObject5 = {
+		    id: object5.id,
+		    duration: 0,
+		    content: object5.content
+	};
+	for (let i=0; i< updateObject5.content.length; i++) {
+		updateObject5.content[i].transformations = [s];
+	}
+	let updateObject6 = {
+		    id: object6.id,
+		    duration: 0,
+		    content: object6.content
+	};
+	for (let i=0; i< updateObject6.content.length; i++) {
+		updateObject6.content[i].transformations = [s];
+	}
+	let updateObject7 = {
+		    id: object7.id,
+		    duration: 0,
+		    content: object7.content
+	};
+	for (let i=0; i< updateObject7.content.length; i++) {
+		updateObject7.content[i].transformations = [s];
+	}
+
+	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
+
+}
+var funcionAumentarTamañoAlto= function(val) {
+	$("#voydespues2").val(val);
+		s.elements[0] = 1
+	  s.elements[5] = 1;
+	  s.elements[10] = (val*10) / (currScaleZ*10);
+	  
+	  let updateObject = {
+	    id: object0.id,
+	    duration: 0,
+	    content: object0.content
+	  };
+	  for (let i=0; i< updateObject.content.length; i++) {
+	    updateObject.content[i].transformations = [s];
+	  }
+	  let updateObject1 = {
+			    id: object1.id,
+			    duration: 0,
+			    content: object1.content
+	  };
+	  for (let i=0; i< updateObject1.content.length; i++) {
+			    updateObject1.content[i].transformations = [s];
+	  }
+	  let updateObject2 = {
+					    id: object2.id,
+					    duration: 0,
+					    content: object2.content
+	  };
+	  for (let i=0; i< updateObject2.content.length; i++) {
+		  updateObject2.content[i].transformations = [s];
+	  }
+	  let updateObject3 = {
+			    id: object3.id,
+			    duration: 0,
+			    content: object3.content
+	};
+	for (let i=0; i< updateObject3.content.length; i++) {
+		updateObject3.content[i].transformations = [s];
+	}
+	let updateObject4 = {
+		    id: object4.id,
+		    duration: 0,
+		    content: object4.content
+	};
+	for (let i=0; i< updateObject4.content.length; i++) {
+		updateObject4.content[i].transformations = [s];
+	}
+	let updateObject5 = {
+		    id: object5.id,
+		    duration: 0,
+		    content: object5.content
+	};
+	for (let i=0; i< updateObject5.content.length; i++) {
+		updateObject5.content[i].transformations = [s];
+	}
+	let updateObject6 = {
+		    id: object6.id,
+		    duration: 0,
+		    content: object6.content
+	};
+	for (let i=0; i< updateObject6.content.length; i++) {
+		updateObject6.content[i].transformations = [s];
+	}
+	let updateObject7 = {
+		    id: object7.id,
+		    duration: 0,
+		    content: object7.content
+	};
+	for (let i=0; i< updateObject7.content.length; i++) {
+		updateObject7.content[i].transformations = [s];
+	}
+
+	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
+}
+
 
 function outputUpdate(vol) {
 	  var output = document.querySelector("#volume");
