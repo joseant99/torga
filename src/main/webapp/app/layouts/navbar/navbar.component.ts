@@ -13911,6 +13911,10 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 16) {
                                         meterpilotoapoyo = 3;
                                     }
+                                    if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 409) {
+                                        meterpilotoapoyo = 5;
+                                    }
+
                                     if (prodCarr[m][1]['apoyo']['productoApoyo']['id'] == 17) {
                                         meterpilotoapoyo = 6;
                                         if (prodCarr[m][1]['apoyo']['apoyoSecundario'] != undefined) {

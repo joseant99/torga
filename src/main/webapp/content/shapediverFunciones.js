@@ -184,6 +184,7 @@ function apiShape(id){
 		      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
 		      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
 		      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
+
 		    	      let arrPivot = api.scene.getData({
 		    	        name: "frente"
 		    	      }).data[0].data;
@@ -272,15 +273,15 @@ function apiShape(id){
 		          //paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
 		          if(i == 0){
 		        	  window.currScaleX = param.value / 10;
-		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoAncho(this.value);");
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoAncho(this.value);");
 		          }
 		          if(i == 1){
 		        	  window.currScaleY = param.value / 10;
-		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoFondo(this.value);");
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoFondo(this.value);");
 		          }
 		          if(i == 2){
 		        	  window.currScaleZ = param.value / 10;
-		        	  paramInput.setAttribute("oninput", "funcionAumentarTamañoAlto(this.value);");
+		        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoAlto(this.value);");
 		          }
 		          paramInput.setAttribute("max", (param.max/10));
 		          paramInput.setAttribute("class", "rangeInputgg");
@@ -291,10 +292,7 @@ function apiShape(id){
 		          else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
 		          else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
 		          paramInput.onchange = function() {
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.value * 10
-		            });
+		            
 		            if(param["name"] == "ANCHO"){
 		            	$("#ancho1").text(this.value);
 		            }
@@ -304,6 +302,50 @@ function apiShape(id){
 		            if(param["name"] == "FONDO"){
 		            	$("#fondoDatosDimen").text(this.value);
 		            }
+		            
+		            var currScaleX = $("#voydespues0").text();
+		            var currScaleY = $("#voydespues1").text();
+		            var currScaleZ = $("#voydespues2").text();
+		            api.parameters.updateAsync({
+			              id: param.id,
+			              value: this.value * 10
+			            });
+		            if(textura2 != undefined && textura2 != null){
+		            	for (let i = 0; i < parameters.data.length; i++) {
+		    				if(parameters.data[i]["name"] == "textura2"){
+		    					api.parameters.updateAsync({
+		    			            id: parameters.data[i]["id"],
+		    			            value: textura2
+		    			          });
+		    				}
+
+		    			}
+		            	
+		            }
+					if(textura != undefined && textura != null){
+						for (let i = 0; i < parameters.data.length; i++) {
+		    				if(parameters.data[i]["name"] == "textura"){
+		    					api.parameters.updateAsync({
+		    			            id: parameters.data[i]["id"],
+		    			            value: textura
+		    			          });
+		    				}
+
+		    			}            	
+							            	
+					}
+					if(textura6 != undefined && textura6 != null){
+						for (let i = 0; i < parameters.data.length; i++) {
+		    				if(parameters.data[i]["name"] == "textura6"){
+		    					api.parameters.updateAsync({
+		    			            id: parameters.data[i]["id"],
+		    			            value: textura6
+		    			          });
+		    				}
+
+		    			}
+						
+					}
 		            
 		            setTimeout(function() {
 		            	window.camaraposition = api.scene.camera.get();
@@ -317,11 +359,6 @@ function apiShape(id){
 		          paramInput.setAttribute("checked", param.value);
 		          paramInput.onchange = function() {
 		            console.log(this);
-		            api.parameters.updateAsync({
-		              id: param.id,
-		              value: this.checked
-		            });
-		            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
 		            api.scene.camera.zoomAsync()
 		          };
 		        
@@ -397,9 +434,286 @@ function apiShape(id){
 		
 		
 	}
+
+function apiShape1(id){
+	var rangeSlider = document.getElementById("rs-range-line");
+	var rangeSlider1 = document.getElementById("rs-range-line1");
+	var rangeSlider2 = document.getElementById("rs-range-line2");
+	var rangeBullet = document.getElementById("rs-bullet");
+
+	rangeSlider.addEventListener("input", showSliderValue, false);
+	rangeSlider1.addEventListener("input", showSliderValue1, false);
+	rangeSlider2.addEventListener("input", showSliderValue2, false);
+	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
+	$("#rs-range-line1").attr("onmouseup","cambiarVistaArmarioAltura()");
+	$("#rs-range-line2").attr("onmouseup","cambiarVistaArmarioFondo()");
+	$(".divBuscadorArticulos").css({"display":"block"});
+	$("#page-heading").css({"display":"none"});
+    $("#diviframeprueba").css({"display":"block"});
+    $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    var _container = document.getElementById('sdv-container');
+	// viewer settings
+	var _viewerSettings = {
+	  // container to use
+	  container: _container,
+	  // when creating the viewer, we want to get back an API v2 object
+	  api: {
+	    version: 2
+	  },
+	  // ticket for a ShapeDiver model
+	  ticket: id,
+	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+	  modelViewUrl: 'eu-central-1',
+	  showControlsInitial: true,
+	  showSettingsInitial: false
+	};
+	
+	// create the viewer, get back an API v2 object
+	window.api = new SDVApp.ParametricViewer(_viewerSettings);
+	
+	var viewerInit = false;
+	var parameters;
+	
+	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+	    if (!viewerInit) {
+	    	window.s = new THREE.Matrix4();
+	      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
+	      var updatedSettings = {
+	    		  scene : {
+	    			  camera : {
+	    				  rotationSpeed : 0.1,
+	    				  autoAdjust: true,
+	    				  restrictions :{
+	    					  rotation : {
+	    						  minAzimuthAngle: -75,
+	    						  minPolarAngle: 45,
+	    						  maxPolarAngle: 90,
+	    						  maxAzimuthAngle: 75
+	    						  }
+	      					}
+	      				}
+	      			}
+	      }
+	      
+	     
+	      api.updateSettingsAsync(updatedSettings);
+	      var globalDiv = document.getElementById("parameters");
+	      parameters = api.parameters.get();
+	      parameters.data.sort(function(a, b) {
+	        return a.order - b.order;
+	      });
+	      console.log(parameters.data);
+	      
+	      setTimeout(function() {
+            	window.camaraposition = api.scene.camera.get();
+            }, 1500);
+	      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
+	      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object2 = api.scene.get({name: "SueloGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object3 = api.scene.get({name: "Tabica geo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object4 = api.scene.get({name: "MolduraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
+
+	    	      
+	      for (let i = 0; i < parameters.data.length; i++) {
+	        let paramInput = null;
+	        let paramDiv = document.createElement("div");
+	        let param = parameters.data[i];
+	        let label = document.createElement("label");
+	        label.setAttribute("for", param.id);
+	        		
+	        if(i == 8){
+	        	param["hidden"] = false;
+	        }
+	        if(i == 0){
+	        	param["name"] = "ANCHO";
+	        }
+	        if(i == 1){
+	        	param["name"] = "FONDO";
+	        }
+	        if(i == 2){
+	        	param["name"] = "ALTO";
+	        }
+	        if(i == 3){
+	        	param["hidden"] = true;
+	        }
+	        label.innerHTML = param.name;
+	        if (param.type == "Int" || param.type == "Float" || param.type == "Even" || param.type == "Odd") {
+	          paramInput = document.createElement("input");
+	          paramInput12 = document.createElement("output");
+	          paramInput.setAttribute("id", param.id);
+	          paramInput.setAttribute("type", "range");
+	          paramInput.setAttribute("min", param.min/10);
+	          //paramInput.setAttribute("oninput", "this.nextElementSibling.value = this.value");
+	          if(i == 0){
+	        	  window.currScaleX = param.value / 10;
+	        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoAncho(this.value);");
+	          }
+	          if(i == 1){
+	        	  window.currScaleY = param.value / 10;
+	        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoFondo(this.value);");
+	          }
+	          if(i == 2){
+	        	  window.currScaleZ = param.value / 10;
+	        	  paramInput.setAttribute("oninput", "funcionAumentarTamanoAlto(this.value);");
+	          }
+	          paramInput.setAttribute("max", (param.max/10));
+	          paramInput.setAttribute("class", "rangeInputgg");
+	          paramInput.setAttribute("value", (param.value/10));
+	          window.valorDef = param.value/10;
+	          paramInput12.setAttribute("id", "voydespues"+i);
+	          if (param.type == "Int") paramInput.setAttribute("step", 1);
+	          else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
+	          else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
+	          paramInput.onchange = function() {
+	            
+	            if(param["name"] == "ANCHO"){
+	            	$("#ancho1").text(this.value);
+	            }
+	            if(param["name"] == "ALTO"){
+	            	$("#altoDatosDimen").text(this.value);
+	            }
+	            if(param["name"] == "FONDO"){
+	            	$("#fondoDatosDimen").text(this.value);
+	            }
+	            
+	            var currScaleX = $("#voydespues0").text();
+	            var currScaleY = $("#voydespues1").text();
+	            var currScaleZ = $("#voydespues2").text();
+	            api.parameters.updateAsync({
+		              id: param.id,
+		              value: this.value * 10
+		            });
+	            if(textura2 != undefined && textura2 != null){
+	            	for (let i = 0; i < parameters.data.length; i++) {
+	    				if(parameters.data[i]["name"] == "textura2"){
+	    					api.parameters.updateAsync({
+	    			            id: parameters.data[i]["id"],
+	    			            value: textura2
+	    			          });
+	    				}
+
+	    			}
+	            	
+	            }
+				if(textura != undefined && textura != null){
+					for (let i = 0; i < parameters.data.length; i++) {
+	    				if(parameters.data[i]["name"] == "textura"){
+	    					api.parameters.updateAsync({
+	    			            id: parameters.data[i]["id"],
+	    			            value: textura
+	    			          });
+	    				}
+
+	    			}            	
+						            	
+				}
+				if(textura6 != undefined && textura6 != null){
+					for (let i = 0; i < parameters.data.length; i++) {
+	    				if(parameters.data[i]["name"] == "textura6"){
+	    					api.parameters.updateAsync({
+	    			            id: parameters.data[i]["id"],
+	    			            value: textura6
+	    			          });
+	    				}
+
+	    			}
+					
+				}
+	            
+	            setTimeout(function() {
+	            	window.camaraposition = api.scene.camera.get();
+	            }, 1500);
+	            
+	          };
+	        } else if (param.type == "Bool") {
+	          paramInput = document.createElement("input");
+	          paramInput.setAttribute("id", param.id);
+	          paramInput.setAttribute("type", "checkbox");
+	          paramInput.setAttribute("checked", param.value);
+	          paramInput.onchange = function() {
+	            console.log(this);
+	            api.scene.camera.zoomAsync()
+	          };
+	        
+	        } else if (param.type == "Color") {
+	          paramInput = document.createElement("input");
+	          paramInput.setAttribute("id", param.id);
+	          paramInput.setAttribute("type", "color");
+	          paramInput.setAttribute("value", param.value);
+	          paramInput.onchange = function() {
+	            api.parameters.updateAsync({
+	              id: param.id,
+	              value: this.value
+	            });
+	            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+	            api.scene.camera.zoomAsync()
+	          };
+	        } else if (param.type == "StringList") {
+	          paramInput = document.createElement("select");
+	          paramInput.setAttribute("id", param.id);
+	          for (let j = 0; j < param.choices.length; j++) {
+	            let option = document.createElement("option");
+	            option.setAttribute("value", j);
+	            option.setAttribute("name", param.choices[j]);
+	            option.innerHTML = param.choices[j];
+	            if (param.value == j) option.setAttribute("selected", "");
+	            paramInput.appendChild(option);
+	          }
+	          paramInput.onchange = function() {
+	            api.parameters.updateAsync({
+	              id: param.id,
+	              value: this.value
+	            });
+	            api.scene.camera.zoomAsync();
+	            api.scene.camera.updateAsync({position:{x:1752.1604577050061,y:-1064.35000980438,z:311.8331380020649}, target:{x:699.6633891813408,y:254.5559136794404,z:59.28410887811541} });
+	            
+	          };
+	        }
+	        if (param.hidden) paramDiv.setAttribute("hidden", "");
+	        paramDiv.appendChild(label);
+	        paramDiv.appendChild(paramInput);
+	        paramDiv.appendChild(paramInput12);
+	        globalDiv.appendChild(paramDiv);
+	        $("#voydespues"+i).append(param.value / 10);
+	      }
+
+	      var exports = api.exports.get();
+	      for (let i = 0; i < exports.data.length; i++) {
+	        let exportAsset = exports.data[i];
+	        let exportDiv = document.createElement("div");
+	        let exportInput = document.createElement("input");
+	        exportInput.setAttribute("id", exportAsset.id);
+	        exportInput.setAttribute("type", "button");
+	        exportInput.setAttribute("name", exportAsset.name);
+	        exportInput.setAttribute("value", exportAsset.name);
+	        exportInput.onclick = function() {
+	          api.exports.requestAsync({
+	            id: this.id
+	          }).then(
+	            function(response) {
+	              let link = response.data.content[0].href;
+	              window.location = link;
+	            }
+	          );
+	        };
+	        exportDiv.appendChild(exportInput);
+	        globalDiv.appendChild(exportDiv);
+	      }
+	      
+	      viewerInit = true;
+	      
+	    }
+	  });
+	
+	
+}
 	
 
-var funcionAumentarTamañoAncho = function(val) {
+var funcionAumentarTamanoAncho = function(val) {
 	$("#voydespues0").val(val);
 	  s.elements[0] = (val*10) / (currScaleX*10);
 	  s.elements[5] = 1;
@@ -472,7 +786,7 @@ var funcionAumentarTamañoAncho = function(val) {
 
 	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
 }
-var funcionAumentarTamañoFondo = function(val) {
+var funcionAumentarTamanoFondo = function(val) {
 	$("#voydespues1").val(val);
 	  s.elements[0] = 1
 	  s.elements[5] = (val*10) / (currScaleY*10);
@@ -546,7 +860,7 @@ var funcionAumentarTamañoFondo = function(val) {
 	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
 
 }
-var funcionAumentarTamañoAlto= function(val) {
+var funcionAumentarTamanoAlto= function(val) {
 	$("#voydespues2").val(val);
 		s.elements[0] = 1
 	  s.elements[5] = 1;
@@ -619,7 +933,6 @@ var funcionAumentarTamañoAlto= function(val) {
 
 	  api.scene.updateAsync([updateObject,updateObject1,updateObject2,updateObject3,updateObject4,updateObject5,updateObject6,updateObject7], 'CommPlugin_1');
 }
-
 
 function outputUpdate(vol) {
 	  var output = document.querySelector("#volume");
@@ -2767,7 +3080,164 @@ function cambiarVistaArmario(tipo){
     });
   $("#codigodepsArm"+ codigo)[0].click();
   console.log(JSON.stringify(object));
+  setTimeout(function() {
+  		var hoverEffect = {
+			active: {
+		    name: "colorHighlight",
+		    options: {
+		      color: [100, 100, 100]
+		    }
+		  }
+		};
+
+		var selectEffect = {
+		  active: {
+		    name: "colorHighlight",
+		    options: {
+			     color: [255, 0, 0]
+				    }
+			 }
+		};
+		var puertaIzq = {
+				  scenePaths: [],
+				  transformations: [
+				    {
+				      delay: 0,
+				      duration: 500,
+				      type: "rotation",
+				      repeat: 0,
+				      //yoyo:true,
+				      rotationAxis: {
+				        x: 0,
+				        y: 0,
+				        z: 1
+				      },
+				      rotationDegree: 90,
+				      pivot: {}
+				    }
+				  ],
+				  reset: false
+		};
+		var rightTrans = {
+				  scenePaths: [],
+				  transformations: [
+				    {
+				      delay: 0,
+				      duration: 500,
+				      type: "rotation",
+				      repeat: 0,
+				      //yoyo:true,
+				      rotationAxis: {
+				        x: 0,
+				        y: 0,
+				        z: 1
+				      },
+				      rotationDegree: -90,
+				      pivot: {}
+				    }
+				  ],
+				  reset: false
+				};
+		
+			var selectableGroup = {
+				  id: "select",
+				  hoverable: true,
+				  hoverEffect: hoverEffect,
+				  //selectionEffect: selectEffect,
+				  selectable: true,
+				  selectionMode: "single"
+				};
+			
+			let arrPivot = api.scene.getData({
+    	        name: "puntoIzqPuertasIzquierda"
+    	      }).data[0].data;
+    	      var leftPivot = {
+    	        x: arrPivot[0],
+    	        y: arrPivot[1],
+    	        z: arrPivot[2]
+    	      };
+    	      
+    	      let arrPivot1 = api.scene.getData({
+      	        name: "puntoDerPuertasDerecha"
+      	      }).data[0].data;
+      	      var derPivot = {
+      	        x: arrPivot1[0],
+      	        y: arrPivot1[1],
+      	        z: arrPivot1[2]
+      	      };
+
+    	      puertaIzq.scenePaths = [
+    	        api.scene.get(
+    	          {
+    	            name: "PuertaIzquierda",
+    	            format: "glb"
+    	          },
+    	          "CommPlugin_1"
+    	        ).data[0].scenePath
+    	      ];
+    	      
+    	      rightTrans.scenePaths = [
+      	        api.scene.get(
+      	          {
+      	            name: "PuertaDerecha",
+      	            format: "glb"
+      	          },
+      	          "CommPlugin_1"
+      	        ).data[0].scenePath
+      	      ];
+    	      
+    	      puertaIzq.transformations[0].pivot = leftPivot;
+    	      rightTrans.transformations[0].pivot = derPivot;
+    	      api.scene.updateInteractionGroups(selectableGroup);
+    	      
+    	      var assets = api.scene.get(null, "CommPlugin_1");
+    	      var updateObjects = [];
+    	      for (let assetnum in assets.data) {
+    	        var asset = assets.data[assetnum];
+    	        if (
+    	          (asset.name == "PuertaIzquierda" ||
+    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
+    	        ) {
+    	          let updateObject = {
+    	            id: asset.id,
+    	            duration: 0,
+    	            interactionGroup: selectableGroup.id,
+    	            interactionMode: "global"
+    	          };
+    	          updateObjects.push(updateObject);
+    	        }
+    	      }
+    	          	      
+    	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
+    	      window.seadadoclic = 0;
+    	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(event){
+    	        console.log("SELECT_ON");
+    	        console.log(event);
+    	        let objID = event.scenePath.split(".")[1];
+    	        let selectedAsset = api.scene.get(
+    	          {
+    	            id: objID
+    	          },
+    	          "CommPlugin_1"
+    	        );
+    	        let name = selectedAsset.data[0].name;
+    	        if(name == "PuertaIzquierda"){
+    	        	let rot = puertaIzq.transformations[0].rotationDegree;
+	    	        puertaIzq.transformations[0].rotationDegree = -rot;
+    	            api.scene.setLiveTransformation([puertaIzq]);
+    	        }
+    	        if(name == "PuertaDerecha"){
+    	        	let rot = rightTrans.transformations[0].rotationDegree;
+    	        	rightTrans.transformations[0].rotationDegree = -rot;
+    	            api.scene.setLiveTransformation([rightTrans]);
+    	        }
+    	        api.scene.updateSelected(null, api.scene.getSelected());
+	    	        
+    	      });
+    	      
+  }, 1500);
 }
+
 function showSliderValue() {
 		var rangeSlider = document.getElementById("rs-range-line");
 		var rangeBullet = document.getElementById("rs-bullet");

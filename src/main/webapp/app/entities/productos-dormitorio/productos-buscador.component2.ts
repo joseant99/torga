@@ -8099,7 +8099,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo1 #apoyoModal' + 2).append(
                                         '<strong><p style="text-align:center;font-size: 14px;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                            ' Remetido 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                             } else {
@@ -8152,7 +8152,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo1 #apoyoModal' + 7).append(
                                         '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                            ' Remetida 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                                 if (data.body[w]['id'] == 411) {
@@ -14309,7 +14309,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo #apoyoModal' + 2).append(
                                         '<strong><p style="text-align:center;font-size: 14px;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                            ' Remetido 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                             } else {
@@ -14362,7 +14362,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo #apoyoModal' + 7).append(
                                         '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                            ' Remetida 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                                 if (data.body[w]['id'] == 411) {
@@ -14551,7 +14551,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo #apoyoModal' + 2).append(
                                         '<strong><p style="text-align:center;font-size: 14px;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                            ' Remetido 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                             } else {
@@ -14604,7 +14604,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo #apoyoModal' + 7).append(
                                         '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                            ' Remetida 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                                 if (data.body[w]['id'] == 411) {
@@ -20327,7 +20327,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo2 #apoyoModal' + 2).append(
                                         '<strong><p style="text-align:center;font-size: 14px;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                            ' Remetido 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                             } else {
@@ -20380,7 +20380,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                     $('#modalApoyo2 #apoyoModal' + 7).append(
                                         '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                             data.body[w]['nombre'] +
-                                            ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                            ' Remetida 3 cm a ambos lados</strong></p>'
                                     );
                                 }
                                 if (data.body[w]['id'] == 411) {
@@ -26547,7 +26547,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         $('#modalApoyo #apoyoModal' + 2).append(
                                             '<strong><p style="text-align:center;font-size: 14px;">' +
                                                 data.body[w]['nombre'] +
-                                                ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                                ' Remetido 3 cm a ambos lados</strong></p>'
                                         );
                                     }
                                 } else {
@@ -26600,7 +26600,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         $('#modalApoyo #apoyoModal' + 7).append(
                                             '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                                 data.body[w]['nombre'] +
-                                                ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                                ' Remetida 3 cm a ambos lados</strong></p>'
                                         );
                                     }
                                     if (data.body[w]['id'] == 411) {
@@ -31043,10 +31043,10 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             this.tiposApoyoService.findBus1(idApoyo).subscribe(data => {
                 datos = data['body'];
-                if (idApoyo != 32) {
-                    $('#fondoDatosDimen').text('44');
-                    $('#productoCalculadora1 #datos1 #fondo1').text('44');
-                }
+                //if (idApoyo != 32) {
+                //  $('#fondoDatosDimen').text('44');
+                // $('#productoCalculadora1 #datos1 #fondo1').text('44');
+                //}
                 $.each(datos, function(index, value) {
                     if (idApoyo == 15 || idApoyo == 16 || idApoyo == 403) {
                         if (idApoyo == 16) {

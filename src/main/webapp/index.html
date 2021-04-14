@@ -247,6 +247,7 @@ $("#divDentroCalcu").scroll(function() {
 			}
 		}
 	}
+	
 	function cambiardecolor(id,url){
 		var parameters = api.parameters.get();
 		if(id == 1){
@@ -257,29 +258,83 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
-			
+				window.textura2 = url;
 		}
 		if(id == 2){
 				
-				api.scene.updateAsync({
+				api.scene.updateAsync([{
 					id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
 					{
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
-				}, "CommPlugin_1");
+				}, {
+					id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}], "CommPlugin_1");
+				/**
 				api.scene.updateAsync({
 					id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
@@ -287,12 +342,14 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
+				
+				
+				
 				api.scene.updateAsync({
 					id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
@@ -300,25 +357,25 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
 				api.scene.updateAsync({
-					id: api.scene.get({ name: "MoldurasGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
 					{
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
+				
+				
 				api.scene.updateAsync({
 					id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
@@ -326,28 +383,26 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
-				}, "CommPlugin_1");
+				},  "CommPlugin_1");
 				
 				api.scene.updateAsync({
-					id: api.scene.get({ name: "CostadosIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
 					{
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
-	
-			
+		**/
+				window.textura = url;
 		}
 		if(id == 3){
 				api.scene.updateAsync({
@@ -357,13 +412,12 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
-							color: [255, 0, 0, 255],
 							bitmaptexture: url
 						}
 					}
 					]
 				}, "CommPlugin_1");
-				
+				window.textura6 = url;
 			
 		}
 		setTimeout(function() {
@@ -371,6 +425,7 @@ $("#divDentroCalcu").scroll(function() {
         }, 1500);
 		
 	}
+
 	
 	function saberdondeestapuesto(){
 
