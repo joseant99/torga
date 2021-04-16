@@ -333,6 +333,17 @@ $("#divDentroCalcu").scroll(function() {
 						}
 					}
 					]
+				},{
+					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: 'https://dl.dropboxusercontent.com/s/gff45pf2oswf77j/image.png?dl=1'
+						}
+					}
+					]
 				}], "CommPlugin_1");
 				/**
 				api.scene.updateAsync({
@@ -405,7 +416,7 @@ $("#divDentroCalcu").scroll(function() {
 				window.textura = url;
 		}
 		if(id == 3){
-				api.scene.updateAsync({
+				api.scene.updateAsync([{
 					id: api.scene.get({ name: "FrenteGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
 					{
@@ -416,9 +427,20 @@ $("#divDentroCalcu").scroll(function() {
 						}
 					}
 					]
-				}, "CommPlugin_1");
+				},{
+					id: api.scene.get({ name: "FrenteGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: 'https://dl.dropboxusercontent.com/s/gff45pf2oswf77j/image.png?dl=1'
+						}
+					}
+					]
+				}], "CommPlugin_1");
 				window.textura6 = url;
-			
+				
 		}
 		setTimeout(function() {
         	window.camaraposition = api.scene.camera.get();

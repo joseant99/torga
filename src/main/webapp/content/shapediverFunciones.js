@@ -3069,6 +3069,7 @@ function cambiarVistaArmario(tipo){
   }
   **/
   object["costados"] = array;
+  window.armario = armario;
   object["altura"] = alto * 10;
   object["fondo"] = fondo * 10;
   object["1puerta"] = arrayPuertas;
@@ -3098,6 +3099,7 @@ function cambiarVistaArmario(tipo){
 				    }
 			 }
 		};
+		if(window.armario == 2 || window.armario == 3){
 		var puertaIzq = {
 				  scenePaths: [],
 				  transformations: [
@@ -3202,14 +3204,784 @@ function cambiarVistaArmario(tipo){
     	            id: asset.id,
     	            duration: 0,
     	            interactionGroup: selectableGroup.id,
-    	            interactionMode: "global"
+    	            interactionMode: 'SUB'
     	          };
     	          updateObjects.push(updateObject);
     	        }
     	      }
-    	          	      
+		}	
+		
+		if(window.armario == 4 || window.armario == 5){
+			var puertaIzq = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var rightTrans = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			var rightTrans1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+				var selectableGroup = {
+					  id: "select",
+					  hoverable: true,
+					  hoverEffect: hoverEffect,
+					  //selectionEffect: selectEffect,
+					  selectable: true,
+					  selectionMode: "single"
+					};
+				
+				let arrPivot = api.scene.getData({
+	    	        name: "puntoIzqPuertasIzquierda"
+	    	      }).data[0].data;
+	    	      var leftPivot = {
+	    	        x: arrPivot[0][0],
+	    	        y: arrPivot[0][1],
+	    	        z: arrPivot[0][2]
+	    	      };
+	    	      var leftPivot1 = {
+	  	    	        x: arrPivot[1][0],
+	  	    	        y: arrPivot[1][1],
+	  	    	        z: arrPivot[1][2]
+	  	    	      };
+	    	      
+	    	      let arrPivot1 = api.scene.getData({
+	      	        name: "puntoDerPuertasDerecha"
+	      	      }).data[0].data;
+	      	      var derPivot = {
+	      	        x: arrPivot1[0][0],
+	      	        y: arrPivot1[0][1],
+	      	        z: arrPivot1[0][2]
+	      	      };
+	      	    var derPivot1 = {
+		      	        x: arrPivot1[1][0],
+		      	        y: arrPivot1[1][1],
+		      	        z: arrPivot1[1][2]
+		      	      };
+
+	    	      puertaIzq.scenePaths = [
+	    	        api.scene.get(
+	    	          {
+	    	            name: "PuertaIzquierda",
+	    	            format: "glb"
+	    	          },
+	    	          "CommPlugin_1"
+	    	        ).data[0].scenePath
+	    	      ];
+	    	      
+	    	      rightTrans.scenePaths = [
+	      	        api.scene.get(
+	      	          {
+	      	            name: "PuertaDerecha",
+	      	            format: "glb"
+	      	          },
+	      	          "CommPlugin_1"
+	      	        ).data[0].scenePath
+	      	      ];
+	    	      
+	    	      puertaIzq1.scenePaths = [
+		    	        api.scene.get(
+		    	          {
+		    	            name: "PuertaIzquierda",
+		    	            format: "glb"
+		    	          },
+		    	          "CommPlugin_1"
+		    	        ).data[0].scenePath
+		    	      ];
+		    	      
+		    	      rightTrans1.scenePaths = [
+		      	        api.scene.get(
+		      	          {
+		      	            name: "PuertaDerecha",
+		      	            format: "glb"
+		      	          },
+		      	          "CommPlugin_1"
+		      	        ).data[0].scenePath
+		      	      ];
+	    	      
+	    	      puertaIzq.transformations[0].pivot = leftPivot;
+	    	      rightTrans.transformations[0].pivot = derPivot;
+	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
+	    	      rightTrans1.transformations[0].pivot = derPivot1;
+	    	      api.scene.updateInteractionGroups(selectableGroup);
+	    	      
+	    	      var assets = api.scene.get(null, "CommPlugin_1");
+	    	      var updateObjects = [];
+	    	      for (let assetnum in assets.data) {
+	    	        var asset = assets.data[assetnum];
+	    	        if (
+	    	          (asset.name == "PuertaIzquierda" ||
+	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
+	    	        ) {
+	    	          let updateObject = {
+	    	            id: asset.id,
+	    	            duration: 0,
+	    	            interactionGroup: selectableGroup.id,
+	    	            interactionMode: 'SUB'
+	    	          };
+	    	          updateObjects.push(updateObject);
+	    	        }
+	    	      }
+			}
+		
+		if(window.armario == 6 || window.armario == 7){
+			var puertaIzq = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq2 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var rightTrans = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			var rightTrans1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+			var rightTrans2 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+				var selectableGroup = {
+					  id: "select",
+					  hoverable: true,
+					  hoverEffect: hoverEffect,
+					  //selectionEffect: selectEffect,
+					  selectable: true,
+					  selectionMode: "single"
+					};
+				
+				let arrPivot = api.scene.getData({
+	    	        name: "puntoIzqPuertasIzquierda"
+	    	      }).data[0].data;
+	    	      var leftPivot = {
+	    	        x: arrPivot[0][0],
+	    	        y: arrPivot[0][1],
+	    	        z: arrPivot[0][2]
+	    	      };
+	    	      var leftPivot1 = {
+	  	    	        x: arrPivot[1][0],
+	  	    	        y: arrPivot[1][1],
+	  	    	        z: arrPivot[1][2]
+	  	    	      };
+	    	      var leftPivot2 = {
+		  	    	        x: arrPivot[2][0],
+		  	    	        y: arrPivot[2][1],
+		  	    	        z: arrPivot[2][2]
+		  	    	      };
+	    	      let arrPivot1 = api.scene.getData({
+	      	        name: "puntoDerPuertasDerecha"
+	      	      }).data[0].data;
+	      	      var derPivot = {
+	      	        x: arrPivot1[0][0],
+	      	        y: arrPivot1[0][1],
+	      	        z: arrPivot1[0][2]
+	      	      };
+	      	    var derPivot1 = {
+		      	        x: arrPivot1[1][0],
+		      	        y: arrPivot1[1][1],
+		      	        z: arrPivot1[1][2]
+		      	      };
+	      	  var derPivot2 = {
+		      	        x: arrPivot1[2][0],
+		      	        y: arrPivot1[2][1],
+		      	        z: arrPivot1[2][2]
+		      	      };
+
+	    	      puertaIzq.scenePaths = [
+	    	        api.scene.get(
+	    	          {
+	    	            name: "PuertaIzquierda",
+	    	            format: "glb"
+	    	          },
+	    	          "CommPlugin_1"
+	    	        ).data[0].scenePath
+	    	      ];
+	    	      
+	    	      rightTrans.scenePaths = [
+	      	        api.scene.get(
+	      	          {
+	      	            name: "PuertaDerecha",
+	      	            format: "glb"
+	      	          },
+	      	          "CommPlugin_1"
+	      	        ).data[0].scenePath
+	      	      ];
+	    	      
+	    	      puertaIzq1.scenePaths = [
+		    	        api.scene.get(
+		    	          {
+		    	            name: "PuertaIzquierda",
+		    	            format: "glb"
+		    	          },
+		    	          "CommPlugin_1"
+		    	        ).data[0].scenePath
+		    	      ];
+		    	      
+		    	      rightTrans1.scenePaths = [
+		      	        api.scene.get(
+		      	          {
+		      	            name: "PuertaDerecha",
+		      	            format: "glb"
+		      	          },
+		      	          "CommPlugin_1"
+		      	        ).data[0].scenePath
+		      	      ];
+		    	      
+		    	      puertaIzq2.scenePaths = [
+			    	        api.scene.get(
+			    	          {
+			    	            name: "PuertaIzquierda",
+			    	            format: "glb"
+			    	          },
+			    	          "CommPlugin_1"
+			    	        ).data[0].scenePath
+			    	      ];
+			    	      
+			    	      rightTrans2.scenePaths = [
+			      	        api.scene.get(
+			      	          {
+			      	            name: "PuertaDerecha",
+			      	            format: "glb"
+			      	          },
+			      	          "CommPlugin_1"
+			      	        ).data[0].scenePath
+			      	      ];
+	    	      
+	    	      puertaIzq.transformations[0].pivot = leftPivot;
+	    	      rightTrans.transformations[0].pivot = derPivot;
+	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
+	    	      rightTrans1.transformations[0].pivot = derPivot1;
+	    	      puertaIzq2.transformations[0].pivot = leftPivot2;
+	    	      rightTrans2.transformations[0].pivot = derPivot2;
+	    	      api.scene.updateInteractionGroups(selectableGroup);
+	    	      
+	    	      var assets = api.scene.get(null, "CommPlugin_1");
+	    	      var updateObjects = [];
+	    	      for (let assetnum in assets.data) {
+	    	        var asset = assets.data[assetnum];
+	    	        if (
+	    	          (asset.name == "PuertaIzquierda" ||
+	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
+	    	        ) {
+	    	          let updateObject = {
+	    	            id: asset.id,
+	    	            duration: 0,
+	    	            interactionGroup: selectableGroup.id,
+	    	            interactionMode: 'SUB'
+	    	          };
+	    	          updateObjects.push(updateObject);
+	    	        }
+	    	      }
+			}
+		
+		if(window.armario == 8){
+			var puertaIzq = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq2 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var puertaIzq3 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+			var rightTrans = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			var rightTrans1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+			var rightTrans2 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+			var rightTrans3 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			
+				var selectableGroup = {
+					  id: "select",
+					  hoverable: true,
+					  hoverEffect: hoverEffect,
+					  //selectionEffect: selectEffect,
+					  selectable: true,
+					  selectionMode: "single"
+					};
+				
+				let arrPivot = api.scene.getData({
+	    	        name: "puntoIzqPuertasIzquierda"
+	    	      }).data[0].data;
+	    	      var leftPivot = {
+	    	        x: arrPivot[0][0],
+	    	        y: arrPivot[0][1],
+	    	        z: arrPivot[0][2]
+	    	      };
+	    	      var leftPivot1 = {
+	  	    	        x: arrPivot[1][0],
+	  	    	        y: arrPivot[1][1],
+	  	    	        z: arrPivot[1][2]
+	  	    	      };
+	    	      var leftPivot2 = {
+		  	    	        x: arrPivot[2][0],
+		  	    	        y: arrPivot[2][1],
+		  	    	        z: arrPivot[2][2]
+		  	    	      };
+	    	      var leftPivot3 = {
+		  	    	        x: arrPivot[3][0],
+		  	    	        y: arrPivot[3][1],
+		  	    	        z: arrPivot[3][2]
+		  	    	      };
+	    	      let arrPivot1 = api.scene.getData({
+	      	        name: "puntoDerPuertasDerecha"
+	      	      }).data[0].data;
+	      	      var derPivot = {
+	      	        x: arrPivot1[0][0],
+	      	        y: arrPivot1[0][1],
+	      	        z: arrPivot1[0][2]
+	      	      };
+	      	    var derPivot1 = {
+		      	        x: arrPivot1[1][0],
+		      	        y: arrPivot1[1][1],
+		      	        z: arrPivot1[1][2]
+		      	      };
+	      	  var derPivot2 = {
+		      	        x: arrPivot1[2][0],
+		      	        y: arrPivot1[2][1],
+		      	        z: arrPivot1[2][2]
+		      	      };
+	      	var derPivot3 = {
+	      	        x: arrPivot1[3][0],
+	      	        y: arrPivot1[3][1],
+	      	        z: arrPivot1[3][2]
+	      	      };
+
+	    	      puertaIzq.scenePaths = [
+	    	        api.scene.get(
+	    	          {
+	    	            name: "PuertaIzquierda",
+	    	            format: "glb"
+	    	          },
+	    	          "CommPlugin_1"
+	    	        ).data[0].scenePath
+	    	      ];
+	    	      
+	    	      rightTrans.scenePaths = [
+	      	        api.scene.get(
+	      	          {
+	      	            name: "PuertaDerecha",
+	      	            format: "glb"
+	      	          },
+	      	          "CommPlugin_1"
+	      	        ).data[0].scenePath
+	      	      ];
+	    	      
+	    	      puertaIzq1.scenePaths = [
+		    	        api.scene.get(
+		    	          {
+		    	            name: "PuertaIzquierda",
+		    	            format: "glb"
+		    	          },
+		    	          "CommPlugin_1"
+		    	        ).data[0].scenePath
+		    	      ];
+		    	      
+		    	      rightTrans1.scenePaths = [
+		      	        api.scene.get(
+		      	          {
+		      	            name: "PuertaDerecha",
+		      	            format: "glb"
+		      	          },
+		      	          "CommPlugin_1"
+		      	        ).data[0].scenePath
+		      	      ];
+		    	      
+		    	      puertaIzq2.scenePaths = [
+			    	        api.scene.get(
+			    	          {
+			    	            name: "PuertaIzquierda",
+			    	            format: "glb"
+			    	          },
+			    	          "CommPlugin_1"
+			    	        ).data[0].scenePath
+			    	      ];
+			    	      
+			    	      rightTrans2.scenePaths = [
+			      	        api.scene.get(
+			      	          {
+			      	            name: "PuertaDerecha",
+			      	            format: "glb"
+			      	          },
+			      	          "CommPlugin_1"
+			      	        ).data[0].scenePath
+			      	      ];
+			    	      puertaIzq3.scenePaths = [
+				    	        api.scene.get(
+				    	          {
+				    	            name: "PuertaIzquierda",
+				    	            format: "glb"
+				    	          },
+				    	          "CommPlugin_1"
+				    	        ).data[0].scenePath
+				    	      ];
+				    	      
+				    	      rightTrans3.scenePaths = [
+				      	        api.scene.get(
+				      	          {
+				      	            name: "PuertaDerecha",
+				      	            format: "glb"
+				      	          },
+				      	          "CommPlugin_1"
+				      	        ).data[0].scenePath
+				      	      ];
+	    	      
+	    	      puertaIzq.transformations[0].pivot = leftPivot;
+	    	      rightTrans.transformations[0].pivot = derPivot;
+	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
+	    	      rightTrans1.transformations[0].pivot = derPivot1;
+	    	      puertaIzq2.transformations[0].pivot = leftPivot2;
+	    	      rightTrans2.transformations[0].pivot = derPivot2;
+	    	      puertaIzq3.transformations[0].pivot = leftPivot3;
+	    	      rightTrans3.transformations[0].pivot = derPivot3;
+	    	      api.scene.updateInteractionGroups(selectableGroup);
+	    	      
+	    	      var assets = api.scene.get(null, "CommPlugin_1");
+	    	      var updateObjects = [];
+	    	      for (let assetnum in assets.data) {
+	    	        var asset = assets.data[assetnum];
+	    	        if (
+	    	          (asset.name == "PuertaIzquierda" ||
+	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
+	    	        ) {
+	    	          let updateObject = {
+	    	            id: asset.id,
+	    	            duration: 0,
+	    	            interactionGroup: selectableGroup.id,
+	    	            interactionMode: 'SUB'
+	    	          };
+	    	          updateObjects.push(updateObject);
+	    	        }
+	    	      }
+			}
     	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
     	      window.seadadoclic = 0;
+    	      window.numeroPath = 0;
+    	      
     	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(event){
     	        console.log("SELECT_ON");
     	        console.log(event);
@@ -3220,22 +3992,196 @@ function cambiarVistaArmario(tipo){
     	          },
     	          "CommPlugin_1"
     	        );
-    	        let name = selectedAsset.data[0].name;
-    	        if(name == "PuertaIzquierda"){
-    	        	let rot = puertaIzq.transformations[0].rotationDegree;
-	    	        puertaIzq.transformations[0].rotationDegree = -rot;
-    	            api.scene.setLiveTransformation([puertaIzq]);
-    	        }
-    	        if(name == "PuertaDerecha"){
-    	        	let rot = rightTrans.transformations[0].rotationDegree;
-    	        	rightTrans.transformations[0].rotationDegree = -rot;
-    	            api.scene.setLiveTransformation([rightTrans]);
-    	        }
+    	        
+    	        	if(window.armario == 2 || window.armario == 3){
+    	        		if(numeroPath == 0){
+    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
+        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
+        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
+        	        	
+        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
+    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
+        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
+        	        		
+        	        		window.numeroPath = 1;
+    	        		}
+	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
+		    	        puertaIzq.transformations[0].rotationDegree = -rot;
+	    	            api.scene.setLiveTransformation([puertaIzq]);
+	    	        
+	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
+	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
+	    	            api.scene.setLiveTransformation([rightTrans]);
+    	        	}
+    	        	if(window.armario == 4 || window.armario == 5){
+    	        		if(numeroPath == 0){
+    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
+        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
+        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
+        	        	
+        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
+    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
+        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
+        	        		
+        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
+    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
+    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
+    	    	            
+    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
+    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
+        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
+        	        		
+        	        		window.numeroPath = 1;
+    	        		}
+    	        		
+	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
+		    	        puertaIzq.transformations[0].rotationDegree = -rot;
+	    	            api.scene.setLiveTransformation([puertaIzq]);
+	    	            
+	    	            
+	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
+	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
+	    	            api.scene.setLiveTransformation([rightTrans]);
+	    	            
+	    	            
+	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
+	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
+	    	            api.scene.setLiveTransformation([puertaIzq1]);
+	    	            
+	    	             
+	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
+	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
+	    	            api.scene.setLiveTransformation([rightTrans1]);
+    	        	}
+    	        	
+    	        	if(window.armario == 6 || window.armario == 7){
+    	        		if(numeroPath == 0){
+    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
+        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
+        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
+        	        	
+        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
+    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
+        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
+        	        		
+        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
+    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
+    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
+    	    	            
+    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
+    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
+        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
+        	        		
+        	        		var pathArpuerta5 = puertaIzq2.scenePaths[0];
+        	        		pathArpuerta5 = pathArpuerta5 + ".content_2";
+    	    	            puertaIzq2.scenePaths[0] = pathArpuerta5;
+    	    	            
+    	    	            var pathArpuerta6 = rightTrans2.scenePaths[0];
+    	    	            pathArpuerta6 = pathArpuerta6 + ".content_2";
+        	        		rightTrans2.scenePaths[0] = pathArpuerta6;
+        	        		
+        	        		window.numeroPath = 1;
+    	        		}
+    	        		
+	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
+		    	        puertaIzq.transformations[0].rotationDegree = -rot;
+	    	            api.scene.setLiveTransformation([puertaIzq]);
+	    	            
+	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
+	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
+	    	            api.scene.setLiveTransformation([rightTrans]);
+	    	            
+	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
+	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
+	    	            api.scene.setLiveTransformation([puertaIzq1]);
+	    	            
+	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
+	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
+	    	            api.scene.setLiveTransformation([rightTrans1]);
+	    	            
+	    	            let rot4 = puertaIzq2.transformations[0].rotationDegree;
+	    	        	puertaIzq2.transformations[0].rotationDegree = -rot4;
+	    	            api.scene.setLiveTransformation([puertaIzq2]);
+	    	            
+	    	        	let rot5 = rightTrans2.transformations[0].rotationDegree;
+	    	        	rightTrans2.transformations[0].rotationDegree = -rot5;
+	    	            api.scene.setLiveTransformation([rightTrans2]);
+    	        	}
+    	        	
+    	        	if(window.armario == 8){
+    	        		if(numeroPath == 0){
+    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
+        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
+        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
+        	        	
+        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
+    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
+        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
+        	        		
+        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
+    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
+    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
+    	    	            
+    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
+    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
+        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
+        	        		
+        	        		var pathArpuerta5 = puertaIzq2.scenePaths[0];
+        	        		pathArpuerta5 = pathArpuerta5 + ".content_2";
+    	    	            puertaIzq2.scenePaths[0] = pathArpuerta5;
+    	    	            
+    	    	            var pathArpuerta6 = rightTrans2.scenePaths[0];
+    	    	            pathArpuerta6 = pathArpuerta6 + ".content_2";
+        	        		rightTrans2.scenePaths[0] = pathArpuerta6;
+        	        		
+        	        		var pathArpuerta7 = puertaIzq3.scenePaths[0];
+        	        		pathArpuerta7 = pathArpuerta7 + ".content_3";
+    	    	            puertaIzq3.scenePaths[0] = pathArpuerta7;
+        	        		
+        	        		var pathArpuerta8 = rightTrans3.scenePaths[0];
+        	        		pathArpuerta8 = pathArpuerta8 + ".content_3";
+        	        		rightTrans3.scenePaths[0] = pathArpuerta8;
+        	        		
+        	        		window.numeroPath = 1;
+    	        		}
+    	        		
+	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
+		    	        puertaIzq.transformations[0].rotationDegree = -rot;
+	    	            api.scene.setLiveTransformation([puertaIzq]);
+	    	            
+	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
+	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
+	    	            api.scene.setLiveTransformation([rightTrans]);
+	    	            
+	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
+	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
+	    	            api.scene.setLiveTransformation([puertaIzq1]);
+	    	            
+	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
+	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
+	    	            api.scene.setLiveTransformation([rightTrans1]);
+	    	            
+	    	            let rot4 = puertaIzq2.transformations[0].rotationDegree;
+	    	        	puertaIzq2.transformations[0].rotationDegree = -rot4;
+	    	            api.scene.setLiveTransformation([puertaIzq2]);
+	    	            
+	    	        	let rot5 = rightTrans2.transformations[0].rotationDegree;
+	    	        	rightTrans2.transformations[0].rotationDegree = -rot5;
+	    	            api.scene.setLiveTransformation([rightTrans2]);
+	    	            
+	    	            let rot6 = puertaIzq3.transformations[0].rotationDegree;
+	    	            puertaIzq3.transformations[0].rotationDegree = -rot6;
+	    	            api.scene.setLiveTransformation([puertaIzq3]);
+	    	            
+	    	        	let rot7 = rightTrans3.transformations[0].rotationDegree;
+	    	        	rightTrans3.transformations[0].rotationDegree = -rot7;
+	    	            api.scene.setLiveTransformation([rightTrans3]);
+    	        	}
     	        api.scene.updateSelected(null, api.scene.getSelected());
 	    	        
     	      });
     	      
-  }, 1500);
+  }, 2500);
 }
 
 function showSliderValue() {

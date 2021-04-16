@@ -812,7 +812,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let aca of productosDormitorioModal; let i=index;" class="classintdivmen{{i}}" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal" (click)="this.armariosDormitorioComponent.pintarInteriores(aca.nombre)"><img title="Foto de linea de codigo" class="tirador" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
+		          <div *ngFor="let aca of productosDormitorioModal; let i=index;" class="classintdivmen{{i}}" style="float:left; width:280px; height:280px ;margin-left:80px;margin-top: 30px;margin-bottom:70px" id="tirador012" data-dismiss="modal" (click)="enviarInterioresArmario(aca.nombre)"><img title="Foto de linea de codigo" class="tirador" [src]="'data:' + aca.imagenContentType + ';base64,' + aca.imagen" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><p id="textoInteriorModal" style="text-align:center;font-size:25px">INT {{aca.nombre}}</p></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -862,7 +862,7 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	          
-		          <div *ngFor="let tirador of interiorArmario;" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{tirador.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tirador.imagenContentType + ';base64,' + tirador.imagen" (click)="this.armariosDormitorioComponent.cogidoInterior(tirador.id)" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
+		          <div *ngFor="let tirador of interiorArmario;" style="float:left; width:25%; height:500px ;margin-left:80px;margin-top: 30px;" id="tirador0" data-dismiss="modal"><p style="text-align:center;font-size:25px">{{tirador.nombre}}</p><img title="Foto de linea de codigo"" class="tirador" [src]="'data:' + tirador.imagenContentType + ';base64,' + tirador.imagen" (click)="enviarInterioresArmario(tirador.id)" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="100%" width="100%" alt="productosDormitorio image"/></div>  
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -1920,10 +1920,10 @@
         <div id="idNativComedoresDiv" style="z-index:2;margin-bottom: 65px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;"><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textoStrongNativ"><strong>NATIV COMEDORES</strong></span></div>
         <div style="width:100%;padding-top: 135px;" id="idDivDentroImagenes">
         	
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('209986ce38289ebfbf5a79e871f5839dabb1dca742ccdc7b96afcb410611e23c2d8bdc77d852937fa68e3068412138e2c210ee48b9b4faf3189c637a29ddc1eb50330516086e2de804663d9c4f56cbb012ae5dbc47786b75be66f309ea97440c1fef3a37bf1acfde58af2bc8c330f9a7867058d2c8fc-634a7e104c6382835d23c71c04e79904',0)" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('f177b8adbf20888f477482fd3ad8a353b103fa82bf5437b7de33748c9ad93fc113c1b498f7d3f7fa6f56b1f4f0ce7145edc3bac78d691e0c7ed0ad90abd0121db523e32402428fd5782b4faae5d6ba019e97385f8de9097400a6e3edc8304c74e5c974f19b393c4a484a98276529ffa3f09fe2628c51-d2fe11c594209653d04f4abc81ba6c83',0)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('5f733cf4c00b0fdbe16ed8940e1a77c64f67c5010f892a203e40359075b66bced7b9a4ae0bd35ec4b817d4223c432c51da753cc73a9707880ea887f3e6002f3552d2848dcede6fc36b49ce7715158dc68c2c4c57a9bb800c35f291380a08a1f0baa014b64bc9baf4374d35fb4e44d491fd8a900760c7-41016401c642a2e836c9b11d44a4c3c8',1)" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('0f8f3472a4c17f8d221b8ac0c5357ae2dddc2c5322b48ac85c92f3f7afd391fb8342d2d8acdc0b63b19d62f3fcd8a2b08e3ec409703ee1aa7a1af5226c8c3d9912f3a7afa27ad894c6382eee09b04e26f408bfe2b255043616aeede8e8722fc558cd347aae6b6a302dd253bbb8fdb30ecab87a9420cc-a5518f0c6caaad47c85d8b70495df819',1)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
         	<a id="cargarApiShape" style="display:none">prueba</a>

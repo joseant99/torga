@@ -282,6 +282,88 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('.selectfondoArmBatientes').append('<option value="' + i + '">' + i + '</option>');
         }
     }
+
+    public enviarInterioresArmario(id) {
+        var altura = parseFloat($('#rs-range-line1').val());
+        var hueco = this.armariosDormitorioComponent.huecoPinta;
+        alert(hueco);
+        var arrayEstantes = [];
+        var cont = 0;
+        var interiores = this.productosDormitorioModal;
+        for (let i = 0; i < interiores.length; i++) {
+            if (interiores[i]['nombre'] == id) {
+                if (id == 1) {
+                    if (altura > 225) {
+                        arrayEstantes[0] = 1740;
+                    } else {
+                        arrayEstantes[0] = 1980;
+                    }
+                }
+                if (id == 2) {
+                    if (altura > 225) {
+                        arrayEstantes[0] = (altura - 90) / 2;
+                    } else {
+                        arrayEstantes[0] = (altura - 90) / 2;
+                    }
+                }
+                if (id == 3) {
+                    if (altura > 225) {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 1740;
+                    } else {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 1980;
+                    }
+                }
+                if (id == 4) {
+                    if (altura > 225) {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 1146;
+                        arrayEstantes[2] = 1740;
+                    } else {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 1266;
+                        arrayEstantes[2] = 1980;
+                    }
+                }
+                if (id == 5) {
+                    if (altura > 225) {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 948;
+                        arrayEstantes[2] = 1344;
+                        arrayEstantes[3] = 1740;
+                    } else {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 1028;
+                        arrayEstantes[2] = 1504;
+                        arrayEstantes[3] = 1980;
+                    }
+                }
+            }
+        }
+        var arrayHueco1 = [];
+        var arrayHueco2 = [];
+        var arrayHueco3 = [];
+        var arrayHueco4 = [];
+        if (hueco == 1) {
+            arrayHueco1 = arrayEstantes;
+        }
+        if (hueco == 2) {
+            arrayHueco2 = arrayEstantes;
+        }
+        if (hueco == 3) {
+            arrayHueco3 = arrayEstantes;
+        }
+        if (hueco == 4) {
+            arrayHueco4 = arrayEstantes;
+        }
+        window.arrayhueco1 = arrayHueco1;
+        window.arrayhueco2 = arrayHueco2;
+        window.arrayhueco3 = arrayHueco3;
+        window.arrayhueco4 = arrayHueco4;
+        this.armariosDormitorioComponent.pintarInteriores(id);
+    }
+
     public eliminarAdicionales(u, id) {
         var array = [];
         var nuevoarray = [];
