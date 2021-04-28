@@ -161,6 +161,20 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     adicionalesArray3: any;
     adicionalesArray4: any;
     precioAdicionalesInt: any;
+    arrayhuecoEstantes1: any;
+    arrayhuecoEstantes2: any;
+    arrayhuecoEstantes3: any;
+    arrayhuecoEstantes4: any;
+    arrayTubo1: any;
+    arrayTubo2: any;
+    arrayTubo3: any;
+    arrayTubo4: any;
+    objetoCajonesArray1: any;
+    objetoCajonesArray2: any;
+    objetoCajonesArray3: any;
+    objetoCajonesArray4: any;
+    alturaArmario: any;
+    arrayHuecoInterioresubida: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -252,6 +266,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         }, 1000);
     }
 
+    public acabadoInterioresArmarioApi(nombre) {
+        this.armariosDormitorioComponent.cambiarAcabadoInterior(nombre);
+        var arrayAcabadoUrl = [];
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https:/dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
+
+        $('#clicparacambiardecolor1234').attr('onclick', 'cambiardecolor1234(1,' + arrayAcabadoUrl[nombre.toLowerCase()] + ')');
+        $('#clicparacambiardecolor1234')[0].click();
+    }
+
     uploadFactura() {
         var long = this.selectedFilesFactura.length;
         for (var i = 0; i < long; i++) {
@@ -284,39 +322,61 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     public enviarInterioresArmario(id) {
-        var altura = parseFloat($('#rs-range-line1').val());
+        var altura = this.alturaArmario;
         var hueco = this.armariosDormitorioComponent.huecoPinta;
-        alert(hueco);
         var arrayEstantes = [];
+        var arrayCajones = [];
+        var tubo = [];
+        var objetoCajones1 = this.objetoCajonesArray1;
+        var objetoCajones2 = this.objetoCajonesArray2;
+        var objetoCajones3 = this.objetoCajonesArray3;
+        var objetoCajones4 = this.objetoCajonesArray4;
         var cont = 0;
+        var alturaValor = 0;
+        var ezarrayInteteriores = [];
+        ezarrayInteteriores[hueco] = id;
+        this.arrayHuecoInterioresubida = ezarrayInteteriores;
+        alturaValor = altura;
         var interiores = this.productosDormitorioModal;
         for (let i = 0; i < interiores.length; i++) {
             if (interiores[i]['nombre'] == id) {
                 if (id == 1) {
-                    if (altura > 225) {
+                    if (altura < 2250) {
                         arrayEstantes[0] = 1740;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
                     } else {
                         arrayEstantes[0] = 1980;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
                     }
                 }
                 if (id == 2) {
-                    if (altura > 225) {
-                        arrayEstantes[0] = (altura - 90) / 2;
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = (alturaValor - 90) / 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
                     } else {
-                        arrayEstantes[0] = (altura - 90) / 2;
+                        arrayEstantes[0] = (alturaValor - 90) / 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
                     }
                 }
                 if (id == 3) {
-                    if (altura > 225) {
+                    if (alturaValor < 2250) {
                         arrayEstantes[0] = 552;
                         arrayEstantes[1] = 1740;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
                     } else {
                         arrayEstantes[0] = 552;
                         arrayEstantes[1] = 1980;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
                     }
                 }
                 if (id == 4) {
-                    if (altura > 225) {
+                    if (alturaValor < 2250) {
                         arrayEstantes[0] = 552;
                         arrayEstantes[1] = 1146;
                         arrayEstantes[2] = 1740;
@@ -327,7 +387,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     }
                 }
                 if (id == 5) {
-                    if (altura > 225) {
+                    if (alturaValor < 2250) {
                         arrayEstantes[0] = 552;
                         arrayEstantes[1] = 948;
                         arrayEstantes[2] = 1344;
@@ -339,29 +399,1100 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         arrayEstantes[3] = 1980;
                     }
                 }
+                if (id == 6) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = alturaValor / 2 - 15;
+                        arrayEstantes[1] = (5 * alturaValor - 180) / 8;
+                        arrayEstantes[2] = 0.75 * (alturaValor - 30);
+                        arrayEstantes[3] = (7 * alturaValor - 210) / 8;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
+                    } else {
+                        arrayEstantes[0] = alturaValor / 2 - 15;
+                        arrayEstantes[1] = (5 * alturaValor - 180) / 8;
+                        arrayEstantes[2] = 0.75 * (alturaValor - 30);
+                        arrayEstantes[3] = (7 * alturaValor - 210) / 8;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 0;
+                    }
+                }
+                if (id == 7) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = (alturaValor - 30) / 8;
+                        arrayEstantes[1] = (alturaValor - 30) / 4;
+                        arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
+                        arrayEstantes[3] = (alturaValor - 30) / 2;
+                    } else {
+                        arrayEstantes[0] = (alturaValor - 30) / 8;
+                        arrayEstantes[1] = (alturaValor - 30) / 4;
+                        arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
+                        arrayEstantes[3] = (alturaValor - 30) / 2;
+                    }
+                }
+                if (id == 8) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = (alturaValor - 30) / 6;
+                        arrayEstantes[1] = (alturaValor - 30) / 3;
+                        arrayEstantes[2] = (alturaValor - 30) / 2;
+                        arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
+                        arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                    } else {
+                        arrayEstantes[0] = (alturaValor - 30) / 6;
+                        arrayEstantes[1] = (alturaValor - 30) / 3;
+                        arrayEstantes[2] = (alturaValor - 30) / 2;
+                        arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
+                        arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                    }
+                }
+                if (id == 9) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 724;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 1;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 1;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    } else {
+                        arrayEstantes[0] = 724;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 1;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 1;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    }
+                }
+                if (id == 10) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 1;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    } else {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 1;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    }
+                }
+                if (id == 11) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 380;
+                        arrayEstantes[1] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
+                    } else {
+                        arrayEstantes[0] = 380;
+                        arrayEstantes[1] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
+                    }
+                }
+                if (id == 12) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 380;
+                        arrayEstantes[1] = 760;
+                        arrayEstantes[2] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    } else {
+                        arrayEstantes[0] = 380;
+                        arrayEstantes[1] = 760;
+                        arrayEstantes[2] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 2;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    }
+                }
+                if (id == 13) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 3;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    } else {
+                        arrayEstantes[0] = 552;
+                        arrayEstantes[1] = 932;
+                        arrayEstantes[2] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 3;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 2;
+                    }
+                }
+                if (id == 14) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 724;
+                        arrayEstantes[1] = 1740;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 4;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
+                    } else {
+                        arrayEstantes[0] = 724;
+                        arrayEstantes[1] = 1980;
+                        var arrayspp = [];
+                        arrayspp[0] = hueco - 1;
+                        arrayspp[1] = 0;
+                        objetoCajones1['posicion'] = arrayspp;
+                        objetoCajones1['cantidad'] = 4;
+                        tubo[0] = hueco - 1;
+                        tubo[1] = 1;
+                    }
+                }
             }
         }
-        var arrayHueco1 = [];
-        var arrayHueco2 = [];
-        var arrayHueco3 = [];
-        var arrayHueco4 = [];
+        var arrayHueco1 = this.arrayhuecoEstantes1;
+        var arrayHueco2 = this.arrayhuecoEstantes2;
+        var arrayHueco3 = this.arrayhuecoEstantes3;
+        var arrayHueco4 = this.arrayhuecoEstantes4;
+        var tubo1 = this.arrayTubo1;
+        var tubo2 = this.arrayTubo2;
+        var tubo3 = this.arrayTubo3;
+        var tubo4 = this.arrayTubo4;
+        var arrayInterior = [];
+        arrayInterior[hueco - 1] = id;
         if (hueco == 1) {
             arrayHueco1 = arrayEstantes;
+            tubo1 = tubo;
+            if (objetoCajones1['posicion'] != undefined) {
+                objetoCajones1 = objetoCajones1;
+                this.objetoCajonesArray1 = objetoCajones1;
+            }
+            this.arrayhuecoEstantes1 = arrayHueco1;
+            this.arrayTubo1 = tubo1;
         }
         if (hueco == 2) {
             arrayHueco2 = arrayEstantes;
+            tubo2 = tubo;
+            if (objetoCajones1['posicion'] != undefined) {
+                objetoCajones2 = objetoCajones1;
+                this.objetoCajonesArray2 = objetoCajones2;
+            }
+            this.arrayhuecoEstantes2 = arrayHueco2;
+            this.arrayTubo2 = tubo2;
         }
         if (hueco == 3) {
             arrayHueco3 = arrayEstantes;
+            tubo3 = tubo;
+            if (objetoCajones1['posicion'] != undefined) {
+                objetoCajones3 = objetoCajones1;
+                this.objetoCajonesArray3 = objetoCajones3;
+            }
+            this.arrayhuecoEstantes3 = arrayHueco3;
+            this.arrayTubo3 = tubo3;
         }
         if (hueco == 4) {
             arrayHueco4 = arrayEstantes;
+            tubo4 = tubo;
+            if (objetoCajones1['posicion'] != undefined) {
+                objetoCajones4 = objetoCajones1;
+                this.objetoCajonesArray4 = objetoCajones4;
+            }
+            this.arrayhuecoEstantes4 = arrayHueco4;
+            this.arrayTubo4 = tubo4;
         }
-        window.arrayhueco1 = arrayHueco1;
-        window.arrayhueco2 = arrayHueco2;
-        window.arrayhueco3 = arrayHueco3;
-        window.arrayhueco4 = arrayHueco4;
+
+        $('#cliccambiarinteriores').attr(
+            'onclick',
+            "pintarinterioresArmarioShape('" +
+                arrayHueco1 +
+                "','" +
+                arrayHueco2 +
+                "','" +
+                arrayHueco3 +
+                "','" +
+                arrayHueco4 +
+                "','" +
+                JSON.stringify(objetoCajones1) +
+                "','" +
+                JSON.stringify(objetoCajones2) +
+                "','" +
+                JSON.stringify(objetoCajones3) +
+                "','" +
+                JSON.stringify(objetoCajones4) +
+                "','" +
+                tubo1 +
+                "','" +
+                tubo2 +
+                "','" +
+                tubo3 +
+                "','" +
+                tubo4 +
+                "','" +
+                arrayInterior +
+                "')"
+        );
+        $('#cliccambiarinteriores')[0].click();
         this.armariosDormitorioComponent.pintarInteriores(id);
+    }
+
+    public adcionaltipoFuncion(id) {
+        var huecoPinta = this.armariosDormitorioComponent.huecoPinta;
+
+        var precio = 0;
+
+        var array = [];
+        if (huecoPinta == 1) {
+            array = this.adicionalesArray0;
+        }
+        if (huecoPinta == 2) {
+            array = this.adicionalesArray1;
+        }
+        if (huecoPinta == 3) {
+            array = this.adicionalesArray2;
+        }
+        if (huecoPinta == 4) {
+            array = this.adicionalesArray3;
+        }
+        if (huecoPinta == 5) {
+            array = this.adicionalesArray4;
+        }
+        var cont = array.length;
+        var arraymeter = '';
+        var preciollamadogg = this.precioAdicionalesInt;
+        if (id == 0) {
+            precio = precio + 40;
+            preciollamadogg = preciollamadogg + 40;
+            arraymeter = 'ESTANTE MADERA ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ESTANTE MADERA ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
+        }
+        if (id == 1) {
+            precio = precio + 50;
+            preciollamadogg = preciollamadogg + 50;
+            arraymeter = 'ESTANTE DE CRISTAL ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ESTANTE DE CRISTAL ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
+        }
+        if (id == 2) {
+            precio = precio + 15;
+            preciollamadogg = preciollamadogg + 15;
+            arraymeter = 'BARRA DE COLGAR ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'BARRA DE COLGAR ADICIONAL'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
+        }
+        if (id == 3) {
+            precio = precio + 90;
+            preciollamadogg = preciollamadogg + 90;
+            arraymeter = '1 CAJON ADICIONAL DE SUELO';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                '1 CAJON ADICIONAL DE SUELO'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+        }
+        if (id == 4) {
+            preciollamadogg = preciollamadogg + 90;
+            precio = precio + 90;
+            arraymeter = '1 CAJON SUSPENDIDO';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                '1 CAJON ADICIONAL DE SUELO'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+        }
+        if (id == 5) {
+            precio = precio + 48;
+            preciollamadogg = preciollamadogg + 48;
+            arraymeter = 'CAMISERO DE 1 ALTURA';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 1 ALTURA');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
+        }
+        if (id == 6) {
+            precio = precio + 96;
+            preciollamadogg = preciollamadogg + 96;
+            arraymeter = 'CAMISERO DE 2 ALTURAS';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 2 ALTURAS');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
+        }
+        if (id == 7) {
+            precio = precio + 144;
+            preciollamadogg = preciollamadogg + 144;
+            arraymeter = 'CAMISERO DE 3 ALTURAS';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 3 ALTURAS');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
+        }
+        if (id == 8) {
+            precio = precio + 205;
+            preciollamadogg = preciollamadogg + 205;
+            arraymeter = 'ZAPATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'ZAPATERO LATERAL EXTRAIBLE'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('205 PP');
+        }
+        if (id == 9) {
+            precio = precio + 80;
+            preciollamadogg = preciollamadogg + 80;
+            arraymeter = 'PANTALONERO EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('PANTALONERO EXTRAIBLE');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
+        }
+        if (id == 10) {
+            precio = precio + 80;
+            preciollamadogg = preciollamadogg + 80;
+            arraymeter = 'CORBATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                'CORBATERO LATERAL EXTRAIBLE'
+            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
+        }
+
+        for (let i = 0; i <= cont; i++) {
+            if (array[i] == undefined) {
+                array[i] = arraymeter;
+            }
+        }
+        var otroarray = [];
+        if (huecoPinta == 1) {
+            this.adicionalesArray0 = array;
+            this.armariosDormitorioComponent.adicionalesArray0 = array;
+        }
+        if (huecoPinta == 2) {
+            this.adicionalesArray1 = array;
+            this.armariosDormitorioComponent.adicionalesArray1 = array;
+        }
+        if (huecoPinta == 3) {
+            this.adicionalesArray2 = array;
+            this.armariosDormitorioComponent.adicionalesArray2 = array;
+        }
+        if (huecoPinta == 4) {
+            this.adicionalesArray3 = array;
+            this.armariosDormitorioComponent.adicionalesArray3 = array;
+        }
+        if (huecoPinta == 5) {
+            this.adicionalesArray4 = array;
+            this.armariosDormitorioComponent.adicionalesArray4 = array;
+        }
+        this.precioAdicionalesInt = preciollamadogg;
+        this.armariosDormitorioComponent.precioAdicionalesInt = preciollamadogg;
+        var prec = $('#precioInt' + (huecoPinta - 1)).text();
+        prec = prec.split(' ')[1];
+        var precio1 = parseFloat(prec);
+        $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 + precio) + ' pp');
+        console.log(this.adicionalesArray0);
+
+        var arrayHueco1 = this.arrayhuecoEstantes1;
+        var arrayHueco2 = this.arrayhuecoEstantes2;
+        var arrayHueco3 = this.arrayhuecoEstantes3;
+        var arrayHueco4 = this.arrayhuecoEstantes4;
+        var tubo1 = this.arrayTubo1;
+        var tubo2 = this.arrayTubo2;
+        var tubo3 = this.arrayTubo3;
+        var tubo4 = this.arrayTubo4;
+        var objetoCajones1 = this.objetoCajonesArray1;
+        var objetoCajones2 = this.objetoCajonesArray2;
+        var objetoCajones3 = this.objetoCajonesArray3;
+        var objetoCajones4 = this.objetoCajonesArray4;
+        var estantes = arrayHueco1;
+        var estantes1 = arrayHueco2;
+        var estantes2 = arrayHueco3;
+        var estantes3 = arrayHueco4;
+        var arrayInterior = [];
+        if (huecoPinta == 1) {
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
+                    estantes[i] = valor;
+                }
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
+                    estantes1[i] = valor;
+                }
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
+                    estantes2[i] = valor;
+                }
+                arrayHueco3 = estantes2;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
+                    estantes3[i] = valor;
+                }
+                arrayHueco4 = estantes3;
+            }
+            arrayHueco2 = estantes1;
+            estantes[arrayHueco1.length] = 1000;
+            this.arrayhuecoEstantes1 = estantes;
+            arrayHueco1 = estantes;
+            $('.divSliderAdi10').css({ display: 'block' });
+            if (this.adicionalesArray0.length == 2) {
+                $('.divSliderAdi20').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 3) {
+                $('.divSliderAdi30').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 4) {
+                $('.divSliderAdi40').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 5) {
+                $('.divSliderAdi50').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 6) {
+                $('.divSliderAdi60').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 7) {
+                $('.divSliderAdi70').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 8) {
+                $('.divSliderAdi80').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 9) {
+                $('.divSliderAdi90').css({ display: 'block' });
+            }
+            if (this.adicionalesArray0.length == 10) {
+                $('.divSliderAdi100').css({ display: 'block' });
+            }
+        }
+        if (huecoPinta == 2) {
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
+                    estantes[i] = valor;
+                }
+                arrayHueco1 = estantes;
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
+                    estantes1[i] = valor;
+                }
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
+                    estantes2[i] = valor;
+                }
+                arrayHueco3 = estantes2;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
+                    estantes3[i] = valor;
+                }
+                arrayHueco4 = estantes3;
+            }
+            estantes1[arrayHueco2.length] = 1000;
+            this.arrayhuecoEstantes2 = estantes1;
+            arrayHueco2 = estantes1;
+            $('.divSliderAdi11').css({ display: 'block' });
+            if (this.adicionalesArray1.length == 2) {
+                $('.divSliderAdi21').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 3) {
+                $('.divSliderAdi31').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 4) {
+                $('.divSliderAdi41').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 5) {
+                $('.divSliderAdi51').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 6) {
+                $('.divSliderAdi61').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 7) {
+                $('.divSliderAdi71').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 8) {
+                $('.divSliderAdi81').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 9) {
+                $('.divSliderAdi91').css({ display: 'block' });
+            }
+            if (this.adicionalesArray1.length == 10) {
+                $('.divSliderAdi101').css({ display: 'block' });
+            }
+        }
+        if (huecoPinta == 3) {
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
+                    estantes[i] = valor;
+                }
+                arrayHueco1 = estantes;
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
+                    estantes1[i] = valor;
+                }
+                arrayHueco2 = estantes1;
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
+                    estantes2[i] = valor;
+                }
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
+                    estantes3[i] = valor;
+                }
+                arrayHueco4 = estantes3;
+            }
+            estantes2[arrayHueco3.length] = 1000;
+            this.arrayhuecoEstantes3 = estantes2;
+            arrayHueco3 = estantes2;
+            $('.divSliderAdi12').css({ display: 'block' });
+            if (this.adicionalesArray2.length == 2) {
+                $('.divSliderAdi22').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 3) {
+                $('.divSliderAdi32').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 4) {
+                $('.divSliderAdi42').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 5) {
+                $('.divSliderAdi52').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 6) {
+                $('.divSliderAdi62').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 7) {
+                $('.divSliderAdi72').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 8) {
+                $('.divSliderAdi82').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 9) {
+                $('.divSliderAdi92').css({ display: 'block' });
+            }
+            if (this.adicionalesArray2.length == 10) {
+                $('.divSliderAdi102').css({ display: 'block' });
+            }
+        }
+        if (huecoPinta == 4) {
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
+                    estantes[i] = valor;
+                }
+                arrayHueco1 = estantes;
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
+                    estantes1[i] = valor;
+                }
+                arrayHueco2 = estantes1;
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
+                    estantes2[i] = valor;
+                }
+                arrayHueco3 = estantes2;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
+                    estantes3[i] = valor;
+                }
+            }
+            estantes3[arrayHueco4.length] = 1000;
+            this.arrayhuecoEstantes4 = estantes3;
+            arrayHueco4 = estantes3;
+            $('.divSliderAdi13').css({ display: 'block' });
+            if (this.adicionalesArray3.length == 2) {
+                $('.divSliderAdi23').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 3) {
+                $('.divSliderAdi33').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 4) {
+                $('.divSliderAdi43').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 5) {
+                $('.divSliderAdi53').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 6) {
+                $('.divSliderAdi63').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 7) {
+                $('.divSliderAdi73').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 8) {
+                $('.divSliderAdi83').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 9) {
+                $('.divSliderAdi93').css({ display: 'block' });
+            }
+            if (this.adicionalesArray3.length == 10) {
+                $('.divSliderAdi103').css({ display: 'block' });
+            }
+        }
+        $('#cliccambiarinteriores').attr(
+            'onclick',
+            "pintarinterioresArmarioShape('" +
+                arrayHueco1 +
+                "','" +
+                arrayHueco2 +
+                "','" +
+                arrayHueco3 +
+                "','" +
+                arrayHueco4 +
+                "','" +
+                JSON.stringify(objetoCajones1) +
+                "','" +
+                JSON.stringify(objetoCajones2) +
+                "','" +
+                JSON.stringify(objetoCajones3) +
+                "','" +
+                JSON.stringify(objetoCajones4) +
+                "','" +
+                tubo1 +
+                "','" +
+                tubo2 +
+                "','" +
+                tubo3 +
+                "','" +
+                tubo4 +
+                "','" +
+                arrayInterior +
+                "')"
+        );
+        $('#cliccambiarinteriores')[0].click();
+        if (huecoPinta == 1) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco1.length + '(' + huecoPinta + ')');
+        }
+        if (huecoPinta == 2) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco2.length + '(' + huecoPinta + ')');
+        }
+        if (huecoPinta == 3) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco3.length + '(' + huecoPinta + ')');
+        }
+        if (huecoPinta == 4) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco4.length + '(' + huecoPinta + ')');
+        }
+        $('#cliccambiarAdici1')[0].click();
+    }
+
+    public enviarInterioresArmarioCambioAltura() {
+        var alturaValor = 2200;
+        var arrayHuecoInt = this.arrayHuecoInterioresubida;
+        for (var hueco = 0; hueco <= arrayHuecoInt.length; hueco++) {
+            if (arrayHuecoInt[hueco] != undefined) {
+                var arrayEstantes = [];
+                var arrayCajones = [];
+                var tubo = [];
+                var objetoCajones1 = this.objetoCajonesArray1;
+                var objetoCajones2 = this.objetoCajonesArray2;
+                var objetoCajones3 = this.objetoCajonesArray3;
+                var objetoCajones4 = this.objetoCajonesArray4;
+                var cont = 0;
+                var id = arrayHuecoInt[hueco];
+                var interiores = this.productosDormitorioModal;
+                for (let i = 0; i < interiores.length; i++) {
+                    if (interiores[i]['nombre'] == id) {
+                        if (id == 1) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 1740;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            } else {
+                                arrayEstantes[0] = 1980;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            }
+                        }
+                        if (id == 2) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = (alturaValor - 90) / 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            } else {
+                                arrayEstantes[0] = (alturaValor - 90) / 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            }
+                        }
+                        if (id == 3) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 1740;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            } else {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 1980;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            }
+                        }
+                        if (id == 4) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 1146;
+                                arrayEstantes[2] = 1740;
+                            } else {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 1266;
+                                arrayEstantes[2] = 1980;
+                            }
+                        }
+                        if (id == 5) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 948;
+                                arrayEstantes[2] = 1344;
+                                arrayEstantes[3] = 1740;
+                            } else {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 1028;
+                                arrayEstantes[2] = 1504;
+                                arrayEstantes[3] = 1980;
+                            }
+                        }
+                        if (id == 6) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = alturaValor / 2 - 15;
+                                arrayEstantes[1] = (5 * alturaValor - 180) / 8;
+                                arrayEstantes[2] = 0.75 * (alturaValor - 30);
+                                arrayEstantes[3] = (7 * alturaValor - 210) / 8;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            } else {
+                                arrayEstantes[0] = alturaValor / 2 - 15;
+                                arrayEstantes[1] = (5 * alturaValor - 180) / 8;
+                                arrayEstantes[2] = 0.75 * (alturaValor - 30);
+                                arrayEstantes[3] = (7 * alturaValor - 210) / 8;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 0;
+                            }
+                        }
+                        if (id == 7) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = (alturaValor - 30) / 8;
+                                arrayEstantes[1] = (alturaValor - 30) / 4;
+                                arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
+                                arrayEstantes[3] = (alturaValor - 30) / 2;
+                            } else {
+                                arrayEstantes[0] = (alturaValor - 30) / 8;
+                                arrayEstantes[1] = (alturaValor - 30) / 4;
+                                arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
+                                arrayEstantes[3] = (alturaValor - 30) / 2;
+                            }
+                        }
+                        if (id == 8) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = (alturaValor - 30) / 6;
+                                arrayEstantes[1] = (alturaValor - 30) / 3;
+                                arrayEstantes[2] = (alturaValor - 30) / 2;
+                                arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
+                                arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                            } else {
+                                arrayEstantes[0] = (alturaValor - 30) / 6;
+                                arrayEstantes[1] = (alturaValor - 30) / 3;
+                                arrayEstantes[2] = (alturaValor - 30) / 2;
+                                arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
+                                arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                            }
+                        }
+                        if (id == 9) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 724;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 1;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 1;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            } else {
+                                arrayEstantes[0] = 724;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 1;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 1;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            }
+                        }
+                        if (id == 10) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 1;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            } else {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 1;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            }
+                        }
+                        if (id == 11) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 380;
+                                arrayEstantes[1] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            } else {
+                                arrayEstantes[0] = 380;
+                                arrayEstantes[1] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            }
+                        }
+                        if (id == 12) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 380;
+                                arrayEstantes[1] = 760;
+                                arrayEstantes[2] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            } else {
+                                arrayEstantes[0] = 380;
+                                arrayEstantes[1] = 760;
+                                arrayEstantes[2] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 2;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            }
+                        }
+                        if (id == 13) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 3;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            } else {
+                                arrayEstantes[0] = 552;
+                                arrayEstantes[1] = 932;
+                                arrayEstantes[2] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 3;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 2;
+                            }
+                        }
+                        if (id == 14) {
+                            if (alturaValor < 2250) {
+                                arrayEstantes[0] = 724;
+                                arrayEstantes[1] = 1740;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 4;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            } else {
+                                arrayEstantes[0] = 724;
+                                arrayEstantes[1] = 1980;
+                                var arrayspp = [];
+                                arrayspp[0] = hueco - 1;
+                                arrayspp[1] = 0;
+                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['cantidad'] = 4;
+                                tubo[0] = hueco - 1;
+                                tubo[1] = 1;
+                            }
+                        }
+                    }
+                }
+                var arrayHueco1 = this.arrayhuecoEstantes1;
+                var arrayHueco2 = this.arrayhuecoEstantes2;
+                var arrayHueco3 = this.arrayhuecoEstantes3;
+                var arrayHueco4 = this.arrayhuecoEstantes4;
+                var tubo1 = this.arrayTubo1;
+                var tubo2 = this.arrayTubo2;
+                var tubo3 = this.arrayTubo3;
+                var tubo4 = this.arrayTubo4;
+                var arrayInterior = [];
+                arrayInterior[hueco - 1] = id;
+                if (hueco == 1) {
+                    arrayHueco1 = arrayEstantes;
+                    tubo1 = tubo;
+                    if (objetoCajones1['posicion'] != undefined) {
+                        objetoCajones1 = objetoCajones1;
+                        this.objetoCajonesArray1 = objetoCajones1;
+                    }
+                    this.arrayhuecoEstantes1 = arrayHueco1;
+                    this.arrayTubo1 = tubo1;
+                }
+                if (hueco == 2) {
+                    arrayHueco2 = arrayEstantes;
+                    tubo2 = tubo;
+                    if (objetoCajones1['posicion'] != undefined) {
+                        objetoCajones2 = objetoCajones1;
+                        this.objetoCajonesArray2 = objetoCajones2;
+                    }
+                    this.arrayhuecoEstantes2 = arrayHueco2;
+                    this.arrayTubo2 = tubo2;
+                }
+                if (hueco == 3) {
+                    arrayHueco3 = arrayEstantes;
+                    tubo3 = tubo;
+                    if (objetoCajones1['posicion'] != undefined) {
+                        objetoCajones3 = objetoCajones1;
+                        this.objetoCajonesArray3 = objetoCajones3;
+                    }
+                    this.arrayhuecoEstantes3 = arrayHueco3;
+                    this.arrayTubo3 = tubo3;
+                }
+                if (hueco == 4) {
+                    arrayHueco4 = arrayEstantes;
+                    tubo4 = tubo;
+                    if (objetoCajones1['posicion'] != undefined) {
+                        objetoCajones4 = objetoCajones1;
+                        this.objetoCajonesArray4 = objetoCajones4;
+                    }
+                    this.arrayhuecoEstantes4 = arrayHueco4;
+                    this.arrayTubo4 = tubo4;
+                }
+            }
+        }
+        $('#cliccambiarinteriores').attr(
+            'onclick',
+            "pintarinterioresArmarioShape('" +
+                arrayHueco1 +
+                "','" +
+                arrayHueco2 +
+                "','" +
+                arrayHueco3 +
+                "','" +
+                arrayHueco4 +
+                "','" +
+                JSON.stringify(objetoCajones1) +
+                "','" +
+                JSON.stringify(objetoCajones2) +
+                "','" +
+                JSON.stringify(objetoCajones3) +
+                "','" +
+                JSON.stringify(objetoCajones4) +
+                "','" +
+                tubo1 +
+                "','" +
+                tubo2 +
+                "','" +
+                tubo3 +
+                "','" +
+                tubo4 +
+                "','" +
+                arrayInterior +
+                "')"
+        );
+        $('#cliccambiarinteriores')[0].click();
     }
 
     public eliminarAdicionales(u, id) {
@@ -31063,12 +32194,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 $('#calculadoraCarrito').removeAttr('style');
                 $('#calculadoraCarrito').attr('style');
                 $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+                $('#calculadoraCarrito').css({ 'background-color': 'white' });
                 $('.divBuscadorArticulos').css({ height: '100%' });
                 $('#calculadoraCarrito').css({ width: '25%' });
                 $('.divfondoSaber').css({ display: 'none' });
                 $('.divfondoocogidomen').css({ display: 'none' });
                 $('#imagenesArmario2').css({ display: 'none' });
                 $('#datos1').css({ display: 'none' });
+                $('#cajeadoCalcu').css({ display: 'none' });
+                $('#enmarcadoCalcu').css({ display: 'none' });
                 if (screen.width < 800) {
                     $('#calculadoraCarrito').css({ width: '100%' });
                     $('#calculadoraCarrito').css({ height: '40%' });
@@ -31084,6 +32218,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }, 1000);
         }
     }
+
+    public funcionEstaMarcadaDivArm(div, id) {
+        var string = div + '' + id;
+        var idApoyo;
+        idApoyo = $(div + '' + id).attr('class');
+        if (idApoyo == 'siPuestoGris') {
+            $(string + ' #clickSoloInterioresEnv').attr('onclick', "estaMarcadoDivArm('" + string + "')");
+            $(string + ' #clickSoloInterioresEnv')[0].click();
+            $(div + '' + id).attr('class', 'noPuestoGris');
+        }
+    }
+
     public anadirCalculadora() {
         $('#iluminacion').removeAttr('style');
         $('#iluminacion').attr('style');
@@ -35420,6 +36566,17 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        this.adicionalesArray0 = [];
+        this.adicionalesArray1 = [];
+        this.adicionalesArray2 = [];
+        this.adicionalesArray3 = [];
+        this.adicionalesArray4 = [];
+        this.adicionalesArray = [];
+        this.arrayhuecoEstantes1 = [];
+        this.arrayhuecoEstantes2 = [];
+        this.arrayhuecoEstantes3 = [];
+        this.arrayhuecoEstantes4 = [];
+        this.precioAdicionalesInt = 0;
         var productos = [];
         var apoyos = [];
         this.posicionEstanteria = 0;
@@ -35429,6 +36586,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             elem[0].style.setProperty('padding-top', '20px', 'important');
             elem[0].style.setProperty('padding-left', '80px', 'important');
         }
+        this.arrayhuecoEstantes1 = [];
+        this.arrayhuecoEstantes2 = [];
+        this.arrayhuecoEstantes3 = [];
+        this.arrayhuecoEstantes4 = [];
+        this.arrayTubo1 = [];
+        this.arrayTubo2 = [];
+        this.arrayTubo3 = [];
+        this.arrayTubo4 = [];
+        this.objetoCajonesArray1 = {};
+        this.objetoCajonesArray2 = {};
+        this.objetoCajonesArray3 = {};
+        this.objetoCajonesArray4 = {};
         this.arrayNombresArchivos = [];
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();

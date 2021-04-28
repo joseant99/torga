@@ -439,8 +439,10 @@ function apiShape1(id){
 	var rangeSlider = document.getElementById("rs-range-line");
 	var rangeSlider1 = document.getElementById("rs-range-line1");
 	var rangeSlider2 = document.getElementById("rs-range-line2");
+	
 	var rangeBullet = document.getElementById("rs-bullet");
-
+	window.todounarmario = {};
+	window.armario = 1;
 	rangeSlider.addEventListener("input", showSliderValue, false);
 	rangeSlider1.addEventListener("input", showSliderValue1, false);
 	rangeSlider2.addEventListener("input", showSliderValue2, false);
@@ -470,14 +472,178 @@ function apiShape1(id){
 	
 	// create the viewer, get back an API v2 object
 	window.api = new SDVApp.ParametricViewer(_viewerSettings);
-	
+	window.ultimoDivPuesto = '.divSlider';
 	var viewerInit = false;
 	var parameters;
-	
+		//store door id
+		  var doorsId;
+
+		  //store state of door;
+		  var doorState = [];
+		  //define hover effect for doors
+		  var hoverEffect = {
+		      active: {
+		          name: "colorHighlight",
+		          options: {
+		              color: [255, 0, 0]
+		          }
+		      }
+		  };
+
+		  //define interaction group for doors. They need to be hoverable and selectable
+		  var doorsInteractionGroup = {
+		      id: "doorsInteractionGroup",
+		      hoverable: true,
+		      hoverEffect: hoverEffect,
+		      selectable: true,
+		      selectionMode: "single"
+		  };
+
+		  //define the base animation object
+		  var baseAnimation = {
+		      scenePaths: [],
+		      transformations: [
+		          {
+		              delay: 0,
+		              duration: 500,
+		              type: "rotation",
+		              repeat: 0,
+		              //yoyo:true,
+		              rotationAxis: {
+		                  x: 0,
+		                  y: 0,
+		                  z: 1
+		              },
+		              rotationDegree: 90,
+		              pivot: {}
+		          }
+		      ],
+		      reset: false
+		  };
+		  var animateDoor = function (doorNumber, direction) {
+			    //get data from Grasshopper model regarding animations
+			    var animationData = api.scene.getData(
+			        {
+			            name: "animacionPuertas"
+			        }
+			    ).data[0].data;
+
+			    //get paths that are relevant for animation
+			    var animationPaths = animationData.paths[doorNumber];
+
+			    //create animation objects
+			    var finalAnimation = [];
+
+			    for (var i = 0; i <window.armario; i++) {
+			        //duplicate base animation object
+			    	
+			    		 var animation = JSON.parse(JSON.stringify(baseAnimation));
+
+					        //define scene path
+					        animation.scenePaths.push("CommPlugin_1." + doorsId + ".content_" + i);
+
+					        //define pivot point and direction
+					        animation.transformations[0].pivot = animationData.animation[i].pivot;
+					        animation.transformations[0].rotationDegree *= animationData.animation[i].direction * doorState[i];
+					      
+					      //store new state of door
+					      doorState[i] *= -1;
+					      finalAnimation.push(animation);
+			    	
+			    }
+
+			    //send animation to model
+			    api.scene.setLiveTransformation(finalAnimation);
+			};
+		 
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 	    if (!viewerInit) {
+	    	 var doorsObject = api.scene.get(
+				        {
+				          name: "puertas",
+				          format: "glb"
+				        },
+				        "CommPlugin_1"
+				      ).data[0];
+				      
+				      doorsId = doorsObject.id;
+				      doorState = Array(doorsObject.content.length).fill(-1);
+
+				        //add doors interaction group to scene
+				        api.scene.updateInteractionGroups(doorsInteractionGroup);
+
+				        //apply interaction group to doors
+				        api.scene.updatePersistentAsync({
+				            id: doorsId,
+				            interactionGroup: doorsInteractionGroup.id,
+				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+				        }, "CommPlugin_1");
+
+				      //add event listener when clicking objects
+				      api.scene.addEventListener(
+				        api.scene.EVENTTYPE.SELECT_ON,
+				        function(res){
+				          var scenePathData = res.scenePath.split(".");
+
+				          //check if scene path is door
+				          if (scenePathData[1] == doorsId) {
+				            //unselect door to be able to trigger animation again
+				            api.scene.updateSelected([],[res.scenePath]);
+
+				            //animate door
+				            animateDoor(scenePathData[2].split("_")[1]);
+				          }
+				        }
+				      );
+				      
+				      //add event listener when hovering objects
+				      api.scene.addEventListener(
+				        api.scene.EVENTTYPE.HOVER_ON,
+				        function(res){
+				          var scenePathData = res.scenePath.split(".");
+				          
+				          //check if scene path is door
+				          if (scenePathData[1] == doorsId) {
+				            //get data from Grasshopper model regarding animations
+				            var animationData = api.scene.getData(
+				                {
+				                    name: "animacionPuertas"
+				                }
+				            ).data[0].data;
+
+				            //get paths that are relevant for animation
+				            var doorNumber = scenePathData[2].split("_")[1];
+				            var animationPaths = animationData.paths[doorNumber];
+				            
+				            //get additional scene paths to ve hovered with doors
+				            var addDoorPaths = [];
+				            for(var i = 0; i < animationPaths.length; i++){
+				              if(animationPaths[i] == doorNumber)continue;
+				              addDoorPaths.push("CommPlugin_1." + doorsId + ".content_" + animationPaths[i]);
+				            }
+
+				            //hover other doors that are relevant for animation
+				            res.additionalInteractionPathsCallBack(addDoorPaths);
+				          }
+				        }
+				      );
+				      
+				      //add event listener when model finishes to update parameters
+				      api.state.addEventListener(
+				        api.state.EVENTTYPE.IDLE,
+				        function(){
+				          //reset door states
+				          doorState = Array(
+				            api.scene.get(
+				              {
+				                id: doorsId
+				              },
+				              "CommPlugin_1"
+				            ).data[0].content.length
+				          ).fill(-1);
+				        }
+				      );
 	    	window.s = new THREE.Matrix4();
-	      api.scene.camera.updateAsync({position:{x:2231.0624115662486,y:-669.0987454644667,z:708.2095380715232}, target:{x:725,y:220,z:137.5} });
 	      var updatedSettings = {
 	    		  scene : {
 	    			  camera : {
@@ -502,7 +668,6 @@ function apiShape1(id){
 	      parameters.data.sort(function(a, b) {
 	        return a.order - b.order;
 	      });
-	      console.log(parameters.data);
 	      
 	      setTimeout(function() {
             	window.camaraposition = api.scene.camera.get();
@@ -516,7 +681,10 @@ function apiShape1(id){
 	      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
 	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
 	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
-
+	      	window.estantes0 = [];
+	      	window.estantes1 = [];
+	      	window.estantes2 = [];
+	      	window.estantes3 = [];
 	    	      
 	      for (let i = 0; i < parameters.data.length; i++) {
 	        let paramInput = null;
@@ -948,6 +1116,8 @@ function cambiarVistaArmarioAltura(){
 	      id: parame.id,
 	      value: JSON.stringify(todounarmario)
 	    });
+	  $("#cambioDeAlturaSitieneInteriores")[0].click();
+	  
 }
 function cambiarVistaArmarioFondo(){
 	var rangeSlider = document.getElementById("rs-range-line2");
@@ -965,10 +1135,10 @@ function cambiarVistaArmario(tipo){
 	var rangeSlider2 = document.getElementById("rs-range-line2");
 	var rangeBullet = document.getElementById("rs-bullet");
 	$("#sdv-container-canvas").removeAttr("onmouseup");
-	
+	$("#inputAlturaArmario").val(rangeSlider1.value * 10);
   rangeBullet.innerHTML = rangeSlider.value;
   var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.72)) + "px";
+  rangeBullet.style.left = (bulletPosition * (578*0.68)) + "px";
   var valorAncho =  (rangeSlider.value*10);
   var alto = (rangeSlider1.value);
   var fondo = (rangeSlider2.value);
@@ -3068,6 +3238,147 @@ function cambiarVistaArmario(tipo){
 	  array[array.length] = costadoFinal;
   }
   **/
+  object = window.todounarmario;
+  
+  if(object.estantes != undefined){
+	  if(h == 1){
+		  if(window.estantes0.length != 0){
+			  object.estantes[0] = window.estantes0;
+		  }
+		  object.estantes[1] = [];
+		  object.estantes[2] = [];
+		  object.estantes[3] = [];
+	  }
+	  if(h == 2){
+		  if(window.estantes0.length != 0){
+			  object.estantes[0] = window.estantes0;
+		  }
+		  if(window.estantes1.length != 0){
+			  object.estantes[1] = window.estantes1;
+		  }
+		  object.estantes[2] = [];
+		  object.estantes[3] = [];
+	  }
+	  if(h == 3){
+		  if(window.estantes0.length != 0){
+			  object.estantes[0] = window.estantes0;
+		  }
+		  if(window.estantes1.length != 0){
+			  object.estantes[1] = window.estantes1;
+		  }
+		  if(window.estantes2.length != 0){
+			  object.estantes[2] = window.estantes2;
+		  }
+		  object.estantes[3] = [];
+	  }
+	  if(h == 4){
+		  if(window.estantes0.length != 0){
+			  object.estantes[0] = window.estantes0;
+		  }
+		  if(window.estantes1.length != 0){
+			  object.estantes[1] = window.estantes1;
+		  }
+		  if(window.estantes2.length != 0){
+			  object.estantes[2] = window.estantes2;
+		  }
+		  if(window.estantes3.length != 0){
+			  object.estantes[3] = window.estantes3;
+		  }
+	  }
+  }
+  
+  if(object.cajones != undefined){
+	  if(h == 1){
+		  if(window.cajones0.length != 0){
+			  object.cajones[0] = window.cajones0;
+		  }
+		  object.cajones[1] = [];
+		  object.cajones[2] = [];
+		  object.cajones[3] = [];
+	  }
+	  if(h == 2){
+		  if(window.cajones0.length != 0){
+			  object.cajones[0] = window.cajones0;
+		  }
+		  if(window.cajones1.length != 0){
+			  object.cajones[1] = window.cajones1;
+		  }
+		  object.cajones[2] = [];
+		  object.cajones[3] = [];
+	  }
+	  if(h == 3){
+		  if(window.cajones0.length != 0){
+			  object.cajones[0] = window.cajones0;
+		  }
+		  if(window.cajones1.length != 0){
+			  object.cajones[1] = window.cajones1;
+		  }
+		  if(window.cajones2.length != 0){
+			  object.cajones[2] = window.cajones2;
+		  }
+		  object.cajones[3] = [];
+	  }
+	  if(h == 4){
+		  if(window.cajones0.length != 0){
+			  object.cajones[0] = window.cajones0;
+		  }
+		  if(window.cajones1.length != 0){
+			  object.cajones[1] = window.cajones1;
+		  }
+		  if(window.cajones2.length != 0){
+			  object.cajones[2] = window.cajones2;
+		  }
+		  if(window.cajones3.length != 0){
+			  object.cajones[3] = window.cajones3;
+		  }
+	  }
+  }
+  if(object.tubos != undefined){
+	  var arrayTub = [];
+	  for(var p = 0;p<window.tuboArray.length;p++){
+		  if(h == 1){
+			  if(p == 0){
+				  arrayTub[0] = window.tuboArray[p];
+			  }
+			  
+		  }
+		  if(h == 2){
+			  if(p == 0){
+				  arrayTub[0] = window.tuboArray[p];
+			  }
+			  if(p == 1){
+				  arrayTub[1] = window.tuboArray[p];
+			  }
+		  }
+		  if(h == 3){
+			  if(p == 0){
+				  arrayTub[0] = window.tuboArray[p];
+			  }
+			  if(p == 1){
+				  arrayTub[1] = window.tuboArray[p];
+			  }
+			  if(p == 2){
+				  arrayTub[2] = window.tuboArray[p];
+			  }  
+		  }
+		  if(h == 4){
+			  if(p == 0){
+				  arrayTub[0] = window.tuboArray[p];
+			  }
+			  if(p == 1){
+				  arrayTub[1] = window.tuboArray[p];
+			  }
+			  if(p == 2){
+				  arrayTub[2] = window.tuboArray[p];
+			  }
+			  if(p == 3){
+				  arrayTub[3] = window.tuboArray[p];
+			  }  
+		  }
+	  }
+	  object.tubos = arrayTub;
+  }
+  
   object["costados"] = array;
   window.armario = armario;
   object["altura"] = alto * 10;
@@ -3081,7 +3392,10 @@ function cambiarVistaArmario(tipo){
     });
   $("#codigodepsArm"+ codigo)[0].click();
   console.log(JSON.stringify(object));
-  setTimeout(function() {
+  
+  
+  /**setTimeout(function() {
+	  api.scene.render();
   		var hoverEffect = {
 			active: {
 		    name: "colorHighlight",
@@ -3140,6 +3454,28 @@ function cambiarVistaArmario(tipo){
 				  ],
 				  reset: false
 				};
+		if(window.armario == 3){
+			var puerta1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 0,
+					        z: 1
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+			};
+		}
 		
 			var selectableGroup = {
 				  id: "select",
@@ -3167,6 +3503,27 @@ function cambiarVistaArmario(tipo){
       	        y: arrPivot1[1],
       	        z: arrPivot1[2]
       	      };
+	      	    if(window.armario == 3){
+	      	    	if(tipo == 1){
+	      	    		let arrPivot2 = api.scene.getData({
+	          	        name: "puntoIzq1Puerta"
+	          	      }).data[0].data;
+	          	      var derPivot1 = {
+	          	        x: arrPivot2[0],
+	          	        y: arrPivot2[1],
+	          	        z: arrPivot2[2]
+	          	      };
+	      	    	}else{
+	      	    		let arrPivot2 = api.scene.getData({
+		          	        name: "puntoDer1puerta"
+		          	      }).data[0].data;
+		          	      var derPivot1 = {
+		          	        x: arrPivot2[0],
+		          	        y: arrPivot2[1],
+		          	        z: arrPivot2[2]
+		          	      };
+	      	    	}
+	    		}
 
     	      puertaIzq.scenePaths = [
     	        api.scene.get(
@@ -3188,8 +3545,24 @@ function cambiarVistaArmario(tipo){
       	        ).data[0].scenePath
       	      ];
     	      
+    	      if(window.armario == 3){
+    	    	  puerta1.scenePaths = [
+    	      	        api.scene.get(
+    	      	          {
+    	      	            name: "1Puerta",
+    	      	            format: "glb"
+    	      	          },
+    	      	          "CommPlugin_1"
+    	      	        ).data[0].scenePath
+    	      	      ];
+    	      }
+    	      
+    	       
     	      puertaIzq.transformations[0].pivot = leftPivot;
     	      rightTrans.transformations[0].pivot = derPivot;
+    	      if(window.armario == 3){
+    	    	  puerta1.transformations[0].pivot = derPivot1;
+    	      }
     	      api.scene.updateInteractionGroups(selectableGroup);
     	      
     	      var assets = api.scene.get(null, "CommPlugin_1");
@@ -3207,6 +3580,17 @@ function cambiarVistaArmario(tipo){
     	            interactionMode: 'SUB'
     	          };
     	          updateObjects.push(updateObject);
+    	        }
+    	        if(window.armario == 3){
+    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
+    	        		let updateObject = {
+    	        	            id: asset.id,
+    	        	            duration: 0,
+    	        	            interactionGroup: selectableGroup.id,
+    	        	            interactionMode: 'SUB'
+    	        	          };
+    	        	          updateObjects.push(updateObject);
+    	        	}
     	        }
     	      }
 		}	
@@ -3292,7 +3676,28 @@ function cambiarVistaArmario(tipo){
 					  ],
 					  reset: false
 					};
-			
+			if(window.armario == 5){
+				var puerta1 = {
+						  scenePaths: [],
+						  transformations: [
+						    {
+						      delay: 0,
+						      duration: 500,
+						      type: "rotation",
+						      repeat: 0,
+						      //yoyo:true,
+						      rotationAxis: {
+						        x: 0,
+						        y: 0,
+						        z: 1
+						      },
+						      rotationDegree: -90,
+						      pivot: {}
+						    }
+						  ],
+						  reset: false
+				};
+			}
 				var selectableGroup = {
 					  id: "select",
 					  hoverable: true,
@@ -3329,7 +3734,27 @@ function cambiarVistaArmario(tipo){
 		      	        y: arrPivot1[1][1],
 		      	        z: arrPivot1[1][2]
 		      	      };
-
+	      	  if(window.armario == 5){
+	      	    	if(tipo == 1 || tipo == 3){
+	      	    		let arrPivot2 = api.scene.getData({
+		          	        name: "puntoDer1puerta"
+		          	      }).data[0].data;
+		          	      var derPivot2 = {
+		          	        x: arrPivot2[0],
+		          	        y: arrPivot2[1],
+		          	        z: arrPivot2[2]
+		          	      };
+	      	    	}else{
+		          	    let arrPivot2 = api.scene.getData({
+		          	        name: "puntoIzq1Puerta"
+		          	      }).data[0].data;
+		          	      var derPivot2 = {
+		          	        x: arrPivot2[0],
+		          	        y: arrPivot2[1],
+		          	        z: arrPivot2[2]
+		          	      };
+	      	    	}
+	    		}
 	    	      puertaIzq.scenePaths = [
 	    	        api.scene.get(
 	    	          {
@@ -3369,11 +3794,24 @@ function cambiarVistaArmario(tipo){
 		      	          "CommPlugin_1"
 		      	        ).data[0].scenePath
 		      	      ];
-	    	      
+		    	      if(window.armario == 5){
+		    	    	  puerta1.scenePaths = [
+		    	      	        api.scene.get(
+		    	      	          {
+		    	      	            name: "1Puerta",
+		    	      	            format: "glb"
+		    	      	          },
+		    	      	          "CommPlugin_1"
+		    	      	        ).data[0].scenePath
+		    	      	      ];
+		    	      }
 	    	      puertaIzq.transformations[0].pivot = leftPivot;
 	    	      rightTrans.transformations[0].pivot = derPivot;
 	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
 	    	      rightTrans1.transformations[0].pivot = derPivot1;
+	    	      if(window.armario == 5){
+	    	    	  puerta1.transformations[0].pivot = derPivot2;
+	    	      } 
 	    	      api.scene.updateInteractionGroups(selectableGroup);
 	    	      
 	    	      var assets = api.scene.get(null, "CommPlugin_1");
@@ -3391,6 +3829,17 @@ function cambiarVistaArmario(tipo){
 	    	            interactionMode: 'SUB'
 	    	          };
 	    	          updateObjects.push(updateObject);
+	    	        }
+	    	        if(window.armario == 5){
+	    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
+	    	        		let updateObject = {
+	    	        	            id: asset.id,
+	    	        	            duration: 0,
+	    	        	            interactionGroup: selectableGroup.id,
+	    	        	            interactionMode: 'SUB'
+	    	        	          };
+	    	        	          updateObjects.push(updateObject);
+	    	        	}
 	    	        }
 	    	      }
 			}
@@ -3517,7 +3966,28 @@ function cambiarVistaArmario(tipo){
 					  ],
 					  reset: false
 					};
-			
+			if(window.armario == 7){
+				var puerta1 = {
+						  scenePaths: [],
+						  transformations: [
+						    {
+						      delay: 0,
+						      duration: 500,
+						      type: "rotation",
+						      repeat: 0,
+						      //yoyo:true,
+						      rotationAxis: {
+						        x: 0,
+						        y: 0,
+						        z: 1
+						      },
+						      rotationDegree: -90,
+						      pivot: {}
+						    }
+						  ],
+						  reset: false
+				};
+			}
 				var selectableGroup = {
 					  id: "select",
 					  hoverable: true,
@@ -3563,7 +4033,27 @@ function cambiarVistaArmario(tipo){
 		      	        y: arrPivot1[2][1],
 		      	        z: arrPivot1[2][2]
 		      	      };
-
+	      	if(window.armario == 7){
+      	    	if(tipo == 1 || tipo == 3){
+      	    		let arrPivot2 = api.scene.getData({
+	          	        name: "puntoDer1puerta"
+	          	      }).data[0].data;
+	          	      var derPivot4 = {
+	          	        x: arrPivot2[0],
+	          	        y: arrPivot2[1],
+	          	        z: arrPivot2[2]
+	          	      };
+      	    	}else{
+	          	    let arrPivot2 = api.scene.getData({
+	          	        name: "puntoIzq1Puerta"
+	          	      }).data[0].data;
+	          	      var derPivot4 = {
+	          	        x: arrPivot2[0],
+	          	        y: arrPivot2[1],
+	          	        z: arrPivot2[2]
+	          	      };
+      	    	}
+    		}
 	    	      puertaIzq.scenePaths = [
 	    	        api.scene.get(
 	    	          {
@@ -3623,6 +4113,17 @@ function cambiarVistaArmario(tipo){
 			      	          "CommPlugin_1"
 			      	        ).data[0].scenePath
 			      	      ];
+			    	      if(window.armario == 7){
+			    	    	  puerta1.scenePaths = [
+			    	      	        api.scene.get(
+			    	      	          {
+			    	      	            name: "1Puerta",
+			    	      	            format: "glb"
+			    	      	          },
+			    	      	          "CommPlugin_1"
+			    	      	        ).data[0].scenePath
+			    	      	      ];
+			    	      }
 	    	      
 	    	      puertaIzq.transformations[0].pivot = leftPivot;
 	    	      rightTrans.transformations[0].pivot = derPivot;
@@ -3630,6 +4131,9 @@ function cambiarVistaArmario(tipo){
 	    	      rightTrans1.transformations[0].pivot = derPivot1;
 	    	      puertaIzq2.transformations[0].pivot = leftPivot2;
 	    	      rightTrans2.transformations[0].pivot = derPivot2;
+	    	      if(window.armario == 7){
+	    	    	  puerta1.transformations[0].pivot = derPivot4;
+	    	      }
 	    	      api.scene.updateInteractionGroups(selectableGroup);
 	    	      
 	    	      var assets = api.scene.get(null, "CommPlugin_1");
@@ -3647,6 +4151,17 @@ function cambiarVistaArmario(tipo){
 	    	            interactionMode: 'SUB'
 	    	          };
 	    	          updateObjects.push(updateObject);
+	    	        }
+	    	        if(window.armario == 7){
+	    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
+	    	        		let updateObject = {
+	    	        	            id: asset.id,
+	    	        	            duration: 0,
+	    	        	            interactionGroup: selectableGroup.id,
+	    	        	            interactionMode: 'SUB'
+	    	        	          };
+	    	        	          updateObjects.push(updateObject);
+	    	        	}
 	    	        }
 	    	      }
 			}
@@ -4002,7 +4517,11 @@ function cambiarVistaArmario(tipo){
         	        		var pathArpuerta2 = rightTrans.scenePaths[0];
     	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
         	        		rightTrans.scenePaths[0] = pathArpuerta2; 
-        	        		
+        	        		 if(window.armario == 3){
+        	        			 var pathArpuerta3 = puerta1.scenePaths[0];
+        	        			 pathArpuerta3 = pathArpuerta3 + ".content_0";
+             	        		puerta1.scenePaths[0] = pathArpuerta3; 
+        	        		 }
         	        		window.numeroPath = 1;
     	        		}
 	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
@@ -4012,6 +4531,12 @@ function cambiarVistaArmario(tipo){
 	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
 	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
 	    	            api.scene.setLiveTransformation([rightTrans]);
+	    	            
+	    	            if(window.armario == 3){
+	    	            	let rot2 = puerta1.transformations[0].rotationDegree;
+	    	            	puerta1.transformations[0].rotationDegree = -rot2;
+		    	            api.scene.setLiveTransformation([puerta1]);
+	    	            }
     	        	}
     	        	if(window.armario == 4 || window.armario == 5){
     	        		if(numeroPath == 0){
@@ -4031,6 +4556,11 @@ function cambiarVistaArmario(tipo){
     	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
         	        		rightTrans1.scenePaths[0] = pathArpuerta4;
         	        		
+        	        		if(window.armario == 5){
+	       	        			 var pathArpuerta5 = puerta1.scenePaths[0];
+	       	        			pathArpuerta5 = pathArpuerta5 + ".content_0";
+	            	        		puerta1.scenePaths[0] = pathArpuerta5; 
+	       	        		 }
         	        		window.numeroPath = 1;
     	        		}
     	        		
@@ -4052,6 +4582,12 @@ function cambiarVistaArmario(tipo){
 	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
 	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
 	    	            api.scene.setLiveTransformation([rightTrans1]);
+	    	            
+	    	            if(window.armario == 5){
+	    	            	let rot4 = puerta1.transformations[0].rotationDegree;
+	    	            	puerta1.transformations[0].rotationDegree = -rot4;
+		    	            api.scene.setLiveTransformation([puerta1]);
+	    	            }
     	        	}
     	        	
     	        	if(window.armario == 6 || window.armario == 7){
@@ -4080,6 +4616,11 @@ function cambiarVistaArmario(tipo){
     	    	            pathArpuerta6 = pathArpuerta6 + ".content_2";
         	        		rightTrans2.scenePaths[0] = pathArpuerta6;
         	        		
+        	        		if(window.armario == 7){
+	       	        			 var pathArpuerta7 = puerta1.scenePaths[0];
+	       	        			pathArpuerta7 = pathArpuerta7 + ".content_0";
+	            	        		puerta1.scenePaths[0] = pathArpuerta7; 
+	       	        		 }
         	        		window.numeroPath = 1;
     	        		}
     	        		
@@ -4106,6 +4647,12 @@ function cambiarVistaArmario(tipo){
 	    	        	let rot5 = rightTrans2.transformations[0].rotationDegree;
 	    	        	rightTrans2.transformations[0].rotationDegree = -rot5;
 	    	            api.scene.setLiveTransformation([rightTrans2]);
+	    	            
+	    	            if(window.armario == 7){
+	    	            	let rot6 = puerta1.transformations[0].rotationDegree;
+	    	            	puerta1.transformations[0].rotationDegree = -rot6;
+		    	            api.scene.setLiveTransformation([puerta1]);
+	    	            }
     	        	}
     	        	
     	        	if(window.armario == 8){
@@ -4181,22 +4728,653 @@ function cambiarVistaArmario(tipo){
 	    	        
     	      });
     	      
-  }, 2500);
+  }, 2500);**/
 }
 
+
+
+function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajones2,cajones3,cajones4,tubo1,tubo2,tubo3,tubo4,arrayInterior){
+	var arrayHueco1 = [];
+	var arrayHueco2 = [];
+	var arrayHueco3 = [];
+	var arrayHueco4 = [];
+	console.log(arrayInterior);
+	var armario = window.todounarmario
+	if(array1 != ""){
+		arrayHueco1 = array1.split(",");
+	}
+	if(array2 != ""){
+		arrayHueco2 = array2.split(",");
+	}
+	if(array3 != ""){
+		arrayHueco3 = array3.split(",");
+	}
+	if(array4 != ""){
+		arrayHueco4 = array4.split(",");
+	}
+	var arraytubo1 = [];
+	var arraytubo2 = [];
+	var arraytubo3 = [];
+	var arraytubo4 = [];
+	if(tubo1 != ""){
+		arraytubo1 = tubo1.split(",");
+	}
+	if(tubo2 != ""){
+		arraytubo2 = tubo2.split(",");
+	}
+	if(tubo3 != ""){
+		arraytubo3 = tubo3.split(",");
+	}
+	if(tubo4 != ""){
+		arraytubo4 = tubo4.split(",");
+	}
+	var estantes = [];
+	estantes[0]=arrayHueco1;
+	estantes[1]=arrayHueco2;
+	estantes[2]=arrayHueco3;
+	estantes[3]=arrayHueco4;
+	var arrayCajones = [];
+	arrayCajones[0] = JSON.parse(cajones1);
+	arrayCajones[1] = JSON.parse(cajones2);
+	arrayCajones[2] = JSON.parse(cajones3);
+	arrayCajones[3] = JSON.parse(cajones4);
+	var arrayTubo = [];
+	var cont = 0;
+	if(arraytubo1.length != 0){
+		arrayTubo[cont] = arraytubo1;
+		cont++;
+	}
+	if(arraytubo2.length != 0){
+		arrayTubo[cont] = arraytubo2;
+		cont++;
+	}
+	if(arraytubo3.length != 0){
+		arrayTubo[cont] = arraytubo3;
+		cont++;
+	}
+	if(arraytubo4.length != 0){
+		arrayTubo[cont] = arraytubo4;
+		cont++;
+	}
+	
+	
+	armario["estantes"] = estantes;
+	armario["tubo"] = arrayTubo;
+	armario["cajones"] = arrayCajones;
+	window.estantes0 = estantes[0];
+	window.estantes1 = estantes[1];
+	window.estantes2 = estantes[2];
+	window.estantes3 = estantes[3];
+	window.cajones0 = arrayCajones[0];
+	window.cajones1 = arrayCajones[1];
+	window.cajones2 = arrayCajones[2];
+	window.cajones3 = arrayCajones[3];
+	window.tuboArray = arrayTubo;
+	window.todounarmario = armario;
+	var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: JSON.stringify(armario)
+	    });
+	  
+}
 function showSliderValue() {
 		var rangeSlider = document.getElementById("rs-range-line");
 		var rangeBullet = document.getElementById("rs-bullet");
 
 	  rangeBullet.innerHTML = rangeSlider.value;
 	  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-	  rangeBullet.style.left = (bulletPosition * (578*0.72)) + "px";
+	  rangeBullet.style.left = (bulletPosition * (578*0.86)) + "px";
 }
+
+
+function showSliderValueAdicional10() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional10");
+	var rangeBullet = document.getElementById("rs-bulletAdicional10");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional11() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional11");
+	var rangeBullet = document.getElementById("rs-bulletAdicional11");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional12() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional12");
+	var rangeBullet = document.getElementById("rs-bulletAdicional12");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional13() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional13");
+	var rangeBullet = document.getElementById("rs-bulletAdicional13");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional20() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional20");
+	var rangeBullet = document.getElementById("rs-bulletAdicional20");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional21() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional21");
+	var rangeBullet = document.getElementById("rs-bulletAdicional21");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional22() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional22");
+	var rangeBullet = document.getElementById("rs-bulletAdicional22");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional23() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional23");
+	var rangeBullet = document.getElementById("rs-bulletAdicional23");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional30() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional30");
+	var rangeBullet = document.getElementById("rs-bulletAdicional30");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional40() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional40");
+	var rangeBullet = document.getElementById("rs-bulletAdicional40");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional50() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional50");
+	var rangeBullet = document.getElementById("rs-bulletAdicional50");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional60() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional60");
+	var rangeBullet = document.getElementById("rs-bulletAdicional60");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional70() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional70");
+	var rangeBullet = document.getElementById("rs-bulletAdicional70");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional80() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional80");
+	var rangeBullet = document.getElementById("rs-bulletAdicional80");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional31() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional31");
+	var rangeBullet = document.getElementById("rs-bulletAdicional31");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional41() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional41");
+	var rangeBullet = document.getElementById("rs-bulletAdicional41");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional51() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional51");
+	var rangeBullet = document.getElementById("rs-bulletAdicional51");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional61() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional61");
+	var rangeBullet = document.getElementById("rs-bulletAdicional61");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional71() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional71");
+	var rangeBullet = document.getElementById("rs-bulletAdicional71");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional81() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional81");
+	var rangeBullet = document.getElementById("rs-bulletAdicional81");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional32() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional32");
+	var rangeBullet = document.getElementById("rs-bulletAdicional32");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional42() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional42");
+	var rangeBullet = document.getElementById("rs-bulletAdicional42");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional52() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional52");
+	var rangeBullet = document.getElementById("rs-bulletAdicional52");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional62() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional62");
+	var rangeBullet = document.getElementById("rs-bulletAdicional62");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional72() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional72");
+	var rangeBullet = document.getElementById("rs-bulletAdicional72");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional82() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional82");
+	var rangeBullet = document.getElementById("rs-bulletAdicional82");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional33() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional33");
+	var rangeBullet = document.getElementById("rs-bulletAdicional33");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional43() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional43");
+	var rangeBullet = document.getElementById("rs-bulletAdicional43");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional53() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional53");
+	var rangeBullet = document.getElementById("rs-bulletAdicional53");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional63() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional63");
+	var rangeBullet = document.getElementById("rs-bulletAdicional63");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional73() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional73");
+	var rangeBullet = document.getElementById("rs-bulletAdicional73");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function showSliderValueAdicional83() {
+	var rangeSlider = document.getElementById("rs-range-lineAdicional83");
+	var rangeBullet = document.getElementById("rs-bulletAdicional83");
+
+  rangeBullet.innerHTML = rangeSlider.value;
+  var bulletPosition = (rangeSlider.value /rangeSlider.max);
+  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
+}
+
+function anadirAddEventAdi1(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional10, false);
+		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional11, false);
+		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(2,0,1,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional12, false);
+		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(3,0,1,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional13, false);
+		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(4,0,1,3)");
+	}
+}
+function anadirAddEventAdi2(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional20, false);
+		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(1,1,2,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional21, false);
+		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(2,1,2,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional22, false);
+		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(3,1,2,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional23, false);
+		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(4,1,2,3)");
+	}
+}
+function anadirAddEventAdi3(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional30, false);
+		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(1,2,3,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional31, false);
+		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(2,2,3,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional32, false);
+		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(3,2,3,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional33, false);
+		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(4,2,3,3)");
+	}
+}
+function anadirAddEventAdi4(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional40, false);
+		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(1,3,4,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional41, false);
+		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(2,3,4,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional42, false);
+		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(3,3,4,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional43, false);
+		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(4,3,4,3)");
+	}
+}
+function anadirAddEventAdi5(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional50, false);
+		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(1,4,5,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional51, false);
+		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(2,4,5,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional52, false);
+		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(3,4,5,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional53, false);
+		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(4,4,5,3)");
+	}
+}
+function anadirAddEventAdi6(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional60, false);
+		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(1,5,6,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional61, false);
+		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(2,5,6,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional62, false);
+		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(3,5,6,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional63, false);
+		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(4,5,6,3)");
+	}
+}
+function anadirAddEventAdi7(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional70, false);
+		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(1,6,7,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional71, false);
+		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(2,6,7,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional72, false);
+		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(3,6,7,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional73, false);
+		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(4,6,7,3)");
+	}
+}
+function anadirAddEventAdi8(id){
+	id = id-1;
+	var funcion = "showSliderValueAdicional1"+id;
+	if(id == 0){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional80, false);
+		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(1,7,8,0)");
+	}
+	if(id == 1){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional81, false);
+		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(2,7,8,1)");
+	}
+	if(id == 2){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional82, false);
+		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(3,7,8,2)");
+	}
+	if(id == 3){
+		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
+		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional83, false);
+		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(4,7,8,3)");
+	}
+}
+function cambiarArmarioEstantes(id,id1,posicion,num){
+	var rangeSlider = document.getElementById("rs-range-lineAdicional"+posicion+""+num);
+	var armario = window.todounarmario;
+	var estantes = armario["estantes"];
+	if(id == 1){
+		if(estantes[0].length >1){
+			var array = estantes[0];
+		}else{
+			var array = estantes[0][0].split(",");
+		}
+		
+		array[id1] = rangeSlider.value;
+		estantes[0] = array;
+		this.arrayhuecoEstantes1 = estantes;
+		armario["estantes"] = estantes;
+	}
+	if(id == 2){
+		if(estantes[1].length >1){
+			var array = estantes[1];
+		}else{
+			var array = estantes[1][0].split(",");
+		}
+		
+		array[id1] = rangeSlider.value;
+		estantes[1] = array;
+		this.arrayhuecoEstantes2 = estantes;
+		armario["estantes"] = estantes;
+	}
+	if(id == 3){
+		if(estantes[2].length >1){
+			var array = estantes[2];
+		}else{
+			var array = estantes[2][0].split(",");
+		}
+		
+		array[id1] = rangeSlider.value;
+		estantes[2] = array;
+		this.arrayhuecoEstantes2 = estantes;
+		armario["estantes"] = estantes;
+	}
+	if(id == 4){
+		if(estantes[3].length >1){
+			var array = estantes[3];
+		}else{
+			var array = estantes[3][0].split(",");
+		}
+		
+		array[id1] = rangeSlider.value;
+		estantes[3] = array;
+		this.arrayhuecoEstantes2 = estantes;
+		armario["estantes"] = estantes;
+	}
+	window.todounarmario = armario;
+		var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+		api.parameters.updateAsync({
+	      id: parame.id,
+	      value: JSON.stringify(armario)
+	    });
+}
+
+
 function showSliderValue1() {
 	var rangeSlider = document.getElementById("rs-range-line1");
 	var rangeBullet = document.getElementById("rs-bullet1");
 	var rangeSlider1 = document.getElementById("rs-range-line");
   rangeBullet.innerHTML = rangeSlider.value;
+  $("#inputAlturaArmario").val(parseFloat(rangeSlider.value) * 10);
   var bulletPosition = (rangeSlider.value /rangeSlider.max);
   	if(rangeSlider.value == 260){
   		bulletPosition = 416.16;
@@ -4324,6 +5502,11 @@ function showSliderValue1() {
   
   rangeBullet.style.left = (bulletPosition) + "px";
 }
+
+function ocultarPuertasFuncion(){
+	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas", format: "glb" }, "CommPlugin_1").data[0].scenePath]);
+	
+}
 function showSliderValue2() {
 	var rangeSlider = document.getElementById("rs-range-line2");
 	var rangeSlider1 = document.getElementById("rs-range-line");
@@ -4397,4 +5580,17 @@ function showSliderValue2() {
   rangeBullet.style.left = (bulletPosition) + "px";
   
   
+}
+function estaMarcadoDivArm(div){
+	//if(div == 'divElegirOpcionSlider'){
+		$(div).removeAttr("onclick");
+		$(div+" #divOscuroOpOpcionesSlider").remove();
+		$(""+window.ultimoDivPuesto).append('<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>');
+		if('#botonesAcabadosCuerpo' == window.ultimoDivPuesto){
+			$(""+window.ultimoDivPuesto+" #divOscuroOpOpcionesSlider").css({"margin-top":"-16px"});
+		}
+		$(""+window.ultimoDivPuesto).attr("onclick","estaMarcadoDivArm('"+window.ultimoDivPuesto+"')");
+		window.ultimoDivPuesto = div;
+	    
+	//}
 }

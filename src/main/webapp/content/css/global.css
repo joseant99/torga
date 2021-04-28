@@ -59,8 +59,9 @@ a {
 }
 .rs-range {
     margin-top: 29px;
-    width: 85%;
+    width: 75%;
     position: absolute;
+    margin-left: 80px;
     z-index: 15;
     background-color: transparent;
     -webkit-appearance: media-volume-slider;
@@ -128,7 +129,7 @@ a {
     font-weight: bold;
     padding-top: 6px;
     box-sizing: border-box;
-    left: 57.8px;
+    left: 112px;
     border: 2px solid #fff;
     margin-top: 14px;
     margin-left: -38px;

@@ -236,6 +236,7 @@ $("#divDentroCalcu").scroll(function() {
 			}
 		}
 		if(id == 2){
+			
 			for (let i = 0; i < parameters.data.length; i++) {
 				
 				if(parameters.data[i]["name"] == "textura1"){
@@ -246,6 +247,18 @@ $("#divDentroCalcu").scroll(function() {
 				}
 			}
 		}
+	}
+	
+	function cambiardecolor1234(id,url){
+		var parameters = api.parameters.get();
+			for (let i = 0; i < parameters.data.length; i++) {
+				if(parameters.data[i]["name"] == "texturaInteriores"){
+					api.parameters.updateAsync({
+			            id: parameters.data[i]["id"],
+			            value: url
+			          });
+				}
+			}
 	}
 	
 	function cambiardecolor(id,url){
