@@ -321,6 +321,21 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         }
     }
 
+    public interiorDefinidoMostrarArmTs(u, id) {
+        if (id == 1) {
+            var texto = 'opcionInteriorEst';
+            $('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional1').css({ display: 'block' });
+            $('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional2').css({ display: 'none' });
+        }
+        if (id == 2) {
+            var texto = 'opcionInteriorMedida';
+            $('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional1').css({ display: 'none' });
+            $('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional2').css({ display: 'block' });
+        }
+        $('#clickDesdeTsInteriores').attr('onclick', 'interiorDefinidoMostrarArm(' + u + ",'" + texto + "')");
+        $('#clickDesdeTsInteriores')[0].click();
+    }
+
     public enviarInterioresArmario(id) {
         var altura = this.alturaArmario;
         var hueco = this.armariosDormitorioComponent.huecoPinta;
@@ -332,11 +347,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCajones3 = this.objetoCajonesArray3;
         var objetoCajones4 = this.objetoCajonesArray4;
         var cont = 0;
-        var alturaValor = 0;
+        var alturaValor = 2200;
+        var armarioCogido = this.armariosDormitorioComponent.armarioCogido;
+        var armMensaje = armarioCogido['armario']['mensaje'];
+        if (armMensaje == '3 PUERTAS IZQUIERDA') {
+            $('#rs-range-line').attr('min', 101);
+            $('#rs-range-line').attr('max', 150);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('100');
+            $('#valorMaxDeAncho').text('150');
+        }
         var ezarrayInteteriores = [];
         ezarrayInteteriores[hueco] = id;
         this.arrayHuecoInterioresubida = ezarrayInteteriores;
-        alturaValor = altura;
         var interiores = this.productosDormitorioModal;
         for (let i = 0; i < interiores.length; i++) {
             if (interiores[i]['nombre'] == id) {
@@ -611,6 +634,41 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes1 = arrayHueco1;
             this.arrayTubo1 = tubo1;
+            for (var o = 0; o < arrayHueco1.length; o++) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    arrayHueco1[o] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal2 #rs-range-lineAdicional' + (i + 1) + '2').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
+            }
         }
         if (hueco == 2) {
             arrayHueco2 = arrayEstantes;
@@ -621,6 +679,41 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes2 = arrayHueco2;
             this.arrayTubo2 = tubo2;
+            for (var o = 0; o < arrayHueco2.length; o++) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',1)'
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(arrayHueco2[o] / 10);
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
+                    arrayHueco2[o] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal2 #rs-range-lineAdicional' + (i + 1) + '2').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
+            }
         }
         if (hueco == 3) {
             arrayHueco3 = arrayEstantes;
@@ -631,6 +724,41 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes3 = arrayHueco3;
             this.arrayTubo3 = tubo3;
+            for (var o = 0; o < arrayHueco3.length; o++) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',2)'
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-bulletAdicional' + (o + 1) + '2').text(arrayHueco3[o] / 10);
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-range-lineAdicional' + (o + 1) + '2').val(
+                    arrayHueco3[o] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
+            }
         }
         if (hueco == 4) {
             arrayHueco4 = arrayEstantes;
@@ -641,6 +769,41 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes4 = arrayHueco4;
             this.arrayTubo4 = tubo4;
+            for (var o = 0; o < arrayHueco4.length; o++) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',3)'
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-bulletAdicional' + (o + 1) + '3').text(arrayHueco4[o] / 10);
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-range-lineAdicional' + (o + 1) + '3').val(
+                    arrayHueco4[o] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal2 #rs-range-lineAdicional' + (i + 1) + '2').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
         }
 
         $('#cliccambiarinteriores').attr(
@@ -855,34 +1018,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var estantes2 = arrayHueco3;
         var estantes3 = arrayHueco4;
         var arrayInterior = [];
+
         if (huecoPinta == 1) {
             if (arrayHueco1.length > 0) {
                 for (let i = 0; i < arrayHueco1.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
-                    estantes[i] = valor;
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    estantes[i] = valor + '0';
                 }
             }
-            if (arrayHueco2.length > 0) {
-                for (let i = 0; i < arrayHueco2.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
-                    estantes1[i] = valor;
-                }
-            }
-            if (arrayHueco3.length > 0) {
-                for (let i = 0; i < arrayHueco3.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
-                    estantes2[i] = valor;
-                }
-                arrayHueco3 = estantes2;
-            }
-            if (arrayHueco4.length > 0) {
-                for (let i = 0; i < arrayHueco4.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
-                    estantes3[i] = valor;
-                }
-                arrayHueco4 = estantes3;
-            }
-            arrayHueco2 = estantes1;
             estantes[arrayHueco1.length] = 1000;
             this.arrayhuecoEstantes1 = estantes;
             arrayHueco1 = estantes;
@@ -914,34 +1057,24 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (this.adicionalesArray0.length == 10) {
                 $('.divSliderAdi100').css({ display: 'block' });
             }
+            for (var o = 0; o < arrayHueco1.length; o++) {
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    arrayHueco1[o] / 10
+                );
+            }
         }
         if (huecoPinta == 2) {
-            if (arrayHueco1.length > 0) {
-                for (let i = 0; i < arrayHueco1.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
-                    estantes[i] = valor;
-                }
-                arrayHueco1 = estantes;
-            }
             if (arrayHueco2.length > 0) {
                 for (let i = 0; i < arrayHueco2.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
-                    estantes1[i] = valor;
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    estantes1[i] = valor + '0';
                 }
-            }
-            if (arrayHueco3.length > 0) {
-                for (let i = 0; i < arrayHueco3.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
-                    estantes2[i] = valor;
-                }
-                arrayHueco3 = estantes2;
-            }
-            if (arrayHueco4.length > 0) {
-                for (let i = 0; i < arrayHueco4.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
-                    estantes3[i] = valor;
-                }
-                arrayHueco4 = estantes3;
             }
             estantes1[arrayHueco2.length] = 1000;
             this.arrayhuecoEstantes2 = estantes1;
@@ -974,34 +1107,24 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (this.adicionalesArray1.length == 10) {
                 $('.divSliderAdi101').css({ display: 'block' });
             }
+            for (var o = 0; o < arrayHueco2.length; o++) {
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',1)'
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(arrayHueco2[o] / 10);
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
+                    arrayHueco2[o] / 10
+                );
+            }
         }
         if (huecoPinta == 3) {
-            if (arrayHueco1.length > 0) {
-                for (let i = 0; i < arrayHueco1.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
-                    estantes[i] = valor;
-                }
-                arrayHueco1 = estantes;
-            }
-            if (arrayHueco2.length > 0) {
-                for (let i = 0; i < arrayHueco2.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
-                    estantes1[i] = valor;
-                }
-                arrayHueco2 = estantes1;
-            }
             if (arrayHueco3.length > 0) {
                 for (let i = 0; i < arrayHueco3.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
-                    estantes2[i] = valor;
+                    var valor = $('#divInterioresTdoPrincipal2 #rs-range-lineAdicional' + (i + 1) + '2').val();
+                    estantes2[i] = valor + '0';
                 }
-            }
-            if (arrayHueco4.length > 0) {
-                for (let i = 0; i < arrayHueco4.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
-                    estantes3[i] = valor;
-                }
-                arrayHueco4 = estantes3;
             }
             estantes2[arrayHueco3.length] = 1000;
             this.arrayhuecoEstantes3 = estantes2;
@@ -1034,33 +1157,23 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (this.adicionalesArray2.length == 10) {
                 $('.divSliderAdi102').css({ display: 'block' });
             }
+            for (var o = 0; o < arrayHueco3.length; o++) {
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',2)'
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-bulletAdicional' + (o + 1) + '2').text(arrayHueco3[o] / 10);
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-range-lineAdicional' + (o + 1) + '2').val(
+                    arrayHueco3[o] / 10
+                );
+            }
         }
         if (huecoPinta == 4) {
-            if (arrayHueco1.length > 0) {
-                for (let i = 0; i < arrayHueco1.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '0').val();
-                    estantes[i] = valor;
-                }
-                arrayHueco1 = estantes;
-            }
-            if (arrayHueco2.length > 0) {
-                for (let i = 0; i < arrayHueco2.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '1').val();
-                    estantes1[i] = valor;
-                }
-                arrayHueco2 = estantes1;
-            }
-            if (arrayHueco3.length > 0) {
-                for (let i = 0; i < arrayHueco3.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '2').val();
-                    estantes2[i] = valor;
-                }
-                arrayHueco3 = estantes2;
-            }
             if (arrayHueco4.length > 0) {
                 for (let i = 0; i < arrayHueco4.length; i++) {
-                    var valor = $('#rs-range-lineAdicional' + (i + 1) + '3').val();
-                    estantes3[i] = valor;
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    estantes3[i] = valor + '0';
                 }
             }
             estantes3[arrayHueco4.length] = 1000;
@@ -1093,6 +1206,17 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             if (this.adicionalesArray3.length == 10) {
                 $('.divSliderAdi103').css({ display: 'block' });
+            }
+            for (var o = 0; o < arrayHueco4.length; o++) {
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',3)'
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-bulletAdicional' + (o + 1) + '3').text(arrayHueco4[o] / 10);
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-range-lineAdicional' + (o + 1) + '3').val(
+                    arrayHueco4[o] / 10
+                );
             }
         }
         $('#cliccambiarinteriores').attr(

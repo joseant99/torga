@@ -14535,7 +14535,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 2) {
                                     var meterpilotoapoyo;
                                     if (prodCarr[m][1]['productosDormitorio']['id'] == 18) {
-                                        meterpilotoapoyo = 1;
+                                        meterpilotoapoyo = 9;
                                     }
                                     if (prodCarr[m][1]['productosDormitorio']['id'] == 403) {
                                         meterpilotoapoyo = 7;
@@ -14553,7 +14553,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         meterpilotoapoyo = 3;
                                     }
                                     if (prodCarr[m][1]['productosDormitorio']['id'] == 17) {
-                                        meterpilotoapoyo = 6;
+                                        meterpilotoapoyo = 8;
                                     }
                                     prodPrePed = {
                                         productosDormitorio: prodCarr[m][1]['productosDormitorio'],
