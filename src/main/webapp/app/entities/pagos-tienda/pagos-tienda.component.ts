@@ -145,6 +145,9 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
                         precio = precio + puntos;
                         cont++;
                         data.body[j]['sumado'] = 1;
+                        if (data.body[j]['numero_pedido'] != null) {
+                            data.body[j]['modificado'] = 0;
+                        }
                         this.subscribeToSaveResponse1(this.presupuestoPedidoService.update(data.body[j]));
                     }
                 }

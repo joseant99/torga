@@ -439,6 +439,10 @@ function apiShape(id){
 
 
 function apiShape1(id){
+	
+	$(".divBuscadorArticulos #acabados").css({"display":"none"});
+	$(".divBuscadorArticulos #medidasEspeciales").css({"display":"none"});
+	
 	/* para añadir reglas CSS  de manera dinámica*/
 	var s = document.createElement('style');
 	document.head.appendChild(s);
@@ -460,18 +464,419 @@ function apiShape1(id){
 	/* el valor de la etiqueta (el tooltip) */
 	etiqueta.innerHTML = elInput.value;
 	/* calcula la posición inicial de la etiqueta (el tooltip) */
-	etiqueta.style.left =  ((elInput.value * 0.75) - (40/2))+"px";
+	etiqueta.style.left =  "0px";
 	/* establece el estilo inicial del TRACK */
 	
+	
+	//altura Div
+	
+	var inputDivAltura = document.querySelector('#inputDivAltura');
+	var wAltura = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+	/* EL INPUT */
+	var elInputAltura = document.querySelector("#rs-range-line1");
+	elInputAltura.style.width = "100%";
+	var inputMinAltura = elInputAltura.getAttribute('min');
+	var inputMaxAltura = elInputAltura.getAttribute('max');
+	
 
+	/* LA ETIQUETA */
+	var etiquetaAltura = document.querySelector('#etiquetaAltura');
+	var ewAltura = parseInt(window.getComputedStyle(etiquetaAltura, null).getPropertyValue("width"));
+	wAltura = 300;
+	var kAltura = 260/(inputMaxAltura - inputMinAltura);
+	/* el valor de la etiqueta (el tooltip) */
+	etiquetaAltura.innerHTML = elInputAltura.value;
+	/* calcula la posición inicial de la etiqueta (el tooltip) */
+	etiquetaAltura.style.left =  "0px";
+	/* establece el estilo inicial del TRACK */
+	
+	
+	elInputAltura.addEventListener('input',function(){
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiquetaAltura.innerHTML =(elInputAltura.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		var bulletPosition = 0;
+	  	if(elInputAltura.value == 260){
+	  		bulletPosition = 286;
+	  	}
+	  	if(elInputAltura.value == 259){
+			bulletPosition = 279;
+		}
+	  	if(elInputAltura.value == 258){
+			bulletPosition = 272;
+		}
+		if(elInputAltura.value == 257){
+				bulletPosition = 265;
+			}
+		if(elInputAltura.value == 256){
+				bulletPosition = 258;
+			}
+		if(elInputAltura.value == 255){
+			bulletPosition = 251;
+		}
+		if(elInputAltura.value == 254){
+				bulletPosition = 244;
+			}
+		if(elInputAltura.value == 253){
+			bulletPosition = 237;
+		}
+		if(elInputAltura.value == 252){
+				bulletPosition = 230;
+			}
+		if(elInputAltura.value == 251){
+			bulletPosition =  223;
+		}
+		if(elInputAltura.value == 250){
+				bulletPosition = 216;
+			}
+		if(elInputAltura.value == 249){
+			bulletPosition = 208;
+		}
+		if(elInputAltura.value == 248){
+			bulletPosition = 200;
+		}
+		if(elInputAltura.value == 247){
+				bulletPosition = 192;
+			}
+		if(elInputAltura.value == 246){
+				bulletPosition = 184;
+			}
+		if(elInputAltura.value == 245){
+			bulletPosition = 176;
+		}
+		if(elInputAltura.value == 244){
+				bulletPosition = 168;
+			}
+		if(elInputAltura.value == 243){
+			bulletPosition = 160;
+		}
+		if(elInputAltura.value == 242){
+				bulletPosition = 152;
+			}
+		if(elInputAltura.value == 241){
+			bulletPosition =  144;
+		}
+		if(elInputAltura.value == 240){
+				bulletPosition = 136;
+			}
+		if(elInputAltura.value == 239){
+			bulletPosition = 128.5;
+		}
+	  	if(elInputAltura.value == 238){
+			bulletPosition = 121;
+		}
+		if(elInputAltura.value == 237){
+				bulletPosition = 113.5;
+			}
+		if(elInputAltura.value == 236){
+				bulletPosition = 106;
+			}
+		if(elInputAltura.value == 235){
+			bulletPosition = 98.5;
+		}
+		if(elInputAltura.value == 234){
+				bulletPosition = 91;
+			}
+		if(elInputAltura.value == 233){
+			bulletPosition = 83.5;
+		}
+		if(elInputAltura.value == 232){
+				bulletPosition = 76;
+			}
+		if(elInputAltura.value == 231){
+			bulletPosition =  68.5;
+		}
+		if(elInputAltura.value == 230){
+				bulletPosition = 61;
+			}
+		if(elInputAltura.value == 229){
+			bulletPosition = 54;
+		}
+		if(elInputAltura.value == 228){
+			bulletPosition = 47;
+		}
+		if(elInputAltura.value == 227){
+				bulletPosition = 40;
+			}
+		if(elInputAltura.value == 226){
+				bulletPosition = 33;
+			}
+		if(elInputAltura.value == 225){
+			bulletPosition = 26;
+		}
+		if(elInputAltura.value == 224){
+				bulletPosition = 19;
+			}
+		if(elInputAltura.value == 223){
+			bulletPosition = 12;
+		}
+		if(elInputAltura.value == 222){
+				bulletPosition = 5;
+			}
+		if(elInputAltura.value == 221){
+			bulletPosition =  -2;
+		}
+		if(elInputAltura.value == 220){
+				bulletPosition = -10;
+			}
+	  
+	  etiquetaAltura.style.left = (bulletPosition) + "px";
+		
+		/* cambia el estilo del TRACK */
+	}, false);
+	
+	
+	//fondo Div
+	
+	var inputDivFondo = document.querySelector('#inputDivFondo');
+	var wFondo = parseInt(window.getComputedStyle(inputDivFondo, null).getPropertyValue("width"));
+	/* EL INPUT */
+	var elInputFondo = document.querySelector("#rs-range-line2");
+	elInputFondo.style.width = "100%";
+	var inputMinFondo = elInputFondo.getAttribute('min');
+	var inputMaxFondo = elInputFondo.getAttribute('max');
+	
+
+	/* LA ETIQUETA */
+	var etiquetaFondo = document.querySelector('#etiquetaFondo');
+	var ewFondo = parseInt(window.getComputedStyle(etiquetaFondo, null).getPropertyValue("width"));
+	wFondo = 300;
+	var kFondo = 260/(inputMaxFondo - inputMinFondo);
+	/* el valor de la etiqueta (el tooltip) */
+	etiquetaFondo.innerHTML = elInputFondo.value;
+	/* calcula la posición inicial de la etiqueta (el tooltip) */
+	etiquetaFondo.style.left =  "150px";
+	/* establece el estilo inicial del TRACK */
+	
+	
+	elInputFondo.addEventListener('input',function(){
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiquetaFondo.innerHTML =(elInputFondo.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		 var bulletPosition = 0;
+		  if(elInputFondo.value == 70){
+				bulletPosition = 286;
+			}
+		  if(elInputFondo.value == 69){
+				bulletPosition = 275;
+			}
+		  if(elInputFondo.value == 68){
+				bulletPosition = 260;
+			}
+			if(elInputFondo.value == 67){
+				bulletPosition = 245;
+			}
+			if(elInputFondo.value == 66){
+				bulletPosition = 230;
+			}
+			if(elInputFondo.value == 65){
+				bulletPosition = 215;
+			}
+			if(elInputFondo.value == 64){
+				bulletPosition = 200;
+			}
+			if(elInputFondo.value == 63){
+				bulletPosition = 185;
+			}
+			if(elInputFondo.value == 62){
+				bulletPosition = 170;
+			}
+			if(elInputFondo.value == 61){
+				bulletPosition = 155;
+			}
+		  if(elInputFondo.value == 60){
+				bulletPosition = 140;
+			}
+		  if(elInputFondo.value == 59){
+				bulletPosition = 125;
+			}
+		  if(elInputFondo.value == 58){
+				bulletPosition = 110;
+			}
+		  if(elInputFondo.value == 57){
+				bulletPosition = 95;
+			}
+		  if(elInputFondo.value == 56){
+				bulletPosition = 80;
+			}
+		  if(elInputFondo.value == 55){
+				bulletPosition = 65;
+			}
+		  if(elInputFondo.value == 54){
+				bulletPosition = 50;
+			}
+		  if(elInputFondo.value == 53){
+				bulletPosition = 35;
+			}
+		  if(elInputFondo.value == 52){
+				bulletPosition = 20;
+			}
+		  if(elInputFondo.value == 51){
+				bulletPosition = 5;
+			}
+		  if(elInputFondo.value == 50){
+				bulletPosition = -10;
+			}
+		  etiquetaFondo.style.left = (bulletPosition) + "px";
+		
+		/* cambia el estilo del TRACK */
+	}, false);
 
 
 	elInput.addEventListener('input',function(){
 		
 	/* cambia el valor de la etiqueta (el tooltip) */
+		var max = $("#rs-range-line").attr("max");
+		if(elInput.value == 200){
+			if(max == 200){
+				etiqueta.style.left =  ((parseFloat(elInput.value)) + (80))+"px";
+			}else{
+				etiqueta.style.left =  ((parseFloat(elInput.value)) - (205))+"px";
+			}
+		}
 	etiqueta.innerHTML =elInput.value;
 	/* cambia la posición de la etiqueta (el tooltip) */
-	etiqueta.style.left =  ((elInput.value * 0.75) - (40/2))+"px";
+	if(elInput.value >= 390){
+		etiqueta.style.left =  ((parseFloat(elInput.value)) - (112))+"px";
+	}else{
+		if(elInput.value >= 380){
+			etiqueta.style.left =  ((parseFloat(elInput.value)) - (117))+"px";
+		}else{
+			if(elInput.value >= 370){
+				etiqueta.style.left =  ((parseFloat(elInput.value)) - (122))+"px";
+			}else{
+				if(elInput.value >= 360){
+					etiqueta.style.left =  ((parseFloat(elInput.value)) - (127))+"px";
+				}else{
+					if(elInput.value >= 350){
+						etiqueta.style.left =  ((parseFloat(elInput.value)) - (132))+"px";
+					}else{
+						if(elInput.value >= 340){
+							etiqueta.style.left =  ((parseFloat(elInput.value)) - (137))+"px";
+						}else{
+							if(elInput.value >= 330){
+								etiqueta.style.left =  ((parseFloat(elInput.value)) - (142))+"px";
+							}else{
+								if(elInput.value >= 320){
+									etiqueta.style.left =  ((parseFloat(elInput.value)) - (147))+"px";
+								}else{
+									if(elInput.value >= 310){
+										etiqueta.style.left =  ((parseFloat(elInput.value)) - (152))+"px";
+									}else{
+										if(elInput.value >= 300){
+											etiqueta.style.left =  ((parseFloat(elInput.value)) - (157))+"px";
+										}else{
+											if(elInput.value >= 290){
+												etiqueta.style.left =  ((parseFloat(elInput.value)) - (162))+"px";
+											}else{
+												if(elInput.value >= 280){
+													etiqueta.style.left =  ((parseFloat(elInput.value)) - (167))+"px";
+												}else{
+													if(elInput.value >= 260){
+														etiqueta.style.left =  ((parseFloat(elInput.value)) - (175))+"px";
+													}else{
+														if(elInput.value >= 250){
+															etiqueta.style.left =  ((parseFloat(elInput.value)) - (182))+"px";
+														}else{
+														if(elInput.value >= 240){
+															etiqueta.style.left =  ((parseFloat(elInput.value)) - (187))+"px";
+														}else{
+															if(elInput.value >= 220){
+																etiqueta.style.left =  ((parseFloat(elInput.value)) - (195))+"px";
+															}else{
+																if(elInput.value >= 210){
+																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (200))+"px";
+																}
+																else{
+																if(elInput.value > 200){
+																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (205))+"px";
+																}else{
+																	if(elInput.value >= 190 && elInput.value < 200){
+																		etiqueta.style.left =  ((parseFloat(elInput.value)) + (80))+"px";
+																	}else{
+																		if(elInput.value >= 180 && elInput.value != 200){
+																			etiqueta.style.left =  ((parseFloat(elInput.value)) + (70))+"px";
+																		}else{
+																			if(elInput.value >= 170 && elInput.value != 200){
+																				etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
+																			}else{
+																				if(elInput.value >= 160 && elInput.value != 200){
+																					etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
+																				}else{
+																					if(elInput.value >= 150 && elInput.value != 200){
+																						etiqueta.style.left =  ((parseFloat(elInput.value)) + (55))+"px";
+																					}else{
+																						if(elInput.value >= 140 && elInput.value != 200){
+																							etiqueta.style.left =  ((parseFloat(elInput.value)) + (48))+"px";
+																						}else{
+																							if(elInput.value >= 130 && elInput.value != 200){
+																								etiqueta.style.left =  ((parseFloat(elInput.value)) + (40))+"px";
+																							}else{
+																								if(elInput.value >= 120 && elInput.value != 200){
+																									etiqueta.style.left =  ((parseFloat(elInput.value)) + (32))+"px";
+																								}else{
+																									if(elInput.value >= 110 && elInput.value != 200){
+																										etiqueta.style.left =  ((parseFloat(elInput.value)) + (24))+"px";
+																									}else{
+																										if(elInput.value >= 100 && elInput.value != 200){
+																											etiqueta.style.left =  ((parseFloat(elInput.value)) + (16))+"px";
+																										}else{
+																											if(elInput.value >= 90 && elInput.value != 200){
+																												etiqueta.style.left =  ((parseFloat(elInput.value)) + (8))+"px";
+																											}else{
+																												if(elInput.value >= 80 && elInput.value != 200){
+																													etiqueta.style.left =  ((parseFloat(elInput.value)) - (2))+"px";
+																												}else{
+																													if(elInput.value >= 70 && elInput.value != 200){
+																														etiqueta.style.left =  ((parseFloat(elInput.value)) - (12))+"px";
+																													}else{
+																														if(elInput.value >= 60 && elInput.value != 200){
+																															etiqueta.style.left =  ((parseFloat(elInput.value)) - (22))+"px";
+																														}else{
+																															if(elInput.value >= 50 && elInput.value != 200){
+																																etiqueta.style.left =  ((parseFloat(elInput.value)) - (30))+"px";
+																															}else{
+																																if(elInput.value >= 40 && elInput.value != 200){
+																																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (40))+"px";
+																																}else{
+																																	if(elInput.value != 200){
+																																		etiqueta.style.left =  ((parseFloat(elInput.value)) - (50))+"px";
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+																}
+															}
+														}
+													}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	/* cambia el estilo del TRACK */
 	
 
@@ -517,6 +922,7 @@ function apiShape1(id){
 	var parameters;
 		//store door id
 		  var doorsId;
+		  var estantesId;
 
 		  //store state of door;
 		  var doorState = [];
@@ -529,7 +935,14 @@ function apiShape1(id){
 		          }
 		      }
 		  };
-
+		  var effect = {
+				    active: {
+				        name: "colorHighlight",
+				        options: {
+				            color: [0, 185, 3]
+				        }
+				    }
+				};
 		  //define interaction group for doors. They need to be hoverable and selectable
 		  var doorsInteractionGroup = {
 		      id: "doorsInteractionGroup",
@@ -538,6 +951,13 @@ function apiShape1(id){
 		      selectable: true,
 		      selectionMode: "single"
 		  };
+		  var shelvesInteractionGroup = {
+				  id: "shelvesInteractionGroup",
+				  selectable: true,
+				  selectionEffect: effect,
+				  selectionMode: "multiple"
+				};
+		  		
 
 		  //define the base animation object
 		  var baseAnimation = {
@@ -598,26 +1018,55 @@ function apiShape1(id){
 		 
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 	    if (!viewerInit) {
+	    	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"]);
 	    	 var doorsObject = api.scene.get(
 				        {
-				          name: "puertas",
-				          format: "glb"
+				          name: "puertas"
 				        },
 				        "CommPlugin_1"
 				      ).data[0];
+	    	 	var shelves = api.scene.get(
+	    		        {
+	    		          name: "EstantesGeo",
+	    		          format: "glb"
+	    		        },
+	    		        "CommPlugin_1"
+	    		      ).data[0];
+	    		      
+	    		      var shelvesSides = api.scene.get(
+	    		        {
+	    		          name: "EstantesCantosGeo",
+	    		          format: "glb"
+	    		        },
+	    		        "CommPlugin_1"
+	    		      ).data[0];
 				      
 				      doorsId = doorsObject.id;
 				      doorState = Array(doorsObject.content.length).fill(-1);
 
 				        //add doors interaction group to scene
-				        api.scene.updateInteractionGroups(doorsInteractionGroup);
+				      api.scene.updateInteractionGroups([doorsInteractionGroup,shelvesInteractionGroup]);
 
 				        //apply interaction group to doors
-				        api.scene.updatePersistentAsync({
+				      api.scene.updatePersistentAsync([
+				          {
 				            id: doorsId,
 				            interactionGroup: doorsInteractionGroup.id,
 				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-				        }, "CommPlugin_1");
+				          },
+				          {
+				            id: shelves.id,
+				            interactionGroup: shelvesInteractionGroup.id,
+				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+				          },
+				          {
+				            id: shelvesSides.id,
+				            interactionGroup: shelvesInteractionGroup.id,
+				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+				          }
+				        ], "CommPlugin_1");
+				        
+
 
 				      //add event listener when clicking objects
 				      api.scene.addEventListener(
@@ -1151,7 +1600,7 @@ function cambiarVistaArmarioAltura(){
 	var rangeSlider = document.getElementById("rs-range-line1");
 	var valorAncho =  (rangeSlider.value*10);
 	todounarmario["altura"] = valorAncho;
-	var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(todounarmario)
@@ -1163,7 +1612,7 @@ function cambiarVistaArmarioFondo(){
 	var rangeSlider = document.getElementById("rs-range-line2");
 	var valorAncho =  (rangeSlider.value*10);
 	todounarmario["fondo"] = valorAncho;
-	var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(todounarmario)
@@ -1192,70 +1641,14 @@ function interiorDefinidoMostrarArm(u,id){
 }
 var timeOutAncho;
 function cambiarVistaArmario(tipo){
-	for(let i = 0;i<arrayTimeOut.length;i++){
-		clearTimeout(arrayTimeOut[i]);
-	}
+
 	//ya1vez = false;
 	var rangeSlider = document.getElementById("rs-range-line");
 	var rangeSlider1 = document.getElementById("rs-range-line1");
 	var rangeSlider2 = document.getElementById("rs-range-line2");
 	$("#sdv-container-canvas").removeAttr("onmouseup");
 	$("#inputAlturaArmario").val(rangeSlider1.value * 10);
-	window.ya1vez = false;
 	
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"102%"});
-		  $("#rs-range-line").css({"margin-left":"-3px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 900);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"104%"});
-		  $("#rs-range-line").css({"margin-left":"-6px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 800);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"106%"});
-		  $("#rs-range-line").css({"margin-left":"-10px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 700);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"108%"});
-		  $("#rs-range-line").css({"margin-left":"-15px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 600);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"110%"});
-		  $("#rs-range-line").css({"margin-left":"-20px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 500);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"112%"});
-		  $("#rs-range-line").css({"margin-left":"-24px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 400);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"114%"});
-		  $("#rs-range-line").css({"margin-left":"-28px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 300);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"116%"});
-		  $("#rs-range-line").css({"margin-left":"-32px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 200);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"width":"118%"});
-		  $("#rs-range-line").css({"margin-left":"-32px"});
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 100);
-	  setTimeout(function() {
-		  $("#rs-range-line").css({"background":"transparent"});
-		  $("#rs-range-line").css({"width":"100%"});
-		  $("#rs-range-line").css({"margin-left":"0px"});
-		  $("#rs-range-line").attr("min",40);
-		  $("#rs-range-line").attr("max",400);
-		  //$("#rs-range-lineRaya").css({"display":"none"});
-	  }, 1000);
   var valorAncho =  (rangeSlider.value*10);
   var alto = (rangeSlider1.value);
   var fondo = (rangeSlider2.value);
@@ -1300,7 +1693,15 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 0;
 			  h = 1;
-			  arrayPuertas[0] = 0;
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+
+			  arrayPuertas[0] = objPuer1;
+
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1324,7 +1725,15 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 0;
 			  h = 1;
-			  arrayPuertas[0] = 0;
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+
+			  arrayPuertas[0] = objPuer1;
+
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1351,6 +1760,13 @@ function cambiarVistaArmario(tipo){
 		  h1 = 0;
 		  h2 = 1;
 		  h = 1;
+		  var objPuer1 = {
+				  "interior": 0,
+			      "tipo": "doble",
+			      "material": "madera1",
+			      "tirador":["none","none"]
+		  }
+		  arrayPuertas[0] = objPuer1;
 		  $("#opcionSliderDiv1").css({"display":"block"});
 		  $("#opcionSliderDiv2").css({"display":"none"});
 		  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1376,6 +1792,13 @@ function cambiarVistaArmario(tipo){
 		  h1 = 0;
 		  h2 = 1;
 		  h = 1;
+		  var objPuer1 = {
+				  "interior": 0,
+			      "tipo": "doble",
+			      "material": "madera1",
+			      "tirador":["none","none"]
+		  }
+		  arrayPuertas[0] = objPuer1;
 		  $("#opcionSliderDiv1").css({"display":"block"});
 		  $("#opcionSliderDiv2").css({"display":"none"});
 		  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1404,7 +1827,21 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
-			  arrayPuertas[0] = 0;
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1428,12 +1865,25 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
 			  costado = 0.75;
 	          costado1 = 0;
-	          arrayPuertas[0] = 1;
 		  }
 		  break;
 	  case valorAncho <= 1200:
@@ -1460,7 +1910,20 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 	          costado = 0.33;
 	          costado1 = 0;
-	          arrayPuertas[0] = 0;
+	          var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1486,7 +1949,20 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 			  costado = 0.75;
 	          costado1 = 0;
-	          arrayPuertas[0] = 1;
+	          var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1516,7 +1992,20 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 	          costado = 0.33;
 	          costado1 = 0;
-	          arrayPuertas[0] = 0;
+	          var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1542,7 +2031,20 @@ function cambiarVistaArmario(tipo){
 			  h = 2;
 			  costado = 0.75;
 	          costado1 = 0;
-	          arrayPuertas[0] = 1;
+	          var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 	          $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1572,7 +2074,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
-			  arrayPuertas[0] = 0;
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1598,7 +2113,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1628,7 +2156,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
-			  arrayPuertas[0] = 0;
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1654,7 +2195,39 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 1;
 			  h = 2;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1684,6 +2257,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 2;
 			  h = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1709,8 +2296,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1740,6 +2346,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 2;
 			  h = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1765,8 +2385,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1796,6 +2435,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 2;
 			  h = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1821,8 +2474,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1852,6 +2524,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 2;
 			  h = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1878,8 +2564,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 1;
 			  h = 3;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1909,6 +2614,20 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 2;
 			  h = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1936,6 +2655,27 @@ function cambiarVistaArmario(tipo){
 			  h = 3;
 			  arrayPuertas[0] = 0;
 			  arrayPuertas[1] = 2;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+				      "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -1965,7 +2705,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -1992,7 +2752,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2019,7 +2799,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 2;
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2050,7 +2850,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2077,7 +2897,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2104,7 +2944,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 2;
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2135,7 +2995,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2162,7 +3042,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2189,7 +3089,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 2;
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2220,7 +3140,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2247,7 +3187,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2274,7 +3234,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 2;
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2305,7 +3285,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 2;
 			  h = 3;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador": "none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2332,7 +3332,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2359,7 +3379,27 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 2;
 				  h = 3;
-				  arrayPuertas[0] = 2;
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador": "none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2390,6 +3430,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 3;
 			  h = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2416,8 +3477,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2447,6 +3534,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 3;
 			  h = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2473,8 +3581,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2504,6 +3638,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 3;
 			  h = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2530,8 +3685,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2561,6 +3742,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 3;
 			  h = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2587,8 +3789,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2618,6 +3846,27 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 3;
 			  h = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2644,8 +3893,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 2;
 			  h2 = 2;
 			  h = 4;
-			  arrayPuertas[0] = 0;
-			  arrayPuertas[1] = 3;
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -2677,7 +3952,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2705,7 +4007,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2733,7 +4062,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 3;
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2765,7 +4121,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2793,7 +4176,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2821,7 +4231,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 3;
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2853,7 +4290,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2881,7 +4345,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2909,7 +4400,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 3;
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2941,7 +4459,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2969,7 +4514,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -2997,7 +4569,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 3;
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -3029,7 +4628,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 1;
 			  h2 = 3;
 			  h = 4;
-			  arrayPuertas[0] = 1;
+			  var objPuer2 = {
+					  "interior": 1,
+					  "tipo": "simple",
+				      "material": "madera1",
+				      "tirador":"none"
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"block"});
 			  $("#opcionSliderDiv3").css({"display":"block"});
@@ -3057,7 +4683,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 0;
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -3084,7 +4737,34 @@ function cambiarVistaArmario(tipo){
 				  h1 = 1;
 				  h2 = 3;
 				  h = 4;
-				  arrayPuertas[0] = 3;
+				  var objPuer4 = {
+						  "interior": 3,
+						  "tipo": "simple",
+					      "material": "madera1",
+					      "tirador":"none"
+				  }
+				  var objPuer2 = {
+						  "interior": 1,
+					      "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer3 = {
+						  "interior": 2,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  var objPuer1 = {
+						  "interior": 0,
+						  "tipo": "doble",
+					      "material": "madera1",
+					      "tirador":["none","none"]
+				  }
+				  arrayPuertas[0] = objPuer1;
+				  arrayPuertas[1] = objPuer2;
+				  arrayPuertas[2] = objPuer3;
+				  arrayPuertas[3] = objPuer4;
 				  $("#opcionSliderDiv1").css({"display":"block"});
 				  $("#opcionSliderDiv2").css({"display":"block"});
 				  $("#opcionSliderDiv3").css({"display":"block"});
@@ -3116,6 +4796,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 4;
 			  h = 4;
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -3146,6 +4854,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 4;
 			  h = 4;
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -3176,6 +4912,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 4;
 			  h = 4;
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -3206,6 +4970,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 4;
 			  h = 4;
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -3236,6 +5028,34 @@ function cambiarVistaArmario(tipo){
 			  h1 = 0;
 			  h2 = 4;
 			  h = 4;
+			  var objPuer4 = {
+					  "interior": 3,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer2 = {
+					  "interior": 1,
+				      "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer3 = {
+					  "interior": 2,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  var objPuer1 = {
+					  "interior": 0,
+					  "tipo": "doble",
+				      "material": "madera1",
+				      "tirador":["none","none"]
+			  }
+			  arrayPuertas[0] = objPuer1;
+			  arrayPuertas[1] = objPuer2;
+			  arrayPuertas[2] = objPuer3;
+			  arrayPuertas[3] = objPuer4;
 			  $("#opcionSliderDiv1").css({"display":"block"});
 			  $("#opcionSliderDiv2").css({"display":"none"});
 			  $("#opcionSliderDiv3").css({"display":"none"});
@@ -3575,11 +5395,12 @@ function cambiarVistaArmario(tipo){
   
   object["costados"] = array;
   window.armario = armario;
+  window.tipo = tipo;
   object["altura"] = alto * 10;
   object["fondo"] = fondo * 10;
-  object["1puerta"] = arrayPuertas;
+  object["puertas"] = arrayPuertas;
   window.todounarmario = object;
-  var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+  var parame = api.parameters.get({name :"armarioJSON"}).data[0];
   api.parameters.updateAsync({
       id: parame.id,
       value: JSON.stringify(object)
@@ -4927,7 +6748,7 @@ function cambiarVistaArmario(tipo){
 
 
 
-function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajones2,cajones3,cajones4,tubo1,tubo2,tubo3,tubo4,arrayInterior){
+function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajones2,cajones3,cajones4,tubo1,tubo2,tubo3,tubo4,cajonSuelo1,cajonSuelo2,cajonSuelo3,cajonSuelo4,arrayInterior){
 	var arrayHueco1 = [];
 	var arrayHueco2 = [];
 	var arrayHueco3 = [];
@@ -4972,6 +6793,11 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	arrayCajones[1] = JSON.parse(cajones2);
 	arrayCajones[2] = JSON.parse(cajones3);
 	arrayCajones[3] = JSON.parse(cajones4);
+	var arrayCajonesSuelo = [];
+	arrayCajonesSuelo[0] = JSON.parse(cajonSuelo1);
+	arrayCajonesSuelo[1] = JSON.parse(cajonSuelo2);
+	arrayCajonesSuelo[2] = JSON.parse(cajonSuelo3);
+	arrayCajonesSuelo[3] = JSON.parse(cajonSuelo4);
 	var arrayTubo = [];
 	var cont = 0;
 	if(arraytubo1.length != 0){
@@ -4994,7 +6820,8 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	
 	armario["estantes"] = estantes;
 	armario["tubo"] = arrayTubo;
-	armario["cajones"] = arrayCajones;
+	armario["cajonesVolados"] = arrayCajones;
+	armario["cajonesSuelo"] = arrayCajonesSuelo;
 	window.estantes0 = estantes[0];
 	window.estantes1 = estantes[1];
 	window.estantes2 = estantes[2];
@@ -5003,13 +6830,18 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	window.cajones1 = arrayCajones[1];
 	window.cajones2 = arrayCajones[2];
 	window.cajones3 = arrayCajones[3];
+	window.cajonesSuelo0 = arrayCajonesSuelo[0];
+	window.cajonesSuelo1 = arrayCajonesSuelo[1];
+	window.cajonesSuelo2 = arrayCajonesSuelo[2];
+	window.cajonesSuelo3 = arrayCajonesSuelo[3];
 	window.tuboArray = arrayTubo;
 	window.todounarmario = armario;
-	var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
 	    });
+	  console.log(JSON.stringify(armario));
 	  if(estantes[0].length != 0){
 		  
 		    var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
@@ -9166,564 +10998,39 @@ var arrayTimeOut = [];
 var ya1vez = false;
 var valorBullet = 0;
 function showSliderValue() {
-	for(let i = 0;i<arrayTimeOut.length;i++){
-		clearTimeout(arrayTimeOut[i]);
-	}
-	
+		$("#masgrandeBoton").css({"display":"none"});
+		$("#maschicoBoton").css({"display":"none"});
 		var rangeSlider = document.getElementById("rs-range-line");
-
-	  arrayTimeOut[arrayTimeOut.length] = setTimeout(function() {
-		  
-		  $('#calculadoraCarrito').append('<datalist id="listaAnchoArmario"></datalist>');
-		  if(window.ya1vez == false){
-			  window.ya1vez = true;
-			  $("#rs-range-line").attr("min",(parseFloat(rangeSlider.value) - 16));
-			  $("#rs-range-line").attr("max",(parseFloat(rangeSlider.value) + 16));
-			  /** $("#rs-range-lineRaya").css({"display":"block"});
-			  $("#rs-range-lineRaya").css({"background-color":"red"});
-			  $("#rs-range-lineRaya").css({"z-index":"3"});
-			  $("#rs-range-lineRaya").css({"background":"-webkit-repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-			  $("#rs-range-lineRaya").css({"background":"-moz-repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-			  $("#rs-range-lineRaya").css({"background":"repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-			  $("#rs-range-lineRaya").attr("class","ampliacionSliderInput"); **/
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"102%"});
-				  $("#rs-range-line").css({"margin-left":"-3px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 100);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"104%"});
-				  $("#rs-range-line").css({"margin-left":"-6px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 200);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"106%"});
-				  $("#rs-range-line").css({"margin-left":"-10px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 300);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"108%"});
-				  $("#rs-range-line").css({"margin-left":"-15px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 400);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"110%"});
-				  $("#rs-range-line").css({"margin-left":"-20px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 500);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"112%"});
-				  $("#rs-range-line").css({"margin-left":"-24px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 600);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"114%"});
-				  $("#rs-range-line").css({"margin-left":"-28px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 700);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"116%"});
-				  $("#rs-range-line").css({"margin-left":"-32px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 800);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"width":"118%"});
-				  $("#rs-range-line").css({"margin-left":"-32px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 900);
-			  setTimeout(function() {
-				  $("#rs-range-line").css({"background":"-webkit-repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-				  $("#rs-range-line").css({"background":"-moz-repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-				  $("#rs-range-line").css({"background":"repeating-linear-gradient(90deg, #777, #777 1px, transparent 1px, transparent 10px) 50% 50%"});
-				  $("#rs-range-line").css({"width":"120%"});
-				  $("#rs-range-line").css({"margin-left":"-35px"});
-				  //$("#rs-range-lineRaya").css({"display":"none"});
-			  }, 1000);
-		  }
-      }, 2000);
+		if(rangeSlider.value == rangeSlider.max && rangeSlider.value != 400){
+			$("#masgrandeBoton").css({"display":"block"});
+		}
+		if(rangeSlider.value == rangeSlider.min && rangeSlider.value != 40){
+			$("#maschicoBoton").css({"display":"block"});
+		}
+}
+function masgrandebotonancho(){
+	var etiqueta = document.querySelector('#etiqueta');
+	etiqueta.style.left =  "0px";
+	$("#masgrandeBoton").css({"display":"none"});
+	$("#maschicoBoton").css({"display":"block"});
+	var rangeSlider = document.getElementById("rs-range-line");
+	rangeSlider.min = 200;
+	rangeSlider.max = 400;
+	$("#valorMinDeAncho").text("200");
+	$("#valorMaxDeAncho").text("400");
+}
+function maschicobotonancho(){
+	var etiqueta = document.querySelector('#etiqueta');
+	etiqueta.style.left =  "280px";
+	$("#masgrandeBoton").css({"display":"block"});
+	$("#maschicoBoton").css({"display":"none"});
+	var rangeSlider = document.getElementById("rs-range-line");
+	rangeSlider.min = 40;
+	rangeSlider.max = 200;
+	$("#valorMinDeAncho").text("40");
+	$("#valorMaxDeAncho").text("200");
 }
 
-
-function showSliderValueAdicional10() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional10");
-	var rangeBullet = document.getElementById("rs-bulletAdicional10");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional11() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional11");
-	var rangeBullet = document.getElementById("rs-bulletAdicional11");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional12() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional12");
-	var rangeBullet = document.getElementById("rs-bulletAdicional12");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional13() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional13");
-	var rangeBullet = document.getElementById("rs-bulletAdicional13");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional20() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional20");
-	var rangeBullet = document.getElementById("rs-bulletAdicional20");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional21() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional21");
-	var rangeBullet = document.getElementById("rs-bulletAdicional21");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional22() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional22");
-	var rangeBullet = document.getElementById("rs-bulletAdicional22");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional23() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional23");
-	var rangeBullet = document.getElementById("rs-bulletAdicional23");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional30() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional30");
-	var rangeBullet = document.getElementById("rs-bulletAdicional30");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional40() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional40");
-	var rangeBullet = document.getElementById("rs-bulletAdicional40");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional50() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional50");
-	var rangeBullet = document.getElementById("rs-bulletAdicional50");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional60() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional60");
-	var rangeBullet = document.getElementById("rs-bulletAdicional60");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional70() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional70");
-	var rangeBullet = document.getElementById("rs-bulletAdicional70");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional80() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional80");
-	var rangeBullet = document.getElementById("rs-bulletAdicional80");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional31() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional31");
-	var rangeBullet = document.getElementById("rs-bulletAdicional31");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional41() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional41");
-	var rangeBullet = document.getElementById("rs-bulletAdicional41");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional51() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional51");
-	var rangeBullet = document.getElementById("rs-bulletAdicional51");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional61() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional61");
-	var rangeBullet = document.getElementById("rs-bulletAdicional61");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional71() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional71");
-	var rangeBullet = document.getElementById("rs-bulletAdicional71");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional81() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional81");
-	var rangeBullet = document.getElementById("rs-bulletAdicional81");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional32() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional32");
-	var rangeBullet = document.getElementById("rs-bulletAdicional32");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional42() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional42");
-	var rangeBullet = document.getElementById("rs-bulletAdicional42");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional52() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional52");
-	var rangeBullet = document.getElementById("rs-bulletAdicional52");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional62() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional62");
-	var rangeBullet = document.getElementById("rs-bulletAdicional62");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional72() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional72");
-	var rangeBullet = document.getElementById("rs-bulletAdicional72");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional82() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional82");
-	var rangeBullet = document.getElementById("rs-bulletAdicional82");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional33() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional33");
-	var rangeBullet = document.getElementById("rs-bulletAdicional33");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional43() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional43");
-	var rangeBullet = document.getElementById("rs-bulletAdicional43");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional53() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional53");
-	var rangeBullet = document.getElementById("rs-bulletAdicional53");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional63() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional63");
-	var rangeBullet = document.getElementById("rs-bulletAdicional63");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional73() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional73");
-	var rangeBullet = document.getElementById("rs-bulletAdicional73");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function showSliderValueAdicional83() {
-	var rangeSlider = document.getElementById("rs-range-lineAdicional83");
-	var rangeBullet = document.getElementById("rs-bulletAdicional83");
-
-  rangeBullet.innerHTML = rangeSlider.value;
-  var bulletPosition = (rangeSlider.value /rangeSlider.max);
-  rangeBullet.style.left = (bulletPosition * (578*0.69)) + "px";
-}
-
-function anadirAddEventAdi1(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional10, false);
-		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional11, false);
-		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(2,0,1,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional12, false);
-		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(3,0,1,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional1"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional13, false);
-		$("#rs-range-lineAdicional1"+id).attr("onmouseup","cambiarArmarioEstantes(4,0,1,3)");
-	}
-}
-function anadirAddEventAdi2(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional20, false);
-		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(1,1,2,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional21, false);
-		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(2,1,2,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional22, false);
-		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(3,1,2,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional2"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional23, false);
-		$("#rs-range-lineAdicional2"+id).attr("onmouseup","cambiarArmarioEstantes(4,1,2,3)");
-	}
-}
-function anadirAddEventAdi3(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional30, false);
-		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(1,2,3,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional31, false);
-		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(2,2,3,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional32, false);
-		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(3,2,3,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional3"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional33, false);
-		$("#rs-range-lineAdicional3"+id).attr("onmouseup","cambiarArmarioEstantes(4,2,3,3)");
-	}
-}
-function anadirAddEventAdi4(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional40, false);
-		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(1,3,4,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional41, false);
-		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(2,3,4,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional42, false);
-		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(3,3,4,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional4"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional43, false);
-		$("#rs-range-lineAdicional4"+id).attr("onmouseup","cambiarArmarioEstantes(4,3,4,3)");
-	}
-}
-function anadirAddEventAdi5(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional50, false);
-		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(1,4,5,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional51, false);
-		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(2,4,5,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional52, false);
-		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(3,4,5,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional5"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional53, false);
-		$("#rs-range-lineAdicional5"+id).attr("onmouseup","cambiarArmarioEstantes(4,4,5,3)");
-	}
-}
-function anadirAddEventAdi6(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional60, false);
-		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(1,5,6,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional61, false);
-		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(2,5,6,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional62, false);
-		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(3,5,6,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional6"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional63, false);
-		$("#rs-range-lineAdicional6"+id).attr("onmouseup","cambiarArmarioEstantes(4,5,6,3)");
-	}
-}
-function anadirAddEventAdi7(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional70, false);
-		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(1,6,7,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional71, false);
-		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(2,6,7,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional72, false);
-		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(3,6,7,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional7"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional73, false);
-		$("#rs-range-lineAdicional7"+id).attr("onmouseup","cambiarArmarioEstantes(4,6,7,3)");
-	}
-}
-function anadirAddEventAdi8(id){
-	id = id-1;
-	var funcion = "showSliderValueAdicional1"+id;
-	if(id == 0){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional80, false);
-		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(1,7,8,0)");
-	}
-	if(id == 1){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional81, false);
-		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(2,7,8,1)");
-	}
-	if(id == 2){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional82, false);
-		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(3,7,8,2)");
-	}
-	if(id == 3){
-		var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional8"+id+"");
-		rangeSliderAdicional1.addEventListener("input", showSliderValueAdicional83, false);
-		$("#rs-range-lineAdicional8"+id).attr("onmouseup","cambiarArmarioEstantes(4,7,8,3)");
-	}
-}
 function cambiarArmarioEstantes(id,id1,posicion,num){
 	var rangeSlider = document.getElementById("rs-range-lineAdicional"+posicion+""+num);
 	var armario = window.todounarmario;
@@ -9778,7 +11085,7 @@ function cambiarArmarioEstantes(id,id1,posicion,num){
 	}
 	window.todounarmario = armario;
 	console.log(JSON.stringify(armario));
-		var parame = api.parameters.get({name :"SDTextJSON"}).data[0];
+		var parame = api.parameters.get({name :"armarioJSON"}).data[0];
 		api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
@@ -9788,9 +11095,9 @@ function cambiarArmarioEstantes(id,id1,posicion,num){
 
 function showSliderValue1() {
 	var rangeSlider = document.getElementById("rs-range-line1");
-	var rangeBullet = document.getElementById("rs-bullet1");
+	//var rangeBullet = document.getElementById("rs-bullet1");
 	var rangeSlider1 = document.getElementById("rs-range-line");
-  rangeBullet.innerHTML = rangeSlider.value;
+  //rangeBullet.innerHTML = rangeSlider.value;
   $("#inputAlturaArmario").val(parseFloat(rangeSlider.value) * 10);
   var bulletPosition = (rangeSlider.value /rangeSlider.max);
   	if(rangeSlider.value == 260){
@@ -9917,12 +11224,14 @@ function showSliderValue1() {
 			bulletPosition = 57,8;
 		}
   
-  rangeBullet.style.left = (bulletPosition) + "px";
+  //rangeBullet.style.left = (bulletPosition) + "px";
 }
 
 function ocultarPuertasFuncion(){
-	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas", format: "glb" }, "CommPlugin_1").data[0].scenePath]);
-	
+	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"]);
+}
+function mostrarPuertasFuncion(){
+	api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"],[]);
 }
 function showSliderValue2() {
 	var rangeSlider = document.getElementById("rs-range-line2");
@@ -9999,6 +11308,25 @@ function showSliderValue2() {
   
 }
 function divcontenidometerfuncion(u,id){
+	var shelves = api.scene.get(
+	        {
+	          name: "EstantesGeo",
+	          format: "glb"
+	        },
+	        "CommPlugin_1"
+	      ).data[0];
+	      
+	      var shelvesSides = api.scene.get(
+	        {
+	          name: "EstantesCantosGeo",
+	          format: "glb"
+	        },
+	        "CommPlugin_1"
+	      ).data[0];
+	      for(let l = 0;l<25;l++){
+	    	  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
+	    	  api.scene.updateSelected([],shelvesScenePaths);
+	      }
 	for(let o = 0;o<9;o++){
 		$("#divAdicionalesInterior0 #divContenidoMeter"+o+"0 #divOscuroOpOpcionesSlider").remove();
 		$("#divAdicionalesInterior1 #divContenidoMeter"+o+"1 #divOscuroOpOpcionesSlider").remove();
@@ -10016,20 +11344,84 @@ function divcontenidometerfuncion(u,id){
 	
 	$("#divAdicionalesInterior"+id+" #divContenidoMeter"+u+""+id).removeAttr("onclick");
 	$("#divAdicionalesInterior"+id+" #divContenidoMeter"+u+""+id+" #divOscuroOpOpcionesSlider").remove();
-	window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
-	window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-	api.scene.updateAsync({
-		scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
-		content: [
-		{
-			format: "material",
-			data: {
-				version: "2.0",
-				bitmaptexture: 'https://i.imgur.com/eucAMTA.jpg'
+	
+	var estantes0 = window.estantes0;
+	var estantes1 = window.estantes1;
+	var estantes2 = window.estantes2;
+	var estantes3 = window.estantes3;
+	
+	if(id == 0){
+		  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(u-1)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(u-1)+".transformation_0.node_0.mesh_0.primitive_0"];
+		  api.scene.updateSelected(shelvesScenePaths);
+	}
+	if(id == 1){
+		var num = estantes0.length - 1;
+		if(num == -1){
+			var sum = 2 + (u-1);
+		}else{
+			var sum = 1 + (u-1);
+		}
+		  
+		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(sum+num)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(sum+num)+".transformation_0.node_0.mesh_0.primitive_0"];
+		api.scene.updateSelected(shelvesScenePaths);
+	}
+	if(id == 2){
+		var num = estantes0.length - 1;
+		var num1 = estantes1.length - 1;
+		var sum = 0;
+		if(num == -1){
+			if(num1 == -1){
+				sum = 4 + (u-1);
+			}else{
+				sum = 3 + (u-1);
+			}
+		}else{
+			if(num1 == -1){
+				sum = 3 + (u-1);
+			}else{
+				sum = 2 + (u-1);
 			}
 		}
-		]
-	}, "CommPlugin_1");
+		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(num+num1+sum)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(num+num1+sum)+".transformation_0.node_0.mesh_0.primitive_0"];
+		api.scene.updateSelected(shelvesScenePaths);
+	}
+	if(id == 3){
+		var num = estantes0.length - 1;
+		var num1 = estantes1.length - 1;
+		var num2 = estantes2.length - 1;
+		var sum = 0;
+		if(num == -1){
+			if(num1 == -1 && num2 != -1){
+				sum = 5+ (u-1);
+			}
+			if(num2 == -1 && num1 != -1){
+				sum = 5+ (u-1);
+			}
+			if(num2 != -1 && num1 != -1){
+				sum = 4+ (u-1);
+			}
+			if(num2 == -1 && num1 == -1){
+				sum = 4+ (u-1);
+			}
+		}else{
+			if(num1 == -1 && num2 != -1){
+				sum = 4+ (u-1);
+			}
+			if(num2 != -1 && num1 == -1){
+				sum = 4+ (u-1);
+			}
+			if(num2 != -1 && num1 != -1){
+				sum = 3+ (u-1);
+			}
+			if(num2 == -1 && num1 == -1){
+				sum = 5+ (u-1);
+			}
+		}
+		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(num+num1+num2+sum)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(num+num1+num2+sum)+".transformation_0.node_0.mesh_0.primitive_0"];
+		api.scene.updateSelected(shelvesScenePaths);
+	}
+	
+	
 }
 function estaMarcadoDivArm(div){
 	//if(div == 'divElegirOpcionSlider'){
@@ -10058,4 +11450,94 @@ function estaMarcadoDivArm(div){
 		}
 		
 	//}
+}
+function armarioPuertaCambiar(idPuerta,idTipo,num){
+	var armario = window.todounarmario;
+	 var armNum = window.armario;
+	 var tipo = window.tipo;
+	if(armario["puertas"][idPuerta]["tipo"] == "simple"){
+		if(idTipo == "381"){
+			armario["puertas"][idPuerta]["material"] = "cristal";
+			armario["puertas"][idPuerta]["tirador"] = "none";
+		}
+		if(idTipo == "382"){
+			armario["puertas"][idPuerta]["material"] = "cristal";
+			armario["puertas"][idPuerta]["tirador"] = "none";
+		}
+		if(idTipo == "383"){
+			armario["puertas"][idPuerta]["material"] = "madera1";
+			armario["puertas"][idPuerta]["tirador"] = "none";
+		}
+		if(idTipo == "384"){
+			armario["puertas"][idPuerta]["material"] = "madera1";
+			armario["puertas"][idPuerta]["tirador"] = "tim";
+		}
+		if(idTipo == "385"){
+			armario["puertas"][idPuerta]["material"] = "madera1";
+			armario["puertas"][idPuerta]["tirador"] = "nye";
+		}
+		if(idTipo == "386"){
+			armario["puertas"][idPuerta]["material"] = "madera1";
+			armario["puertas"][idPuerta]["tirador"] = "draw";
+		}
+		if(idTipo == "391"){
+			armario["puertas"][idPuerta]["material"] = "";
+			armario["puertas"][idPuerta]["tirador"] = "none";
+		}
+	}
+	if(armario["puertas"][idPuerta]["tipo"] == "doble"){
+		
+				if(idTipo == "381"){
+					armario["puertas"][idPuerta]["material"] = "cristal";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "382"){
+					armario["puertas"][idPuerta]["material"] = "cristal";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "383"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "384"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "tim";
+				}
+				if(idTipo == "385"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "nye";
+				}
+				if(idTipo == "386"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "draw";
+				}
+				if(idTipo == "387"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "388"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "389"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "390"){
+					armario["puertas"][idPuerta]["material"] = "madera1";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+				if(idTipo == "391"){
+					armario["puertas"][idPuerta]["material"] = "";
+					armario["puertas"][idPuerta]["tirador"][num] = "none";
+				}
+		}
+		
+	
+	window.todounarmario = armario;
+	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: JSON.stringify(armario)
+	    });
 }

@@ -156,6 +156,80 @@ a {
     /*top:-1px;*/
 }
 
+#inputDivAltura {
+    width: 75%;
+    margin-top: 78px;
+    position: absolute;
+    margin-left: 57px;
+}
+
+#etiquetaAltura {
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+    color: block;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 4px;
+    top: -45px;
+    border: 1px solid;
+}
+
+#etiquetaAltura:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 8;
+    background-color: white;
+    position: relative;
+    left: 9px;
+    border: 1px solid;
+    /*top:-1px;*/
+}
+#inputDivFondo {
+    width: 75%;
+    margin-top: 78px;
+    position: absolute;
+    margin-left: 57px;
+}
+
+#etiquetaFondo {
+    width: 30px;
+    height: 26px;
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+    color: block;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 4px;
+    top: -45px;
+    border: 1px solid;
+}
+
+#etiquetaFondo:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 8;
+    background-color: white;
+    position: relative;
+    left: 9px;
+    border: 1px solid;
+    /*top:-1px;*/
+}
 #inputDivAdi10 {
     width: 90%;
     margin-top: 55px;

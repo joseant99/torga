@@ -173,6 +173,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     objetoCajonesArray2: any;
     objetoCajonesArray3: any;
     objetoCajonesArray4: any;
+    objetoCajonesSueloArray1: any;
+    objetoCajonesSueloArray2: any;
+    objetoCajonesSueloArray3: any;
+    objetoCajonesSueloArray4: any;
     alturaArmario: any;
     arrayHuecoInterioresubida: any;
     constructor(
@@ -341,11 +345,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var hueco = this.armariosDormitorioComponent.huecoPinta;
         var arrayEstantes = [];
         var arrayCajones = [];
+        var objetoCajonesSuelo = {};
         var tubo = [];
         var objetoCajones1 = this.objetoCajonesArray1;
         var objetoCajones2 = this.objetoCajonesArray2;
         var objetoCajones3 = this.objetoCajonesArray3;
         var objetoCajones4 = this.objetoCajonesArray4;
+        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
+        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
+        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
+        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
         var cont = 0;
         var alturaValor = 2200;
         var armarioCogido = this.armariosDormitorioComponent.armarioCogido;
@@ -365,61 +374,55 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (interiores[i]['nombre'] == id) {
                 if (id == 1) {
                     if (altura < 2250) {
-                        arrayEstantes[0] = 1740;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        arrayEstantes[0] = 1710;
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 1980;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        arrayEstantes[0] = 1950;
+                        tubo[0] = 1900;
                     }
                 }
                 if (id == 2) {
                     if (alturaValor < 2250) {
                         arrayEstantes[0] = (alturaValor - 90) / 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        tubo[0] = (alturaValor - 90) / 2 - 50;
                     } else {
                         arrayEstantes[0] = (alturaValor - 90) / 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        tubo[0] = (alturaValor - 90) / 2 - 50;
                     }
                 }
                 if (id == 3) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 1740;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 1710;
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 1980;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 1950;
+                        tubo[0] = 1900;
                     }
                 }
                 if (id == 4) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 1146;
-                        arrayEstantes[2] = 1740;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 1126;
+                        arrayEstantes[2] = 1710;
                     } else {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 1266;
-                        arrayEstantes[2] = 1980;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 1236;
+                        arrayEstantes[2] = 1950;
                     }
                 }
                 if (id == 5) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 948;
-                        arrayEstantes[2] = 1344;
-                        arrayEstantes[3] = 1740;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 918;
+                        arrayEstantes[2] = 1314;
+                        arrayEstantes[3] = 1710;
                     } else {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 1028;
-                        arrayEstantes[2] = 1504;
-                        arrayEstantes[3] = 1980;
+                        arrayEstantes[0] = 522;
+                        arrayEstantes[1] = 998;
+                        arrayEstantes[2] = 1474;
+                        arrayEstantes[3] = 1950;
                     }
                 }
                 if (id == 6) {
@@ -428,15 +431,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         arrayEstantes[1] = (5 * alturaValor - 180) / 8;
                         arrayEstantes[2] = 0.75 * (alturaValor - 30);
                         arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        tubo[0] = (alturaValor - 90) / 2 - 50;
                     } else {
                         arrayEstantes[0] = alturaValor / 2 - 15;
                         arrayEstantes[1] = (5 * alturaValor - 180) / 8;
                         arrayEstantes[2] = 0.75 * (alturaValor - 30);
                         arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 0;
+                        tubo[0] = (alturaValor - 90) / 2 - 50;
                     }
                 }
                 if (id == 7) {
@@ -469,148 +470,84 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
                 if (id == 9) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 724;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 1;
-                        objetoCajones1['posicion'] = arrayspp;
+                        arrayEstantes[0] = 1710;
+                        objetoCajones1['posicion'] = 694;
                         objetoCajones1['cantidad'] = 1;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 724;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 1;
-                        objetoCajones1['posicion'] = arrayspp;
+                        arrayEstantes[0] = 1950;
+                        objetoCajones1['posicion'] = 694;
                         objetoCajones1['cantidad'] = 1;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        tubo[0] = 1900;
                     }
                 }
                 if (id == 10) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 1;
-                        objetoCajones1['posicion'] = arrayspp;
+                        arrayEstantes[0] = 1710;
+                        objetoCajones1['posicion'] = 522;
                         objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 1;
-                        objetoCajones1['posicion'] = arrayspp;
+                        arrayEstantes[0] = 1950;
+                        objetoCajones1['posicion'] = 522;
                         objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        tubo[0] = 1900;
                     }
                 }
                 if (id == 11) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 380;
-                        arrayEstantes[1] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 1710;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 380;
-                        arrayEstantes[1] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 1950;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1660;
                     }
                 }
                 if (id == 12) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 380;
-                        arrayEstantes[1] = 760;
-                        arrayEstantes[2] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        arrayEstantes[0] = 730;
+                        arrayEstantes[1] = 1710;
+                        tubo[0] = 1660;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
                     } else {
-                        arrayEstantes[0] = 380;
-                        arrayEstantes[1] = 760;
-                        arrayEstantes[2] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 2;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        arrayEstantes[0] = 730;
+                        arrayEstantes[1] = 1950;
+                        tubo[0] = 1900;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
                     }
                 }
                 if (id == 13) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 3;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        arrayEstantes[0] = 932;
+                        arrayEstantes[1] = 1710;
+                        objetoCajonesSuelo['cantidad'] = 3;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 552;
-                        arrayEstantes[1] = 932;
-                        arrayEstantes[2] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 3;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 2;
+                        arrayEstantes[0] = 932;
+                        arrayEstantes[1] = 1950;
+                        objetoCajonesSuelo['cantidad'] = 3;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1900;
                     }
                 }
                 if (id == 14) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 724;
-                        arrayEstantes[1] = 1740;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 4;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 1710;
+                        objetoCajonesSuelo['cantidad'] = 4;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1660;
                     } else {
-                        arrayEstantes[0] = 724;
-                        arrayEstantes[1] = 1980;
-                        var arrayspp = [];
-                        arrayspp[0] = hueco - 1;
-                        arrayspp[1] = 0;
-                        objetoCajones1['posicion'] = arrayspp;
-                        objetoCajones1['cantidad'] = 4;
-                        tubo[0] = hueco - 1;
-                        tubo[1] = 1;
+                        arrayEstantes[0] = 1950;
+                        objetoCajonesSuelo['cantidad'] = 4;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        tubo[0] = 1900;
                     }
                 }
             }
@@ -631,6 +568,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (objetoCajones1['posicion'] != undefined) {
                 objetoCajones1 = objetoCajones1;
                 this.objetoCajonesArray1 = objetoCajones1;
+            }
+            if (objetoCajonesSuelo['cantidad'] != undefined) {
+                objetoCajonesSuelo1 = objetoCajonesSuelo;
+                this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
             }
             this.arrayhuecoEstantes1 = arrayHueco1;
             this.arrayTubo1 = tubo1;
@@ -677,6 +618,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 objetoCajones2 = objetoCajones1;
                 this.objetoCajonesArray2 = objetoCajones2;
             }
+            if (objetoCajonesSuelo['cantidad'] != undefined) {
+                objetoCajonesSuelo2 = objetoCajonesSuelo;
+                this.objetoCajonesSueloArray2 = objetoCajonesSuelo2;
+            }
             this.arrayhuecoEstantes2 = arrayHueco2;
             this.arrayTubo2 = tubo2;
             for (var o = 0; o < arrayHueco2.length; o++) {
@@ -722,6 +667,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 objetoCajones3 = objetoCajones1;
                 this.objetoCajonesArray3 = objetoCajones3;
             }
+            if (objetoCajonesSuelo['cantidad'] != undefined) {
+                objetoCajonesSuelo3 = objetoCajonesSuelo;
+                this.objetoCajonesSueloArray3 = objetoCajonesSuelo3;
+            }
             this.arrayhuecoEstantes3 = arrayHueco3;
             this.arrayTubo3 = tubo3;
             for (var o = 0; o < arrayHueco3.length; o++) {
@@ -766,6 +715,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (objetoCajones1['posicion'] != undefined) {
                 objetoCajones4 = objetoCajones1;
                 this.objetoCajonesArray4 = objetoCajones4;
+            }
+            if (objetoCajonesSuelo['cantidad'] != undefined) {
+                objetoCajonesSuelo4 = objetoCajonesSuelo;
+                this.objetoCajonesSueloArray4 = objetoCajonesSuelo4;
             }
             this.arrayhuecoEstantes4 = arrayHueco4;
             this.arrayTubo4 = tubo4;
@@ -833,6 +786,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 tubo4 +
                 "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
                 arrayInterior +
                 "')"
         );
@@ -842,7 +803,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
     public adcionaltipoFuncion(id) {
         var huecoPinta = this.armariosDormitorioComponent.huecoPinta;
-
+        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
+        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
+        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
+        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
         var precio = 0;
 
         var array = [];
@@ -1068,6 +1032,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     arrayHueco1[o] / 10
                 );
             }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
+            }
         }
         if (huecoPinta == 2) {
             if (arrayHueco2.length > 0) {
@@ -1117,6 +1102,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
                     arrayHueco2[o] / 10
                 );
+            }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
             }
         }
         if (huecoPinta == 3) {
@@ -1168,6 +1174,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     arrayHueco3[o] / 10
                 );
             }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco4.length > 0) {
+                for (let i = 0; i < arrayHueco4.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco4[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes4 = arrayHueco4;
+            }
         }
         if (huecoPinta == 4) {
             if (arrayHueco4.length > 0) {
@@ -1218,6 +1245,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     arrayHueco4[o] / 10
                 );
             }
+            if (arrayHueco3.length > 0) {
+                for (let i = 0; i < arrayHueco3.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
+                    arrayHueco3[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes3 = arrayHueco3;
+            }
+            if (arrayHueco1.length > 0) {
+                for (let i = 0; i < arrayHueco1.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
+                    arrayHueco1[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes1 = arrayHueco1;
+            }
+            if (arrayHueco2.length > 0) {
+                for (let i = 0; i < arrayHueco2.length; i++) {
+                    var valor = $('#divInterioresTdoPrincipal3 #rs-range-lineAdicional' + (i + 1) + '3').val();
+                    arrayHueco2[i] = valor + '0';
+                }
+                this.arrayhuecoEstantes2 = arrayHueco2;
+            }
         }
         $('#cliccambiarinteriores').attr(
             'onclick',
@@ -1246,6 +1294,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 tubo4 +
                 "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
                 arrayInterior +
                 "')"
         );
@@ -1267,6 +1323,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
     public enviarInterioresArmarioCambioAltura() {
         var alturaValor = 2200;
+        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
+        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
+        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
+        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
         var arrayHuecoInt = this.arrayHuecoInterioresubida;
         for (var hueco = 0; hueco <= arrayHuecoInt.length; hueco++) {
             if (arrayHuecoInt[hueco] != undefined) {
@@ -1388,24 +1448,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         }
                         if (id == 9) {
                             if (alturaValor < 2250) {
-                                arrayEstantes[0] = 724;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 1;
-                                objetoCajones1['posicion'] = arrayspp;
+                                arrayEstantes[2] = 1710;
+                                objetoCajones1['posicion'] = 694;
                                 objetoCajones1['cantidad'] = 1;
                                 tubo[0] = hueco - 1;
                                 tubo[1] = 2;
                             } else {
-                                arrayEstantes[0] = 724;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 1;
-                                objetoCajones1['posicion'] = arrayspp;
+                                arrayEstantes[2] = 1710;
+                                objetoCajones1['posicion'] = 694;
                                 objetoCajones1['cantidad'] = 1;
                                 tubo[0] = hueco - 1;
                                 tubo[1] = 2;
@@ -1416,10 +1466,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 arrayEstantes[0] = 552;
                                 arrayEstantes[1] = 932;
                                 arrayEstantes[2] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 1;
-                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['posicion'] = 522;
                                 objetoCajones1['cantidad'] = 2;
                                 tubo[0] = hueco - 1;
                                 tubo[1] = 2;
@@ -1427,10 +1474,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 arrayEstantes[0] = 552;
                                 arrayEstantes[1] = 932;
                                 arrayEstantes[2] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 1;
-                                objetoCajones1['posicion'] = arrayspp;
+                                objetoCajones1['posicion'] = 522;
                                 objetoCajones1['cantidad'] = 2;
                                 tubo[0] = hueco - 1;
                                 tubo[1] = 2;
@@ -1613,10 +1657,644 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 tubo4 +
                 "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
                 arrayInterior +
                 "')"
         );
         $('#cliccambiarinteriores')[0].click();
+    }
+
+    public puertaDelArmarioPonerAcabado(id) {
+        this.armariosDormitorioComponent.cambioAcabadoImagenPue(id);
+        var armario = this.armariosDormitorioComponent.armarioCogido;
+        var idPuerta = this.armariosDormitorioComponent.idPuertaInput;
+        var cogidoId = armario['puertas'][idPuerta]['id'];
+        if (armario['armario']['mensaje'] == '3 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB017' ||
+                armario['codigo'] == 'NB018' ||
+                armario['codigo'] == 'NB019' ||
+                armario['codigo'] == 'NB020' ||
+                armario['codigo'] == 'NB025' ||
+                armario['codigo'] == 'NB026' ||
+                armario['codigo'] == 'NB027' ||
+                armario['codigo'] == 'NB028' ||
+                armario['codigo'] == 'NB033' ||
+                armario['codigo'] == 'NB034' ||
+                armario['codigo'] == 'NB035' ||
+                armario['codigo'] == 'NB036' ||
+                armario['codigo'] == 'NB041' ||
+                armario['codigo'] == 'NB042' ||
+                armario['codigo'] == 'NB043' ||
+                armario['codigo'] == 'NB044' ||
+                armario['codigo'] == 'NB049' ||
+                armario['codigo'] == 'NB050' ||
+                armario['codigo'] == 'NB051' ||
+                armario['codigo'] == 'NB052'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+
+            if (
+                armario['codigo'] == 'NB021' ||
+                armario['codigo'] == 'NB022' ||
+                armario['codigo'] == 'NB023' ||
+                armario['codigo'] == 'NB024' ||
+                armario['codigo'] == 'NB029' ||
+                armario['codigo'] == 'NB030' ||
+                armario['codigo'] == 'NB031' ||
+                armario['codigo'] == 'NB032' ||
+                armario['codigo'] == 'NB037' ||
+                armario['codigo'] == 'NB038' ||
+                armario['codigo'] == 'NB039' ||
+                armario['codigo'] == 'NB040' ||
+                armario['codigo'] == 'NB045' ||
+                armario['codigo'] == 'NB046' ||
+                armario['codigo'] == 'NB047' ||
+                armario['codigo'] == 'NB048' ||
+                armario['codigo'] == 'NB053' ||
+                armario['codigo'] == 'NB054' ||
+                armario['codigo'] == 'NB055' ||
+                armario['codigo'] == 'NB056'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '4 PUERTAS - 2 HUECOS GRANDES') {
+            if (
+                armario['codigo'] == 'NB057' ||
+                armario['codigo'] == 'NB058' ||
+                armario['codigo'] == 'NB059' ||
+                armario['codigo'] == 'NB060' ||
+                armario['codigo'] == 'NB065' ||
+                armario['codigo'] == 'NB066' ||
+                armario['codigo'] == 'NB067' ||
+                armario['codigo'] == 'NB068' ||
+                armario['codigo'] == 'NB073' ||
+                armario['codigo'] == 'NB074' ||
+                armario['codigo'] == 'NB075' ||
+                armario['codigo'] == 'NB076' ||
+                armario['codigo'] == 'NB081' ||
+                armario['codigo'] == 'NB082' ||
+                armario['codigo'] == 'NB083' ||
+                armario['codigo'] == 'NB084' ||
+                armario['codigo'] == 'NB089' ||
+                armario['codigo'] == 'NB090' ||
+                armario['codigo'] == 'NB091' ||
+                armario['codigo'] == 'NB092'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '4 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB061' ||
+                armario['codigo'] == 'NB062' ||
+                armario['codigo'] == 'NB063' ||
+                armario['codigo'] == 'NB064' ||
+                armario['codigo'] == 'NB069' ||
+                armario['codigo'] == 'NB070' ||
+                armario['codigo'] == 'NB071' ||
+                armario['codigo'] == 'NB072' ||
+                armario['codigo'] == 'NB077' ||
+                armario['codigo'] == 'NB078' ||
+                armario['codigo'] == 'NB079' ||
+                armario['codigo'] == 'NB080' ||
+                armario['codigo'] == 'NB085' ||
+                armario['codigo'] == 'NB086' ||
+                armario['codigo'] == 'NB087' ||
+                armario['codigo'] == 'NB088' ||
+                armario['codigo'] == 'NB093' ||
+                armario['codigo'] == 'NB094' ||
+                armario['codigo'] == 'NB095' ||
+                armario['codigo'] == 'NB096'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '5 PUERTAS CENTRAL') {
+            if (
+                armario['codigo'] == 'NB097' ||
+                armario['codigo'] == 'NB098' ||
+                armario['codigo'] == 'NB099' ||
+                armario['codigo'] == 'NB100' ||
+                armario['codigo'] == 'NB109' ||
+                armario['codigo'] == 'NB110' ||
+                armario['codigo'] == 'NB111' ||
+                armario['codigo'] == 'NB112' ||
+                armario['codigo'] == 'NB121' ||
+                armario['codigo'] == 'NB122' ||
+                armario['codigo'] == 'NB123' ||
+                armario['codigo'] == 'NB124' ||
+                armario['codigo'] == 'NB133' ||
+                armario['codigo'] == 'NB134' ||
+                armario['codigo'] == 'NB135' ||
+                armario['codigo'] == 'NB136' ||
+                armario['codigo'] == 'NB145' ||
+                armario['codigo'] == 'NB146' ||
+                armario['codigo'] == 'NB147' ||
+                armario['codigo'] == 'NB148'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
+                if (
+                    armario['codigo'] == 'NB101' ||
+                    armario['codigo'] == 'NB102' ||
+                    armario['codigo'] == 'NB103' ||
+                    armario['codigo'] == 'NB104' ||
+                    armario['codigo'] == 'NB113' ||
+                    armario['codigo'] == 'NB114' ||
+                    armario['codigo'] == 'NB115' ||
+                    armario['codigo'] == 'NB116' ||
+                    armario['codigo'] == 'NB125' ||
+                    armario['codigo'] == 'NB126' ||
+                    armario['codigo'] == 'NB127' ||
+                    armario['codigo'] == 'NB128' ||
+                    armario['codigo'] == 'NB137' ||
+                    armario['codigo'] == 'NB138' ||
+                    armario['codigo'] == 'NB139' ||
+                    armario['codigo'] == 'NB140' ||
+                    armario['codigo'] == 'NB149' ||
+                    armario['codigo'] == 'NB150' ||
+                    armario['codigo'] == 'NB151' ||
+                    armario['codigo'] == 'NB152'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '5 PUERTAS DERECHA') {
+                if (
+                    armario['codigo'] == 'NB105' ||
+                    armario['codigo'] == 'NB106' ||
+                    armario['codigo'] == 'NB107' ||
+                    armario['codigo'] == 'NB108' ||
+                    armario['codigo'] == 'NB117' ||
+                    armario['codigo'] == 'NB118' ||
+                    armario['codigo'] == 'NB119' ||
+                    armario['codigo'] == 'NB120' ||
+                    armario['codigo'] == 'NB129' ||
+                    armario['codigo'] == 'NB130' ||
+                    armario['codigo'] == 'NB131' ||
+                    armario['codigo'] == 'NB132' ||
+                    armario['codigo'] == 'NB141' ||
+                    armario['codigo'] == 'NB142' ||
+                    armario['codigo'] == 'NB143' ||
+                    armario['codigo'] == 'NB144' ||
+                    armario['codigo'] == 'NB153' ||
+                    armario['codigo'] == 'NB154' ||
+                    armario['codigo'] == 'NB155' ||
+                    armario['codigo'] == 'NB156'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
+                if (
+                    armario['codigo'] == 'NB157' ||
+                    armario['codigo'] == 'NB158' ||
+                    armario['codigo'] == 'NB159' ||
+                    armario['codigo'] == 'NB160' ||
+                    armario['codigo'] == 'NB165' ||
+                    armario['codigo'] == 'NB166' ||
+                    armario['codigo'] == 'NB167' ||
+                    armario['codigo'] == 'NB168' ||
+                    armario['codigo'] == 'NB173' ||
+                    armario['codigo'] == 'NB174' ||
+                    armario['codigo'] == 'NB175' ||
+                    armario['codigo'] == 'NB176' ||
+                    armario['codigo'] == 'NB181' ||
+                    armario['codigo'] == 'NB182' ||
+                    armario['codigo'] == 'NB183' ||
+                    armario['codigo'] == 'NB184' ||
+                    armario['codigo'] == 'NB189' ||
+                    armario['codigo'] == 'NB190' ||
+                    armario['codigo'] == 'NB191' ||
+                    armario['codigo'] == 'NB192'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
+                if (
+                    armario['codigo'] == 'NB161' ||
+                    armario['codigo'] == 'NB162' ||
+                    armario['codigo'] == 'NB163' ||
+                    armario['codigo'] == 'NB164' ||
+                    armario['codigo'] == 'NB169' ||
+                    armario['codigo'] == 'NB170' ||
+                    armario['codigo'] == 'NB171' ||
+                    armario['codigo'] == 'NB172' ||
+                    armario['codigo'] == 'NB177' ||
+                    armario['codigo'] == 'NB178' ||
+                    armario['codigo'] == 'NB179' ||
+                    armario['codigo'] == 'NB180' ||
+                    armario['codigo'] == 'NB185' ||
+                    armario['codigo'] == 'NB186' ||
+                    armario['codigo'] == 'NB187' ||
+                    armario['codigo'] == 'NB188' ||
+                    armario['codigo'] == 'NB193' ||
+                    armario['codigo'] == 'NB194' ||
+                    armario['codigo'] == 'NB195' ||
+                    armario['codigo'] == 'NB196'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
+                if (
+                    armario['codigo'] == 'NB197' ||
+                    armario['codigo'] == 'NB198' ||
+                    armario['codigo'] == 'NB199' ||
+                    armario['codigo'] == 'NB200' ||
+                    armario['codigo'] == 'NB209' ||
+                    armario['codigo'] == 'NB210' ||
+                    armario['codigo'] == 'NB211' ||
+                    armario['codigo'] == 'NB212' ||
+                    armario['codigo'] == 'NB221' ||
+                    armario['codigo'] == 'NB222' ||
+                    armario['codigo'] == 'NB223' ||
+                    armario['codigo'] == 'NB224' ||
+                    armario['codigo'] == 'NB233' ||
+                    armario['codigo'] == 'NB234' ||
+                    armario['codigo'] == 'NB235' ||
+                    armario['codigo'] == 'NB236' ||
+                    armario['codigo'] == 'NB245' ||
+                    armario['codigo'] == 'NB246' ||
+                    armario['codigo'] == 'NB247' ||
+                    armario['codigo'] == 'NB248'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 6) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+            if (armario['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
+                if (
+                    armario['codigo'] == 'NB201' ||
+                    armario['codigo'] == 'NB202' ||
+                    armario['codigo'] == 'NB203' ||
+                    armario['codigo'] == 'NB204' ||
+                    armario['codigo'] == 'NB213' ||
+                    armario['codigo'] == 'NB214' ||
+                    armario['codigo'] == 'NB215' ||
+                    armario['codigo'] == 'NB216' ||
+                    armario['codigo'] == 'NB225' ||
+                    armario['codigo'] == 'NB226' ||
+                    armario['codigo'] == 'NB227' ||
+                    armario['codigo'] == 'NB228' ||
+                    armario['codigo'] == 'NB237' ||
+                    armario['codigo'] == 'NB238' ||
+                    armario['codigo'] == 'NB239' ||
+                    armario['codigo'] == 'NB240' ||
+                    armario['codigo'] == 'NB249' ||
+                    armario['codigo'] == 'NB250' ||
+                    armario['codigo'] == 'NB251' ||
+                    armario['codigo'] == 'NB252'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 6) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '7 PUERTAS DERECHA') {
+                if (
+                    armario['codigo'] == 'NB205' ||
+                    armario['codigo'] == 'NB206' ||
+                    armario['codigo'] == 'NB207' ||
+                    armario['codigo'] == 'NB208' ||
+                    armario['codigo'] == 'NB217' ||
+                    armario['codigo'] == 'NB218' ||
+                    armario['codigo'] == 'NB219' ||
+                    armario['codigo'] == 'NB220' ||
+                    armario['codigo'] == 'NB229' ||
+                    armario['codigo'] == 'NB230' ||
+                    armario['codigo'] == 'NB231' ||
+                    armario['codigo'] == 'NB232' ||
+                    armario['codigo'] == 'NB241' ||
+                    armario['codigo'] == 'NB242' ||
+                    armario['codigo'] == 'NB243' ||
+                    armario['codigo'] == 'NB244' ||
+                    armario['codigo'] == 'NB253' ||
+                    armario['codigo'] == 'NB254' ||
+                    armario['codigo'] == 'NB255' ||
+                    armario['codigo'] == 'NB256'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 6) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
+                if (
+                    armario['codigo'] == 'NB257' ||
+                    armario['codigo'] == 'NB258' ||
+                    armario['codigo'] == 'NB259' ||
+                    armario['codigo'] == 'NB260' ||
+                    armario['codigo'] == 'NB261' ||
+                    armario['codigo'] == 'NB262' ||
+                    armario['codigo'] == 'NB263' ||
+                    armario['codigo'] == 'NB264' ||
+                    armario['codigo'] == 'NB265' ||
+                    armario['codigo'] == 'NB266' ||
+                    armario['codigo'] == 'NB267' ||
+                    armario['codigo'] == 'NB268' ||
+                    armario['codigo'] == 'NB269' ||
+                    armario['codigo'] == 'NB270' ||
+                    armario['codigo'] == 'NB271' ||
+                    armario['codigo'] == 'NB272' ||
+                    armario['codigo'] == 'NB273' ||
+                    armario['codigo'] == 'NB274' ||
+                    armario['codigo'] == 'NB275' ||
+                    armario['codigo'] == 'NB276'
+                ) {
+                    if (idPuerta == 0) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 1) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 2) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 3) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 4) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 5) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 6) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                    if (idPuerta == 7) {
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario')[0].click();
+                    }
+                }
+            }
+
+            if (armario['armario']['mensaje'] == '2 PUERTAS' || armario['armario']['mensaje'] == '1 PUERTA') {
+                $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0)');
+                $('#estoParaLaPuertaArmario')[0].click();
+            }
+        }
     }
 
     public eliminarAdicionales(u, id) {
@@ -36722,6 +37400,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         this.objetoCajonesArray2 = {};
         this.objetoCajonesArray3 = {};
         this.objetoCajonesArray4 = {};
+        this.objetoCajonesSueloArray1 = {};
+        this.objetoCajonesSueloArray2 = {};
+        this.objetoCajonesSueloArray3 = {};
+        this.objetoCajonesSueloArray4 = {};
         this.arrayNombresArchivos = [];
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();
