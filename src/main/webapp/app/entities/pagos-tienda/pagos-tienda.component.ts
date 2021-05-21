@@ -62,7 +62,7 @@ export class PagosTiendaComponent implements OnInit, OnDestroy {
         this.pagosTiendaService
             .query({
                 page: this.page - 1,
-                size: this.itemsPerPage,
+                size: 100000,
                 sort: this.sort()
             })
             .subscribe(

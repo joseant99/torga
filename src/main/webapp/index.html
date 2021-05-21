@@ -221,30 +221,98 @@ $("#divDentroCalcu").scroll(function() {
 		$("#modalCesta").modal('hide');//ocultamos el modal
 		
 	}
-	function cambiardecolor123(id,url){
+	function cambiardecolor123(id,url,urlNormalMap,urlBrillo,urlCantos){
 		var parameters = api.parameters.get();
 		if(id == 1){
-			for (let i = 0; i < parameters.data.length; i++) {
-				if(parameters.data[i]["name"] == "textura"){
-					api.parameters.updateAsync({
-			            id: parameters.data[i]["id"],
-			            value: url
-			          });
+			
+			api.scene.updateAsync([{
+				id: api.scene.get({ name: "costado", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						roughness: urlBrillo,
+						normaltexture: urlNormalMap,
+						bitmaptexture: url
+					}
 				}
-				
-			}
+				]
+			}, {
+				id: api.scene.get({ name: "suelotapa", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						roughness: urlBrillo,
+						normaltexture: urlNormalMap,
+						bitmaptexture: url
+					}
+				}
+				]
+			}, {
+				id: api.scene.get({ name: "suelotapa1", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						bitmaptexture: urlCantos
+					}
+				}
+				]
+			}, {
+				id: api.scene.get({ name: "CantosSuelo", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						bitmaptexture: urlCantos
+					}
+				}
+				]
+			}, {
+				id: api.scene.get({ name: "CantosTapa", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						bitmaptexture: urlCantos
+					}
+				}
+				]
+			}, {
+				id: api.scene.get({ name: "CantosCostados", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						bitmaptexture: urlCantos
+					}
+				}
+				]
+			}], "CommPlugin_1");
 		}
 		if(id == 2){
 			
-			for (let i = 0; i < parameters.data.length; i++) {
-				
-				if(parameters.data[i]["name"] == "textura1"){
-					api.parameters.updateAsync({
-			            id: parameters.data[i]["id"],
-			            value: url
-			          });
+			api.scene.updateAsync({
+				id: api.scene.get({ name: "trasera", format: "material" }, "CommPlugin_1").data[0].id,
+				content: [
+				{
+					format: "material",
+					data: {
+						version: "2.0",
+						roughness: urlBrillo,
+						normaltexture: urlNormalMap,
+						bitmaptexture: url
+					}
 				}
-			}
+				]
+			}, "CommPlugin_1");
 		}
 	}
 	
@@ -260,7 +328,7 @@ $("#divDentroCalcu").scroll(function() {
 			}
 	}
 	
-	function cambiardecolor(id,url){
+	function cambiardecolor(id,url,urlNormalMap,urlBrillo,urlCantos){
 		var parameters = api.parameters.get();
 		if(id == 1){
 				api.scene.updateAsync({
@@ -270,6 +338,8 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
@@ -278,7 +348,7 @@ $("#divDentroCalcu").scroll(function() {
 				window.textura2 = url;
 		}
 		if(id == 2){
-				
+			
 				api.scene.updateAsync([{
 					id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
@@ -286,6 +356,8 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
@@ -297,7 +369,20 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: urlCantos
 						}
 					}
 					]
@@ -308,6 +393,8 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
@@ -319,6 +406,8 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
@@ -330,6 +419,8 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
@@ -341,18 +432,9 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
-						}
-					}
-					]
-				},{
-					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
-					content: [
-					{
-						format: "material",
-						data: {
-							version: "2.0",
-							bitmaptexture: 'https://dl.dropboxusercontent.com/s/gff45pf2oswf77j/image.png?dl=1'
 						}
 					}
 					]
@@ -435,22 +517,25 @@ $("#divDentroCalcu").scroll(function() {
 						format: "material",
 						data: {
 							version: "2.0",
+							roughness: urlBrillo,
+							normaltexture: urlNormalMap,
 							bitmaptexture: url
 						}
 					}
 					]
-				},{
+				}, {
 					id: api.scene.get({ name: "FrenteGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
 					content: [
 					{
 						format: "material",
 						data: {
 							version: "2.0",
-							bitmaptexture: 'https://dl.dropboxusercontent.com/s/gff45pf2oswf77j/image.png?dl=1'
+							bitmaptexture: urlCantos
 						}
 					}
 					]
-				}], "CommPlugin_1");
+				}
+				], "CommPlugin_1");
 				window.textura6 = url;
 				
 		}

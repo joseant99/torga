@@ -1952,7 +1952,10 @@
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('f177b8adbf20888f477482fd3ad8a353b103fa82bf5437b7de33748c9ad93fc113c1b498f7d3f7fa6f56b1f4f0ce7145edc3bac78d691e0c7ed0ad90abd0121db523e32402428fd5782b4faae5d6ba019e97385f8de9097400a6e3edc8304c74e5c974f19b393c4a484a98276529ffa3f09fe2628c51-d2fe11c594209653d04f4abc81ba6c83',0)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH007-NH008-NH009-NH010.jpg">
         	</div>
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('0826e3ccdc32c0708b4a687d4cb9bdebe369e63f55c8f523695e45cad8e1acf658c9fd1e5818c37f27ffdb0fe2f5a08cce7cd1ca905c47038e443aa4c02a3fb3d5dfeca3b54f46793fda4108cdcc16ce3d8b313d0660d8dd5d64a8e6d526ecb61a8a0078b72bfbdeaad61266d5a0ff649d260646b77f-b20927ec0100face5f56e4b146c83c34',1)" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('9dd6b0cbed1b66b4f854b03cf24e9ae6d9935f2a32b611ef26185fdd3e7b1a6bbe6b6cfadb5262d4d3d4a818157ac676ab5113f07fc119c7b11a39ef8a5de790a1c5c532669772e67d9052b8ceacc4d97553e69e719b85ddfbb7f1ac0b40fe86534d259d2009661e5c1b1815825b5f840c76bd4117a5-6c9ab4e161c3721c4117dca2e4473420',2)" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH019-NH020.jpg">
+        	</div>
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('191ee7b6ae59d31d2f8c891fa6d87bd3febfd3724211316e528654991768138fe7c7b70ddc3f885ab4004d968800ac8aebf5e680a8ac8815f7f22401add041c8f9900f2db5da9a7afdab876b69363523b27b37f6ee6d4f7f4c1053501825f55ee4ae21746f316f863a07219e515a444a85fd9497540c-600cf199dd5ffafcea9d733739897125',1)" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
         	<a id="cargarApiShape" style="display:none">prueba</a>
@@ -2693,7 +2696,7 @@
 						<a id="clicparacambiardecolor1234" onclick="cambiardecolor1234(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
 						<a id="cliccambiarinteriores" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
 						<a id="cliccambiarAdici1" onclick="anadirAddEventAdi1(id)" style="display:none">prueba</a>
-						
+						<a id="urldebrilloacabado" style="display:none"></a>
 						<a id="cambioDeAlturaSitieneInteriores" (click)="enviarInterioresArmarioCambioAltura()" style="display:none">prueba</a>
 						<a id="setintervalfuncion" style="display:none" onclick="setIntervalfuncioncomprobar()">prueba</a>
 						<input type="number" style="display:none" id="inputAlturaArmario">
@@ -2957,7 +2960,7 @@
 						    			</div>
 							    		<div style="margin-top:5px;float:left;margin-top:20px;margin-bottom:35px;width:100%;" id="divAdicionalesInterior{{u}}">
 											<div id="divHuecoAdicionales">
-												<div style="height:125px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter1{{u}}">
+												<div style="height:165px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter1{{u}}">
 												<p id="textoadicional1" style="margin-top:15px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi1{{u}}" style="display:none;position:relative">
 													<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
@@ -2971,10 +2974,12 @@
 															<input id="rs-range-lineRaya" style="display:none" type="range" value='1000' min="300" max="2000" step="1" list="custom-list">
 															<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
 														</div>
+														
 													</div>
 												</div>
+												<p style="float: left; padding-top: 29px; text-align: center; width: 95%;display:none" id="eliminarAdicionalInterior1{{u}}" (click)="eliminarAdicionales(1,u)">ELIMINAR</p>
 												</div>
-												<div style="height:125px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter2{{u}}">
+												<div style="height:165px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter2{{u}}">
 												<p id="textoadicional2" style="margin-top:15px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi2{{u}}" style="display:none;position:relative">
 													<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
@@ -2989,8 +2994,9 @@
 														</div>
 													</div>
 												</div>
+												<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior2{{u}}" (click)="eliminarAdicionales(2,u)">ELIMINAR</p>
 												</div>
-												<div style="height:125px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter3{{u}}">
+												<div style="height:165px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter3{{u}}">
 												<p id="textoadicional3" style="margin-top:15px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi3{{u}}" style="display:none;position:relative">
 													<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
@@ -3005,8 +3011,9 @@
 														</div>
 													</div>
 												</div>
+												<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior3{{u}}" (click)="eliminarAdicionales(3,u)">ELIMINAR</p>
 												</div>
-												<div style="height:125px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter4{{u}}">
+												<div style="height:165px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter4{{u}}">
 												<p id="textoadicional4" style="margin-top:15px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi4{{u}}" style="display:none;position:relative">
 													<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
@@ -3021,8 +3028,9 @@
 														</div>
 													</div>
 												</div>
+												<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior4{{u}}" (click)="eliminarAdicionales(4,u)">ELIMINAR</p>
 												</div>
-												<div style="height:125px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter5{{u}}">
+												<div style="height:165px;margin-top:10px;display:none;border-top: 3px solid #B3B2B2;border-bottom: 3px solid #B3B2B2;" id="divContenidoMeter5{{u}}">
 												<p id="textoadicional5" style="margin-top:15px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi5{{u}}" style="display:none;position:relative">
 													<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
@@ -3037,6 +3045,7 @@
 														</div>
 													</div>
 												</div>
+												<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior5{{u}}" (click)="eliminarAdicionales(5,u)">ELIMINAR</p>
 												</div>
 												<p id="textoadicional6" style="margin-top:35px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi6{{u}}" style="display:none;position:relative">
@@ -3051,6 +3060,7 @@
 															<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
 														</div>
 													</div>
+													<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior6{{u}}">ELIMINAR</p>
 												</div>
 												<p id="textoadicional7" style="margin-top:35px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi7{{u}}" style="display:none;position:relative">
@@ -3065,6 +3075,7 @@
 															<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
 														</div>
 													</div>
+													<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior7{{u}}">ELIMINAR</p>
 												</div>
 												<p id="textoadicional8" style="margin-top:35px;display:none;float:left;width:100%;text-align:center"><span style="overflow: hidden;text-align: center;background-color: white;" id="textosolo"></span></p>
 												<div class="divSliderAdi8{{u}}" style="display:none;position:relative">
@@ -3079,6 +3090,7 @@
 															<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
 														</div>
 													</div>
+													<p style="float: left; padding-top: 29px; text-align: center; width: 95%;" id="eliminarAdicionalInterior8{{u}}">ELIMINAR</p>
 												</div>
 											</div>
 										</div>

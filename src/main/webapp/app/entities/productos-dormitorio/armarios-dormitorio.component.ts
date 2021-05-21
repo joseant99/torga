@@ -3359,22 +3359,76 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var acabados = this.todos;
         var array = this.armarioCogido;
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['crudo'] = "'https://www.dropbox.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://www.dropbox.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
+
+        var arrayAcabadoCantos = [];
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/hr1a95to3l5oln9/KOBE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/tzux8snnpig25w9/NOCE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/a1o7e5h8zryj3xr/TABAK-CANTOS.png?dl=1'";
+
+        var arrayAcabadoUrlNormalMap = [];
+        arrayAcabadoUrlNormalMap['beige'] = "'1'";
+        arrayAcabadoUrlNormalMap['blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['crudo'] = "'1'";
+        arrayAcabadoUrlNormalMap['grafeno'] = "'1'";
+        arrayAcabadoUrlNormalMap['kala'] = "'1'";
+        arrayAcabadoUrlNormalMap['kobe'] = "'https://dl.dropboxusercontent.com/s/silen2jomg0aamh/NORMALMAP%20KOBE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['lago'] = "'1'";
+        arrayAcabadoUrlNormalMap['latte'] = "'1'";
+        arrayAcabadoUrlNormalMap['mare'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol negro'] = "'1'";
+        arrayAcabadoUrlNormalMap['nature'] = "'1'";
+        arrayAcabadoUrlNormalMap['noce'] = "'https://dl.dropboxusercontent.com/s/28jqmrc2d9mhsbs/NORMALMAP%20NOCE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['tabak'] = "'https://dl.dropboxusercontent.com/s/qm2jgeclh5t8yen/NORMALMAP%20TABAK.png?dl=1'";
+
+        var arrayAcabadoUrlBrillo = [];
+        arrayAcabadoUrlBrillo['beige'] = "'1'";
+        arrayAcabadoUrlBrillo['blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['crudo'] = "'1'";
+        arrayAcabadoUrlBrillo['grafeno'] = "'1'";
+        arrayAcabadoUrlBrillo['kala'] = "'1'";
+        arrayAcabadoUrlBrillo['kobe'] = "'https://dl.dropboxusercontent.com/s/9ctsrw8flf47oab/BRILLO%20KOBE.png?dl=1'";
+        arrayAcabadoUrlBrillo['lago'] = "'1'";
+        arrayAcabadoUrlBrillo['latte'] = "'1'";
+        arrayAcabadoUrlBrillo['mare'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol negro'] = "'1'";
+        arrayAcabadoUrlBrillo['nature'] = "'https://dl.dropboxusercontent.com/s/4r4iipjs76z8b6t/BRILLO%20NATURE.png?dl=1'";
+        arrayAcabadoUrlBrillo['noce'] = "'https://dl.dropboxusercontent.com/s/bh5t65woh9vyh57/BRILLO%20NOCE.png?dl=1'";
+        arrayAcabadoUrlBrillo['norway'] = "'1'";
+        arrayAcabadoUrlBrillo['pietra'] = "'1'";
+        arrayAcabadoUrlBrillo['tabak'] = "'https://dl.dropboxusercontent.com/s/kcwfr7h0l1jm1iv/BRILLO%20TABAK.png?dl=1'";
         $('#inputAcabadoCasco').empty();
         $('#calculadoraCarrito #inputAcabadoCasco').empty();
         for (let w = 0; w < acabados.length; w++) {
@@ -3390,7 +3444,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#calculadoraCarrito #inputAcabadoCasco').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
                 $('#clicparacambiardecolor123').attr(
                     'onclick',
-                    'cambiardecolor123(1,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
+                    'cambiardecolor123(1,' +
+                        arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlNormalMap[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlBrillo[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoCantos[acabados[w]['nombre'].toLowerCase()] +
+                        ')'
                 );
                 $('#clicparacambiardecolor123')[0].click();
                 array['acabadoCasco'] = acabados[w];
@@ -30047,22 +30109,76 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var acabados = this.todos;
         var array = this.armarioCogido;
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://www.dropbox.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://www.dropbox.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['crudo'] = "'https://www.dropbox.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://www.dropbox.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://www.dropbox.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://www.dropbox.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://www.dropbox.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://www.dropbox.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://www.dropbox.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://www.dropbox.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://www.dropbox.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://www.dropbox.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://www.dropbox.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://www.dropbox.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://www.dropbox.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
+
+        var arrayAcabadoCantos = [];
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/hr1a95to3l5oln9/KOBE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/tzux8snnpig25w9/NOCE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/a1o7e5h8zryj3xr/TABAK-CANTOS.png?dl=1'";
+
+        var arrayAcabadoUrlNormalMap = [];
+        arrayAcabadoUrlNormalMap['beige'] = "'1'";
+        arrayAcabadoUrlNormalMap['blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['crudo'] = "'1'";
+        arrayAcabadoUrlNormalMap['grafeno'] = "'1'";
+        arrayAcabadoUrlNormalMap['kala'] = "'1'";
+        arrayAcabadoUrlNormalMap['kobe'] = "'https://dl.dropboxusercontent.com/s/silen2jomg0aamh/NORMALMAP%20KOBE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['lago'] = "'1'";
+        arrayAcabadoUrlNormalMap['latte'] = "'1'";
+        arrayAcabadoUrlNormalMap['mare'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol negro'] = "'1'";
+        arrayAcabadoUrlNormalMap['nature'] = "'1'";
+        arrayAcabadoUrlNormalMap['noce'] = "'https://dl.dropboxusercontent.com/s/28jqmrc2d9mhsbs/NORMALMAP%20NOCE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['tabak'] = "'https://dl.dropboxusercontent.com/s/qm2jgeclh5t8yen/NORMALMAP%20TABAK.png?dl=1'";
+
+        var arrayAcabadoUrlBrillo = [];
+        arrayAcabadoUrlBrillo['beige'] = "'1'";
+        arrayAcabadoUrlBrillo['blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['crudo'] = "'1'";
+        arrayAcabadoUrlBrillo['grafeno'] = "'1'";
+        arrayAcabadoUrlBrillo['kala'] = "'1'";
+        arrayAcabadoUrlBrillo['kobe'] = "'https://dl.dropboxusercontent.com/s/9ctsrw8flf47oab/BRILLO%20KOBE.png?dl=1'";
+        arrayAcabadoUrlBrillo['lago'] = "'1'";
+        arrayAcabadoUrlBrillo['latte'] = "'1'";
+        arrayAcabadoUrlBrillo['mare'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol negro'] = "'1'";
+        arrayAcabadoUrlBrillo['nature'] = "'https://dl.dropboxusercontent.com/s/4r4iipjs76z8b6t/BRILLO%20NATURE.png?dl=1'";
+        arrayAcabadoUrlBrillo['noce'] = "'https://dl.dropboxusercontent.com/s/bh5t65woh9vyh57/BRILLO%20NOCE.png?dl=1'";
+        arrayAcabadoUrlBrillo['norway'] = "'1'";
+        arrayAcabadoUrlBrillo['pietra'] = "'1'";
+        arrayAcabadoUrlBrillo['tabak'] = "'https://dl.dropboxusercontent.com/s/kcwfr7h0l1jm1iv/BRILLO%20TABAK.png?dl=1'";
         $('#inputAcabadoTrasera').empty();
         $('#calculadoraCarrito #inputAcabadoTrasera').empty();
         for (let w = 0; w < acabados.length; w++) {
@@ -30076,7 +30192,15 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 $('#calculadoraCarrito #inputAcabadoTrasera').append('<p style="margin-top: -40px;">' + acabados[w]['nombre'] + '</p>');
                 $('#clicparacambiardecolor123').attr(
                     'onclick',
-                    'cambiardecolor123(2,' + arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] + ')'
+                    'cambiardecolor123(2,' +
+                        arrayAcabadoUrl[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlNormalMap[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlBrillo[acabados[w]['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoCantos[acabados[w]['nombre'].toLowerCase()] +
+                        ')'
                 );
                 $('#clicparacambiardecolor123')[0].click();
                 array['acabadoTrasera'] = acabados[w];

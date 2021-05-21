@@ -179,6 +179,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     objetoCajonesSueloArray4: any;
     alturaArmario: any;
     arrayHuecoInterioresubida: any;
+    objetoCamiseroArray1: any;
+    objetoCamiseroArray2: any;
+    objetoCamiseroArray3: any;
+    objetoCamiseroArray4: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -274,21 +278,21 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         this.armariosDormitorioComponent.cambiarAcabadoInterior(nombre);
         var arrayAcabadoUrl = [];
         arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https:/dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
 
         $('#clicparacambiardecolor1234').attr('onclick', 'cambiardecolor1234(1,' + arrayAcabadoUrl[nombre.toLowerCase()] + ')');
         $('#clicparacambiardecolor1234')[0].click();
@@ -346,6 +350,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var arrayEstantes = [];
         var arrayCajones = [];
         var objetoCajonesSuelo = {};
+        var objetoCamisero = {};
         var tubo = [];
         var objetoCajones1 = this.objetoCajonesArray1;
         var objetoCajones2 = this.objetoCajonesArray2;
@@ -355,6 +360,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
         var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
         var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
+        var objetoCamisero1 = this.objetoCamiseroArray1;
+        var objetoCamisero2 = this.objetoCamiseroArray2;
+        var objetoCamisero3 = this.objetoCamiseroArray3;
+        var objetoCamisero4 = this.objetoCamiseroArray4;
         var cont = 0;
         var alturaValor = 2200;
         var armarioCogido = this.armariosDormitorioComponent.armarioCogido;
@@ -471,21 +480,63 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 9) {
                     if (alturaValor < 2250) {
                         arrayEstantes[0] = 1710;
-                        objetoCajones1['posicion'] = 694;
-                        objetoCajones1['cantidad'] = 1;
+                        if (hueco == 1) {
+                            objetoCajones1['posicion'] = 694;
+                            objetoCajones1['cantidad'] = 1;
+                        }
+                        if (hueco == 2) {
+                            objetoCajones2['posicion'] = 694;
+                            objetoCajones2['cantidad'] = 1;
+                        }
+                        if (hueco == 3) {
+                            objetoCajones3['posicion'] = 694;
+                            objetoCajones3['cantidad'] = 1;
+                        }
+                        if (hueco == 4) {
+                            objetoCajones4['posicion'] = 694;
+                            objetoCajones4['cantidad'] = 1;
+                        }
                         tubo[0] = 1660;
                     } else {
                         arrayEstantes[0] = 1950;
-                        objetoCajones1['posicion'] = 694;
-                        objetoCajones1['cantidad'] = 1;
+                        if (hueco == 1) {
+                            objetoCajones1['posicion'] = 694;
+                            objetoCajones1['cantidad'] = 1;
+                        }
+                        if (hueco == 2) {
+                            objetoCajones2['posicion'] = 694;
+                            objetoCajones2['cantidad'] = 1;
+                        }
+                        if (hueco == 3) {
+                            objetoCajones3['posicion'] = 694;
+                            objetoCajones3['cantidad'] = 1;
+                        }
+                        if (hueco == 4) {
+                            objetoCajones4['posicion'] = 694;
+                            objetoCajones4['cantidad'] = 1;
+                        }
                         tubo[0] = 1900;
                     }
                 }
                 if (id == 10) {
                     if (alturaValor < 2250) {
                         arrayEstantes[0] = 1710;
-                        objetoCajones1['posicion'] = 522;
-                        objetoCajones1['cantidad'] = 2;
+                        if (hueco == 1) {
+                            objetoCajones1['posicion'] = 522;
+                            objetoCajones1['cantidad'] = 2;
+                        }
+                        if (hueco == 2) {
+                            objetoCajones2['posicion'] = 522;
+                            objetoCajones2['cantidad'] = 2;
+                        }
+                        if (hueco == 3) {
+                            objetoCajones3['posicion'] = 522;
+                            objetoCajones3['cantidad'] = 2;
+                        }
+                        if (hueco == 4) {
+                            objetoCajones4['posicion'] = 522;
+                            objetoCajones4['cantidad'] = 2;
+                        }
                         tubo[0] = 1660;
                     } else {
                         arrayEstantes[0] = 1950;
@@ -550,6 +601,36 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         tubo[0] = 1900;
                     }
                 }
+                if (id == 15) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 1710;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        objetoCamisero['posicion'] = 380;
+                        objetoCamisero['cantidad'] = 3;
+                        tubo[0] = 1660;
+                    } else {
+                        arrayEstantes[0] = 1950;
+                        objetoCajonesSuelo['cantidad'] = 2;
+                        objetoCajonesSuelo['material'] = 'madera1';
+                        objetoCamisero['posicion'] = 380;
+                        objetoCamisero['cantidad'] = 3;
+                        tubo[0] = 1900;
+                    }
+                }
+                if (id == 16) {
+                    if (alturaValor < 2250) {
+                        arrayEstantes[0] = 1710;
+                        objetoCamisero['posicion'] = 0;
+                        objetoCamisero['cantidad'] = 3;
+                        tubo[0] = 1660;
+                    } else {
+                        arrayEstantes[0] = 1950;
+                        objetoCamisero['posicion'] = 0;
+                        objetoCamisero['cantidad'] = 3;
+                        tubo[0] = 1900;
+                    }
+                }
             }
         }
         var arrayHueco1 = this.arrayhuecoEstantes1;
@@ -573,8 +654,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 objetoCajonesSuelo1 = objetoCajonesSuelo;
                 this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
             }
+            if (objetoCamisero['posicion'] != undefined) {
+                objetoCamisero1 = objetoCamisero;
+                this.objetoCamiseroArray1 = objetoCamisero1;
+            }
             this.arrayhuecoEstantes1 = arrayHueco1;
             this.arrayTubo1 = tubo1;
+            var contNumEst = 0;
+            var tuboCont = 0;
             for (var o = 0; o < arrayHueco1.length; o++) {
                 $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
                 $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
@@ -588,7 +675,63 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 );
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+                contNumEst++;
             }
+            for (var o = contNumEst; o < tubo1.length + contNumEst; o++) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(tubo1[tuboCont] / 10);
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    tubo1[tuboCont] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('TUBO');
+
+                tuboCont++;
+            }
+
+            contNumEst = contNumEst + tuboCont;
+
+            if (objetoCajones1['posicion'] != undefined) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (contNumEst + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (contNumEst + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0 #rs-bulletAdicional' + (contNumEst + 1) + '0').text(
+                    objetoCajones1['posicion'] / 10
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0 #rs-range-lineAdicional' + (contNumEst + 1) + '0').val(
+                    objetoCajones1['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAJONES VOLADOS');
+                contNumEst++;
+            }
+
+            if (objetoCamisero1['posicion'] != undefined) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (contNumEst + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (contNumEst + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0 #rs-bulletAdicional' + (contNumEst + 1) + '0').text(
+                    objetoCamisero1['posicion'] / 10
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (contNumEst + 1) + '0 #rs-range-lineAdicional' + (contNumEst + 1) + '0').val(
+                    objetoCamisero1['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAMISERO');
+                contNumEst++;
+            }
+
             if (arrayHueco2.length > 0) {
                 for (let i = 0; i < arrayHueco2.length; i++) {
                     var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
@@ -614,16 +757,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (hueco == 2) {
             arrayHueco2 = arrayEstantes;
             tubo2 = tubo;
-            if (objetoCajones1['posicion'] != undefined) {
-                objetoCajones2 = objetoCajones1;
+            if (objetoCajones2['posicion'] != undefined) {
+                objetoCajones2 = objetoCajones2;
                 this.objetoCajonesArray2 = objetoCajones2;
             }
             if (objetoCajonesSuelo['cantidad'] != undefined) {
                 objetoCajonesSuelo2 = objetoCajonesSuelo;
                 this.objetoCajonesSueloArray2 = objetoCajonesSuelo2;
             }
+            if (objetoCamisero['posicion'] != undefined) {
+                objetoCamisero2 = objetoCamisero;
+                this.objetoCamiseroArray2 = objetoCamisero2;
+            }
             this.arrayhuecoEstantes2 = arrayHueco2;
             this.arrayTubo2 = tubo2;
+            var contNumEst = 0;
+            var tuboCont = 0;
             for (var o = 0; o < arrayHueco2.length; o++) {
                 $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
                 $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
@@ -637,7 +786,64 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 );
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+                contNumEst++;
             }
+
+            for (var o = contNumEst; o < tubo2.length + contNumEst; o++) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',1)'
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(tubo2[tuboCont] / 10);
+                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
+                    tubo2[tuboCont] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('TUBO');
+
+                tuboCont++;
+            }
+
+            contNumEst = contNumEst + tuboCont;
+
+            if (objetoCajones2['posicion'] != undefined) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (contNumEst + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (contNumEst + 1) + '1').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1 #rs-bulletAdicional' + (contNumEst + 1) + '1').text(
+                    objetoCajones2['posicion'] / 10
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1 #rs-range-lineAdicional' + (contNumEst + 1) + '1').val(
+                    objetoCajones2['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAJONES VOLADOS');
+                contNumEst++;
+            }
+
+            if (objetoCamisero2['posicion'] != undefined) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (contNumEst + 1) + '1').css({ display: 'block' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + (contNumEst + 1) + '1').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1 #rs-bulletAdicional' + (contNumEst + 1) + '1').text(
+                    objetoCamisero2['posicion'] / 10
+                );
+                $('#divAdicionalesInterior1 .divSliderAdi' + (contNumEst + 1) + '1 #rs-range-lineAdicional' + (contNumEst + 1) + '1').val(
+                    objetoCamisero2['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAMISERO');
+                contNumEst++;
+            }
+
             if (arrayHueco1.length > 0) {
                 for (let i = 0; i < arrayHueco1.length; i++) {
                     var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
@@ -663,8 +869,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (hueco == 3) {
             arrayHueco3 = arrayEstantes;
             tubo3 = tubo;
-            if (objetoCajones1['posicion'] != undefined) {
-                objetoCajones3 = objetoCajones1;
+            if (objetoCajones3['posicion'] != undefined) {
+                objetoCajones3 = objetoCajones3;
                 this.objetoCajonesArray3 = objetoCajones3;
             }
             if (objetoCajonesSuelo['cantidad'] != undefined) {
@@ -673,6 +879,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes3 = arrayHueco3;
             this.arrayTubo3 = tubo3;
+            var contNumEst = 0;
+            var tuboCont = 0;
             for (var o = 0; o < arrayHueco3.length; o++) {
                 $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2').css({ display: 'block' });
                 $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').css({ display: 'block' });
@@ -686,7 +894,64 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 );
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+                contNumEst++;
             }
+
+            for (var o = contNumEst; o < tubo3.length + contNumEst; o++) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (o + 1) + '2').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-bulletAdicional' + (o + 1) + '2').text(tubo3[tuboCont] / 10);
+                $('#divAdicionalesInterior2 .divSliderAdi' + (o + 1) + '2 #rs-range-lineAdicional' + (o + 1) + '2').val(
+                    tubo3[tuboCont] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('TUBO');
+
+                tuboCont++;
+            }
+
+            contNumEst = contNumEst + tuboCont;
+
+            if (objetoCajones3['posicion'] != undefined) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (contNumEst + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (contNumEst + 1) + '2').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2 #rs-bulletAdicional' + (contNumEst + 1) + '2').text(
+                    objetoCajones3['posicion'] / 10
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2 #rs-range-lineAdicional' + (contNumEst + 1) + '2').val(
+                    objetoCajones3['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAJONES VOLADOS');
+                contNumEst++;
+            }
+
+            if (objetoCamisero3['posicion'] != undefined) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (contNumEst + 1) + '2').css({ display: 'block' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + (contNumEst + 1) + '2').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2 #rs-bulletAdicional' + (contNumEst + 1) + '2').text(
+                    objetoCamisero3['posicion'] / 10
+                );
+                $('#divAdicionalesInterior2 .divSliderAdi' + (contNumEst + 1) + '2 #rs-range-lineAdicional' + (contNumEst + 1) + '2').val(
+                    objetoCamisero3['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAMISERO');
+                contNumEst++;
+            }
+
             if (arrayHueco2.length > 0) {
                 for (let i = 0; i < arrayHueco2.length; i++) {
                     var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
@@ -712,8 +977,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (hueco == 4) {
             arrayHueco4 = arrayEstantes;
             tubo4 = tubo;
-            if (objetoCajones1['posicion'] != undefined) {
-                objetoCajones4 = objetoCajones1;
+            if (objetoCajones4['posicion'] != undefined) {
+                objetoCajones4 = objetoCajones4;
                 this.objetoCajonesArray4 = objetoCajones4;
             }
             if (objetoCajonesSuelo['cantidad'] != undefined) {
@@ -722,6 +987,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             this.arrayhuecoEstantes4 = arrayHueco4;
             this.arrayTubo4 = tubo4;
+            var contNumEst = 0;
+            var tuboCont = 0;
             for (var o = 0; o < arrayHueco4.length; o++) {
                 $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3').css({ display: 'block' });
                 $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').css({ display: 'block' });
@@ -735,7 +1002,64 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 );
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
+                contNumEst++;
             }
+
+            for (var o = contNumEst; o < tubo4.length + contNumEst; o++) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (o + 1) + '3').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-bulletAdicional' + (o + 1) + '3').text(tubo4[tuboCont] / 10);
+                $('#divAdicionalesInterior3 .divSliderAdi' + (o + 1) + '3 #rs-range-lineAdicional' + (o + 1) + '3').val(
+                    tubo4[tuboCont] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('TUBO');
+
+                tuboCont++;
+            }
+
+            contNumEst = contNumEst + tuboCont;
+
+            if (objetoCajones4['posicion'] != undefined) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (contNumEst + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (contNumEst + 1) + '3').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3 #rs-bulletAdicional' + (contNumEst + 1) + '3').text(
+                    objetoCajones4['posicion'] / 10
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3 #rs-range-lineAdicional' + (contNumEst + 1) + '3').val(
+                    objetoCajones4['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAJONES VOLADOS');
+                contNumEst++;
+            }
+
+            if (objetoCamisero4['posicion'] != undefined) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (contNumEst + 1) + '3').css({ display: 'block' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + (contNumEst + 1) + '3').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (contNumEst + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3 #rs-bulletAdicional' + (contNumEst + 1) + '3').text(
+                    objetoCamisero4['posicion'] / 10
+                );
+                $('#divAdicionalesInterior3 .divSliderAdi' + (contNumEst + 1) + '3 #rs-range-lineAdicional' + (contNumEst + 1) + '3').val(
+                    objetoCamisero4['posicion'] / 10
+                );
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contNumEst + 1) + ' #textosolo').text('CAMISERO');
+                contNumEst++;
+            }
+
             if (arrayHueco2.length > 0) {
                 for (let i = 0; i < arrayHueco2.length; i++) {
                     var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
@@ -793,6 +1117,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 JSON.stringify(objetoCajonesSuelo3) +
                 "','" +
                 JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
+                JSON.stringify(objetoCamisero1) +
+                "','" +
+                JSON.stringify(objetoCamisero2) +
+                "','" +
+                JSON.stringify(objetoCamisero3) +
+                "','" +
+                JSON.stringify(objetoCamisero4) +
                 "','" +
                 arrayInterior +
                 "')"
@@ -873,9 +1205,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 90;
             arraymeter = '1 CAJON SUSPENDIDO';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                '1 CAJON ADICIONAL DE SUELO'
-            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('1 CAJON SUSPENDIDO');
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
         }
         if (id == 5) {
@@ -937,24 +1267,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
         var otroarray = [];
+        var orden;
         if (huecoPinta == 1) {
             this.adicionalesArray0 = array;
+            orden = this.adicionalesArray0;
             this.armariosDormitorioComponent.adicionalesArray0 = array;
         }
         if (huecoPinta == 2) {
             this.adicionalesArray1 = array;
+            orden = this.adicionalesArray1;
             this.armariosDormitorioComponent.adicionalesArray1 = array;
         }
         if (huecoPinta == 3) {
             this.adicionalesArray2 = array;
+            orden = this.adicionalesArray2;
             this.armariosDormitorioComponent.adicionalesArray2 = array;
         }
         if (huecoPinta == 4) {
             this.adicionalesArray3 = array;
+            orden = this.adicionalesArray3;
             this.armariosDormitorioComponent.adicionalesArray3 = array;
         }
         if (huecoPinta == 5) {
             this.adicionalesArray4 = array;
+            orden = this.adicionalesArray4;
             this.armariosDormitorioComponent.adicionalesArray4 = array;
         }
         this.precioAdicionalesInt = preciollamadogg;
@@ -984,15 +1320,42 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var arrayInterior = [];
 
         if (huecoPinta == 1) {
-            if (arrayHueco1.length > 0) {
-                for (let i = 0; i < arrayHueco1.length; i++) {
-                    var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (i + 1) + '0').val();
-                    estantes[i] = valor + '0';
+            var posicionEstantes = [];
+            var contEstantPos = 0;
+            if (arraymeter == 'ESTANTE MADERA ADICIONAL') {
+                for (let j = 0; j < this.adicionalesArray0.length; j++) {
+                    if (this.adicionalesArray0[j] == 'ESTANTE MADERA ADICIONAL') {
+                        posicionEstantes[contEstantPos] = j;
+                        contEstantPos++;
+                    }
                 }
+                if (arrayHueco1.length > 0) {
+                    for (let i = 0; i < arrayHueco1.length; i++) {
+                        var valor = $('#divInterioresTdoPrincipal0 #rs-range-lineAdicional' + (posicionEstantes[i] + 1) + '0').val();
+                        estantes[i] = valor + '0';
+                    }
+                }
+                estantes[arrayHueco1.length] = 1000;
+                this.arrayhuecoEstantes1 = estantes;
+                arrayHueco1 = estantes;
             }
-            estantes[arrayHueco1.length] = 1000;
-            this.arrayhuecoEstantes1 = estantes;
-            arrayHueco1 = estantes;
+            if (arraymeter == '1 CAJON ADICIONAL DE SUELO') {
+                objetoCajonesSuelo1['cantidad'] = 1;
+                objetoCajonesSuelo1['material'] = 'tabak';
+                this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
+            }
+
+            if (arraymeter == '1 CAJON SUSPENDIDO') {
+                objetoCajones1['cantidad'] = 1;
+                objetoCajones1['posicion'] = 800;
+                this.objetoCajonesArray1 = objetoCajones1;
+            }
+
+            if (arraymeter == 'BARRA DE COLGAR ADICIONAL') {
+                tubo1[tubo1.length] = 1000;
+                this.arrayTubo1 = tubo1;
+            }
+
             $('.divSliderAdi10').css({ display: 'block' });
             if (this.adicionalesArray0.length == 2) {
                 $('.divSliderAdi20').css({ display: 'block' });
@@ -1021,17 +1384,66 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (this.adicionalesArray0.length == 10) {
                 $('.divSliderAdi100').css({ display: 'block' });
             }
-            for (var o = 0; o < arrayHueco1.length; o++) {
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                    arrayHueco1[o] / 10
-                );
+
+            var contHueco1 = 0;
+            var o = 0;
+            o = this.adicionalesArray0.length - 1;
+            for (o; o < this.adicionalesArray0.length; o++) {
+                $('#eliminarAdicionalInterior' + (o + 1) + '0').css({ display: 'block' });
+                $('#eliminarAdicionalInterior' + (o + 1) + '0').attr('class', this.adicionalesArray0[o]);
+                if (this.adicionalesArray0[o] == 'ESTANTE MADERA ADICIONAL') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        arrayHueco1[o] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        arrayHueco1[o] / 10
+                    );
+                }
+                if (this.adicionalesArray0[o] == '1 CAJON SUSPENDIDO') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        objetoCajones1['posicion'] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        objetoCajones1['posicion'] / 10
+                    );
+                }
+                if (this.adicionalesArray0[o] == '1 CAJON ADICIONAL DE SUELO') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #inputDivAdi' + (o + 1) + '0').css({ display: 'none' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        arrayHueco1[o] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        arrayHueco1[o] / 10
+                    );
+                }
+                if (this.adicionalesArray0[o] == 'BARRA DE COLGAR ADICIONAL') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(tubo1[o] / 10);
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(tubo1[o] / 10);
+                }
+
+                contHueco1++;
             }
+
             if (arrayHueco3.length > 0) {
                 for (let i = 0; i < arrayHueco3.length; i++) {
                     var valor = $('#divInterioresTdoPrincipal1 #rs-range-lineAdicional' + (i + 1) + '1').val();
@@ -1267,9 +1679,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 this.arrayhuecoEstantes2 = arrayHueco2;
             }
         }
+
         $('#cliccambiarinteriores').attr(
             'onclick',
-            "pintarinterioresArmarioShape('" +
+            "pintarinterioresArmarioShape1('" +
                 arrayHueco1 +
                 "','" +
                 arrayHueco2 +
@@ -1301,6 +1714,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 JSON.stringify(objetoCajonesSuelo3) +
                 "','" +
                 JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
+                JSON.stringify(huecoPinta) +
+                "','" +
+                JSON.stringify(orden) +
                 "','" +
                 arrayInterior +
                 "')"
@@ -1665,6 +2090,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 JSON.stringify(objetoCajonesSuelo4) +
                 "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
                 arrayInterior +
                 "')"
         );
@@ -1700,15 +2133,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 armario['codigo'] == 'NB052'
             ) {
                 if (idPuerta == 0) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 1) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 2) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
             }
@@ -1736,15 +2169,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 armario['codigo'] == 'NB056'
             ) {
                 if (idPuerta == 0) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 1) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 2) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
             }
@@ -1774,19 +2207,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 armario['codigo'] == 'NB092'
             ) {
                 if (idPuerta == 0) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 1) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 2) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 3) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
             }
@@ -1816,19 +2249,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 armario['codigo'] == 'NB096'
             ) {
                 if (idPuerta == 0) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 1) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 2) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 3) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
             }
@@ -1858,23 +2291,23 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 armario['codigo'] == 'NB148'
             ) {
                 if (idPuerta == 0) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 1) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 2) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 3) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
                 if (idPuerta == 4) {
-                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
                 }
             }
@@ -1903,23 +2336,23 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB152'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -1949,23 +2382,23 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB156'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -1995,27 +2428,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB192'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -2045,27 +2478,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB196'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -2095,31 +2528,31 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB248'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -2148,31 +2581,31 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB252'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -2202,31 +2635,31 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB256'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
@@ -2256,51 +2689,68 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     armario['codigo'] == 'NB276'
                 ) {
                     if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                     if (idPuerta == 7) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1)');
+                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
                     }
                 }
             }
 
             if (armario['armario']['mensaje'] == '2 PUERTAS' || armario['armario']['mensaje'] == '1 PUERTA') {
-                $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0)');
+                $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
                 $('#estoParaLaPuertaArmario')[0].click();
             }
         }
     }
 
     public eliminarAdicionales(u, id) {
+        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
+        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
+        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
+        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
+        var arrayHueco1 = this.arrayhuecoEstantes1;
+        var arrayHueco2 = this.arrayhuecoEstantes2;
+        var arrayHueco3 = this.arrayhuecoEstantes3;
+        var arrayHueco4 = this.arrayhuecoEstantes4;
+        var tubo1 = this.arrayTubo1;
+        var tubo2 = this.arrayTubo2;
+        var tubo3 = this.arrayTubo3;
+        var tubo4 = this.arrayTubo4;
+        var objetoCajones1 = this.objetoCajonesArray1;
+        var objetoCajones2 = this.objetoCajonesArray2;
+        var objetoCajones3 = this.objetoCajonesArray3;
+        var objetoCajones4 = this.objetoCajonesArray4;
+        var classSaber = $('#eliminarAdicionalInterior' + u + '' + id).attr('class');
         var array = [];
         var nuevoarray = [];
-        var huecoPinta = u + 1;
+        var huecoPinta = id + 1;
         var preciollamadogg = this.precioAdicionalesInt;
         var cont = 0;
         if (huecoPinta == 1) {
@@ -2318,57 +2768,95 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (huecoPinta == 5) {
             array = this.adicionalesArray4;
         }
-        for (let i = 0; i < array.length; i++) {
-            if (i != id - 1) {
-                nuevoarray[cont] = array[i];
-                cont++;
-            } else {
-                var prec = $('#precioInt' + (huecoPinta - 1)).text();
-                prec = prec.split(' ')[1];
-                var precio1 = parseFloat(prec);
-                var precio = 0;
-                if (array[i] == 'ESTANTE MADERA ADICIONAL') {
-                    precio = 40;
-                }
-                if (array[i] == 'ESTANTE DE CRISTAL ADICIONAL') {
-                    precio = 50;
-                }
-                if (array[i] == 'BARRA DE COLGAR ADICIONAL') {
-                    precio = 15;
-                }
-                if (array[i] == '1 CAJON ADICIONAL DE SUELO') {
-                    precio = 90;
-                }
-                if (array[i] == 'CAMISERO DE 1 ALTURA') {
-                    precio = 48;
-                }
-                if (array[i] == 'CAMISERO DE 2 ALTURAS') {
-                    precio = 96;
-                }
-                if (array[i] == 'CAMISERO DE 3 ALTURAS') {
-                    precio = 144;
-                }
-                if (array[i] == 'ZAPATERO LATERAL EXTRAIBLE') {
-                    precio = 205;
-                }
-                if (array[i] == 'PANTALONERO EXTRAIBLE') {
-                    precio = 80;
-                }
-                if (array[i] == 'CORBATERO LATERAL EXTRAIBLE') {
-                    precio = 80;
-                }
-                if (array[i] == '1 CAJON SUSPENDIDO') {
-                    precio = 110;
-                }
-                preciollamadogg = preciollamadogg - precio;
-                $('#precioInt' + (huecoPinta - 1)).text('+ ' + (precio1 - precio) + ' pp');
+        var nuevoarray = [];
+        var contArraynew = 0;
+        var nuevoCont = 0;
+        var nuevoArrayHueco = [];
+        for (var j = 0; j < array.length; j++) {
+            if (j != u - 1) {
+                nuevoarray[contArraynew] = array[j];
+                contArraynew++;
             }
         }
-        this.precioAdicionalesInt = preciollamadogg;
-        this.armariosDormitorioComponent.precioAdicionalesInt = preciollamadogg;
+
+        if (huecoPinta == 1) {
+            this.adicionalesArray0 = nuevoarray;
+            if (classSaber == 'ESTANTE MADERA ADICIONAL') {
+                for (var j = 0; j < arrayHueco1.length; j++) {
+                    if (j != 0) {
+                        nuevoArrayHueco[nuevoCont] = arrayHueco1[j];
+                    }
+                }
+                arrayHueco1 = nuevoArrayHueco;
+            }
+            if (classSaber == '1 CAJON ADICIONAL DE SUELO') {
+                objetoCajonesSuelo1 = {};
+            }
+        }
+        if (huecoPinta == 2) {
+            this.adicionalesArray1 = nuevoarray;
+        }
+        if (huecoPinta == 3) {
+            this.adicionalesArray2 = nuevoarray;
+        }
+        if (huecoPinta == 4) {
+            this.adicionalesArray3 = nuevoarray;
+        }
+        if (huecoPinta == 5) {
+            this.adicionalesArray4 = nuevoarray;
+        }
+
+        $('#divContenidoMeter' + u + '' + id).css({ display: 'none' });
+        var contHueco1 = 0;
+        var o = 0;
+        o = this.adicionalesArray0.length - 1;
+        for (o; o < this.adicionalesArray0.length; o++) {
+            $('#eliminarAdicionalInterior' + (o + 1) + '0').css({ display: 'block' });
+            $('#eliminarAdicionalInterior' + (o + 1) + '0').attr('class', this.adicionalesArray0[o]);
+            if (this.adicionalesArray0[o] == 'ESTANTE MADERA ADICIONAL') {
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    arrayHueco1[o] / 10
+                );
+            }
+            if (this.adicionalesArray0[o] == '1 CAJON SUSPENDIDO') {
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                    objetoCajones1['posicion'] / 10
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    objetoCajones1['posicion'] / 10
+                );
+            }
+            if (this.adicionalesArray0[o] == '1 CAJON ADICIONAL DE SUELO') {
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                    'onclick',
+                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                );
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
+                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                    arrayHueco1[o] / 10
+                );
+            }
+
+            contHueco1++;
+        }
+
+        var orden;
         if (huecoPinta == 1) {
             this.adicionalesArray0 = nuevoarray;
             this.armariosDormitorioComponent.adicionalesArray0 = nuevoarray;
+            orden = this.adicionalesArray0;
         }
         if (huecoPinta == 2) {
             this.adicionalesArray1 = nuevoarray;
@@ -2386,123 +2874,72 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             this.adicionalesArray4 = nuevoarray;
             this.armariosDormitorioComponent.adicionalesArray4 = nuevoarray;
         }
-        var precio = 0;
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8').css({ display: 'none' });
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional1 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional2 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional3 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional4 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional5 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional6 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional7 #preciosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8 #textosolo').text('');
-        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional8 #preciosolo').text('');
-        for (let w = 0; w < nuevoarray.length; w++) {
-            var cont = w;
 
-            if (nuevoarray[w] == 'ESTANTE MADERA ADICIONAL') {
-                precio = precio + 40;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'ESTANTE MADERA ADICIONAL'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
-            }
-            if (nuevoarray[w] == 'ESTANTE DE CRISTAL ADICIONAL') {
-                precio = precio + 50;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'ESTANTE DE CRISTAL ADICIONAL'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
-            }
-            if (nuevoarray[w] == 'BARRA DE COLGAR ADICIONAL') {
-                precio = precio + 15;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'BARRA DE COLGAR ADICIONAL'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
-            }
-            if (nuevoarray[w] == '1 CAJON ADICIONAL DE SUELO') {
-                precio = precio + 90;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    '1 CAJON ADICIONAL DE SUELO'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
-            }
-            if (nuevoarray[w] == 'CAMISERO DE 1 ALTURA') {
-                precio = precio + 48;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'CAMISERO DE 1 ALTURA'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
-            }
-            if (nuevoarray[w] == 'CAMISERO DE 2 ALTURAS') {
-                precio = precio + 96;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'CAMISERO DE 2 ALTURAS'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
-            }
-            if (nuevoarray[w] == 'CAMISERO DE 3 ALTURAS') {
-                precio = precio + 144;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'CAMISERO DE 3 ALTURAS'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
-            }
-            if (nuevoarray[w] == 'ZAPATERO LATERAL EXTRAIBLE') {
-                precio = precio + 205;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'ZAPATERO LATERAL EXTRAIBLE'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('205 PP');
-            }
-            if (nuevoarray[w] == 'PANTALONERO EXTRAIBLE') {
-                precio = precio + 80;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'PANTALONERO EXTRAIBLE'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
-            }
-            if (nuevoarray[w] == 'CORBATERO LATERAL EXTRAIBLE') {
-                precio = precio + 80;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    'CORBATERO LATERAL EXTRAIBLE'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
-            }
-            if (nuevoarray[w] == '1 CAJON SUSPENDIDO') {
-                precio = precio + 110;
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                    '1 CAJON SUSPENDIDO'
-                );
-                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('110 PP');
-            }
+        var arrayInterior = [];
+        $('#cliccambiarinteriores').attr(
+            'onclick',
+            "pintarinterioresArmarioShape1('" +
+                arrayHueco1 +
+                "','" +
+                arrayHueco2 +
+                "','" +
+                arrayHueco3 +
+                "','" +
+                arrayHueco4 +
+                "','" +
+                JSON.stringify(objetoCajones1) +
+                "','" +
+                JSON.stringify(objetoCajones2) +
+                "','" +
+                JSON.stringify(objetoCajones3) +
+                "','" +
+                JSON.stringify(objetoCajones4) +
+                "','" +
+                tubo1 +
+                "','" +
+                tubo2 +
+                "','" +
+                tubo3 +
+                "','" +
+                tubo4 +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo1) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo2) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo3) +
+                "','" +
+                JSON.stringify(objetoCajonesSuelo4) +
+                "','" +
+                JSON.stringify(huecoPinta) +
+                "','" +
+                JSON.stringify(orden) +
+                "','" +
+                arrayInterior +
+                "')"
+        );
+        $('#cliccambiarinteriores')[0].click();
+        if (huecoPinta == 1) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco1.length + '(' + huecoPinta + ')');
         }
+        if (huecoPinta == 2) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco2.length + '(' + huecoPinta + ')');
+        }
+        if (huecoPinta == 3) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco3.length + '(' + huecoPinta + ')');
+        }
+        if (huecoPinta == 4) {
+            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco4.length + '(' + huecoPinta + ')');
+        }
+        $('#cliccambiarAdici1')[0].click();
     }
     public quieroObservacionEnHueco(u) {
         $('#textareaobservacionesInt' + u).css({ display: 'block' });
@@ -32266,28 +32703,93 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
         arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/tocauxg65bvknoa/KOBE.jpg?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/mimfbvma5vm1301/NOCE.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/6mkwsgjmmwqa6lp/TABAK.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
+
+        var arrayAcabadoCantos = [];
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/hr1a95to3l5oln9/KOBE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/tzux8snnpig25w9/NOCE-CANTOS.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/a1o7e5h8zryj3xr/TABAK-CANTOS.png?dl=1'";
+
+        var arrayAcabadoUrlNormalMap = [];
+        arrayAcabadoUrlNormalMap['beige'] = "'1'";
+        arrayAcabadoUrlNormalMap['blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['crudo'] = "'1'";
+        arrayAcabadoUrlNormalMap['grafeno'] = "'1'";
+        arrayAcabadoUrlNormalMap['kala'] = "'1'";
+        arrayAcabadoUrlNormalMap['kobe'] = "'https://dl.dropboxusercontent.com/s/silen2jomg0aamh/NORMALMAP%20KOBE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['lago'] = "'1'";
+        arrayAcabadoUrlNormalMap['latte'] = "'1'";
+        arrayAcabadoUrlNormalMap['mare'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol blanco'] = "'1'";
+        arrayAcabadoUrlNormalMap['marmol negro'] = "'1'";
+        arrayAcabadoUrlNormalMap['nature'] = "'1'";
+        arrayAcabadoUrlNormalMap['noce'] = "'https://dl.dropboxusercontent.com/s/28jqmrc2d9mhsbs/NORMALMAP%20NOCE.png?dl=1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['norway'] = "'1'";
+        arrayAcabadoUrlNormalMap['tabak'] = "'https://dl.dropboxusercontent.com/s/qm2jgeclh5t8yen/NORMALMAP%20TABAK.png?dl=1'";
+
+        var arrayAcabadoUrlBrillo = [];
+        arrayAcabadoUrlBrillo['beige'] = "'1'";
+        arrayAcabadoUrlBrillo['blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['crudo'] = "'1'";
+        arrayAcabadoUrlBrillo['grafeno'] = "'1'";
+        arrayAcabadoUrlBrillo['kala'] = "'1'";
+        arrayAcabadoUrlBrillo['kobe'] = "'https://dl.dropboxusercontent.com/s/9ctsrw8flf47oab/BRILLO%20KOBE.png?dl=1'";
+        arrayAcabadoUrlBrillo['lago'] = "'1'";
+        arrayAcabadoUrlBrillo['latte'] = "'1'";
+        arrayAcabadoUrlBrillo['mare'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol blanco'] = "'1'";
+        arrayAcabadoUrlBrillo['marmol negro'] = "'1'";
+        arrayAcabadoUrlBrillo['nature'] = "'https://dl.dropboxusercontent.com/s/4r4iipjs76z8b6t/BRILLO%20NATURE.png?dl=1'";
+        arrayAcabadoUrlBrillo['noce'] = "'https://dl.dropboxusercontent.com/s/bh5t65woh9vyh57/BRILLO%20NOCE.png?dl=1'";
+        arrayAcabadoUrlBrillo['norway'] = "'1'";
+        arrayAcabadoUrlBrillo['pietra'] = "'1'";
+        arrayAcabadoUrlBrillo['tabak'] = "'https://dl.dropboxusercontent.com/s/kcwfr7h0l1jm1iv/BRILLO%20TABAK.png?dl=1'";
 
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados;
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
+                $('#urldebrilloacabado').text(arrayAcabadoUrlBrillo[value['nombre'].toLowerCase()]);
                 $('#clicparacambiardecolor').attr(
                     'onclick',
-                    'cambiardecolor(' + id1 + ',' + arrayAcabadoUrl[value['nombre'].toLowerCase()] + ')'
+                    'cambiardecolor(' +
+                        id1 +
+                        ',' +
+                        arrayAcabadoUrl[value['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlNormalMap[value['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoUrlBrillo[value['nombre'].toLowerCase()] +
+                        ',' +
+                        arrayAcabadoCantos[value['nombre'].toLowerCase()] +
+                        ')'
                 );
                 $('#clicparacambiardecolor')[0].click();
                 $('#aca1' + id1 + ' #imagenAcabadoPrincipal' + k).remove();
@@ -32937,6 +33439,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#cargarApiShape')[0].click();
             this.cargarDimen('NH007');
             $('#rangoArmarios').css({ display: 'none' });
+            $('.divElegirOpcionSlider').css({ display: 'none' });
+            $('.divSlider').css({ display: 'none' });
+        }
+        if (es == 2) {
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape').attr('onclick', "apiShape2('" + id + "')");
+            $('#datos1').css({ display: 'block' });
+            $('#observacionesArticulo').css({ display: 'block' });
+            $('#cargarApiShape')[0].click();
+            this.cargarDimen('NH019');
+            $('#rangoArmarios').css({ display: 'none' });
+            $('.divElegirOpcionSlider').css({ display: 'none' });
             $('.divSlider').css({ display: 'none' });
         }
         if (es == 1) {
@@ -37404,6 +37919,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         this.objetoCajonesSueloArray2 = {};
         this.objetoCajonesSueloArray3 = {};
         this.objetoCajonesSueloArray4 = {};
+        this.objetoCamiseroArray1 = {};
+        this.objetoCamiseroArray2 = {};
+        this.objetoCamiseroArray3 = {};
+        this.objetoCamiseroArray4 = {};
         this.arrayNombresArchivos = [];
         this.precioBase = 0;
         this.armariosDormitorioComponent.loadAll();

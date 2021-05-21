@@ -10971,7 +10971,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         '" style="margin-left:10px"></span></p>'
                                 );
                             }
-                            if (u == 1) {
+                            if (u == 2) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
@@ -16986,7 +16986,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                         '" style="margin-left:10px"></span></p>'
                                 );
                             }
-                            if (u == 1) {
+                            if (u == 2) {
                                 $('#datos1').append(
                                     '<p style="width:100%" id="acabado' +
                                         u +
@@ -23191,7 +23191,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                             '" style="margin-left:10px"></span></p>'
                                     );
                                 }
-                                if (u == 1) {
+                                if (u == 2) {
                                     $('#datos1').append(
                                         '<p style="width:100%" id="acabado' +
                                             u +
