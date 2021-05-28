@@ -39,6 +39,7 @@ import { PrecioTiendaService } from '../precio-tienda/precio-tienda.service';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaProductosService } from '../precio-tienda-productos/precio-tienda-productos.service';
 import { IvaProductoTiendaService } from '../iva-producto-tienda/iva-producto-tienda.service';
+import { ImagenDeCestaProdService } from '../imagen-de-cesta-prod/imagen-de-cesta-prod.service';
 import { UsbService } from '../usb/usb.service';
 import { VistaAdminService } from '../vista-admin/vista-admin.service';
 import { HttpEventType } from '@angular/common/http';
@@ -218,6 +219,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         public armariosDormitorioOcultaComponent: ArmariosDormitorioOcultaComponent,
         public armariosDormitorioVistaComponent: ArmariosDormitorioVistaComponent,
         public vestidoresDormitorioComponent: VestidoresDormitorioComponent,
+        protected imagenDeCestaProdService: ImagenDeCestaProdService,
         private http: HttpClient
     ) {
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -1139,6 +1141,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
         var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
         var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
+        var objetoCamisero1 = this.objetoCamiseroArray1;
+        var objetoCamisero2 = this.objetoCamiseroArray2;
+        var objetoCamisero3 = this.objetoCamiseroArray3;
+        var objetoCamisero4 = this.objetoCamiseroArray4;
         var precio = 0;
 
         var array = [];
@@ -1158,8 +1164,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             array = this.adicionalesArray4;
         }
         var cont = array.length;
+        var contCamiMet = 100;
         var arraymeter = '';
         var preciollamadogg = this.precioAdicionalesInt;
+        if (cont != 0) {
+            if (array[cont - 1] != undefined) {
+                for (let x = 0; x < array.length; x++) {
+                    if (array[x] == 'CAMISERO DE 1 ALTURA' || array[x] == 'CAMISERO DE 2 ALTURAS' || array[x] == 'CAMISERO DE 3 ALTURAS') {
+                        contCamiMet = x;
+                    }
+                }
+            }
+        }
         if (id == 0) {
             precio = precio + 40;
             preciollamadogg = preciollamadogg + 40;
@@ -1212,25 +1228,55 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 48;
             preciollamadogg = preciollamadogg + 48;
             arraymeter = 'CAMISERO DE 1 ALTURA';
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 1 ALTURA');
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
+            if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 1 ALTURA'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
+            } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
+                    'CAMISERO DE 1 ALTURA'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('48 PP');
+            }
         }
         if (id == 6) {
             precio = precio + 96;
             preciollamadogg = preciollamadogg + 96;
             arraymeter = 'CAMISERO DE 2 ALTURAS';
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 2 ALTURAS');
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
+            if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 2 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
+            } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
+                    'CAMISERO DE 2 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('96 PP');
+            }
         }
         if (id == 7) {
             precio = precio + 144;
             preciollamadogg = preciollamadogg + 144;
             arraymeter = 'CAMISERO DE 3 ALTURAS';
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('CAMISERO DE 3 ALTURAS');
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
+            if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
+                    'CAMISERO DE 3 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
+            } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
+                    'CAMISERO DE 3 ALTURAS'
+                );
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('144 PP');
+            }
         }
         if (id == 8) {
             precio = precio + 205;
@@ -1260,10 +1306,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
         }
-
-        for (let i = 0; i <= cont; i++) {
-            if (array[i] == undefined) {
-                array[i] = arraymeter;
+        if (contCamiMet != 100) {
+            array[contCamiMet] = arraymeter;
+        } else {
+            for (let i = 0; i <= cont; i++) {
+                if (array[i] == undefined) {
+                    array[i] = arraymeter;
+                }
             }
         }
         var otroarray = [];
@@ -1355,6 +1404,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 tubo1[tubo1.length] = 1000;
                 this.arrayTubo1 = tubo1;
             }
+            if (arraymeter == 'CAMISERO DE 1 ALTURA') {
+                objetoCamisero1['posicion'] = 700;
+                objetoCamisero1['cantidad'] = 1;
+                this.objetoCamiseroArray1 = objetoCamisero1;
+            }
+            if (arraymeter == 'CAMISERO DE 2 ALTURAS') {
+                objetoCamisero1['posicion'] = 700;
+                objetoCamisero1['cantidad'] = 2;
+                this.objetoCamiseroArray1 = objetoCamisero1;
+            }
+            if (arraymeter == 'CAMISERO DE 3 ALTURAS') {
+                objetoCamisero1['posicion'] = 700;
+                objetoCamisero1['cantidad'] = 3;
+                this.objetoCamiseroArray1 = objetoCamisero1;
+            }
+            var objetoCamisero1 = this.objetoCamiseroArray1;
 
             $('.divSliderAdi10').css({ display: 'block' });
             if (this.adicionalesArray0.length == 2) {
@@ -1439,6 +1504,45 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     );
                     $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(tubo1[o] / 10);
                     $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(tubo1[o] / 10);
+                }
+                if (this.adicionalesArray0[o] == 'CAMISERO DE 1 ALTURA') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        objetoCamisero1['posicion'] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        objetoCamisero1['posicion'] / 10
+                    );
+                }
+                if (this.adicionalesArray0[o] == 'CAMISERO DE 2 ALTURAS') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        objetoCamisero1['posicion'] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        objetoCamisero1['posicion'] / 10
+                    );
+                }
+                if (this.adicionalesArray0[o] == 'CAMISERO DE 3 ALTURAS') {
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                    $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                        'onclick',
+                        'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                        objetoCamisero1['posicion'] / 10
+                    );
+                    $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                        objetoCamisero1['posicion'] / 10
+                    );
                 }
 
                 contHueco1++;
@@ -1715,7 +1819,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 JSON.stringify(objetoCajonesSuelo4) +
                 "','" +
-                JSON.stringify(objetoCajonesSuelo1) +
+                JSON.stringify(objetoCamisero1) +
                 "','" +
                 JSON.stringify(objetoCajonesSuelo2) +
                 "','" +
@@ -2772,6 +2876,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var contArraynew = 0;
         var nuevoCont = 0;
         var nuevoArrayHueco = [];
+        var nuevoContTubo = 0;
+        var nuevoArrayHuecoTuebo = [];
         for (var j = 0; j < array.length; j++) {
             if (j != u - 1) {
                 nuevoarray[contArraynew] = array[j];
@@ -2783,14 +2889,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             this.adicionalesArray0 = nuevoarray;
             if (classSaber == 'ESTANTE MADERA ADICIONAL') {
                 for (var j = 0; j < arrayHueco1.length; j++) {
-                    if (j != 0) {
+                    if (j != u - 1) {
                         nuevoArrayHueco[nuevoCont] = arrayHueco1[j];
+                        nuevoCont++;
                     }
                 }
                 arrayHueco1 = nuevoArrayHueco;
             }
             if (classSaber == '1 CAJON ADICIONAL DE SUELO') {
                 objetoCajonesSuelo1 = {};
+                this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
+            }
+            if (classSaber == '1 CAJON SUSPENDIDO') {
+                objetoCajones1 = {};
+                this.objetoCajonesArray1 = objetoCajones1;
+            }
+            if (classSaber == 'BARRA DE COLGAR ADICIONAL') {
+                for (var j = 0; j < tubo1.length; j++) {
+                    if (j != u - 1) {
+                        nuevoArrayHuecoTuebo[nuevoContTubo] = tubo1[j];
+                        nuevoContTubo++;
+                    }
+                }
+                tubo1 = nuevoArrayHuecoTuebo;
+                this.arrayTubo1 = tubo1;
             }
         }
         if (huecoPinta == 2) {
@@ -24211,20 +24333,20 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     var text = $('#nombreMesita').text();
                     $('#nombreMesita').text(datos['productosDormitorio']['nombre']);
                     $('#datos1').append(
-                        '<p style="width:100%;display:none"><span style="font-weight:600">Ancho Especial : </span><span class="' +
+                        '<p style="width:100%;"><span style="font-weight:600">Ancho : </span><span class="' +
                             datos['id'] +
                             '" id="ancho1">' +
-                            codigo +
+                            datos['ancho'] +
                             '</span></p>'
                     );
 
                     $('#datos1').append(
-                        '<p style="width:100%;display:none"><span style="font-weight:600">Alto : </span><span id="altoDatosDimen">' +
+                        '<p style="width:100%;"><span style="font-weight:600">Alto : </span><span id="altoDatosDimen">' +
                             datos['alto'] +
                             '</span></p>'
                     );
                     $('#datos1').append(
-                        '<p style="width:100%;display:none"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
+                        '<p style="width:100%;"><span style="font-weight:600">Fondo : </span><span id="fondoDatosDimen">' +
                             datos['fondo'] +
                             '</span></p>'
                     );
@@ -32700,83 +32822,55 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var idProd = '';
         idProd = $('#nombreMesita').attr('class');
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/anfd12f6hsvl6o3/BEIGE.png?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
         arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/hs82gaqitfei4lz/KALA.png?dl=1'";
         arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/whsbhyp2l631bna/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/3223b1hzl94ilfv/LATTE.png?dl=1'";
         arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
         arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
         arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/saejgqdhphhzpnl/NATURE.png?dl=1'";
         arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
         arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['pietra'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
         arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
+        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
 
         var arrayAcabadoCantos = [];
-        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/anfd12f6hsvl6o3/BEIGE.png?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
         arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/sl66ufwi86eb29u/GRAFENO.jpg?dl=1'";
-        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/n39leonbtn3rrnu/KALA.jpg?dl=1'";
-        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/hr1a95to3l5oln9/KOBE-CANTOS.png?dl=1'";
-        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/el9mdvtvxyqcz3e/LAGO.jpg?dl=1'";
-        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/2ucae077ppk4etu/LATTE.jpg?dl=1'";
-        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/9dvvuhekyjrxtuo/MARE.jpg?dl=1'";
-        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/9b6fezw9fzbsqg8/MARMOL%20BLANCO.jpg?dl=1'";
-        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/fra77oefopu2ixh/MARMOL%20NEGRO.jpg?dl=1'";
-        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/a3q5apowjasuojg/NATURE.jpg?dl=1'";
-        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/tzux8snnpig25w9/NOCE-CANTOS.png?dl=1'";
-        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/yxvj5957icbnjvl/NORWAY.jpg?dl=1'";
-        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/a5h7ib7vnnjxi91/PIETRA.jpg?dl=1'";
-        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/a1o7e5h8zryj3xr/TABAK-CANTOS.png?dl=1'";
-
-        var arrayAcabadoUrlNormalMap = [];
-        arrayAcabadoUrlNormalMap['beige'] = "'1'";
-        arrayAcabadoUrlNormalMap['blanco'] = "'1'";
-        arrayAcabadoUrlNormalMap['crudo'] = "'1'";
-        arrayAcabadoUrlNormalMap['grafeno'] = "'1'";
-        arrayAcabadoUrlNormalMap['kala'] = "'1'";
-        arrayAcabadoUrlNormalMap['kobe'] = "'https://dl.dropboxusercontent.com/s/silen2jomg0aamh/NORMALMAP%20KOBE.png?dl=1'";
-        arrayAcabadoUrlNormalMap['lago'] = "'1'";
-        arrayAcabadoUrlNormalMap['latte'] = "'1'";
-        arrayAcabadoUrlNormalMap['mare'] = "'1'";
-        arrayAcabadoUrlNormalMap['marmol blanco'] = "'1'";
-        arrayAcabadoUrlNormalMap['marmol negro'] = "'1'";
-        arrayAcabadoUrlNormalMap['nature'] = "'1'";
-        arrayAcabadoUrlNormalMap['noce'] = "'https://dl.dropboxusercontent.com/s/28jqmrc2d9mhsbs/NORMALMAP%20NOCE.png?dl=1'";
-        arrayAcabadoUrlNormalMap['norway'] = "'1'";
-        arrayAcabadoUrlNormalMap['norway'] = "'1'";
-        arrayAcabadoUrlNormalMap['tabak'] = "'https://dl.dropboxusercontent.com/s/qm2jgeclh5t8yen/NORMALMAP%20TABAK.png?dl=1'";
-
-        var arrayAcabadoUrlBrillo = [];
-        arrayAcabadoUrlBrillo['beige'] = "'1'";
-        arrayAcabadoUrlBrillo['blanco'] = "'1'";
-        arrayAcabadoUrlBrillo['crudo'] = "'1'";
-        arrayAcabadoUrlBrillo['grafeno'] = "'1'";
-        arrayAcabadoUrlBrillo['kala'] = "'1'";
-        arrayAcabadoUrlBrillo['kobe'] = "'https://dl.dropboxusercontent.com/s/9ctsrw8flf47oab/BRILLO%20KOBE.png?dl=1'";
-        arrayAcabadoUrlBrillo['lago'] = "'1'";
-        arrayAcabadoUrlBrillo['latte'] = "'1'";
-        arrayAcabadoUrlBrillo['mare'] = "'1'";
-        arrayAcabadoUrlBrillo['marmol blanco'] = "'1'";
-        arrayAcabadoUrlBrillo['marmol negro'] = "'1'";
-        arrayAcabadoUrlBrillo['nature'] = "'https://dl.dropboxusercontent.com/s/4r4iipjs76z8b6t/BRILLO%20NATURE.png?dl=1'";
-        arrayAcabadoUrlBrillo['noce'] = "'https://dl.dropboxusercontent.com/s/bh5t65woh9vyh57/BRILLO%20NOCE.png?dl=1'";
-        arrayAcabadoUrlBrillo['norway'] = "'1'";
-        arrayAcabadoUrlBrillo['pietra'] = "'1'";
-        arrayAcabadoUrlBrillo['tabak'] = "'https://dl.dropboxusercontent.com/s/kcwfr7h0l1jm1iv/BRILLO%20TABAK.png?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/hs82gaqitfei4lz/KALA.png?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/whsbhyp2l631bna/LAGO.png?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/3223b1hzl94ilfv/LATTE.png?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/saejgqdhphhzpnl/NATURE.png?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
+        arrayAcabadoCantos['pietra'] = "'https://dl.dropboxusercontent.com/s/sre26680dn4xg66/PIETRA%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
 
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
         var todosAcabados = this.acabados;
         $.each(todosAcabados, function(index, value) {
             if (value['id'] == idAca) {
-                $('#urldebrilloacabado').text(arrayAcabadoUrlBrillo[value['nombre'].toLowerCase()]);
+                $('#urldebrilloacabado').text();
                 $('#clicparacambiardecolor').attr(
                     'onclick',
                     'cambiardecolor(' +
@@ -32784,11 +32878,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         ',' +
                         arrayAcabadoUrl[value['nombre'].toLowerCase()] +
                         ',' +
-                        arrayAcabadoUrlNormalMap[value['nombre'].toLowerCase()] +
-                        ',' +
-                        arrayAcabadoUrlBrillo[value['nombre'].toLowerCase()] +
-                        ',' +
                         arrayAcabadoCantos[value['nombre'].toLowerCase()] +
+                        ',' +
+                        idProd +
+                        ',' +
+                        id1 +
                         ')'
                 );
                 $('#clicparacambiardecolor')[0].click();
@@ -33429,7 +33523,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
     }
-    public shapedivercargar(id, es) {
+    public shapedivercargar(id, es, codigo) {
         if (es == 0) {
             $('#datos1').append('<div id="parameters"></div>');
             $('#calculadoraCarrito').css({ display: 'block' });
@@ -33438,6 +33532,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#observacionesArticulo').css({ display: 'block' });
             $('#cargarApiShape')[0].click();
             this.cargarDimen('NH007');
+            $('#rangoArmarios').css({ display: 'none' });
+            $('.divElegirOpcionSlider').css({ display: 'none' });
+            $('.divSlider').css({ display: 'none' });
+        }
+        if (es == 3) {
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape').attr('onclick', "apiShape3('" + id + "')");
+            $('#datos1').css({ display: 'block' });
+            $('#observacionesArticulo').css({ display: 'block' });
+            $('#cargarApiShape')[0].click();
+            this.cargarDimen(codigo);
             $('#rangoArmarios').css({ display: 'none' });
             $('.divElegirOpcionSlider').css({ display: 'none' });
             $('.divSlider').css({ display: 'none' });
@@ -33705,6 +33811,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var idApoyo;
         idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
         var idApoyoPorSi = 0;
+        var idProd = $('#nombreMesita').attr('class');
+        if (parseFloat(idProd) == 110) {
+            $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');
+            $('#apoyoestaCogidoApi')[0].click();
+        }
+
         if (idApoyo == 411) {
             idApoyo = 17;
             idApoyoPorSi = 411;
@@ -33715,7 +33827,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             idApoyoPorSi = 412;
             this.idApoyoSecundario = 412;
         }
-        var idProd = $('#nombreMesita').attr('class');
+
         var h;
         h = $('#productoCalculadora1  #datos1 #ancho1').text();
         var precioPunto = this.precioPunto;
@@ -33834,6 +33946,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (hbueno == 62.400000000000006) {
             hbueno = 62.4;
         }
+
         var apoyoDentro = 0;
         if (
             parseFloat(idProd) != 360 &&
@@ -37325,12 +37438,23 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     public enviarCarrito() {
+        var contNumArtCarr = 1;
+        $('#clicparaEnviarAbbdd')[0].click();
+        var imagenApi = $('#imagen1BBDD').attr('class');
+        var nombreEspecialggez = Math.random();
+        var obj = {
+            imagen: imagenApi,
+            nombre: nombreEspecialggez
+        };
+
+        this.subscribeToSaveResponse(this.imagenDeCestaProdService.create(obj));
         this.uid = 0;
         for (let j = 1; j <= 10; j++) {
             $('#productoCarrito' + j + ' #datos' + j).empty();
             $('#productoCarrito' + j + ' #precios' + j).empty();
             $('#productoCarrito' + j + ' #precioCalculado' + j).empty();
         }
+
         $('#artFor').prop('checked', false);
         $('#artFor1').prop('checked', false);
         $('#artFor2').prop('checked', false);
@@ -37570,6 +37694,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         prod[1]['apoyo']['imagen'] = '';
                     }
                     console.log(prod);
+                    prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                     sessionStorage.setItem('prod' + contadorDimen, JSON.stringify(prod));
                     contadorDimen++;
                     var cantidad = $('#selectCantidad').val();

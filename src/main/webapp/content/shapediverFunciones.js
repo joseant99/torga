@@ -1,3 +1,19 @@
+function imagenCarritoApi(){
+		
+			var imagen = api.scene.getScreenshot();
+			$("#soloParaMeterEnlacesYmostrar").append('<p id="imagen1BBDD" class="'+imagen+'"></p>');
+}
+
+function imagenGirarParaCarro(){
+	$("#sdv-container").css({"width":"410px"});
+	$("#sdv-container").css({"height":"410px"});
+	api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} });
+	setTimeout(function() {
+		$("#soloParaEnviarImagenGirada")[0].click();
+    }, 1000);
+	
+}
+
 function apiShape(id){
 		var rangeSlider = document.getElementById("rs-range-line");
 		var rangeSlider1 = document.getElementById("rs-range-line1");
@@ -342,9 +358,6 @@ function apiShape(id){
 						
 					}
 		            
-		            setTimeout(function() {
-		            	window.camaraposition = api.scene.camera.get();
-		            }, 1500);
 		            
 		          };
 		        } else if (param.type == "Bool") {
@@ -429,6 +442,277 @@ function apiShape(id){
 		
 		
 	}
+
+function apiShape3(id){
+	var rangeSlider = document.getElementById("rs-range-line");
+	var rangeSlider1 = document.getElementById("rs-range-line1");
+	var rangeSlider2 = document.getElementById("rs-range-line2");
+	var rangeBullet = document.getElementById("rs-bullet");
+
+	rangeSlider.addEventListener("input", showSliderValue, false);
+	rangeSlider1.addEventListener("input", showSliderValue1, false);
+	rangeSlider2.addEventListener("input", showSliderValue2, false);
+	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
+	$("#rs-range-line1").attr("onmouseup","cambiarVistaArmarioAltura()");
+	$("#rs-range-line2").attr("onmouseup","cambiarVistaArmarioFondo()");
+	$(".divBuscadorArticulos").css({"display":"block"});
+	$("#page-heading").css({"display":"none"});
+    $("#diviframeprueba").css({"display":"block"});
+    $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    var _container = document.getElementById('sdv-container');
+	// viewer settings
+	var _viewerSettings = {
+	  // container to use
+	  container: _container,
+	  // when creating the viewer, we want to get back an API v2 object
+	  api: {
+	    version: 2
+	  },
+	  // ticket for a ShapeDiver model
+	  ticket: id,
+	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+	  modelViewUrl: 'eu-central-1',
+	  showControlsInitial: true,
+	  showSettingsInitial: false
+	};
+	
+	// create the viewer, get back an API v2 object
+	window.api = new SDVApp.ParametricViewer(_viewerSettings);
+	
+	var viewerInit = false;
+	var parameters;
+	var hoverEffect = {
+		active: {
+	    name: "colorHighlight",
+	    options: {
+	      color: [100, 100, 100]
+	    }
+	  }
+	};
+
+	var selectEffect = {
+	  active: {
+	    name: "colorHighlight",
+	    options: {
+		     color: [255, 0, 0]
+			    }
+		 }
+	};
+	var leftPivot, rightPivot, rotAxis, transVector;
+			var leftTrans = {
+			  scenePaths: [],
+			  transformations: [
+			    {
+			      delay: 0,
+			      duration: 500,
+			      type: "rotation",
+			      repeat: 0,
+			      //yoyo:true,
+			      rotationAxis: {
+			        x: 1,
+			        y: 0,
+			        z: 0
+			      },
+			      rotationDegree: 90,
+			      pivot: {}
+			    }
+			  ],
+			  reset: false
+			};
+			var leftTrans1 = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 1,
+					        y: 0,
+					        z: 0
+					      },
+					      rotationDegree: -90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+			var puertaIzq = {
+					  scenePaths: [],
+					  transformations: [
+					    {
+					      delay: 0,
+					      duration: 500,
+					      type: "rotation",
+					      repeat: 0,
+					      //yoyo:true,
+					      rotationAxis: {
+					        x: 0,
+					        y: 1,
+					        z: 0
+					      },
+					      rotationDegree: 90,
+					      pivot: {}
+					    }
+					  ],
+					  reset: false
+					};
+					var puertaIzq1 = {
+							  scenePaths: [],
+							  transformations: [
+							    {
+							      delay: 0,
+							      duration: 500,
+							      type: "rotation",
+							      repeat: 0,
+							      //yoyo:true,
+							      rotationAxis: {
+							        x: 0,
+							        y: 1,
+							        z: 0
+							      },
+							      rotationDegree: -90,
+							      pivot: {}
+							    }
+							  ],
+							  reset: false
+							};
+				var selectableGroup = {
+					  id: "select",
+					  hoverable: true,
+					  hoverEffect: hoverEffect,
+					  //selectionEffect: selectEffect,
+					  selectable: true,
+					  selectionMode: "single"
+					};
+	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+	    if (!viewerInit) {
+	    	window.s = new THREE.Matrix4();
+	      var updatedSettings = {
+	    		  scene : {
+	    			  camera : {
+	    				  rotationSpeed : 0.1,
+	    				  autoAdjust: true,
+	    				  restrictions :{
+	    					  rotation : {
+	    						  minAzimuthAngle: -75,
+	    						  minPolarAngle: 45,
+	    						  maxPolarAngle: 90,
+	    						  maxAzimuthAngle: 75
+	    						  }
+	      					}
+	      				}
+	      			}
+	      }
+	      
+	     
+	      api.updateSettingsAsync(updatedSettings);
+	      var globalDiv = document.getElementById("parameters");
+	      parameters = api.parameters.get();
+	      parameters.data.sort(function(a, b) {
+	        return a.order - b.order;
+	      });
+	      console.log(parameters.data);
+	      
+	      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object2 = api.scene.get({name: "SueloGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object3 = api.scene.get({name: "Tabica geo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object4 = api.scene.get({name: "MolduraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
+
+	    	      let arrPivot = api.scene.getData({
+	    	        name: "frente"
+	    	      }).data[0].data;
+	    	      leftPivot = {
+	    	        x: arrPivot[0],
+	    	        y: arrPivot[1],
+	    	        z: arrPivot[2]
+	    	      };
+	    	      leftTrans.scenePaths = [
+	    	        api.scene.get(
+	    	          {
+	    	            name: "FrenteGeo",
+	    	            format: "glb"
+	    	          },
+	    	          "CommPlugin_1"
+	    	        ).data[0].scenePath
+	    	      ];
+	    	      leftTrans1.scenePaths = [
+		    	        api.scene.get(
+		    	          {
+		    	            name: "FrenteGeo",
+		    	            format: "glb"
+		    	          },
+		    	          "CommPlugin_1"
+		    	        ).data[0].scenePath
+		    	      ];
+	    	      leftTrans.transformations[0].pivot = leftPivot;
+	    	      leftTrans1.transformations[0].pivot = leftPivot;
+	    	      api.scene.updateInteractionGroups(selectableGroup);
+	    	      var assets = api.scene.get(
+	    	        {
+	    	          name: "FrenteGeo",
+	    	          format: "glb"
+	    	        },
+	    	        "CommPlugin_1"
+	    	      ).data;
+	    	      var updateObjects = [];
+	    	      let updateObject = {
+	    	        id: assets[0].id,
+	    	        duration: 0,
+	    	        interactionGroup: selectableGroup.id,
+	    	        interactionMode: "global"
+	    	      };
+	    	      updateObjects.push(updateObject);
+	    	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
+	    	      window.seadadoclic = 0;
+	    	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(){
+	    	        console.log("SELECT_ON");
+	    	          if(seadadoclic == 0){
+	    	            api.scene.setLiveTransformation([leftTrans]);
+	    	            seadadoclic = 1;
+	    	          }else{
+	    	            api.scene.setLiveTransformation([leftTrans1]);
+	    	            seadadoclic = 0;
+	    	          }
+	    	      });
+	      
+
+	      var exports = api.exports.get();
+	      for (let i = 0; i < exports.data.length; i++) {
+	        let exportAsset = exports.data[i];
+	        let exportDiv = document.createElement("div");
+	        let exportInput = document.createElement("input");
+	        exportInput.setAttribute("id", exportAsset.id);
+	        exportInput.setAttribute("type", "button");
+	        exportInput.setAttribute("name", exportAsset.name);
+	        exportInput.setAttribute("value", exportAsset.name);
+	        exportInput.onclick = function() {
+	          api.exports.requestAsync({
+	            id: this.id
+	          }).then(
+	            function(response) {
+	              let link = response.data.content[0].href;
+	              window.location = link;
+	            }
+	          );
+	        };
+	        exportDiv.appendChild(exportInput);
+	        globalDiv.appendChild(exportDiv);
+	      }
+	      
+	      viewerInit = true;
+	      
+	    }
+	  });
+	
+	
+}
 
 
 function apiShape2(id){
@@ -16449,5 +16733,67 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
+	    });
+}
+function apoyoDeLosModulos(id){
+	var idBuena = 0;
+	var idMetal = 0;
+	if(id == 15){
+		idBuena = 3;
+		idMetal = 1;
+		var url = 'https://dl.dropboxusercontent.com/s/52j9xalya66pp0g/negro.jpg?dl=1';
+	}
+	if(id == 16){
+		idBuena = 2;
+		idMetal = 1;
+		var url = 'https://dl.dropboxusercontent.com/s/52j9xalya66pp0g/negro.jpg?dl=1';
+	}
+	if(id == 403){
+		idBuena = 6;
+		idMetal = 1;
+		var url = 'https://dl.dropboxusercontent.com/s/52j9xalya66pp0g/negro.jpg?dl=1';
+	}
+	if(id == 18){
+		idBuena = 0;
+		idMetal = 0;
+		var url = window.textura;
+	}
+	if(id == 412){
+		idBuena = 8;
+		idMetal = 0;
+		var url = window.textura;
+	}
+	if(id == 17){
+		idBuena = 5;
+		idMetal = 0;
+		var url = window.textura;
+	}
+	if(id == 411){
+		idBuena = 7;
+		idMetal = 0;
+		var url = window.textura;
+	}
+	if(id == 32){
+		idBuena = 4;
+		idMetal = 0;
+	}
+	if(id == 212){
+		idBuena = 1;
+		idMetal = 0;
+	}
+	var parame = api.parameters.get({'name':'apy'},"CommPlugin_1").data[0];
+	var parame1 = api.parameters.get({'name':'metalApoyo'},"CommPlugin_1").data[0];
+	var parame2 = api.parameters.get({'name':'texturaApoyo'},"CommPlugin_1").data[0];
+	api.parameters.updateAsync({
+	      id: parame.id,
+	      value: idBuena
+	    });
+	api.parameters.updateAsync({
+	      id: parame1.id,
+	      value: idMetal
+	    });
+	api.parameters.updateAsync({
+	      id: parame2.id,
+	      value: url
 	    });
 }

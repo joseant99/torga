@@ -1,0 +1,21 @@
+{
+    "torgaPedidosApp": {
+        "imagenDeCestaProd": {
+            "home": {
+                "title": "Imagen De Cesta Prods",
+                "createLabel": "Crear nuevo Imagen De Cesta Prod",
+                "createOrEditLabel": "Crear o editar Imagen De Cesta Prod"
+            },
+            "created": "Un nuevo Imagen De Cesta Prod ha sido creado con el identificador {{ param }}",
+            "updated": "Un Imagen De Cesta Prod ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Imagen De Cesta Prod ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Imagen De Cesta Prod {{ id }}?"
+            },
+            "detail": {
+                "title": "Imagen De Cesta Prod"
+            },
+            "imagen": "Imagen"
+        }
+    }
+}

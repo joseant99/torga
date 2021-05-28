@@ -55,6 +55,7 @@ import { PresupuestoArmarioPuertasService } from '../presupuesto-armario-puertas
 import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 import { AcabadosService } from 'app/entities/acabados';
 import { SessionStorageService } from 'ngx-webstorage';
+import { ImagenDeCestaProdService } from '../imagen-de-cesta-prod/imagen-de-cesta-prod.service';
 import { NavbarComponent } from '../../layouts/navbar/navbar.component';
 import { VistaAdminService } from './vista-admin.service';
 
@@ -157,6 +158,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
         private router: Router,
         protected activatedRoute: ActivatedRoute,
         protected pagosTiendaService: PagosTiendaService,
+        protected imagenDeCestaProdService: ImagenDeCestaProdService,
         private stateStorageService: StateStorageService
     ) {}
 
@@ -9517,14 +9519,26 @@ export class cestaComponent implements OnInit, AfterViewInit {
                         if (sesion[1]['productosDormitorio']['id'] == 222) {
                             nombreCargarImagen = 'NH507-NH510';
                         }
-
-                        $('#cuerpo' + i + ' #izquierda').append(
-                            '<img id="imagenPresupues" style="z-index:' +
-                                (100 - i) +
-                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                nombreCargarImagen +
-                                '.jpeg">'
-                        );
+                        if (sesion[1]['nombreEspecialggez'] != undefined) {
+                            var imagenDeCestaProd = [];
+                            this.imagenDeCestaProdService.findCoger(sesion[1]['nombreEspecialggez']).subscribe(data => {
+                                $('#cuerpo' + i + ' #izquierda').append(
+                                    '<img id="imagenPresupues" style="z-index:' +
+                                        (100 - i) +
+                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="' +
+                                        data.body[0]['imagen'] +
+                                        '">'
+                                );
+                            });
+                        } else {
+                            $('#cuerpo' + i + ' #izquierda').append(
+                                '<img id="imagenPresupues" style="z-index:' +
+                                    (100 - i) +
+                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                    nombreCargarImagen +
+                                    '.jpeg">'
+                            );
+                        }
 
                         var precioTotalCesta;
                         precioTotalCesta = $('#cestaTotal').text();

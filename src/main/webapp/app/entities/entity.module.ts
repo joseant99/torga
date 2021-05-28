@@ -55,6 +55,7 @@ import { TorgaPedidosUsbModule } from './usb/usb.module';
 import { TorgaPedidosFPagoModule } from './f-pago/f-pago.module';
 import { TorgaPedidosRepreGCompraModule } from './repre-g-compra/repre-g-compra.module';
 import { TorgaPedidosZonasModule } from './zonas/zonas.module';
+import { TorgaPedidosImagenDeCestaProdModule } from './imagen-de-cesta-prod/imagen-de-cesta-prod.module';
 import { TorgaPedidosTransportistaTablaModule } from './transportista-tabla/transportista-tabla.module';
 import { TorgaPedidosFecha_entregaModule } from './fecha-entrega/fecha-entrega.module';
 
@@ -116,6 +117,7 @@ import { TorgaPedidosFecha_entregaModule } from './fecha-entrega/fecha-entrega.m
         TorgaPedidosIvaProductoTiendaModule,
         TorgaPedidosCajeadoModule,
         TorgaPedidosEnmarcadosModule,
+        TorgaPedidosImagenDeCestaProdModule,
         TorgaPedidosFecha_entregaModule,
         TorgaPedidosDatosUsuarioModule
     ],
