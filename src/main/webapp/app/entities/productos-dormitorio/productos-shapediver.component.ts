@@ -184,6 +184,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     objetoCamiseroArray2: any;
     objetoCamiseroArray3: any;
     objetoCamiseroArray4: any;
+    objetoTodoArray: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -381,256 +382,522 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         ezarrayInteteriores[hueco] = id;
         this.arrayHuecoInterioresubida = ezarrayInteteriores;
         var interiores = this.productosDormitorioModal;
+        var obj1 = {};
+        var obj2 = {};
+        var obj3 = {};
+        var obj4 = {};
+        var obj5 = {};
+        var obj6 = {};
+        var obj7 = {};
+        var obj8 = {};
+        var obj9 = {};
+        var obj10 = {};
         for (let i = 0; i < interiores.length; i++) {
             if (interiores[i]['nombre'] == id) {
                 if (id == 1) {
                     if (altura < 2250) {
-                        arrayEstantes[0] = 1710;
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 1710;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
                     } else {
-                        arrayEstantes[0] = 1950;
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 1950;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
                     }
                 }
                 if (id == 2) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = (alturaValor - 90) / 2;
-                        tubo[0] = (alturaValor - 90) / 2 - 50;
+                        obj1['posicion'] = (alturaValor - 90) / 2;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
                     } else {
-                        arrayEstantes[0] = (alturaValor - 90) / 2;
-                        tubo[0] = (alturaValor - 90) / 2 - 50;
+                        obj1['posicion'] = (alturaValor - 90) / 2;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
                     }
                 }
                 if (id == 3) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 1710;
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1710;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1660;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'tubo';
                     } else {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 1950;
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1750;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1900;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'tubo';
                     }
                 }
                 if (id == 4) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 1126;
-                        arrayEstantes[2] = 1710;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1126;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 1236;
-                        arrayEstantes[2] = 1950;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 1236;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     }
                 }
                 if (id == 5) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 918;
-                        arrayEstantes[2] = 1314;
-                        arrayEstantes[3] = 1710;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 918;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1314;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 1710;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 522;
-                        arrayEstantes[1] = 998;
-                        arrayEstantes[2] = 1474;
-                        arrayEstantes[3] = 1950;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = 998;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 1474;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 1950;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     }
                 }
                 if (id == 6) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = alturaValor / 2 - 15;
-                        arrayEstantes[1] = (5 * alturaValor - 180) / 8;
-                        arrayEstantes[2] = 0.75 * (alturaValor - 30);
-                        arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                        tubo[0] = (alturaValor - 90) / 2 - 50;
+                        obj1['posicion'] = alturaValor / 2 - 15;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (5 * alturaValor - 180) / 8;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 0.75 * (alturaValor - 30);
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (7 * alturaValor - 210) / 8;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
+
+                        obj5['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'tubo';
                     } else {
-                        arrayEstantes[0] = alturaValor / 2 - 15;
-                        arrayEstantes[1] = (5 * alturaValor - 180) / 8;
-                        arrayEstantes[2] = 0.75 * (alturaValor - 30);
-                        arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                        tubo[0] = (alturaValor - 90) / 2 - 50;
+                        obj1['posicion'] = alturaValor / 2 - 15;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (5 * alturaValor - 180) / 8;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = 0.75 * (alturaValor - 30);
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (7 * alturaValor - 210) / 8;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
+
+                        obj5['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'tubo';
                     }
                 }
                 if (id == 7) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = (alturaValor - 30) / 8;
-                        arrayEstantes[1] = (alturaValor - 30) / 4;
-                        arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
-                        arrayEstantes[3] = (alturaValor - 30) / 2;
+                        obj1['posicion'] = (alturaValor - 30) / 8;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 30) / 4;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = (3 / 8) * (alturaValor - 30);
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (alturaValor - 30) / 2;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = (alturaValor - 30) / 8;
-                        arrayEstantes[1] = (alturaValor - 30) / 4;
-                        arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
-                        arrayEstantes[3] = (alturaValor - 30) / 2;
+                        obj1['posicion'] = (alturaValor - 30) / 8;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 30) / 4;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = (3 / 8) * (alturaValor - 30);
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (alturaValor - 30) / 2;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     }
                 }
                 if (id == 8) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = (alturaValor - 30) / 6;
-                        arrayEstantes[1] = (alturaValor - 30) / 3;
-                        arrayEstantes[2] = (alturaValor - 30) / 2;
-                        arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
-                        arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                        obj1['posicion'] = (alturaValor - 30) / 6;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 30) / 3;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = (alturaValor - 30) / 2;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (2 / 3) * (alturaValor - 30);
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
+
+                        obj5['posicion'] = (5 / 6) * (alturaValor - 30);
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = (alturaValor - 30) / 6;
-                        arrayEstantes[1] = (alturaValor - 30) / 3;
-                        arrayEstantes[2] = (alturaValor - 30) / 2;
-                        arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
-                        arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
+                        obj1['posicion'] = (alturaValor - 30) / 6;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estante';
+
+                        obj2['posicion'] = (alturaValor - 30) / 3;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estante';
+
+                        obj3['posicion'] = (alturaValor - 30) / 2;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = (2 / 3) * (alturaValor - 30);
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
+
+                        obj5['posicion'] = (5 / 6) * (alturaValor - 30);
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'estante';
                     }
                 }
                 if (id == 9) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        if (hueco == 1) {
-                            objetoCajones1['posicion'] = 694;
-                            objetoCajones1['cantidad'] = 1;
-                        }
-                        if (hueco == 2) {
-                            objetoCajones2['posicion'] = 694;
-                            objetoCajones2['cantidad'] = 1;
-                        }
-                        if (hueco == 3) {
-                            objetoCajones3['posicion'] = 694;
-                            objetoCajones3['cantidad'] = 1;
-                        }
-                        if (hueco == 4) {
-                            objetoCajones4['posicion'] = 694;
-                            objetoCajones4['cantidad'] = 1;
-                        }
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 694;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 1;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 1950;
-                        if (hueco == 1) {
-                            objetoCajones1['posicion'] = 694;
-                            objetoCajones1['cantidad'] = 1;
-                        }
-                        if (hueco == 2) {
-                            objetoCajones2['posicion'] = 694;
-                            objetoCajones2['cantidad'] = 1;
-                        }
-                        if (hueco == 3) {
-                            objetoCajones3['posicion'] = 694;
-                            objetoCajones3['cantidad'] = 1;
-                        }
-                        if (hueco == 4) {
-                            objetoCajones4['posicion'] = 694;
-                            objetoCajones4['cantidad'] = 1;
-                        }
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 694;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 1;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     }
                 }
                 if (id == 10) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        if (hueco == 1) {
-                            objetoCajones1['posicion'] = 522;
-                            objetoCajones1['cantidad'] = 2;
-                        }
-                        if (hueco == 2) {
-                            objetoCajones2['posicion'] = 522;
-                            objetoCajones2['cantidad'] = 2;
-                        }
-                        if (hueco == 3) {
-                            objetoCajones3['posicion'] = 522;
-                            objetoCajones3['cantidad'] = 2;
-                        }
-                        if (hueco == 4) {
-                            objetoCajones4['posicion'] = 522;
-                            objetoCajones4['cantidad'] = 2;
-                        }
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 1950;
-                        objetoCajones1['posicion'] = 522;
-                        objetoCajones1['cantidad'] = 2;
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 522;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1960;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     }
                 }
                 if (id == 11) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 1950;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1960;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     }
                 }
                 if (id == 12) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 730;
-                        arrayEstantes[1] = 1710;
-                        tubo[0] = 1660;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 730;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 730;
-                        arrayEstantes[1] = 1950;
-                        tubo[0] = 1900;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 730;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     }
                 }
                 if (id == 13) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 932;
-                        arrayEstantes[1] = 1710;
-                        objetoCajonesSuelo['cantidad'] = 3;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 3;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 932;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 932;
-                        arrayEstantes[1] = 1950;
-                        objetoCajonesSuelo['cantidad'] = 3;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 3;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 932;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estante';
                     }
                 }
                 if (id == 14) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        objetoCajonesSuelo['cantidad'] = 4;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 4;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     } else {
-                        arrayEstantes[0] = 1950;
-                        objetoCajonesSuelo['cantidad'] = 4;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 4;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
                     }
                 }
                 if (id == 15) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        objetoCamisero['posicion'] = 380;
-                        objetoCamisero['cantidad'] = 3;
-                        tubo[0] = 1660;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 380;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'camisero';
+                        obj4['cantidad'] = 3;
                     } else {
-                        arrayEstantes[0] = 1950;
-                        objetoCajonesSuelo['cantidad'] = 2;
-                        objetoCajonesSuelo['material'] = 'madera1';
-                        objetoCamisero['posicion'] = 380;
-                        objetoCamisero['cantidad'] = 3;
-                        tubo[0] = 1900;
+                        obj1['posicion'] = 0;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'cajones';
+                        obj1['cantidad'] = 2;
+
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj4['posicion'] = 380;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'camisero';
+                        obj4['cantidad'] = 3;
                     }
                 }
                 if (id == 16) {
                     if (alturaValor < 2250) {
-                        arrayEstantes[0] = 1710;
-                        objetoCamisero['posicion'] = 0;
-                        objetoCamisero['cantidad'] = 3;
-                        tubo[0] = 1660;
+                        obj2['posicion'] = 1660;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1710;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj1['posicion'] = 380;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'camisero';
+                        obj1['cantidad'] = 3;
                     } else {
-                        arrayEstantes[0] = 1950;
-                        objetoCamisero['posicion'] = 0;
-                        objetoCamisero['cantidad'] = 3;
-                        tubo[0] = 1900;
+                        obj2['posicion'] = 1900;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'tubo';
+
+                        obj3['posicion'] = 1950;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estante';
+
+                        obj1['posicion'] = 380;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'camisero';
+                        obj1['cantidad'] = 3;
                     }
                 }
             }
@@ -645,39 +912,88 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var tubo4 = this.arrayTubo4;
         var arrayInterior = [];
         arrayInterior[hueco - 1] = id;
+        var objetoTODO = {};
+        var arraySec = [];
+        var contArraySec = 0;
+        var objetoTodoArray = this.objetoTodoArray;
+        var contIntArray = objetoTodoArray.length;
+        //if (hueco == 1) {
+        if (objetoTodoArray.length > 0) {
+            for (let k = 0; k < objetoTodoArray.length; k++) {
+                if (objetoTodoArray[k] != undefined) {
+                    if (objetoTodoArray[k]['interior'] != hueco - 1) {
+                        arraySec[contArraySec] = objetoTodoArray[k];
+                        contArraySec++;
+                    }
+                }
+            }
+            objetoTodoArray = arraySec;
+        }
+        var contNuevoArrayObj = 0;
+        var nuevoObjetoTodoArray = [];
+        for (let k = 0; k < objetoTodoArray.length; k++) {
+            if (objetoTodoArray[k] != undefined) {
+                nuevoObjetoTodoArray[contNuevoArrayObj] = objetoTodoArray[k];
+                contNuevoArrayObj++;
+            }
+        }
+        objetoTodoArray = nuevoObjetoTodoArray;
+        //}
+        if (obj1['interior'] != undefined) {
+            objetoTodoArray[contIntArray] = obj1;
+            if (obj2['interior'] != undefined) {
+                objetoTodoArray[contIntArray + 1] = obj2;
+                if (obj3['interior'] != undefined) {
+                    objetoTodoArray[contIntArray + 2] = obj3;
+                    if (obj4['interior'] != undefined) {
+                        objetoTodoArray[contIntArray + 3] = obj4;
+                        if (obj5['interior'] != undefined) {
+                            objetoTodoArray[contIntArray + 4] = obj5;
+                            if (obj6['interior'] != undefined) {
+                                objetoTodoArray[contIntArray + 5] = obj6;
+                                if (obj7['interior'] != undefined) {
+                                    objetoTodoArray[contIntArray + 6] = obj7;
+                                    if (obj8['interior'] != undefined) {
+                                        objetoTodoArray[contIntArray + 7] = obj8;
+                                        if (obj9['interior'] != undefined) {
+                                            objetoTodoArray[contIntArray + 8] = obj9;
+                                            if (obj10['interior'] != undefined) {
+                                                objetoTodoArray[contIntArray + 9] = obj10;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        this.objetoTodoArray = objetoTodoArray;
+
+        objetoTODO['interiores'] = objetoTodoArray;
         if (hueco == 1) {
-            arrayHueco1 = arrayEstantes;
-            tubo1 = tubo;
-            if (objetoCajones1['posicion'] != undefined) {
-                objetoCajones1 = objetoCajones1;
-                this.objetoCajonesArray1 = objetoCajones1;
-            }
-            if (objetoCajonesSuelo['cantidad'] != undefined) {
-                objetoCajonesSuelo1 = objetoCajonesSuelo;
-                this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
-            }
-            if (objetoCamisero['posicion'] != undefined) {
-                objetoCamisero1 = objetoCamisero;
-                this.objetoCamiseroArray1 = objetoCamisero1;
-            }
-            this.arrayhuecoEstantes1 = arrayHueco1;
-            this.arrayTubo1 = tubo1;
-            var contNumEst = 0;
-            var tuboCont = 0;
-            for (var o = 0; o < arrayHueco1.length; o++) {
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                    arrayHueco1[o] / 10
-                );
-                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
-                contNumEst++;
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == hueco - 1) {
+                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
+                        $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
+                        $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (o + 1) + ',0)'
+                        );
+                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
+                            objetoTodoArray[o]['posicion'] / 10
+                        );
+                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
+                            objetoTodoArray[o]['posicion'] / 10
+                        );
+                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text(
+                            objetoTodoArray[o]['tipo']
+                        );
+                    }
+                }
             }
             for (var o = contNumEst; o < tubo1.length + contNumEst; o++) {
                 $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
@@ -757,6 +1073,28 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
         if (hueco == 2) {
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == hueco - 1) {
+                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
+                        $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
+                        $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (o + 1) + ',1)'
+                        );
+                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(
+                            objetoTodoArray[o]['posicion'] / 10
+                        );
+                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
+                            objetoTodoArray[o]['posicion'] / 10
+                        );
+                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
+                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text(
+                            objetoTodoArray[o]['tipo']
+                        );
+                    }
+                }
+            }
             arrayHueco2 = arrayEstantes;
             tubo2 = tubo;
             if (objetoCajones2['posicion'] != undefined) {
@@ -1085,7 +1423,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
 
-        $('#cliccambiarinteriores').attr(
+        /**$('#cliccambiarinteriores').attr(
             'onclick',
             "pintarinterioresArmarioShape('" +
                 arrayHueco1 +
@@ -1130,7 +1468,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 "','" +
                 arrayInterior +
                 "')"
-        );
+        );**/
+        $('#cliccambiarinteriores').attr('onclick', 'interioresNuevoJson(' + JSON.stringify(objetoTODO) + ')');
         $('#cliccambiarinteriores')[0].click();
         this.armariosDormitorioComponent.pintarInteriores(id);
     }
@@ -24559,10 +24898,6 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                             if (screen.width < 800) {
                                 $('#imagenAcabado').css({ 'margin-top': '5px' });
                                 $('#imagenAcabado').css({ 'padding-top': '5px' });
-                                const elem = $('#imagenAcabado');
-                                elem[0].style.setProperty('max-width', '300px', 'important');
-                                elem[0].style.setProperty('max-height', '300px', 'important');
-                                elem[0].style.setProperty('margin-left', '8%', 'important');
                             }
                             if (u == 1) {
                                 $('#datos1').append('<p style="width:100%"><strong>ACABADOS</strong></p>');
@@ -33812,7 +34147,17 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         idApoyo = $('#apoyoModal' + id + ' #imagenApoyo' + id).attr('class');
         var idApoyoPorSi = 0;
         var idProd = $('#nombreMesita').attr('class');
-        if (parseFloat(idProd) == 110) {
+        if (
+            parseFloat(idProd) == 110 ||
+            parseFloat(idProd) == 107 ||
+            parseFloat(idProd) == 108 ||
+            parseFloat(idProd) == 295 ||
+            parseFloat(idProd) == 296 ||
+            parseFloat(idProd) == 112 ||
+            parseFloat(idProd) == 114 ||
+            parseFloat(idProd) == 114 ||
+            parseFloat(idProd) == 109
+        ) {
             $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');
             $('#apoyoestaCogidoApi')[0].click();
         }
@@ -38008,6 +38353,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        this.objetoTodoArray = [];
         this.adicionalesArray0 = [];
         this.adicionalesArray1 = [];
         this.adicionalesArray2 = [];

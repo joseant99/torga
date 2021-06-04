@@ -58,6 +58,9 @@ public class ProductosPresupuestoPedidos implements Serializable {
     @Column(name = "grosor")
     private String grosor;
     
+    @Column(name = "nombre_imagen_shape")
+    private String nombreImagenShape;
+    
     @Column(name = "alto")
     private String alto;
     
@@ -139,6 +142,19 @@ public class ProductosPresupuestoPedidos implements Serializable {
 
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
+    }
+    
+    public String getNombreImagenShape() {
+        return nombreImagenShape;
+    }
+
+    public ProductosPresupuestoPedidos nombreImagenShape(String nombreImagenShape) {
+        this.nombreImagenShape = nombreImagenShape;
+        return this;
+    }
+
+    public void setNombreImagenShape(String nombreImagenShape) {
+        this.nombreImagenShape = nombreImagenShape;
     }
     
     public String getPrecioEspecial() {

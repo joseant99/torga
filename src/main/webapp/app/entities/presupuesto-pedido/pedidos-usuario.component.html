@@ -12,6 +12,7 @@
     		<!-- <option>REFERENCIA CLIENTE</option>-->
     	</select></p>
     	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="textoDemasFiltros" ><input list="listaBuena" style="height: 50px;width: 300px;" type="text" id="inputFiltro"></p>
+    	<p *jhiHasAnyAuthority="['ROLE_ADMIN']" style="text-align:center;display: none" id="nombreFiscalTextFiltros" ><input style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalInput" type="text"> <button style="width: 140px;height: 44px;font-size: 20px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="cargarSelectTexto()">CARGAR</button></p>
     	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="nombreFiscalSelectFiltros" ><select style="text-align:center;height: 50px;width: 300px;" id="nombreFiscalSelect" ><option></option></select></p>
     	<p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;display: none" id="fechaFiltrado" ><input style="height: 50px;width: 300px;" type="date" id="fechaBus"></p>
         <p *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_ADMIN']" style="text-align:center;"><button style="width: 140px;height: 44px;font-size: 20px;letter-spacing: 3px;color: white;background: #B5BABD;border: 0;" (click)="buscarPresu()">BUSCAR</button></p>

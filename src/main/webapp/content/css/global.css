@@ -32,6 +32,44 @@ a {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
 }
 
+#textoPantallaInicioCentral {
+    margin-top: 17%;
+    font-size: 55px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+#textoPantallaInicioCentral1 {
+    margin-top: 25px;
+    font-size: 55px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 300;
+}
+
+.shapediver-domElements {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    pointer-events: none;
+    position: absolute;
+    width: 75%;
+    height: 700px;
+    left: 0%;
+    top: 6%;
+    margin-top: 6%;
+    margin-left: 25%;
+}
+
+.shapediver-domElement {
+    position: absolute;
+}
+
 .blink {
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
@@ -18371,6 +18409,20 @@ ui bootstrap tweaks
         margin-left: 10%;
         right: auto;
         position: relative;
+    }
+    #textoPantallaInicioCentral {
+        margin-top: 50%;
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 5px;
+        font-weight: 300;
+    }
+    #textoPantallaInicioCentral1 {
+        margin-top: -2px;
+        font-size: 40px;
+        text-align: center;
+        letter-spacing: 5px;
+        font-weight: 300;
     }
 }
 

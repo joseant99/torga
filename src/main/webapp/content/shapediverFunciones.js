@@ -7,11 +7,20 @@ function imagenCarritoApi(){
 function imagenGirarParaCarro(){
 	$("#sdv-container").css({"width":"410px"});
 	$("#sdv-container").css({"height":"410px"});
-	api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} });
 	setTimeout(function() {
 		$("#soloParaEnviarImagenGirada")[0].click();
     }, 1000);
+	api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} });
 	
+	
+}
+
+function cambiarAnchoImagenSha(ancho){
+	var parame = api.parameters.get({name :"L"}).data[0];
+	api.parameters.updateAsync({
+        id: parame.id,
+        value: (parseFloat(ancho)*10)
+      });
 }
 
 function apiShape(id){
@@ -444,17 +453,9 @@ function apiShape(id){
 	}
 
 function apiShape3(id){
-	var rangeSlider = document.getElementById("rs-range-line");
-	var rangeSlider1 = document.getElementById("rs-range-line1");
-	var rangeSlider2 = document.getElementById("rs-range-line2");
-	var rangeBullet = document.getElementById("rs-bullet");
-
-	rangeSlider.addEventListener("input", showSliderValue, false);
-	rangeSlider1.addEventListener("input", showSliderValue1, false);
-	rangeSlider2.addEventListener("input", showSliderValue2, false);
-	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
-	$("#rs-range-line1").attr("onmouseup","cambiarVistaArmarioAltura()");
-	$("#rs-range-line2").attr("onmouseup","cambiarVistaArmarioFondo()");
+	
+	window.textura = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1';
+	
 	$(".divBuscadorArticulos").css({"display":"block"});
 	$("#page-heading").css({"display":"none"});
     $("#diviframeprueba").css({"display":"block"});
@@ -481,7 +482,7 @@ function apiShape3(id){
 	
 	var viewerInit = false;
 	var parameters;
-	var hoverEffect = {
+	/**var hoverEffect = {
 		active: {
 	    name: "colorHighlight",
 	    options: {
@@ -586,7 +587,7 @@ function apiShape3(id){
 					  //selectionEffect: selectEffect,
 					  selectable: true,
 					  selectionMode: "single"
-					};
+					};**/
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 	    if (!viewerInit) {
 	    	window.s = new THREE.Matrix4();
@@ -607,7 +608,12 @@ function apiShape3(id){
 	      			}
 	      }
 	      
-	     
+	     var ancho1 = $("#ancho1").text();
+	      var parame = api.parameters.get({name :"L"}).data[0];
+	  	api.parameters.updateAsync({
+	          id: parame.id,
+	          value: (parseFloat(ancho1)*10)
+	        });
 	      api.updateSettingsAsync(updatedSettings);
 	      var globalDiv = document.getElementById("parameters");
 	      parameters = api.parameters.get();
@@ -625,7 +631,7 @@ function apiShape3(id){
 	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
 	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
 
-	    	      let arrPivot = api.scene.getData({
+	    	      /**let arrPivot = api.scene.getData({
 	    	        name: "frente"
 	    	      }).data[0].data;
 	    	      leftPivot = {
@@ -680,7 +686,7 @@ function apiShape3(id){
 	    	            api.scene.setLiveTransformation([leftTrans1]);
 	    	            seadadoclic = 0;
 	    	          }
-	    	      });
+	    	      });**/
 	      
 
 	      var exports = api.exports.get();
@@ -1634,13 +1640,14 @@ function apiShape1(id){
 		      ],
 		      reset: false
 		  };
+		  
 		  var animateDoor = function (doorNumber, direction) {
 			    //get data from Grasshopper model regarding animations
-			    var animationData = api.scene.getData(
-			        {
-			            name: "animacionPuertas"
-			        }
-			    ).data[0].data;
+			  		var animationData = api.scene.getData(
+				        {
+				            name: "animacionPuertas"
+				        }
+				    ).data[0].data;
 
 			    //get paths that are relevant for animation
 			    var animationPaths = animationData.paths[doorNumber];
@@ -1650,20 +1657,20 @@ function apiShape1(id){
 
 			    for (var i = 0; i <window.armario; i++) {
 			        //duplicate base animation object
-			    	var tiradoresObject = api.scene.get(
+			    	/**var tiradoresObject = api.scene.get(
 					        {
 					          name: "Tiradores",
 					          format: "glb"
 					        },
 					        "CommPlugin_1"
-					      ).data[0];
+					      ).data[0];**/
 			    		 var animation = JSON.parse(JSON.stringify(baseAnimation));
 
 					        //define scene path
 					        animation.scenePaths.push("CommPlugin_1." + doorsId + ".content_" + i);
-					        if(tiradoresObject != undefined){
-					        	animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_" + i);
-					        }
+					        //if(tiradoresObject != undefined){
+					        	//animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_" + i);
+					        //}
 					        
 
 					        //define pivot point and direction
@@ -1682,35 +1689,31 @@ function apiShape1(id){
 		 
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 	    if (!viewerInit) {
-	    	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"]);
+	    	//api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"]);
 	    	var materialesArray = [];
 	    	materialesArray[0] = {
 	    		"id" : "tabak",
 	    		"opacidad" : 1,
-	    		"textura" : "https://www.dropbox.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1",
-	    		"brillo" : "https://www.dropbox.com/s/kcwfr7h0l1jm1iv/BRILLO%20TABAK.png?dl=1",
-	    		"normalMap" : "https://www.dropbox.com/s/30zqhxphjldjmaq/NORMALMAP%20TABAK.png?dl=1"
+	    		"textura" : "https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1",
+	    		"brillo" : 1
 	    	};
 	    	materialesArray[1] = {
 		    		"id" : "kobe",
 		    		"opacidad" : 1,
 		    		"textura" : "https://www.dropbox.com/s/a40x79bngq87z6h/KOBE.png?dl=1",
-		    		"brillo" : "https://www.dropbox.com/s/9ctsrw8flf47oab/BRILLO%20KOBE.png?dl=1",
-		    		"normalMap" : "https://www.dropbox.com/s/4ub7j3an6xg9kkg/NORMALMAP%20KOBE.png?dl=1"
+		    		"brillo" : 1
 		    	};
 	    	materialesArray[2] = {
 		    		"id" : "noce",
 		    		"opacidad" : 1,
 		    		"textura" : "https://www.dropbox.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1",
-		    		"brillo" : "https://www.dropbox.com/s/bh5t65woh9vyh57/BRILLO%20NOCE.png?dl=1",
-		    		"normalMap" : "https://www.dropbox.com/s/ce1nyy2082jftar/NORMALMAP%20NOCE.png?dl=1"
+		    		"brillo" : "1"
 		    	};
 	    	materialesArray[3] = {
 		    		"id" : "nature",
 		    		"opacidad" : 1,
 		    		"textura" : "https://www.dropbox.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1",
-		    		"brillo" : "https://www.dropbox.com/s/4r4iipjs76z8b6t/BRILLO%20NATURE.png?dl=1",
-		    		"normalMap" : "https://www.dropbox.com/s/c51d1vom3t1li8p/NORMALMAP%20NATURE.png?dl=1"
+		    		"brillo" : 1
 		    	};
 	    	materialesArray[4] = {
 		    		"id" : "blanco",
@@ -1775,7 +1778,7 @@ function apiShape1(id){
 				        "CommPlugin_1"
 				      ).data[0];
 	    	 
-	    	 	var shelves = api.scene.get(
+	    	 	/**var shelves = api.scene.get(
 	    		        {
 	    		          name: "EstantesGeo",
 	    		          format: "glb"
@@ -1789,16 +1792,16 @@ function apiShape1(id){
 	    		          format: "glb"
 	    		        },
 	    		        "CommPlugin_1"
-	    		      ).data[0];
+	    		      ).data[0]; **/
 				      
 				      doorsId = doorsObject.id;
 				      doorState = Array(doorsObject.content.length).fill(-1);
 
 				        //add doors interaction group to scene
-				      api.scene.updateInteractionGroups([doorsInteractionGroup,shelvesInteractionGroup]);
-
+				      //api.scene.updateInteractionGroups([doorsInteractionGroup,shelvesInteractionGroup]);
+				      api.scene.updateInteractionGroups([doorsInteractionGroup]);
 				        //apply interaction group to doors
-				      api.scene.updatePersistentAsync([
+				      /**api.scene.updatePersistentAsync([
 				          {
 				            id: doorsId,
 				            interactionGroup: doorsInteractionGroup.id,
@@ -1815,8 +1818,14 @@ function apiShape1(id){
 				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
 				          }
 				        ], "CommPlugin_1");
-				        
-
+				        **/
+				      api.scene.updatePersistentAsync([
+				          {
+				            id: doorsId,
+				            interactionGroup: doorsInteractionGroup.id,
+				            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+				          }
+				        ], "CommPlugin_1");
 
 				      //add event listener when clicking objects
 				      api.scene.addEventListener(
@@ -1907,10 +1916,7 @@ function apiShape1(id){
 	      parameters.data.sort(function(a, b) {
 	        return a.order - b.order;
 	      });
-	      
-	      setTimeout(function() {
-            	window.camaraposition = api.scene.camera.get();
-            }, 1500);
+
 	      $("#sdv-container-canvas").attr("onmouseup","saberdondeestapuesto()");
 	      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
 	      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
@@ -2350,10 +2356,10 @@ function cambiarVistaArmarioAltura(){
 	var rangeSlider = document.getElementById("rs-range-line1");
 	var valorAncho =  (rangeSlider.value*10);
 	todounarmario["altura"] = valorAncho;
-	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
+	var parame = api.parameters.get({'name':'altura'},"CommPlugin_1").data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
-	      value: JSON.stringify(todounarmario)
+	      value: valorAncho
 	    });
 	  $("#cambioDeAlturaSitieneInteriores")[0].click();
 	  
@@ -2362,10 +2368,10 @@ function cambiarVistaArmarioFondo(){
 	var rangeSlider = document.getElementById("rs-range-line2");
 	var valorAncho =  (rangeSlider.value*10);
 	todounarmario["fondo"] = valorAncho;
-	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
+	var parame = api.parameters.get({'name':'fondo'},"CommPlugin_1").data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
-	      value: JSON.stringify(todounarmario)
+	      value: valorAncho
 	    });
 }
 
@@ -2379,6 +2385,1441 @@ function niveladoresopcionesarm(id){
 	if(id == 2){
 		$("#enlaceclickniveladoresNo")[0].click();
 	}
+}
+
+function interioresNuevoJson(obj){
+	window.obj = obj; 
+	var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: JSON.stringify(obj)
+	    });
+	  
+	  var arrayDeEstantesMet = [];
+	  var contEst = 0;
+	  var contTubo = 0;
+	  var contEst1 = 0;
+	  var contCaj = 0;
+	  var length = obj["interiores"].length;
+	  for(let h = 0;h<length;h++){
+		  if(obj["interiores"][h]["tipo"] == "estante"){
+			  if(h>0){
+				  if(obj["interiores"][h]["interior"] != obj["interiores"][h-1]["interior"]){
+					  contEst1 = 0;
+				  }
+			  }
+			  arrayDeEstantesMet[contEst]=[];
+			  arrayDeEstantesMet[contEst]["puesto"] = h;
+			  arrayDeEstantesMet[contEst]["interior"] = obj["interiores"][h]["interior"];
+			  arrayDeEstantesMet[contEst]["num"] = contEst1;
+			  
+			  if(contEst == 0){ 
+				  setTimeout(function() {
+				  var effect = {
+						    active: {
+						        name: "colorHighlight",
+						        options: {
+						            color: [0, 185, 3]
+						        }
+						    }
+						};
+				  		var shelvesInteractionGroup = {
+						  id: "shelvesInteractionGroup",
+						  selectable: true,
+						  selectionEffect: effect,
+						  selectionMode: "multiple"
+						};
+
+				  			var shelves = api.scene.get(
+			    		        {
+			    		          name: "EstantesGeo",
+			    		          format: "glb"
+			    		        },
+			    		        "CommPlugin_1"
+			    		      ).data[0];
+			    		      
+			    		      var shelvesSides = api.scene.get(
+			    		        {
+			    		          name: "EstantesCantosGeo",
+			    		          format: "glb"
+			    		        },
+			    		        "CommPlugin_1"
+			    		      ).data[0];
+
+			    		      	api.scene.updateInteractionGroups([shelvesInteractionGroup]);
+
+								api.scene.updatePersistentAsync([
+						          {
+						            id: shelves.id,
+						            interactionGroup: shelvesInteractionGroup.id,
+						            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+						          },
+						          {
+						            id: shelvesSides.id,
+						            interactionGroup: shelvesInteractionGroup.id,
+						            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+						          }
+						        ], "CommPlugin_1");
+				  }, 3500);
+				  
+			  }
+			  contEst++;
+			  contEst1++;
+		  }
+		  if(obj["interiores"][h]["tipo"] == "tubo"){
+			  if(contTubo == 0){
+				  setTimeout(function() {
+					  var effect = {
+							    active: {
+							        name: "colorHighlight",
+							        options: {
+							            color: [0, 185, 3]
+							        }
+							    }
+							};
+					  		var tubosInteractionGroup = {
+							  id: "tubosInteractionGroup",
+							  selectable: true,
+							  selectionEffect: effect,
+							  selectionMode: "multiple"
+							};
+
+					  			var tubos = api.scene.get(
+				    		        {
+				    		          name: "tubos",
+				    		          format: "glb"
+				    		        },
+				    		        "CommPlugin_1"
+				    		      ).data[0];
+				    		      
+				    		      
+
+				    		      	api.scene.updateInteractionGroups([tubosInteractionGroup]);
+
+									api.scene.updatePersistentAsync([
+							          {
+							            id: tubos.id,
+							            interactionGroup: tubosInteractionGroup.id,
+							            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+							          }
+							        ], "CommPlugin_1");
+					  }, 3500);
+				  
+			  }
+			  contTubo++;
+		  }
+		  if(obj["interiores"][h]["tipo"] == "cajones"){
+			  if(contCaj == 0){
+				  setTimeout(function() {
+					  var effect = {
+							    active: {
+							        name: "colorHighlight",
+							        options: {
+							            color: [0, 185, 3]
+							        }
+							    }
+							};
+					  		var cajonesInteractionGroup = {
+							  id: "cajonesInteractionGroup",
+							  selectable: true,
+							  selectionEffect: effect,
+							  selectionMode: "multiple"
+							};
+					  			var cajones = api.scene.get(
+				    		        {
+				    		          name: "Cajones",
+				    		          format: "glb"
+				    		        },
+				    		        "CommPlugin_1"
+				    		      ).data[0];
+					  			var cantosCajones = api.scene.get(
+				    		        {
+				    		          name: "CantosCajones",
+				    		          format: "glb"
+				    		        },
+				    		        "CommPlugin_1"
+				    		      ).data[0];
+				    		      
+				    		      
+
+				    		      	api.scene.updateInteractionGroups([cajonesInteractionGroup]);
+
+									api.scene.updatePersistentAsync([
+										 {
+									            id: cajones.id,
+									            interactionGroup: cajonesInteractionGroup.id,
+									            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+									          },
+									          {
+									            id: cantosCajones.id,
+									            interactionGroup: cajonesInteractionGroup.id,
+									            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+									          }
+							        ], "CommPlugin_1");
+					  }, 3500);
+				  
+			  }
+			  contCaj++;
+		  }
+	  }
+	  window.arrayDeEstantesMet = arrayDeEstantesMet;
+	  window.arrayDeEstantesMet1 = arrayDeEstantesMet;
+	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
+		$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
+		var inputDiv = document.querySelector('#inputDivAdi10');
+		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional1.style.width = "100%";
+		var inputMin = rangeSliderAdicional1.getAttribute('min');
+		var inputMax = rangeSliderAdicional1.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta = document.querySelector('#etiquetaAdi10');
+		var ew = parseInt(window.getComputedStyle(etiqueta, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta.innerHTML = (rangeSliderAdicional1.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional1.value >= 190){
+			etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional1.value >= 180){
+				etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional1.value >= 170){
+					etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional1.value >= 160){
+						etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional1.value >= 150){
+							etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional1.value >= 140){
+								etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional1.value >= 130){
+									etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional1.value >= 120){
+										etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional1.value >= 110){
+											etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional1.value >= 100){
+												etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional1.value >= 90){
+													etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional1.value >= 80){
+														etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional1.value >= 70){
+															etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional1.value >= 60){
+																etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional1.value >= 50){
+																	etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional1.value >= 40){
+																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (30))+"px";
+																	}else{
+																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional1.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi10").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var calcu = (parseFloat(rangeSliderAdicional1.value) * 10) - (parseFloat(etihtml)*10);
+			  if(window.obj["interiores"][0]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 0){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+				  
+			  }
+			  
+			  if(window.obj["interiores"][0]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][0]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_0"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+			  
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta.innerHTML =(rangeSliderAdicional1.value); 
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional1.value >= 190){
+			etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional1.value >= 180){
+				etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional1.value >= 170){
+					etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional1.value >= 160){
+						etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional1.value >= 150){
+							etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional1.value >= 140){
+								etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional1.value >= 130){
+									etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional1.value >= 120){
+										etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional1.value >= 110){
+											etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional1.value >= 100){
+												etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional1.value >= 90){
+													etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional1.value >= 80){
+														etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional1.value >= 70){
+															etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional1.value >= 60){
+																etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional1.value >= 50){
+																	etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional1.value >= 40){
+																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (30))+"px";
+																	}else{
+																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional2 = document.getElementById("rs-range-lineAdicional20");
+		$("#rs-range-lineAdicional20").attr("onmouseup","cambiarArmarioEstantes(1,1,2,0)");
+		var inputDiv2 = document.querySelector('#inputDivAdi20');
+		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional2.style.width = "100%";
+		var inputMin = rangeSliderAdicional2.getAttribute('min');
+		var inputMax = rangeSliderAdicional2.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta2 = document.querySelector('#etiquetaAdi20');
+		var ew = parseInt(window.getComputedStyle(etiqueta2, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta2.innerHTML = (rangeSliderAdicional2.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional2.value >= 190){
+			etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional2.value >= 180){
+				etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional2.value >= 170){
+					etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional2.value >= 160){
+						etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional2.value >= 150){
+							etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional2.value >= 140){
+								etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional2.value >= 130){
+									etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional2.value >= 120){
+										etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional2.value >= 110){
+											etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional2.value >= 100){
+												etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional2.value >= 90){
+													etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional2.value >= 80){
+														etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional2.value >= 70){
+															etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional2.value >= 60){
+																etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional2.value >= 50){
+																	etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional2.value >= 40){
+																		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (30))+"px";
+																	}else{
+																		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional2.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi20").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var calcu = (parseFloat(rangeSliderAdicional2.value) * 10) - (parseFloat(etihtml)*10);
+			  if(window.obj["interiores"][1]["tipo"] == "estante"){
+			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 1){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+			  }
+			  if(window.obj["interiores"][1]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][1]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta2.innerHTML =(rangeSliderAdicional2.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional2.value >= 190){
+			etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional2.value >= 180){
+				etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional2.value >= 170){
+					etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional2.value >= 160){
+						etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional2.value >= 150){
+							etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional2.value >= 140){
+								etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional2.value >= 130){
+									etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional2.value >= 120){
+										etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional2.value >= 110){
+											etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional2.value >= 100){
+												etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional2.value >= 90){
+													etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional2.value >= 80){
+														etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional2.value >= 70){
+															etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional2.value >= 60){
+																etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional2.value >= 50){
+																	etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional2.value >= 40){
+																		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (30))+"px";
+																	}else{
+																		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional3 = document.getElementById("rs-range-lineAdicional30");
+		$("#rs-range-lineAdicional30").attr("onmouseup","cambiarArmarioEstantes(1,2,3,0)");
+		var inputDiv3 = document.querySelector('#inputDivAdi30');
+		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional3.style.width = "100%";
+		var inputMin = rangeSliderAdicional3.getAttribute('min');
+		var inputMax = rangeSliderAdicional3.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta3 = document.querySelector('#etiquetaAdi30');
+		var ew = parseInt(window.getComputedStyle(etiqueta3, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta3.innerHTML = (rangeSliderAdicional3.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional3.value >= 190){
+			etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional3.value >= 180){
+				etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional3.value >= 170){
+					etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional3.value >= 160){
+						etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional3.value >= 150){
+							etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional3.value >= 140){
+								etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional3.value >= 130){
+									etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional3.value >= 120){
+										etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional3.value >= 110){
+											etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional3.value >= 100){
+												etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional3.value >= 90){
+													etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional3.value >= 80){
+														etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional3.value >= 70){
+															etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional3.value >= 60){
+																etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional3.value >= 50){
+																	etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional3.value >= 40){
+																		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (30))+"px";
+																	}else{
+																		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional3.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi30").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var calcu = (parseFloat(rangeSliderAdicional3.value) * 10) - (parseFloat(etihtml)*10); 
+			  if(window.obj["interiores"][2]["tipo"] == "estante"){
+			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+			  for(let i = 0;i<arr.length;i++){
+				  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 2){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+			  }
+		  }
+		  if(window.obj["interiores"][2]["tipo"] == "tubo"){
+			  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       }]);
+		  }
+		  if(window.obj["interiores"][2]["tipo"] == "cajones"){
+			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       },
+					       {
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+		  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta3.innerHTML =(rangeSliderAdicional3.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional3.value >= 190){
+			etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional3.value >= 180){
+				etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional3.value >= 170){
+					etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional3.value >= 160){
+						etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional3.value >= 150){
+							etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional3.value >= 140){
+								etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional3.value >= 130){
+									etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional3.value >= 120){
+										etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional3.value >= 110){
+											etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional3.value >= 100){
+												etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional3.value >= 90){
+													etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional3.value >= 80){
+														etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional3.value >= 70){
+															etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional3.value >= 60){
+																etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional3.value >= 50){
+																	etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional3.value >= 40){
+																		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (30))+"px";
+																	}else{
+																		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional4 = document.getElementById("rs-range-lineAdicional40");
+		$("#rs-range-lineAdicional40").attr("onmouseup","cambiarArmarioEstantes(1,3,4,0)");
+		var inputDiv4 = document.querySelector('#inputDivAdi40');
+		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional4.style.width = "100%";
+		var inputMin = rangeSliderAdicional4.getAttribute('min');
+		var inputMax = rangeSliderAdicional4.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta4 = document.querySelector('#etiquetaAdi40');
+		var ew = parseInt(window.getComputedStyle(etiqueta4, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta4.innerHTML = (rangeSliderAdicional4.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional4.value >= 190){
+			etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional4.value >= 180){
+				etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional4.value >= 170){
+					etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional4.value >= 160){
+						etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional4.value >= 150){
+							etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional4.value >= 140){
+								etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional4.value >= 130){
+									etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional4.value >= 120){
+										etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional4.value >= 110){
+											etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional4.value >= 100){
+												etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional4.value >= 90){
+													etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional4.value >= 80){
+														etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional4.value >= 70){
+															etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional4.value >= 60){
+																etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional4.value >= 50){
+																	etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional4.value >= 40){
+																		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (30))+"px";
+																	}else{
+																		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional4.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi40").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var calcu = (parseFloat(rangeSliderAdicional4.value) * 10) - (parseFloat(etihtml)*10); 
+			  if(window.obj["interiores"][3]["tipo"] == "estante"){
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 3){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+			  }
+			  if(window.obj["interiores"][3]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][3]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta4.innerHTML =(rangeSliderAdicional4.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional4.value >= 190){
+			etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional4.value >= 180){
+				etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional4.value >= 170){
+					etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional4.value >= 160){
+						etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional4.value >= 150){
+							etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional4.value >= 140){
+								etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional4.value >= 130){
+									etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional4.value >= 120){
+										etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional4.value >= 110){
+											etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional4.value >= 100){
+												etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional4.value >= 90){
+													etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional4.value >= 80){
+														etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional4.value >= 70){
+															etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional4.value >= 60){
+																etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional4.value >= 50){
+																	etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional4.value >= 40){
+																		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (30))+"px";
+																	}else{
+																		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional5 = document.getElementById("rs-range-lineAdicional50");
+		$("#rs-range-lineAdicional50").attr("onmouseup","cambiarArmarioEstantes(1,4,5,0)");
+		var inputDiv5 = document.querySelector('#inputDivAdi50');
+		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional5.style.width = "100%";
+		var inputMin = rangeSliderAdicional5.getAttribute('min');
+		var inputMax = rangeSliderAdicional5.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta5 = document.querySelector('#etiquetaAdi50');
+		var ew = parseInt(window.getComputedStyle(etiqueta5, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta5.innerHTML = (rangeSliderAdicional5.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional5.value >= 190){
+			etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional5.value >= 180){
+				etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional5.value >= 170){
+					etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional5.value >= 160){
+						etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional5.value >= 150){
+							etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional5.value >= 140){
+								etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional5.value >= 130){
+									etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional5.value >= 120){
+										etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional5.value >= 110){
+											etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional5.value >= 100){
+												etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional5.value >= 90){
+													etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional5.value >= 80){
+														etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional5.value >= 70){
+															etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional5.value >= 60){
+																etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional5.value >= 50){
+																	etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional5.value >= 40){
+																		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (30))+"px";
+																	}else{
+																		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional5.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi50").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var calcu = (parseFloat(rangeSliderAdicional5.value) * 10) - (parseFloat(etihtml)*10); 
+			  if(window.obj["interiores"][4]["tipo"] == "estante"){
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 4){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+			  }
+			  if(window.obj["interiores"][4]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][4]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta5.innerHTML =(rangeSliderAdicional5.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional5.value >= 190){
+			etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional5.value >= 180){
+				etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional5.value >= 170){
+					etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional5.value >= 160){
+						etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional5.value >= 150){
+							etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional5.value >= 140){
+								etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional5.value >= 130){
+									etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional5.value >= 120){
+										etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional5.value >= 110){
+											etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional5.value >= 100){
+												etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional5.value >= 90){
+													etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional5.value >= 80){
+														etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional5.value >= 70){
+															etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional5.value >= 60){
+																etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional5.value >= 50){
+																	etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional5.value >= 40){
+																		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (30))+"px";
+																	}else{
+																		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		
+		
 }
 
 function interiorDefinidoMostrarArm(u,id){
@@ -6141,8 +7582,10 @@ function cambiarVistaArmario(tipo){
 	  object.tubos = arrayTub;
   }
   
-  
-  
+  var costadosObject = {};
+  var puertasObject = {};
+  costadosObject["costados"] = array;
+  puertasObject["puertas"] = arrayPuertas;
   object["costados"] = array;
   window.armario = armario;
   window.tipo = tipo;
@@ -6150,11 +7593,17 @@ function cambiarVistaArmario(tipo){
   object["fondo"] = fondo * 10;
   object["puertas"] = arrayPuertas;
   window.todounarmario = object;
-  var parame = api.parameters.get({name :"armarioJSON"}).data[0];
+  var parame = api.parameters.get({name :"CostadosJSON"}).data[0];
   api.parameters.updateAsync({
       id: parame.id,
-      value: JSON.stringify(object)
+      value: JSON.stringify(costadosObject)
     });
+  var parame1 = api.parameters.get({name :"PuertasJSON"}).data[0];
+  api.parameters.updateAsync({
+      id: parame1.id,
+      value: JSON.stringify(puertasObject)
+    });
+  
   $("#codigodepsArm"+ codigo)[0].click();
   console.log(JSON.stringify(object));
   
@@ -16503,24 +17952,85 @@ function showSliderValue2() {
 }
 function divcontenidometerfuncion(u,id){
 	var shelves = api.scene.get(
-	        {
+	        { 
 	          name: "EstantesGeo",
 	          format: "glb"
 	        },
 	        "CommPlugin_1"
 	      ).data[0];
+	var tubos = api.scene.get(
+	        { 
+	          name: "tubos",
+	          format: "glb"
+	        },
+	        "CommPlugin_1"
+	      ).data[0];
 	      
-	      var shelvesSides = api.scene.get(
+	 var shelvesSides = api.scene.get(
 	        {
 	          name: "EstantesCantosGeo",
 	          format: "glb"
 	        },
 	        "CommPlugin_1"
 	      ).data[0];
-	      for(let l = 0;l<25;l++){
-	    	  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
-	    	  api.scene.updateSelected([],shelvesScenePaths);
-	      }
+	 var cantosCajones = api.scene.get(
+		        { 
+		          name: "CantosCajones",
+		          format: "glb"
+		        },
+		        "CommPlugin_1"
+		      ).data[0];
+	 var cajones = api.scene.get(
+		        { 
+		          name: "Cajones",
+		          format: "glb"
+		        },
+		        "CommPlugin_1"
+		      ).data[0];
+	 
+	 
+	var obj = window.obj;
+	var array = [];
+	var contg = 0;
+	var length = obj["interiores"].length;
+	 for(let h = 0;h<length;h++){
+		  if(obj["interiores"][h]["interior"] == 0){
+			  array[contg] = obj["interiores"][h];
+			  contg++;
+		  }
+	 }
+	 var contTubo = 0;
+	 var contEst = 0;
+	 var contCaj = 0;
+	 for(let l = 0;l<25;l++){
+	   	  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
+		  cajonesScenePaths = [cajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0"];
+		  tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
+	   	  api.scene.updateSelected([],shelvesScenePaths);
+	   	  api.scene.updateSelected([],cajonesScenePaths);
+	   	  api.scene.updateSelected([],tubosScenePaths);
+     }
+	 for(let i = 0;i<array.length;i++){
+		 if(i == (u - 1)){
+			 if(array[i]["tipo"] == "estante"){
+				 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(contEst)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(contEst)+".transformation_0.node_0.mesh_0.primitive_0"];
+				  api.scene.updateSelected(shelvesScenePaths);
+				  contEst++;
+			 }
+			 if(array[i]["tipo"] == "tubo"){
+				 tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
+				  api.scene.updateSelected(tubosScenePaths);
+				  contTubo++;
+			 }
+			 if(array[i]["tipo"] == "cajones"){
+				 cajonesScenePaths = [cajones.scenePath + ".content_"+(contCaj)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(contCaj)+".transformation_0.node_0.mesh_0.primitive_0"];
+				  api.scene.updateSelected(cajonesScenePaths);
+				  contCaj++;
+			 }
+		 }
+	 }
+	
+	      
 	for(let o = 0;o<9;o++){
 		$("#divAdicionalesInterior0 #divContenidoMeter"+o+"0 #divOscuroOpOpcionesSlider").remove();
 		$("#divAdicionalesInterior1 #divContenidoMeter"+o+"1 #divOscuroOpOpcionesSlider").remove();
@@ -16542,79 +18052,7 @@ function divcontenidometerfuncion(u,id){
 	var estantes0 = window.estantes0;
 	var estantes1 = window.estantes1;
 	var estantes2 = window.estantes2;
-	var estantes3 = window.estantes3;
-	
-	if(id == 0){
-		  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(u-1)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(u-1)+".transformation_0.node_0.mesh_0.primitive_0"];
-		  api.scene.updateSelected(shelvesScenePaths);
-	}
-	if(id == 1){
-		var num = estantes0.length - 1;
-		if(num == -1){
-			var sum = 2 + (u-1);
-		}else{
-			var sum = 1 + (u-1);
-		}
-		  
-		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(sum+num)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(sum+num)+".transformation_0.node_0.mesh_0.primitive_0"];
-		api.scene.updateSelected(shelvesScenePaths);
-	}
-	if(id == 2){
-		var num = estantes0.length - 1;
-		var num1 = estantes1.length - 1;
-		var sum = 0;
-		if(num == -1){
-			if(num1 == -1){
-				sum = 4 + (u-1);
-			}else{
-				sum = 3 + (u-1);
-			}
-		}else{
-			if(num1 == -1){
-				sum = 3 + (u-1);
-			}else{
-				sum = 2 + (u-1);
-			}
-		}
-		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(num+num1+sum)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(num+num1+sum)+".transformation_0.node_0.mesh_0.primitive_0"];
-		api.scene.updateSelected(shelvesScenePaths);
-	}
-	if(id == 3){
-		var num = estantes0.length - 1;
-		var num1 = estantes1.length - 1;
-		var num2 = estantes2.length - 1;
-		var sum = 0;
-		if(num == -1){
-			if(num1 == -1 && num2 != -1){
-				sum = 5+ (u-1);
-			}
-			if(num2 == -1 && num1 != -1){
-				sum = 5+ (u-1);
-			}
-			if(num2 != -1 && num1 != -1){
-				sum = 4+ (u-1);
-			}
-			if(num2 == -1 && num1 == -1){
-				sum = 4+ (u-1);
-			}
-		}else{
-			if(num1 == -1 && num2 != -1){
-				sum = 4+ (u-1);
-			}
-			if(num2 != -1 && num1 == -1){
-				sum = 4+ (u-1);
-			}
-			if(num2 != -1 && num1 != -1){
-				sum = 3+ (u-1);
-			}
-			if(num2 == -1 && num1 == -1){
-				sum = 5+ (u-1);
-			}
-		}
-		shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(num+num1+num2+sum)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(num+num1+num2+sum)+".transformation_0.node_0.mesh_0.primitive_0"];
-		api.scene.updateSelected(shelvesScenePaths);
-	}
-	
+	var estantes3 = window.estantes3;	
 	
 }
 function estaMarcadoDivArm(div){
@@ -16736,6 +18174,7 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	    });
 }
 function apoyoDeLosModulos(id){
+	window.apoyoIdGrass = id;
 	var idBuena = 0;
 	var idMetal = 0;
 	if(id == 15){
@@ -16751,7 +18190,7 @@ function apoyoDeLosModulos(id){
 	if(id == 403){
 		idBuena = 6;
 		idMetal = 1;
-		var url = 'https://dl.dropboxusercontent.com/s/52j9xalya66pp0g/negro.jpg?dl=1';
+		var url = 'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1';
 	}
 	if(id == 18){
 		idBuena = 0;
@@ -16792,8 +18231,19 @@ function apoyoDeLosModulos(id){
 	      id: parame1.id,
 	      value: idMetal
 	    });
-	api.parameters.updateAsync({
-	      id: parame2.id,
-	      value: url
-	    });
+	setTimeout(function() {
+    
+	api.scene.updatePersistentAsync({
+		id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+			content: [
+			{
+				format: "material",
+				data: {
+					version: "2.0",
+					bitmaptexture: url
+				}
+			}
+			]
+		}, "CommPlugin_1");
+	}, 1750);
 }

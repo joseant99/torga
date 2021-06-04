@@ -200,6 +200,8 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[3259] = 73;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
+        $('#nombreFiscalTextFiltros').css({ display: 'none' });
+
         if (filtro == 'TODOS') {
             var idUsu = this.accountService['userIdentity']['id'];
             var auto = this.accountService['userIdentity']['authorities'][1];
@@ -255,6 +257,8 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         }
         if (filtro == 'NOMBRE FISCAL') {
             $('#nombreFiscalSelectFiltros').css({ display: 'block' });
+            $('#nombreFiscalTextFiltros').css({ display: 'block' });
+
             $('#presupuestoPedidos').append('<datalist id="listaBuena"></datalist>');
             if (this.currentAccount.authorities[0] != 'ROLE_REPRESENTATE') {
                 this.datosUsuarioService.findCoger1().subscribe(data => {
@@ -280,6 +284,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
 
             if (screen.width < 800) {
                 $('#nombreFiscalSelectFiltros').css({ display: 'block' });
+                $('#nombreFiscalTextFiltros').css({ display: 'block' });
                 $('#textoDemasFiltros').css({ display: 'none' });
             }
         }
@@ -288,7 +293,17 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
             $('#listaBuena').empty();
         }
     }
-
+    public cargarSelectTexto() {
+        var nombreFiscal = $('#nombreFiscalInput').val();
+        this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
+            $('#nombreFiscalSelect').empty();
+            for (let i = 0; i < data.body['length']; i++) {
+                $('#nombreFiscalSelect').append(
+                    '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
+                );
+            }
+        });
+    }
     public buscarPresu() {
         var filtro = $('#filtroos').val();
         var texto = $('#inputFiltro').val();

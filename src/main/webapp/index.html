@@ -32,7 +32,7 @@
 	<script type="https://s3.amazonaws.com/shapediverviewer/v2/2.19.4/sdv.concat.min.js"></script>
 	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script>
     <script src="content/jquerysession.js"></script>
-    <script src="content/shapediverFunciones.js"></script>
+    <script src="content/shapediverFunciones.js?n=1"></script>
     
     	    <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
@@ -332,7 +332,7 @@ $("#divDentroCalcu").scroll(function() {
 	
 	function cambiardecolor(id,url,urlCantos,idProd,id1){
 		var parameters = api.parameters.get();
-		if(idProd == 107 || idProd == 410){
+		if(idProd == 107 || idProd == 410 || idProd == 119){
 			if(id == 1){
 				api.scene.updatePersistentAsync([{
 					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
@@ -361,7 +361,97 @@ $("#divDentroCalcu").scroll(function() {
 					window.textura2 = url;
 			}
 			if(id == 2){
-				
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
 					api.scene.updatePersistentAsync([{
 						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 						content: [
@@ -440,6 +530,8 @@ $("#divDentroCalcu").scroll(function() {
 						}
 						]
 					}], "CommPlugin_1");
+				}
+					
 					window.textura = url;
 			}
 			if(id == 3){
@@ -501,7 +593,97 @@ $("#divDentroCalcu").scroll(function() {
 					window.textura2 = url;
 			}
 			if(id == 2){
-				
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
 					api.scene.updatePersistentAsync([{
 						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 						content: [
@@ -580,6 +762,8 @@ $("#divDentroCalcu").scroll(function() {
 						}
 						]
 					}], "CommPlugin_1");
+				}
+					
 					window.textura = url;
 			}
 			if(id == 3){
@@ -639,7 +823,7 @@ $("#divDentroCalcu").scroll(function() {
 			}
 		}
 		
-		if(idProd == 110){
+		if(idProd == 110 || idProd == 109){
 			if(id == 1){
 				api.scene.updatePersistentAsync([{
 					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
@@ -668,7 +852,97 @@ $("#divDentroCalcu").scroll(function() {
 					window.textura2 = url;
 			}
 			if(id == 2){
-				
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
 					api.scene.updatePersistentAsync([{
 						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 						content: [
@@ -747,6 +1021,8 @@ $("#divDentroCalcu").scroll(function() {
 						}
 						]
 					}], "CommPlugin_1");
+				}
+					
 					window.textura = url;
 			}
 			if(id == 3 || id == 4){
@@ -848,7 +1124,97 @@ $("#divDentroCalcu").scroll(function() {
 					window.textura2 = url;
 			}
 			if(id == 2){
-				
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
 					api.scene.updatePersistentAsync([{
 						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
 						content: [
@@ -927,6 +1293,8 @@ $("#divDentroCalcu").scroll(function() {
 						}
 						]
 					}], "CommPlugin_1");
+				}
+					
 					window.textura = url;
 			}
 			if(id == 4){
@@ -986,6 +1354,965 @@ $("#divDentroCalcu").scroll(function() {
 				
 			}
 			
+		}
+		
+		if(idProd == 295){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "TapaGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}
+					
+					window.textura = url;
+			}
+			if(id == 3 || id == 4 || id == 5){
+					var arrayPuertas = window.puertasAca;
+					var arrayPuertasCantos = window.puertasAcaCantos;
+					if(id1 == 3){
+						arrayPuertas[0] = url;
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[2] == undefined){
+							arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertas[1] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[2] == undefined){
+							arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 5){
+						arrayPuertas[2] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 3){
+						arrayPuertasCantos[0] = urlCantos;
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[2] == undefined){
+							arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertasCantos[1] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[2] == undefined){
+							arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 5){
+						arrayPuertasCantos[2] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					window.puertasAca = arrayPuertas;
+					window.puertasAcaCantos = arrayPuertasCantos;
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "FrenteGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: arrayPuertas[0]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: arrayPuertas[1]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: arrayPuertas[2]
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "FrenteGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[0]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[1]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[2]
+								}
+							}
+						]
+					}
+					], "CommPlugin_1");
+					window.textura6 = url;
+					
+			}
+		}
+		
+		if(idProd == 296){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "TapaGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}
+					
+					window.textura = url;
+			}
+			if(id == 3 || id == 4 || id == 5 || id == 6){
+					var arrayPuertas = window.puertasAca;
+					var arrayPuertasCantos = window.puertasAcaCantos;
+					if(id1 == 3){
+						arrayPuertas[0] = url;
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[2] == undefined){
+							arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[3] == undefined){
+							arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertas[1] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[2] == undefined){
+							arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[3] == undefined){
+							arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 5){
+						arrayPuertas[2] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[3] == undefined){
+							arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 6){
+						arrayPuertas[3] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertas[2] == undefined){
+							arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 3){
+						arrayPuertasCantos[0] = urlCantos;
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[2] == undefined){
+							arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[3] == undefined){
+							arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertasCantos[1] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[2] == undefined){
+							arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[3] == undefined){
+							arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 5){
+						arrayPuertasCantos[2] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[3] == undefined){
+							arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 6){
+						arrayPuertasCantos[3] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+						if(arrayPuertasCantos[2] == undefined){
+							arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					window.puertasAca = arrayPuertas;
+					window.puertasAcaCantos = arrayPuertasCantos;
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "FrenteGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: arrayPuertas[0]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: arrayPuertas[1]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: arrayPuertas[2]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: arrayPuertas[3]
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "FrenteGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[0]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[1]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[2]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[3]
+								}
+							}
+						]
+					}
+					], "CommPlugin_1");
+					window.textura6 = url;
+					
+			}
+		}
+		
+		if(idProd == 114){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: url
+						}
+					}
+					]
+				}, {
+					id: api.scene.get({ name: "TapaGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					},{
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "SueloGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "Tabica geo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "MolduraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "TraseraGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "CostadoIntGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}
+					
+					window.textura = url;
+			}
+			if(id == 3 || id == 4){
+					var arrayPuertas = window.puertasAca;
+					var arrayPuertasCantos = window.puertasAcaCantos;
+					if(id1 == 3){
+						arrayPuertas[0] = url;
+						if(arrayPuertas[1] == undefined){
+							arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertas[1] = url;
+						if(arrayPuertas[0] == undefined){
+							arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 3){
+						arrayPuertasCantos[0] = urlCantos;
+						if(arrayPuertasCantos[1] == undefined){
+							arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					if(id1 == 4){
+						arrayPuertasCantos[1] = urlCantos;
+						if(arrayPuertasCantos[0] == undefined){
+							arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1' ;
+						}
+					}
+					window.puertasAca = arrayPuertas;
+					window.puertasAcaCantos = arrayPuertasCantos;
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "FrenteGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: arrayPuertas[1]
+							}
+						},{
+							format: "material",
+							data: {
+								version: "2.0",
+								bitmaptexture: arrayPuertas[0]
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "FrenteGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[1]
+								}
+							},{
+								format: "material",
+								data: {
+									version: "2.0",
+									bitmaptexture: arrayPuertasCantos[0]
+								}
+							}
+						]
+					}
+					], "CommPlugin_1");
+					window.textura6 = url;
+					
+			}
 		}
 		
 	}

@@ -13930,6 +13930,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                         pilotoApoyo: meterpilotoapoyo
                                     };
                                 }
+                                if (prodCarr[m][1]['nombreEspecialggez'] != undefined) {
+                                    prodPrePed['nombreImagenShape'] = prodCarr[m][1]['nombreEspecialggez'];
+                                }
                             } else {
                                 if (prodCarr[m][1]['canteado'] != 'SI') {
                                     var dimensolotablero = {

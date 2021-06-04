@@ -33,6 +33,7 @@ import { DireccionTiendasService } from '../direccion-tiendas/direccion-tiendas.
 import { PrecioFinalPresuService } from '../precio-final-presu/precio-final-presu.service';
 import { DimensionesProductoTipoService } from '../dimensiones-producto-tipo/dimensiones-producto-tipo.service';
 import { DatosUsuarioService } from '../datos-usuario/datos-usuario.service';
+import { ImagenDeCestaProdService } from '../imagen-de-cesta-prod/imagen-de-cesta-prod.service';
 import { VistaAdminService } from '../vista-admin/vista-admin.service';
 import { JhiMainComponent } from '../../layouts/main/main.component';
 @Component({
@@ -112,6 +113,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
         protected accountService: AccountService,
         protected medEspProductoPedidoPresuService: MedEspProductoPedidoPresuService,
         protected activatedRoute: ActivatedRoute,
+        protected imagenDeCestaProdService: ImagenDeCestaProdService,
         protected router: Router,
         protected eventManager: JhiEventManager
     ) {
@@ -12972,11 +12974,92 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                     nombreCargarImagen = 'NH507-NH510';
                                                 }
                                                 if (productos[w - 1] != undefined) {
-                                                    if (
-                                                        productos[w - 1]['productosDormitorio'] != null &&
-                                                        productos[w - 1]['productosDormitorio'] != '' &&
-                                                        productos[w - 1]['productosDormitorio'] != undefined
-                                                    ) {
+                                                    if (productos[w]['nombreImagenShape'] == null) {
+                                                        if (
+                                                            productos[w - 1]['productosDormitorio'] != null &&
+                                                            productos[w - 1]['productosDormitorio'] != '' &&
+                                                            productos[w - 1]['productosDormitorio'] != undefined
+                                                        ) {
+                                                            if (contador == 1) {
+                                                                $('#imagen' + w).append(
+                                                                    '<img id="imagenPresupues" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                            }
+                                                        } else {
+                                                            if (contador == 1) {
+                                                                $('#imagen' + w).append(
+                                                                    '<img id="imagenPresupues" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
+                                                                        nombreCargarImagen +
+                                                                        '.jpeg">'
+                                                                );
+                                                            }
+                                                        }
+                                                    } else {
+                                                        //nuevo
+                                                        this.imagenDeCestaProdService
+                                                            .findCoger(productos[w]['nombreImagenShape'])
+                                                            .subscribe(data => {
+                                                                if (contador == 1) {
+                                                                    $('#imagen' + w).append(
+                                                                        '<img id="imagenPresupues" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                }
+                                                            });
+                                                    }
+                                                } else {
+                                                    if (productos[w]['nombreImagenShape'] == null) {
                                                         if (contador == 1) {
                                                             $('#imagen' + w).append(
                                                                 '<img id="imagenPresupues" style="z-index:' +
@@ -13001,53 +13084,35 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                             );
                                                         }
                                                     } else {
-                                                        if (contador == 1) {
-                                                            $('#imagen' + w).append(
-                                                                '<img id="imagenPresupues" style="z-index:' +
-                                                                    (100 - i) +
-                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                    nombreCargarImagen +
-                                                                    '.jpeg">'
-                                                            );
-                                                            $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                                '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
-                                                                    (100 - i) +
-                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                    nombreCargarImagen +
-                                                                    '.jpeg">'
-                                                            );
-                                                            $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                                '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
-                                                                    (100 - i) +
-                                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                    nombreCargarImagen +
-                                                                    '.jpeg">'
-                                                            );
-                                                        }
-                                                    }
-                                                } else {
-                                                    if (contador == 1) {
-                                                        $('#imagen' + w).append(
-                                                            '<img id="imagenPresupues" style="z-index:' +
-                                                                (100 - i) +
-                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                nombreCargarImagen +
-                                                                '.jpeg">'
-                                                        );
-                                                        $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                            '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
-                                                                (100 - i) +
-                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="../../../content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                nombreCargarImagen +
-                                                                '.jpeg">'
-                                                        );
-                                                        $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                            '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
-                                                                (100 - i) +
-                                                                ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="https://www.pedidosTorga.com/content/images/1- PARA WEB/DORMITORIO2/' +
-                                                                nombreCargarImagen +
-                                                                '.jpeg">'
-                                                        );
+                                                        //nuevo
+                                                        this.imagenDeCestaProdService
+                                                            .findCoger(productos[w]['nombreImagenShape'])
+                                                            .subscribe(data => {
+                                                                if (data.body[0] != undefined) {
+                                                                    $('#imagen' + w).empty();
+                                                                    $('#imagen' + w).append(
+                                                                        '<img id="imagenPresupues" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
+                                                                            (100 - i) +
+                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                            data.body[0]['imagen'] +
+                                                                            '">'
+                                                                    );
+                                                                }
+                                                            });
                                                     }
                                                 }
                                                 contador++;
