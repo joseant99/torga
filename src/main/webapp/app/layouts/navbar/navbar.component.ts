@@ -34,6 +34,7 @@ import { DireccionTiendasService } from '../../entities/direccion-tiendas/direcc
 import { ICategoriasDormi } from 'app/shared/model/categorias-dormi.model';
 import { Observable } from 'rxjs';
 import { PrecioTiendaService } from '../../entities/precio-tienda/precio-tienda.service';
+import { ImagenDeCestaProdService } from '../../entities/imagen-de-cesta-prod/imagen-de-cesta-prod.service';
 import { Fecha_entregaService } from '../../entities/fecha-entrega/fecha-entrega.service';
 import { JhiMainComponent } from '../main/main.component';
 import { PrecioFinalPresuService } from '../../entities/precio-final-presu/precio-final-presu.service';
@@ -95,6 +96,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
     todosLosAcabados: any;
     iddireccioncogida;
     arrayNombresArchivos: any;
+    imagenesShapeApiProd: any;
     constructor(
         protected presupuestoArmarioPuertasService: PresupuestoArmarioPuertasService,
         protected acabadosService: AcabadosService,
@@ -130,6 +132,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private modalService: NgbModal,
         public productosDormitorioService: ProductosDormitorioService,
         private eventManager: JhiEventManager,
+        public imagenDeCestaProdService: ImagenDeCestaProdService,
         protected activatedRoute: ActivatedRoute
     ) {
         this.version = VERSION ? 'v' + VERSION : '';
@@ -417,6 +420,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         if (ruta != 'cesta') {
             sessionStorage.setItem('ruta', ruta);
         }
+
         var prod = $('#calculadoraCarrito #nombreMesita').text();
         var idsArray = [];
         idsArray[0] = 'composicionesSpan1';
@@ -470,7 +474,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 );
             } else {
                 this.productosDormitorioService.todos = undefined;
-                this.router.navigate(['/' + ruta]);
+                if (ruta == 'cesta') {
+                    var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+                    var todosImagenesShape = [];
+                    var conttodosImagenesShape = 0;
+                    if (cogerIdCesta != null || cogerIdCesta != undefined) {
+                        this.imagenDeCestaProdService.findCoger(cogerIdCesta).subscribe(data => {
+                            for (let h = 0; h < data.body['length']; h++) {
+                                todosImagenesShape[conttodosImagenesShape] = data.body[h];
+                                conttodosImagenesShape++;
+                                this.imagenDeCestaProdService.todos = todosImagenesShape;
+                            }
+                            this.router.navigate(['/' + ruta]);
+                        });
+                    } else {
+                        this.router.navigate(['/' + ruta]);
+                    }
+                } else {
+                    this.router.navigate(['/' + ruta]);
+                }
+
                 this.modalService.dismissAll();
                 $('#menuPrincipal').css({ display: 'none' });
                 $('#botonEsconder').removeAttr('onclick');
@@ -478,7 +501,26 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 $('#rayasNavegador').attr('src', '../../../content/images/LINEAS-min.png');
             }
         } else {
-            this.router.navigate(['/' + ruta]);
+            if (ruta == 'cesta') {
+                var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+                var todosImagenesShape = [];
+                var conttodosImagenesShape = 0;
+                if (cogerIdCesta != null || cogerIdCesta != undefined) {
+                    this.imagenDeCestaProdService.findCoger(cogerIdCesta).subscribe(data => {
+                        for (let h = 0; h < data.body['length']; h++) {
+                            todosImagenesShape[conttodosImagenesShape] = data.body[h];
+                            conttodosImagenesShape++;
+                            this.imagenDeCestaProdService.todos = todosImagenesShape;
+                        }
+                        this.router.navigate(['/' + ruta]);
+                    });
+                } else {
+                    this.router.navigate(['/' + ruta]);
+                }
+            } else {
+                this.router.navigate(['/' + ruta]);
+            }
+
             this.productosDormitorioService.todos = undefined;
             $('#menuPrincipal').css({ display: 'none' });
             $('#botonEsconder').removeAttr('onclick');
@@ -691,9 +733,13 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 prueba['observaciones'] = oberser;
                 prueba['sumado'] = 0;
                 prueba['puntos'] = todoElPrecio;
+                var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+                if (cogerIdCesta != null || cogerIdCesta != undefined) {
+                    prueba['nombreCesta'] = cogerIdCesta;
+                }
                 console.log(prueba);
                 this.presupuestoPedido = prueba;
-
+                sessionStorage.removeItem('cestaIdMod');
                 this.subscribeToSaveResponse4(this.presupuestoPedidoService.create(this.presupuestoPedido));
             }
         });

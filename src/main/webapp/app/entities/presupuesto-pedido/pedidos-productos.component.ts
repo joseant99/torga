@@ -13030,33 +13030,34 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         }
                                                     } else {
                                                         //nuevo
-                                                        this.imagenDeCestaProdService
-                                                            .findCoger(productos[w]['nombreImagenShape'])
-                                                            .subscribe(data => {
+                                                        var arrayImagenShape = this.imagenDeCestaProdService.todos1;
+                                                        for (let g = 0; g < arrayImagenShape.length; g++) {
+                                                            if (arrayImagenShape[g]['nombre'] == productos[w]['nombreImagenShape']) {
                                                                 if (contador == 1) {
                                                                     $('#imagen' + w).append(
                                                                         '<img id="imagenPresupues" style="z-index:' +
                                                                             (100 - i) +
                                                                             ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
+                                                                            arrayImagenShape[g]['imagen'] +
                                                                             '">'
                                                                     );
                                                                     $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                                         '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
                                                                             (100 - i) +
                                                                             ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
+                                                                            arrayImagenShape[g]['imagen'] +
                                                                             '">'
                                                                     );
                                                                     $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
                                                                         '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
                                                                             (100 - i) +
                                                                             ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
+                                                                            arrayImagenShape[g]['imagen'] +
                                                                             '">'
                                                                     );
                                                                 }
-                                                            });
+                                                            }
+                                                        }
                                                     }
                                                 } else {
                                                     if (productos[w]['nombreImagenShape'] == null) {
@@ -13085,34 +13086,33 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                         }
                                                     } else {
                                                         //nuevo
-                                                        this.imagenDeCestaProdService
-                                                            .findCoger(productos[w]['nombreImagenShape'])
-                                                            .subscribe(data => {
-                                                                if (data.body[0] != undefined) {
-                                                                    $('#imagen' + w).empty();
-                                                                    $('#imagen' + w).append(
-                                                                        '<img id="imagenPresupues" style="z-index:' +
-                                                                            (100 - i) +
-                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
-                                                                            '">'
-                                                                    );
-                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
-                                                                            (100 - i) +
-                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
-                                                                            '">'
-                                                                    );
-                                                                    $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
-                                                                        '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
-                                                                            (100 - i) +
-                                                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
-                                                                            data.body[0]['imagen'] +
-                                                                            '">'
-                                                                    );
-                                                                }
-                                                            });
+                                                        var arrayImagenShape = this.imagenDeCestaProdService.todos1;
+                                                        for (let g = 0; g < arrayImagenShape.length; g++) {
+                                                            if (arrayImagenShape[g]['nombre'] == productos[w]['nombreImagenShape']) {
+                                                                $('#imagen' + w).empty();
+                                                                $('#imagen' + w).append(
+                                                                    '<img id="imagenPresupues" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                        arrayImagenShape[g]['imagen'] +
+                                                                        '">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                        arrayImagenShape[g]['imagen'] +
+                                                                        '">'
+                                                                );
+                                                                $('.estoesundivparaprobar #divreferenciapedido #imagen' + w).append(
+                                                                    '<img id="imagenPresupues" class="imagensolobotonimprimir1" style="z-index:' +
+                                                                        (100 - i) +
+                                                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;" width="1000px" height="1000px" src="' +
+                                                                        arrayImagenShape[g]['imagen'] +
+                                                                        '">'
+                                                                );
+                                                            }
+                                                        }
                                                     }
                                                 }
                                                 contador++;
@@ -13836,43 +13836,53 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
         this.presupuestoPedidoService.find(idPresu).subscribe(data => {
             var usuario = data.body.user;
-            this.datosUsuarioService.findCoger12(usuario['id']).subscribe(data => {
-                if (data.body[0]['user'] != null) {
-                    if (data.body[0]['user']['id'] == usuario['id']) {
-                        tienda = data.body[0];
-                        this.datosUsuarioService.tiendaCargadaPresu = tienda;
-                        JSON.parse(sessionStorage.getItem('tiendaUsuario'));
-                        this.precioPunto = 0;
-                        this.precioTiendaService.precioTienda = 0;
-                        this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
-                            this.productosPresupuestoPedidosService.todos = data.body;
-                            var toma = [];
-                            var contToma = 0;
-                            for (let f = 0; f < data.body.length; f++) {
-                                if (
-                                    data.body[f]['productosDormitorio'] != null &&
-                                    data.body[f]['productosDormitorio'] != '' &&
-                                    data.body[f]['productosDormitorio'] != undefined
-                                ) {
-                                    toma[contToma] = data.body[f];
-                                    if (toma[contToma]['textoEspecial'] == 'Ancho especial') {
-                                        toma[contToma]['dimensionesProductoTipo']['ancho'] = toma[contToma]['ancho'];
-                                    }
-                                    if (toma[contToma]['textoEspecial'] == 'Alto especial') {
-                                        toma[contToma]['dimensionesProductoTipo']['alto'] = toma[contToma]['alto'];
-                                    }
-                                    if (toma[contToma]['textoEspecial'] == 'Fondo especial') {
-                                        toma[contToma]['dimensionesProductoTipo']['fondo'] = toma[contToma]['fondo'];
-                                    }
-
-                                    contToma++;
-                                }
-                            }
-                            this.productosPresupuestoPedidos = toma;
-                            this.soloMedBuen();
-                        });
-                    }
+            var todosImagenesShape = [];
+            var conttodosImagenesShape = 0;
+            this.imagenDeCestaProdService.findCoger(data.body['nombreCesta']).subscribe(data => {
+                for (let h = 0; h < data.body['length']; h++) {
+                    todosImagenesShape[conttodosImagenesShape] = data.body[h];
+                    conttodosImagenesShape++;
                 }
+                this.imagenDeCestaProdService.todos1 = todosImagenesShape;
+
+                this.datosUsuarioService.findCoger12(usuario['id']).subscribe(data => {
+                    if (data.body[0]['user'] != null) {
+                        if (data.body[0]['user']['id'] == usuario['id']) {
+                            tienda = data.body[0];
+                            this.datosUsuarioService.tiendaCargadaPresu = tienda;
+                            JSON.parse(sessionStorage.getItem('tiendaUsuario'));
+                            this.precioPunto = 0;
+                            this.precioTiendaService.precioTienda = 0;
+                            this.productosPresupuestoPedidosService.query1(idPresu).subscribe(data => {
+                                this.productosPresupuestoPedidosService.todos = data.body;
+                                var toma = [];
+                                var contToma = 0;
+                                for (let f = 0; f < data.body.length; f++) {
+                                    if (
+                                        data.body[f]['productosDormitorio'] != null &&
+                                        data.body[f]['productosDormitorio'] != '' &&
+                                        data.body[f]['productosDormitorio'] != undefined
+                                    ) {
+                                        toma[contToma] = data.body[f];
+                                        if (toma[contToma]['textoEspecial'] == 'Ancho especial') {
+                                            toma[contToma]['dimensionesProductoTipo']['ancho'] = toma[contToma]['ancho'];
+                                        }
+                                        if (toma[contToma]['textoEspecial'] == 'Alto especial') {
+                                            toma[contToma]['dimensionesProductoTipo']['alto'] = toma[contToma]['alto'];
+                                        }
+                                        if (toma[contToma]['textoEspecial'] == 'Fondo especial') {
+                                            toma[contToma]['dimensionesProductoTipo']['fondo'] = toma[contToma]['fondo'];
+                                        }
+
+                                        contToma++;
+                                    }
+                                }
+                                this.productosPresupuestoPedidos = toma;
+                                this.soloMedBuen();
+                            });
+                        }
+                    }
+                });
             });
         });
 

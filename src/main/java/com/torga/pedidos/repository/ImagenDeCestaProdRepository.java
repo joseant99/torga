@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ImagenDeCestaProdRepository extends JpaRepository<ImagenDeCestaProd, Long> {
-	@Query("Select u from ImagenDeCestaProd u where u.nombre = ?1")
+	@Query("Select u from ImagenDeCestaProd u where u.nombreCesta = ?1")
 	Collection<ImagenDeCestaProd> buscandoNombre(String id);
 }

@@ -57,7 +57,7 @@ export class inicioComponent implements OnInit, AfterViewInit {
         protected precioTiendaService: PrecioTiendaService,
         private loginService: LoginService,
         private router: Router,
-        protected navbarComponent: NavbarComponent,
+        public navbarComponent: NavbarComponent,
         protected activatedRoute: ActivatedRoute,
         protected pagosTiendaService: PagosTiendaService,
         protected datosUsuarioService: DatosUsuarioService,

@@ -5,14 +5,19 @@ function imagenCarritoApi(){
 }
 
 function imagenGirarParaCarro(){
-	$("#sdv-container").css({"width":"410px"});
-	$("#sdv-container").css({"height":"410px"});
-	setTimeout(function() {
+	var idProd = $('#nombreMesita').attr('class');118,117,299,301,300
+	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300){
 		$("#soloParaEnviarImagenGirada")[0].click();
-    }, 1000);
-	api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} });
-	
-	
+	}else{
+		$("#sdv-container").css({"width":"410px"});
+		$("#sdv-container").css({"height":"410px"});
+		api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
+	            function(response) {
+	            	$("#soloParaEnviarImagenGirada")[0].click();
+	            	
+	            });
+	}
+
 }
 
 function cambiarAnchoImagenSha(ancho){
@@ -614,7 +619,23 @@ function apiShape3(id){
 	          id: parame.id,
 	          value: (parseFloat(ancho1)*10)
 	        });
-	      api.updateSettingsAsync(updatedSettings);
+	  	var updatedSettings = {
+	    		  scene : {
+	    			  camera : {
+	    				  rotationSpeed : 0.1,
+	    				  autoAdjust: true,
+	    				  restrictions :{
+	    					  rotation : {
+	    						  minAzimuthAngle: -75,
+	    						  minPolarAngle: 45,
+	    						  maxPolarAngle: 90,
+	    						  maxAzimuthAngle: 75
+	    						  }
+	      					}
+	      				}
+	      			}
+	      }
+  	 api.updateSettingsAsync(updatedSettings);
 	      var globalDiv = document.getElementById("parameters");
 	      parameters = api.parameters.get();
 	      parameters.data.sort(function(a, b) {
@@ -2393,177 +2414,177 @@ function interioresNuevoJson(obj){
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(obj)
-	    });
+	    }).then(
+	    		  function(response) {
+	    			  var arrayDeEstantesMet = [];
+	    			  var contEst = 0;
+	    			  var contTubo = 0;
+	    			  var contEst1 = 0;
+	    			  var contCaj = 0;
+	    			  var length = obj["interiores"].length;
+	    			  for(let h = 0;h<length;h++){
+	    				  if(obj["interiores"][h]["tipo"] == "estante"){
+	    					  if(h>0){
+	    						  if(obj["interiores"][h]["interior"] != obj["interiores"][h-1]["interior"]){
+	    							  contEst1 = 0;
+	    						  }
+	    					  }
+	    					  arrayDeEstantesMet[contEst]=[];
+	    					  arrayDeEstantesMet[contEst]["puesto"] = h;
+	    					  arrayDeEstantesMet[contEst]["interior"] = obj["interiores"][h]["interior"];
+	    					  arrayDeEstantesMet[contEst]["num"] = contEst1;
+	    					  
+	    					  if(contEst == 0){ 
+	    						  var effect = {
+	    								    active: {
+	    								        name: "colorHighlight",
+	    								        options: {
+	    								            color: [0, 185, 3]
+	    								        }
+	    								    }
+	    								};
+	    						  		var shelvesInteractionGroup = {
+	    								  id: "shelvesInteractionGroup",
+	    								  selectable: true,
+	    								  selectionEffect: effect,
+	    								  selectionMode: "multiple"
+	    								};
+
+	    						  			var shelves = api.scene.get(
+	    					    		        {
+	    					    		          name: "EstantesGeo",
+	    					    		          format: "glb"
+	    					    		        },
+	    					    		        "CommPlugin_1"
+	    					    		      ).data[0];
+	    					    		      
+	    					    		      var shelvesSides = api.scene.get(
+	    					    		        {
+	    					    		          name: "EstantesCantosGeo",
+	    					    		          format: "glb"
+	    					    		        },
+	    					    		        "CommPlugin_1"
+	    					    		      ).data[0];
+
+	    					    		      	api.scene.updateInteractionGroups([shelvesInteractionGroup]);
+
+	    										api.scene.updatePersistentAsync([
+	    								          {
+	    								            id: shelves.id,
+	    								            interactionGroup: shelvesInteractionGroup.id,
+	    								            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    								          },
+	    								          {
+	    								            id: shelvesSides.id,
+	    								            interactionGroup: shelvesInteractionGroup.id,
+	    								            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    								          }
+	    								        ], "CommPlugin_1");
+	    						  
+	    					  }
+	    					  contEst++;
+	    					  contEst1++;
+	    				  }
+	    				  if(obj["interiores"][h]["tipo"] == "tubo"){
+	    					  if(contTubo == 0){
+	    							  var effect = {
+	    									    active: {
+	    									        name: "colorHighlight",
+	    									        options: {
+	    									            color: [0, 185, 3]
+	    									        }
+	    									    }
+	    									};
+	    							  		var tubosInteractionGroup = {
+	    									  id: "tubosInteractionGroup",
+	    									  selectable: true,
+	    									  selectionEffect: effect,
+	    									  selectionMode: "multiple"
+	    									};
+
+	    							  			var tubos = api.scene.get(
+	    						    		        {
+	    						    		          name: "tubos",
+	    						    		          format: "glb"
+	    						    		        },
+	    						    		        "CommPlugin_1"
+	    						    		      ).data[0];
+	    						    		      
+	    						    		      
+
+	    						    		      	api.scene.updateInteractionGroups([tubosInteractionGroup]);
+
+	    											api.scene.updatePersistentAsync([
+	    									          {
+	    									            id: tubos.id,
+	    									            interactionGroup: tubosInteractionGroup.id,
+	    									            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    									          }
+	    									        ], "CommPlugin_1");
+	    						  
+	    					  }
+	    					  contTubo++;
+	    				  }
+	    				  if(obj["interiores"][h]["tipo"] == "cajones"){
+	    					  if(contCaj == 0){
+	    							  var effect = {
+	    									    active: {
+	    									        name: "colorHighlight",
+	    									        options: {
+	    									            color: [0, 185, 3]
+	    									        }
+	    									    }
+	    									};
+	    							  		var cajonesInteractionGroup = {
+	    									  id: "cajonesInteractionGroup",
+	    									  selectable: true,
+	    									  selectionEffect: effect,
+	    									  selectionMode: "multiple"
+	    									};
+	    							  			var cajones = api.scene.get(
+	    						    		        {
+	    						    		          name: "Cajones",
+	    						    		          format: "glb"
+	    						    		        },
+	    						    		        "CommPlugin_1"
+	    						    		      ).data[0];
+	    							  			var cantosCajones = api.scene.get(
+	    						    		        {
+	    						    		          name: "CantosCajones",
+	    						    		          format: "glb"
+	    						    		        },
+	    						    		        "CommPlugin_1"
+	    						    		      ).data[0];
+	    						    		      
+	    						    		      
+
+	    						    		      	api.scene.updateInteractionGroups([cajonesInteractionGroup]);
+
+	    											api.scene.updatePersistentAsync([
+	    												 {
+	    											            id: cajones.id,
+	    											            interactionGroup: cajonesInteractionGroup.id,
+	    											            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    											          },
+	    											          {
+	    											            id: cantosCajones.id,
+	    											            interactionGroup: cajonesInteractionGroup.id,
+	    											            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    											          }
+	    									        ], "CommPlugin_1");
+	    						  
+	    					  }
+	    					  contCaj++;
+	    				  }
+	    			  }
+	    			  window.arrayDeEstantesMet = arrayDeEstantesMet;
+		    		  window.arrayDeEstantesMet1 = arrayDeEstantesMet;
+	    			  }
+	    		  
+	    			);
 	  
-	  var arrayDeEstantesMet = [];
-	  var contEst = 0;
-	  var contTubo = 0;
-	  var contEst1 = 0;
-	  var contCaj = 0;
-	  var length = obj["interiores"].length;
-	  for(let h = 0;h<length;h++){
-		  if(obj["interiores"][h]["tipo"] == "estante"){
-			  if(h>0){
-				  if(obj["interiores"][h]["interior"] != obj["interiores"][h-1]["interior"]){
-					  contEst1 = 0;
-				  }
-			  }
-			  arrayDeEstantesMet[contEst]=[];
-			  arrayDeEstantesMet[contEst]["puesto"] = h;
-			  arrayDeEstantesMet[contEst]["interior"] = obj["interiores"][h]["interior"];
-			  arrayDeEstantesMet[contEst]["num"] = contEst1;
-			  
-			  if(contEst == 0){ 
-				  setTimeout(function() {
-				  var effect = {
-						    active: {
-						        name: "colorHighlight",
-						        options: {
-						            color: [0, 185, 3]
-						        }
-						    }
-						};
-				  		var shelvesInteractionGroup = {
-						  id: "shelvesInteractionGroup",
-						  selectable: true,
-						  selectionEffect: effect,
-						  selectionMode: "multiple"
-						};
+	  
 
-				  			var shelves = api.scene.get(
-			    		        {
-			    		          name: "EstantesGeo",
-			    		          format: "glb"
-			    		        },
-			    		        "CommPlugin_1"
-			    		      ).data[0];
-			    		      
-			    		      var shelvesSides = api.scene.get(
-			    		        {
-			    		          name: "EstantesCantosGeo",
-			    		          format: "glb"
-			    		        },
-			    		        "CommPlugin_1"
-			    		      ).data[0];
-
-			    		      	api.scene.updateInteractionGroups([shelvesInteractionGroup]);
-
-								api.scene.updatePersistentAsync([
-						          {
-						            id: shelves.id,
-						            interactionGroup: shelvesInteractionGroup.id,
-						            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-						          },
-						          {
-						            id: shelvesSides.id,
-						            interactionGroup: shelvesInteractionGroup.id,
-						            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-						          }
-						        ], "CommPlugin_1");
-				  }, 3500);
-				  
-			  }
-			  contEst++;
-			  contEst1++;
-		  }
-		  if(obj["interiores"][h]["tipo"] == "tubo"){
-			  if(contTubo == 0){
-				  setTimeout(function() {
-					  var effect = {
-							    active: {
-							        name: "colorHighlight",
-							        options: {
-							            color: [0, 185, 3]
-							        }
-							    }
-							};
-					  		var tubosInteractionGroup = {
-							  id: "tubosInteractionGroup",
-							  selectable: true,
-							  selectionEffect: effect,
-							  selectionMode: "multiple"
-							};
-
-					  			var tubos = api.scene.get(
-				    		        {
-				    		          name: "tubos",
-				    		          format: "glb"
-				    		        },
-				    		        "CommPlugin_1"
-				    		      ).data[0];
-				    		      
-				    		      
-
-				    		      	api.scene.updateInteractionGroups([tubosInteractionGroup]);
-
-									api.scene.updatePersistentAsync([
-							          {
-							            id: tubos.id,
-							            interactionGroup: tubosInteractionGroup.id,
-							            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-							          }
-							        ], "CommPlugin_1");
-					  }, 3500);
-				  
-			  }
-			  contTubo++;
-		  }
-		  if(obj["interiores"][h]["tipo"] == "cajones"){
-			  if(contCaj == 0){
-				  setTimeout(function() {
-					  var effect = {
-							    active: {
-							        name: "colorHighlight",
-							        options: {
-							            color: [0, 185, 3]
-							        }
-							    }
-							};
-					  		var cajonesInteractionGroup = {
-							  id: "cajonesInteractionGroup",
-							  selectable: true,
-							  selectionEffect: effect,
-							  selectionMode: "multiple"
-							};
-					  			var cajones = api.scene.get(
-				    		        {
-				    		          name: "Cajones",
-				    		          format: "glb"
-				    		        },
-				    		        "CommPlugin_1"
-				    		      ).data[0];
-					  			var cantosCajones = api.scene.get(
-				    		        {
-				    		          name: "CantosCajones",
-				    		          format: "glb"
-				    		        },
-				    		        "CommPlugin_1"
-				    		      ).data[0];
-				    		      
-				    		      
-
-				    		      	api.scene.updateInteractionGroups([cajonesInteractionGroup]);
-
-									api.scene.updatePersistentAsync([
-										 {
-									            id: cajones.id,
-									            interactionGroup: cajonesInteractionGroup.id,
-									            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-									          },
-									          {
-									            id: cantosCajones.id,
-									            interactionGroup: cajonesInteractionGroup.id,
-									            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
-									          }
-							        ], "CommPlugin_1");
-					  }, 3500);
-				  
-			  }
-			  contCaj++;
-		  }
-	  }
-	  window.arrayDeEstantesMet = arrayDeEstantesMet;
-	  window.arrayDeEstantesMet1 = arrayDeEstantesMet;
 	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
 		$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
 		var inputDiv = document.querySelector('#inputDivAdi10');
@@ -3403,7 +3424,7 @@ function interioresNuevoJson(obj){
 			}
 		}
 
-
+ 
 
 		rangeSliderAdicional4.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi40").text();
@@ -3818,7 +3839,4850 @@ function interioresNuevoJson(obj){
 		/* cambia el estilo del TRACK */
 		}, false);
 		
+		//empieza 2 hueco
+		var rangeSliderAdicional6 = document.getElementById("rs-range-lineAdicional11");
+		$("#rs-range-lineAdicional11").attr("onmouseup","cambiarArmarioEstantes(2,0,1,1)");
+		var inputDiv = document.querySelector('#inputDivAdi11');
+		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional6.style.width = "100%";
+		var inputMin = rangeSliderAdicional6.getAttribute('min');
+		var inputMax = rangeSliderAdicional6.getAttribute('max');
 		
+
+		/* LA etiqueta6 */
+		var etiqueta6 = document.querySelector('#etiquetaAdi11');
+		var ew = parseInt(window.getComputedStyle(etiqueta6, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta6 (el tooltip) */
+		etiqueta6.innerHTML = (rangeSliderAdicional6.value);
+		/* calcula la posición inicial de la etiqueta6 (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional6.value >= 190){
+			etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional6.value >= 180){
+				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional6.value >= 170){
+					etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional6.value >= 160){
+						etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional6.value >= 150){
+							etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional6.value >= 140){
+								etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional6.value >= 130){
+									etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional6.value >= 120){
+										etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional6.value >= 110){
+											etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional6.value >= 100){
+												etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional6.value >= 90){
+													etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional6.value >= 80){
+														etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional6.value >= 70){
+															etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional6.value >= 60){
+																etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional6.value >= 50){
+																	etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional6.value >= 40){
+																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (30))+"px";
+																	}else{
+																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		
+
+		rangeSliderAdicional6.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi11").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco2 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1){
+					hueco2[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional6.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco2[0]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 1 && yaPuesto == 0){
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+				  
+			  }
+			  
+			  if(hueco2[0]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco2[0]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+			  
+		/* cambia el valor de la etiqueta (el tooltip) */
+				etiqueta6.innerHTML =(rangeSliderAdicional6.value);
+				/* cambia la posición de la etiqueta6 (el tooltip) */
+				if(rangeSliderAdicional6.value >= 190){
+					etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (90))+"px";
+				}else{
+					if(rangeSliderAdicional6.value >= 180){
+						etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (80))+"px";
+					}else{
+						if(rangeSliderAdicional6.value >= 170){
+							etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (70))+"px";
+						}else{
+							if(rangeSliderAdicional6.value >= 160){
+								etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (65))+"px";
+							}else{
+								if(rangeSliderAdicional6.value >= 150){
+									etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (60))+"px";
+								}else{
+									if(rangeSliderAdicional6.value >= 140){
+										etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (55))+"px";
+									}else{
+										if(rangeSliderAdicional6.value >= 130){
+											etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (48))+"px";
+										}else{
+											if(rangeSliderAdicional6.value >= 120){
+												etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (40))+"px";
+											}else{
+												if(rangeSliderAdicional6.value >= 110){
+													etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (32))+"px";
+												}else{
+													if(rangeSliderAdicional6.value >= 100){
+														etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (24))+"px";
+													}else{
+														if(rangeSliderAdicional6.value >= 90){
+															etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (16))+"px";
+														}else{
+															if(rangeSliderAdicional6.value >= 80){
+																etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (8))+"px";
+															}else{
+																if(rangeSliderAdicional6.value >= 70){
+																	etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (2))+"px";
+																}else{
+																	if(rangeSliderAdicional6.value >= 60){
+																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (12))+"px";
+																	}else{
+																		if(rangeSliderAdicional6.value >= 50){
+																			etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (22))+"px";
+																		}else{
+																			if(rangeSliderAdicional6.value >= 40){
+																				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (30))+"px";
+																			}else{
+																				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (40))+"px";
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional7 = document.getElementById("rs-range-lineAdicional21");
+		$("#rs-range-lineAdicional21").attr("onmouseup","cambiarArmarioEstantes(2,1,2,1)");
+		var inputDiv2 = document.querySelector('#inputDivAdi21');
+		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional7.style.width = "100%";
+		var inputMin = rangeSliderAdicional7.getAttribute('min');
+		var inputMax = rangeSliderAdicional7.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta7 = document.querySelector('#etiquetaAdi21');
+		var ew = parseInt(window.getComputedStyle(etiqueta7, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta7.innerHTML = (rangeSliderAdicional7.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional7.value >= 190){
+			etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional7.value >= 180){
+				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional7.value >= 170){
+					etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional7.value >= 160){
+						etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional7.value >= 150){
+							etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional7.value >= 140){
+								etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional7.value >= 130){
+									etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional7.value >= 120){
+										etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional7.value >= 110){
+											etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional7.value >= 100){
+												etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional7.value >= 90){
+													etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional7.value >= 80){
+														etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional7.value >= 70){
+															etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional7.value >= 60){
+																etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional7.value >= 50){
+																	etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional7.value >= 40){
+																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (30))+"px";
+																	}else{
+																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional7.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi21").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco2 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1){
+					hueco2[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional7.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco2[1]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco2[0]["tipo"] == 'estante'){
+							  var sum = 1;
+						  }else{
+							  var sum = 0;
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco2[1]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][1]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			  etiqueta7.innerHTML =(rangeSliderAdicional7.value);
+				/* cambia la posición de la etiqueta (el tooltip) */
+				if(rangeSliderAdicional7.value >= 190){
+					etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (90))+"px";
+				}else{
+					if(rangeSliderAdicional7.value >= 180){
+						etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (80))+"px";
+					}else{
+						if(rangeSliderAdicional7.value >= 170){
+							etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (70))+"px";
+						}else{
+							if(rangeSliderAdicional7.value >= 160){
+								etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (65))+"px";
+							}else{
+								if(rangeSliderAdicional7.value >= 150){
+									etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (60))+"px";
+								}else{
+									if(rangeSliderAdicional7.value >= 140){
+										etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (55))+"px";
+									}else{
+										if(rangeSliderAdicional7.value >= 130){
+											etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (48))+"px";
+										}else{
+											if(rangeSliderAdicional7.value >= 120){
+												etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (40))+"px";
+											}else{
+												if(rangeSliderAdicional7.value >= 110){
+													etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (32))+"px";
+												}else{
+													if(rangeSliderAdicional7.value >= 100){
+														etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (24))+"px";
+													}else{
+														if(rangeSliderAdicional7.value >= 90){
+															etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (16))+"px";
+														}else{
+															if(rangeSliderAdicional7.value >= 80){
+																etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (8))+"px";
+															}else{
+																if(rangeSliderAdicional7.value >= 70){
+																	etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (2))+"px";
+																}else{
+																	if(rangeSliderAdicional7.value >= 60){
+																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (12))+"px";
+																	}else{
+																		if(rangeSliderAdicional7.value >= 50){
+																			etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (22))+"px";
+																		}else{
+																			if(rangeSliderAdicional7.value >= 40){
+																				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (30))+"px";
+																			}else{
+																				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (40))+"px";
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		 
+		var rangeSliderAdicional8 = document.getElementById("rs-range-lineAdicional31");
+		$("#rs-range-lineAdicional31").attr("onmouseup","cambiarArmarioEstantes(2,2,3,1)");
+		var inputDiv3 = document.querySelector('#inputDivAdi31');
+		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional8.style.width = "100%";
+		var inputMin = rangeSliderAdicional8.getAttribute('min');
+		var inputMax = rangeSliderAdicional8.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta8 = document.querySelector('#etiquetaAdi31');
+		var ew = parseInt(window.getComputedStyle(etiqueta8, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta8.innerHTML = (rangeSliderAdicional8.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional8.value >= 190){
+			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional8.value >= 180){
+				etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional8.value >= 170){
+					etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional8.value >= 160){
+						etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional8.value >= 150){
+							etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional8.value >= 140){
+								etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional8.value >= 130){
+									etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional8.value >= 120){
+										etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional8.value >= 110){
+											etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional8.value >= 100){
+												etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional8.value >= 90){
+													etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional8.value >= 80){
+														etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional8.value >= 70){
+															etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional8.value >= 60){
+																etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional8.value >= 50){
+																	etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional8.value >= 40){
+																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (30))+"px";
+																	}else{
+																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional8.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi31").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco2 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1){
+					hueco2[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional8.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco2[2]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco2[0]["tipo"] == 'estante'){
+							  if(hueco2[1]["tipo"] == 'estante'){
+								  var sum = 2;
+							  }else{
+								  var sum = 1;
+							  }
+						  }else{
+							  if(hueco2[1]["tipo"] == 'estante'){
+								  var sum = 1;
+							  }else{
+								  var sum = 0;
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+		  if(hueco2[2]["tipo"] == "tubo"){
+			  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       }]);
+		  }
+		  if(window.obj["interiores"][2]["tipo"] == "cajones"){
+			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       },
+					       {
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+		  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+		  etiqueta8.innerHTML =(rangeSliderAdicional8.value);
+			/* cambia la posición de la etiqueta (el tooltip) */
+			if(rangeSliderAdicional8.value >= 190){
+				etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (90))+"px";
+			}else{
+				if(rangeSliderAdicional8.value >= 180){
+					etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (80))+"px";
+				}else{
+					if(rangeSliderAdicional8.value >= 170){
+						etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (70))+"px";
+					}else{
+						if(rangeSliderAdicional8.value >= 160){
+							etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (65))+"px";
+						}else{
+							if(rangeSliderAdicional8.value >= 150){
+								etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (60))+"px";
+							}else{
+								if(rangeSliderAdicional8.value >= 140){
+									etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (55))+"px";
+								}else{
+									if(rangeSliderAdicional8.value >= 130){
+										etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (48))+"px";
+									}else{
+										if(rangeSliderAdicional8.value >= 120){
+											etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (40))+"px";
+										}else{
+											if(rangeSliderAdicional8.value >= 110){
+												etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (32))+"px";
+											}else{
+												if(rangeSliderAdicional8.value >= 100){
+													etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (24))+"px";
+												}else{
+													if(rangeSliderAdicional8.value >= 90){
+														etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (16))+"px";
+													}else{
+														if(rangeSliderAdicional8.value >= 80){
+															etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (8))+"px";
+														}else{
+															if(rangeSliderAdicional8.value >= 70){
+																etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (2))+"px";
+															}else{
+																if(rangeSliderAdicional8.value >= 60){
+																	etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (12))+"px";
+																}else{
+																	if(rangeSliderAdicional8.value >= 50){
+																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (22))+"px";
+																	}else{
+																		if(rangeSliderAdicional8.value >= 40){
+																			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (30))+"px";
+																		}else{
+																			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (40))+"px";
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional9 = document.getElementById("rs-range-lineAdicional41");
+		$("#rs-range-lineAdicional41").attr("onmouseup","cambiarArmarioEstantes(2,3,4,1)");
+		var inputDiv4 = document.querySelector('#inputDivAdi41');
+		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional9.style.width = "100%";
+		var inputMin = rangeSliderAdicional9.getAttribute('min');
+		var inputMax = rangeSliderAdicional9.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta9 = document.querySelector('#etiquetaAdi41');
+		var ew = parseInt(window.getComputedStyle(etiqueta9, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta9.innerHTML = (rangeSliderAdicional9.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional9.value >= 190){
+			etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional9.value >= 180){
+				etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional9.value >= 170){
+					etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional9.value >= 160){
+						etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional9.value >= 150){
+							etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional9.value >= 140){
+								etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional9.value >= 130){
+									etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional9.value >= 120){
+										etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional9.value >= 110){
+											etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional9.value >= 100){
+												etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional9.value >= 90){
+													etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional9.value >= 80){
+														etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional9.value >= 70){
+															etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional9.value >= 60){
+																etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional9.value >= 50){
+																	etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional9.value >= 40){
+																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (30))+"px";
+																	}else{
+																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+ 
+
+		rangeSliderAdicional9.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi41").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var numParaInt = 0;
+			  var numParaIntTubo = 0;
+				var numParaInt1 = 0;
+				var yaPuesto = 0;
+				var hueco2 = [];
+				var cont2Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1){
+						hueco2[cont2Hueco] = window.obj["interiores"][o];
+						cont2Hueco++;
+					}
+				} 
+				  var calcu = (parseFloat(rangeSliderAdicional9.value) * 10) - (parseFloat(etihtml)*10);
+				  if(hueco2[3]["tipo"] == "estante"){
+					  		
+					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+							  if(hueco2[0]["tipo"] == 'estante'){
+								  if(hueco2[1]["tipo"] == 'estante'){
+									  if(hueco2[2]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco2[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1;  
+									  }
+									  
+								  }
+							  }else{
+								  if(hueco2[1]["tipo"] == 'estante'){
+									  if(hueco2[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco2[2]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+									  
+								  }
+								  
+							  }
+							  yaPuesto = 1;
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+					  
+				  }
+			  if(hueco2[3]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][3]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+			  /* cambia el valor de la etiqueta (el tooltip) */
+			  etiqueta9.innerHTML =(rangeSliderAdicional9.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional9.value >= 190){
+			etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional9.value >= 180){
+				etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional9.value >= 170){
+					etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional9.value >= 160){
+						etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional9.value >= 150){
+							etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional9.value >= 140){
+								etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional9.value >= 130){
+									etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional9.value >= 120){
+										etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional9.value >= 110){
+											etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional9.value >= 100){
+												etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional9.value >= 90){
+													etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional9.value >= 80){
+														etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional9.value >= 70){
+															etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional9.value >= 60){
+																etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional9.value >= 50){
+																	etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional9.value >= 40){
+																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (30))+"px";
+																	}else{
+																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}		
+		/* cambia el estilo del TRACK */
+		}, false);
+		 
+		var rangeSliderAdicional10 = document.getElementById("rs-range-lineAdicional51");
+		$("#rs-range-lineAdicional51").attr("onmouseup","cambiarArmarioEstantes(2,4,5,1)");
+		var inputDiv5 = document.querySelector('#inputDivAdi51');
+		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional10.style.width = "100%";
+		var inputMin = rangeSliderAdicional10.getAttribute('min');
+		var inputMax = rangeSliderAdicional10.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta10 = document.querySelector('#etiquetaAdi51');
+		var ew = parseInt(window.getComputedStyle(etiqueta10, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta10.innerHTML = (rangeSliderAdicional10.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional10.value >= 190){
+			etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional10.value >= 180){
+				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional10.value >= 170){
+					etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional10.value >= 160){
+						etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional10.value >= 150){
+							etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional10.value >= 140){
+								etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional10.value >= 130){
+									etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional10.value >= 120){
+										etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional10.value >= 110){
+											etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional10.value >= 100){
+												etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional10.value >= 90){
+													etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional10.value >= 80){
+														etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional10.value >= 70){
+															etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional10.value >= 60){
+																etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional10.value >= 50){
+																	etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional10.value >= 40){
+																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (30))+"px";
+																	}else{
+																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional10.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi51").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco2 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1){
+					hueco2[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional10.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco2[4]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco2[0]["tipo"] == 'estante'){
+							  if(hueco2[1]["tipo"] == 'estante'){
+								  if(hueco2[2]["tipo"] == 'estante'){
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 4;
+									  }else{
+										  var sum = 3;
+									  }
+									 
+								  }else{
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco2[2]["tipo"] == 'estante'){
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									    
+								  }
+								  
+							  }
+						  }else{
+							  if(hueco2[1]["tipo"] == 'estante'){
+								  if(hueco2[2]["tipo"] == 'estante'){
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco2[2]["tipo"] == 'estante'){
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco2[3]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+								  }
+								  
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco[4]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(window.obj["interiores"][4]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			  etiqueta10.innerHTML =(rangeSliderAdicional10.value);
+				/* cambia la posición de la etiqueta (el tooltip) */
+				if(rangeSliderAdicional10.value >= 190){
+					etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (90))+"px";
+				}else{
+					if(rangeSliderAdicional10.value >= 180){
+						etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (80))+"px";
+					}else{
+						if(rangeSliderAdicional10.value >= 170){
+							etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (70))+"px";
+						}else{
+							if(rangeSliderAdicional10.value >= 160){
+								etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (65))+"px";
+							}else{
+								if(rangeSliderAdicional10.value >= 150){
+									etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (60))+"px";
+								}else{
+									if(rangeSliderAdicional10.value >= 140){
+										etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (55))+"px";
+									}else{
+										if(rangeSliderAdicional10.value >= 130){
+											etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (48))+"px";
+										}else{
+											if(rangeSliderAdicional10.value >= 120){
+												etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (40))+"px";
+											}else{
+												if(rangeSliderAdicional10.value >= 110){
+													etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (32))+"px";
+												}else{
+													if(rangeSliderAdicional10.value >= 100){
+														etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (24))+"px";
+													}else{
+														if(rangeSliderAdicional10.value >= 90){
+															etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (16))+"px";
+														}else{
+															if(rangeSliderAdicional10.value >= 80){
+																etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (8))+"px";
+															}else{
+																if(rangeSliderAdicional10.value >= 70){
+																	etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (2))+"px";
+																}else{
+																	if(rangeSliderAdicional10.value >= 60){
+																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (12))+"px";
+																	}else{
+																		if(rangeSliderAdicional10.value >= 50){
+																			etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (22))+"px";
+																		}else{
+																			if(rangeSliderAdicional10.value >= 40){
+																				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (30))+"px";
+																			}else{
+																				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (40))+"px";
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		
+		var rangeSliderAdicional11 = document.getElementById("rs-range-lineAdicional12");
+		$("#rs-range-lineAdicional12").attr("onmouseup","cambiarArmarioEstantes(3,0,1,2)");
+		var inputDiv = document.querySelector('#inputDivAdi12');
+		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional11.style.width = "100%";
+		var inputMin = rangeSliderAdicional11.getAttribute('min');
+		var inputMax = rangeSliderAdicional11.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta11 = document.querySelector('#etiquetaAdi12');
+		var ew = parseInt(window.getComputedStyle(etiqueta11, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta11.innerHTML = (rangeSliderAdicional11.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional11.value >= 190){
+			etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional11.value >= 180){
+				etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional11.value >= 170){
+					etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional11.value >= 160){
+						etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional11.value >= 150){
+							etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional11.value >= 140){
+								etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional11.value >= 130){
+									etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional11.value >= 120){
+										etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional11.value >= 110){
+											etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional11.value >= 100){
+												etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional11.value >= 90){
+													etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional11.value >= 80){
+														etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional11.value >= 70){
+															etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional11.value >= 60){
+																etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional11.value >= 50){
+																	etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional11.value >= 40){
+																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (30))+"px";
+																	}else{
+																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+ 
+		rangeSliderAdicional11.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi12").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco3 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2){
+					hueco3[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional11.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco3[0]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 2 && yaPuesto == 0){
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+				  
+			  }
+			  
+			  if(hueco3[0]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco3[0]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta11.innerHTML =(rangeSliderAdicional11.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional11.value >= 190){
+			etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional11.value >= 180){
+				etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional11.value >= 170){
+					etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional11.value >= 160){
+						etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional11.value >= 150){
+							etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional11.value >= 140){
+								etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional11.value >= 130){
+									etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional11.value >= 120){
+										etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional11.value >= 110){
+											etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional11.value >= 100){
+												etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional11.value >= 90){
+													etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional11.value >= 80){
+														etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional11.value >= 70){
+															etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional11.value >= 60){
+																etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional11.value >= 50){
+																	etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional11.value >= 40){
+																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (30))+"px";
+																	}else{
+																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional12 = document.getElementById("rs-range-lineAdicional22");
+		$("#rs-range-lineAdicional22").attr("onmouseup","cambiarArmarioEstantes(3,1,2,2)");
+		var inputDiv2 = document.querySelector('#inputDivAdi22');
+		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional12.style.width = "100%";
+		var inputMin = rangeSliderAdicional12.getAttribute('min');
+		var inputMax = rangeSliderAdicional12.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta12 = document.querySelector('#etiquetaAdi22');
+		var ew = parseInt(window.getComputedStyle(etiqueta12, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta12.innerHTML = (rangeSliderAdicional12.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional12.value >= 190){
+			etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional12.value >= 180){
+				etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional12.value >= 170){
+					etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional12.value >= 160){
+						etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional12.value >= 150){
+							etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional12.value >= 140){
+								etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional12.value >= 130){
+									etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional12.value >= 120){
+										etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional12.value >= 110){
+											etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional12.value >= 100){
+												etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional12.value >= 90){
+													etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional12.value >= 80){
+														etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional12.value >= 70){
+															etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional12.value >= 60){
+																etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional12.value >= 50){
+																	etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional12.value >= 40){
+																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (30))+"px";
+																	}else{
+																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional12.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi22").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaInt1 = 0;
+			var numParaIntCajones = 0;
+			var yaPuesto = 0;
+			var hueco3 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2){
+					hueco3[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional12.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco3[1]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco3[0]["tipo"] == 'estante'){
+							  var sum = 1;
+						  }else{
+							  var sum = 0;
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco3[1]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco3[1]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta12.innerHTML =(rangeSliderAdicional12.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional12.value >= 190){
+			etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional12.value >= 180){
+				etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional12.value >= 170){
+					etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional12.value >= 160){
+						etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional12.value >= 150){
+							etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional12.value >= 140){
+								etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional12.value >= 130){
+									etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional12.value >= 120){
+										etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional12.value >= 110){
+											etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional12.value >= 100){
+												etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional12.value >= 90){
+													etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional12.value >= 80){
+														etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional12.value >= 70){
+															etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional12.value >= 60){
+																etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional12.value >= 50){
+																	etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional12.value >= 40){
+																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (30))+"px";
+																	}else{
+																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional13 = document.getElementById("rs-range-lineAdicional32");
+		$("#rs-range-lineAdicional32").attr("onmouseup","cambiarArmarioEstantes(3,2,3,2)");
+		var inputDiv3 = document.querySelector('#inputDivAdi32');
+		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional13.style.width = "100%";
+		var inputMin = rangeSliderAdicional13.getAttribute('min');
+		var inputMax = rangeSliderAdicional13.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta13 = document.querySelector('#etiquetaAdi32');
+		var ew = parseInt(window.getComputedStyle(etiqueta13, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta13.innerHTML = (rangeSliderAdicional13.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional13.value >= 190){
+			etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional13.value >= 180){
+				etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional13.value >= 170){
+					etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional13.value >= 160){
+						etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional13.value >= 150){
+							etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional13.value >= 140){
+								etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional13.value >= 130){
+									etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional13.value >= 120){
+										etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional13.value >= 110){
+											etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional13.value >= 100){
+												etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional13.value >= 90){
+													etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional13.value >= 80){
+														etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional13.value >= 70){
+															etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional13.value >= 60){
+																etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional13.value >= 50){
+																	etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional13.value >= 40){
+																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (30))+"px";
+																	}else{
+																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional13.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi32").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco3 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2){
+					hueco3[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional13.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco3[2]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco3[0]["tipo"] == 'estante'){
+							  if(hueco3[1]["tipo"] == 'estante'){
+								  var sum = 2;
+							  }else{
+								  var sum = 1;
+							  }
+						  }else{
+							  if(hueco3[1]["tipo"] == 'estante'){
+								  var sum = 1;
+							  }else{
+								  var sum = 0;
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+		  if(hueco3[2]["tipo"] == "tubo"){
+			  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       }]);
+		  }
+		  if(hueco3[2]["tipo"] == "cajones"){
+			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       },
+					       {
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+		  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta13.innerHTML =(rangeSliderAdicional13.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional13.value >= 190){
+			etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional13.value >= 180){
+				etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional13.value >= 170){
+					etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional13.value >= 160){
+						etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional13.value >= 150){
+							etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional13.value >= 140){
+								etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional13.value >= 130){
+									etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional13.value >= 120){
+										etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional13.value >= 110){
+											etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional13.value >= 100){
+												etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional13.value >= 90){
+													etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional13.value >= 80){
+														etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional13.value >= 70){
+															etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional13.value >= 60){
+																etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional13.value >= 50){
+																	etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional13.value >= 40){
+																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (30))+"px";
+																	}else{
+																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional14 = document.getElementById("rs-range-lineAdicional42");
+		$("#rs-range-lineAdicional42").attr("onmouseup","cambiarArmarioEstantes(3,3,4,2)");
+		var inputDiv4 = document.querySelector('#inputDivAdi42');
+		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional14.style.width = "100%";
+		var inputMin = rangeSliderAdicional14.getAttribute('min');
+		var inputMax = rangeSliderAdicional14.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta14 = document.querySelector('#etiquetaAdi42');
+		var ew = parseInt(window.getComputedStyle(etiqueta14, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta14.innerHTML = (rangeSliderAdicional14.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional14.value >= 190){
+			etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional14.value >= 180){
+				etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional14.value >= 170){
+					etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional14.value >= 160){
+						etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional14.value >= 150){
+							etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional14.value >= 140){
+								etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional14.value >= 130){
+									etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional14.value >= 120){
+										etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional14.value >= 110){
+											etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional14.value >= 100){
+												etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional14.value >= 90){
+													etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional14.value >= 80){
+														etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional14.value >= 70){
+															etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional14.value >= 60){
+																etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional14.value >= 50){
+																	etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional14.value >= 40){
+																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (30))+"px";
+																	}else{
+																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional14.addEventListener('input',function(){ 			
+			var etihtml = $("#etiquetaAdi42").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var numParaInt = 0;
+			  var numParaIntTubo = 0;
+				var numParaInt1 = 0;
+				var yaPuesto = 0;
+				var numParaIntCajones = 0; 
+				var hueco3 = [];
+				var cont2Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 2){
+						hueco3[cont2Hueco] = window.obj["interiores"][o];
+						cont2Hueco++;
+					}
+				} 
+				  var calcu = (parseFloat(rangeSliderAdicional14.value) * 10) - (parseFloat(etihtml)*10);
+				  if(hueco3[3]["tipo"] == "estante"){
+					  		
+					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+							  if(hueco3[0]["tipo"] == 'estante'){
+								  if(hueco3[1]["tipo"] == 'estante'){
+									  if(hueco3[2]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco3[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1;  
+									  }
+									  
+								  }
+							  }else{
+								  if(hueco3[1]["tipo"] == 'estante'){
+									  if(hueco3[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco3[2]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+									  
+								  }
+								  
+							  }
+							  yaPuesto = 1;
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+					  
+				  }
+			  if(hueco3[3]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco3[3]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta14.innerHTML =(rangeSliderAdicional14.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional14.value >= 190){
+			etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional14.value >= 180){
+				etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional14.value >= 170){
+					etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional14.value >= 160){
+						etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional14.value >= 150){
+							etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional14.value >= 140){
+								etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional14.value >= 130){
+									etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional14.value >= 120){
+										etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional14.value >= 110){
+											etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional14.value >= 100){
+												etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional14.value >= 90){
+													etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional14.value >= 80){
+														etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional14.value >= 70){
+															etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional14.value >= 60){
+																etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional14.value >= 50){
+																	etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional14.value >= 40){
+																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (30))+"px";
+																	}else{
+																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional15 = document.getElementById("rs-range-lineAdicional52");
+		$("#rs-range-lineAdicional52").attr("onmouseup","cambiarArmarioEstantes(3,4,5,2)");
+		var inputDiv5 = document.querySelector('#inputDivAdi52');
+		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional15.style.width = "100%";
+		var inputMin = rangeSliderAdicional15.getAttribute('min');
+		var inputMax = rangeSliderAdicional15.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta15 = document.querySelector('#etiquetaAdi52');
+		var ew = parseInt(window.getComputedStyle(etiqueta15, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta15.innerHTML = (rangeSliderAdicional15.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional15.value >= 190){
+			etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional15.value >= 180){
+				etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional15.value >= 170){
+					etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional15.value >= 160){
+						etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional15.value >= 150){
+							etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional15.value >= 140){
+								etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional15.value >= 130){
+									etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional15.value >= 120){
+										etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional15.value >= 110){
+											etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional15.value >= 100){
+												etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional15.value >= 90){
+													etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional15.value >= 80){
+														etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional15.value >= 70){
+															etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional15.value >= 60){
+																etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional15.value >= 50){
+																	etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional15.value >= 40){
+																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (30))+"px";
+																	}else{
+																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional15.addEventListener('input',function(){
+			var etihtml = $("#etiquetaAdi52").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco3 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2){
+					hueco3[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional15.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco3[4]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco3[0]["tipo"] == 'estante'){
+							  if(hueco3[1]["tipo"] == 'estante'){
+								  if(hueco3[2]["tipo"] == 'estante'){
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 4;
+									  }else{
+										  var sum = 3;
+									  }
+									 
+								  }else{
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco3[2]["tipo"] == 'estante'){
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									    
+								  }
+								  
+							  }
+						  }else{
+							  if(hueco3[1]["tipo"] == 'estante'){
+								  if(hueco3[2]["tipo"] == 'estante'){
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco3[2]["tipo"] == 'estante'){
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco3[3]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+								  }
+								  
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco3[4]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco3[4]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta15.innerHTML =(rangeSliderAdicional15.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional15.value >= 190){
+			etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional15.value >= 180){
+				etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional15.value >= 170){
+					etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional15.value >= 160){
+						etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional15.value >= 150){
+							etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional15.value >= 140){
+								etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional15.value >= 130){
+									etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional15.value >= 120){
+										etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional15.value >= 110){
+											etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional15.value >= 100){
+												etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional15.value >= 90){
+													etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional15.value >= 80){
+														etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional15.value >= 70){
+															etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional15.value >= 60){
+																etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional15.value >= 50){
+																	etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional15.value >= 40){
+																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (30))+"px";
+																	}else{
+																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		  
+	    var rangeSliderAdicional16 = document.getElementById("rs-range-lineAdicional13");
+		$("#rs-range-lineAdicional13").attr("onmouseup","cambiarArmarioEstantes(4,0,1,3)");
+		var inputDiv = document.querySelector('#inputDivAdi13');
+		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional16.style.width = "100%";
+		var inputMin = rangeSliderAdicional16.getAttribute('min');
+		var inputMax = rangeSliderAdicional16.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta16 = document.querySelector('#etiquetaAdi13');
+		var ew = parseInt(window.getComputedStyle(etiqueta16, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta16.innerHTML = (rangeSliderAdicional16.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional16.value >= 190){
+			etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional16.value >= 180){
+				etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional16.value >= 170){
+					etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional16.value >= 160){
+						etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional16.value >= 150){
+							etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional16.value >= 140){
+								etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional16.value >= 130){
+									etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional16.value >= 120){
+										etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional16.value >= 110){
+											etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional16.value >= 100){
+												etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional16.value >= 90){
+													etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional16.value >= 80){
+														etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional16.value >= 70){
+															etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional16.value >= 60){
+																etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional16.value >= 50){
+																	etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional16.value >= 40){
+																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (30))+"px";
+																	}else{
+																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional16.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi13").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco4 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 3){
+					hueco4[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional16.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco4[0]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 3 && yaPuesto == 0){
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+					  }
+				  }
+				  
+			  }
+			  
+			  if(hueco4[0]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco4[0]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta16.innerHTML =(rangeSliderAdicional16.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional16.value >= 190){
+			etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional16.value >= 180){
+				etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional16.value >= 170){
+					etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional16.value >= 160){
+						etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional16.value >= 150){
+							etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional16.value >= 140){
+								etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional16.value >= 130){
+									etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional16.value >= 120){
+										etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional16.value >= 110){
+											etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional16.value >= 100){
+												etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional16.value >= 90){
+													etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional16.value >= 80){
+														etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional16.value >= 70){
+															etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional16.value >= 60){
+																etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional16.value >= 50){
+																	etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional16.value >= 40){
+																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (30))+"px";
+																	}else{
+																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional17 = document.getElementById("rs-range-lineAdicional23");
+		$("#rs-range-lineAdicional23").attr("onmouseup","cambiarArmarioEstantes(4,1,2,3)");
+		var inputDiv2 = document.querySelector('#inputDivAdi23');
+		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional17.style.width = "100%";
+		var inputMin = rangeSliderAdicional17.getAttribute('min');
+		var inputMax = rangeSliderAdicional17.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta17 = document.querySelector('#etiquetaAdi23');
+		var ew = parseInt(window.getComputedStyle(etiqueta17, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta17.innerHTML = (rangeSliderAdicional17.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional17.value >= 190){
+			etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional17.value >= 180){
+				etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional17.value >= 170){
+					etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional17.value >= 160){
+						etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional17.value >= 150){
+							etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional17.value >= 140){
+								etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional17.value >= 130){
+									etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional17.value >= 120){
+										etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional17.value >= 110){
+											etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional17.value >= 100){
+												etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional17.value >= 90){
+													etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional17.value >= 80){
+														etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional17.value >= 70){
+															etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional17.value >= 60){
+																etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional17.value >= 50){
+																	etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional17.value >= 40){
+																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (30))+"px";
+																	}else{
+																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional17.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi23").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaInt1 = 0;
+			var numParaIntCajones = 0;
+			var yaPuesto = 0;
+			var hueco4 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 3){
+					hueco4[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional17.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco4[1]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco4[0]["tipo"] == 'estante'){
+							  var sum = 1;
+						  }else{
+							  var sum = 0;
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco4[1]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco4[1]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta17.innerHTML =(rangeSliderAdicional17.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional17.value >= 190){
+			etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional17.value >= 180){
+				etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional17.value >= 170){
+					etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional17.value >= 160){
+						etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional17.value >= 150){
+							etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional17.value >= 140){
+								etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional17.value >= 130){
+									etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional17.value >= 120){
+										etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional17.value >= 110){
+											etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional17.value >= 100){
+												etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional17.value >= 90){
+													etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional17.value >= 80){
+														etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional17.value >= 70){
+															etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional17.value >= 60){
+																etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional17.value >= 50){
+																	etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional17.value >= 40){
+																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (30))+"px";
+																	}else{
+																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional18 = document.getElementById("rs-range-lineAdicional33");
+		$("#rs-range-lineAdicional33").attr("onmouseup","cambiarArmarioEstantes(4,2,3,3)");
+		var inputDiv3 = document.querySelector('#inputDivAdi33');
+		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional18.style.width = "100%";
+		var inputMin = rangeSliderAdicional18.getAttribute('min');
+		var inputMax = rangeSliderAdicional18.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta18 = document.querySelector('#etiquetaAdi33');
+		var ew = parseInt(window.getComputedStyle(etiqueta18, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta18.innerHTML = (rangeSliderAdicional18.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional18.value >= 190){
+			etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional18.value >= 180){
+				etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional18.value >= 170){
+					etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional18.value >= 160){
+						etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional18.value >= 150){
+							etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional18.value >= 140){
+								etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional18.value >= 130){
+									etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional18.value >= 120){
+										etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional18.value >= 110){
+											etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional18.value >= 100){
+												etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional18.value >= 90){
+													etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional18.value >= 80){
+														etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional18.value >= 70){
+															etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional18.value >= 60){
+																etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional18.value >= 50){
+																	etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional18.value >= 40){
+																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (30))+"px";
+																	}else{
+																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional18.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi33").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco4 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 3){
+					hueco4[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional18.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco4[2]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco4[0]["tipo"] == 'estante'){
+							  if(hueco4[1]["tipo"] == 'estante'){
+								  var sum = 2;
+							  }else{
+								  var sum = 1;
+							  }
+						  }else{
+							  if(hueco4[1]["tipo"] == 'estante'){
+								  var sum = 1;
+							  }else{
+								  var sum = 0;
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+		  if(hueco4[2]["tipo"] == "tubo"){
+			  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       }]);
+		  }
+		  if(hueco4[2]["tipo"] == "cajones"){
+			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+			  api.scene.setLiveTransformation(
+					     [
+					       {
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+					         transformations: [
+					           {
+					             delay: 0,
+					             duration: 500,
+					             type: 'translation',
+					             easing: "Quartic.InOut",
+					             translationVector: { x: 0, y: 0, z: calcu },
+					             repeat: 0
+					           }
+					         ],reset:false
+					       },
+					       {
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+		  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta18.innerHTML =(rangeSliderAdicional18.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional18.value >= 190){
+			etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional18.value >= 180){
+				etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional18.value >= 170){
+					etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional18.value >= 160){
+						etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional18.value >= 150){
+							etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional18.value >= 140){
+								etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional18.value >= 130){
+									etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional18.value >= 120){
+										etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional18.value >= 110){
+											etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional18.value >= 100){
+												etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional18.value >= 90){
+													etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional18.value >= 80){
+														etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional18.value >= 70){
+															etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional18.value >= 60){
+																etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional18.value >= 50){
+																	etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional18.value >= 40){
+																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (30))+"px";
+																	}else{
+																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional19 = document.getElementById("rs-range-lineAdicional43");
+		$("#rs-range-lineAdicional43").attr("onmouseup","cambiarArmarioEstantes(4,3,4,3)");
+		var inputDiv4 = document.querySelector('#inputDivAdi43');
+		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional19.style.width = "100%";
+		var inputMin = rangeSliderAdicional19.getAttribute('min');
+		var inputMax = rangeSliderAdicional19.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta19 = document.querySelector('#etiquetaAdi43');
+		var ew = parseInt(window.getComputedStyle(etiqueta19, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta19.innerHTML = (rangeSliderAdicional19.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional19.value >= 190){
+			etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional19.value >= 180){
+				etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional19.value >= 170){
+					etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional19.value >= 160){
+						etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional19.value >= 150){
+							etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional19.value >= 140){
+								etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional19.value >= 130){
+									etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional19.value >= 120){
+										etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional19.value >= 110){
+											etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional19.value >= 100){
+												etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional19.value >= 90){
+													etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional19.value >= 80){
+														etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional19.value >= 70){
+															etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional19.value >= 60){
+																etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional19.value >= 50){
+																	etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional19.value >= 40){
+																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (30))+"px";
+																	}else{
+																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional19.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi43").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			  var numParaInt = 0;
+			  var numParaIntTubo = 0;
+				var numParaInt1 = 0;
+				var yaPuesto = 0;
+				var numParaIntCajones = 0; 
+				var hueco4 = [];
+				var cont2Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
+						numParaInt++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 3){
+						hueco4[cont2Hueco] = window.obj["interiores"][o];
+						cont2Hueco++;
+					}
+				} 
+				  var calcu = (parseFloat(rangeSliderAdicional19.value) * 10) - (parseFloat(etihtml)*10);
+				  if(hueco4[3]["tipo"] == "estante"){
+					  		
+					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+							  if(hueco4[0]["tipo"] == 'estante'){
+								  if(hueco4[1]["tipo"] == 'estante'){
+									  if(hueco4[2]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco4[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1;  
+									  }
+									  
+								  }
+							  }else{
+								  if(hueco4[1]["tipo"] == 'estante'){
+									  if(hueco4[2]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco4[2]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+									  
+								  }
+								  
+							  }
+							  yaPuesto = 1;
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+					  
+				  }
+			  if(hueco4[3]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco4[3]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta19.innerHTML =(rangeSliderAdicional19.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional19.value >= 190){
+			etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional19.value >= 180){
+				etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional19.value >= 170){
+					etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional19.value >= 160){
+						etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional19.value >= 150){
+							etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional19.value >= 140){
+								etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional19.value >= 130){
+									etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional19.value >= 120){
+										etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional19.value >= 110){
+											etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional19.value >= 100){
+												etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional19.value >= 90){
+													etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional19.value >= 80){
+														etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional19.value >= 70){
+															etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional19.value >= 60){
+																etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional19.value >= 50){
+																	etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional19.value >= 40){
+																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (30))+"px";
+																	}else{
+																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+		var rangeSliderAdicional20 = document.getElementById("rs-range-lineAdicional53");
+		$("#rs-range-lineAdicional53").attr("onmouseup","cambiarArmarioEstantes(4,4,5,3)");
+		var inputDiv5 = document.querySelector('#inputDivAdi53');
+		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
+		/* EL INPUT */
+		rangeSliderAdicional20.style.width = "100%";
+		var inputMin = rangeSliderAdicional20.getAttribute('min');
+		var inputMax = rangeSliderAdicional20.getAttribute('max');
+		
+
+		/* LA ETIQUETA */
+		var etiqueta20 = document.querySelector('#etiquetaAdi53');
+		var ew = parseInt(window.getComputedStyle(etiqueta20, null).getPropertyValue("width"));
+		w = 300;
+		var k = 260/(inputMax - inputMin);
+		/* el valor de la etiqueta (el tooltip) */
+		etiqueta20.innerHTML = (rangeSliderAdicional20.value);
+		/* calcula la posición inicial de la etiqueta (el tooltip) */
+		/* establece el estilo inicial del TRACK */
+		if(rangeSliderAdicional20.value >= 190){
+			etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional20.value >= 180){
+				etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional20.value >= 170){
+					etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional20.value >= 160){
+						etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional20.value >= 150){
+							etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional20.value >= 140){
+								etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional20.value >= 130){
+									etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional20.value >= 120){
+										etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional20.value >= 110){
+											etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional20.value >= 100){
+												etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional20.value >= 90){
+													etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional20.value >= 80){
+														etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional20.value >= 70){
+															etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional20.value >= 60){
+																etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional20.value >= 50){
+																	etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional20.value >= 40){
+																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (30))+"px";
+																	}else{
+																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		rangeSliderAdicional20.addEventListener('input',function(){
+			
+			var etihtml = $("#etiquetaAdi53").text();
+			var arr = window.arrayDeEstantesMet;
+			var arr1 = window.arrayDeEstantesMet;
+			var numParaInt = 0;
+			var numParaIntTubo = 0;
+			var numParaIntCajones = 0;
+			var numParaInt1 = 0;
+			var yaPuesto = 0;
+			var hueco4 = [];
+			var cont2Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
+					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 3){
+					hueco4[cont2Hueco] = window.obj["interiores"][o];
+					cont2Hueco++;
+				}
+			} 
+			  var calcu = (parseFloat(rangeSliderAdicional20.value) * 10) - (parseFloat(etihtml)*10);
+			  if(hueco4[4]["tipo"] == "estante"){
+				  		
+				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
+				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+						  if(hueco4[0]["tipo"] == 'estante'){
+							  if(hueco4[1]["tipo"] == 'estante'){
+								  if(hueco4[2]["tipo"] == 'estante'){
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 4;
+									  }else{
+										  var sum = 3;
+									  }
+									 
+								  }else{
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco4[2]["tipo"] == 'estante'){
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									    
+								  }
+								  
+							  }
+						  }else{
+							  if(hueco4[1]["tipo"] == 'estante'){
+								  if(hueco4[2]["tipo"] == 'estante'){
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 3;
+									  }else{
+										  var sum = 2;
+									  }
+									  
+								  }else{
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }
+								  
+							  }else{
+								  if(hueco4[2]["tipo"] == 'estante'){
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 2;
+									  }else{
+										  var sum = 1; 
+									  }
+									  
+								  }else{
+									  if(hueco4[3]["tipo"] == 'estante'){
+										  var sum = 1;
+									  }else{
+										  var sum = 0; 
+									  }
+								  }
+								  
+							  }
+							  
+						  }
+						  yaPuesto = 1;
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       }]);
+				  
+			  }
+			  if(hueco4[4]["tipo"] == "tubo"){
+				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       }]);
+			  }
+			  if(hueco4[4]["tipo"] == "cajones"){
+				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
+			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+		/* cambia el valor de la etiqueta (el tooltip) */
+			etiqueta20.innerHTML =(rangeSliderAdicional20.value);
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(rangeSliderAdicional20.value >= 190){
+			etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (90))+"px";
+		}else{
+			if(rangeSliderAdicional20.value >= 180){
+				etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (80))+"px";
+			}else{
+				if(rangeSliderAdicional20.value >= 170){
+					etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (70))+"px";
+				}else{
+					if(rangeSliderAdicional20.value >= 160){
+						etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (65))+"px";
+					}else{
+						if(rangeSliderAdicional20.value >= 150){
+							etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (60))+"px";
+						}else{
+							if(rangeSliderAdicional20.value >= 140){
+								etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (55))+"px";
+							}else{
+								if(rangeSliderAdicional20.value >= 130){
+									etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (48))+"px";
+								}else{
+									if(rangeSliderAdicional20.value >= 120){
+										etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (40))+"px";
+									}else{
+										if(rangeSliderAdicional20.value >= 110){
+											etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (32))+"px";
+										}else{
+											if(rangeSliderAdicional20.value >= 100){
+												etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (24))+"px";
+											}else{
+												if(rangeSliderAdicional20.value >= 90){
+													etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (16))+"px";
+												}else{
+													if(rangeSliderAdicional20.value >= 80){
+														etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (8))+"px";
+													}else{
+														if(rangeSliderAdicional20.value >= 70){
+															etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (2))+"px";
+														}else{
+															if(rangeSliderAdicional20.value >= 60){
+																etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (12))+"px";
+															}else{
+																if(rangeSliderAdicional20.value >= 50){
+																	etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (22))+"px";
+																}else{
+																	if(rangeSliderAdicional20.value >= 40){
+																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (30))+"px";
+																	}else{
+																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (40))+"px";
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		/* cambia el estilo del TRACK */
+		}, false);
+		
+  
 		
 }
 
@@ -7599,6 +12463,7 @@ function cambiarVistaArmario(tipo){
       value: JSON.stringify(costadosObject)
     });
   var parame1 = api.parameters.get({name :"PuertasJSON"}).data[0];
+  window.puertas = puertasObject;
   api.parameters.updateAsync({
       id: parame1.id,
       value: JSON.stringify(puertasObject)
@@ -10500,7 +15365,7 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 			
 			/* cambia el estilo del TRACK */
 			}, false);
-			
+			 
 			var rangeSliderAdicional8 = document.getElementById("rs-range-lineAdicional31");
 			$("#rs-range-lineAdicional31").attr("onmouseup","cambiarArmarioEstantes(2,2,3,1)");
 			var inputDiv3 = document.querySelector('#inputDivAdi31');
@@ -17680,59 +22545,26 @@ function maschicobotonancho(){
 
 function cambiarArmarioEstantes(id,id1,posicion,num){
 	var rangeSlider = document.getElementById("rs-range-lineAdicional"+posicion+""+num);
-	var armario = window.todounarmario;
-	var estantes = armario["estantes"];
-	if(id == 1){
-		if(estantes[0].length >= 1){
-			var array = estantes[0];
-		}else{
-			var array = estantes[0][0].split(",");
+	var obj = window.obj;
+	var cont = 0;
+	var contDef = 0;
+	var length = obj["interiores"].length;
+	var array = [];
+	var arrayDef = [];
+	for(let i = 0;i<length;i++){
+		if(obj["interiores"][i]["interior"] == (id - 1)){
+			array[cont] = obj["interiores"][i];
+			arrayDef[cont] = i
+			cont++;
 		}
 		
-		array[id1] = parseFloat(rangeSlider.value) * 10;
-		estantes[0] = array;
-		this.arrayhuecoEstantes1 = estantes;
-		armario["estantes"] = estantes;
 	}
-	if(id == 2){
-		if(estantes[1].length >= 1){
-			var array = estantes[1];
-		}else{
-			var array = estantes[1][0].split(",");
-		}
-		
-		array[id1] = parseFloat(rangeSlider.value) * 10;
-		estantes[1] = array;
-		this.arrayhuecoEstantes2 = estantes;
-		armario["estantes"] = estantes;
-	}
-	if(id == 3){
-		if(estantes[2].length >= 1){
-			var array = estantes[2];
-		}else{
-			var array = estantes[2][0].split(",");
-		}
-		
-		array[id1] = parseFloat(rangeSlider.value) * 10;
-		estantes[2] = array;
-		this.arrayhuecoEstantes2 = estantes;
-		armario["estantes"] = estantes;
-	}
-	if(id == 4){
-		if(estantes[3].length >= 1){
-			var array = estantes[3];
-		}else{
-			var array = estantes[3][0].split(",");
-		}
-		
-		array[id1] = parseFloat(rangeSlider.value) * 10;
-		estantes[3] = array;
-		this.arrayhuecoEstantes2 = estantes;
-		armario["estantes"] = estantes;
-	}
-	window.todounarmario = armario;
-	console.log(JSON.stringify(armario));
-
+		array[id1]["posicion"] = parseFloat(rangeSlider.value) * 10; 
+		obj["interiores"][arrayDef[id1]] = array[id1];
+	
+	window.obj = obj;
+	$("#clicparaConfirmarMoverInteriores").attr("class",""+JSON.stringify(obj)+"");
+	$("#clicparaConfirmarMoverInteriores")[0].click();
 }
 
 
@@ -17994,40 +22826,210 @@ function divcontenidometerfuncion(u,id){
 	var contg = 0;
 	var length = obj["interiores"].length;
 	 for(let h = 0;h<length;h++){
-		  if(obj["interiores"][h]["interior"] == 0){
+
 			  array[contg] = obj["interiores"][h];
 			  contg++;
-		  }
+		  
 	 }
 	 var contTubo = 0;
 	 var contEst = 0;
 	 var contCaj = 0;
 	 for(let l = 0;l<25;l++){
-	   	  shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
-		  cajonesScenePaths = [cajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0"];
-		  tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
-	   	  api.scene.updateSelected([],shelvesScenePaths);
-	   	  api.scene.updateSelected([],cajonesScenePaths);
-	   	  api.scene.updateSelected([],tubosScenePaths);
+		 if(shelvesSides != undefined){
+			 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
+			 api.scene.updateSelected([],shelvesScenePaths);
+		 }
+	   	 
+		 if(cajones != undefined){
+			 cajonesScenePaths = [cajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(l)+".transformation_0.node_0.mesh_0.primitive_0"];
+			 api.scene.updateSelected([],cajonesScenePaths);
+		 }
+		 
+		 if(tubos != undefined){
+			 tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
+			 api.scene.updateSelected([],tubosScenePaths);
+		 }
      }
-	 for(let i = 0;i<array.length;i++){
-		 if(i == (u - 1)){
-			 if(array[i]["tipo"] == "estante"){
-				 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+(contEst)+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+(contEst)+".transformation_0.node_0.mesh_0.primitive_0"];
-				  api.scene.updateSelected(shelvesScenePaths);
-				  contEst++;
-			 }
-			 if(array[i]["tipo"] == "tubo"){
-				 tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
-				  api.scene.updateSelected(tubosScenePaths);
-				  contTubo++;
-			 }
-			 if(array[i]["tipo"] == "cajones"){
-				 cajonesScenePaths = [cajones.scenePath + ".content_"+(contCaj)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(contCaj)+".transformation_0.node_0.mesh_0.primitive_0"];
-				  api.scene.updateSelected(cajonesScenePaths);
-				  contCaj++;
+	 
+	 
+	 if(id == 0){
+		 for(let i = 0;i<array.length;i++){
+			 if(i == (u - 1)){
+				 if(array[i]["tipo"] == "estante"){
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+array[i]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+array[i]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(shelvesScenePaths);
+					  contEst++;
+				 }
+				 if(array[i]["tipo"] == "tubo"){
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(tubosScenePaths);
+					  contTubo++;
+				 }
+				 if(array[i]["tipo"] == "cajones"){
+					 cajonesScenePaths = [cajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(cajonesScenePaths);
+					  contCaj++;
+				 }
 			 }
 		 }
+	 }
+	 var cont1 = 0;
+	 var cont1Tubo = 0;
+	 var cont1Cajones = 0;
+	 var contTotal = 0;
+	 var arrayIntTodo = [];
+	 var contArray1 = 0;
+	 if(id == 1){
+		 for(let i = 0;i<array.length;i++){
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 0){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 1){
+				 arrayIntTodo[contArray1] = array[i];
+				 contArray1++;
+			 }
+		 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(shelvesScenePaths);
+					  contEst++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(tubosScenePaths);
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(cajonesScenePaths);
+					  contCaj++;
+				 }
+	 }
+	 
+	 var cont1 = 0;
+	 var cont1Tubo = 0;
+	 var cont1Cajones = 0;
+	 var contTotal = 0;
+	 var arrayIntTodo = [];
+	 var contArray1 = 0;
+	 if(id == 2){
+		 for(let i = 0;i<array.length;i++){
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 0){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 1){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 2){
+				 arrayIntTodo[contArray1] = array[i];
+				 contArray1++;
+			 }
+		 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(shelvesScenePaths);
+					  contEst++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(tubosScenePaths);
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(cajonesScenePaths);
+					  contCaj++;
+				 }
+	 }
+	 
+	 var cont1 = 0;
+	 var cont1Tubo = 0;
+	 var cont1Cajones = 0;
+	 var contTotal = 0;
+	 var arrayIntTodo = [];
+	 var contArray1 = 0;
+	 if(id == 3){
+		 for(let i = 0;i<array.length;i++){
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 0){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 1){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'estante'){
+				 cont1++;
+			 }
+			 if(array[i]["interior"] == 2){
+				 contTotal++;
+			 }
+			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'tubo'){
+				 cont1Tubo++;
+			 }
+			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'cajones'){
+				 cont1Cajones++;
+			 }
+			 if(array[i]["interior"] == 3){
+				 arrayIntTodo[contArray1] = array[i];
+				 contArray1++;
+			 }
+		 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(shelvesScenePaths);
+					  contEst++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(tubosScenePaths);
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(cajonesScenePaths);
+					  contCaj++;
+				 }
 	 }
 	
 	      
@@ -18084,9 +23086,9 @@ function estaMarcadoDivArm(div){
 	//}
 }
 function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
-	var armario = window.todounarmario;
+	var armario = window.puertas;
 	 var armNum = window.armario;
-	 var tipo = window.tipo;
+	 var tipo = window.tipo; 
 	if(armario["puertas"][idPuerta]["tipo"] == "simple"){
 		if(idTipo == "381"){
 			armario["puertas"][idPuerta]["material"] = "cristal";
@@ -18166,8 +23168,8 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 		}
 		
 	
-	window.todounarmario = armario;
-	var parame = api.parameters.get({name :"armarioJSON"}).data[0];
+	window.puertas = armario;
+	var parame = api.parameters.get({name :"PuertasJSON"}).data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
@@ -18226,24 +23228,96 @@ function apoyoDeLosModulos(id){
 	api.parameters.updateAsync({
 	      id: parame.id,
 	      value: idBuena
-	    });
-	api.parameters.updateAsync({
+	    }).then(
+	            function(response) {
+	            	api.scene.updatePersistentAsync({
+	            		id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+	            			content: [
+	            			{
+	            				format: "material",
+	            				data: {
+	            					version: "2.0",
+	            					bitmaptexture: url
+	            				}
+	            			}
+	            			]
+	            		}, "CommPlugin_1");
+		            }
+		          );
+	/**api.parameters.updateAsync({
 	      id: parame1.id,
 	      value: idMetal
-	    });
-	setTimeout(function() {
-    
-	api.scene.updatePersistentAsync({
-		id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
-			content: [
-			{
-				format: "material",
-				data: {
-					version: "2.0",
-					bitmaptexture: url
-				}
-			}
-			]
-		}, "CommPlugin_1");
-	}, 1750);
+	    }); **/
+}
+
+
+function camiseroFuncionMover(hueco,id,input){
+	
+	var array = window.obj["interiores"];
+	var length = array.length;
+	var arrayHueco = [];
+	var cont = 0;
+	var arrayDef = [];
+	var contDef = 0;
+	for(let i = 0;i<length;i++){
+		if(array[i]["interior"] == hueco){
+				arrayHueco[cont]=array[i];
+				cont++;
+		}
+	}
+	
+	var posicionCogida = arrayHueco[input]["posicion"];
+	var tipo = arrayHueco[input]["tipo"];
+	
+	if(tipo == "estante"){
+		posicionCogida = posicionCogida + 30;
+		arrayHueco[id - 1]["posicion"] = posicionCogida;
+	}
+	if(tipo == "cajones"){
+		posicionCogida = posicionCogida + 30;
+		if(arrayHueco[input]["cantidad"] == 1){
+			var tot = 212 + posicionCogida;
+		}
+		if(arrayHueco[input]["cantidad"] == 2){
+			var tot = 380 + posicionCogida;		
+		}
+		if(arrayHueco[input]["cantidad"] == 3){
+			var tot = 556 + posicionCogida;
+		}
+		if(arrayHueco[input]["cantidad"] == 4){
+			var tot = 724 + posicionCogida;
+		}
+		if(arrayHueco[input]["cantidad"] == 5){
+			var tot = 900 + posicionCogida;
+		}
+		arrayHueco[id - 1]["posicion"] = tot;
+	}
+	
+	for(let i = 0;i<length;i++){
+		if(array[i]["interior"] == 0){
+			arrayDef[contDef]=array[i];
+			contDef++;
+		}
+	}
+	for(let i = 0;i<length;i++){
+		if(array[i]["interior"] == 1){
+			arrayDef[contDef]=array[i];
+			contDef++;
+		}
+	}
+	for(let i = 0;i<length;i++){
+		if(array[i]["interior"] == 2){
+			arrayDef[contDef]=array[i];
+			contDef++;
+		}
+	}
+	for(let i = 0;i<length;i++){
+		if(array[i]["interior"] == 3){
+			arrayDef[contDef]=array[i];
+			contDef++;
+		}
+	}
+	var objDef = {};
+	objDef["interiores"] = arrayDef;
+	this.interioresNuevoJson(objDef);
 }

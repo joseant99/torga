@@ -27,6 +27,9 @@ public class ImagenDeCestaProd implements Serializable {
     
     @Column(name = "nombre")
     private String nombre;
+    
+    @Column(name = "nombre_cesta")
+    private String nombreCesta;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -61,6 +64,19 @@ public class ImagenDeCestaProd implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public String getNombreCesta() {
+        return nombreCesta;
+    }
+
+    public ImagenDeCestaProd nombreCesta(String nombreCesta) {
+        this.nombreCesta = nombreCesta;
+        return this;
+    }
+
+    public void setNombreCesta(String nombreCesta) {
+        this.nombreCesta = nombreCesta;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

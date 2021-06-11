@@ -399,6 +399,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 1710;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1660;
                         obj2['interior'] = hueco - 1;
@@ -407,6 +408,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 1950;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1900;
                         obj2['interior'] = hueco - 1;
@@ -418,6 +420,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = (alturaValor - 90) / 2;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj2['interior'] = hueco - 1;
@@ -426,6 +429,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = (alturaValor - 90) / 2;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj2['interior'] = hueco - 1;
@@ -437,10 +441,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1710;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1660;
                         obj3['interior'] = hueco - 1;
@@ -449,10 +455,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1750;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1900;
                         obj3['interior'] = hueco - 1;
@@ -464,10 +472,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1126;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
@@ -476,10 +486,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 1236;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
@@ -491,34 +503,42 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 918;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1314;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = 1710;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
                     } else {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = 998;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 1474;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = 1950;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
                     }
                 }
                 if (id == 6) {
@@ -526,18 +546,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = alturaValor / 2 - 15;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (5 * alturaValor - 180) / 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 0.75 * (alturaValor - 30);
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (7 * alturaValor - 210) / 8;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
 
                         obj5['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj5['interior'] = hueco - 1;
@@ -546,18 +570,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = alturaValor / 2 - 15;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (5 * alturaValor - 180) / 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = 0.75 * (alturaValor - 30);
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (7 * alturaValor - 210) / 8;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
 
                         obj5['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj5['interior'] = hueco - 1;
@@ -569,34 +597,42 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = (alturaValor - 30) / 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 30) / 4;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = (3 / 8) * (alturaValor - 30);
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (alturaValor - 30) / 2;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
                     } else {
                         obj1['posicion'] = (alturaValor - 30) / 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 30) / 4;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = (3 / 8) * (alturaValor - 30);
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (alturaValor - 30) / 2;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
                     }
                 }
                 if (id == 8) {
@@ -604,22 +640,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = (alturaValor - 30) / 6;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 30) / 3;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = (alturaValor - 30) / 2;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (2 / 3) * (alturaValor - 30);
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
 
                         obj5['posicion'] = (5 / 6) * (alturaValor - 30);
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'estante';
+                        obj5['numero'] = 4;
                     } else {
                         obj1['posicion'] = (alturaValor - 30) / 6;
                         obj1['interior'] = hueco - 1;
@@ -969,29 +1010,140 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
             }
         }
+        var arrayOrd = [];
+        var contOrd = 0;
+        for (let o = 0; o < objetoTodoArray.length; o++) {
+            if (objetoTodoArray[o] != undefined) {
+                if (objetoTodoArray[o]['interior'] == 0) {
+                    arrayOrd[contOrd] = objetoTodoArray[o];
+                    contOrd++;
+                }
+            }
+        }
+        for (let o = 0; o < objetoTodoArray.length; o++) {
+            if (objetoTodoArray[o] != undefined) {
+                if (objetoTodoArray[o]['interior'] == 1) {
+                    arrayOrd[contOrd] = objetoTodoArray[o];
+                    contOrd++;
+                }
+            }
+        }
+        for (let o = 0; o < objetoTodoArray.length; o++) {
+            if (objetoTodoArray[o] != undefined) {
+                if (objetoTodoArray[o]['interior'] == 2) {
+                    arrayOrd[contOrd] = objetoTodoArray[o];
+                    contOrd++;
+                }
+            }
+        }
+        for (let o = 0; o < objetoTodoArray.length; o++) {
+            if (objetoTodoArray[o] != undefined) {
+                if (objetoTodoArray[o]['interior'] == 3) {
+                    arrayOrd[contOrd] = objetoTodoArray[o];
+                    contOrd++;
+                }
+            }
+        }
+        objetoTodoArray = arrayOrd;
         this.objetoTodoArray = objetoTodoArray;
-
         objetoTODO['interiores'] = objetoTodoArray;
         if (hueco == 1) {
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + t + '0').css({ display: 'none' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + t + '0').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorhueco1 = 0;
             for (let o = 0; o < objetoTodoArray.length; o++) {
                 if (objetoTodoArray[o] != undefined) {
                     if (objetoTodoArray[o]['interior'] == hueco - 1) {
-                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0').css({ display: 'block' });
-                        $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                        $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                            'onclick',
-                            'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                        );
-                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
-                            objetoTodoArray[o]['posicion'] / 10
-                        );
-                        $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                            objetoTodoArray[o]['posicion'] / 10
-                        );
-                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
-                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text(
-                            objetoTodoArray[o]['tipo']
-                        );
+                        if (objetoTodoArray[o]['tipo'] != 'camisero') {
+                            $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                            $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero').css({
+                                display: 'none'
+                            });
+
+                            $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                            $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').attr(
+                                'onclick',
+                                'divcontenidometerfuncion(' + (contadorhueco1 + 1) + ',0)'
+                            );
+                            $(
+                                '#divAdicionalesInterior0 .divSliderAdi' +
+                                    (contadorhueco1 + 1) +
+                                    '0 #rs-bulletAdicional' +
+                                    (contadorhueco1 + 1) +
+                                    '0'
+                            ).text(objetoTodoArray[o]['posicion'] / 10);
+                            $(
+                                '#divAdicionalesInterior0 .divSliderAdi' +
+                                    (contadorhueco1 + 1) +
+                                    '0 #rs-range-lineAdicional' +
+                                    (contadorhueco1 + 1) +
+                                    '0'
+                            ).val(objetoTodoArray[o]['posicion'] / 10);
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorhueco1 + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorhueco1 + 1) + ' #textosolo').text(
+                                objetoTodoArray[o]['tipo']
+                            );
+                        } else {
+                            $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                            $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero').css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .range-slider').css({ display: 'none' });
+                            $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorhueco1 + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorhueco1 + 1) + ' #textosolo').text(
+                                objetoTodoArray[o]['tipo']
+                            );
+
+                            var contInput = 0;
+                            for (let v = 0; v < objetoTodoArray.length; v++) {
+                                if (objetoTodoArray[v] != undefined) {
+                                    if (objetoTodoArray[v]['interior'] == hueco - 1) {
+                                        if (objetoTodoArray[v]['tipo'] != 'camisero' && objetoTodoArray[v]['tipo'] != 'tubo') {
+                                            $(
+                                                '#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero'
+                                            ).append(
+                                                '<input onclick="camiseroFuncionMover(' +
+                                                    (hueco - 1) +
+                                                    ',' +
+                                                    (contadorhueco1 + 1) +
+                                                    ',' +
+                                                    v +
+                                                    ')" type="radio" id="inputradioCamisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorhueco1 + 1) +
+                                                    '' +
+                                                    v +
+                                                    '" style="margin-left:50px" name="camisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorhueco1 + 1) +
+                                                    '">'
+                                            );
+                                            if (v == 0) {
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorhueco1 + 1) + '' + v).prop(
+                                                    'checked',
+                                                    true
+                                                );
+                                            }
+                                            $(
+                                                '#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero'
+                                            ).append('<label style="margin-left:15px">' + (contInput + 1) + '</label>');
+                                            contInput++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        contadorhueco1++;
                     }
                 }
             }
@@ -1073,25 +1225,108 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
         if (hueco == 2) {
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + t + '1').css({ display: 'none' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + t + '1').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == 0) {
+                        contadorDeHueco0++;
+                    }
+                }
+            }
             for (let o = 0; o < objetoTodoArray.length; o++) {
                 if (objetoTodoArray[o] != undefined) {
                     if (objetoTodoArray[o]['interior'] == hueco - 1) {
-                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
-                        $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
-                        $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
-                            'onclick',
-                            'divcontenidometerfuncion(' + (o + 1) + ',1)'
-                        );
-                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(
-                            objetoTodoArray[o]['posicion'] / 10
-                        );
-                        $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
-                            objetoTodoArray[o]['posicion'] / 10
-                        );
-                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
-                        $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text(
-                            objetoTodoArray[o]['tipo']
-                        );
+                        if (objetoTodoArray[o]['tipo'] != 'camisero') {
+                            $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                            $('#divAdicionalesInterior1 #divContenidoMeter' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                            $('#divAdicionalesInterior1 #divContenidoMeter' + (contadorEstWueToca + 1) + '1').attr(
+                                'onclick',
+                                'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',1)'
+                            );
+                            $(
+                                '#divAdicionalesInterior1 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '1 #rs-bulletAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '1'
+                            ).text(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $(
+                                '#divAdicionalesInterior1 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '1 #rs-range-lineAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '1'
+                            ).val(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['tipo']
+                            );
+                        } else {
+                            $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                            $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .divButtonCamisero').css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .range-slider').css({
+                                display: 'none'
+                            });
+                            $('#divAdicionalesInterior1 #divContenidoMeter' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[o]['tipo']
+                            );
+
+                            var contInput = 0;
+                            for (let v = 0; v < objetoTodoArray.length; v++) {
+                                if (objetoTodoArray[v] != undefined) {
+                                    if (objetoTodoArray[v]['interior'] == hueco - 1) {
+                                        if (objetoTodoArray[v]['tipo'] != 'camisero' && objetoTodoArray[v]['tipo'] != 'tubo') {
+                                            $(
+                                                '#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .divButtonCamisero'
+                                            ).append(
+                                                '<input onclick="camiseroFuncionMover(' +
+                                                    (hueco - 1) +
+                                                    ',' +
+                                                    (contadorEstWueToca + 1) +
+                                                    ',' +
+                                                    v +
+                                                    ')" type="radio" id="inputradioCamisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '' +
+                                                    v +
+                                                    '" style="margin-left:50px" name="camisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '">'
+                                            );
+                                            if (v == 0) {
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
+                                                    'checked',
+                                                    true
+                                                );
+                                            }
+                                            $(
+                                                '#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .divButtonCamisero'
+                                            ).append('<label style="margin-left:15px">' + (contInput + 1) + '</label>');
+                                            contInput++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        contadorEstWueToca++;
                     }
                 }
             }
@@ -1127,23 +1362,6 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('ESTANTE MADERA');
                 contNumEst++;
-            }
-
-            for (var o = contNumEst; o < tubo2.length + contNumEst; o++) {
-                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1').css({ display: 'block' });
-                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').css({ display: 'block' });
-                $('#divAdicionalesInterior1 #divContenidoMeter' + (o + 1) + '1').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',1)'
-                );
-                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-bulletAdicional' + (o + 1) + '1').text(tubo2[tuboCont] / 10);
-                $('#divAdicionalesInterior1 .divSliderAdi' + (o + 1) + '1 #rs-range-lineAdicional' + (o + 1) + '1').val(
-                    tubo2[tuboCont] / 10
-                );
-                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1)).css({ display: 'block' });
-                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (o + 1) + ' #textosolo').text('TUBO');
-
-                tuboCont++;
             }
 
             contNumEst = contNumEst + tuboCont;
@@ -1207,6 +1425,115 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
         if (hueco == 3) {
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + t + '2').css({ display: 'none' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + t + '2').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == 0) {
+                        contadorDeHueco0++;
+                    }
+                    if (objetoTodoArray[o]['interior'] == 1) {
+                        contadorDeHueco0++;
+                    }
+                }
+            }
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == hueco - 1) {
+                        if (objetoTodoArray[o]['tipo'] != 'camisero') {
+                            $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                            $('#divAdicionalesInterior2 #divContenidoMeter' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                            $('#divAdicionalesInterior2 #divContenidoMeter' + (contadorEstWueToca + 1) + '2').attr(
+                                'onclick',
+                                'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',2)'
+                            );
+                            $(
+                                '#divAdicionalesInterior2 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '2 #rs-bulletAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '2'
+                            ).text(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $(
+                                '#divAdicionalesInterior2 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '2 #rs-range-lineAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '2'
+                            ).val(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['tipo']
+                            );
+                        } else {
+                            $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                            $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .divButtonCamisero').css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .range-slider').css({
+                                display: 'none'
+                            });
+                            $('#divAdicionalesInterior2 #divContenidoMeter' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[o]['tipo']
+                            );
+
+                            var contInput = 0;
+                            for (let v = 0; v < objetoTodoArray.length; v++) {
+                                if (objetoTodoArray[v] != undefined) {
+                                    if (objetoTodoArray[v]['interior'] == hueco - 1) {
+                                        if (objetoTodoArray[v]['tipo'] != 'camisero' && objetoTodoArray[v]['tipo'] != 'tubo') {
+                                            $(
+                                                '#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .divButtonCamisero'
+                                            ).append(
+                                                '<input onclick="camiseroFuncionMover(' +
+                                                    (hueco - 1) +
+                                                    ',' +
+                                                    (contadorEstWueToca + 1) +
+                                                    ',' +
+                                                    v +
+                                                    ')" type="radio" id="inputradioCamisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '' +
+                                                    v +
+                                                    '" style="margin-left:50px" name="camisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '">'
+                                            );
+                                            if (v == 0) {
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
+                                                    'checked',
+                                                    true
+                                                );
+                                            }
+                                            $(
+                                                '#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .divButtonCamisero'
+                                            ).append('<label style="margin-left:15px">' + (contInput + 1) + '</label>');
+                                            contInput++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        contadorEstWueToca++;
+                    }
+                }
+            }
+
             arrayHueco3 = arrayEstantes;
             tubo3 = tubo;
             if (objetoCajones3['posicion'] != undefined) {
@@ -1315,6 +1642,119 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
         }
         if (hueco == 4) {
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + t + '3').css({ display: 'none' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + t + '3').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == 0) {
+                        contadorDeHueco0++;
+                    }
+                    if (objetoTodoArray[o]['interior'] == 1) {
+                        contadorDeHueco0++;
+                    }
+                    if (objetoTodoArray[o]['interior'] == 2) {
+                        contadorDeHueco0++;
+                    }
+                }
+            }
+            for (let o = 0; o < objetoTodoArray.length; o++) {
+                if (objetoTodoArray[o] != undefined) {
+                    if (objetoTodoArray[o]['interior'] == hueco - 1) {
+                        if (objetoTodoArray[o]['tipo'] != 'camisero') {
+                            $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                            $('#divAdicionalesInterior3 #divContenidoMeter' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                            $('#divAdicionalesInterior3 #divContenidoMeter' + (contadorEstWueToca + 1) + '3').attr(
+                                'onclick',
+                                'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',3)'
+                            );
+                            $(
+                                '#divAdicionalesInterior3 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '3 #rs-bulletAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '3'
+                            ).text(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $(
+                                '#divAdicionalesInterior3 .divSliderAdi' +
+                                    (contadorEstWueToca + 1) +
+                                    '3 #rs-range-lineAdicional' +
+                                    (contadorEstWueToca + 1) +
+                                    '3'
+                            ).val(objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[contadorDeHueco0 + contadorEstWueToca]['tipo']
+                            );
+                        } else {
+                            $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                            $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .divButtonCamisero').css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .range-slider').css({
+                                display: 'none'
+                            });
+                            $('#divAdicionalesInterior3 #divContenidoMeter' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                                display: 'block'
+                            });
+                            $('#divAdicionalesInterior' + (hueco - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo').text(
+                                objetoTodoArray[o]['tipo']
+                            );
+
+                            var contInput = 0;
+                            for (let v = 0; v < objetoTodoArray.length; v++) {
+                                if (objetoTodoArray[v] != undefined) {
+                                    if (objetoTodoArray[v]['interior'] == hueco - 1) {
+                                        if (objetoTodoArray[v]['tipo'] != 'camisero' && objetoTodoArray[v]['tipo'] != 'tubo') {
+                                            $(
+                                                '#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .divButtonCamisero'
+                                            ).append(
+                                                '<input onclick="camiseroFuncionMover(' +
+                                                    (hueco - 1) +
+                                                    ',' +
+                                                    (contadorEstWueToca + 1) +
+                                                    ',' +
+                                                    v +
+                                                    ')" type="radio" id="inputradioCamisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '' +
+                                                    v +
+                                                    '" style="margin-left:50px" name="camisero' +
+                                                    (hueco - 1) +
+                                                    '' +
+                                                    (contadorEstWueToca + 1) +
+                                                    '">'
+                                            );
+                                            if (v == 0) {
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
+                                                    'checked',
+                                                    true
+                                                );
+                                            }
+                                            $(
+                                                '#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .divButtonCamisero'
+                                            ).append('<label style="margin-left:15px">' + (contInput + 1) + '</label>');
+                                            contInput++;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        contadorEstWueToca++;
+                    }
+                }
+            }
+
             arrayHueco4 = arrayEstantes;
             tubo4 = tubo;
             if (objetoCajones4['posicion'] != undefined) {
@@ -1473,7 +1913,18 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         $('#cliccambiarinteriores')[0].click();
         this.armariosDormitorioComponent.pintarInteriores(id);
     }
-
+    public paraCuandoMuevesIntFunction() {
+        var todo = $('#clicparaConfirmarMoverInteriores').attr('class');
+        var def = JSON.parse(todo);
+        var length = def['interiores'].length;
+        var array = [];
+        var cont = 0;
+        for (let i = 0; i < length; i++) {
+            array[cont] = def['interiores'][i];
+            cont++;
+        }
+        this.objetoTodoArray = array;
+    }
     public adcionaltipoFuncion(id) {
         var huecoPinta = this.armariosDormitorioComponent.huecoPinta;
         var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
@@ -1485,24 +1936,50 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCamisero3 = this.objetoCamiseroArray3;
         var objetoCamisero4 = this.objetoCamiseroArray4;
         var precio = 0;
-
+        var obj1 = {};
         var array = [];
-        if (huecoPinta == 1) {
-            array = this.adicionalesArray0;
-        }
-        if (huecoPinta == 2) {
-            array = this.adicionalesArray1;
-        }
-        if (huecoPinta == 3) {
-            array = this.adicionalesArray2;
-        }
-        if (huecoPinta == 4) {
-            array = this.adicionalesArray3;
-        }
-        if (huecoPinta == 5) {
-            array = this.adicionalesArray4;
-        }
+        array = this.objetoTodoArray;
         var cont = array.length;
+        var contDef = 0;
+        var posicionEstante = 0;
+        if (array.length > 0) {
+            for (let i = 0; i < array.length; i++) {
+                if (huecoPinta == 1) {
+                    if (array[i]['interior'] == 0) {
+                        contDef++;
+                    }
+                    if (array[i]['tipo'] == 'estante') {
+                        posicionEstante++;
+                    }
+                }
+                if (huecoPinta == 2) {
+                    if (array[i]['interior'] == 1) {
+                        contDef++;
+                    }
+                    if (array[i]['tipo'] == 'estante') {
+                        posicionEstante++;
+                    }
+                }
+                if (huecoPinta == 3) {
+                    if (array[i]['interior'] == 2) {
+                        contDef++;
+                    }
+                    if (array[i]['tipo'] == 'estante') {
+                        posicionEstante++;
+                    }
+                }
+                if (huecoPinta == 4) {
+                    if (array[i]['interior'] == 3) {
+                        contDef++;
+                    }
+                    if (array[i]['tipo'] == 'estante') {
+                        posicionEstante++;
+                    }
+                }
+            }
+
+            cont = contDef;
+        }
         var contCamiMet = 100;
         var arraymeter = '';
         var preciollamadogg = this.precioAdicionalesInt;
@@ -1519,16 +1996,39 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 40;
             preciollamadogg = preciollamadogg + 40;
             arraymeter = 'ESTANTE MADERA ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'ESTANTE MADERA ADICIONAL'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
+            obj1['posicion'] = 1000;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'estante';
+            obj1['numero'] = posicionEstante;
         }
         if (id == 1) {
             precio = precio + 50;
             preciollamadogg = preciollamadogg + 50;
             arraymeter = 'ESTANTE DE CRISTAL ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'ESTANTE DE CRISTAL ADICIONAL'
@@ -1539,88 +2039,201 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 15;
             preciollamadogg = preciollamadogg + 15;
             arraymeter = 'BARRA DE COLGAR ADICIONAL';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'BARRA DE COLGAR ADICIONAL'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
+            obj1['posicion'] = 1000;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'tubo';
         }
         if (id == 3) {
             precio = precio + 90;
             preciollamadogg = preciollamadogg + 90;
             arraymeter = '1 CAJON ADICIONAL DE SUELO';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 '1 CAJON ADICIONAL DE SUELO'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+            obj1['posicion'] = 0;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'cajones';
+            obj1['cantidad'] = 1;
         }
         if (id == 4) {
             preciollamadogg = preciollamadogg + 90;
             precio = precio + 90;
             arraymeter = '1 CAJON SUSPENDIDO';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('1 CAJON SUSPENDIDO');
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
+            obj1['posicion'] = 1000;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'cajones';
+            obj1['cantidad'] = 1;
         }
         if (id == 5) {
             precio = precio + 48;
             preciollamadogg = preciollamadogg + 48;
             arraymeter = 'CAMISERO DE 1 ALTURA';
             if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                     'CAMISERO DE 1 ALTURA'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('48 PP');
             } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
                     'CAMISERO DE 1 ALTURA'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('48 PP');
             }
+            obj1['posicion'] = 0;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'camisero';
+            obj1['cantidad'] = 1;
         }
         if (id == 6) {
             precio = precio + 96;
             preciollamadogg = preciollamadogg + 96;
             arraymeter = 'CAMISERO DE 2 ALTURAS';
             if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                     'CAMISERO DE 2 ALTURAS'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('96 PP');
             } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
                     'CAMISERO DE 2 ALTURAS'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('96 PP');
             }
+            obj1['posicion'] = 0;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'camisero';
+            obj1['cantidad'] = 2;
         }
         if (id == 7) {
             precio = precio + 144;
             preciollamadogg = preciollamadogg + 144;
             arraymeter = 'CAMISERO DE 3 ALTURAS';
             if (contCamiMet == 100) {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                     'CAMISERO DE 3 ALTURAS'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('144 PP');
             } else {
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                    display: 'block'
+                });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1)).css({ display: 'block' });
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #textosolo').text(
                     'CAMISERO DE 3 ALTURAS'
                 );
                 $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contCamiMet + 1) + ' #preciosolo').text('144 PP');
             }
+            obj1['posicion'] = 0;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'camisero';
+            obj1['cantidad'] = 3;
         }
         if (id == 8) {
             precio = precio + 205;
             preciollamadogg = preciollamadogg + 205;
             arraymeter = 'ZAPATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'ZAPATERO LATERAL EXTRAIBLE'
@@ -1631,6 +2244,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 80;
             preciollamadogg = preciollamadogg + 80;
             arraymeter = 'PANTALONERO EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('PANTALONERO EXTRAIBLE');
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
@@ -1639,22 +2261,42 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             precio = precio + 80;
             preciollamadogg = preciollamadogg + 80;
             arraymeter = 'CORBATERO LATERAL EXTRAIBLE';
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #eliminarAdicionalInterior' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #divContenidoMeter' + (cont + 1) + '' + (huecoPinta - 1)).css({
+                display: 'block'
+            });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'CORBATERO LATERAL EXTRAIBLE'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
         }
+        var cont = array.length;
         if (contCamiMet != 100) {
-            array[contCamiMet] = arraymeter;
+            array[contCamiMet] = obj1;
         } else {
             for (let i = 0; i <= cont; i++) {
                 if (array[i] == undefined) {
-                    array[i] = arraymeter;
+                    array[i] = obj1;
                 }
             }
         }
-        var otroarray = [];
+        this.objetoTodoArray = array;
+        console.log(array);
+        var objetoTODO = {};
+        objetoTODO['interiores'] = array;
+
+        $('#cliccambiarinteriores').attr('onclick', 'interioresNuevoJson(' + JSON.stringify(objetoTODO) + ')');
+        $('#cliccambiarinteriores')[0].click();
+
+        //antiguo adicional
+
+        /** var otroarray = [];
         var orden;
         if (huecoPinta == 1) {
             this.adicionalesArray0 = array;
@@ -2187,6 +2829,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco4.length + '(' + huecoPinta + ')');
         }
         $('#cliccambiarAdici1')[0].click();
+        **/
     }
 
     public enviarInterioresArmarioCambioAltura() {
@@ -3174,233 +3817,338 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     public eliminarAdicionales(u, id) {
-        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
-        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
-        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
-        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
-        var arrayHueco1 = this.arrayhuecoEstantes1;
-        var arrayHueco2 = this.arrayhuecoEstantes2;
-        var arrayHueco3 = this.arrayhuecoEstantes3;
-        var arrayHueco4 = this.arrayhuecoEstantes4;
-        var tubo1 = this.arrayTubo1;
-        var tubo2 = this.arrayTubo2;
-        var tubo3 = this.arrayTubo3;
-        var tubo4 = this.arrayTubo4;
-        var objetoCajones1 = this.objetoCajonesArray1;
-        var objetoCajones2 = this.objetoCajonesArray2;
-        var objetoCajones3 = this.objetoCajonesArray3;
-        var objetoCajones4 = this.objetoCajonesArray4;
         var classSaber = $('#eliminarAdicionalInterior' + u + '' + id).attr('class');
         var array = [];
         var nuevoarray = [];
+        var arrayDef = [];
+        var arrayEnv = [];
+        var contEnv = 0;
         var huecoPinta = id + 1;
         var preciollamadogg = this.precioAdicionalesInt;
         var cont = 0;
-        if (huecoPinta == 1) {
-            array = this.adicionalesArray0;
-        }
-        if (huecoPinta == 2) {
-            array = this.adicionalesArray1;
-        }
-        if (huecoPinta == 3) {
-            array = this.adicionalesArray2;
-        }
-        if (huecoPinta == 4) {
-            array = this.adicionalesArray3;
-        }
-        if (huecoPinta == 5) {
-            array = this.adicionalesArray4;
-        }
-        var nuevoarray = [];
-        var contArraynew = 0;
-        var nuevoCont = 0;
-        var nuevoArrayHueco = [];
-        var nuevoContTubo = 0;
-        var nuevoArrayHuecoTuebo = [];
-        for (var j = 0; j < array.length; j++) {
-            if (j != u - 1) {
-                nuevoarray[contArraynew] = array[j];
-                contArraynew++;
+        var contDef = 0;
+        array = this.objetoTodoArray;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i]['interior'] == huecoPinta - 1) {
+                nuevoarray[cont] = array[i];
+                cont++;
             }
         }
-
+        for (let i = 0; i < nuevoarray.length; i++) {
+            if (i != u - 1) {
+                arrayDef[contDef] = nuevoarray[i];
+                contDef++;
+            }
+        }
         if (huecoPinta == 1) {
-            this.adicionalesArray0 = nuevoarray;
-            if (classSaber == 'ESTANTE MADERA ADICIONAL') {
-                for (var j = 0; j < arrayHueco1.length; j++) {
-                    if (j != u - 1) {
-                        nuevoArrayHueco[nuevoCont] = arrayHueco1[j];
-                        nuevoCont++;
+            for (let i = 0; i < arrayDef.length; i++) {
+                if (arrayDef[i]['interior'] == 0) {
+                    arrayEnv[contEnv] = arrayDef[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 1) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 2) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 3) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior0 .divSliderAdi' + t + '0').css({ display: 'none' });
+                $('#divAdicionalesInterior0 #divContenidoMeter' + t + '0').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorhueco1 = 0;
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == huecoPinta - 1) {
+                        $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                        $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
+                        $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (contadorhueco1 + 1) + ',0)'
+                        );
+                        $(
+                            '#divAdicionalesInterior0 .divSliderAdi' +
+                                (contadorhueco1 + 1) +
+                                '0 #rs-bulletAdicional' +
+                                (contadorhueco1 + 1) +
+                                '0'
+                        ).text(arrayEnv[o]['posicion'] / 10);
+                        $(
+                            '#divAdicionalesInterior0 .divSliderAdi' +
+                                (contadorhueco1 + 1) +
+                                '0 #rs-range-lineAdicional' +
+                                (contadorhueco1 + 1) +
+                                '0'
+                        ).val(arrayEnv[o]['posicion'] / 10);
+                        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorhueco1 + 1)).css({
+                            display: 'block'
+                        });
+                        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorhueco1 + 1) + ' #textosolo').text(
+                            arrayEnv[o]['tipo']
+                        );
+                        contadorhueco1++;
                     }
                 }
-                arrayHueco1 = nuevoArrayHueco;
             }
-            if (classSaber == '1 CAJON ADICIONAL DE SUELO') {
-                objetoCajonesSuelo1 = {};
-                this.objetoCajonesSueloArray1 = objetoCajonesSuelo1;
+        }
+        if (huecoPinta == 2) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 0) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
             }
-            if (classSaber == '1 CAJON SUSPENDIDO') {
-                objetoCajones1 = {};
-                this.objetoCajonesArray1 = objetoCajones1;
+            for (let i = 0; i < arrayDef.length; i++) {
+                if (arrayDef[i]['interior'] == 1) {
+                    arrayEnv[contEnv] = arrayDef[i];
+                    contEnv++;
+                }
             }
-            if (classSaber == 'BARRA DE COLGAR ADICIONAL') {
-                for (var j = 0; j < tubo1.length; j++) {
-                    if (j != u - 1) {
-                        nuevoArrayHuecoTuebo[nuevoContTubo] = tubo1[j];
-                        nuevoContTubo++;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 2) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 3) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+        }
+        if (huecoPinta == 3) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 0) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 1) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < arrayDef.length; i++) {
+                if (arrayDef[i]['interior'] == 2) {
+                    arrayEnv[contEnv] = arrayDef[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 3) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+        }
+        if (huecoPinta == 4) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 0) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 1) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < array.length; i++) {
+                if (array[i]['interior'] == 2) {
+                    arrayEnv[contEnv] = array[i];
+                    contEnv++;
+                }
+            }
+            for (let i = 0; i < arrayDef.length; i++) {
+                if (arrayDef[i]['interior'] == 3) {
+                    arrayEnv[contEnv] = arrayDef[i];
+                    contEnv++;
+                }
+            }
+        }
+
+        this.objetoTodoArray = arrayEnv;
+        var objetoTODO = {};
+        objetoTODO['interiores'] = arrayEnv;
+        if (huecoPinta == 2) {
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior1 .divSliderAdi' + t + '1').css({ display: 'none' });
+                $('#divAdicionalesInterior1 #divContenidoMeter' + t + '1').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == 0) {
+                        contadorDeHueco0++;
                     }
                 }
-                tubo1 = nuevoArrayHuecoTuebo;
-                this.arrayTubo1 = tubo1;
+            }
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == huecoPinta - 1) {
+                        $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                        $('#divAdicionalesInterior1 #divContenidoMeter' + (contadorEstWueToca + 1) + '1').css({ display: 'block' });
+                        $('#divAdicionalesInterior1 #divContenidoMeter' + (contadorEstWueToca + 1) + '1').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',1)'
+                        );
+                        $(
+                            '#divAdicionalesInterior1 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '1 #rs-bulletAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '1'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $(
+                            '#divAdicionalesInterior1 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '1 #rs-range-lineAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '1'
+                        ).val(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                            display: 'block'
+                        });
+                        $(
+                            '#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['tipo']);
+                        contadorEstWueToca++;
+                    }
+                }
             }
         }
-        if (huecoPinta == 2) {
-            this.adicionalesArray1 = nuevoarray;
-        }
+
         if (huecoPinta == 3) {
-            this.adicionalesArray2 = nuevoarray;
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior2 .divSliderAdi' + t + '2').css({ display: 'none' });
+                $('#divAdicionalesInterior2 #divContenidoMeter' + t + '2').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + t).css({ display: 'none' });
+            }
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == 0) {
+                        contadorDeHueco0++;
+                    }
+                    if (arrayEnv[o]['interior'] == 1) {
+                        contadorDeHueco0++;
+                    }
+                }
+            }
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == huecoPinta - 1) {
+                        $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                        $('#divAdicionalesInterior2 #divContenidoMeter' + (contadorEstWueToca + 1) + '2').css({ display: 'block' });
+                        $('#divAdicionalesInterior2 #divContenidoMeter' + (contadorEstWueToca + 1) + '2').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',2)'
+                        );
+                        $(
+                            '#divAdicionalesInterior2 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '2 #rs-bulletAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '2'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $(
+                            '#divAdicionalesInterior2 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '2 #rs-range-lineAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '2'
+                        ).val(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                            display: 'block'
+                        });
+                        $(
+                            '#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['tipo']);
+                        contadorEstWueToca++;
+                    }
+                }
+            }
         }
+
         if (huecoPinta == 4) {
-            this.adicionalesArray3 = nuevoarray;
-        }
-        if (huecoPinta == 5) {
-            this.adicionalesArray4 = nuevoarray;
-        }
-
-        $('#divContenidoMeter' + u + '' + id).css({ display: 'none' });
-        var contHueco1 = 0;
-        var o = 0;
-        o = this.adicionalesArray0.length - 1;
-        for (o; o < this.adicionalesArray0.length; o++) {
-            $('#eliminarAdicionalInterior' + (o + 1) + '0').css({ display: 'block' });
-            $('#eliminarAdicionalInterior' + (o + 1) + '0').attr('class', this.adicionalesArray0[o]);
-            if (this.adicionalesArray0[o] == 'ESTANTE MADERA ADICIONAL') {
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                    arrayHueco1[o] / 10
-                );
-            }
-            if (this.adicionalesArray0[o] == '1 CAJON SUSPENDIDO') {
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(
-                    objetoCajones1['posicion'] / 10
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                    objetoCajones1['posicion'] / 10
-                );
-            }
-            if (this.adicionalesArray0[o] == '1 CAJON ADICIONAL DE SUELO') {
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').css({ display: 'block' });
-                $('#divAdicionalesInterior0 #divContenidoMeter' + (o + 1) + '0').attr(
-                    'onclick',
-                    'divcontenidometerfuncion(' + (o + 1) + ',0)'
-                );
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-bulletAdicional' + (o + 1) + '0').text(arrayHueco1[o] / 10);
-                $('#divAdicionalesInterior0 .divSliderAdi' + (o + 1) + '0 #rs-range-lineAdicional' + (o + 1) + '0').val(
-                    arrayHueco1[o] / 10
-                );
+            for (let t = 0; t < 8; t++) {
+                $('#divAdicionalesInterior3 .divSliderAdi' + t + '3').css({ display: 'none' });
+                $('#divAdicionalesInterior3 #divContenidoMeter' + t + '3').css({ display: 'none' });
+                $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + t).css({ display: 'none' });
             }
 
-            contHueco1++;
+            var contadorEstWueToca = 0;
+            var contadorDeHueco0 = 0;
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == 0) {
+                        contadorDeHueco0++;
+                    }
+                    if (arrayEnv[o]['interior'] == 1) {
+                        contadorDeHueco0++;
+                    }
+                    if (arrayEnv[o]['interior'] == 2) {
+                        contadorDeHueco0++;
+                    }
+                }
+            }
+            for (let o = 0; o < arrayEnv.length; o++) {
+                if (arrayEnv[o] != undefined) {
+                    if (arrayEnv[o]['interior'] == huecoPinta - 1) {
+                        $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                        $('#divAdicionalesInterior3 #divContenidoMeter' + (contadorEstWueToca + 1) + '3').css({ display: 'block' });
+                        $('#divAdicionalesInterior3 #divContenidoMeter' + (contadorEstWueToca + 1) + '3').attr(
+                            'onclick',
+                            'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',3)'
+                        );
+                        $(
+                            '#divAdicionalesInterior3 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '3 #rs-bulletAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '3'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $(
+                            '#divAdicionalesInterior3 .divSliderAdi' +
+                                (contadorEstWueToca + 1) +
+                                '3 #rs-range-lineAdicional' +
+                                (contadorEstWueToca + 1) +
+                                '3'
+                        ).val(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['posicion'] / 10);
+                        $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1)).css({
+                            display: 'block'
+                        });
+                        $(
+                            '#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (contadorEstWueToca + 1) + ' #textosolo'
+                        ).text(arrayEnv[contadorDeHueco0 + contadorEstWueToca]['tipo']);
+                        contadorEstWueToca++;
+                    }
+                }
+            }
         }
 
-        var orden;
-        if (huecoPinta == 1) {
-            this.adicionalesArray0 = nuevoarray;
-            this.armariosDormitorioComponent.adicionalesArray0 = nuevoarray;
-            orden = this.adicionalesArray0;
-        }
-        if (huecoPinta == 2) {
-            this.adicionalesArray1 = nuevoarray;
-            this.armariosDormitorioComponent.adicionalesArray1 = nuevoarray;
-        }
-        if (huecoPinta == 3) {
-            this.adicionalesArray2 = nuevoarray;
-            this.armariosDormitorioComponent.adicionalesArray2 = nuevoarray;
-        }
-        if (huecoPinta == 4) {
-            this.adicionalesArray3 = nuevoarray;
-            this.armariosDormitorioComponent.adicionalesArray3 = nuevoarray;
-        }
-        if (huecoPinta == 5) {
-            this.adicionalesArray4 = nuevoarray;
-            this.armariosDormitorioComponent.adicionalesArray4 = nuevoarray;
-        }
-
-        var arrayInterior = [];
-        $('#cliccambiarinteriores').attr(
-            'onclick',
-            "pintarinterioresArmarioShape1('" +
-                arrayHueco1 +
-                "','" +
-                arrayHueco2 +
-                "','" +
-                arrayHueco3 +
-                "','" +
-                arrayHueco4 +
-                "','" +
-                JSON.stringify(objetoCajones1) +
-                "','" +
-                JSON.stringify(objetoCajones2) +
-                "','" +
-                JSON.stringify(objetoCajones3) +
-                "','" +
-                JSON.stringify(objetoCajones4) +
-                "','" +
-                tubo1 +
-                "','" +
-                tubo2 +
-                "','" +
-                tubo3 +
-                "','" +
-                tubo4 +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo1) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo2) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo3) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo4) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo1) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo2) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo3) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo4) +
-                "','" +
-                JSON.stringify(huecoPinta) +
-                "','" +
-                JSON.stringify(orden) +
-                "','" +
-                arrayInterior +
-                "')"
-        );
+        $('#cliccambiarinteriores').attr('onclick', 'interioresNuevoJson(' + JSON.stringify(objetoTODO) + ')');
         $('#cliccambiarinteriores')[0].click();
-        if (huecoPinta == 1) {
-            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco1.length + '(' + huecoPinta + ')');
-        }
-        if (huecoPinta == 2) {
-            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco2.length + '(' + huecoPinta + ')');
-        }
-        if (huecoPinta == 3) {
-            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco3.length + '(' + huecoPinta + ')');
-        }
-        if (huecoPinta == 4) {
-            $('#cliccambiarAdici1').attr('onclick', 'anadirAddEventAdi' + arrayHueco4.length + '(' + huecoPinta + ')');
-        }
-        $('#cliccambiarAdici1')[0].click();
     }
     public quieroObservacionEnHueco(u) {
         $('#textareaobservacionesInt' + u).css({ display: 'block' });
@@ -33154,51 +33902,52 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (res == 'mb2') {
             res = 'mb1';
         }
+
         var idProd = '';
         idProd = $('#nombreMesita').attr('class');
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/anfd12f6hsvl6o3/BEIGE.png?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/sm7nv4v9i7tj9st/BEIGE.png?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/hs82gaqitfei4lz/KALA.png?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/whsbhyp2l631bna/LAGO.png?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/3223b1hzl94ilfv/LATTE.png?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/saejgqdhphhzpnl/NATURE.png?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
-        arrayAcabadoUrl['pietra'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
-        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
-        arrayAcabadoUrl['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/hjhnl5fhq7y378j/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/55g8hd1mxbj7fdo/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/dbjdchwov6mwai9/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/qhpamt0ekwec948/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/tpv55i6b91e0w38/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/v472dwuobh1myov/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/mfu6xuf6pyhjshq/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/qi8vt1fz66riltm/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/xwvi93rzjpixjjt/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/hs89c7eer9dy8vw/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['pietra'] = "'https://dl.dropboxusercontent.com/s/xcz4s5r7sm1xap9/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/f11t2yhfvwkfndy/TABAK.png?dl=1'";
+        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
 
         var arrayAcabadoCantos = [];
-        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/anfd12f6hsvl6o3/BEIGE.png?dl=1'";
-        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/q196gdhabe3zemo/BLANCO_CANTO.png?dl=1'";
         arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
-        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/hs82gaqitfei4lz/KALA.png?dl=1'";
-        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
-        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/whsbhyp2l631bna/LAGO.png?dl=1'";
-        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/3223b1hzl94ilfv/LATTE.png?dl=1'";
-        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
-        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
-        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
-        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/saejgqdhphhzpnl/NATURE.png?dl=1'";
-        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE%20CANTO.png?dl=1'";
-        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
-        arrayAcabadoCantos['pietra'] = "'https://dl.dropboxusercontent.com/s/sre26680dn4xg66/PIETRA%20CANTO.png?dl=1'";
-        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK%20CANTO.png?dl=1'";
-        arrayAcabadoCantos['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
-        arrayAcabadoCantos['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
-        arrayAcabadoCantos['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1'";
-        arrayAcabadoCantos['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO%20CANTO.png?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/gphco4slgbiazg3/KALA_CANTO.png?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/3mb88xauuqpkf3m/KOBE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/apr1jdu5ksjp7w6/LAGO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/ppk7oth0ykeij90/LATTE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/qleycwfbf0njs4f/MARE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/f0i90mfg7454xcg/MARMOL%20BLANCO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/rbwybrvuy8ghlxw/MARMOL%20NEGRO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/yt0r62w1mr3um9u/NATURE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/ccdee8su5r9xni9/NOCE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/173j1v3jqkyevnk/NORWAY_CANTO.png?dl=1'";
+        arrayAcabadoCantos['pietra'] = "'https://dl.dropboxusercontent.com/s/5q18cq4ntwllzmw/PIETRA_CANTO.png?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/utaijywqv5vgelv/TABAK_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
 
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');

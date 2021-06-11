@@ -61,6 +61,9 @@ public class PresupuestoPedido implements Serializable {
     
     @Column(name = "fecha_presupuesto")
     private String fecha_presupuesto;
+    
+    @Column(name = "nombre_cesta")
+    private String nombreCesta;
 
     @Column(name = "fecha_pedido")
     private String fecha_pedido;
@@ -159,6 +162,19 @@ public class PresupuestoPedido implements Serializable {
 
     public void setArchivoAdjunto(String archivoAdjunto) {
         this.archivoAdjunto = archivoAdjunto;
+    }
+    
+    public String getNombreCesta() {
+        return nombreCesta;
+    }
+
+    public PresupuestoPedido nombreCesta(String nombreCesta) {
+        this.nombreCesta = nombreCesta;
+        return this;
+    }
+
+    public void setNombreCesta(String nombreCesta) {
+        this.nombreCesta = nombreCesta;
     }
     
     public String getFecha_prevista() {

@@ -87,6 +87,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
     interiores: any;
     routeData: any;
     links: any;
+    enviarInterioresArmarioCambioAltura: any;
     precioTienda1: any;
     totalItems: any;
     queryCount: any;
@@ -20928,7 +20929,42 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             codigo != 'NH063' &&
             codigo != 'NH064' &&
             codigo != 'NH065' &&
-            codigo != 'NH066'
+            codigo != 'NH066' &&
+            codigo != 'NH021' &&
+            codigo != 'NH022' &&
+            codigo != 'NH023' &&
+            codigo != 'NH024' &&
+            codigo != 'NH029' &&
+            codigo != 'NH030' &&
+            codigo != 'NH031' &&
+            codigo != 'NH032' &&
+            codigo != 'NH042' &&
+            codigo != 'NH043' &&
+            codigo != 'NH044' &&
+            codigo != 'NH045' &&
+            codigo != 'NH046' &&
+            codigo != 'NH047' &&
+            codigo != 'NH048' &&
+            codigo != 'NH049' &&
+            codigo != 'NH050' &&
+            codigo != 'NH051' &&
+            codigo != 'NH052' &&
+            codigo != 'NH053' &&
+            codigo != 'NH054' &&
+            codigo != 'NH055' &&
+            codigo != 'NH056' &&
+            codigo != 'NH057' &&
+            codigo != 'NH058' &&
+            codigo != 'NH059' &&
+            codigo != 'NH060' &&
+            codigo != 'NH061' &&
+            codigo != 'NH067' &&
+            codigo != 'NH068' &&
+            codigo != 'NH069' &&
+            codigo != 'NH070' &&
+            codigo != 'NH071' &&
+            codigo != 'NH072' &&
+            codigo != 'NH073'
         ) {
             if (uid == 0) {
                 this.uid = 1;
@@ -27008,9 +27044,17 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 codIdShape =
                     'f8f105255a5a5ecf44c3233b1b9abe1c9e7a2f1366d649c1e6d4d1ed8ebbb317251ee10d0a3370b15f5f55d23fecef0af6613e61951ac9bf062cd030bd02eea046b299c6fc221b2e7aa0013117454262c9d6b1f6368c15bd2f159333e30ab8f0946614713ef2996190cc86ae837bbf7650e01db7a465-dfbab8d7b2079ec26bb2c69147501b99-0c3e420dc57a58b00749b1cfa9d20f24-383c851e93a938ed12d35171524134bd-ea9cd1ee45009ab35ba255dc3bf88617-3f2144f7cec3dceb8f2396d0baae8fea';
             }
+            if (codigo == 'NH021' || codigo == 'NH022' || codigo == 'NH023' || codigo == 'NH024') {
+                codIdShape =
+                    'a6d97324c508ac97b61c90b1cf239a143de7226bad06257998efe61af61a649f946d4839ec67c96c1516285dbf941fec79fc65ab41dc100682ba78584c22d3a2dbf7364e007918ea66e91df000251b98ca1e9cf69c8349611f936de0e8c97f9964a538666821c379e0c9b85875f487d8132feb419d2e-67850d02fcaeaffde5c44941ade0904b';
+            }
             if (codigo == 'NH025' || codigo == 'NH026' || codigo == 'NH027' || codigo == 'NH028') {
                 codIdShape =
                     '7008bf8fc889ba2c8728942cd0e21091daf27558613c1c3723e59302153099c783b72898fc5e36b8f59efbe03ad7812d0d00b3c56c5bdba6945d8679c9c971a39c435a198c69445f3e32ebf0eda1ede7b685c592a51925789f996adcc2cd0294285abf596845a374d198d85a7e370a9c75795d6a5141-963d83b117cafde8e6728279d2d094aa-ea9cd1ee45009ab35ba255dc3bf88617-3f2144f7cec3dceb8f2396d0baae8fea';
+            }
+            if (codigo == 'NH029' || codigo == 'NH030' || codigo == 'NH031' || codigo == 'NH032') {
+                codIdShape =
+                    '41ae14fffebde4c780d6732a4da8e77ceb6199671a0289b16a03d52784fa4eb361ed0c7f22658dc4028ccc4c59b5aef2d1032ea0daf02743fe478ec94fa774546ae235e57db7fd83b8464c8e7734f158e467b94448591a21e74dc7e7e7394f9eaa60e05775ddad25af6039c77cbaa08af70aa5ccb622-05279333923a91b95c889e58beb61a92';
             }
             if (codigo == 'NH033' || codigo == 'NH034' || codigo == 'NH035' || codigo == 'NH036') {
                 codIdShape =
@@ -27019,6 +27063,42 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             if (codigo == 'NH037' || codigo == 'NH038' || codigo == 'NH039' || codigo == 'NH040' || codigo == 'NH041') {
                 codIdShape =
                     '8cadc63cf7fcc46926e285d0dc3ab33b3deb00f5d806135ad6f1803a3658dec014338fe15bc4b876518f025fcd235b3c9674f6c7b0f80289763010463eba476ca313bdfd25390c4f547087f95ad258210c8b9795e38448972f06320e5b5a5a65a1c583e65bb1c9fc9b276f440c96d47f114ffd8aa64e-7478948f240fc0c90acf922c3731471f-6f9cd850a20e820e8d4a606c629e20e8-963d83b117cafde8e6728279d2d094aa-ea9cd1ee45009ab35ba255dc3bf88617-3f2144f7cec3dceb8f2396d0baae8fea';
+            }
+            if (codigo == 'NH042' || codigo == 'NH043' || codigo == 'NH044' || codigo == 'NH045') {
+                codIdShape =
+                    '2bc4584a318546895ce5e62e4dcc47ff445f3e3f884e83e50bb1c47be39bd6418e2ba07cee0ed8cabdccdf461db5f24fda536d98744618fea27fde291fda8634310d971edb0ef36f4a565a62dc005703addb6d847f8857bb363a6cb5dd412eb38a578975f777dc94cde7798e4e851ffae7c07b6eef60-e41fe72db52f037cb28d5feca96ea877';
+            }
+            if (codigo == 'NH046' || codigo == 'NH047' || codigo == 'NH048' || codigo == 'NH049') {
+                codIdShape =
+                    '5bfcbeba07b87a5ded11f95474a90bf4b853fe2de8e35bc0042951c73c643fca596572b77982c6dc3f82e7c0d1c629803e5fe33735a6121a5ae70796b7625903e8861f3200a554d9e5d2a5582d038732b4a73be912725f7ca3faf89299f6f62bd9dce924191933e3777d77386544c1805bf07c8ef06b-4752dcff3adb5b0989f95b5be12cb33b';
+            }
+            if (codigo == 'NH050' || codigo == 'NH051') {
+                codIdShape =
+                    'd573c77862eeedc353918b56218b24e8a5b9699115758d750e2c3852e8956b05df38225ff7453c9f21c4c6df9d923381195e01126552fbbdf5c05fa187e23916f74e755fbd25f238011393e146ab5fe17c96a2b0641a4e46f018f14942c7b6621dbb7d3cb24419bf3e6d077960bf679352cb94374920-7bdcdcfe5f1fcc472aecd0a38ac54b0b';
+            }
+            if (codigo == 'NH052' || codigo == 'NH053') {
+                codIdShape =
+                    '3932ea0644483681ccb079275210ae5aaa9ab0c1e8a95b7e455b05c1ff642cdde912eb27157ecdf654cf7080325fa0dbcc7bb5193b1b3824e5ef56893305c0c477fb49c8b9ce2562876657abb65d7072460e59089febbea1013b29cb4b91f946183b4c6a7eb69e5102107d82f26885c9a6ad2db1ba71-d16a3350578b40669a00ee514f27d59b';
+            }
+            if (codigo == 'NH054' || codigo == 'NH055' || codigo == 'NH056' || codigo == 'NH057') {
+                codIdShape =
+                    '8bf668f14e81de14e38c8eff452c534e4ca5766a89a7c5a6d94195524e359feb2350b0b213eae026e9bbad27d48bc432383e74cfc1379bce802e2ec776a26a2df58fe9df814c4168075f038c22e4274a36e7e38b594d332a343d273f34db0c863795b45c89d58a99d767cb15d88c14d0cf5201226060-ad69ad21191197577cc1f90624701777';
+            }
+            if (codigo == 'NH058' || codigo == 'NH059' || codigo == 'NH060' || codigo == 'NH061') {
+                codIdShape =
+                    'cdaa7a5e459c4d5490d617de415f1c239f828b9ac0c61759f4c2492eb3fa0f70e6cd50ca98303532713c74500e6074563a9dfdd0d2371cda5c3cf725c71ae6c1b3e981e3ca536f46678223c8154e2e8a43fb06c67ea0f462aff691e1f9e86ca3760fe978f34a7e0c0d6a514ee8a6c10993bf488d32d9-f6fd9fb21af2f2fee2a6e026e9949108';
+            }
+            if (codigo == 'NH067' || codigo == 'NH068' || codigo == 'NH069') {
+                codIdShape =
+                    '05b6b6625189b49175a36a846c4e5c3e96486a6afa64c323d9b78ccdfcd269ddd2829194b2bd5ee95925c8d20dca5d44cb654f5946c5189aa33a13253f6b73894b4aac20a380c9f98b72e1b467ea0000854714aaa4511ef957e398b555168e5e041b1e823eab146f678f15032d4b7231cde382fc73c9-54f00eeb8486a85a9c544722c2b81c7f';
+            }
+            if (codigo == 'NH070' || codigo == 'NH071') {
+                codIdShape =
+                    '23a11501d714ef79ffe11f599148047074d896bb875bba543180b543cac8e562e63b350d90429029a02dcf83c3a8a5c16256bf7007f5722076eb66653db53f03e35edc59a90f789d34eca9728cc7e0ae5c0eb76cea46724728c0e7455803fcadff98d19dc28c87f49de9304591d8f49e71a655e634c9-01a40822aff57c8d8698b55d9e751edc';
+            }
+            if (codigo == 'NH072' || codigo == 'NH073') {
+                codIdShape =
+                    '5f6ce2427892376fcff9aff19eb4ed2c892d53a69aa00bd857395da3c2e352591c35557234d046268f04236e1da49a91a9a6edac959f7cd442e327505ca4996ce2a643024211f837f6a6a45c967618187ca4d67cc0ffec6c2a536cc0ba28737e089647f09883509ca58c0d63a4ff40591dfed98db1ec-fa108003d99029510b42bf10e6c6f4a6';
             }
             if (codigo == 'NH062' || codigo == 'NH063' || codigo == 'NH064' || codigo == 'NH065' || codigo == 'NH066') {
                 codIdShape =
@@ -29706,7 +29786,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) != 114 &&
             parseFloat(idProd) != 114 &&
             parseFloat(idProd) != 109 &&
-            parseFloat(idProd) != 410
+            parseFloat(idProd) != 410 &&
+            parseFloat(idProd) != 111 &&
+            parseFloat(idProd) != 113 &&
+            parseFloat(idProd) != 116 &&
+            parseFloat(idProd) != 115 &&
+            parseFloat(idProd) != 298 &&
+            parseFloat(idProd) != 297 &&
+            parseFloat(idProd) != 118 &&
+            parseFloat(idProd) != 117 &&
+            parseFloat(idProd) != 299 &&
+            parseFloat(idProd) != 301 &&
+            parseFloat(idProd) != 300
         ) {
             nombre = res;
             var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -30354,6 +30445,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         } else {
             this.productosShapediverComponent.acabados = this.acabados;
             this.productosShapediverComponent.cambiarAcabado(idImagen, id, id1);
+            this.productosShapediverComponent.iluminacion = this.iluminacion;
         }
     }
 
@@ -30526,7 +30618,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) == 114 ||
             parseFloat(idProd) == 114 ||
             parseFloat(idProd) == 109 ||
-            parseFloat(idProd) == 410
+            parseFloat(idProd) == 410 ||
+            parseFloat(idProd) == 111 ||
+            parseFloat(idProd) == 113 ||
+            parseFloat(idProd) == 116 ||
+            parseFloat(idProd) == 115 ||
+            parseFloat(idProd) == 298 ||
+            parseFloat(idProd) == 297 ||
+            parseFloat(idProd) == 118 ||
+            parseFloat(idProd) == 117 ||
+            parseFloat(idProd) == 299 ||
+            parseFloat(idProd) == 301 ||
+            parseFloat(idProd) == 300
         ) {
             $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');
             $('#apoyoestaCogidoApi')[0].click();
@@ -31130,6 +31233,22 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         }
                     }
                 });
+                var bien = 2;
+                for (let y = 0; y <= 15; y++) {
+                    var yeah = $('#datos1 #acabado' + y).html();
+                    if (yeah != undefined) {
+                        var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
+                        if (nombreAcabado != '' && bien != 0) {
+                            bien = 1;
+                        } else {
+                            bien = 0;
+                        }
+                    }
+                }
+
+                if (bien == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
             });
         } else {
             var nombreBase;
@@ -31562,23 +31681,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                         }
                     }
                 });
-            });
-        }
-        var bien = 2;
-        for (let y = 0; y <= 15; y++) {
-            var yeah = $('#datos1 #acabado' + y).html();
-            if (yeah != undefined) {
-                var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
-                if (nombreAcabado != '' && bien != 0) {
-                    bien = 1;
-                } else {
-                    bien = 0;
+                var bien = 2;
+                for (let y = 0; y <= 15; y++) {
+                    var yeah = $('#datos1 #acabado' + y).html();
+                    if (yeah != undefined) {
+                        var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
+                        if (nombreAcabado != '' && bien != 0) {
+                            bien = 1;
+                        } else {
+                            bien = 0;
+                        }
+                    }
                 }
-            }
-        }
 
-        if (bien == 1) {
-            $('#botonCalculadora').removeAttr('class');
+                if (bien == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
+            });
         }
     }
 
@@ -34165,15 +34284,38 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 114 ||
             parseFloat(idProd1) == 114 ||
             parseFloat(idProd1) == 109 ||
-            parseFloat(idProd1) == 410
+            parseFloat(idProd1) == 410 ||
+            parseFloat(idProd1) == 111 ||
+            parseFloat(idProd1) == 113 ||
+            parseFloat(idProd1) == 116 ||
+            parseFloat(idProd1) == 115 ||
+            parseFloat(idProd1) == 298 ||
+            parseFloat(idProd1) == 297 ||
+            parseFloat(idProd1) == 118 ||
+            parseFloat(idProd1) == 117 ||
+            parseFloat(idProd1) == 299 ||
+            parseFloat(idProd1) == 301 ||
+            parseFloat(idProd1) == 300
         ) {
+            var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+            if (cogerIdCesta == null || cogerIdCesta == undefined) {
+                var nombreCesta = '';
+                var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+                for (var q = 0; q < 5; q++) {
+                    nombreCesta += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+                sessionStorage.setItem('cestaIdMod', nombreCesta);
+                cogerIdCesta = nombreCesta;
+            }
             var contNumArtCarr = 1;
             $('#clicparaEnviarAbbdd')[0].click();
             var imagenApi = $('#imagen1BBDD').attr('class');
             var nombreEspecialggez = Math.random();
             var obj = {
                 imagen: imagenApi,
-                nombre: nombreEspecialggez
+                nombre: nombreEspecialggez,
+                nombreCesta: cogerIdCesta
             };
 
             this.subscribeToSaveResponse(this.imagenDeCestaProdService.create(obj));
@@ -34431,7 +34573,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 114 ||
                             parseFloat(idProd1) == 114 ||
                             parseFloat(idProd1) == 109 ||
-                            parseFloat(idProd1) == 410
+                            parseFloat(idProd1) == 410 ||
+                            parseFloat(idProd1) == 111 ||
+                            parseFloat(idProd1) == 113 ||
+                            parseFloat(idProd1) == 116 ||
+                            parseFloat(idProd1) == 115 ||
+                            parseFloat(idProd1) == 298 ||
+                            parseFloat(idProd1) == 297 ||
+                            parseFloat(idProd1) == 118 ||
+                            parseFloat(idProd1) == 117 ||
+                            parseFloat(idProd1) == 299 ||
+                            parseFloat(idProd1) == 301 ||
+                            parseFloat(idProd1) == 300
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }
@@ -34457,7 +34610,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 console.log(sessionStorage);
             }
         }
-
+        $('#soloParaMeterEnlacesYmostrar').empty();
         this.borrarProdCalculadora();
     }
 

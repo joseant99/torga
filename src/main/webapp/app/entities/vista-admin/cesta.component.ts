@@ -9520,16 +9520,18 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             nombreCargarImagen = 'NH507-NH510';
                         }
                         if (sesion[1]['nombreEspecialggez'] != undefined) {
-                            var imagenDeCestaProd = [];
-                            this.imagenDeCestaProdService.findCoger(sesion[1]['nombreEspecialggez']).subscribe(data => {
-                                $('#cuerpo' + i + ' #izquierda').append(
-                                    '<img id="imagenPresupues" style="z-index:' +
-                                        (100 - i) +
-                                        ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="' +
-                                        data.body[0]['imagen'] +
-                                        '">'
-                                );
-                            });
+                            var todosImagenesShape = this.navbarComponent.imagenDeCestaProdService.todos;
+                            for (var t = 0; t < todosImagenesShape.length; t++) {
+                                if (todosImagenesShape[t]['nombre'] == sesion[1]['nombreEspecialggez']) {
+                                    $('#cuerpo' + i + ' #izquierda').append(
+                                        '<img id="imagenPresupues" style="z-index:' +
+                                            (100 - i) +
+                                            ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="' +
+                                            todosImagenesShape[t]['imagen'] +
+                                            '">'
+                                    );
+                                }
+                            }
                         } else {
                             $('#cuerpo' + i + ' #izquierda').append(
                                 '<img id="imagenPresupues" style="z-index:' +

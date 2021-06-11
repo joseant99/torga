@@ -32787,6 +32787,22 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         }
                     }
                 });
+                var bien = 0;
+                for (let y = 0; y <= 15; y++) {
+                    var yeah = $('#datos1 #acabado' + y).html();
+                    if (yeah != undefined) {
+                        var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
+                        if (nombreAcabado != '') {
+                            bien = 1;
+                        } else {
+                            bien = 0;
+                        }
+                    }
+                }
+
+                if (bien == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
             });
         } else {
             this.tiposApoyoService.findBus1(idApoyo).subscribe(data => {
@@ -33127,23 +33143,23 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                         }
                     }
                 });
-            });
-        }
-        var bien = 0;
-        for (let y = 0; y <= 15; y++) {
-            var yeah = $('#datos1 #acabado' + y).html();
-            if (yeah != undefined) {
-                var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
-                if (nombreAcabado != '') {
-                    bien = 1;
-                } else {
-                    bien = 0;
+                var bien = 0;
+                for (let y = 0; y <= 15; y++) {
+                    var yeah = $('#datos1 #acabado' + y).html();
+                    if (yeah != undefined) {
+                        var nombreAcabado = $('#datos1 #acabado' + y + ' #nombreAcaCalcu' + y).text();
+                        if (nombreAcabado != '') {
+                            bien = 1;
+                        } else {
+                            bien = 0;
+                        }
+                    }
                 }
-            }
-        }
 
-        if (bien == 1) {
-            $('#botonCalculadora').removeAttr('class');
+                if (bien == 1) {
+                    $('#botonCalculadora').removeAttr('class');
+                }
+            });
         }
     }
 

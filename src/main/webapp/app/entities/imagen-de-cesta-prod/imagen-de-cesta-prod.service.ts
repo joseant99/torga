@@ -12,7 +12,8 @@ type EntityArrayResponseType = HttpResponse<IImagenDeCestaProd[]>;
 @Injectable({ providedIn: 'root' })
 export class ImagenDeCestaProdService {
     public resourceUrl = SERVER_API_URL + 'api/imagen-de-cesta-prods';
-
+    public todos;
+    public todos1;
     constructor(protected http: HttpClient) {}
 
     create(imagenDeCestaProd: IImagenDeCestaProd): Observable<EntityResponseType> {
