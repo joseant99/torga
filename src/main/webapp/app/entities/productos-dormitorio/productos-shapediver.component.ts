@@ -425,6 +425,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
+
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'hang';
                     } else {
                         obj1['posicion'] = (alturaValor - 90) / 2;
                         obj1['interior'] = hueco - 1;
@@ -434,6 +437,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
+
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'hang';
                     }
                 }
                 if (id == 3) {
@@ -613,6 +619,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
+
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'hang';
                     } else {
                         obj1['posicion'] = (alturaValor - 30) / 8;
                         obj1['interior'] = hueco - 1;
@@ -633,6 +642,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
+
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'hang';
                     }
                 }
                 if (id == 8) {
@@ -665,22 +677,27 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = (alturaValor - 30) / 6;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
+                        obj1['numero'] = 0;
 
                         obj2['posicion'] = (alturaValor - 30) / 3;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
+                        obj2['numero'] = 1;
 
                         obj3['posicion'] = (alturaValor - 30) / 2;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
 
                         obj4['posicion'] = (2 / 3) * (alturaValor - 30);
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 3;
 
                         obj5['posicion'] = (5 / 6) * (alturaValor - 30);
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'estante';
+                        obj5['numero'] = 4;
                     }
                 }
                 if (id == 9) {
@@ -697,6 +714,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     } else {
                         obj1['posicion'] = 694;
                         obj1['interior'] = hueco - 1;
@@ -710,6 +728,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     }
                 }
                 if (id == 10) {
@@ -726,6 +745,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     } else {
                         obj1['posicion'] = 522;
                         obj1['interior'] = hueco - 1;
@@ -739,6 +759,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1960;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     }
                 }
                 if (id == 11) {
@@ -755,6 +776,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     } else {
                         obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
@@ -768,6 +790,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1960;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     }
                 }
                 if (id == 12) {
@@ -784,10 +807,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 730;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 1;
                     } else {
                         obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
@@ -801,10 +826,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 730;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 1;
                     }
                 }
                 if (id == 13) {
@@ -821,10 +848,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 932;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 1;
                     } else {
                         obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
@@ -838,10 +867,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 932;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
+                        obj4['numero'] = 1;
                     }
                 }
                 if (id == 14) {
@@ -858,6 +889,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     } else {
                         obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
@@ -871,6 +903,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
                     }
                 }
                 if (id == 15) {
@@ -887,6 +920,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 380;
                         obj4['interior'] = hueco - 1;
@@ -905,6 +939,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj4['posicion'] = 380;
                         obj4['interior'] = hueco - 1;
@@ -921,6 +956,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj1['posicion'] = 380;
                         obj1['interior'] = hueco - 1;
@@ -934,11 +970,144 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1950;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 0;
 
                         obj1['posicion'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'camisero';
                         obj1['cantidad'] = 3;
+                    }
+                }
+
+                if (id == 22) {
+                    if (alturaValor < 2250) {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 4;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+                    } else {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 4;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+                    }
+                }
+
+                if (id == 23) {
+                    if (alturaValor < 2250) {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 5;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+
+                        obj4['posicion'] = obj1['posicion'] * 4 + 6;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estantecristal';
+                        obj4['puesto'] = 3;
+                    } else {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 5;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+
+                        obj4['posicion'] = obj1['posicion'] * 4 + 6;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estantecristal';
+                        obj4['puesto'] = 3;
+                    }
+                }
+
+                if (id == 24) {
+                    if (alturaValor < 2250) {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 6;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+
+                        obj4['posicion'] = obj1['posicion'] * 4 + 6;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estantecristal';
+                        obj4['puesto'] = 3;
+
+                        obj5['posicion'] = obj1['posicion'] * 5 + 6;
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'estantecristal';
+                        obj5['puesto'] = 3;
+                    } else {
+                        obj1['posicion'] = (alturaValor - 30 - 18) / 6;
+                        obj1['interior'] = hueco - 1;
+                        obj1['tipo'] = 'estantecristal';
+                        obj1['puesto'] = 0;
+
+                        obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['interior'] = hueco - 1;
+                        obj2['tipo'] = 'estantecristal';
+                        obj2['puesto'] = 1;
+
+                        obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['interior'] = hueco - 1;
+                        obj3['tipo'] = 'estantecristal';
+                        obj3['puesto'] = 2;
+
+                        obj4['posicion'] = obj1['posicion'] * 4 + 6;
+                        obj4['interior'] = hueco - 1;
+                        obj4['tipo'] = 'estantecristal';
+                        obj4['puesto'] = 3;
+
+                        obj5['posicion'] = obj1['posicion'] * 5 + 6;
+                        obj5['interior'] = hueco - 1;
+                        obj5['tipo'] = 'estantecristal';
+                        obj5['puesto'] = 3;
                     }
                 }
             }
@@ -2034,6 +2203,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 'ESTANTE DE CRISTAL ADICIONAL'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
+
+            obj1['posicion'] = 1000;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'estantecristal';
         }
         if (id == 2) {
             precio = precio + 15;
@@ -2224,7 +2397,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (id == 8) {
             precio = precio + 205;
             preciollamadogg = preciollamadogg + 205;
-            arraymeter = 'ZAPATERO LATERAL EXTRAIBLE';
+            arraymeter = 'COLGADOR HANG';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
                 display: 'block'
             });
@@ -2235,10 +2408,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 display: 'block'
             });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                'ZAPATERO LATERAL EXTRAIBLE'
-            );
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('COLGADOR HANG');
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('205 PP');
+
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'hang';
         }
         if (id == 9) {
             precio = precio + 80;
@@ -30861,7 +31035,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                         $('#modalApoyo #apoyoModal' + 2).append(
                                             '<strong><p style="text-align:center;font-size: 14px;">' +
                                                 data.body[w]['nombre'] +
-                                                ' Remetido 6,25 cm a ambos lados</strong></p>'
+                                                ' Remetido 3 cm a ambos lados</strong></p>'
                                         );
                                     }
                                 } else {
@@ -30914,7 +31088,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                         $('#modalApoyo #apoyoModal' + 7).append(
                                             '<strong><p style="text-align:center;width: 70%;margin-left: 10%;">' +
                                                 data.body[w]['nombre'] +
-                                                ' Remetida 5,25 cm a ambos lados</strong></p>'
+                                                ' Remetida 3 cm a ambos lados</strong></p>'
                                         );
                                     }
                                     if (data.body[w]['id'] == 411) {

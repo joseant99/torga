@@ -27644,7 +27644,8 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
         var precioPunto = parseFloat(this.precioPunto);
         var iva = this.iva;
         if (id == 'Si') {
-            var idProd = this.idDelProducto;
+            var idProd = '';
+            idProd = $('#nombreMesita').attr('class');
             $('#precioDeLaLuz').css({ display: 'block' });
             var luz = this.estaEsLaLUZ;
             if (luz != undefined) {
@@ -27653,23 +27654,23 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 $('#precioDimension').text(precioDimen - precioLuz);
             }
             this.estaEsLaLUZ = undefined;
-            this.iluminacionService.findProd(idProd).subscribe(data => {
+            this.iluminacionService.findProd(parseFloat(idProd)).subscribe(data => {
                 console.log(data.body);
                 if (data.body.length != 0) {
                     $('#tenerLUZ').css({ display: 'block' });
-                    if (idProd == 87) {
+                    if (parseFloat(idProd) == 87) {
                         var codigodato = $('#codigoMensajeDatos').text();
                         if (codigodato == 'NH145') {
                             data.body[0]['precio'] = data.body[0]['precio'] - 1;
                         }
                     }
-                    if (idProd == 86) {
+                    if (parseFloat(idProd) == 86) {
                         var codigodato = $('#codigoMensajeDatos').text();
                         if (codigodato == 'NH146') {
                             data.body[0]['precio'] = data.body[0]['precio'] - 1;
                         }
                     }
-                    if (idProd == 92) {
+                    if (parseFloat(idProd) == 92) {
                         var codigodato = $('#codigoMensajeDatos').text();
                         if (codigodato == 'NH153') {
                             data.body[0]['precio'] = data.body[0]['precio'] - 3;

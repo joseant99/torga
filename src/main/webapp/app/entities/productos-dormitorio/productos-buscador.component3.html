@@ -2260,6 +2260,7 @@
 		    		<span>30 mm</span>
 		    	</div>
 	    	</div>
+	    	<a id="cargarApiShape" style="display:none">prueba</a>
 	    	<div style="width:90%;margin-left:10%;display:none" class="divdentrocanteadotablero">
 	    		<p style="width:100%;text-align:center;font-size:25px;">CANTEADO</p>
 	   			<div style="margin-left:40%" id="divcodigoarituclos" class="divcodigometerfondo123" (click)="meterCanteadoCalculadora('SI')">
@@ -2742,7 +2743,12 @@
     
     <div  style="display:none;top: 0;bottom: 0;height: 1000px;" id="producto" class="divBuscadorArticulos">
     	    <div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 110px;top: 0;TEXT-ALIGN:CENTER;z-index:1000"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volverAtras1MeterCasa" (click)="volveratras(2)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;display:none" id="volverAtras125MeterCasa" (click)="volveratras(125)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;" id="textodivsuperiorquenosecambia4">CONFIGURACION</span><span id="divvolveriniciomen" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: right;border: 1px red solid;color: red;padding-top: 13px;margin-right: 10%;" (click)="volveratras(6)"><span id="paraQuitarPaTras">VOLVER AL INICIO</span><img src="../../../content/images/comedores/cajaroja.png" style="width:10px;display:none" id="imagenAtarmen1"></span></div>
-    	
+    		<div id="diviframeprueba" style="display:none">
+    			<div id='sdv-container' style="width: 75%;height: 700px;margin-top: 8%;margin-left: 25%;">
+    			
+			    </div>
+			    
+    		</div>
    <!--   <div style="margin-right:0%;margin-left:24%;background-color:#dfdddc" [id]='modulosBajos.productosDormitorio.id' class="productosColor{{modulosBajos.productosDormitorio.id}}" *ngIf="modulosBajos !== undefined">
         	<div class="productosColorSolo{{modulosBajos.productosDormitorio.id}}">
 	    	<div id="productosDormitorioCargados">
@@ -2856,6 +2862,16 @@
 					<strong style="float:left;" id="negritaNombre"><p id="nombreMesita" style="font-weight: 600;"></p><p id="nombreMesitaArma" style="display:none"></p></strong><p id="textprecioCalculadoraazul" style="float:right;display:none;    display: block;float: right !important;position: absolute !important;bottom: 38px !important;background-color: #addaf1 !important;width: 50% !important;height: 68px !important;left: 0 !important;text-align: center !important;margin-bottom: 0 !important;"><strong id="precioDimension" style="float:left;font-weight: 600;"></strong><span style="display:none;float:left" id="euroCalculadora">&euro;</span><span style="display:none;float:left" id="ppCalculadora"> <span style="font-weight: 600;">pp</span></span></p >
 				</div>
 					<a id="clicparacambiardecolor123" style="display:none">prueba</a>
+					<a id="clicparacambiardecolor" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="clicparacambiardecolor123" onclick="cambiardecolor123(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="clicparacambiardecolor1234" onclick="cambiardecolor1234(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="cliccambiarinteriores" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
+						<a id="clicparaEnviarAbbdd" style="diplay:none" onclick="imagenCarritoApi()"></a>
+						<a id="cliccambiarAdici1" onclick="anadirAddEventAdi1(id)" style="display:none">prueba</a>
+						<a id="urldebrilloacabado" style="display:none"></a>
+						<a id="cambioDeAlturaSitieneInteriores" style="display:none">prueba</a>
+						<a id="setintervalfuncion" style="display:none" onclick="setIntervalfuncioncomprobar()">prueba</a>
+						<a id="apoyoestaCogidoApi" style="display:none"></a>
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;">
 								
@@ -3749,7 +3765,11 @@
 					<div style="width:100%;height:7%;background-color:gray;color:white;margin-top: 520px;display: none;">				
 						<p>Precio Total <strong id="total">0</strong>&euro;</p>
 					</div>
-				<button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
+				
+				<button  id="botonCalculadora" class="displayBoton" onclick="imagenGirarParaCarro()" data-toggle="modal" data-target="#modalEnviadoCarrito"  style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;    left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
+				<a (click)="enviarCarrito()" id="soloParaEnviarImagenGirada" style="display:none"  ></a>				<button  id="botonCalculadoraTablero"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarritoTablero()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
+				
+				<!-- <button  id="botonCalculadora"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarrito()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button> -->
 				<button  id="botonCalculadoraTablero"  data-toggle="modal" data-target="#modalEnviadoCarrito" class="displayBoton" (click)="enviarCarritoTablero()" style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
 				<button id="botonEnviarEspecial" style="width: 86%;height: 6%;bottom: 80px;position: absolute;font-size: 16px;background-color: black;left: 25px;color: white;display:none" data-toggle="modal" data-target="#modalEnviadoCarrito1" (click)="enviarCarritoEspecial()">Enviar al carrito</button>
 				

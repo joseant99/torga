@@ -5,17 +5,27 @@ function imagenCarritoApi(){
 }
 
 function imagenGirarParaCarro(){
-	var idProd = $('#nombreMesita').attr('class');118,117,299,301,300
-	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300){
+	var idProd = $('#nombreMesita').attr('class');
+	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245){
 		$("#soloParaEnviarImagenGirada")[0].click();
 	}else{
 		$("#sdv-container").css({"width":"410px"});
 		$("#sdv-container").css({"height":"410px"});
-		api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
-	            function(response) {
-	            	$("#soloParaEnviarImagenGirada")[0].click();
-	            	
-	            });
+		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245){
+			api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
+		            function(response) {
+		            	$("#soloParaEnviarImagenGirada")[0].click();
+		            });
+		}else{
+			api.scene.camera.updateAsync({'position': {x: -657.883398040687, y: -1721.5418300011615, z: 1227.8223071618345}, 'target': {x: 758.5643606351833, y:  127.50578991868758, z: 631.7026621119127} }).then(
+		            function(response) {
+		            	api.scene.camera.zoomAsync().then(function(response){
+		            		$("#soloParaEnviarImagenGirada")[0].click();
+		            	})
+		            });
+
+		}
+		
 	}
 
 }
@@ -618,6 +628,15 @@ function apiShape3(id){
 	  	api.parameters.updateAsync({
 	          id: parame.id,
 	          value: (parseFloat(ancho1)*10)
+	        }).then(function(response){
+	        	 var alto1 = $("#altoDatosDimen").text();
+		  	     var parame = api.parameters.get({name :"H"}).data[0];
+		  	     if(parame != undefined){
+		  	    	api.parameters.updateAsync({
+			  	          id: parame.id,
+			  	          value: (parseFloat(alto1)*10)
+			  	        }) 
+		  	     }
 	        });
 	  	var updatedSettings = {
 	    		  scene : {
@@ -1678,20 +1697,32 @@ function apiShape1(id){
 
 			    for (var i = 0; i <window.armario; i++) {
 			        //duplicate base animation object
-			    	/**var tiradoresObject = api.scene.get(
+			    	var tiradoresObject = api.scene.get(
 					        {
 					          name: "Tiradores",
 					          format: "glb"
 					        },
 					        "CommPlugin_1"
-					      ).data[0];**/
+					      ).data[0];
 			    		 var animation = JSON.parse(JSON.stringify(baseAnimation));
 
 					        //define scene path
 					        animation.scenePaths.push("CommPlugin_1." + doorsId + ".content_" + i);
-					        //if(tiradoresObject != undefined){
-					        	//animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_" + i);
-					        //}
+					       if(tiradoresObject != undefined){
+					    	   var contTira = 0;
+					    	   var arrayTirador = arrayPuertaTirador;
+					    	   var tiradorI = arrayTirador[i];
+					    	   for(let p = 0;p<arrayTirador.length;p++){
+					    		   if(p != i && i != 0){
+					    			   if(arrayTirador[p] = tiradorI){
+					    				   contTira++;
+					    				   
+					    			   }
+					    			   
+					    		   }
+					    	   }
+					        	animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_"+i+".transformation_0.node_"+contTira);
+					        }
 					        
 
 					        //define pivot point and direction
@@ -1710,66 +1741,66 @@ function apiShape1(id){
 		 
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 	    if (!viewerInit) {
-	    	//api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath +".content_0"]);
+	    	api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
 	    	var materialesArray = [];
 	    	materialesArray[0] = {
 	    		"id" : "tabak",
 	    		"opacidad" : 1,
-	    		"textura" : "https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1",
+	    		"textura" : "https://dl.dropboxusercontent.com/s/f11t2yhfvwkfndy/TABAK.png?dl=1",
 	    		"brillo" : 1
 	    	};
 	    	materialesArray[1] = {
 		    		"id" : "kobe",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/a40x79bngq87z6h/KOBE.png?dl=1",
+		    		"textura" : "https://www.dropbox.com/s/55g8hd1mxbj7fdo/KOBE.png?dl=1",
 		    		"brillo" : 1
 		    	};
 	    	materialesArray[2] = {
 		    		"id" : "noce",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1",
+		    		"textura" : "https://www.dropbox.com/s/xwvi93rzjpixjjt/NOCE.png?dl=1",
 		    		"brillo" : "1"
 		    	};
 	    	materialesArray[3] = {
 		    		"id" : "nature",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1",
+		    		"textura" : "https://www.dropbox.com/s/qi8vt1fz66riltm/NATURE.png?dl=1",
 		    		"brillo" : 1
 		    	};
 	    	materialesArray[4] = {
 		    		"id" : "blanco",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/bmgwlmwee9p6ma7/BLANCO.png?dl=1",
+		    		"textura" : "https://www.dropbox.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1",
 		    		"brillo" : "1"
 		    	};
 		    materialesArray[5] = {
 			    	"id" : "beige",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/x36v5wl163xhpu3/BEIGE.png?dl=1",
+			    	"textura" : "https://www.dropbox.com/s/sm7nv4v9i7tj9st/BEIGE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[6] = {
 			    	"id" : "latte",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1",
+			    	"textura" : "https://www.dropbox.com/s/qhpamt0ekwec948/LATTE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[7] = {
 			    	"id" : "grafeno",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1",
+			    	"textura" : "https://www.dropbox.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[8] = {
 			    	"id" : "lago",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1",
+			    	"textura" : "https://www.dropbox.com/s/dbjdchwov6mwai9/LAGO.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[9] = {
 			    	"id" : "mare",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1",
+			    	"textura" : "https://www.dropbox.com/s/tpv55i6b91e0w38/MARE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[10] = {
@@ -2417,9 +2448,12 @@ function interioresNuevoJson(obj){
 	    }).then(
 	    		  function(response) {
 	    			  var arrayDeEstantesMet = [];
+	    			  var arrayDeEstantesMetCristal = [];
 	    			  var contEst = 0;
+	    			  var contEstCristal = 0;
 	    			  var contTubo = 0;
 	    			  var contEst1 = 0;
+	    			  var contEst1Cristal = 0;
 	    			  var contCaj = 0;
 	    			  var length = obj["interiores"].length;
 	    			  for(let h = 0;h<length;h++){
@@ -2576,7 +2610,56 @@ function interioresNuevoJson(obj){
 	    					  }
 	    					  contCaj++;
 	    				  }
+	    				  
+	    				  if(obj["interiores"][h]["tipo"] == "estantecristal"){
+	    					  if(h>0){
+	    						  if(obj["interiores"][h]["interior"] != obj["interiores"][h-1]["interior"]){
+	    							  contEst1Cristal = 0;
+	    						  }
+	    					  }
+	    					  arrayDeEstantesMetCristal[contEstCristal]=[];
+	    					  arrayDeEstantesMetCristal[contEstCristal]["puesto"] = h;
+	    					  arrayDeEstantesMetCristal[contEstCristal]["interior"] = obj["interiores"][h]["interior"];
+	    					  arrayDeEstantesMetCristal[contEstCristal]["num"] = contEst1Cristal;
+	    					  if(contEstCristal == 0){
+	    							  var effect = {
+	    									    active: {
+	    									        name: "colorHighlight",
+	    									        options: {
+	    									            color: [0, 185, 3]
+	    									        }
+	    									    }
+	    									};
+	    							  		var estantesCristalInteractionGroup = {
+	    									  id: "estanteCristalInteractionGroup",
+	    									  selectable: true,
+	    									  selectionEffect: effect,
+	    									  selectionMode: "multiple"
+	    									};
+	    							  			var estantesCristal = api.scene.get(
+	    						    		        {
+	    						    		          name: "EstantesCristal",
+	    						    		          format: "glb"
+	    						    		        },
+	    						    		        "CommPlugin_1"
+	    						    		      ).data[0];
+	    						    		      
+
+	    						    		      	api.scene.updateInteractionGroups([estantesCristalInteractionGroup]);
+
+	    											api.scene.updatePersistentAsync([
+	    												 {
+	    											            id: estantesCristal.id,
+	    											            interactionGroup: estantesCristalInteractionGroup.id,
+	    											            interactionMode: api.scene.INTERACTIONMODETYPE.SUB
+	    											          }
+	    									        ], "CommPlugin_1");
+	    						  
+	    					  }
+	    					  contEstCristal++;
+	    				  }
 	    			  }
+	    			  window.arrayDeEstantesMetCristal = arrayDeEstantesMetCristal;
 	    			  window.arrayDeEstantesMet = arrayDeEstantesMet;
 		    		  window.arrayDeEstantesMet1 = arrayDeEstantesMet;
 	    			  }
@@ -2765,6 +2848,31 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  
+			  if(window.obj["interiores"][0]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 0){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+					  }
+				  }
+				  
 			  }
 			  
 		/* cambia el valor de la etiqueta (el tooltip) */
@@ -3017,6 +3125,30 @@ function interioresNuevoJson(obj){
 							         ],reset:false
 							       }]);
 			  }
+			  if(window.obj["interiores"][1]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+				  for(let i = 0;i<arr.length;i++){
+					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 1){
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+					  }
+				  }
+				  
+			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta2.innerHTML =(rangeSliderAdicional2.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
@@ -3266,6 +3398,31 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
+		  }
+		  
+		  if(window.obj["interiores"][2]["tipo"] == "estantecristal"){
+		  		var arr = window.arrayDeEstantesMetCristal;
+			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+			  for(let i = 0;i<arr.length;i++){
+				  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 2){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+				  }
+			  }
+			  
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta3.innerHTML =(rangeSliderAdicional3.value);
@@ -4300,7 +4457,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][1]["tipo"] == "cajones"){
+			  if(hueco2[1]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
@@ -4587,7 +4744,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       }]);
 		  }
-		  if(window.obj["interiores"][2]["tipo"] == "cajones"){
+		  if(hueco2[2]["tipo"] == "cajones"){
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
@@ -4894,7 +5051,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][3]["tipo"] == "cajones"){
+			  if(hueco2[3]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
@@ -5221,7 +5378,7 @@ function interioresNuevoJson(obj){
 									       }]);
 				  
 			  }
-			  if(hueco[4]["tipo"] == "tubo"){
+			  if(hueco2[4]["tipo"] == "tubo"){
 				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
@@ -5239,7 +5396,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][4]["tipo"] == "cajones"){
+			  if(hueco2[4]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
@@ -12141,9 +12298,12 @@ function cambiarVistaArmario(tipo){
   array[0] = 0;
   if(armario == 1){
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
   }
   if(armario == 2){
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
   }
   if(armario == 3){
 	  if(tipo == 1){
@@ -12152,6 +12312,9 @@ function cambiarVistaArmario(tipo){
 		  array[1] = (posint2 + 19);
 	  }
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
   }
   if(armario == 4){
 	  if(tipo == 1){
@@ -22819,6 +22982,21 @@ function divcontenidometerfuncion(u,id){
 		        },
 		        "CommPlugin_1"
 		      ).data[0];
+	 var camiseros = api.scene.get(
+		        { 
+		          name: "Camiseros",
+		          format: "glb"
+		        },
+		        "CommPlugin_1"
+		      ).data[0];
+	 var estantesCristal = api.scene.get(
+		        { 
+		          name: "EstantesCristal",
+		          format: "glb"
+		        },
+		        "CommPlugin_1"
+		      ).data[0];
+	 
 	 
 	 
 	var obj = window.obj;
@@ -22834,6 +23012,8 @@ function divcontenidometerfuncion(u,id){
 	 var contTubo = 0;
 	 var contEst = 0;
 	 var contCaj = 0;
+	 var contCami = 0;
+	 var contCris = 0;
 	 for(let l = 0;l<25;l++){
 		 if(shelvesSides != undefined){
 			 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+l+".transformation_0.node_0.mesh_0.primitive_0"];
@@ -22849,6 +23029,18 @@ function divcontenidometerfuncion(u,id){
 			 tubosScenePaths = [tubos.scenePath + ".content_"+(contTubo)+".transformation_0.node_0.mesh_0.primitive_0"];
 			 api.scene.updateSelected([],tubosScenePaths);
 		 }
+		 
+		 if(camiseros != undefined){
+			 camiserosScenePaths = [camiseros.scenePath + ".content_"+(0)+".transformation_0.node_0.mesh_0.primitive_0"];
+			 api.scene.updateSelected([],camiserosScenePaths);
+		 }
+		 
+		 if(estantesCristal != undefined){
+			 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_"+(0)+".transformation_0.node_0.mesh_0.primitive_0"];
+			 api.scene.updateSelected([],estantesCristalScenePaths);
+		 }
+		 
+		 
      }
 	 
 	 
@@ -22869,6 +23061,16 @@ function divcontenidometerfuncion(u,id){
 					 cajonesScenePaths = [cajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
+				 }
+				 if(array[i]["tipo"] == "camisero"){
+					 camiserosScenePaths = [camiseros.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(camiserosScenePaths);
+					  contCami++;
+				 }
+				 if(array[i]["tipo"] == "estantecristal"){
+					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					  api.scene.updateSelected(estantesCristalScenePaths);
+					  contCris++;
 				 }
 			 }
 		 }
@@ -23089,6 +23291,7 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	var armario = window.puertas;
 	 var armNum = window.armario;
 	 var tipo = window.tipo; 
+	 
 	if(armario["puertas"][idPuerta]["tipo"] == "simple"){
 		if(idTipo == "381"){
 			armario["puertas"][idPuerta]["material"] = "cristal";
@@ -23122,47 +23325,47 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	if(armario["puertas"][idPuerta]["tipo"] == "doble"){
 		
 				if(idTipo == "381"){
-					armario["puertas"][idPuerta]["material"] = "cristal";
+					armario["puertas"][idPuerta]["material"][num] = "cristal";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "382"){
-					armario["puertas"][idPuerta]["material"] = "cristal";
+					armario["puertas"][idPuerta]["material"][num] = "cristal";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "383"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "384"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "tim";
 				}
 				if(idTipo == "385"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "nye";
 				}
 				if(idTipo == "386"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "draw";
 				}
 				if(idTipo == "387"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "388"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "389"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "390"){
-					armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
+					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "391"){
-					armario["puertas"][idPuerta]["material"] = "";
+					armario["puertas"][idPuerta]["material"][num] = "";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 		}
@@ -23173,8 +23376,18 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
-	    });
+	    }).then(
+	            function(response) {
+	            	var arrayPuertaTirador1 = arrayPuertaTirador;
+		           	 arrayPuertaTirador1[idPuerta + num] = idTipo;
+		           	 arrayPuertaTirador = arrayPuertaTirador1;
+	            	 api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath + ".content_"+(idPuerta+num)],[]);
+	            }
+		          );
 }
+
+var arrayPuertaTirador = [];
+
 function apoyoDeLosModulos(id){
 	window.apoyoIdGrass = id;
 	var idBuena = 0;
