@@ -280,24 +280,53 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     public acabadoInterioresArmarioApi(nombre) {
         this.armariosDormitorioComponent.cambiarAcabadoInterior(nombre);
         var arrayAcabadoUrl = [];
-        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/z6lx0px5hhb76um/BEIGE.jpg?dl=1'";
-        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/bf30dk9i5nqcxb1/BLANCO.jpg?dl=1'";
+        arrayAcabadoUrl['beige'] = "'https://dl.dropboxusercontent.com/s/sm7nv4v9i7tj9st/BEIGE.png?dl=1'";
+        arrayAcabadoUrl['blanco'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
         arrayAcabadoUrl['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
-        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/d883ro3dcdynz2r/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/jy705kdvckq091g/KALA.png?dl=1'";
-        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/a40x79bngq87z6h/KOBE.png?dl=1'";
-        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/wd230dbsa0wo7gr/LAGO.png?dl=1'";
-        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/78o5gnpv8j8kccn/LATTE.png?dl=1'";
-        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/2abgzsz3rjzpo4j/MARE.png?dl=1'";
-        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/3pg0qw6cf90dij9/MARMOL%20BLANCO.png?dl=1'";
-        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/nhccmylpl5vje8h/MARMOL%20NEGRO.png?dl=1'";
-        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/q7gynxdxxy7xcnx/NATURE.png?dl=1'";
-        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/bwvlyhe58utxt1s/NOCE.png?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/trfp9yj5knw7fji/NORWAY.png?dl=1'";
-        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/7qmumzfm8z6p9on/PIETRA.png?dl=1'";
-        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1'";
+        arrayAcabadoUrl['grafeno'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['kala'] = "'https://dl.dropboxusercontent.com/s/hjhnl5fhq7y378j/KALA.png?dl=1'";
+        arrayAcabadoUrl['kobe'] = "'https://dl.dropboxusercontent.com/s/55g8hd1mxbj7fdo/KOBE.png?dl=1'";
+        arrayAcabadoUrl['lago'] = "'https://dl.dropboxusercontent.com/s/dbjdchwov6mwai9/LAGO.png?dl=1'";
+        arrayAcabadoUrl['latte'] = "'https://dl.dropboxusercontent.com/s/qhpamt0ekwec948/LATTE.png?dl=1'";
+        arrayAcabadoUrl['mare'] = "'https://dl.dropboxusercontent.com/s/tpv55i6b91e0w38/MARE.png?dl=1'";
+        arrayAcabadoUrl['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/v472dwuobh1myov/MARMOL%20BLANCO.png?dl=1'";
+        arrayAcabadoUrl['marmol negro'] = "'https://dl.dropboxusercontent.com/s/mfu6xuf6pyhjshq/MARMOL%20NEGRO.png?dl=1'";
+        arrayAcabadoUrl['nature'] = "'https://dl.dropboxusercontent.com/s/qi8vt1fz66riltm/NATURE.png?dl=1'";
+        arrayAcabadoUrl['noce'] = "'https://dl.dropboxusercontent.com/s/xwvi93rzjpixjjt/NOCE.png?dl=1'";
+        arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/hs89c7eer9dy8vw/NORWAY.png?dl=1'";
+        arrayAcabadoUrl['pietra'] = "'https://dl.dropboxusercontent.com/s/xcz4s5r7sm1xap9/PIETRA.png?dl=1'";
+        arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/f11t2yhfvwkfndy/TABAK.png?dl=1'";
+        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
 
-        $('#clicparacambiardecolor1234').attr('onclick', 'cambiardecolor1234(1,' + arrayAcabadoUrl[nombre.toLowerCase()] + ')');
+        var arrayAcabadoCantos = [];
+        arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco'] = "'https://dl.dropboxusercontent.com/s/q196gdhabe3zemo/BLANCO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['crudo'] = "'https://dl.dropboxusercontent.com/s/ifplxkq3nczhryj/CRUDO.jpg?dl=1'";
+        arrayAcabadoCantos['grafeno'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['kala'] = "'https://dl.dropboxusercontent.com/s/gphco4slgbiazg3/KALA_CANTO.png?dl=1'";
+        arrayAcabadoCantos['kobe'] = "'https://dl.dropboxusercontent.com/s/3mb88xauuqpkf3m/KOBE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['lago'] = "'https://dl.dropboxusercontent.com/s/apr1jdu5ksjp7w6/LAGO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['latte'] = "'https://dl.dropboxusercontent.com/s/ppk7oth0ykeij90/LATTE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['mare'] = "'https://dl.dropboxusercontent.com/s/qleycwfbf0njs4f/MARE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['marmol blanco'] = "'https://dl.dropboxusercontent.com/s/f0i90mfg7454xcg/MARMOL%20BLANCO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['marmol negro'] = "'https://dl.dropboxusercontent.com/s/rbwybrvuy8ghlxw/MARMOL%20NEGRO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['nature'] = "'https://dl.dropboxusercontent.com/s/yt0r62w1mr3um9u/NATURE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['noce'] = "'https://dl.dropboxusercontent.com/s/ccdee8su5r9xni9/NOCE_CANTO.png?dl=1'";
+        arrayAcabadoCantos['norway'] = "'https://dl.dropboxusercontent.com/s/173j1v3jqkyevnk/NORWAY_CANTO.png?dl=1'";
+        arrayAcabadoCantos['pietra'] = "'https://dl.dropboxusercontent.com/s/5q18cq4ntwllzmw/PIETRA_CANTO.png?dl=1'";
+        arrayAcabadoCantos['tabak'] = "'https://dl.dropboxusercontent.com/s/utaijywqv5vgelv/TABAK_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+
+        $('#clicparacambiardecolor1234').attr(
+            'onclick',
+            'cambiardecolor1234(1,' + arrayAcabadoUrl[nombre.toLowerCase()] + ',' + arrayAcabadoCantos[nombre.toLowerCase()] + ')'
+        );
         $('#clicparacambiardecolor1234')[0].click();
     }
 
@@ -333,6 +362,33 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     public interiorDefinidoMostrarArmTs(u, id) {
+        var arrayMetInt = [];
+        var objetoTODO = {};
+        var cont = 0;
+        if (this.puntosmetidosxd == undefined) {
+            this.puntosmetidosxd = [];
+            this.puntosmetidosxd[u] = id;
+        }
+        if (this.puntosmetidosxd[u] != id) {
+            if (this.objetoTodoArray != []) {
+                for (let o = 0; o < this.objetoTodoArray.length; o++) {
+                    if (this.objetoTodoArray[o]['interior'] != u) {
+                        arrayMetInt[cont] = this.objetoTodoArray[o];
+                        cont++;
+                    } else {
+                        $('#divAdicionalesInterior' + u + ' .divSliderAdi' + (o + 1) + '' + u).css({ display: 'none' });
+                        $('#divAdicionalesInterior' + u + ' #divContenidoMeter' + (o + 1) + '' + u).css({ display: 'none' });
+                        $('#divAdicionalesInterior' + u + ' #textoadicional' + (o + 1)).css({ display: 'none' });
+                    }
+                }
+                this.objetoTodoArray = arrayMetInt;
+                objetoTODO['interiores'] = arrayMetInt;
+                $('#cliccambiarinteriores').attr('onclick', 'interioresNuevoJson(' + JSON.stringify(objetoTODO) + ')');
+                $('#cliccambiarinteriores')[0].click();
+            }
+        }
+
+        this.puntosmetidosxd[u] = id;
         if (id == 1) {
             var texto = 'opcionInteriorEst';
             $('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional1').css({ display: 'block' });
@@ -368,7 +424,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCamisero3 = this.objetoCamiseroArray3;
         var objetoCamisero4 = this.objetoCamiseroArray4;
         var cont = 0;
-        var alturaValor = 2200;
+        var alturaPrueba = $('#rs-range-line1').val();
+        var alturaValor: number = +alturaPrueba;
+        alturaValor = alturaValor * 10;
         var armarioCogido = this.armariosDormitorioComponent.armarioCogido;
         var armMensaje = armarioCogido['armario']['mensaje'];
         if (armMensaje == '3 PUERTAS IZQUIERDA') {
@@ -395,7 +453,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         for (let i = 0; i < interiores.length; i++) {
             if (interiores[i]['nombre'] == id) {
                 if (id == 1) {
-                    if (altura < 2250) {
+                    if (alturaValor < 2250) {
                         obj1['posicion'] = 1710;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
@@ -2105,12 +2163,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var objetoCamisero3 = this.objetoCamiseroArray3;
         var objetoCamisero4 = this.objetoCamiseroArray4;
         var precio = 0;
+        precio = parseFloat($('#precioDimension').text());
         var obj1 = {};
         var array = [];
         array = this.objetoTodoArray;
         var cont = array.length;
         var contDef = 0;
         var posicionEstante = 0;
+        var posicionEstanteCristal = 0;
+        var posicionCajones = 0;
         if (array.length > 0) {
             for (let i = 0; i < array.length; i++) {
                 if (huecoPinta == 1) {
@@ -2120,6 +2181,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (array[i]['tipo'] == 'estante') {
                         posicionEstante++;
                     }
+                    if (array[i]['tipo'] == 'estantecristal') {
+                        posicionEstanteCristal++;
+                    }
+                    if (array[i]['tipo'] == 'cajones') {
+                        posicionCajones++;
+                    }
                 }
                 if (huecoPinta == 2) {
                     if (array[i]['interior'] == 1) {
@@ -2127,6 +2194,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     }
                     if (array[i]['tipo'] == 'estante') {
                         posicionEstante++;
+                    }
+                    if (array[i]['tipo'] == 'estantecristal') {
+                        posicionEstanteCristal++;
+                    }
+                    if (array[i]['tipo'] == 'cajones') {
+                        posicionCajones++;
                     }
                 }
                 if (huecoPinta == 3) {
@@ -2136,6 +2209,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (array[i]['tipo'] == 'estante') {
                         posicionEstante++;
                     }
+                    if (array[i]['tipo'] == 'estantecristal') {
+                        posicionEstanteCristal++;
+                    }
+                    if (array[i]['tipo'] == 'cajones') {
+                        posicionCajones++;
+                    }
                 }
                 if (huecoPinta == 4) {
                     if (array[i]['interior'] == 3) {
@@ -2143,6 +2222,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     }
                     if (array[i]['tipo'] == 'estante') {
                         posicionEstante++;
+                    }
+                    if (array[i]['tipo'] == 'estantecristal') {
+                        posicionEstanteCristal++;
+                    }
+                    if (array[i]['tipo'] == 'cajones') {
+                        posicionCajones++;
                     }
                 }
             }
@@ -2207,6 +2292,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = 1000;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'estantecristal';
+            obj1['numero'] = posicionEstanteCristal;
         }
         if (id == 2) {
             precio = precio + 15;
@@ -2252,6 +2338,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
+            obj1['numero'] = posicionCajones;
         }
         if (id == 4) {
             preciollamadogg = preciollamadogg + 90;
@@ -2273,6 +2360,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
+            obj1['numero'] = posicionCajones;
         }
         if (id == 5) {
             precio = precio + 48;
@@ -2460,6 +2548,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
             }
         }
+        $('#precioDimension').text(precio);
         this.objetoTodoArray = array;
         console.log(array);
         var objetoTODO = {};
@@ -31073,6 +31162,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                             );
                                         }
                                     }
+
                                     if (data.body[w]['id'] == 18) {
                                         $('#modalApoyo #apoyoModal' + 7).empty();
                                         console.log(productoTocho);
@@ -31091,21 +31181,50 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                                 ' Remetida 3 cm a ambos lados</strong></p>'
                                         );
                                     }
-                                    if (data.body[w]['id'] == 411) {
-                                        $('#modalApoyo #apoyoModal' + 3).empty();
-                                        console.log(productoTocho);
-                                        $('#modalApoyo #apoyoModal' + 3).append(
-                                            '<img  src="data:image/gif;base64,' +
-                                                data.body[w]['imagen'] +
-                                                '" id="imagenApoyo' +
-                                                3 +
-                                                '" class="' +
-                                                data.body[w]['id'] +
-                                                '" height="160px" width="280px" style=" ">'
-                                        );
-                                        $('#modalApoyo #apoyoModal' + 3).append(
-                                            '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
-                                        );
+
+                                    if (
+                                        idProd != 1 &&
+                                        idProd != 2 &&
+                                        idProd != 3 &&
+                                        idProd != 4 &&
+                                        idProd != 5 &&
+                                        idProd != 6 &&
+                                        idProd != 7 &&
+                                        idProd != 8 &&
+                                        idProd != 9 &&
+                                        idProd != 10 &&
+                                        idProd != 11 &&
+                                        idProd != 12 &&
+                                        idProd != 13 &&
+                                        idProd != 229 &&
+                                        idProd != 238 &&
+                                        idProd != 239 &&
+                                        idProd != 240 &&
+                                        idProd != 241 &&
+                                        idProd != 242 &&
+                                        idProd != 243 &&
+                                        idProd != 244 &&
+                                        idProd != 245 &&
+                                        idProd != 233 &&
+                                        idProd != 236 &&
+                                        idProd != 237
+                                    ) {
+                                        if (data.body[w]['id'] == 411) {
+                                            $('#modalApoyo #apoyoModal' + 3).empty();
+                                            console.log(productoTocho);
+                                            $('#modalApoyo #apoyoModal' + 3).append(
+                                                '<img  src="data:image/gif;base64,' +
+                                                    data.body[w]['imagen'] +
+                                                    '" id="imagenApoyo' +
+                                                    3 +
+                                                    '" class="' +
+                                                    data.body[w]['id'] +
+                                                    '" height="160px" width="280px" style=" ">'
+                                            );
+                                            $('#modalApoyo #apoyoModal' + 3).append(
+                                                '<strong><p style="text-align:center">' + data.body[w]['nombre'] + '</strong></p>'
+                                            );
+                                        }
                                     }
                                     if (data.body[w]['id'] == 412) {
                                         $('#modalApoyo #apoyoModal' + 8).empty();
@@ -34096,10 +34215,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         arrayAcabadoUrl['norway'] = "'https://dl.dropboxusercontent.com/s/hs89c7eer9dy8vw/NORWAY.png?dl=1'";
         arrayAcabadoUrl['pietra'] = "'https://dl.dropboxusercontent.com/s/xcz4s5r7sm1xap9/PIETRA.png?dl=1'";
         arrayAcabadoUrl['tabak'] = "'https://dl.dropboxusercontent.com/s/f11t2yhfvwkfndy/TABAK.png?dl=1'";
-        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
-        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
+        arrayAcabadoUrl['blanco bronce'] = "'https://dl.dropboxusercontent.com/s/dtaqd965xhev6y7/marron-oscuro.jpg?dl=1'";
+        arrayAcabadoUrl['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/dtaqd965xhev6y7/marron-oscuro.jpg?dl=1'";
         arrayAcabadoUrl['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
         arrayAcabadoUrl['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['cristal transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoUrl['cristal gris'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
 
         var arrayAcabadoCantos = [];
         arrayAcabadoCantos['beige'] = "'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'";
@@ -34122,6 +34243,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         arrayAcabadoCantos['grafeno bronce'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
         arrayAcabadoCantos['blanco transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
         arrayAcabadoCantos['grafeno transparente'] = "'https://dl.dropboxusercontent.com/s/dx0k998cv6fkgil/GRAFENO_CANTO.png?dl=1'";
+        arrayAcabadoCantos['cristal transparente'] = "'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1'";
+        arrayAcabadoCantos['cristal gris'] = "'https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1'";
 
         nombre = res;
         var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');

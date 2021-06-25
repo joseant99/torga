@@ -314,7 +314,7 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
             .val()
             .toString();
         console.log(fechaBus);
-        var pedidos = this.presuped1;
+        var pedidos = this.todospedidos;
         var cont = 0;
         var array = [];
         var datosUsuariosTiendas = this.todosdatosusuarios;
@@ -406,18 +406,33 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
                     }
                 } else {
                     if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                        if (idUsu == 85 || idUsu == 84 || idUsu == 1073 || idUsu == 1694 || idUsu == 934) {
+                        if (
+                            idUsu == 85 ||
+                            idUsu == 84 ||
+                            idUsu == 1073 ||
+                            idUsu == 1694 ||
+                            idUsu == 934 ||
+                            idUsu == 3246 ||
+                            idUsu == 1188
+                        ) {
                             for (let k = 0; k < todos.length; k++) {
                                 if (todos[k]['user'] != null) {
-                                    if (idUsu != 934) {
+                                    if (idUsu != 934 && idUsu != 3246 && idUsu != 1188) {
                                         if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
                                             cogidos[contador] = value;
                                             contador++;
                                         }
                                     } else {
-                                        if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1 && value['id'] > 4777) {
-                                            cogidos[contador] = value;
-                                            contador++;
+                                        if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                            if (value['web'] == 1) {
+                                                cogidos[contador] = value;
+                                                contador++;
+                                            } else {
+                                                if (value['id'] > 4777) {
+                                                    cogidos[contador] = value;
+                                                    contador++;
+                                                }
+                                            }
                                         }
                                     }
                                 }

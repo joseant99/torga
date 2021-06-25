@@ -573,6 +573,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('#datos1').empty();
             $('#sdv-container').empty();
             $('#diviframeprueba').css({ display: 'none' });
+            $('#botonCalculadora').attr('class', 'displayBoton');
             $('body').removeAttr('style');
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
@@ -599,6 +600,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             $('body').removeAttr('style');
             $('#datos1').empty();
             $('#sdv-container').empty();
+            $('#botonCalculadora').attr('class', 'displayBoton');
             $('#diviframeprueba').css({ display: 'none' });
             setTimeout(function() {
                 $('.divBuscadorArticulos').css({ display: 'none' });
@@ -27030,7 +27032,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             if (codigo == 'NH011' || codigo == 'NH012' || codigo == 'NH013' || codigo == 'NH014') {
                 codIdShape =
-                    '52f8a3bf9e6de25cdd5e7afe3079007c0b437882d07bf133a9820dc5dcca40a7317c345fc174c08052fb20352d91ae7f7e218b629406d76dc8f0bc7ca11616fe021801369a43d0d099c2695700acac73ca6f2bc950910a2fcae180fd4619b5edcdb2dafceea55f1c09ce41af914fde2c988966d8d8c8-ea9cd1ee45009ab35ba255dc3bf88617-3f2144f7cec3dceb8f2396d0baae8fea';
+                    '607f5678ff947e69fe1f1404ff17aff2aea493c6059e4b5c0284a7e5c4a08780acb4eddd40b9034e5b8d74c6df7ac7559a654ebe3f7689e4edb6f6e75a484645245d32509f2da0788a41d734f7e7b0cf09f4f8d22d480f633d13a2404bbc7b70e0e09012ca6cc7e2deac0db5d0525b2a8984467f2a176615337688d67f2e2e31-aefde455a65582d030ee2b88fd9d98fb';
             }
             if (codigo == 'NH015' || codigo == 'NH016') {
                 codIdShape =
@@ -27090,7 +27092,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             if (codigo == 'NH067' || codigo == 'NH068' || codigo == 'NH069') {
                 codIdShape =
-                    '05b6b6625189b49175a36a846c4e5c3e96486a6afa64c323d9b78ccdfcd269ddd2829194b2bd5ee95925c8d20dca5d44cb654f5946c5189aa33a13253f6b73894b4aac20a380c9f98b72e1b467ea0000854714aaa4511ef957e398b555168e5e041b1e823eab146f678f15032d4b7231cde382fc73c9-54f00eeb8486a85a9c544722c2b81c7f';
+                    'e4b7d925ae3b757cdf312b466a28bd1ed813ca32ef24b4df3e187b5747a979bcf4de4685c9eb3b7e50f3ff929f4787c63a054b556c5ce04d9eee13542bcfd0f783155f5a6e1770e292f2fd799d2b26db6dcf7707c071c36500a5f98195289bd962f81cad4f044bf05686a8368f48db29dca5345f846b9de81fe0d17ebf47ad4d-1ba6302224646cf2476f0ea2ad389037';
             }
             if (codigo == 'NH070' || codigo == 'NH071') {
                 codIdShape =
@@ -30630,6 +30632,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) == 117 ||
             parseFloat(idProd) == 299 ||
             parseFloat(idProd) == 301 ||
+            parseFloat(idProd) == 119 ||
             parseFloat(idProd) == 300
         ) {
             $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');

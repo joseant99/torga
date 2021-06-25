@@ -1896,6 +1896,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('.divseleccionarcodigo').removeAttr('id');
             $('#calculadoraCarrito').css({ display: 'none' });
             $('body').removeAttr('style');
+            $('#datos1').empty();
+            $('#sdv-container').empty();
+            $('#botonCalculadora').attr('class', 'displayBoton');
+            $('#diviframeprueba').css({ display: 'none' });
             if (screen.width < 800) {
                 $('#productosPrincipal').css({ height: '5975px' });
                 $('.divseleccionarcodigo').css({ height: 'auto' });
@@ -1911,6 +1915,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             $('#page-heading').css({ display: 'block' });
             $('#calculadoraCarrito').css({ display: 'none' });
             $('body').removeAttr('style');
+            $('#datos1').empty();
+            $('#sdv-container').empty();
+            $('#botonCalculadora').attr('class', 'displayBoton');
+            $('#diviframeprueba').css({ display: 'none' });
             setTimeout(function() {
                 $('.armariosDivTodo').css({ display: 'none' });
                 $('.armariosDivTodo').removeAttr('id');
@@ -4497,6 +4505,38 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             codigo != 'NT002' &&
             codigo != 'NT003' &&
             codigo != 'NT004' &&
+            codigo != 'NT007' &&
+            codigo != 'NT008' &&
+            codigo != 'NT009' &&
+            codigo != 'NT010' &&
+            codigo != 'NT011' &&
+            codigo != 'NT012' &&
+            codigo != 'NT013' &&
+            codigo != 'NT014' &&
+            codigo != 'NT015' &&
+            codigo != 'NT016' &&
+            codigo != 'NT017' &&
+            codigo != 'NT018' &&
+            codigo != 'NT019' &&
+            codigo != 'NT020' &&
+            codigo != 'NT021' &&
+            codigo != 'NT022' &&
+            codigo != 'NT023' &&
+            codigo != 'NT024' &&
+            codigo != 'NT025' &&
+            codigo != 'NT026' &&
+            codigo != 'NT027' &&
+            codigo != 'NT028' &&
+            codigo != 'NT029' &&
+            codigo != 'NT030' &&
+            codigo != 'NT031' &&
+            codigo != 'NT032' &&
+            codigo != 'NT033' &&
+            codigo != 'NT034' &&
+            codigo != 'NT035' &&
+            codigo != 'NT036' &&
+            codigo != 'NT037' &&
+            codigo != 'NT038' &&
             codigo != 'NT177' &&
             codigo != 'NT178' &&
             codigo != 'NT179' &&
@@ -4572,6 +4612,42 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             codigo != 'NT174' &&
             codigo != 'NT175' &&
             codigo != 'NT176' &&
+            codigo != 'NT297' &&
+            codigo != 'NT298' &&
+            codigo != 'NT299' &&
+            codigo != 'NT300' &&
+            codigo != 'NT301' &&
+            codigo != 'NT302' &&
+            codigo != 'NT303' &&
+            codigo != 'NT304' &&
+            codigo != 'NT305' &&
+            codigo != 'NT306' &&
+            codigo != 'NT307' &&
+            codigo != 'NT308' &&
+            codigo != 'NT309' &&
+            codigo != 'NT310' &&
+            codigo != 'NT311' &&
+            codigo != 'NT312' &&
+            codigo != 'NT313' &&
+            codigo != 'NT314' &&
+            codigo != 'NT315' &&
+            codigo != 'NT316' &&
+            codigo != 'NT317' &&
+            codigo != 'NT318' &&
+            codigo != 'NT319' &&
+            codigo != 'NT320' &&
+            codigo != 'NT321' &&
+            codigo != 'NT322' &&
+            codigo != 'NT323' &&
+            codigo != 'NT324' &&
+            codigo != 'NT325' &&
+            codigo != 'NT326' &&
+            codigo != 'NT327' &&
+            codigo != 'NT328' &&
+            codigo != 'NT329' &&
+            codigo != 'NT330' &&
+            codigo != 'NT331' &&
+            codigo != 'NT332' &&
             codigo != 'NX001' &&
             codigo != 'NX002' &&
             codigo != 'NX003' &&
@@ -10639,19 +10715,19 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             var codIdShape = '';
             if (codigo == 'NX001' || codigo == 'NX002' || codigo == 'NX003' || codigo == 'NX004') {
                 codIdShape =
-                    'a2bf6e7aaa279f6f4c59010a4858e43b6ccd95aa7be1fe67b395b74f49010af51e2bff9f37562f811a0027cd5529347475d8fb382e0004da04040fff8f7f88185c60cff4a87e192d1149a7d0b030d63e3580148104ba59f44aaccbbc256edbe692981063614d0c3a485b639fbd646ac51ee4ce8e86d58d794c3c3fff0c24b42a-bb402e9063357c9bade53c2910cb5198';
+                    '5d3ace8f16c55d8faf67a9c64f83e1e2d6ecd87fba4b0529a0b26f2884d3bbd4b8514e30dfe74ccab4af12b937bdb0ee555beb4c86a618c0cdec9659e129a95503ba1d3abfc6d95fc5444e482a51500da575fe23fc47b7db06f51fa29fa18e3a3b86c87a02d1579450e53b7fd5090524503c96db7b57051e7163472b0ae2c91e-e3414bf4e1ffe5a05709fe965f0a88ee';
             }
             if (codigo == 'NX005' || codigo == 'NX006' || codigo == 'NX007' || codigo == 'NX008') {
                 codIdShape =
-                    '98d21942345eb1fb9fa6e142bac8ab2b2c8903f2b3741eadc7f7b113e52f31dcea730f9893f16c0fab34a30da9bbb36fe88a9d05e7133966fd69e3789f8f00ef8f15b4e7f8bbd8e8b078413eba30d14d9bbfe903c656df82610fe4bce61f1ae53c82daa3471c40cb8d050eed69195ec4c880097b73c820414829320f92f407eb-2c8183339094a93ef50d13dabd7f2bc6';
+                    '3f458cdd79d3f49cef51bbd9ea8e40c1ccbbc0422259badc7ec594510cd9e7d348f320727c42c9b3172cf1eee840bd7844e4db67754acdede3d6836a084857ff19d73648c385501f3a0646b8cde844776249c03dabef6e79a87d2c70768f9fb158c700bc9f00cdbb14b4010e0f3a9cc70dd2aba477e9c0f5f06ff7e8350e4470-bfe1a428e2103e5d8247e4fe4c9edf84';
             }
             if (codigo == 'NX009' || codigo == 'NX010' || codigo == 'NX011' || codigo == 'NX012') {
                 codIdShape =
-                    '26dc2b845220c25b998bed461a32842b2ff3fb28467a4b473d8bc5773d016150b07cda8f8e4b73b5445557398f86b66811616ab1c49b4a13379471bc0491b3f069b19248fef5bdf1198f2981478f473563d6b3ae8914f015fc8169050b5b4145d74a290ef3633cd4613cdb5b4c8993f6c9afa497f0f0a4f783321149497fcee4-bd908f864070859ffae034a9c6572879';
+                    '1f6c6a32fa85dda1aa75cb18bd5b1e8493ae01c04a67f924aec879851a5f3bc96a71d1048d84ac3c1bd09a511682f332d788e6ef9dd330e6a3d6a68c6fb46a1aabc648a1ca6250c2e4344ce31213df8f2ca7a538ee2d2cea4a8ebf0ecf9c287a92a41d1421b1c10e9c630cf489df43ad07a4b153317a7c2871bc07e9fdbb8bf2-b733590632c5581f99bbe8908ffed0fc';
             }
             if (codigo == 'NX013' || codigo == 'NX014' || codigo == 'NX015' || codigo == 'NX016') {
                 codIdShape =
-                    '18ed88f6d9d2564afb61acbdf2c1302b1f42cfba481b7cf77a330f05a5a58230edef87865ce2f6cc735906898bee338de7dd875f72ba5f99c09c3bf1a9712ad6acf8ff43a86a70017ff5c3c5726c38bb3bba81153d06c5ec565c084474ed665386c2f29066a3898770b3b6bb7d441a8355575ca47765605e9ee2e6c15cfae5e2-21844a939505d27991094bd95c25424f';
+                    '27bc3a820a6183ac19c9193ee12aeebfdd46b19e8ce51f12e079dcc84772c345924b1784fa840e511b76e0e92314ab62e95334b35df2c5fec2f17b0eac200558328dc1d9503b7ad52be8ae878cbbafddd5d8223f321f4decf18376b3bd2d9e8045cb6eb8c3380f5d8fecc3af9289edc3f8137effc879bb99895913e8fcf60f09-6a11b494abefe4b7e20ab06c8ebba3d8';
             }
             if (codigo == 'NX017' || codigo == 'NX018' || codigo == 'NX019' || codigo == 'NX020') {
                 codIdShape =
@@ -10691,11 +10767,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
             if (codigo == 'NX054' || codigo == 'NX055' || codigo == 'NX056' || codigo == 'NX057') {
                 codIdShape =
-                    '8b60e216fc0b9838a30d476bacac468587ac368c4701c8691d6dfb40f6737a3c2db5999e17543af866c85a804684e4f3c0594178d31382ef8b702035ebf9f2450ec3ec9505bc6f8bcaa87c8a9fd166de681b4938b9a54b399faf436d28cc9c8ccafcb1e9a57eaba4be414fc1bb8159c60832a488842d5553c8b2207faa4094d9-6e64eadff41f573f70ba03acc30c5870';
+                    'd01b499c5bf010ecb31f12588cf3f3eb24e3e519710a10cb6fecedfc93608ac0f321a2c036094d93f8378d807ddae6dc63f6ee6d0d31cb97fa648ddbcaff765346593bc6eda0bdffa48104b62c570e7ab0dfad76bd58ce52ad85eed6a8bc6ee6da7c5c3abb7905b9122d87b1761f130b6b9e9610074b89609d05a671cb819d71-4667b03b08041ebe421204a85ea2a7d2';
             }
             if (codigo == 'NX058' || codigo == 'NX059' || codigo == 'NX060' || codigo == 'NX061') {
                 codIdShape =
-                    '6c3547282ea27531a057059ead0ad2597234a7861efabfd743d4badf9315b2faa25359bae61b3cc37696cf19692feb09eb09cf57ce35c2555a72980a45af81a6126ae112837db3906f903dafa667dff0e9a1ba15048596481395668f9f2a77f5c0d8b85ce7376fdea12a51e585dbbc8c2dad34e3b81533f77fab651a4e1379ef-13d79f428d1ef3a3d2f98dfb60aefe3d';
+                    'f33362e196b5ebb07506c629754771d85c22a0f824b03db036c78f65dd3015813718ff31384df1c8239d4c458af37434148cc63b18ce8535993e1147676e7fa3e94267b570d43b422565fb8df91a857fdcc70e08b62bdc384efede04a9bb55f54d042f0669679c389b38b3a83d24c284e1a9a4c1600c3be9c2b6cef2171c403b-2026677396ede31e0f6861a7ab460d85';
             }
             if (codigo == 'NX062' || codigo == 'NX063' || codigo == 'NX064' || codigo == 'NX065') {
                 codIdShape =
@@ -10707,11 +10783,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
             if (codigo == 'NX070') {
                 codIdShape =
-                    '83be8f06fc7e33cdfe7b5deb4445457500b8d43574a985123b7da8931dca49e2f628b4badae4ee0428d3dee52dc37982e8c60702cb627dc0a5a0b1b908a602431f5bcd01911a6aafa86aae2619e672faea5ba5866e68e54aa66334c633f64a236d3c305ab73ebd208bf6071af46bfbfb780b3f9cf278dec70a94565b83942065-55bebf8a1b1ee3bafe7773b6f3e33458';
+                    '5614c266c589b82a17468ad641ebf2198c03ae987e711866a72a7531d73d3a59b05042ef0f7cda3a52de50165375ae7d7d8eb7fdccbf061557ae7d930537a295990ac45eb909b6ce5c6569d2c662103f6282e14f5e5891ec99b3f3fddff668ef6e13457c720cb9f30f182915cefc25a9a03cf3fa593c74037a0d74778ffe8da3-47f71ef93e54031b36516dc3c5aafe53';
             }
             if (codigo == 'NX071') {
                 codIdShape =
-                    'a0d2e63580c5c00a82f38858fc595c5d5155f8e584c72936fa0115b361c53dcb7c068055c26d772c850060d4cc3ed5a522cb748fab41b0c3372f98ff12ab760334fcbd23e02cc92624dec0c05a77f52a8ab657531bda0cb04ab36ad2dc4ab5205fcd3a45446fa529a5e9ee4b8b59b2e7cba0ad3543783a4121075c81c8c5a7e3-771eebdc2a845cf23d1e7359cb846cc2';
+                    '92ee65b16c92e4e50fd95b9cec94f5c7bcaa91ff78283f5762168cdfd31e0753183252afd7e0bd602d7a264c70a248e54aec71bca4b34c202b2eec000c70c8b4aecd58ee50c04bed8d382d37cdca5b347e2904261c06ada2dc2030dddeb178494cfe485bbe88583479f876d543239266495a288da049bf1be899d506bf42ef74-cb98135c93a02f845bfd11b7e0b80896';
             }
             if (codigo == 'NX072') {
                 codIdShape =
@@ -10724,6 +10800,48 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             if (codigo == 'NT001' || codigo == 'NT002' || codigo == 'NT003' || codigo == 'NT004') {
                 codIdShape =
                     'd23aa7c5c82b1d4de5444f67af4f3dd3baf78bd64a564280e5c71072eaa76d4c8272c017caaa4c521e36a89f65dc97ec1d59f9ee73bc782a19ca9c7d7c34a21dba224c3f3d68d675d5f159296e77d4ca0c463084e08d93e16242d58e3d2aa620a2ac224b861271394e211e8aba46070f49b0afeb45a29c07351b55429fcdda28-6bdc5219268fc40ab903c44f01f31101';
+            }
+            if (
+                codigo == 'NT007' ||
+                codigo == 'NT008' ||
+                codigo == 'NT009' ||
+                codigo == 'NT010' ||
+                codigo == 'NT011' ||
+                codigo == 'NT012' ||
+                codigo == 'NT013' ||
+                codigo == 'NT014' ||
+                codigo == 'NT015' ||
+                codigo == 'NT016' ||
+                codigo == 'NT017' ||
+                codigo == 'NT018' ||
+                codigo == 'NT019' ||
+                codigo == 'NT020' ||
+                codigo == 'NT021' ||
+                codigo == 'NT022'
+            ) {
+                codIdShape =
+                    '078b76c2829ef007689edcac11ab017b5306b1810f9a56e1fc6b9804de2f6775663e62bdffa418323aa751f05e0e6c3b3b6cdf12eb10735dc4fb17dee38e6e2df32816fb485bd98a1c4ebd9ba90fd8b570fe34731e70218980acfaed9d1871116e7e2386851327798357a285ecdcb34ec2653208e773c7053f13ca8448bb2d43-de38a232a846955ce0afb8ff932e9a85';
+            }
+            if (
+                codigo == 'NT023' ||
+                codigo == 'NT024' ||
+                codigo == 'NT025' ||
+                codigo == 'NT026' ||
+                codigo == 'NT027' ||
+                codigo == 'NT028' ||
+                codigo == 'NT029' ||
+                codigo == 'NT030' ||
+                codigo == 'NT031' ||
+                codigo == 'NT032' ||
+                codigo == 'NT033' ||
+                codigo == 'NT034' ||
+                codigo == 'NT035' ||
+                codigo == 'NT036' ||
+                codigo == 'NT037' ||
+                codigo == 'NT038'
+            ) {
+                codIdShape =
+                    '949284b110ee7ea0f890ec41adb99f089f2ffc6b8f6a3b1f78424d686926f287867bb15413b4f2260a08d44d6fe445a330264eeefec67a324fa6ad46f19bf054fb92a7086855f3b0ff334ab6afe399ea1952f324a36c63b0e92af8ac74590e875bb17fea0bc55126b758674bf0a980cfb1ade10a690083f59c75147c208e48f2-e339262da38a9e2828ce4c88a46a104d';
             }
             if (codigo == 'NT111' || codigo == 'NT112' || codigo == 'NT113' || codigo == 'NT114' || codigo == 'NT115') {
                 codIdShape =
@@ -10811,6 +10929,52 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             ) {
                 codIdShape =
                     '686adb73103cb26e7dbc7ecb565076c02e9dbfa2793a0bc7bf419878242d77cfb7f9d8810e08d583b4aba383e45e737a6029f630b1821b2c868dc9b58814bb25fecc8c6d5fd83a0febb41b70130bced08a58f0a07189bfa0124ea2085b1e64b79516ed516a803bad0a7196505f1061db7699d55604bde2e9c109a809eab26b37-92b751e8e83629e5ef06676bb1674fe9';
+            }
+            if (
+                codigo == 'NT297' ||
+                codigo == 'NT298' ||
+                codigo == 'NT299' ||
+                codigo == 'NT300' ||
+                codigo == 'NT301' ||
+                codigo == 'NT302' ||
+                codigo == 'NT303' ||
+                codigo == 'NT304' ||
+                codigo == 'NT305' ||
+                codigo == 'NT306' ||
+                codigo == 'NT307' ||
+                codigo == 'NT308' ||
+                codigo == 'NT309' ||
+                codigo == 'NT310' ||
+                codigo == 'NT311' ||
+                codigo == 'NT312' ||
+                codigo == 'NT313' ||
+                codigo == 'NT314'
+            ) {
+                codIdShape =
+                    '638c4d0e858f268e4bc4149ea5909e26ea819bb32a76769dcb3b37d4db40b821ba739acc313e14fb591aac56a116a3a51906201f03fa083065428d53398a1e167698b619667c0246ba9a3a087861b6e696005ed44e406bd565d528a090b7f4fc498ad90d5b3716b899c405aaa03d926509e784c884b5d42803aa918684cd7df8-929521068674bd935f780da8b21a80b3';
+            }
+            if (
+                codigo == 'NT315' ||
+                codigo == 'NT316' ||
+                codigo == 'NT317' ||
+                codigo == 'NT318' ||
+                codigo == 'NT319' ||
+                codigo == 'NT320' ||
+                codigo == 'NT321' ||
+                codigo == 'NT322' ||
+                codigo == 'NT323' ||
+                codigo == 'NT324' ||
+                codigo == 'NT325' ||
+                codigo == 'NT326' ||
+                codigo == 'NT327' ||
+                codigo == 'NT328' ||
+                codigo == 'NT329' ||
+                codigo == 'NT330' ||
+                codigo == 'NT331' ||
+                codigo == 'NT332'
+            ) {
+                codIdShape =
+                    '086499f29933ebdcc429af41bb424afcb9585202e20f73d514e45255b914e569b3c035f22b58ae737ca224ceef5f2961e3f88673dc66ca7d38b380ee724c554dbebde9940fbb0d73d3005b7033273f2d92cf309dabb6c7ff856269039a2fc8e5d6b4238648b61150cdc93412b6ecfdf5f5d8d8323e6b9a80ebeaa5b3320dd0be-12b8fe369d5a43fda8336be132d2d14e';
             }
 
             this.productosShapediverComponent.uid = this.uid;
@@ -31746,6 +31910,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         idProd = $('#nombreMesita').attr('class');
         if (
             parseFloat(idProd) != 275 &&
+            parseFloat(idProd) != 277 &&
             parseFloat(idProd) != 255 &&
             parseFloat(idProd) != 256 &&
             parseFloat(idProd) != 251 &&
@@ -31772,7 +31937,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             parseFloat(idProd) != 242 &&
             parseFloat(idProd) != 243 &&
             parseFloat(idProd) != 244 &&
-            parseFloat(idProd) != 245
+            parseFloat(idProd) != 245 &&
+            parseFloat(idProd) != 278 &&
+            parseFloat(idProd) != 283 &&
+            parseFloat(idProd) != 284
         ) {
             var res = nombre;
 
@@ -34578,6 +34746,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var idProd1 = $('#nombreMesita').attr('class');
         if (
             parseFloat(idProd1) == 275 ||
+            parseFloat(idProd1) == 277 ||
             parseFloat(idProd1) == 255 ||
             parseFloat(idProd1) == 256 ||
             parseFloat(idProd1) == 251 ||
@@ -34604,7 +34773,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 242 ||
             parseFloat(idProd1) == 243 ||
             parseFloat(idProd1) == 244 ||
-            parseFloat(idProd1) == 245
+            parseFloat(idProd1) == 245 ||
+            parseFloat(idProd1) == 278 ||
+            parseFloat(idProd1) == 283 ||
+            parseFloat(idProd1) == 284
         ) {
             var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
             if (cogerIdCesta == null || cogerIdCesta == undefined) {
@@ -34835,6 +35007,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     if (value['mensajeEspecial'] == undefined) {
                         if (
                             parseFloat(idProd1) == 275 ||
+                            parseFloat(idProd1) == 277 ||
                             parseFloat(idProd1) == 255 ||
                             parseFloat(idProd1) == 256 ||
                             parseFloat(idProd1) == 251 ||
@@ -34861,7 +35034,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 242 ||
                             parseFloat(idProd1) == 243 ||
                             parseFloat(idProd1) == 244 ||
-                            parseFloat(idProd1) == 245
+                            parseFloat(idProd1) == 245 ||
+                            parseFloat(idProd1) == 278 ||
+                            parseFloat(idProd1) == 283 ||
+                            parseFloat(idProd1) == 284
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }

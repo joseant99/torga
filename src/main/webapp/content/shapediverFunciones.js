@@ -6,12 +6,12 @@ function imagenCarritoApi(){
 
 function imagenGirarParaCarro(){
 	var idProd = $('#nombreMesita').attr('class');
-	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245){
+	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284){
 		$("#soloParaEnviarImagenGirada")[0].click();
 	}else{
 		$("#sdv-container").css({"width":"410px"});
 		$("#sdv-container").css({"height":"410px"});
-		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245){
+		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284){
 			api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
 		            function(response) {
 		            	$("#soloParaEnviarImagenGirada")[0].click();
@@ -470,7 +470,7 @@ function apiShape(id){
 function apiShape3(id){
 	
 	window.textura = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1';
-	
+	window.puertasAca = [];
 	$(".divBuscadorArticulos").css({"display":"block"});
 	$("#page-heading").css({"display":"none"});
     $("#diviframeprueba").css({"display":"block"});
@@ -493,7 +493,7 @@ function apiShape3(id){
 	};
 	
 	// create the viewer, get back an API v2 object
-	window.api = new SDVApp.ParametricViewer(_viewerSettings);
+	window.api = new SDVApp.ParametricViewer(_viewerSettings); 
 	
 	var viewerInit = false;
 	var parameters;
@@ -603,33 +603,36 @@ function apiShape3(id){
 					  selectable: true,
 					  selectionMode: "single"
 					};**/
+
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+		
 	    if (!viewerInit) {
 	    	window.s = new THREE.Matrix4();
-	      var updatedSettings = {
-	    		  scene : {
-	    			  camera : {
-	    				  rotationSpeed : 0.1,
-	    				  autoAdjust: true,
-	    				  restrictions :{
-	    					  rotation : {
-	    						  minAzimuthAngle: -75,
-	    						  minPolarAngle: 45,
-	    						  maxPolarAngle: 90,
-	    						  maxAzimuthAngle: 75
-	    						  }
-	      					}
-	      				}
-	      			}
-	      }
-	      
-	     var ancho1 = $("#ancho1").text();
-	      var parame = api.parameters.get({name :"L"}).data[0];
-	  	api.parameters.updateAsync({
-	          id: parame.id,
-	          value: (parseFloat(ancho1)*10)
-	        }).then(function(response){
-	        	 var alto1 = $("#altoDatosDimen").text();
+			//api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones_Num2" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "Dimensiones_Num1" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "Expression, Expression, Dimensiones_Num, Expression" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesAlto" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesFodno" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesAncho" }, "CommPlugin_1").data[0].scenePath]);
+		  var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		  
+		 var ancho1 = $("#ancho1").text();
+		  var parame = api.parameters.get({name :"L"}).data[0];
+			api.parameters.updateAsync({
+		      id: parame.id,
+		      value: (parseFloat(ancho1)*10)
+		    }).then(function(response){
+		    	 var alto1 = $("#altoDatosDimen").text();
 		  	     var parame = api.parameters.get({name :"H"}).data[0];
 		  	     if(parame != undefined){
 		  	    	api.parameters.updateAsync({
@@ -637,24 +640,24 @@ function apiShape3(id){
 			  	          value: (parseFloat(alto1)*10)
 			  	        }) 
 		  	     }
-	        });
-	  	var updatedSettings = {
-	    		  scene : {
-	    			  camera : {
-	    				  rotationSpeed : 0.1,
-	    				  autoAdjust: true,
-	    				  restrictions :{
-	    					  rotation : {
-	    						  minAzimuthAngle: -75,
-	    						  minPolarAngle: 45,
-	    						  maxPolarAngle: 90,
-	    						  maxAzimuthAngle: 75
-	    						  }
-	      					}
-	      				}
-	      			}
-	      }
-  	 api.updateSettingsAsync(updatedSettings);
+		    });
+			var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		api.updateSettingsAsync(updatedSettings);
 	      var globalDiv = document.getElementById("parameters");
 	      parameters = api.parameters.get();
 	      parameters.data.sort(function(a, b) {
@@ -3038,16 +3041,26 @@ function interioresNuevoJson(obj){
 			var etihtml = $("#etiquetaAdi20").text();
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
+			var contCaj = 0;
 			  var calcu = (parseFloat(rangeSliderAdicional2.value) * 10) - (parseFloat(etihtml)*10);
-			  if(window.obj["interiores"][1]["tipo"] == "estante"){
+			  if(window.obj["interiores"][0]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+			  var hueco1 = [];
+			  var cont1Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0){
+						hueco1[cont1Hueco] = window.obj["interiores"][o];
+						cont1Hueco++;
+					}
+				}
+			  if(hueco1[1]["tipo"] == "estante"){
 			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 1){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['numero']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3060,7 +3073,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['numero']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -3072,10 +3085,10 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  }
-				  }
+					  
+				  
 			  }
-			  if(window.obj["interiores"][1]["tipo"] == "tubo"){
+			  if(hueco1[1]["tipo"] == "tubo"){
 				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
@@ -3093,13 +3106,13 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][1]["tipo"] == "cajones"){
+			  if(hueco1[1]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(0+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3112,7 +3125,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(0+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3125,15 +3138,14 @@ function interioresNuevoJson(obj){
 							         ],reset:false
 							       }]);
 			  }
-			  if(window.obj["interiores"][1]["tipo"] == "estantecristal"){
+			  if(hueco1[1]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 1){
+
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['numero']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3145,8 +3157,7 @@ function interioresNuevoJson(obj){
 								           }
 								         ],reset:false
 								       }]);
-					  }
-				  }
+
 				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
@@ -3312,16 +3323,25 @@ function interioresNuevoJson(obj){
 			var etihtml = $("#etiquetaAdi30").text();
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
-			  var calcu = (parseFloat(rangeSliderAdicional3.value) * 10) - (parseFloat(etihtml)*10); 
-			  if(window.obj["interiores"][2]["tipo"] == "estante"){
+			  var calcu = (parseFloat(rangeSliderAdicional3.value) * 10) - (parseFloat(etihtml)*10);
+			  
+			  var hueco1 = [];
+			  var cont1Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0){
+						hueco1[cont1Hueco] = window.obj["interiores"][o];
+						cont1Hueco++;
+					}
+				}
+
+			  if(hueco1[2]["tipo"] == "estante"){
 			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-			  for(let i = 0;i<arr.length;i++){
-				  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 2){
+
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['numero']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3334,7 +3354,7 @@ function interioresNuevoJson(obj){
 							         ],reset:false
 							       },
 							       {
-								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['numero']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3346,10 +3366,9 @@ function interioresNuevoJson(obj){
 								           }
 								         ],reset:false
 								       }]);
-				  }
-			  }
+
 		  }
-		  if(window.obj["interiores"][2]["tipo"] == "tubo"){
+		  if(hueco1[2]["tipo"] == "tubo"){
 			  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
@@ -3367,13 +3386,20 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       }]);
 		  }
-		  if(window.obj["interiores"][2]["tipo"] == "cajones"){
+		  if(hueco1[2]["tipo"] == "cajones"){
+			  var contCaj = 0;
+			  if(hueco1[0]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+			  if(hueco1[1]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -3386,7 +3412,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3398,17 +3424,16 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
-		  }
+		  } 
 		  
-		  if(window.obj["interiores"][2]["tipo"] == "estantecristal"){
+		  if(hueco1[2]["tipo"] == "estantecristal"){
 		  		var arr = window.arrayDeEstantesMetCristal;
 			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
-			  for(let i = 0;i<arr.length;i++){
-				  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 2){
+
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['numero']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3420,9 +3445,6 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
-				  }
-			  }
-			  
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta3.innerHTML =(rangeSliderAdicional3.value);
@@ -3588,15 +3610,23 @@ function interioresNuevoJson(obj){
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
 			  var calcu = (parseFloat(rangeSliderAdicional4.value) * 10) - (parseFloat(etihtml)*10); 
-			  if(window.obj["interiores"][3]["tipo"] == "estante"){
+			  var hueco1 = [];
+			  var cont1Hueco = 0;
+				for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0){
+						hueco1[cont1Hueco] = window.obj["interiores"][o];
+						cont1Hueco++;
+					}
+				}
+
+			  if(hueco1[3]["tipo"] == "estante"){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 3){
+
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['numero']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3609,7 +3639,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['numero']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -3621,10 +3651,9 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  }
-				  }
+
 			  }
-			  if(window.obj["interiores"][3]["tipo"] == "tubo"){
+			  if(hueco1[3]["tipo"] == "tubo"){
 				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
@@ -3642,13 +3671,23 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][3]["tipo"] == "cajones"){
+			  if(hueco1[3]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco1[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco1[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco1[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3661,7 +3700,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3673,6 +3712,27 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco1[3]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['numero']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta4.innerHTML =(rangeSliderAdicional4.value);
@@ -3837,16 +3897,24 @@ function interioresNuevoJson(obj){
 			var etihtml = $("#etiquetaAdi50").text();
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
-			  var calcu = (parseFloat(rangeSliderAdicional5.value) * 10) - (parseFloat(etihtml)*10); 
-			  if(window.obj["interiores"][4]["tipo"] == "estante"){
+			var calcu = (parseFloat(rangeSliderAdicional5.value) * 10) - (parseFloat(etihtml)*10);
+			var hueco1 = [];
+			var cont1Hueco = 0;
+			for(let o = 0;o<window.obj["interiores"].length;o++){
+					if(window.obj["interiores"][o]["interior"] == 0){
+						hueco1[cont1Hueco] = window.obj["interiores"][o];
+						cont1Hueco++;
+					}
+			}
+
+			  if(hueco1[4]["tipo"] == "estante"){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 4){
+
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['numero']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3859,7 +3927,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['numero']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -3871,10 +3939,9 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  }
-				  }
+
 			  }
-			  if(window.obj["interiores"][4]["tipo"] == "tubo"){
+			  if(hueco1[4]["tipo"] == "tubo"){
 				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
@@ -3892,13 +3959,26 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][4]["tipo"] == "cajones"){
+			  if(hueco1[4]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco1[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco1[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco1[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco1[3]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3911,7 +3991,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3923,6 +4003,27 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco1[4]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['numero']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta5.innerHTML =(rangeSliderAdicional5.value);
@@ -4091,6 +4192,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco2 = [];
@@ -4110,6 +4212,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -4211,6 +4319,27 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  
+			  if(hueco2[0]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
+			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 				etiqueta6.innerHTML =(rangeSliderAdicional6.value);
 				/* cambia la posición de la etiqueta6 (el tooltip) */
@@ -4377,6 +4506,8 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaInt1 = 0;
+			var numParaIntEstantCristal = 0;
+			var numParaIntCajones = 0;
 			var yaPuesto = 0;
 			var hueco2 = [];
 			var cont2Hueco = 0;
@@ -4393,10 +4524,23 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
+				
 			} 
 			  var calcu = (parseFloat(rangeSliderAdicional7.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[1]["tipo"] == "estante"){
@@ -4458,12 +4602,16 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco2[1]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco2[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4476,7 +4624,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -4488,6 +4636,32 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco2[1]["tipo"] == "estantecristal"){
+				  if(hueco2[0]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta7.innerHTML =(rangeSliderAdicional7.value);
@@ -4655,6 +4829,8 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaInt1 = 0;
+			var numParaIntEstantCristal = 0;
+			var numParaIntCajones = 0;
 			var yaPuesto = 0;
 			var hueco2 = [];
 			var cont2Hueco = 0;
@@ -4667,6 +4843,18 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
 					numParaIntTubo++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -4745,12 +4933,19 @@ function interioresNuevoJson(obj){
 					       }]);
 		  }
 		  if(hueco2[2]["tipo"] == "cajones"){
+			  var contCaj = 0;
+			  if(hueco2[0]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+			  if(hueco2[1]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -4763,7 +4958,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4775,6 +4970,42 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
+		  }
+		  if(hueco2[2]["tipo"] == "estantecristal"){
+			  if(hueco2[0]["tipo"] == 'estantecristal'){
+				  if(hueco2[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 2;
+				  }else{
+					  var sumCristal = 1;
+				  }
+			  }else{
+				  if(hueco2[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+				  
+			  }
+		  		var arr = window.arrayDeEstantesMetCristal;
+			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+
+			  
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		  etiqueta8.innerHTML =(rangeSliderAdicional8.value);
@@ -4942,6 +5173,8 @@ function interioresNuevoJson(obj){
 			  var numParaInt = 0;
 			  var numParaIntTubo = 0;
 				var numParaInt1 = 0;
+				var numParaIntEstantCristal = 0;
+				var numParaIntCajones = 0;
 				var yaPuesto = 0;
 				var hueco2 = [];
 				var cont2Hueco = 0;
@@ -4954,6 +5187,18 @@ function interioresNuevoJson(obj){
 					}
 					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
 						numParaIntTubo++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+						numParaIntCajones++;
 						if(numParaInt1 == 0){
 							numParaInt1 = o;
 						}
@@ -5052,12 +5297,22 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco2[3]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco2[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco2[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco2[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5070,7 +5325,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -5082,6 +5337,61 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco2[3]["tipo"] == "estantecristal"){
+				  if(hueco2[0]["tipo"] == 'estantecristal'){
+					  if(hueco2[1]["tipo"] == 'estantecristal'){
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 3;
+						  }else{
+							  var sumCristal = 2;
+						  }
+						  
+					  }else{
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1;  
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco2[1]["tipo"] == 'estantecristal'){
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1; 
+						  }
+						  
+					  }else{
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 1;
+						  }else{
+							  var sumCristal = 0; 
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  
 			  }
 			  /* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta9.innerHTML =(rangeSliderAdicional9.value);
@@ -5248,6 +5558,8 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaInt1 = 0;
+			var numParaIntEstantCristal = 0;
+			var numParaIntCajones = 0;
 			var yaPuesto = 0;
 			var hueco2 = [];
 			var cont2Hueco = 0;
@@ -5260,6 +5572,18 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
 					numParaInt++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
+					numParaIntCajones++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -5397,12 +5721,25 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco2[4]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco2[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco2[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco2[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco2[3]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5415,7 +5752,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_1"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -5427,6 +5764,101 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco2[4]["tipo"] == "estantecristal"){
+				  if(hueco2[0]["tipo"] == 'estantecristal'){
+					  if(hueco2[1]["tipo"] == 'estantecristal'){
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 4;
+							  }else{
+								  var sumCristal = 3;
+							  }
+							 
+						  }else{
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							    
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco2[1]["tipo"] == 'estantecristal'){
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco2[2]["tipo"] == 'estantecristal'){
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }else{
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 1;
+							  }else{
+								  var sumCristal = 0; 
+							  }
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta10.innerHTML =(rangeSliderAdicional10.value);
@@ -5597,6 +6029,7 @@ function interioresNuevoJson(obj){
 			var numParaIntCajones = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
+			var numParaIntEstantCristal = 0;
 			var hueco3 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
@@ -5618,6 +6051,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -5632,6 +6071,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -5731,6 +6176,27 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco3[0]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta11.innerHTML =(rangeSliderAdicional11.value);
@@ -5898,6 +6364,7 @@ function interioresNuevoJson(obj){
 			var arr1 = window.arrayDeEstantesMet;
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var numParaIntCajones = 0;
 			var yaPuesto = 0;
@@ -5922,6 +6389,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -5936,6 +6409,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -6005,12 +6484,17 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco3[1]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco3[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6023,7 +6507,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -6035,6 +6519,32 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco3[1]["tipo"] == "estantecristal"){
+				  if(hueco3[0]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta12.innerHTML =(rangeSliderAdicional12.value);
@@ -6202,6 +6712,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco3 = [];
@@ -6225,6 +6736,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -6239,6 +6756,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -6317,12 +6840,19 @@ function interioresNuevoJson(obj){
 					       }]);
 		  }
 		  if(hueco3[2]["tipo"] == "cajones"){
+			  var contCaj = 0;
+			  if(hueco3[0]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+			  if(hueco3[1]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -6335,7 +6865,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6347,6 +6877,42 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
+		  }
+		  if(hueco3[2]["tipo"] == "estantecristal"){
+			  if(hueco3[0]["tipo"] == 'estantecristal'){
+				  if(hueco3[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 2;
+				  }else{
+					  var sumCristal = 1;
+				  }
+			  }else{
+				  if(hueco3[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+				  
+			  }
+		  		var arr = window.arrayDeEstantesMetCristal;
+			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+
+			  
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta13.innerHTML =(rangeSliderAdicional13.value);
@@ -6515,6 +7081,7 @@ function interioresNuevoJson(obj){
 			  var numParaIntTubo = 0;
 				var numParaInt1 = 0;
 				var yaPuesto = 0;
+				var numParaIntEstantCristal = 0;
 				var numParaIntCajones = 0; 
 				var hueco3 = [];
 				var cont2Hueco = 0;
@@ -6537,6 +7104,12 @@ function interioresNuevoJson(obj){
 							numParaInt1 = o;
 						}
 					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
 					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 						numParaInt++;
 						if(numParaInt1 == 0){
@@ -6551,6 +7124,12 @@ function interioresNuevoJson(obj){
 					}
 					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
 						if(numParaInt1 == 0){
 							numParaInt1 = o;
 						}
@@ -6649,12 +7228,23 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco3[3]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco3[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco3[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco3[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6667,7 +7257,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -6679,6 +7269,61 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco3[3]["tipo"] == "estantecristal"){
+				  if(hueco3[0]["tipo"] == 'estantecristal'){
+					  if(hueco3[1]["tipo"] == 'estantecristal'){
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 3;
+						  }else{
+							  var sumCristal = 2;
+						  }
+						  
+					  }else{
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1;  
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco3[1]["tipo"] == 'estantecristal'){
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1; 
+						  }
+						  
+					  }else{
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 1;
+						  }else{
+							  var sumCristal = 0; 
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta14.innerHTML =(rangeSliderAdicional14.value);
@@ -6846,6 +7491,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco3 = [];
@@ -6869,6 +7515,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -6883,6 +7535,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -7020,12 +7678,25 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco3[4]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco3[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco3[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco3[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco3[3]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7038,7 +7709,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7050,6 +7721,101 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco3[4]["tipo"] == "estantecristal"){
+				  if(hueco3[0]["tipo"] == 'estantecristal'){
+					  if(hueco3[1]["tipo"] == 'estantecristal'){
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 4;
+							  }else{
+								  var sumCristal = 3;
+							  }
+							 
+						  }else{
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							    
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco3[1]["tipo"] == 'estantecristal'){
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco3[2]["tipo"] == 'estantecristal'){
+							  if(hueco2[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }else{
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 1;
+							  }else{
+								  var sumCristal = 0; 
+							  }
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta15.innerHTML =(rangeSliderAdicional15.value);
@@ -7218,6 +7984,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco4 = [];
@@ -7241,6 +8008,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7259,6 +8032,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7273,6 +8052,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -7372,6 +8157,27 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco4[0]["tipo"] == "estantecristal"){
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta16.innerHTML =(rangeSliderAdicional16.value);
@@ -7541,6 +8347,7 @@ function interioresNuevoJson(obj){
 			var numParaIntTubo = 0;
 			var numParaInt1 = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var yaPuesto = 0;
 			var hueco4 = [];
 			var cont2Hueco = 0;
@@ -7563,6 +8370,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7581,6 +8394,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7595,6 +8414,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -7664,12 +8489,17 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco4[1]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco4[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7682,7 +8512,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7694,6 +8524,32 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco4[1]["tipo"] == "estantecristal"){
+				  if(hueco4[0]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta17.innerHTML =(rangeSliderAdicional17.value);
@@ -7862,6 +8718,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco4 = [];
@@ -7885,6 +8742,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7903,6 +8766,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -7917,6 +8786,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -7995,12 +8870,20 @@ function interioresNuevoJson(obj){
 					       }]);
 		  }
 		  if(hueco4[2]["tipo"] == "cajones"){
+			  var contCaj = 0;
+			  if(hueco4[0]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+			  if(hueco4[1]["tipo"] == "cajones"){
+				  contCaj++;
+			  }
+
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -8013,7 +8896,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8025,6 +8908,42 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
+		  }
+		  if(hueco4[2]["tipo"] == "estantecristal"){
+			  if(hueco4[0]["tipo"] == 'estantecristal'){
+				  if(hueco4[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 2;
+				  }else{
+					  var sumCristal = 1;
+				  }
+			  }else{
+				  if(hueco4[1]["tipo"] == 'estantecristal'){
+					  var sumCristal = 1;
+				  }else{
+					  var sumCristal = 0;
+				  }
+				  
+			  }
+		  		var arr = window.arrayDeEstantesMetCristal;
+			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+
+			  
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta18.innerHTML =(rangeSliderAdicional18.value);
@@ -8194,7 +9113,8 @@ function interioresNuevoJson(obj){
 			  var numParaIntTubo = 0;
 				var numParaInt1 = 0;
 				var yaPuesto = 0;
-				var numParaIntCajones = 0; 
+				var numParaIntCajones = 0;
+				var numParaIntEstantCristal = 0;
 				var hueco4 = [];
 				var cont2Hueco = 0;
 				for(let o = 0;o<window.obj["interiores"].length;o++){
@@ -8212,6 +9132,12 @@ function interioresNuevoJson(obj){
 					}
 					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
 						if(numParaInt1 == 0){
 							numParaInt1 = o;
 						}
@@ -8234,6 +9160,12 @@ function interioresNuevoJson(obj){
 							numParaInt1 = o;
 						}
 					}
+					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
 					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
 						numParaInt++;
 						if(numParaInt1 == 0){
@@ -8248,6 +9180,12 @@ function interioresNuevoJson(obj){
 					}
 					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 						numParaIntCajones++;
+						if(numParaInt1 == 0){
+							numParaInt1 = o;
+						}
+					}
+					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+						numParaIntEstantCristal++;
 						if(numParaInt1 == 0){
 							numParaInt1 = o;
 						}
@@ -8346,12 +9284,23 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco4[3]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco4[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco4[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco4[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8364,7 +9313,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8376,6 +9325,61 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco4[3]["tipo"] == "estantecristal"){
+				  if(hueco4[0]["tipo"] == 'estantecristal'){
+					  if(hueco4[1]["tipo"] == 'estantecristal'){
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 3;
+						  }else{
+							  var sumCristal = 2;
+						  }
+						  
+					  }else{
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1;  
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco4[1]["tipo"] == 'estantecristal'){
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 2;
+						  }else{
+							  var sumCristal = 1; 
+						  }
+						  
+					  }else{
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  var sumCristal = 1;
+						  }else{
+							  var sumCristal = 0; 
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta19.innerHTML =(rangeSliderAdicional19.value);
@@ -8544,6 +9548,7 @@ function interioresNuevoJson(obj){
 			var numParaInt = 0;
 			var numParaIntTubo = 0;
 			var numParaIntCajones = 0;
+			var numParaIntEstantCristal = 0;
 			var numParaInt1 = 0;
 			var yaPuesto = 0;
 			var hueco4 = [];
@@ -8567,6 +9572,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -8585,6 +9596,12 @@ function interioresNuevoJson(obj){
 						numParaInt1 = o;
 					}
 				}
+				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
 					numParaInt++;
 					if(numParaInt1 == 0){
@@ -8599,6 +9616,12 @@ function interioresNuevoJson(obj){
 				}
 				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
 					numParaIntCajones++;
+					if(numParaInt1 == 0){
+						numParaInt1 = o;
+					}
+				}
+				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
+					numParaIntEstantCristal++;
 					if(numParaInt1 == 0){
 						numParaInt1 = o;
 					}
@@ -8736,12 +9759,25 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(hueco4[4]["tipo"] == "cajones"){
+				  var contCaj = 0;
+				  if(hueco4[0]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco4[1]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco4[2]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
+				  if(hueco4[3]["tipo"] == "cajones"){
+					  contCaj++;
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8754,7 +9790,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8766,6 +9802,101 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hueco4[4]["tipo"] == "estantecristal"){
+				  if(hueco4[0]["tipo"] == 'estantecristal'){
+					  if(hueco4[1]["tipo"] == 'estantecristal'){
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 4;
+							  }else{
+								  var sumCristal = 3;
+							  }
+							 
+						  }else{
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco3[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							    
+						  }
+						  
+					  }
+				  }else{
+					  if(hueco4[1]["tipo"] == 'estantecristal'){
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 3;
+							  }else{
+								  var sumCristal = 2;
+							  }
+							  
+						  }else{
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }
+						  
+					  }else{
+						  if(hueco4[2]["tipo"] == 'estantecristal'){
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 2;
+							  }else{
+								  var sumCristal = 1; 
+							  }
+							  
+						  }else{
+							  if(hueco4[3]["tipo"] == 'estantecristal'){
+								  var sumCristal = 1;
+							  }else{
+								  var sumCristal = 0; 
+							  }
+						  }
+						  
+					  }
+					  
+				  }
+			  		var arr = window.arrayDeEstantesMetCristal;
+				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
+
+						  api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+
+				  
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta20.innerHTML =(rangeSliderAdicional20.value);
@@ -12324,6 +13455,10 @@ function cambiarVistaArmario(tipo){
 		  array[2] = (array[1]+ (posint2 + 19));
 	  }
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
   }
   if(armario == 5){
 	  if(tipo == 1){
@@ -12339,6 +13474,11 @@ function cambiarVistaArmario(tipo){
 		  }
 	  }
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
   }
   if(armario == 6){
 	  if(tipo == 1){
@@ -12352,6 +13492,12 @@ function cambiarVistaArmario(tipo){
 		  }
 	  }
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
   }
   if(armario == 7){
 	  if(tipo == 1){
@@ -12370,6 +13516,13 @@ function cambiarVistaArmario(tipo){
 		  }
 	  }
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
   }
   if(armario == 8){
 	  
@@ -12378,6 +13531,14 @@ function cambiarVistaArmario(tipo){
 		  array[3] = (array[2]+ (posint2 + 19));
 	  
 	  array[array.length] = (valorAncho - 19) ;
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+	  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
   }
   /**
   if(costado != undefined && costado != 0){
@@ -12395,6 +13556,7 @@ function cambiarVistaArmario(tipo){
   **/
   object = window.todounarmario;
   
+  /**
   if(object.estantes != undefined){
 	  if(h == 1){
 		  if(window.estantes0.length != 0){
@@ -12608,7 +13770,7 @@ function cambiarVistaArmario(tipo){
 	  }
 	  object.tubos = arrayTub;
   }
-  
+  **/
   var costadosObject = {};
   var puertasObject = {};
   costadosObject["costados"] = array;
@@ -12621,1356 +13783,20 @@ function cambiarVistaArmario(tipo){
   object["puertas"] = arrayPuertas;
   window.todounarmario = object;
   var parame = api.parameters.get({name :"CostadosJSON"}).data[0];
-  api.parameters.updateAsync({
+  var parame1 = api.parameters.get({name :"PuertasJSON"}).data[0];
+  api.parameters.updateAsync([{
       id: parame.id,
       value: JSON.stringify(costadosObject)
-    });
-  var parame1 = api.parameters.get({name :"PuertasJSON"}).data[0];
+    },{
+        id: parame1.id,
+        value: JSON.stringify(puertasObject)
+      }]);
+  
   window.puertas = puertasObject;
-  api.parameters.updateAsync({
-      id: parame1.id,
-      value: JSON.stringify(puertasObject)
-    });
   
   $("#codigodepsArm"+ codigo)[0].click();
   console.log(JSON.stringify(object));
   
-  
-  /**setTimeout(function() {
-	  api.scene.render();
-  		var hoverEffect = {
-			active: {
-		    name: "colorHighlight",
-		    options: {
-		      color: [100, 100, 100]
-		    }
-		  }
-		};
-
-		var selectEffect = {
-		  active: {
-		    name: "colorHighlight",
-		    options: {
-			     color: [255, 0, 0]
-				    }
-			 }
-		};
-		if(window.armario == 2 || window.armario == 3){
-		var puertaIzq = {
-				  scenePaths: [],
-				  transformations: [
-				    {
-				      delay: 0,
-				      duration: 500,
-				      type: "rotation",
-				      repeat: 0,
-				      //yoyo:true,
-				      rotationAxis: {
-				        x: 0,
-				        y: 0,
-				        z: 1
-				      },
-				      rotationDegree: 90,
-				      pivot: {}
-				    }
-				  ],
-				  reset: false
-		};
-		var rightTrans = {
-				  scenePaths: [],
-				  transformations: [
-				    {
-				      delay: 0,
-				      duration: 500,
-				      type: "rotation",
-				      repeat: 0,
-				      //yoyo:true,
-				      rotationAxis: {
-				        x: 0,
-				        y: 0,
-				        z: 1
-				      },
-				      rotationDegree: -90,
-				      pivot: {}
-				    }
-				  ],
-				  reset: false
-				};
-		if(window.armario == 3){
-			var puerta1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-		}
-		
-			var selectableGroup = {
-				  id: "select",
-				  hoverable: true,
-				  hoverEffect: hoverEffect,
-				  //selectionEffect: selectEffect,
-				  selectable: true,
-				  selectionMode: "single"
-				};
-			
-			let arrPivot = api.scene.getData({
-    	        name: "puntoIzqPuertasIzquierda"
-    	      }).data[0].data;
-    	      var leftPivot = {
-    	        x: arrPivot[0],
-    	        y: arrPivot[1],
-    	        z: arrPivot[2]
-    	      };
-    	      
-    	      let arrPivot1 = api.scene.getData({
-      	        name: "puntoDerPuertasDerecha"
-      	      }).data[0].data;
-      	      var derPivot = {
-      	        x: arrPivot1[0],
-      	        y: arrPivot1[1],
-      	        z: arrPivot1[2]
-      	      };
-	      	    if(window.armario == 3){
-	      	    	if(tipo == 1){
-	      	    		let arrPivot2 = api.scene.getData({
-	          	        name: "puntoIzq1Puerta"
-	          	      }).data[0].data;
-	          	      var derPivot1 = {
-	          	        x: arrPivot2[0],
-	          	        y: arrPivot2[1],
-	          	        z: arrPivot2[2]
-	          	      };
-	      	    	}else{
-	      	    		let arrPivot2 = api.scene.getData({
-		          	        name: "puntoDer1puerta"
-		          	      }).data[0].data;
-		          	      var derPivot1 = {
-		          	        x: arrPivot2[0],
-		          	        y: arrPivot2[1],
-		          	        z: arrPivot2[2]
-		          	      };
-	      	    	}
-	    		}
-
-    	      puertaIzq.scenePaths = [
-    	        api.scene.get(
-    	          {
-    	            name: "PuertaIzquierda",
-    	            format: "glb"
-    	          },
-    	          "CommPlugin_1"
-    	        ).data[0].scenePath
-    	      ];
-    	      
-    	      rightTrans.scenePaths = [
-      	        api.scene.get(
-      	          {
-      	            name: "PuertaDerecha",
-      	            format: "glb"
-      	          },
-      	          "CommPlugin_1"
-      	        ).data[0].scenePath
-      	      ];
-    	      
-    	      if(window.armario == 3){
-    	    	  puerta1.scenePaths = [
-    	      	        api.scene.get(
-    	      	          {
-    	      	            name: "1Puerta",
-    	      	            format: "glb"
-    	      	          },
-    	      	          "CommPlugin_1"
-    	      	        ).data[0].scenePath
-    	      	      ];
-    	      }
-    	      
-    	       
-    	      puertaIzq.transformations[0].pivot = leftPivot;
-    	      rightTrans.transformations[0].pivot = derPivot;
-    	      if(window.armario == 3){
-    	    	  puerta1.transformations[0].pivot = derPivot1;
-    	      }
-    	      api.scene.updateInteractionGroups(selectableGroup);
-    	      
-    	      var assets = api.scene.get(null, "CommPlugin_1");
-    	      var updateObjects = [];
-    	      for (let assetnum in assets.data) {
-    	        var asset = assets.data[assetnum];
-    	        if (
-    	          (asset.name == "PuertaIzquierda" ||
-    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
-    	        ) {
-    	          let updateObject = {
-    	            id: asset.id,
-    	            duration: 0,
-    	            interactionGroup: selectableGroup.id,
-    	            interactionMode: 'SUB'
-    	          };
-    	          updateObjects.push(updateObject);
-    	        }
-    	        if(window.armario == 3){
-    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
-    	        		let updateObject = {
-    	        	            id: asset.id,
-    	        	            duration: 0,
-    	        	            interactionGroup: selectableGroup.id,
-    	        	            interactionMode: 'SUB'
-    	        	          };
-    	        	          updateObjects.push(updateObject);
-    	        	}
-    	        }
-    	      }
-		}	
-		
-		if(window.armario == 4 || window.armario == 5){
-			var puertaIzq = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var rightTrans = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			var rightTrans1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			if(window.armario == 5){
-				var puerta1 = {
-						  scenePaths: [],
-						  transformations: [
-						    {
-						      delay: 0,
-						      duration: 500,
-						      type: "rotation",
-						      repeat: 0,
-						      //yoyo:true,
-						      rotationAxis: {
-						        x: 0,
-						        y: 0,
-						        z: 1
-						      },
-						      rotationDegree: -90,
-						      pivot: {}
-						    }
-						  ],
-						  reset: false
-				};
-			}
-				var selectableGroup = {
-					  id: "select",
-					  hoverable: true,
-					  hoverEffect: hoverEffect,
-					  //selectionEffect: selectEffect,
-					  selectable: true,
-					  selectionMode: "single"
-					};
-				
-				let arrPivot = api.scene.getData({
-	    	        name: "puntoIzqPuertasIzquierda"
-	    	      }).data[0].data;
-	    	      var leftPivot = {
-	    	        x: arrPivot[0][0],
-	    	        y: arrPivot[0][1],
-	    	        z: arrPivot[0][2]
-	    	      };
-	    	      var leftPivot1 = {
-	  	    	        x: arrPivot[1][0],
-	  	    	        y: arrPivot[1][1],
-	  	    	        z: arrPivot[1][2]
-	  	    	      };
-	    	      
-	    	      let arrPivot1 = api.scene.getData({
-	      	        name: "puntoDerPuertasDerecha"
-	      	      }).data[0].data;
-	      	      var derPivot = {
-	      	        x: arrPivot1[0][0],
-	      	        y: arrPivot1[0][1],
-	      	        z: arrPivot1[0][2]
-	      	      };
-	      	    var derPivot1 = {
-		      	        x: arrPivot1[1][0],
-		      	        y: arrPivot1[1][1],
-		      	        z: arrPivot1[1][2]
-		      	      };
-	      	  if(window.armario == 5){
-	      	    	if(tipo == 1 || tipo == 3){
-	      	    		let arrPivot2 = api.scene.getData({
-		          	        name: "puntoDer1puerta"
-		          	      }).data[0].data;
-		          	      var derPivot2 = {
-		          	        x: arrPivot2[0],
-		          	        y: arrPivot2[1],
-		          	        z: arrPivot2[2]
-		          	      };
-	      	    	}else{
-		          	    let arrPivot2 = api.scene.getData({
-		          	        name: "puntoIzq1Puerta"
-		          	      }).data[0].data;
-		          	      var derPivot2 = {
-		          	        x: arrPivot2[0],
-		          	        y: arrPivot2[1],
-		          	        z: arrPivot2[2]
-		          	      };
-	      	    	}
-	    		}
-	    	      puertaIzq.scenePaths = [
-	    	        api.scene.get(
-	    	          {
-	    	            name: "PuertaIzquierda",
-	    	            format: "glb"
-	    	          },
-	    	          "CommPlugin_1"
-	    	        ).data[0].scenePath
-	    	      ];
-	    	      
-	    	      rightTrans.scenePaths = [
-	      	        api.scene.get(
-	      	          {
-	      	            name: "PuertaDerecha",
-	      	            format: "glb"
-	      	          },
-	      	          "CommPlugin_1"
-	      	        ).data[0].scenePath
-	      	      ];
-	    	      
-	    	      puertaIzq1.scenePaths = [
-		    	        api.scene.get(
-		    	          {
-		    	            name: "PuertaIzquierda",
-		    	            format: "glb"
-		    	          },
-		    	          "CommPlugin_1"
-		    	        ).data[0].scenePath
-		    	      ];
-		    	      
-		    	      rightTrans1.scenePaths = [
-		      	        api.scene.get(
-		      	          {
-		      	            name: "PuertaDerecha",
-		      	            format: "glb"
-		      	          },
-		      	          "CommPlugin_1"
-		      	        ).data[0].scenePath
-		      	      ];
-		    	      if(window.armario == 5){
-		    	    	  puerta1.scenePaths = [
-		    	      	        api.scene.get(
-		    	      	          {
-		    	      	            name: "1Puerta",
-		    	      	            format: "glb"
-		    	      	          },
-		    	      	          "CommPlugin_1"
-		    	      	        ).data[0].scenePath
-		    	      	      ];
-		    	      }
-	    	      puertaIzq.transformations[0].pivot = leftPivot;
-	    	      rightTrans.transformations[0].pivot = derPivot;
-	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
-	    	      rightTrans1.transformations[0].pivot = derPivot1;
-	    	      if(window.armario == 5){
-	    	    	  puerta1.transformations[0].pivot = derPivot2;
-	    	      } 
-	    	      api.scene.updateInteractionGroups(selectableGroup);
-	    	      
-	    	      var assets = api.scene.get(null, "CommPlugin_1");
-	    	      var updateObjects = [];
-	    	      for (let assetnum in assets.data) {
-	    	        var asset = assets.data[assetnum];
-	    	        if (
-	    	          (asset.name == "PuertaIzquierda" ||
-	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
-	    	        ) {
-	    	          let updateObject = {
-	    	            id: asset.id,
-	    	            duration: 0,
-	    	            interactionGroup: selectableGroup.id,
-	    	            interactionMode: 'SUB'
-	    	          };
-	    	          updateObjects.push(updateObject);
-	    	        }
-	    	        if(window.armario == 5){
-	    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
-	    	        		let updateObject = {
-	    	        	            id: asset.id,
-	    	        	            duration: 0,
-	    	        	            interactionGroup: selectableGroup.id,
-	    	        	            interactionMode: 'SUB'
-	    	        	          };
-	    	        	          updateObjects.push(updateObject);
-	    	        	}
-	    	        }
-	    	      }
-			}
-		
-		if(window.armario == 6 || window.armario == 7){
-			var puertaIzq = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq2 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var rightTrans = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			var rightTrans1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			
-			var rightTrans2 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			if(window.armario == 7){
-				var puerta1 = {
-						  scenePaths: [],
-						  transformations: [
-						    {
-						      delay: 0,
-						      duration: 500,
-						      type: "rotation",
-						      repeat: 0,
-						      //yoyo:true,
-						      rotationAxis: {
-						        x: 0,
-						        y: 0,
-						        z: 1
-						      },
-						      rotationDegree: -90,
-						      pivot: {}
-						    }
-						  ],
-						  reset: false
-				};
-			}
-				var selectableGroup = {
-					  id: "select",
-					  hoverable: true,
-					  hoverEffect: hoverEffect,
-					  //selectionEffect: selectEffect,
-					  selectable: true,
-					  selectionMode: "single"
-					};
-				
-				let arrPivot = api.scene.getData({
-	    	        name: "puntoIzqPuertasIzquierda"
-	    	      }).data[0].data;
-	    	      var leftPivot = {
-	    	        x: arrPivot[0][0],
-	    	        y: arrPivot[0][1],
-	    	        z: arrPivot[0][2]
-	    	      };
-	    	      var leftPivot1 = {
-	  	    	        x: arrPivot[1][0],
-	  	    	        y: arrPivot[1][1],
-	  	    	        z: arrPivot[1][2]
-	  	    	      };
-	    	      var leftPivot2 = {
-		  	    	        x: arrPivot[2][0],
-		  	    	        y: arrPivot[2][1],
-		  	    	        z: arrPivot[2][2]
-		  	    	      };
-	    	      let arrPivot1 = api.scene.getData({
-	      	        name: "puntoDerPuertasDerecha"
-	      	      }).data[0].data;
-	      	      var derPivot = {
-	      	        x: arrPivot1[0][0],
-	      	        y: arrPivot1[0][1],
-	      	        z: arrPivot1[0][2]
-	      	      };
-	      	    var derPivot1 = {
-		      	        x: arrPivot1[1][0],
-		      	        y: arrPivot1[1][1],
-		      	        z: arrPivot1[1][2]
-		      	      };
-	      	  var derPivot2 = {
-		      	        x: arrPivot1[2][0],
-		      	        y: arrPivot1[2][1],
-		      	        z: arrPivot1[2][2]
-		      	      };
-	      	if(window.armario == 7){
-      	    	if(tipo == 1 || tipo == 3){
-      	    		let arrPivot2 = api.scene.getData({
-	          	        name: "puntoDer1puerta"
-	          	      }).data[0].data;
-	          	      var derPivot4 = {
-	          	        x: arrPivot2[0],
-	          	        y: arrPivot2[1],
-	          	        z: arrPivot2[2]
-	          	      };
-      	    	}else{
-	          	    let arrPivot2 = api.scene.getData({
-	          	        name: "puntoIzq1Puerta"
-	          	      }).data[0].data;
-	          	      var derPivot4 = {
-	          	        x: arrPivot2[0],
-	          	        y: arrPivot2[1],
-	          	        z: arrPivot2[2]
-	          	      };
-      	    	}
-    		}
-	    	      puertaIzq.scenePaths = [
-	    	        api.scene.get(
-	    	          {
-	    	            name: "PuertaIzquierda",
-	    	            format: "glb"
-	    	          },
-	    	          "CommPlugin_1"
-	    	        ).data[0].scenePath
-	    	      ];
-	    	      
-	    	      rightTrans.scenePaths = [
-	      	        api.scene.get(
-	      	          {
-	      	            name: "PuertaDerecha",
-	      	            format: "glb"
-	      	          },
-	      	          "CommPlugin_1"
-	      	        ).data[0].scenePath
-	      	      ];
-	    	      
-	    	      puertaIzq1.scenePaths = [
-		    	        api.scene.get(
-		    	          {
-		    	            name: "PuertaIzquierda",
-		    	            format: "glb"
-		    	          },
-		    	          "CommPlugin_1"
-		    	        ).data[0].scenePath
-		    	      ];
-		    	      
-		    	      rightTrans1.scenePaths = [
-		      	        api.scene.get(
-		      	          {
-		      	            name: "PuertaDerecha",
-		      	            format: "glb"
-		      	          },
-		      	          "CommPlugin_1"
-		      	        ).data[0].scenePath
-		      	      ];
-		    	      
-		    	      puertaIzq2.scenePaths = [
-			    	        api.scene.get(
-			    	          {
-			    	            name: "PuertaIzquierda",
-			    	            format: "glb"
-			    	          },
-			    	          "CommPlugin_1"
-			    	        ).data[0].scenePath
-			    	      ];
-			    	      
-			    	      rightTrans2.scenePaths = [
-			      	        api.scene.get(
-			      	          {
-			      	            name: "PuertaDerecha",
-			      	            format: "glb"
-			      	          },
-			      	          "CommPlugin_1"
-			      	        ).data[0].scenePath
-			      	      ];
-			    	      if(window.armario == 7){
-			    	    	  puerta1.scenePaths = [
-			    	      	        api.scene.get(
-			    	      	          {
-			    	      	            name: "1Puerta",
-			    	      	            format: "glb"
-			    	      	          },
-			    	      	          "CommPlugin_1"
-			    	      	        ).data[0].scenePath
-			    	      	      ];
-			    	      }
-	    	      
-	    	      puertaIzq.transformations[0].pivot = leftPivot;
-	    	      rightTrans.transformations[0].pivot = derPivot;
-	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
-	    	      rightTrans1.transformations[0].pivot = derPivot1;
-	    	      puertaIzq2.transformations[0].pivot = leftPivot2;
-	    	      rightTrans2.transformations[0].pivot = derPivot2;
-	    	      if(window.armario == 7){
-	    	    	  puerta1.transformations[0].pivot = derPivot4;
-	    	      }
-	    	      api.scene.updateInteractionGroups(selectableGroup);
-	    	      
-	    	      var assets = api.scene.get(null, "CommPlugin_1");
-	    	      var updateObjects = [];
-	    	      for (let assetnum in assets.data) {
-	    	        var asset = assets.data[assetnum];
-	    	        if (
-	    	          (asset.name == "PuertaIzquierda" ||
-	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
-	    	        ) {
-	    	          let updateObject = {
-	    	            id: asset.id,
-	    	            duration: 0,
-	    	            interactionGroup: selectableGroup.id,
-	    	            interactionMode: 'SUB'
-	    	          };
-	    	          updateObjects.push(updateObject);
-	    	        }
-	    	        if(window.armario == 7){
-	    	        	if (asset.name == "1Puerta" && asset.format == "glb"){
-	    	        		let updateObject = {
-	    	        	            id: asset.id,
-	    	        	            duration: 0,
-	    	        	            interactionGroup: selectableGroup.id,
-	    	        	            interactionMode: 'SUB'
-	    	        	          };
-	    	        	          updateObjects.push(updateObject);
-	    	        	}
-	    	        }
-	    	      }
-			}
-		
-		if(window.armario == 8){
-			var puertaIzq = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq2 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var puertaIzq3 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: 90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-			};
-			var rightTrans = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			var rightTrans1 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			
-			var rightTrans2 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			
-			var rightTrans3 = {
-					  scenePaths: [],
-					  transformations: [
-					    {
-					      delay: 0,
-					      duration: 500,
-					      type: "rotation",
-					      repeat: 0,
-					      //yoyo:true,
-					      rotationAxis: {
-					        x: 0,
-					        y: 0,
-					        z: 1
-					      },
-					      rotationDegree: -90,
-					      pivot: {}
-					    }
-					  ],
-					  reset: false
-					};
-			
-				var selectableGroup = {
-					  id: "select",
-					  hoverable: true,
-					  hoverEffect: hoverEffect,
-					  //selectionEffect: selectEffect,
-					  selectable: true,
-					  selectionMode: "single"
-					};
-				
-				let arrPivot = api.scene.getData({
-	    	        name: "puntoIzqPuertasIzquierda"
-	    	      }).data[0].data;
-	    	      var leftPivot = {
-	    	        x: arrPivot[0][0],
-	    	        y: arrPivot[0][1],
-	    	        z: arrPivot[0][2]
-	    	      };
-	    	      var leftPivot1 = {
-	  	    	        x: arrPivot[1][0],
-	  	    	        y: arrPivot[1][1],
-	  	    	        z: arrPivot[1][2]
-	  	    	      };
-	    	      var leftPivot2 = {
-		  	    	        x: arrPivot[2][0],
-		  	    	        y: arrPivot[2][1],
-		  	    	        z: arrPivot[2][2]
-		  	    	      };
-	    	      var leftPivot3 = {
-		  	    	        x: arrPivot[3][0],
-		  	    	        y: arrPivot[3][1],
-		  	    	        z: arrPivot[3][2]
-		  	    	      };
-	    	      let arrPivot1 = api.scene.getData({
-	      	        name: "puntoDerPuertasDerecha"
-	      	      }).data[0].data;
-	      	      var derPivot = {
-	      	        x: arrPivot1[0][0],
-	      	        y: arrPivot1[0][1],
-	      	        z: arrPivot1[0][2]
-	      	      };
-	      	    var derPivot1 = {
-		      	        x: arrPivot1[1][0],
-		      	        y: arrPivot1[1][1],
-		      	        z: arrPivot1[1][2]
-		      	      };
-	      	  var derPivot2 = {
-		      	        x: arrPivot1[2][0],
-		      	        y: arrPivot1[2][1],
-		      	        z: arrPivot1[2][2]
-		      	      };
-	      	var derPivot3 = {
-	      	        x: arrPivot1[3][0],
-	      	        y: arrPivot1[3][1],
-	      	        z: arrPivot1[3][2]
-	      	      };
-
-	    	      puertaIzq.scenePaths = [
-	    	        api.scene.get(
-	    	          {
-	    	            name: "PuertaIzquierda",
-	    	            format: "glb"
-	    	          },
-	    	          "CommPlugin_1"
-	    	        ).data[0].scenePath
-	    	      ];
-	    	      
-	    	      rightTrans.scenePaths = [
-	      	        api.scene.get(
-	      	          {
-	      	            name: "PuertaDerecha",
-	      	            format: "glb"
-	      	          },
-	      	          "CommPlugin_1"
-	      	        ).data[0].scenePath
-	      	      ];
-	    	      
-	    	      puertaIzq1.scenePaths = [
-		    	        api.scene.get(
-		    	          {
-		    	            name: "PuertaIzquierda",
-		    	            format: "glb"
-		    	          },
-		    	          "CommPlugin_1"
-		    	        ).data[0].scenePath
-		    	      ];
-		    	      
-		    	      rightTrans1.scenePaths = [
-		      	        api.scene.get(
-		      	          {
-		      	            name: "PuertaDerecha",
-		      	            format: "glb"
-		      	          },
-		      	          "CommPlugin_1"
-		      	        ).data[0].scenePath
-		      	      ];
-		    	      
-		    	      puertaIzq2.scenePaths = [
-			    	        api.scene.get(
-			    	          {
-			    	            name: "PuertaIzquierda",
-			    	            format: "glb"
-			    	          },
-			    	          "CommPlugin_1"
-			    	        ).data[0].scenePath
-			    	      ];
-			    	      
-			    	      rightTrans2.scenePaths = [
-			      	        api.scene.get(
-			      	          {
-			      	            name: "PuertaDerecha",
-			      	            format: "glb"
-			      	          },
-			      	          "CommPlugin_1"
-			      	        ).data[0].scenePath
-			      	      ];
-			    	      puertaIzq3.scenePaths = [
-				    	        api.scene.get(
-				    	          {
-				    	            name: "PuertaIzquierda",
-				    	            format: "glb"
-				    	          },
-				    	          "CommPlugin_1"
-				    	        ).data[0].scenePath
-				    	      ];
-				    	      
-				    	      rightTrans3.scenePaths = [
-				      	        api.scene.get(
-				      	          {
-				      	            name: "PuertaDerecha",
-				      	            format: "glb"
-				      	          },
-				      	          "CommPlugin_1"
-				      	        ).data[0].scenePath
-				      	      ];
-	    	      
-	    	      puertaIzq.transformations[0].pivot = leftPivot;
-	    	      rightTrans.transformations[0].pivot = derPivot;
-	    	      puertaIzq1.transformations[0].pivot = leftPivot1;
-	    	      rightTrans1.transformations[0].pivot = derPivot1;
-	    	      puertaIzq2.transformations[0].pivot = leftPivot2;
-	    	      rightTrans2.transformations[0].pivot = derPivot2;
-	    	      puertaIzq3.transformations[0].pivot = leftPivot3;
-	    	      rightTrans3.transformations[0].pivot = derPivot3;
-	    	      api.scene.updateInteractionGroups(selectableGroup);
-	    	      
-	    	      var assets = api.scene.get(null, "CommPlugin_1");
-	    	      var updateObjects = [];
-	    	      for (let assetnum in assets.data) {
-	    	        var asset = assets.data[assetnum];
-	    	        if (
-	    	          (asset.name == "PuertaIzquierda" ||
-	    	          asset.name == "PuertaDerecha") && asset.format == "glb" 
-	    	        ) {
-	    	          let updateObject = {
-	    	            id: asset.id,
-	    	            duration: 0,
-	    	            interactionGroup: selectableGroup.id,
-	    	            interactionMode: 'SUB'
-	    	          };
-	    	          updateObjects.push(updateObject);
-	    	        }
-	    	      }
-			}
-    	      api.scene.updatePersistentAsync(updateObjects, "CommPlugin_1");
-    	      window.seadadoclic = 0;
-    	      window.numeroPath = 0;
-    	      
-    	      api.scene.addEventListener(api.scene.EVENTTYPE.SELECT_ON, function(event){
-    	        console.log("SELECT_ON");
-    	        console.log(event);
-    	        let objID = event.scenePath.split(".")[1];
-    	        let selectedAsset = api.scene.get(
-    	          {
-    	            id: objID
-    	          },
-    	          "CommPlugin_1"
-    	        );
-    	        
-    	        	if(window.armario == 2 || window.armario == 3){
-    	        		if(numeroPath == 0){
-    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
-        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
-        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
-        	        	
-        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
-    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
-        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
-        	        		 if(window.armario == 3){
-        	        			 var pathArpuerta3 = puerta1.scenePaths[0];
-        	        			 pathArpuerta3 = pathArpuerta3 + ".content_0";
-             	        		puerta1.scenePaths[0] = pathArpuerta3; 
-        	        		 }
-        	        		window.numeroPath = 1;
-    	        		}
-	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
-		    	        puertaIzq.transformations[0].rotationDegree = -rot;
-	    	            api.scene.setLiveTransformation([puertaIzq]);
-	    	        
-	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
-	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
-	    	            api.scene.setLiveTransformation([rightTrans]);
-	    	            
-	    	            if(window.armario == 3){
-	    	            	let rot2 = puerta1.transformations[0].rotationDegree;
-	    	            	puerta1.transformations[0].rotationDegree = -rot2;
-		    	            api.scene.setLiveTransformation([puerta1]);
-	    	            }
-    	        	}
-    	        	if(window.armario == 4 || window.armario == 5){
-    	        		if(numeroPath == 0){
-    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
-        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
-        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
-        	        	
-        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
-    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
-        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
-        	        		
-        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
-    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
-    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
-    	    	            
-    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
-    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
-        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
-        	        		
-        	        		if(window.armario == 5){
-	       	        			 var pathArpuerta5 = puerta1.scenePaths[0];
-	       	        			pathArpuerta5 = pathArpuerta5 + ".content_0";
-	            	        		puerta1.scenePaths[0] = pathArpuerta5; 
-	       	        		 }
-        	        		window.numeroPath = 1;
-    	        		}
-    	        		
-	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
-		    	        puertaIzq.transformations[0].rotationDegree = -rot;
-	    	            api.scene.setLiveTransformation([puertaIzq]);
-	    	            
-	    	            
-	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
-	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
-	    	            api.scene.setLiveTransformation([rightTrans]);
-	    	            
-	    	            
-	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
-	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
-	    	            api.scene.setLiveTransformation([puertaIzq1]);
-	    	            
-	    	             
-	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
-	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
-	    	            api.scene.setLiveTransformation([rightTrans1]);
-	    	            
-	    	            if(window.armario == 5){
-	    	            	let rot4 = puerta1.transformations[0].rotationDegree;
-	    	            	puerta1.transformations[0].rotationDegree = -rot4;
-		    	            api.scene.setLiveTransformation([puerta1]);
-	    	            }
-    	        	}
-    	        	
-    	        	if(window.armario == 6 || window.armario == 7){
-    	        		if(numeroPath == 0){
-    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
-        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
-        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
-        	        	
-        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
-    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
-        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
-        	        		
-        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
-    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
-    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
-    	    	            
-    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
-    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
-        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
-        	        		
-        	        		var pathArpuerta5 = puertaIzq2.scenePaths[0];
-        	        		pathArpuerta5 = pathArpuerta5 + ".content_2";
-    	    	            puertaIzq2.scenePaths[0] = pathArpuerta5;
-    	    	            
-    	    	            var pathArpuerta6 = rightTrans2.scenePaths[0];
-    	    	            pathArpuerta6 = pathArpuerta6 + ".content_2";
-        	        		rightTrans2.scenePaths[0] = pathArpuerta6;
-        	        		
-        	        		if(window.armario == 7){
-	       	        			 var pathArpuerta7 = puerta1.scenePaths[0];
-	       	        			pathArpuerta7 = pathArpuerta7 + ".content_0";
-	            	        		puerta1.scenePaths[0] = pathArpuerta7; 
-	       	        		 }
-        	        		window.numeroPath = 1;
-    	        		}
-    	        		
-	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
-		    	        puertaIzq.transformations[0].rotationDegree = -rot;
-	    	            api.scene.setLiveTransformation([puertaIzq]);
-	    	            
-	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
-	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
-	    	            api.scene.setLiveTransformation([rightTrans]);
-	    	            
-	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
-	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
-	    	            api.scene.setLiveTransformation([puertaIzq1]);
-	    	            
-	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
-	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
-	    	            api.scene.setLiveTransformation([rightTrans1]);
-	    	            
-	    	            let rot4 = puertaIzq2.transformations[0].rotationDegree;
-	    	        	puertaIzq2.transformations[0].rotationDegree = -rot4;
-	    	            api.scene.setLiveTransformation([puertaIzq2]);
-	    	            
-	    	        	let rot5 = rightTrans2.transformations[0].rotationDegree;
-	    	        	rightTrans2.transformations[0].rotationDegree = -rot5;
-	    	            api.scene.setLiveTransformation([rightTrans2]);
-	    	            
-	    	            if(window.armario == 7){
-	    	            	let rot6 = puerta1.transformations[0].rotationDegree;
-	    	            	puerta1.transformations[0].rotationDegree = -rot6;
-		    	            api.scene.setLiveTransformation([puerta1]);
-	    	            }
-    	        	}
-    	        	
-    	        	if(window.armario == 8){
-    	        		if(numeroPath == 0){
-    	        			var pathArpuerta1 = puertaIzq.scenePaths[0];
-        	        		pathArpuerta1 = pathArpuerta1 + ".content_0";
-        	        		puertaIzq.scenePaths[0] = pathArpuerta1; 
-        	        	
-        	        		var pathArpuerta2 = rightTrans.scenePaths[0];
-    	    	            pathArpuerta2 = pathArpuerta2 + ".content_0";
-        	        		rightTrans.scenePaths[0] = pathArpuerta2; 
-        	        		
-        	        		var pathArpuerta3 = puertaIzq1.scenePaths[0];
-    	    	            pathArpuerta3 = pathArpuerta3 + ".content_1";
-    	    	            puertaIzq1.scenePaths[0] = pathArpuerta3;
-    	    	            
-    	    	            var pathArpuerta4 = rightTrans1.scenePaths[0];
-    	    	            pathArpuerta4 = pathArpuerta4 + ".content_1";
-        	        		rightTrans1.scenePaths[0] = pathArpuerta4;
-        	        		
-        	        		var pathArpuerta5 = puertaIzq2.scenePaths[0];
-        	        		pathArpuerta5 = pathArpuerta5 + ".content_2";
-    	    	            puertaIzq2.scenePaths[0] = pathArpuerta5;
-    	    	            
-    	    	            var pathArpuerta6 = rightTrans2.scenePaths[0];
-    	    	            pathArpuerta6 = pathArpuerta6 + ".content_2";
-        	        		rightTrans2.scenePaths[0] = pathArpuerta6;
-        	        		
-        	        		var pathArpuerta7 = puertaIzq3.scenePaths[0];
-        	        		pathArpuerta7 = pathArpuerta7 + ".content_3";
-    	    	            puertaIzq3.scenePaths[0] = pathArpuerta7;
-        	        		
-        	        		var pathArpuerta8 = rightTrans3.scenePaths[0];
-        	        		pathArpuerta8 = pathArpuerta8 + ".content_3";
-        	        		rightTrans3.scenePaths[0] = pathArpuerta8;
-        	        		
-        	        		window.numeroPath = 1;
-    	        		}
-    	        		
-	    	        	let rot = puertaIzq.transformations[0].rotationDegree;
-		    	        puertaIzq.transformations[0].rotationDegree = -rot;
-	    	            api.scene.setLiveTransformation([puertaIzq]);
-	    	            
-	    	        	let rot1 = rightTrans.transformations[0].rotationDegree;
-	    	        	rightTrans.transformations[0].rotationDegree = -rot1;
-	    	            api.scene.setLiveTransformation([rightTrans]);
-	    	            
-	    	        	let rot2 = puertaIzq1.transformations[0].rotationDegree;
-	    	        	puertaIzq1.transformations[0].rotationDegree = -rot2;
-	    	            api.scene.setLiveTransformation([puertaIzq1]);
-	    	            
-	    	        	let rot3 = rightTrans1.transformations[0].rotationDegree;
-	    	        	rightTrans1.transformations[0].rotationDegree = -rot3;
-	    	            api.scene.setLiveTransformation([rightTrans1]);
-	    	            
-	    	            let rot4 = puertaIzq2.transformations[0].rotationDegree;
-	    	        	puertaIzq2.transformations[0].rotationDegree = -rot4;
-	    	            api.scene.setLiveTransformation([puertaIzq2]);
-	    	            
-	    	        	let rot5 = rightTrans2.transformations[0].rotationDegree;
-	    	        	rightTrans2.transformations[0].rotationDegree = -rot5;
-	    	            api.scene.setLiveTransformation([rightTrans2]);
-	    	            
-	    	            let rot6 = puertaIzq3.transformations[0].rotationDegree;
-	    	            puertaIzq3.transformations[0].rotationDegree = -rot6;
-	    	            api.scene.setLiveTransformation([puertaIzq3]);
-	    	            
-	    	        	let rot7 = rightTrans3.transformations[0].rotationDegree;
-	    	        	rightTrans3.transformations[0].rotationDegree = -rot7;
-	    	            api.scene.setLiveTransformation([rightTrans3]);
-    	        	}
-    	        api.scene.updateSelected(null, api.scene.getSelected());
-	    	        
-    	      });
-    	      
-  }, 2500);**/
 }
 
 
@@ -23045,35 +22871,41 @@ function divcontenidometerfuncion(u,id){
 	 
 	 
 	 if(id == 0){
+		 var arrayIntTodo = [];
+		 var contArray1 = 0;
 		 for(let i = 0;i<array.length;i++){
-			 if(i == (u - 1)){
-				 if(array[i]["tipo"] == "estante"){
-					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+array[i]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+array[i]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
+			 if(array[i]["interior"] == 0){
+				 arrayIntTodo[contArray1] = array[i];
+				 contArray1++;
+			 }
+		 }
+
+				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(shelvesScenePaths);
 					  contEst++;
 				 }
-				 if(array[i]["tipo"] == "tubo"){
+				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
 					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(tubosScenePaths);
 					  contTubo++;
 				 }
-				 if(array[i]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+ arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+ arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
 				 }
-				 if(array[i]["tipo"] == "camisero"){
+				 if(arrayIntTodo[u-1]["tipo"] == "camisero"){
 					 camiserosScenePaths = [camiseros.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(camiserosScenePaths);
 					  contCami++;
 				 }
-				 if(array[i]["tipo"] == "estantecristal"){
+				 if(arrayIntTodo[u-1]["tipo"] == "estantecristal"){
 					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(estantesCristalScenePaths);
 					  contCris++;
 				 }
-			 }
-		 }
+			 
 	 }
 	 var cont1 = 0;
 	 var cont1Tubo = 0;
@@ -23110,7 +22942,7 @@ function divcontenidometerfuncion(u,id){
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
 				 }
@@ -23163,7 +22995,7 @@ function divcontenidometerfuncion(u,id){
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
 				 }
@@ -23228,7 +23060,7 @@ function divcontenidometerfuncion(u,id){
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones)+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
 				 }
@@ -23261,7 +23093,127 @@ function divcontenidometerfuncion(u,id){
 }
 function estaMarcadoDivArm(div){
 	//if(div == 'divElegirOpcionSlider'){
-	
+		if(div == "#divPuerta0" || div == "#divPuerta1" || div == "#divPuerta2" || div == "#divPuerta3" || div == "#divPuerta4" || div == "#divPuerta5" || div == "#divPuerta6" || div == "#divPuerta7"){
+			if(armario == 1){
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+			  }
+			  if(armario == 2){
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+			  }
+			  if(armario == 3){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+			  }
+			  if(armario == 4){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+			  }
+			  if(armario == 5){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+			  }
+			  if(armario == 6){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+			  }
+			  if(armario == 7){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
+			  }
+			  if(armario == 8){
+
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
+				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"],[]);
+			  }
+			
+		}else{
+			if(armario == 1){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+			  }
+			  if(armario == 2){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+			  }
+			  if(armario == 3){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+			  }
+			  if(armario == 4){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+			  }
+			  if(armario == 5){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+			  }
+			  if(armario == 6){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+			  }
+			  if(armario == 7){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+			  }
+			  if(armario == 8){
+
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+			  }
+			
+		}
 		$(div).removeAttr("onclick");
 		$(div+" #divOscuroOpOpcionesSlider").remove();
 		$(""+window.ultimoDivPuesto).append('<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>');
@@ -23405,7 +23357,7 @@ function apoyoDeLosModulos(id){
 	if(id == 403){
 		idBuena = 6;
 		idMetal = 1;
-		var url = 'https://dl.dropboxusercontent.com/s/ovogx9txrveqo8p/BLANCO.png?dl=1';
+		var url = 'https://dl.dropboxusercontent.com/s/q196gdhabe3zemo/BLANCO_CANTO.png?dl=1';
 	}
 	if(id == 18){
 		idBuena = 0;
