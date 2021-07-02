@@ -661,7 +661,7 @@ function apiShape3(id){
 		  				}
 		  			}
 		  }
-		api.updateSettingsAsync(updatedSettings);
+		api.updateSettingsAsync(updatedSettings); 
 			 if(api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0] != undefined){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0].scenePath]);
 			}
