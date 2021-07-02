@@ -471,6 +471,9 @@ function apiShape3(id){
 	
 	window.textura = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1';
 	window.puertasAca = [];
+	window.puertasAca1 = [];
+	window.puertasAcaCantos = [];
+	window.puertasAcaCantos1 = [];
 	$(".divBuscadorArticulos").css({"display":"block"});
 	$("#page-heading").css({"display":"none"});
     $("#diviframeprueba").css({"display":"block"});
@@ -608,7 +611,7 @@ function apiShape3(id){
 		
 	    if (!viewerInit) {
 	    	window.s = new THREE.Matrix4();
-			//api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones_Num2" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "Dimensiones_Num1" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "Expression, Expression, Dimensiones_Num, Expression" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesAlto" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesFodno" }, "CommPlugin_1").data[0].scenePath,api.scene.get({ name: "DimensionesAncho" }, "CommPlugin_1").data[0].scenePath]);
+	    	//$('#clicWebNumeroCambio')[0].click();
 		  var updatedSettings = {
 				  scene : {
 					  camera : {
@@ -628,6 +631,7 @@ function apiShape3(id){
 		  
 		 var ancho1 = $("#ancho1").text();
 		  var parame = api.parameters.get({name :"L"}).data[0];
+		 
 			api.parameters.updateAsync({
 		      id: parame.id,
 		      value: (parseFloat(ancho1)*10)
@@ -658,6 +662,9 @@ function apiShape3(id){
 		  			}
 		  }
 		api.updateSettingsAsync(updatedSettings);
+			 if(api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0] != undefined){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0].scenePath]);
+			}
 	      var globalDiv = document.getElementById("parameters");
 	      parameters = api.parameters.get();
 	      parameters.data.sort(function(a, b) {
@@ -758,6 +765,7 @@ function apiShape3(id){
 	      viewerInit = true;
 	      
 	    }
+
 	  });
 	
 	
@@ -1137,7 +1145,58 @@ function apiShape2(id){
 	
 }
 
+function enviarNumeroWeb(){
+	
+	var parame = api.parameters.get({'name':'WEB'},"CommPlugin_1").data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: $("#numeroWebInput").val()
+	    });
+}
+function enviarNumeroWeb1(){
+	
+	var parame = api.parameters.get({'name':'WEBCASCO'},"CommPlugin_1").data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: $("#numeroWebInput1").val()
+	    });
+}
+function enviarNumeroWeb2(){
+	
+	var parame = api.parameters.get({'name':'WEBFRENTE'},"CommPlugin_1").data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: $("#numeroWebInput2").val()
+	    });
+}
+function clicWebNumeroCambioFuncion(id,id1,id2){
+	if(id != '' && id1 != '' && id2 != ''){
+		var parame = api.parameters.get({'name':'WEB'},"CommPlugin_1").data[0];
+		var parame1 = api.parameters.get({'name':'WEBCASCO'},"CommPlugin_1").data[0];
+		var parame2 = api.parameters.get({'name':'WEBFRENTE'},"CommPlugin_1").data[0];
+		  api.parameters.updateAsync([{
+		      id: parame.id,
+		      value: id
+		 },{
+			      id: parame1.id,
+			      value: id1
+		},{
+				  id: parame2.id,
+				  value: id2
+		}]);
+		
+	}
+	
+	if(id != '' && id1 == '' && id2 == ''){
+		var parame = api.parameters.get({'name':'WEB'},"CommPlugin_1").data[0];
+		  api.parameters.updateAsync([{
+		      id: parame.id,
+		      value: id
+		 }]);
+		
+	}
 
+}
 
 
 function apiShape1(id){
@@ -1697,7 +1756,9 @@ function apiShape1(id){
 
 			    //create animation objects
 			    var finalAnimation = [];
-
+			    var contTira = 0;
+		    	   var arrayIdTira = [];
+		    	   var tiracont = 0;
 			    for (var i = 0; i <window.armario; i++) {
 			        //duplicate base animation object
 			    	var tiradoresObject = api.scene.get(
@@ -1712,19 +1773,41 @@ function apiShape1(id){
 					        //define scene path
 					        animation.scenePaths.push("CommPlugin_1." + doorsId + ".content_" + i);
 					       if(tiradoresObject != undefined){
-					    	   var contTira = 0;
-					    	   var arrayTirador = arrayPuertaTirador;
+					    	  
+					    	   var arrayTirador = window.arrayPuertaTirador;
 					    	   var tiradorI = arrayTirador[i];
-					    	   for(let p = 0;p<arrayTirador.length;p++){
-					    		   if(p != i && i != 0){
-					    			   if(arrayTirador[p] = tiradorI){
+					    	   if(tiradorI != undefined){
+					    		   for(let p = contTira;p<arrayTirador.length;p++){
+						    		   
+						    		   if(i != 0){
+						    			   if(arrayTirador[p] == tiradorI && p<i){
+						    				   contTira++;
+						    				   if(p == (arrayTirador.length - 1)){
+						    					   contTira--;
+						    				   }
+						    			   }
+						    			   
+						    		   }
+						    	   }
+						    	   if(i == 0){
+					    			   arrayIdTira[arrayTirador[i]] = tiracont;
+					    			   tiracont++;
+					    		   }
+					    		   if(arrayIdTira[arrayTirador[i]] == undefined ){
+					    			   arrayIdTira[arrayTirador[i]] = tiracont;
+					    			   tiracont++;
+					    		   }
+					    		   /**if(p != i && i != 0){
+					    			   if(arrayTirador[p] == tiradorI){
 					    				   contTira++;
 					    				   
 					    			   }
 					    			   
-					    		   }
+					    		   }**/
+					    	   
+					    		   animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_"+arrayIdTira[arrayTirador[i]]+".transformation_0.node_"+(contTira));
 					    	   }
-					        	animation.scenePaths.push("CommPlugin_1." + tiradoresObject.id + ".content_"+i+".transformation_0.node_"+contTira);
+					    	   
 					        }
 					        
 
@@ -1755,55 +1838,55 @@ function apiShape1(id){
 	    	materialesArray[1] = {
 		    		"id" : "kobe",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/55g8hd1mxbj7fdo/KOBE.png?dl=1",
+		    		"textura" : "https://dl.dropboxusercontent.com/s/55g8hd1mxbj7fdo/KOBE.png?dl=1",
 		    		"brillo" : 1
 		    	};
 	    	materialesArray[2] = {
 		    		"id" : "noce",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/xwvi93rzjpixjjt/NOCE.png?dl=1",
+		    		"textura" : "https://dl.dropboxusercontent.com/s/xwvi93rzjpixjjt/NOCE.png?dl=1",
 		    		"brillo" : "1"
 		    	};
 	    	materialesArray[3] = {
 		    		"id" : "nature",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/qi8vt1fz66riltm/NATURE.png?dl=1",
+		    		"textura" : "https://dl.dropboxusercontent.com/s/qi8vt1fz66riltm/NATURE.png?dl=1",
 		    		"brillo" : 1
 		    	};
 	    	materialesArray[4] = {
 		    		"id" : "blanco",
 		    		"opacidad" : 1,
-		    		"textura" : "https://www.dropbox.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1",
+		    		"textura" : "https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1",
 		    		"brillo" : "1"
 		    	};
 		    materialesArray[5] = {
 			    	"id" : "beige",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/sm7nv4v9i7tj9st/BEIGE.png?dl=1",
+			    	"textura" : "https://dl.dropboxusercontent.com/s/sm7nv4v9i7tj9st/BEIGE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[6] = {
 			    	"id" : "latte",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/qhpamt0ekwec948/LATTE.png?dl=1",
+			    	"textura" : "https://dl.dropboxusercontent.com/s/qhpamt0ekwec948/LATTE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[7] = {
 			    	"id" : "grafeno",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1",
+			    	"textura" : "https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[8] = {
 			    	"id" : "lago",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/dbjdchwov6mwai9/LAGO.png?dl=1",
+			    	"textura" : "https://dl.dropboxusercontent.com/s/dbjdchwov6mwai9/LAGO.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[9] = {
 			    	"id" : "mare",
 			    	"opacidad" : 1,
-			    	"textura" : "https://www.dropbox.com/s/tpv55i6b91e0w38/MARE.png?dl=1",
+			    	"textura" : "https://dl.dropboxusercontent.com/s/tpv55i6b91e0w38/MARE.png?dl=1",
 			    	"brillo" : "1"
 			    };
 		    materialesArray[10] = {
@@ -13807,7 +13890,7 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	var arrayHueco3 = [];
 	var arrayHueco4 = [];
 
-	var armario = window.todounarmario
+	var armario = window.todounarmario;
 	if(array1 != ""){
 		arrayHueco1 = array1.split(",");
 	}
@@ -22510,6 +22593,35 @@ function showSliderValue() {
 		}
 }
 function masgrandebotonancho(){
+	if(window.obj != undefined){
+		window.obj = undefined;
+		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
+		api.parameters.updateAsync({
+			id: parame.id,
+		    value: '{}'
+		}).then(
+	            function(response) {
+	            	$("#clicinterioresAumentarInt")[0].click();
+	            }
+		);
+		for(let u = 0; u<5;u++){
+			for(let o = 0;o<9;o++){
+				$('#divAdicionalesInterior' + u + ' .divSliderAdi' + (o + 1) + '' + u).css({ display: 'none' });
+		        $('#divAdicionalesInterior' + u + ' #divContenidoMeter' + (o + 1) + '' + u).css({ display: 'none' });
+		        $('#divAdicionalesInterior' + u + ' #textoadicional' + (o + 1)).css({ display: 'none' });
+		        $('#inputInterior' + o).empty();
+			}
+			$('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional1').css({ display: 'none' });
+			$('#divInterioresTdoPrincipal' + u + ' #interiorpredefinidoadicional2').css({ display: 'none' });
+			$("#divInterioresTdoPrincipal"+u+" #opcionInteriorEst #inputOpcion").val("");
+			$("#divInterioresTdoPrincipal"+u+" #opcionInteriorMedida #inputOpcion").val("");
+			$("#divInterioresTdoPrincipal"+u+" #opcionInteriorEst #inputOpcion").val("");
+			$("#divInterioresTdoPrincipal"+u+" #opcionInteriorMedida #inputOpcion").val("");
+			$("#divInterioresTdoPrincipal"+u+" #estanquitadosLosInteriores").css({"display":"none"});
+		}
+		
+		
+	}
 	var etiqueta = document.querySelector('#etiqueta');
 	etiqueta.style.left =  "0px";
 	$("#masgrandeBoton").css({"display":"none"});
@@ -22521,6 +22633,25 @@ function masgrandebotonancho(){
 	$("#valorMaxDeAncho").text("400");
 }
 function maschicobotonancho(){
+	if(window.obj != undefined){
+		window.obj = undefined;
+		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
+		api.parameters.updateAsync({
+			id: parame.id,
+		    value: '{}'
+		}).then(
+	            function(response) {
+	            	$("#clicinterioresAumentarInt")[0].click();
+	            }
+		);
+		for(let u = 0; u<5;u++){
+			for(let o = 0;o<9;o++){
+				$('#divAdicionalesInterior' + u + ' .divSliderAdi' + (o + 1) + '' + u).css({ display: 'none' });
+		        $('#divAdicionalesInterior' + u + ' #divContenidoMeter' + (o + 1) + '' + u).css({ display: 'none' });
+		        $('#divAdicionalesInterior' + u + ' #textoadicional' + (o + 1)).css({ display: 'none' });
+			}
+		}
+	}
 	var etiqueta = document.querySelector('#etiqueta');
 	etiqueta.style.left =  "280px";
 	$("#masgrandeBoton").css({"display":"block"});
@@ -23330,15 +23461,15 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	      value: JSON.stringify(armario)
 	    }).then(
 	            function(response) {
-	            	var arrayPuertaTirador1 = arrayPuertaTirador;
+	            	var arrayPuertaTirador1 = window.arrayPuertaTirador;
 		           	 arrayPuertaTirador1[idPuerta + num] = idTipo;
-		           	 arrayPuertaTirador = arrayPuertaTirador1;
+		           	 window.arrayPuertaTirador = arrayPuertaTirador1;
 	            	 api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath + ".content_"+(idPuerta+num)],[]);
 	            }
 		          );
 }
 
-var arrayPuertaTirador = [];
+window.arrayPuertaTirador = [];
 
 function apoyoDeLosModulos(id){
 	window.apoyoIdGrass = id;
@@ -23402,6 +23533,7 @@ function apoyoDeLosModulos(id){
 	            				format: "material",
 	            				data: {
 	            					version: "2.0",
+	            					roughness: 1,
 	            					bitmaptexture: url
 	            				}
 	            			}

@@ -3555,6 +3555,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#inputCodigoArmario').css({ border: '0.5px solid red' });
         }
     }
+
+    public interiorBorrarMasMenos() {
+        this.extraInterioresPorSi = [];
+    }
+
     public rellenamosArrayCambioSlider(id) {
         var idProdInt = [];
         idProdInt[1] = 123;
@@ -3592,6 +3597,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         console.log(this.extraInterioresPorSi);
         var extraInteriores = this.extraInterioresPorSi;
         var dato = this.cascoService.dato;
+        console.log(extraInteriores);
 
         this.cascoService.findBus1(id).subscribe(data => {
             data.body[0]['ancho'] = rangeSlider;
@@ -4552,6 +4558,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     }
                 }
             }
+            console.log(this.arraySaberPuertas);
         });
     }
     public luzInteriores(id, lol, como) {

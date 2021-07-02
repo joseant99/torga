@@ -2747,6 +2747,11 @@
 								<input type="radio" id="noLuz" name="luz" value="No" (click)="cogidaLuz('No')" checked></p>
 							</form>
 						</div>
+						<div style="float:left;display:none;width:100%;" id="cambiarNumeroWeb">
+							<input type="number" id="numeroWebInput"> <button onclick="enviarNumeroWeb()">enviar</button>
+							<input type="number" id="numeroWebInput1"> <button onclick="enviarNumeroWeb1()">enviar</button>
+							<input type="number" id="numeroWebInput2"> <button onclick="enviarNumeroWeb2()">enviar</button>
+						</div>
 						
 						<div style="float:left;width:100%;" *ngIf="usb != undefined" >
 							<p style="width:100%"><strong>USB</strong><span style="float:right"><span id="precioUSB" style="display:none;float:left"></span> PP</span></p>

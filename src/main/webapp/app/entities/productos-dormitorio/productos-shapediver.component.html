@@ -2776,6 +2776,7 @@
 								<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
 						</div>
 						<div style="display:none">
+							<a style="display:none" id="clicinterioresAumentarInt" (click)="this.armariosDormitorioComponent.interiorBorrarMasMenos()"></a>
 							<p *ngFor="let u of arrayTodosLosCodigosArmarios" id="codigodepsArm{{u}}" (click)="this.armariosDormitorioComponent.rellenamosArrayCambioSlider(u)">u</p>
 						</div>
 						<div id="datos1" style="float:left;margin-left:5px;width:100%;">

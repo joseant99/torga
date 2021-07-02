@@ -429,12 +429,110 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         alturaValor = alturaValor * 10;
         var armarioCogido = this.armariosDormitorioComponent.armarioCogido;
         var armMensaje = armarioCogido['armario']['mensaje'];
+        if (armMensaje == '1 PUERTA') {
+            $('#rs-range-line').attr('min', 40);
+            $('#rs-range-line').attr('max', 50);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('40');
+            $('#valorMaxDeAncho').text('50');
+        }
+        if (armMensaje == '2 PUERTAS') {
+            $('#rs-range-line').attr('min', 80);
+            $('#rs-range-line').attr('max', 100);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('80');
+            $('#valorMaxDeAncho').text('100');
+        }
         if (armMensaje == '3 PUERTAS IZQUIERDA') {
             $('#rs-range-line').attr('min', 101);
             $('#rs-range-line').attr('max', 150);
             $('.range-slider #etiqueta').css({ left: '20px' });
             $('#valorMinDeAncho').text('100');
             $('#valorMaxDeAncho').text('150');
+        }
+        if (armMensaje == '3 PUERTAS DERECHA') {
+            $('#rs-range-line').attr('min', 101);
+            $('#rs-range-line').attr('max', 150);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('100');
+            $('#valorMaxDeAncho').text('150');
+        }
+        if (armMensaje == '4 PUERTAS ASIMETRICAS') {
+            $('#rs-range-line').attr('min', 150);
+            $('#rs-range-line').attr('max', 200);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('150');
+            $('#valorMaxDeAncho').text('200');
+        }
+        if (armMensaje == '4 PUERTAS - 2 HUECOS GRANDES') {
+            $('#rs-range-line').attr('min', 150);
+            $('#rs-range-line').attr('max', 200);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('150');
+            $('#valorMaxDeAncho').text('200');
+        }
+        if (armMensaje == '5 PUERTAS IZQUIERDA') {
+            $('#rs-range-line').attr('min', 200);
+            $('#rs-range-line').attr('max', 250);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('200');
+            $('#valorMaxDeAncho').text('250');
+        }
+        if (armMensaje == '5 PUERTAS DERECHA') {
+            $('#rs-range-line').attr('min', 200);
+            $('#rs-range-line').attr('max', 250);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('200');
+            $('#valorMaxDeAncho').text('250');
+        }
+        if (armMensaje == '5 PUERTAS CENTRAL') {
+            $('#rs-range-line').attr('min', 200);
+            $('#rs-range-line').attr('max', 250);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('200');
+            $('#valorMaxDeAncho').text('250');
+        }
+        if (armMensaje == '7 PUERTAS IZQUIERDA') {
+            $('#rs-range-line').attr('min', 300);
+            $('#rs-range-line').attr('max', 350);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('300');
+            $('#valorMaxDeAncho').text('350');
+        }
+        if (armMensaje == '7 PUERTAS DERECHA') {
+            $('#rs-range-line').attr('min', 300);
+            $('#rs-range-line').attr('max', 350);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('300');
+            $('#valorMaxDeAncho').text('350');
+        }
+        if (armMensaje == '7 PUERTA ASIMETRICAS') {
+            $('#rs-range-line').attr('min', 300);
+            $('#rs-range-line').attr('max', 350);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('300');
+            $('#valorMaxDeAncho').text('350');
+        }
+        if (armMensaje == '6 PUERTAS ASIMETRICAS') {
+            $('#rs-range-line').attr('min', 250);
+            $('#rs-range-line').attr('max', 300);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('250');
+            $('#valorMaxDeAncho').text('300');
+        }
+        if (armMensaje == '6 PUERTAS -3 HUECOS GRANDES') {
+            $('#rs-range-line').attr('min', 250);
+            $('#rs-range-line').attr('max', 300);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('250');
+            $('#valorMaxDeAncho').text('300');
+        }
+        if (armMensaje == '8 PUERTAS ASIMETRICAS') {
+            $('#rs-range-line').attr('min', 350);
+            $('#rs-range-line').attr('max', 400);
+            $('.range-slider #etiqueta').css({ left: '20px' });
+            $('#valorMinDeAncho').text('350');
+            $('#valorMaxDeAncho').text('400');
         }
         var ezarrayInteteriores = [];
         ezarrayInteteriores[hueco] = id;
@@ -25664,7 +25762,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
                 if (
                     datos['productosDormitorio']['categoriasDormi']['id'] == 15 ||
-                    datos['productosDormitorio']['categoriasDormi']['id'] == 8
+                    datos['productosDormitorio']['categoriasDormi']['id'] == 8 ||
+                    datos['productosDormitorio']['categoriasDormi']['id'] == 1
                 ) {
                     $('#solomesitascant').css({ display: 'block' });
                     $('#selectCantidad').val('1');

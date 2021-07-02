@@ -440,9 +440,16 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
                         } else {
                             for (let k = 0; k < todos.length; k++) {
                                 if (todos[k]['user'] != null) {
-                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1 && value['web'] != null) {
-                                        cogidos[contador] = value;
-                                        contador++;
+                                    if (todos[k]['user']['id'] == value['user']['id'] && value['pedido'] == 1) {
+                                        if (value['web'] == 1) {
+                                            cogidos[contador] = value;
+                                            contador++;
+                                        } else {
+                                            if (value['id'] > 5421) {
+                                                cogidos[contador] = value;
+                                                contador++;
+                                            }
+                                        }
                                     }
                                 }
                             }
