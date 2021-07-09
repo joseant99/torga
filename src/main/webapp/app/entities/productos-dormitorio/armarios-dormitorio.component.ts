@@ -3440,6 +3440,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         */
         var interior = $('#inputAcabadoInterior').val();
         var trasera = $('#inputAcabadoTrasera').val();
+        var tirador = $('#inputAcabadoTirador').val();
+        var cascoaca = $('#inputAcabadoCasco').val();
+        if (interior != '' && trasera != '' && tirador != '' && cascoaca != '') {
+            $('#botonesAcabadosCuerpo').css({ border: '3px solid #47D54E' });
+        }
         if (interior != '' && trasera != '') {
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {
@@ -9457,6 +9462,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 */
             }
         }
+        var interior = $('#inputAcabadoInterior').val();
+        var trasera = $('#inputAcabadoTrasera').val();
+        var tirador = $('#inputAcabadoTirador').val();
+        var cascoaca = $('#inputAcabadoCasco').val();
+        if (interior != '' && trasera != '' && tirador != '' && cascoaca != '') {
+            $('#botonesAcabadosCuerpo').css({ border: '3px solid #47D54E' });
+        }
     }
 
     public cambiarAcabadoInterior(nombre) {
@@ -9504,6 +9516,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         var trasera = $('#inputAcabadoTrasera').val();
         var arrayPuertas = [];
         var contPuertas = 0;
+        var interior = $('#inputAcabadoInterior').val();
+        var trasera = $('#inputAcabadoTrasera').val();
+        var tirador = $('#inputAcabadoTirador').val();
+        var cascoaca = $('#inputAcabadoCasco').val();
+        if (interior != '' && trasera != '' && tirador != '' && cascoaca != '') {
+            $('#botonesAcabadosCuerpo').css({ border: '3px solid #47D54E' });
+        }
         if (casco != '' && trasera != '') {
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria2(24).subscribe(data => {
@@ -30229,6 +30248,13 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         */
         var interior = $('#inputAcabadoInterior').val();
         var casco = $('#inputAcabadoCasco').val();
+        var interior = $('#inputAcabadoInterior').val();
+        var trasera = $('#inputAcabadoTrasera').val();
+        var tirador = $('#inputAcabadoTirador').val();
+        var cascoaca = $('#inputAcabadoCasco').val();
+        if (interior != '' && trasera != '' && tirador != '' && cascoaca != '') {
+            $('#botonesAcabadosCuerpo').css({ border: '3px solid #47D54E' });
+        }
         if (interior != '' && casco != '') {
             $('#interioresDiv').removeAttr('class');
             this.productosDormitorioService.categoria(24).subscribe(data => {

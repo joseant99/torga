@@ -1980,7 +1980,7 @@
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/ESPECIALES/NH062-NH063-NH064-NH065-NH066.jpg">
         	</div>
         	
-        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('0e66bc6482ce60d7b8941763acd9468386f67d608257aa03e79a210bc6a72f224f4976407c29381975af7d73eb7458dc05f06cff857e4f1ce36318bf0bf10a27e0cc7a98049169396b5510667ae48df559566c13b2f096e56bc31a3347ed873691a8978140b56bd8cfe6be07a530534fd22d3a711a219321809f0e9fe1481586-4f1fc6bef69b09906a9ebfabed4c3af4',1,'')" id="pruebahoverdiv">
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('97362560301db27dbf11bea6052295603f726eaa71eb1357c12892178f08a0d9aa9053f542a7ba429446cb56580ae76825a8686f848401b52d19e118d40bd884a022c38eed2b920041c506fa8c3d2ac8d1a7deb2270ae0e34e51d15c1007148590c86ab97aec427a13c3dcde41f57e111ac7a1ea3a651559011fbf9c44e222c2-da9f33346ccfe078d4708a557957b0eb',1,'')" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-7.jpeg">
         	</div>
         	<a id="cargarApiShape" style="display:none">prueba</a>
@@ -2729,50 +2729,53 @@
 						<a id="setintervalfuncion" style="display:none" onclick="setIntervalfuncioncomprobar()">prueba</a>
 						<input type="number" style="display:none" id="inputAlturaArmario">
 						<div class="divSlider" style="display:none;position:relative;background-color: #e4e4e4;width: 100%;height: 565px;border: 3px solid #B3B2B2;">
-							<p style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;"><strong>MEDIDAS</strong></p>
-							<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
-								<button style="position: absolute;margin-top: 31px;display:none" id="maschicoBoton" onclick="maschicobotonancho()">Lo quiere m&#225;s peque&ntilde;o</button>
-								<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ANCHO</span>
-								<button style="position: absolute;margin-top: 31px;right:0;display:none" id="masgrandeBoton" onclick="masgrandebotonancho()">Lo quiere m&#225;s grande</button>
-								 <div id="inputDiv" style="margin-top:110px !important">
-									<div id="etiqueta"></div>
-									
-									<input id="rs-range-line" type="range" value='40' min="40" max="200" step="1">
-									<input id="rs-range-lineRaya" style="display:none" type="range" value='40' min="40" max="200" step="1" list="custom-list">
-									<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
-									<label style="margin-left:-7px" id="valorMinDeAncho">40</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">200</label>
-									</div>
-
-								<!-- <input type="range" style="margin-top: 29px;width: 75%;position:absolute;-webkit-appearance: media-volume-slider;margin-left: 80px;">
-							    <span id="rs-bullet" class="rs-label">40</span>
-							    <input id="rs-range-line" class="rs-range" type="range" value="40" min="40" max="400"> -->
+							<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>MEDIDAS</strong></p>
+							<div id="divEscondidodivSlider" style="display:block">
+								<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
+									<button style="position: absolute;margin-top: 31px;display:none" id="maschicoBoton" onclick="maschicobotonancho()">Lo quiere m&#225;s peque&ntilde;o</button>
+									<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ANCHO</span>
+									<button style="position: absolute;margin-top: 31px;right:0;display:none" id="masgrandeBoton" onclick="masgrandebotonancho()">Lo quiere m&#225;s grande</button>
+									 <div id="inputDiv" style="margin-top:110px !important">
+										<div id="etiqueta"></div>
+										
+										<input id="rs-range-line" type="range" value='40' min="40" max="200" step="1">
+										<input id="rs-range-lineRaya" style="display:none" type="range" value='40' min="40" max="200" step="1" list="custom-list">
+										<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
+										<label style="margin-left:-7px" id="valorMinDeAncho">40</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">200</label>
+										</div>
+	
+									<!-- <input type="range" style="margin-top: 29px;width: 75%;position:absolute;-webkit-appearance: media-volume-slider;margin-left: 80px;">
+								    <span id="rs-bullet" class="rs-label">40</span>
+								    <input id="rs-range-line" class="rs-range" type="range" value="40" min="40" max="400"> -->
+								</div>
+								<div class="range-slider" style="float: left;margin-top: 110px !important;width: 100%;margin-bottom: 60px;">
+									<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ALTO</span>
+									<div id="inputDivAltura" style="margin-top:110px !important">
+										<div id="etiquetaAltura"></div>
+										<input id="rs-range-line1" type="range" value="220" min="220" max="260" style="width:100%">
+										<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
+										<label style="margin-left:-7px" id="valorMinDeAncho">220</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">260</label>
+										</div>
+								    
+								</div>
+								<div class="range-slider" style="float: left;margin-top: 110px !important;width: 100%;margin-bottom: 60px;">
+									<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >FONDO</span>
+									<div id="inputDivFondo" style="margin-top:110px !important">
+										<div id="etiquetaFondo"></div>
+										<input id="rs-range-line2" type="range" value="61" min="50" max="70" style="width:100%">
+										<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
+										<label style="margin-left:-7px" id="valorMinDeAncho">50</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">70</label>
+										</div>
+								</div>
 							</div>
-							<div class="range-slider" style="float: left;margin-top: 110px !important;width: 100%;margin-bottom: 60px;">
-								<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ALTO</span>
-								<div id="inputDivAltura" style="margin-top:110px !important">
-									<div id="etiquetaAltura"></div>
-									<input id="rs-range-line1" type="range" value="220" min="220" max="260" style="width:100%">
-									<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
-									<label style="margin-left:-7px" id="valorMinDeAncho">220</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">260</label>
-									</div>
-							    
-							</div>
-							<div class="range-slider" style="float: left;margin-top: 110px !important;width: 100%;margin-bottom: 60px;">
-								<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >FONDO</span>
-								<div id="inputDivFondo" style="margin-top:110px !important">
-									<div id="etiquetaFondo"></div>
-									<input id="rs-range-line2" type="range" value="61" min="50" max="70" style="width:100%">
-									<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
-									<label style="margin-left:-7px" id="valorMinDeAncho">50</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">70</label>
-									</div>
-							</div>
-							
 						</div>
 						<div class="divElegirOpcionSlider" style="float:left;width:100%;background-color: #e4e4e4;border: 3px solid #B3B2B2;margin-top: 35px;position:relative" onclick="estaMarcadoDivArm('.divElegirOpcionSlider')">
-								<p style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;"><strong>OPCI&Oacute;N INTERIOR</strong></p>
-								<p style="float:left;width:100%;display:block;padding-left:25%;" id="opcionSliderDiv1"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N A</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(1)"></p>
-								<p style="float:left;width:100%;display:block;padding-left:25%;" id="opcionSliderDiv2"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N B</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(2)"></p>
-								<p style="float:left;width:100%;display:none;padding-left:25%;" id="opcionSliderDiv3"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N C</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(3)"></p>
+								<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>OPCI&Oacute;N INTERIOR</strong></p>
+								<div id="divEscondidodivElegirOpcionSlider" style="display:none">
+									<p style="float:left;width:100%;display:block;padding-left:25%;" id="opcionSliderDiv1"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N A</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(1)"></p>
+									<p style="float:left;width:100%;display:block;padding-left:25%;" id="opcionSliderDiv2"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N B</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(2)"></p>
+									<p style="float:left;width:100%;display:none;padding-left:25%;" id="opcionSliderDiv3"><span style="float:left;letter-spacing:3px;">OPCI&Oacute;N C</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="cambiarVistaArmario(3)"></p>
+								</div>
 								<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
 						</div>
 						<div style="display:none">
@@ -2871,7 +2874,7 @@
 							
 						<div id="calcuBatientes" style="display:none">
 							<div id="niveladoresCalcu"  style="float:left;width:100%;font-size: 14px;display:none;border: 3px solid #B3B2B2;background-color: #e4e4e4;margin-top:35px;position:relative" onclick="estaMarcadoDivArm('#niveladoresCalcu')">
-								<p style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;"><strong>NIVELADORES</strong></p>
+								<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>NIVELADORES</strong></p>
 								<!-- <form style="float:left;padding-left:20%">
 									  <label for="sinivelador" style="font-size:14px;letter-spacing:3px;margin-right:25px;margin-bottom:15px;">SI</label>
 									  <input type="radio" id="siNivelador" name="nive" value="sinivelador" (click)="this.armariosDormitorioComponent.niveladoresCargar('si')">
@@ -2882,10 +2885,12 @@
 	
 								</form>
 								 -->
+								 <div id="divEscondidoniveladoresCalcu" style="display:none">
 								<p style="float:left;width:100%;display:block;padding-left:36%;" id="niveladoresOpcion1"><span style="float:left;letter-spacing:3px;">SI</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="niveladoresopcionesarm(1)"></p>
 								<p style="float:left;width:100%;display:block;padding-left:33.5%;" id="niveladoresOpcion2"><span style="float:left;letter-spacing:3px;">NO</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly onclick="niveladoresopcionesarm(2)"></p>
 								<a style="display:none" id="enlaceclickniveladoresSi" (click)="this.armariosDormitorioComponent.niveladoresCargar('si')"></a>
 								<a style="display:none" id="enlaceclickniveladoresNo" (click)="this.armariosDormitorioComponent.niveladoresCargar('no')"></a>
+								</div>
 								<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
 							</div>
 							
@@ -2961,20 +2966,23 @@
 								<textarea id="textareaenmarcado" name="w3review" rows="4" cols="40" style="display:none;margin-bottom: 30px;"></textarea>
 							</div>
 							
-							<div style="float:left;width:100%;font-size: 14px;display:none;border: 3px solid #B3B2B2;background-color: #e4e4e4;margin-top:35px;position:relative" id="botonesAcabadosCuerpo" onclick="estaMarcadoDivArm('#botonesAcabadosCuerpo')">
-								<p style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;"><strong>ACABADOS</strong></p>
+							<div style="float:left;width:100%;font-size: 14px;display:none;border: 3px solid #EC1C1C;background-color: #e4e4e4;margin-top:35px;position:relative" id="botonesAcabadosCuerpo" onclick="estaMarcadoDivArm('#botonesAcabadosCuerpo')">
+								<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>ACABADOS</strong></p>
+								 <div id="divEscondidobotonesAcabadosCuerpo" style="display:none">
 								<a style="color:black;float:left;width:100%;padding-left:20%"><p style="float: left;margin-top: 15px;width:30%;" id="batPCasco">CASCO: <div style="height:60px;width:140px;text-align:center;margin-bottom:30px;border: 0.5px solid black;float: left;background-color:white" id="inputAcabadoCasco" data-toggle="modal" data-target="#modalInterioresAcabados"> </div></p></a>
 								<a style="color:black;float:left;width:100%;padding-left:20%"><p style="float: left;margin-top: 15px;width:30%;" id="batPTrasera">TRASERA: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: left;margin-bottom:30px;background-color:white" id="inputAcabadoTrasera" data-toggle="modal" data-target="#modalTraseraAcabados"> </div></p></a>
 		    					<a style="color:black;float:left;width:100%;padding-left:20%"><p style="float: left;margin-top: 15px;width:30%;" id="batPInterior">INTERIORES: <div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: left;margin-bottom:30px;background-color:white" id="inputAcabadoInterior" data-toggle="modal" data-target="#modalInterioresAcabados1"> </div></p></a>
 		    					<a style="color:black;float:left;width:100%;padding-left:20%"><p style="float: left;margin-top: 15px;width:30%;" id="batPTirador">TIRADORES <br>Y PERFILES :<div style="height:60px;width:140px;text-align:center;border: 0.5px solid black;float: left;margin-bottom:30px;background-color:white" id="inputAcabadoTirador" data-toggle="modal" data-target="#modalInterioresAcabados2"> </div></p></a>
+		    					</div>
 		    					<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;margin-top:-16px;"></div>
 							</div>
-								<button onclick="ocultarPuertasFuncion()">Ocultar Puertas</button>
-								<button onclick="mostrarPuertasFuncion()">Mostrar Puertas</button>
+								<!--<button onclick="ocultarPuertasFuncion()">Ocultar Puertas</button>
+								<button onclick="mostrarPuertasFuncion()">Mostrar Puertas</button> -->
 								<div style="width:100%;float:left;margin-top:40px" id="interioresDiv" class="displayBoton">
-					    			<div style="width:100%;float:left;border: 3px solid #B3B2B2;background-color: #e4e4e4;margin-top:35px;position:relative" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberHuecos;let u=index" id="divInterioresTdoPrincipal{{u}}" class="siPuestoGris" (click)="funcionEstaMarcadaDivArm('#divInterioresTdoPrincipal',u)">
+					    			<div style="width:100%;float:left;border: 3px solid #EC1C1C;background-color: #e4e4e4;margin-top:35px;position:relative" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberHuecos;let u=index" id="divInterioresTdoPrincipal{{u}}" class="siPuestoGris" (click)="funcionEstaMarcadaDivArm('#divInterioresTdoPrincipal',u)">
 						    		<a style="display:none" id="clickSoloInterioresEnv"></a>
-						    			<p style="width:100%;float:left;margin-top:15px;margin-bottom:20px;"><strong class="cambiarAcabado" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;">HUECO {{this.armariosDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right;display:none" id="precioInt{{u}}"></span></p>
+						    			<p style="width:100%;float:left;margin-top:15px;margin-bottom:20px;"><strong class="cambiarAcabado" id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;">HUECO {{this.armariosDormitorioComponent.arrayLetras[u]}}</strong><span style="float:right;display:none" id="precioInt{{u}}"></span></p>
+						    			<div id="divEscondidodivInterioresTdoPrincipal{{u}}" style="display:none">
 						    			<p style="float:left;width:100%;display:block;padding-left:11%;" id="opcionInteriorEst" class="{{u}}"><span style="float:left;letter-spacing:3px">INTERIOR PREDEFINIDO</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly (click)="interiorDefinidoMostrarArmTs(u,1)"></p>
 										<p style="float:left;width:100%;display:block;padding-left:20.3%;" id="opcionInteriorMedida" class="{{u}}"><span style="float:left;letter-spacing:3px">INTERIOR A MEDIDA</span><input id="inputOpcion" type="text" style="float: left;background-color: white;width: 32px;border: 1px solid;margin-left: 25px;text-align: center;" readonly (click)="interiorDefinidoMostrarArmTs(u,2)"></p>
 						    			<a id="clickDesdeTsInteriores" style="display:none"></a>
@@ -3003,7 +3011,8 @@
 															<input id="rs-range-lineRaya" style="display:none" type="range" value='1000' min="300" max="2000" step="1" list="custom-list">
 															<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
 														</div>
-														
+														<button (click)="subirRangoSliderTs(1,u)">Subir</button>
+														<a style="display:none" id="subirrangosliderFunct"></a>
 													</div>
 													<div class="divButtonCamisero" style="float: left;width: 100%;margin-bottom: 60px;display:none">
 														
@@ -3183,19 +3192,22 @@
 				    				</div>
 				    			<!--  	<div style="float:left;height: 50px;width: 60px;margin-left: 30px;text-align: center;border: 1px solid black;display:none" readonly="readonly" id="luzInterior{{u}}" class="siLuz" (click)="luzInteriores(u)">LUZ</div>
 				    			-->
-			    					<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
+				    			</div>
+				    				<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
 				    			</div>
 				    			
 				    			
-				    			<div style="width:100%;float:left;margin-top:20px;border: 3px solid #B3B2B2;background-color: #e4e4e4;margin-top:35px;position:relative;padding-bottom:3%;" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberPuertas;let u=index" id="divPuerta{{u}}" class="siPuestoGris" (click)="funcionEstaMarcadaDivArm('#divPuerta',u)">
+				    			<div style="width:100%;float:left;margin-top:20px;border: 3px solid #EC1C1C;background-color: #e4e4e4;margin-top:35px;position:relative;padding-bottom:3%;" *ngFor="let interior of this.armariosDormitorioComponent.arraySaberPuertas;let u=index" id="divPuerta{{u}}" class="siPuestoGris" (click)="funcionEstaMarcadaDivArm('#divPuerta',u)">
 					    			<a style="display:none" id="clickSoloInterioresEnv"></a>
-					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;margin-bottom: 20px;border-bottom: 1px solid #B3B2B2; padding-bottom: 10px;" id="nombrePuertaGG{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;display:none" id="precioPuerta{{u}}"></span></p>
-					    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px;margin-left:14%;">TIPO</span> <input type="text" style="height:60px;width:155px;margin-left:10px;text-align:center;float:right;margin-right:14%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalPuertasArmario" readonly="readonly"/></p>
-					    			<div id="inputs" style="float:left;width:100%;display:none">
-					    				<span style="float:left;margin-top:15px;margin-left:14%;" >PLAFON</span><a ><div style="height:60px;width:100px;text-align:center;float:right;margin-right:21%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
-					    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
-					    					<span style="float:left;margin-top:15px;" >PLAFON</span><a><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
-					    				</div>
+					    			<p style="float:left;width:100%"><strong class="cambiarAcabado" id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;" id="nombrePuertaGG{{u}}">Puerta {{interior}}</strong><span style="float:right;margin-top:15px;display:none" id="precioPuerta{{u}}"></span></p>
+					    			<div id="divEscondidodivPuerta{{u}}" style="display:none">
+						    			<p style="float:left;width:100%"><span style="float:left;margin-top:15px;margin-left:14%;">TIPO</span> <input type="text" style="height:60px;width:155px;margin-left:10px;text-align:center;float:right;margin-right:14%;;font-size:14px" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" value="TIPO" data-target="#modalPuertasArmario" readonly="readonly"/></p>
+						    			<div id="inputs" style="float:left;width:100%;display:none">
+						    				<span style="float:left;margin-top:15px;margin-left:14%;" >PLAFON</span><a ><div style="height:60px;width:100px;text-align:center;float:right;margin-right:21%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+						    				<div style="display:none;float: left;width: 100%;margin-top: 20px;" id="2acaPuerta{{u}}">
+						    					<span style="float:left;margin-top:15px;" >PLAFON</span><a><div style="height:60px;width:100px;text-align:center;float:right;margin-right:30%;border:1px solid black;background-color:white" id="inputPuertas{{u}}" data-toggle="modal" class="inputPuertaOle" (click)="this.armariosDormitorioComponent.guardarIdPuerta(u,interior)" data-target="#modalAcabadosPuertas1"></div></a>
+						    				</div>
+						    			</div>
 					    			</div>
 					    			<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>
 				    			</div>

@@ -18032,7 +18032,7 @@ export class JhiMainComponent implements OnInit {
                         '" style="margin-left:10px"></span></p>'
                 );
             }
-            if (u == 7) {
+            if (u == 8) {
                 $('#datos1').append(
                     '<p style="width:100%" id="acabado' +
                         u +

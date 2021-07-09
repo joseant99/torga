@@ -6,12 +6,12 @@ function imagenCarritoApi(){
 
 function imagenGirarParaCarro(){
 	var idProd = $('#nombreMesita').attr('class');
-	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284){
+	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65 && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68  && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337){
 		$("#soloParaEnviarImagenGirada")[0].click();
 	}else{
 		$("#sdv-container").css({"width":"410px"});
 		$("#sdv-container").css({"height":"410px"});
-		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284){
+		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65  && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68 && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337){
 			api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
 		            function(response) {
 		            	$("#soloParaEnviarImagenGirada")[0].click();
@@ -689,7 +689,7 @@ function apiShape3(id){
 	    	        y: arrPivot[1],
 	    	        z: arrPivot[2]
 	    	      };
-	    	      leftTrans.scenePaths = [
+	    	      leftTrans.scenePaths = [ 
 	    	        api.scene.get(
 	    	          {
 	    	            name: "FrenteGeo",
@@ -2525,6 +2525,7 @@ function niveladoresopcionesarm(id){
 	}
 }
 
+//interiores JSON
 function interioresNuevoJson(obj){
 	window.obj = obj; 
 	var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
@@ -2541,6 +2542,51 @@ function interioresNuevoJson(obj){
 	    			  var contEst1 = 0;
 	    			  var contEst1Cristal = 0;
 	    			  var contCaj = 0;
+	    			  api.scene.addEventListener(api.parameters.EVENTTYPE.SUBSCENE_PUBLISHED, function() {
+	    				  // now it's safe to read the model parameters
+	    				  var dominios = api.scene.getData({
+	    					     name: "puntosDimensiones"
+	    					}).data[0].data;
+	    					let material1 = {
+	    						    version: "2.0",
+	    						    color: "black"
+	    						  };
+	    					const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+	    					var array = [];
+	    					var contarray = 0;
+	    					for(let u = 0;u<dominios.length;u++){
+	    						
+	    						var  points = [];
+	    						points.push( new THREE.Vector3( dominios[u]['start']["x"], dominios[u]['start']["y"], dominios[u]['start']["z"] ) );
+	    						points.push( new THREE.Vector3( dominios[u]['end']["x"], dominios[u]['end']["y"], dominios[u]['end']["z"] ) );
+	    						array[contarray] = points;
+	    						contarray++;
+	    						 
+	    					}
+	    						var geometry = new THREE.BufferGeometry().setFromPoints( array[0] );
+	    						
+	    						var line = new THREE.Line( geometry, material );
+	    						
+	    						
+	    						  let asset = {
+	    						    id: "polyline",
+	    						    content: [
+	    						      {
+	    						        format: api.scene.FORMAT.THREE,
+	    						        data: {
+	    						          threeObject: line
+	    						        }
+	    						      },
+	    						      {
+	    						        format: "material",
+	    						        data: material1
+	    						      }
+	    						    ]
+	    						  };
+	    						
+	    						api.scene.updateAsync([asset]);
+	    					
+	    				});
 	    			  var length = obj["interiores"].length;
 	    			  for(let h = 0;h<length;h++){
 	    				  if(obj["interiores"][h]["tipo"] == "estante"){
@@ -2753,17 +2799,20 @@ function interioresNuevoJson(obj){
 	    			);
 	  
 	  
-
+ 
 	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
 		$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
 		var inputDiv = document.querySelector('#inputDivAdi10');
 		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 		/* EL INPUT */
 		rangeSliderAdicional1.style.width = "100%";
+		var posicionDominiCarga = 10; 
+		
+		
 		var inputMin = rangeSliderAdicional1.getAttribute('min');
 		var inputMax = rangeSliderAdicional1.getAttribute('max');
 		
-
+		
 		/* LA ETIQUETA */
 		var etiqueta = document.querySelector('#etiquetaAdi10');
 		var ew = parseInt(window.getComputedStyle(etiqueta, null).getPropertyValue("width"));
@@ -2843,19 +2892,28 @@ function interioresNuevoJson(obj){
 
 		rangeSliderAdicional1.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi10").text();
+			var arrayInt0 = [];
+			var contArrayInt0 = 0;
+			
+			for(let k = 0;k<window.obj["interiores"].length;k++){
+				if(window.obj["interiores"][k]["interior"] == 0){
+					arrayInt0[contArrayInt0] = window.obj["interiores"][k];
+					contArrayInt0++
+				}
+			}
+			
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
 			  var calcu = (parseFloat(rangeSliderAdicional1.value) * 10) - (parseFloat(etihtml)*10);
-			  if(window.obj["interiores"][0]["tipo"] == "estante"){
+			  if(arrayInt0[0]["tipo"] == "estante"){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 0){
+
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -2868,7 +2926,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+i],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -2880,17 +2938,15 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  }
-				  }
 				  
 			  }
 			  
-			  if(window.obj["interiores"][0]["tipo"] == "tubo"){
+			  if(arrayInt0[0]["tipo"] == "tubo"){
 				  window.object0 = api.scene.get({name: "tubos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+arrayInt0[0]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -2903,13 +2959,13 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       }]);
 			  }
-			  if(window.obj["interiores"][0]["tipo"] == "cajones"){
+			  if(arrayInt0[0]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -2922,7 +2978,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_0"],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -2936,15 +2992,14 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  
-			  if(window.obj["interiores"][0]["tipo"] == "estantecristal"){
+			  if(arrayInt0[0]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 0 && arr[i]["puesto"] == 0){
+
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+i],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -2956,8 +3011,7 @@ function interioresNuevoJson(obj){
 								           }
 								         ],reset:false
 								       }]);
-					  }
-				  }
+
 				  
 			  }
 			  
@@ -3143,7 +3197,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3156,7 +3210,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['numero']],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -3176,7 +3230,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+hueco1[1]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3195,7 +3249,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(0+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3208,7 +3262,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(0+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3228,7 +3282,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3424,7 +3478,7 @@ function interioresNuevoJson(obj){
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['numero']],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3437,7 +3491,7 @@ function interioresNuevoJson(obj){
 							         ],reset:false
 							       },
 							       {
-								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['numero']],
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3456,7 +3510,7 @@ function interioresNuevoJson(obj){
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+hueco1[2]['posicionShape']],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -3471,18 +3525,12 @@ function interioresNuevoJson(obj){
 		  }
 		  if(hueco1[2]["tipo"] == "cajones"){
 			  var contCaj = 0;
-			  if(hueco1[0]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
-			  if(hueco1[1]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -3495,7 +3543,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3516,7 +3564,7 @@ function interioresNuevoJson(obj){
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['numero']],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3709,7 +3757,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3722,7 +3770,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['numero']],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -3741,7 +3789,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+hueco1[3]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3756,21 +3804,12 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco1[3]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco1[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco1[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco1[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -3783,7 +3822,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -3803,7 +3842,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -3997,7 +4036,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4010,7 +4049,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['numero']],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -4029,7 +4068,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_0"],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+hueco1[4]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4044,24 +4083,12 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco1[4]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco1[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco1[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco1[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco1[3]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+contCaj],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4074,7 +4101,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+contCaj],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -4094,7 +4121,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['numero']],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4281,30 +4308,6 @@ function interioresNuevoJson(obj){
 			var hueco2 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 1){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -4321,7 +4324,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4334,7 +4337,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -4356,7 +4359,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco2[0]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4375,7 +4378,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4388,7 +4391,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -4409,7 +4412,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4595,51 +4598,21 @@ function interioresNuevoJson(obj){
 			var hueco2 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 1){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-				
 			} 
 			  var calcu = (parseFloat(rangeSliderAdicional7.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[1]["tipo"] == "estante"){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco2[0]["tipo"] == 'estante'){
-							  var sum = 1;
-						  }else{
-							  var sum = 0;
-						  }
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[1]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4652,7 +4625,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[1]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -4671,7 +4644,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco2[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4694,7 +4667,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -4707,7 +4680,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -4732,7 +4705,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[1]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4918,30 +4891,6 @@ function interioresNuevoJson(obj){
 			var hueco2 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 1){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -4970,7 +4919,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4983,7 +4932,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -5002,7 +4951,7 @@ function interioresNuevoJson(obj){
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco2[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -5028,7 +4977,7 @@ function interioresNuevoJson(obj){
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -5041,7 +4990,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5075,7 +5024,7 @@ function interioresNuevoJson(obj){
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -5262,30 +5211,6 @@ function interioresNuevoJson(obj){
 				var hueco2 = [];
 				var cont2Hueco = 0;
 				for(let o = 0;o<window.obj["interiores"].length;o++){
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
 					if(window.obj["interiores"][o]["interior"] == 1){
 						hueco2[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
@@ -5296,45 +5221,12 @@ function interioresNuevoJson(obj){
 					  		
 					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-							  if(hueco2[0]["tipo"] == 'estante'){
-								  if(hueco2[1]["tipo"] == 'estante'){
-									  if(hueco2[2]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco2[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1;  
-									  }
-									  
-								  }
-							  }else{
-								  if(hueco2[1]["tipo"] == 'estante'){
-									  if(hueco2[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco2[2]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-									  
-								  }
-								  
-							  }
+							  
 							  yaPuesto = 1;
 							  api.scene.setLiveTransformation(
 									     [
 									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -5347,7 +5239,7 @@ function interioresNuevoJson(obj){
 									         ],reset:false
 									       },
 									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -5366,7 +5258,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco2[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5395,7 +5287,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5408,7 +5300,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -5422,47 +5314,14 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco2[3]["tipo"] == "estantecristal"){
-				  if(hueco2[0]["tipo"] == 'estantecristal'){
-					  if(hueco2[1]["tipo"] == 'estantecristal'){
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 3;
-						  }else{
-							  var sumCristal = 2;
-						  }
-						  
-					  }else{
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1;  
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco2[1]["tipo"] == 'estantecristal'){
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1; 
-						  }
-						  
-					  }else{
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 1;
-						  }else{
-							  var sumCristal = 0; 
-						  }
-						  
-					  }
-					  
-				  }
+				 
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -5647,30 +5506,6 @@ function interioresNuevoJson(obj){
 			var hueco2 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 1){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -5681,84 +5516,11 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco2[0]["tipo"] == 'estante'){
-							  if(hueco2[1]["tipo"] == 'estante'){
-								  if(hueco2[2]["tipo"] == 'estante'){
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 4;
-									  }else{
-										  var sum = 3;
-									  }
-									 
-								  }else{
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco2[2]["tipo"] == 'estante'){
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									    
-								  }
-								  
-							  }
-						  }else{
-							  if(hueco2[1]["tipo"] == 'estante'){
-								  if(hueco2[2]["tipo"] == 'estante'){
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco2[2]["tipo"] == 'estante'){
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco2[3]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-								  }
-								  
-							  }
-							  
-						  }
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -5771,7 +5533,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -5790,7 +5552,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco2[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5822,7 +5584,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -5835,7 +5597,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -5849,86 +5611,13 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco2[4]["tipo"] == "estantecristal"){
-				  if(hueco2[0]["tipo"] == 'estantecristal'){
-					  if(hueco2[1]["tipo"] == 'estantecristal'){
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 4;
-							  }else{
-								  var sumCristal = 3;
-							  }
-							 
-						  }else{
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							    
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco2[1]["tipo"] == 'estantecristal'){
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco2[2]["tipo"] == 'estantecristal'){
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }else{
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 1;
-							  }else{
-								  var sumCristal = 0; 
-							  }
-						  }
-						  
-					  }
-					  
-				  }
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6116,54 +5805,6 @@ function interioresNuevoJson(obj){
 			var hueco3 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 2){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -6174,13 +5815,12 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  for(let i = 0;i<arr.length;i++){
-					  if(arr[i]["interior"] == 2 && yaPuesto == 0){
+				  
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6193,7 +5833,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -6205,8 +5845,6 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  }
-				  }
 				  
 			  }
 			  
@@ -6215,7 +5853,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco3[0]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6234,7 +5872,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6247,7 +5885,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -6267,7 +5905,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6454,54 +6092,6 @@ function interioresNuevoJson(obj){
 			var hueco3 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 2){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -6512,16 +6102,11 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco3[0]["tipo"] == 'estante'){
-							  var sum = 1;
-						  }else{
-							  var sum = 0;
-						  }
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6534,7 +6119,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -6553,7 +6138,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco3[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6577,7 +6162,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6590,7 +6175,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -6604,18 +6189,13 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco3[1]["tipo"] == "estantecristal"){
-				  if(hueco3[0]["tipo"] == 'estantecristal'){
-					  var sumCristal = 1;
-				  }else{
-					  var sumCristal = 0;
-				  }
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6801,54 +6381,6 @@ function interioresNuevoJson(obj){
 			var hueco3 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 2){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -6859,25 +6391,11 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco3[0]["tipo"] == 'estante'){
-							  if(hueco3[1]["tipo"] == 'estante'){
-								  var sum = 2;
-							  }else{
-								  var sum = 1;
-							  }
-						  }else{
-							  if(hueco3[1]["tipo"] == 'estante'){
-								  var sum = 1;
-							  }else{
-								  var sum = 0;
-							  }
-							  
-						  }
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -6890,7 +6408,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -6909,7 +6427,7 @@ function interioresNuevoJson(obj){
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco3[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -6924,18 +6442,12 @@ function interioresNuevoJson(obj){
 		  }
 		  if(hueco3[2]["tipo"] == "cajones"){
 			  var contCaj = 0;
-			  if(hueco3[0]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
-			  if(hueco3[1]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -6948,7 +6460,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6962,27 +6474,13 @@ function interioresNuevoJson(obj){
 						       }]);
 		  }
 		  if(hueco3[2]["tipo"] == "estantecristal"){
-			  if(hueco3[0]["tipo"] == 'estantecristal'){
-				  if(hueco3[1]["tipo"] == 'estantecristal'){
-					  var sumCristal = 2;
-				  }else{
-					  var sumCristal = 1;
-				  }
-			  }else{
-				  if(hueco3[1]["tipo"] == 'estantecristal'){
-					  var sumCristal = 1;
-				  }else{
-					  var sumCristal = 0;
-				  }
-				  
-			  }
 		  		var arr = window.arrayDeEstantesMetCristal;
 			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7169,54 +6667,6 @@ function interioresNuevoJson(obj){
 				var hueco3 = [];
 				var cont2Hueco = 0;
 				for(let o = 0;o<window.obj["interiores"].length;o++){
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
 					if(window.obj["interiores"][o]["interior"] == 2){
 						hueco3[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
@@ -7227,45 +6677,12 @@ function interioresNuevoJson(obj){
 					  		
 					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-							  if(hueco3[0]["tipo"] == 'estante'){
-								  if(hueco3[1]["tipo"] == 'estante'){
-									  if(hueco3[2]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco3[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1;  
-									  }
-									  
-								  }
-							  }else{
-								  if(hueco3[1]["tipo"] == 'estante'){
-									  if(hueco3[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco3[2]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-									  
-								  }
-								  
-							  }
+							  
 							  yaPuesto = 1;
 							  api.scene.setLiveTransformation(
 									     [
 									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7278,7 +6695,7 @@ function interioresNuevoJson(obj){
 									         ],reset:false
 									       },
 									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -7297,7 +6714,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco3[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7312,22 +6729,13 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco3[3]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco3[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco3[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco3[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7340,7 +6748,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7354,47 +6762,14 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco3[3]["tipo"] == "estantecristal"){
-				  if(hueco3[0]["tipo"] == 'estantecristal'){
-					  if(hueco3[1]["tipo"] == 'estantecristal'){
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 3;
-						  }else{
-							  var sumCristal = 2;
-						  }
-						  
-					  }else{
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1;  
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco3[1]["tipo"] == 'estantecristal'){
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1; 
-						  }
-						  
-					  }else{
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 1;
-						  }else{
-							  var sumCristal = 0; 
-						  }
-						  
-					  }
-					  
-				  }
+				  
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -7580,54 +6955,6 @@ function interioresNuevoJson(obj){
 			var hueco3 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 2){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -7638,84 +6965,12 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco3[0]["tipo"] == 'estante'){
-							  if(hueco3[1]["tipo"] == 'estante'){
-								  if(hueco3[2]["tipo"] == 'estante'){
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 4;
-									  }else{
-										  var sum = 3;
-									  }
-									 
-								  }else{
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco3[2]["tipo"] == 'estante'){
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									    
-								  }
-								  
-							  }
-						  }else{
-							  if(hueco3[1]["tipo"] == 'estante'){
-								  if(hueco3[2]["tipo"] == 'estante'){
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco3[2]["tipo"] == 'estante'){
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco3[3]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-								  }
-								  
-							  }
-							  
-						  }
+						  
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -7728,7 +6983,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7747,7 +7002,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco3[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7762,24 +7017,12 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco3[4]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco3[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco3[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco3[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco3[3]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7792,7 +7035,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7806,86 +7049,13 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco3[4]["tipo"] == "estantecristal"){
-				  if(hueco3[0]["tipo"] == 'estantecristal'){
-					  if(hueco3[1]["tipo"] == 'estantecristal'){
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 4;
-							  }else{
-								  var sumCristal = 3;
-							  }
-							 
-						  }else{
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							    
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco3[1]["tipo"] == 'estantecristal'){
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco3[2]["tipo"] == 'estantecristal'){
-							  if(hueco2[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }else{
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 1;
-							  }else{
-								  var sumCristal = 0; 
-							  }
-						  }
-						  
-					  }
-					  
-				  }
+				  
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
-
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8073,78 +7243,6 @@ function interioresNuevoJson(obj){
 			var hueco4 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 3){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -8161,7 +7259,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaInt],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8174,7 +7272,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaInt],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8196,7 +7294,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco4[0]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8215,7 +7313,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntCajones],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8228,7 +7326,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+numParaIntCajones],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8248,7 +7346,7 @@ function interioresNuevoJson(obj){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+numParaIntEstantCristal],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8435,78 +7533,6 @@ function interioresNuevoJson(obj){
 			var hueco4 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 3){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -8517,16 +7543,12 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco4[0]["tipo"] == 'estante'){
-							  var sum = 1;
-						  }else{
-							  var sum = 0;
-						  }
+
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8539,7 +7561,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8558,7 +7580,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco4[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8573,16 +7595,13 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco4[1]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco4[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8595,7 +7614,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8609,18 +7628,13 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco4[1]["tipo"] == "estantecristal"){
-				  if(hueco4[0]["tipo"] == 'estantecristal'){
-					  var sumCristal = 1;
-				  }else{
-					  var sumCristal = 0;
-				  }
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8807,78 +7821,6 @@ function interioresNuevoJson(obj){
 			var hueco4 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaIntTubo++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 3){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -8889,25 +7831,12 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco4[0]["tipo"] == 'estante'){
-							  if(hueco4[1]["tipo"] == 'estante'){
-								  var sum = 2;
-							  }else{
-								  var sum = 1;
-							  }
-						  }else{
-							  if(hueco4[1]["tipo"] == 'estante'){
-								  var sum = 1;
-							  }else{
-								  var sum = 0;
-							  }
-							  
-						  }
+
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -8920,7 +7849,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8939,7 +7868,7 @@ function interioresNuevoJson(obj){
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco4[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -8954,19 +7883,13 @@ function interioresNuevoJson(obj){
 		  }
 		  if(hueco4[2]["tipo"] == "cajones"){
 			  var contCaj = 0;
-			  if(hueco4[0]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
-			  if(hueco4[1]["tipo"] == "cajones"){
-				  contCaj++;
-			  }
 
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 			  api.scene.setLiveTransformation(
 					     [
 					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
 					         transformations: [
 					           {
 					             delay: 0,
@@ -8979,7 +7902,7 @@ function interioresNuevoJson(obj){
 					         ],reset:false
 					       },
 					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8993,27 +7916,13 @@ function interioresNuevoJson(obj){
 						       }]);
 		  }
 		  if(hueco4[2]["tipo"] == "estantecristal"){
-			  if(hueco4[0]["tipo"] == 'estantecristal'){
-				  if(hueco4[1]["tipo"] == 'estantecristal'){
-					  var sumCristal = 2;
-				  }else{
-					  var sumCristal = 1;
-				  }
-			  }else{
-				  if(hueco4[1]["tipo"] == 'estantecristal'){
-					  var sumCristal = 1;
-				  }else{
-					  var sumCristal = 0;
-				  }
-				  
-			  }
 		  		var arr = window.arrayDeEstantesMetCristal;
 			  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 					  api.scene.setLiveTransformation(
 							     [
 							       {
-							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -9201,78 +8110,6 @@ function interioresNuevoJson(obj){
 				var hueco4 = [];
 				var cont2Hueco = 0;
 				for(let o = 0;o<window.obj["interiores"].length;o++){
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
-						numParaInt++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-						numParaIntTubo++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-						numParaIntCajones++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
-					if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-						numParaIntEstantCristal++;
-						if(numParaInt1 == 0){
-							numParaInt1 = o;
-						}
-					}
 					if(window.obj["interiores"][o]["interior"] == 3){
 						hueco4[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
@@ -9283,45 +8120,12 @@ function interioresNuevoJson(obj){
 					  		
 					  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-							  if(hueco4[0]["tipo"] == 'estante'){
-								  if(hueco4[1]["tipo"] == 'estante'){
-									  if(hueco4[2]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco4[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1;  
-									  }
-									  
-								  }
-							  }else{
-								  if(hueco4[1]["tipo"] == 'estante'){
-									  if(hueco4[2]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco4[2]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-									  
-								  }
-								  
-							  }
+							  
 							  yaPuesto = 1;
 							  api.scene.setLiveTransformation(
 									     [
 									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -9334,7 +8138,7 @@ function interioresNuevoJson(obj){
 									         ],reset:false
 									       },
 									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -9353,7 +8157,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco4[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -9368,22 +8172,13 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco4[3]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco4[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco4[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco4[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -9396,7 +8191,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -9410,47 +8205,14 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco4[3]["tipo"] == "estantecristal"){
-				  if(hueco4[0]["tipo"] == 'estantecristal'){
-					  if(hueco4[1]["tipo"] == 'estantecristal'){
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 3;
-						  }else{
-							  var sumCristal = 2;
-						  }
-						  
-					  }else{
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1;  
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco4[1]["tipo"] == 'estantecristal'){
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 2;
-						  }else{
-							  var sumCristal = 1; 
-						  }
-						  
-					  }else{
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  var sumCristal = 1;
-						  }else{
-							  var sumCristal = 0; 
-						  }
-						  
-					  }
-					  
-				  }
+				 
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -9637,78 +8399,6 @@ function interioresNuevoJson(obj){
 			var hueco4 = [];
 			var cont2Hueco = 0;
 			for(let o = 0;o<window.obj["interiores"].length;o++){
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 0 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 1 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estante'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'tubo'){
-					numParaInt++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'cajones'){
-					numParaIntCajones++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
-				if(window.obj["interiores"][o]["interior"] == 2 && window.obj["interiores"][o]["tipo"] == 'estantecristal'){
-					numParaIntEstantCristal++;
-					if(numParaInt1 == 0){
-						numParaInt1 = o;
-					}
-				}
 				if(window.obj["interiores"][o]["interior"] == 3){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
@@ -9719,84 +8409,12 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-						  if(hueco4[0]["tipo"] == 'estante'){
-							  if(hueco4[1]["tipo"] == 'estante'){
-								  if(hueco4[2]["tipo"] == 'estante'){
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 4;
-									  }else{
-										  var sum = 3;
-									  }
-									 
-								  }else{
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco4[2]["tipo"] == 'estante'){
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									    
-								  }
-								  
-							  }
-						  }else{
-							  if(hueco4[1]["tipo"] == 'estante'){
-								  if(hueco4[2]["tipo"] == 'estante'){
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 3;
-									  }else{
-										  var sum = 2;
-									  }
-									  
-								  }else{
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }
-								  
-							  }else{
-								  if(hueco4[2]["tipo"] == 'estante'){
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 2;
-									  }else{
-										  var sum = 1; 
-									  }
-									  
-								  }else{
-									  if(hueco4[3]["tipo"] == 'estante'){
-										  var sum = 1;
-									  }else{
-										  var sum = 0; 
-									  }
-								  }
-								  
-							  }
-							  
-						  }
+						  
 						  yaPuesto = 1;
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaInt + sum)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -9809,7 +8427,7 @@ function interioresNuevoJson(obj){
 								         ],reset:false
 								       },
 								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaInt + sum)],
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -9828,7 +8446,7 @@ function interioresNuevoJson(obj){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(numParaIntTubo)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_0.transformation_0.node_"+(hueco4[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -9843,24 +8461,12 @@ function interioresNuevoJson(obj){
 			  }
 			  if(hueco4[4]["tipo"] == "cajones"){
 				  var contCaj = 0;
-				  if(hueco4[0]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco4[1]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco4[2]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
-				  if(hueco4[3]["tipo"] == "cajones"){
-					  contCaj++;
-				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntCajones+contCaj)],
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -9873,7 +8479,7 @@ function interioresNuevoJson(obj){
 						         ],reset:false
 						       },
 						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(numParaIntCajones+contCaj)],
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -9887,86 +8493,14 @@ function interioresNuevoJson(obj){
 							       }]);
 			  }
 			  if(hueco4[4]["tipo"] == "estantecristal"){
-				  if(hueco4[0]["tipo"] == 'estantecristal'){
-					  if(hueco4[1]["tipo"] == 'estantecristal'){
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 4;
-							  }else{
-								  var sumCristal = 3;
-							  }
-							 
-						  }else{
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco3[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							    
-						  }
-						  
-					  }
-				  }else{
-					  if(hueco4[1]["tipo"] == 'estantecristal'){
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 3;
-							  }else{
-								  var sumCristal = 2;
-							  }
-							  
-						  }else{
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }
-						  
-					  }else{
-						  if(hueco4[2]["tipo"] == 'estantecristal'){
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 2;
-							  }else{
-								  var sumCristal = 1; 
-							  }
-							  
-						  }else{
-							  if(hueco4[3]["tipo"] == 'estantecristal'){
-								  var sumCristal = 1;
-							  }else{
-								  var sumCristal = 0; 
-							  }
-						  }
-						  
-					  }
-					  
-				  }
+				  
 			  		var arr = window.arrayDeEstantesMetCristal;
 				  window.object0 = api.scene.get({name: "EstantesCristal", format: "glb"},"CommPlugin_1").data[0];
 
 						  api.scene.setLiveTransformation(
 								     [
 								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(numParaIntEstantCristal+sumCristal)],
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -10057,6 +8591,52 @@ function interioresNuevoJson(obj){
 		
 }
 
+function dragCallback(){
+	var dominios = api.scene.getData({
+	     name: "puntosDimensiones"
+	}).data[0].data;
+	let material1 = {
+		    version: "2.0",
+		    color: "black"
+		  };
+	const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+	for(let u = 0;u<dominios.length;u++){
+		
+		var  points = [];
+		points.push( new THREE.Vector3( dominios[u]['start']["x"], dominios[u]['start']["y"], dominios[u]['start']["z"] ) );
+		points.push( new THREE.Vector3( dominios[u]['end']["x"], dominios[u]['end']["y"], dominios[u]['end']["z"] ) );
+
+		var geometry = new THREE.BufferGeometry().setFromPoints( points );
+		
+		var line = new THREE.Line( geometry, material );
+		
+		
+		  let asset = {
+		    id: "polyline",
+		    content: [
+		      {
+		        format: api.scene.FORMAT.THREE,
+		        data: {
+		          threeObject: line
+		        }
+		      },
+		      {
+		        format: "material",
+		        data: material1
+		      }
+		    ]
+		  };
+		
+		api.scene.updateAsync([asset]);
+	}
+	var interiores =  window.obj["interiores"];
+
+	
+}
+function subirRangoSlider(id,id1){
+	alert(id);
+	alert(id1);
+}
 function interiorDefinidoMostrarArm(u,id){
 	
 	
@@ -22902,6 +21482,7 @@ function showSliderValue2() {
   
   
 }
+//funcion mover
 function divcontenidometerfuncion(u,id){
 	var shelves = api.scene.get(
 	        { 
@@ -23010,29 +21591,29 @@ function divcontenidometerfuncion(u,id){
 				 contArray1++;
 			 }
 		 }
-
+		 
 				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
-					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(shelvesScenePaths);
 					  contEst++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
-					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(tubosScenePaths);
 					  contTubo++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+ arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+ arrayIntTodo[u-1]["numero"]+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+ arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+ arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "camisero"){
-					 camiserosScenePaths = [camiseros.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					 camiserosScenePaths = [camiseros.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(camiserosScenePaths);
 					  contCami++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "estantecristal"){
-					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_0.mesh_0.primitive_0"];
+					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(estantesCristalScenePaths);
 					  contCris++;
 				 }
@@ -23046,36 +21627,29 @@ function divcontenidometerfuncion(u,id){
 	 var contArray1 = 0;
 	 if(id == 1){
 		 for(let i = 0;i<array.length;i++){
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 0){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
 			 if(array[i]["interior"] == 1){
 				 arrayIntTodo[contArray1] = array[i];
 				 contArray1++;
 			 }
 		 }
 				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
-					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+ arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(shelvesScenePaths);
 					  contEst++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
-					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estantecristal"){
+					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(estantesCristalScenePaths);
+					  contCris++;
 				 }
 	 }
 	 
@@ -23087,48 +21661,29 @@ function divcontenidometerfuncion(u,id){
 	 var contArray1 = 0;
 	 if(id == 2){
 		 for(let i = 0;i<array.length;i++){
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 0){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 1){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
 			 if(array[i]["interior"] == 2){
 				 arrayIntTodo[contArray1] = array[i];
 				 contArray1++;
 			 }
 		 }
 				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
-					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(shelvesScenePaths);
 					  contEst++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
-					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estantecristal"){
+					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(estantesCristalScenePaths);
+					  contCris++;
 				 }
 	 }
 	 
@@ -23140,60 +21695,29 @@ function divcontenidometerfuncion(u,id){
 	 var contArray1 = 0;
 	 if(id == 3){
 		 for(let i = 0;i<array.length;i++){
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 0){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 0 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 1){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 1 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
-			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'estante'){
-				 cont1++;
-			 }
-			 if(array[i]["interior"] == 2){
-				 contTotal++;
-			 }
-			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'tubo'){
-				 cont1Tubo++;
-			 }
-			 if(array[i]["interior"] == 2 && array[i]["tipo"] == 'cajones'){
-				 cont1Cajones++;
-			 }
 			 if(array[i]["interior"] == 3){
 				 arrayIntTodo[contArray1] = array[i];
 				 contArray1++;
 			 }
 		 }
 				 if(arrayIntTodo[u-1]["tipo"] == "estante"){
-					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+((cont1) + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 shelvesScenePaths = [shelvesSides.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",shelves.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(shelvesScenePaths);
 					  contEst++;
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "tubo"){
-					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+cont1Tubo+".mesh_0.primitive_0"];
+					 tubosScenePaths = [tubos.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
 					  api.scene.updateSelected(tubosScenePaths);
 				 }
 				 if(arrayIntTodo[u-1]["tipo"] == "cajones"){
-					 cajonesScenePaths = [cajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+(cont1Cajones + arrayIntTodo[u-1]["numero"])+".transformation_0.node_0.mesh_0.primitive_0"];
+					 cajonesScenePaths = [cajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0",cantosCajones.scenePath + ".content_"+arrayIntTodo[u-1]["posicionShape"]+".transformation_0.node_0.mesh_0.primitive_0"];
 					  api.scene.updateSelected(cajonesScenePaths);
 					  contCaj++;
+				 }
+				 if(arrayIntTodo[u-1]["tipo"] == "estantecristal"){
+					 estantesCristalScenePaths = [estantesCristal.scenePath + ".content_0.transformation_0.node_"+arrayIntTodo[u-1]["posicionShape"]+".mesh_0.primitive_0"];
+					  api.scene.updateSelected(estantesCristalScenePaths);
+					  contCris++;
 				 }
 	 }
 	
@@ -23346,11 +21870,38 @@ function estaMarcadoDivArm(div){
 			
 		}
 		$(div).removeAttr("onclick");
+		var parts = [];
+		if(div != ".divElegirOpcionSlider" && div != ".divSlider"){
+			parts = div.split("#");
+		}else{
+			parts = div.split(".");
+		}
+		if(div == ".divSlider"){
+			$(".divSlider").css({"height":"565px"});
+		}
+		
+		$('#divEscondido' +parts[1]).css({"display":"block"});
+		$(div+" #textoParaMeterCss").css({"margin-bottom":"20px"});
+		$(div+" #textoParaMeterCss").css({"border-bottom":"1px solid #B3B2B2"}); 
+		$(div+" #textoParaMeterCss").css({"padding-bottom":"10px"});
 		$(div+" #divOscuroOpOpcionesSlider").remove();
 		$(""+window.ultimoDivPuesto).append('<div id="divOscuroOpOpcionesSlider" style="width:100%;height:100%;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>');
 		if('#botonesAcabadosCuerpo' == window.ultimoDivPuesto){
 			$(""+window.ultimoDivPuesto+" #divOscuroOpOpcionesSlider").css({"margin-top":"-16px"});
 		}
+		var parts1 = [];
+		if(window.ultimoDivPuesto != ".divElegirOpcionSlider" && window.ultimoDivPuesto != ".divSlider"){
+			parts1 = window.ultimoDivPuesto.split("#");
+		}else{
+			parts1 = window.ultimoDivPuesto.split(".");
+		}
+		if(window.ultimoDivPuesto == ".divSlider"){
+			$(".divSlider").css({"height":"56px"});
+		}
+		$('#divEscondido' +parts1[1]).css({"display":"none"});
+		$(window.ultimoDivPuesto+" #textoParaMeterCss").css({"margin-bottom":"10px"});
+		$(window.ultimoDivPuesto+" #textoParaMeterCss").css({"border-bottom":"0px solid #B3B2B2"});
+		$(window.ultimoDivPuesto+" #textoParaMeterCss").css({"padding-bottom":"0px"});
 		$(""+window.ultimoDivPuesto).attr("onclick","estaMarcadoDivArm('"+window.ultimoDivPuesto+"')");
 		window.ultimoDivPuesto = div;
 		for(let o = 0;o<9;o++){

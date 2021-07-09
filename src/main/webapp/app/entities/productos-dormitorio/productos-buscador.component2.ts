@@ -20966,7 +20966,59 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             codigo != 'NH070' &&
             codigo != 'NH071' &&
             codigo != 'NH072' &&
-            codigo != 'NH073'
+            codigo != 'NH073' &&
+            codigo != 'NH078' &&
+            codigo != 'NH079' &&
+            codigo != 'NH080' &&
+            codigo != 'NH081' &&
+            codigo != 'NH082' &&
+            codigo != 'NH083' &&
+            codigo != 'NH084' &&
+            codigo != 'NH085' &&
+            codigo != 'NH086' &&
+            codigo != 'NH087' &&
+            codigo != 'NH088' &&
+            codigo != 'NH089' &&
+            codigo != 'NH090' &&
+            codigo != 'NH091' &&
+            codigo != 'NH092' &&
+            codigo != 'NH093' &&
+            codigo != 'NH094' &&
+            codigo != 'NH095' &&
+            codigo != 'NH096' &&
+            codigo != 'NH097' &&
+            codigo != 'NH098' &&
+            codigo != 'NH099' &&
+            codigo != 'NH100' &&
+            codigo != 'NH101' &&
+            codigo != 'NH102' &&
+            codigo != 'NH103' &&
+            codigo != 'NH104' &&
+            codigo != 'NH105' &&
+            codigo != 'NH106' &&
+            codigo != 'NH107' &&
+            codigo != 'NH108' &&
+            codigo != 'NH109' &&
+            codigo != 'NH110' &&
+            codigo != 'NH111' &&
+            codigo != 'NH112' &&
+            codigo != 'NH113' &&
+            codigo != 'NH114' &&
+            codigo != 'NH115' &&
+            codigo != 'NH122' &&
+            codigo != 'NH123' &&
+            codigo != 'NH127' &&
+            codigo != 'NH125' &&
+            codigo != 'NH126' &&
+            codigo != 'NH127' &&
+            codigo != 'NH128' &&
+            codigo != 'NH129' &&
+            codigo != 'NH130' &&
+            codigo != 'NH131' &&
+            codigo != 'NH132' &&
+            codigo != 'NH133' &&
+            codigo != 'NH134' &&
+            codigo != 'NH135'
         ) {
             if (uid == 0) {
                 this.uid = 1;
@@ -27106,6 +27158,98 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 codIdShape =
                     'b35b3f46df85a6eaba1212888cc41c838875d2093be5b0478da5c42b6a7375dd30ff1addff75e57f341a5c95e09bc32f0ef6c07e36452176b8cf1c2af6f7caf87a66059a175122a0af0efdae435aa0536d15cde8778482f1312af00e568a37ebff9b4f246503b9e78eb51d71dbc0673cd2c72261ce1728d6132cc7e447ae2ea6-311b462e766b3306c5a4f1cf6bedbd7b';
             }
+            if (codigo == 'NH078' || codigo == 'NH079') {
+                codIdShape =
+                    '52d139b7fd50e2583955c68257e615e42bfdc0d5538f97398e4f8bb1803605f1c0db6a18a3c2a936ecf9014316eacd532ae072b771d9287a4e448d751711900a894b007ddc179656c0f5f3b5bd7d1c53a344a4badaae1be969064759f1b21fe7a6236c56985540c459d25c05389c5d50f62011aa73994e2ab4a660053fcc9c2c-76342a88b7be218b710adad330d656b7';
+            }
+            if (codigo == 'NH080' || codigo == 'NH081') {
+                codIdShape =
+                    '183d795f6410cc3d9a291f799ef6973b07a3f4d5e509dd3a3c3bd8eb1f227ec025ee33762e42cfc48b6bceb1afe35f90cd798c675c53a95b5e80064831380e7f6ebdd98c5b63272aa41cc7c93daea3f81caf97a4ee4843ba71098778ea09302fc4447c340a2ca55a7b65b619cbcf643761aefa48e243796c9995d5dd0bce47e5-d410849d20141f9ad2f656fcf9bf9785';
+            }
+            if (codigo == 'NH082' || codigo == 'NH083') {
+                codIdShape =
+                    '5a52752adf3965581853c396fbb89dd935d18c67c10d320ff466ca736eff7908ec4a153cecd1bb95b54a01d568f786d99bf30c4425aaefe27c84d02a0a2352369e9bf5af3477b0e4890a7f9de762f9983e5f8d85e2e2a375657f5b0d6fd622bffa615030056fa5632d8062450441a70708a9b9ea9dc937f53064e5d6f04efb39-e4734374f773bd64544af0d267a7aa54';
+            }
+            if (codigo == 'NH084') {
+                codIdShape =
+                    'd32f9bd3dca23a96c937b0df6ca3bee398d760f6fe6f331533f4302b450101ec6abe667f12253e065c1c4da534b898cddd8174635f6e912594a7eac81564a767eee81badebe308c81fb7d2ec46041d4033a63a28c0e6aec90f2c4f456461271850d76386203f31ca5bb6191699f32aad7ceea6448f2205c131ad2047d3e3af27-e799476b0de891db4fccb66d7b9fe00b';
+            }
+            if (codigo == 'NH085') {
+                codIdShape =
+                    'c502a54ce81920062f54069659f83e7ff7b9797c2f0491dcf53f5a004fc39ab9974b6481e1a15c33e1a86f399efd0f2486309f64a307224c0ccfd528bf6388573717febc7b360a312552ec9a2784a7d14dbd6f13d0384ddbd284a9bd301fb4f56091425dd305e6090229c94c875ccde4f5e7a1c7fcd449dda547a8696992060b-e08589d0e02d68c3dc6479ba8dfd27ba';
+            }
+            if (codigo == 'NH086' || codigo == 'NH087' || codigo == 'NH088') {
+                codIdShape =
+                    'bf591064649dfb54a5615bc94e2798e19c094e4c7601cc911bce46015b2110330f8083a2aa6d7ce18e279be6c85f251758c8b84669b208d17347f1bd8174270dd252c075c60f51866b0d914b1c820d08e32559c79f64f5dd96eda5c0fa576e61df2d5eb4480ef450c353336489b7c8d9273cf3b811967e10f5f889d09863d6c5-586274bc9f2a71a53ecc5c3349a31367';
+            }
+            if (codigo == 'NH089' || codigo == 'NH090' || codigo == 'NH091') {
+                codIdShape =
+                    'dd1cdf4bb024f1271aa1089416493974644b32295411983106a9b2076d4b9322a934934cb83c92490a7a0149c34a0df245929a6ba1c9ee58e81c871466e9ed86f7a8aa6d93f2d9d4f7a35259dce0773184de0bf9be60647382e0c99567a1aa9d168a9e50875eaed4ec6ae63c1cb10a743f4cb5040b22c4d78d3f3ee52defa2d1-90da61a7aaebac472b819956c06be2e6';
+            }
+            if (codigo == 'NH092' || codigo == 'NH093' || codigo == 'NH094') {
+                codIdShape =
+                    '4f76e694ede18cb77a87424f56762fe2071645a70ee45dddfe5ec43d6d631b1adeb957bfd570ea19b1826a890213b6cb0e023f141ea44daec43aaaf2b90e2b843413db245b66713e3a9b56d6868db5acf63c1e2ba8ba0d17c25c47947f65b40ec53087cde5ae50a85e55294a4ab9496e81033ebd60d8b5094b59fedec27aaf63-89879d1a55a37c1b282fa1f48793ba47';
+            }
+            if (codigo == 'NH095' || codigo == 'NH096' || codigo == 'NH097') {
+                codIdShape =
+                    'b2a94f6bf20f44b8af0d67216faa697db21d45b92719e986e2c4845dae7b6242f8f62f1bd7a78d012e35a544b34153a7d0a53c2ea03cc70b991d77051e47ec5c9e7fd0b4c378e7211e18cdd8a4056fd390bc88dbd1d9637ee6d0c6b2e199a3bb5555655f297bb4434dbb96b47da6a9f25bd64d3529837e9763258fa6cf038454-dc0f63bffaf7c2016fed7b3989b9d0d4';
+            }
+            if (codigo == 'NH098' || codigo == 'NH099' || codigo == 'NH100') {
+                codIdShape =
+                    '520b57978a77d977026e5a6e7bc1fc2e27e689e41cc7fcac2241255cde848bcf0eb73a716563526b356003594154bb6e3b2a1197180dbe8a007dc3ab1fafcdc81486aff9421c3da449b1f344cc7b9f267722eb751a739f9f9329ea196f90e248666b32ed7429dd3612e4827be9db72e9c0153e869a6ac513f7c6def4c6ce2a63-03337ff96d2f1714e04ceed4be2998b1';
+            }
+            if (codigo == 'NH101' || codigo == 'NH102' || codigo == 'NH103') {
+                codIdShape =
+                    '78dfdc67f8e6f56d48c6b732cb3a87cc4c9ecf2930a2e1e1dc2cd49bff81ca3c6ec623c1cbd93d1860bb7d2e629ae0422be948e1eb81a3550c92c22f5d35c95f858c0b78ebd9163481b5bc8028d603390c0ec6d6fbfc828bcce01ea66e843a32961f0162c7d81c58952ba6aee3945b4b747931092b677653704b25aef60c3342-5243c652a8c33dca4c164088b58abee3';
+            }
+            if (codigo == 'NH104' || codigo == 'NH105' || codigo == 'NH106') {
+                codIdShape =
+                    '93036b23ab2163091521637a338fd348c4f5872fc92a09a1d2059b2271a4d2bf97f0a65f2ef4e54a05fd95ca0cfc224ca788c366e35bb2e360348fc07072c7a3326a8a44ec364a8e72fbe546d5a1026e4593c12cfa70c97895b909ab365e7b2855d3a03764460de852d231b368b99dcf45c6b4248ad7cfed6ac74d0875f1479d-a0229bbd97ac0e5bb40ccb3723da26f6';
+            }
+            if (codigo == 'NH107' || codigo == 'NH108' || codigo == 'NH109') {
+                codIdShape =
+                    '6880218ad0910f1101acccc8655bb1eade63ab07085b0117496c355f5b22739a4d785d817ec1804db22c3fe24234358bfe936bb1cefe646d3441857db73662c218576b5a543c9d459a74ce6fe5f46836836f1940d0ecfb891142d34afa706d5332875e98bd768dcd5612e9d0548883e206ab30641f2ed13966ce7bde6d38c71f-20a3d460b5531e30b285cc7954e705c5';
+            }
+            if (codigo == 'NH110' || codigo == 'NH111' || codigo == 'NH112') {
+                codIdShape =
+                    '7faa6059564c59b9db71ca5c4f506c5c59675fe287b5c31c337e84d1f0c25ca1ff541b6574cb5578c6040110313bfaefe9d7155bd351a66c53fe60e9743a2e500bf585eddba3f2845011bf66928410f5302598cfbe07edcb2761abb7f1a081da7f4a4aa7c014181d1f9c424181bce442b0691d0650a148cef8dec60f227c7846-350bc67e03d88e98943741f423e3e5ce';
+            }
+            if (codigo == 'NH113' || codigo == 'NH114' || codigo == 'NH115') {
+                codIdShape =
+                    'fc0a17c63451db4e431025f9d0b8b047f1538116d1dcde3d92e7447da180732b69fb1e0d7643c5b0b7ba90144470b39024d31d5462436791c756d8ab34f090a2e5e8f69dafbc03b5b33e4f8098830467910c1038e1f351187a7277773678646773377590ea0aa4e7cae5bee86f3f5f7c6a2b9668d9515a948fdb2591e25db36f-720824a73a85b79037acfc497b777cbb';
+            }
+            if (codigo == 'NH122' || codigo == 'NH123' || codigo == 'NH124') {
+                codIdShape =
+                    'da8fbdc84498c69aa59f3b6f77a05010ccdc61dad6bb2eb39c9411929ea4edd644e9cbd0ca65a5bf2120e90730b7821d87e1ef14682ec731d8845bb746a5c2b8a328d91847b764e0a7409a2062bbfe7f74a078baac846912d91741de4caa7b97bb8d2bb892ee4bb9ea2b29321ba17b1ed9f04d5b5bdae40d22d5fb9e7b1b891e-28748c89ffe0857afd22a91a9f883e4d';
+            }
+            if (codigo == 'NH125' || codigo == 'NH126' || codigo == 'NH127') {
+                codIdShape =
+                    '2dd9566677d4e88ea3a301b5ed830943f329945a1998df90ea794e5c452d8fe26ef21c92d5fc8bb24f8d8590469c6507c1e1669f32d58debd9cffc10890692d1a12e9e4cd7ac5bd4a89c86b48bb52f91ceb5ba890ef4db8026667aca30f4afd90966ac659683a4875ed455ae6bf3089f724c49ad82edf788f9e6811d2d9634c7-d712800593c58dbecdb6ecb644e19aee';
+            }
+            if (codigo == 'NH128') {
+                codIdShape =
+                    'bb59bd0867d4f4e327e3037c7a6d1484c16e9f5dcc1c531d2fc0f9aaf9f3a13c471801b92d17cafa01035d7b2e3e6928b7a94c50951aa9881465c75a9616ecda5446bcbbc1542d12104cd7524a5cd0243ebb492d47d91abbdfadcf078eaeaabfdbb451d3d77b247d03d1e08608a46a471cc4a9701815c8ce8a9ba3958fbc6fbb-bb654a9a50cd0a27e00f95036af52817';
+            }
+            if (codigo == 'NH129') {
+                codIdShape =
+                    '9e5107768b36a782d0b41619422e6572310cc7deae58a94c73ee548a69fb927b3ae321ef5d5c488eb0e0467c5b6b2b11e6c6dcd150e24a48f4a36b25d7d6fd226ae550e488c81ba12bf0593dc4532e7aa6ed931eebee42bed14bac16704db48810c2b3a1fa5057fd97845f2485d3ae07f837c65595a940d04d478a923aa9baa0-990faca4c453256bc73fe02a80b0f69b';
+            }
+            if (codigo == 'NH130' || codigo == 'NH131') {
+                codIdShape =
+                    '36dd52db0a309c40bce8fa99025e13a86593df21b164031757d1e65d9181cc046b82c75fafea14190e7ea72fb03e2f8abfc2265e2246fdef235ef33bee5ae4259dce4c6443a0232618a100e5f0419027cc9d7d07c26bef70dc7aad2a5911e4e75f81604027830464dc75047a5ca17c0965cefca9eb0a4d3b1f034f4cbc275073-fc367d012b10265f4321c270f3c67a52';
+            }
+            if (codigo == 'NH132' || codigo == 'NH133') {
+                codIdShape =
+                    'edde188768e1e83f88b02163620245903941c3af8147398b0647de3ca4a2978ce9e3fbf717a2b3bc0bd8cf9eb699680fa296526cafe14f93261bc65e2597108f5f9e059d2010d38ba1e9daac0639cfa3cdfa7179b2851484756fd879f6b440d89ed747b7c044d5457ba13be519f6a5f5f79ee4d007d391172d9cdc87aea7ed38-22867705621179338aed25434a1a6b7d';
+            }
+            if (codigo == 'NH134') {
+                codIdShape =
+                    'e5d8db91f2876a8f364b9d4fb37202465924dbf9cdbbae1880f5b28058a72f66ccf56f71b7f4a0a6ee0877cb9b0ce43e890c7a2d8ddefb6371af009fcf3d116116155271c95ca9630f79fa77809ec6cc03d1b479af476f2ccef096298bc25fa838d03e8f2ef777fb075bf52dcc2fba0ad704c1b5c8a3297c83b896092f471e0e-fa7966239ef0b9d36e93beaa07516cd1';
+            }
+            if (codigo == 'NH135') {
+                codIdShape =
+                    '1beefa34e897bcf08fa5b8dcb8708e902ac9a4e4e0211d760640eb18c8fb38b673beeb3dba1c5a0cdd5f24c9d1fffd4612e4338ed0245372c2c3c5bb9c16df49d4055736a9151b1e45c6f66079d3ba27316fbb8b0d007f26ef79e8dc5c7366250ff8580b45e14865a603f33cc1a17e1b93a2ea86d299860fcf425f711aaf6f59-5e671a1816bb8c75bdb3a3a73b289644';
+            }
             this.productosShapediverComponent.uid = this.uid;
             this.productosShapediverComponent.shapedivercargar(codIdShape, 3, codigo);
         }
@@ -29801,7 +29945,30 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) != 299 &&
             parseFloat(idProd) != 301 &&
             parseFloat(idProd) != 300 &&
-            parseFloat(idProd) != 119
+            parseFloat(idProd) != 119 &&
+            parseFloat(idProd) != 334 &&
+            parseFloat(idProd) != 303 &&
+            parseFloat(idProd) != 14 &&
+            parseFloat(idProd) != 304 &&
+            parseFloat(idProd) != 53 &&
+            parseFloat(idProd) != 305 &&
+            parseFloat(idProd) != 62 &&
+            parseFloat(idProd) != 306 &&
+            parseFloat(idProd) != 63 &&
+            parseFloat(idProd) != 307 &&
+            parseFloat(idProd) != 64 &&
+            parseFloat(idProd) != 308 &&
+            parseFloat(idProd) != 65 &&
+            parseFloat(idProd) != 309 &&
+            parseFloat(idProd) != 66 &&
+            parseFloat(idProd) != 311 &&
+            parseFloat(idProd) != 68 &&
+            parseFloat(idProd) != 312 &&
+            parseFloat(idProd) != 69 &&
+            parseFloat(idProd) != 336 &&
+            parseFloat(idProd) != 335 &&
+            parseFloat(idProd) != 338 &&
+            parseFloat(idProd) != 337
         ) {
             nombre = res;
             var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -30634,7 +30801,30 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) == 299 ||
             parseFloat(idProd) == 301 ||
             parseFloat(idProd) == 119 ||
-            parseFloat(idProd) == 300
+            parseFloat(idProd) == 300 ||
+            parseFloat(idProd) == 334 ||
+            parseFloat(idProd) == 303 ||
+            parseFloat(idProd) == 14 ||
+            parseFloat(idProd) == 304 ||
+            parseFloat(idProd) == 53 ||
+            parseFloat(idProd) == 305 ||
+            parseFloat(idProd) == 62 ||
+            parseFloat(idProd) == 306 ||
+            parseFloat(idProd) == 63 ||
+            parseFloat(idProd) == 307 ||
+            parseFloat(idProd) == 64 ||
+            parseFloat(idProd) == 308 ||
+            parseFloat(idProd) == 65 ||
+            parseFloat(idProd) == 309 ||
+            parseFloat(idProd) == 66 ||
+            parseFloat(idProd) == 311 ||
+            parseFloat(idProd) == 68 ||
+            parseFloat(idProd) == 312 ||
+            parseFloat(idProd) == 69 ||
+            parseFloat(idProd) == 336 ||
+            parseFloat(idProd) == 335 ||
+            parseFloat(idProd) == 338 ||
+            parseFloat(idProd) == 337
         ) {
             $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');
             $('#apoyoestaCogidoApi')[0].click();
@@ -34300,7 +34490,30 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 117 ||
             parseFloat(idProd1) == 299 ||
             parseFloat(idProd1) == 301 ||
-            parseFloat(idProd1) == 300
+            parseFloat(idProd1) == 300 ||
+            parseFloat(idProd1) == 334 ||
+            parseFloat(idProd1) == 303 ||
+            parseFloat(idProd1) == 14 ||
+            parseFloat(idProd1) == 304 ||
+            parseFloat(idProd1) == 53 ||
+            parseFloat(idProd1) == 305 ||
+            parseFloat(idProd1) == 62 ||
+            parseFloat(idProd1) == 306 ||
+            parseFloat(idProd1) == 63 ||
+            parseFloat(idProd1) == 307 ||
+            parseFloat(idProd1) == 64 ||
+            parseFloat(idProd1) == 308 ||
+            parseFloat(idProd1) == 65 ||
+            parseFloat(idProd1) == 309 ||
+            parseFloat(idProd1) == 66 ||
+            parseFloat(idProd1) == 311 ||
+            parseFloat(idProd1) == 68 ||
+            parseFloat(idProd1) == 312 ||
+            parseFloat(idProd1) == 69 ||
+            parseFloat(idProd1) == 336 ||
+            parseFloat(idProd1) == 335 ||
+            parseFloat(idProd1) == 338 ||
+            parseFloat(idProd1) == 337
         ) {
             var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
             if (cogerIdCesta == null || cogerIdCesta == undefined) {
@@ -34589,7 +34802,30 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 117 ||
                             parseFloat(idProd1) == 299 ||
                             parseFloat(idProd1) == 301 ||
-                            parseFloat(idProd1) == 300
+                            parseFloat(idProd1) == 300 ||
+                            parseFloat(idProd1) == 334 ||
+                            parseFloat(idProd1) == 303 ||
+                            parseFloat(idProd1) == 14 ||
+                            parseFloat(idProd1) == 304 ||
+                            parseFloat(idProd1) == 53 ||
+                            parseFloat(idProd1) == 305 ||
+                            parseFloat(idProd1) == 62 ||
+                            parseFloat(idProd1) == 306 ||
+                            parseFloat(idProd1) == 63 ||
+                            parseFloat(idProd1) == 307 ||
+                            parseFloat(idProd1) == 64 ||
+                            parseFloat(idProd1) == 308 ||
+                            parseFloat(idProd1) == 65 ||
+                            parseFloat(idProd1) == 309 ||
+                            parseFloat(idProd1) == 66 ||
+                            parseFloat(idProd1) == 311 ||
+                            parseFloat(idProd1) == 68 ||
+                            parseFloat(idProd1) == 312 ||
+                            parseFloat(idProd1) == 69 ||
+                            parseFloat(idProd1) == 336 ||
+                            parseFloat(idProd1) == 335 ||
+                            parseFloat(idProd1) == 338 ||
+                            parseFloat(idProd1) == 337
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }

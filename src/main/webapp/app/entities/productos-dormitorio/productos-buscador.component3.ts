@@ -10783,12 +10783,12 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             }
             if (codigo == 'NX070') {
                 codIdShape =
-                    '78d6fdd051259c176791c3ee34baa93d0f4e4803359ebdd69858f91fa74e88fbc601cc9f823fa582ceb765e613292676415d93a2d1771a8e289cba8dac7c52e25d9819df62df6a7fad93bb0a605a77026ccabdc87080aa9ed2f1a084f5c6a70c1220e398fd7929e43489c8e4b0843fc730989f94ced5ab9177d7c0d23b473136-3a44404998486a15f0c72baf2547d9ef';
+                    '8e062fc7d02f04daf7bfe1f940adbf19702a20550d1b592d10c05130a607151b4a4ccae1e18b9b6893ccd38e2fd977bd5e84500607a10bc1b14b7b490f374ae0573e5d51776b583bd52571643ae138e4dcdf840bde8f461133c7f8c5e8f59191e4aaec001dd1be82577437981092f2da965fefc5d3e2700232b35d755ce8d037-b92bd350176cdc6764fe7fba28e88131';
                 //$("#clicWebNumeroCambio").attr("onclick","clicWebNumeroCambioFuncion(2.5,2.5,2.5)");
             }
             if (codigo == 'NX071') {
                 codIdShape =
-                    'b5c78f0bf409618994225241bba037c12335fa766b639a1472bdff6e44d1a72974164fa1d81f408598af902b2adf5c41cb181a509cb864e64905958309866bd1dd8d9768cbc3199d662965d91fd7e84c2cc89c3782a427bf4c4599ef3d1cd58889175fe78338a59f45c77644968cae80fcef7c67937ad17da12ab1e999b5dff2-3ed07f97a763201d6b9a069f8da77d97';
+                    '5d7f36384018dac35f8cef1c4a27e5e435c9b18202eddc651e7b0f62fd91fe5c9827565bdaeab22eb723b87acd07327df02897b6e2f3588a5698fea10ffa0b3b3999285195c60bb8df67d67970ddddeff604b791d7ee99810bb8e61f6e7a134ef47040969359356f5c2d0f8e689944991d0ab8fc565107a4b422bf6d2e19114d-2a468601c80351da326ccb21a87ba60e';
             }
             if (codigo == 'NX072') {
                 codIdShape =
