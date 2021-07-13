@@ -2542,7 +2542,9 @@ function interioresNuevoJson(obj){
 	    			  var contEst1 = 0;
 	    			  var contEst1Cristal = 0;
 	    			  var contCaj = 0;
-	    			  api.scene.addEventListener(api.parameters.EVENTTYPE.SUBSCENE_PUBLISHED, function() {
+	    			// var intervalo = setInterval(function(){
+
+	    				 api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
 	    				  // now it's safe to read the model parameters
 	    				  var dominios = api.scene.getData({
 	    					     name: "puntosDimensiones"
@@ -2563,13 +2565,16 @@ function interioresNuevoJson(obj){
 	    						contarray++;
 	    						 
 	    					}
-	    						var geometry = new THREE.BufferGeometry().setFromPoints( array[0] );
+	    					var arrayLine = [];
+	    					var contLine = 0;
+	    					for(let j = 0;j<array.length;j++){
+	    						var geometry = new THREE.BufferGeometry().setFromPoints( array[j] );
 	    						
-	    						var line = new THREE.Line( geometry, material );
+	    						var line = new THREE.LineLoop( geometry, material );
 	    						
 	    						
 	    						  let asset = {
-	    						    id: "polyline",
+	    						    id: "polyline"+contLine,
 	    						    content: [
 	    						      {
 	    						        format: api.scene.FORMAT.THREE,
@@ -2583,10 +2588,17 @@ function interioresNuevoJson(obj){
 	    						      }
 	    						    ]
 	    						  };
+	    						  arrayLine[contLine] = asset;
+	    						  contLine++;
 	    						
-	    						api.scene.updateAsync([asset]);
 	    					
-	    				});
+	    					}
+	    					window.arrayline = arrayLine;
+	    					api.scene.updateAsync(arrayLine);
+	    				//	clearInterval(intervalo);
+	    				 }); 
+	    					 
+	    			  //}, 1000);
 	    			  var length = obj["interiores"].length;
 	    			  for(let h = 0;h<length;h++){
 	    				  if(obj["interiores"][h]["tipo"] == "estante"){
@@ -2797,9 +2809,33 @@ function interioresNuevoJson(obj){
 	    			  }
 	    		  
 	    			);
-	  
+	  api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+		  var dominios = api.scene.getData({
+			     name: "dominios"
+			}).data[0].data;
+		  var contInt = 0;
+		  var arrayHueco0DomInt = [];
+		 
+		  	for(let h = 0;h<window.obj["interiores"].length;h++){
+		  		for(let d = 0;d<dominios.length;d++){
+				  if(window.obj["interiores"][h]["interior"] == 0){
+					  if(window.obj["interiores"][h]["tipo"].toUpperCase()+"_"+window.obj["interiores"][h]["posicionShape"] == dominios[d]["id"]){
+						  arrayHueco0DomInt[contInt] = dominios[d];
+						  contInt++;
+						  var val = $("#rs-range-lineAdicional"+contInt+"0").val();
+						  $("#rs-range-lineAdicional"+contInt+"0").attr("min",(parseFloat(val) - (parseFloat(dominios[d]["bottom"]) / 10 )));
+						  $("#rs-range-lineAdicional"+contInt+"0").attr("max",(parseFloat(val) + (parseFloat(dominios[d]["top"]) / 10 )));
+						  
+					  }
+				  }
+			  }
+		  }
+		  	window.arrayHueco0DomInt = arrayHueco0DomInt;
+
+	  });
 	  
  
+	  
 	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
 		$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
 		var inputDiv = document.querySelector('#inputDivAdi10');
@@ -2901,14 +2937,98 @@ function interioresNuevoJson(obj){
 					contArrayInt0++
 				}
 			}
+			var dominios = api.scene.getData({
+			     name: "puntosDimensiones"
+			}).data[0].data;
+			
 			
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
+			var comienzoLinea = 0;
+			var finalLinea = 0;
 			  var calcu = (parseFloat(rangeSliderAdicional1.value) * 10) - (parseFloat(etihtml)*10);
 			  if(arrayInt0[0]["tipo"] == "estante"){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+				  
+				  for(let u = 0;u<dominios.length;u++){
+						
+						if(dominios[u]['start']["id"] == "ESTANTE_"+arrayInt0[0]['posicionShape']){
+							finalLinea = u;
+						}
+						if(dominios[u]['end']["id"] == "ESTANTE_"+arrayInt0[0]['posicionShape']){
+							comienzoLinea = u;
+						}
+
+					}
+				  		
+				  var objectLinea = api.scene.get({ id: "polyline"+comienzoLinea }).data[0];
+			  		var objectLinea1 = api.scene.get({ id: "polyline"+finalLinea }).data[0];
+			  		var dominioPuntos = api.scene.getData({
+					     name: "puntosDimensiones"
+					}).data[0].data;
+			  		 
+			  		 var puntosInicio = dominioPuntos[comienzoLinea];
+			  		 var puntosFinal = dominioPuntos[finalLinea];
+			  		 
+			  		let material1 = {
+						    version: "2.0",
+						    color: "black"
+						  };
+					const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+					var array = [];
+					var contarray = 0;
+					
+						var  points = [];
+						points.push( new THREE.Vector3( puntosInicio['start']["x"], puntosInicio['start']["y"], puntosInicio['start']["z"] ) );
+						points.push( new THREE.Vector3( puntosInicio['end']["x"], puntosInicio['end']["y"],  (parseFloat(rangeSliderAdicional1.value) * 10) + 30 ) );
+						array[contarray] = points;
+						contarray++;
+						var  points = [];
+						points.push( new THREE.Vector3( puntosFinal['start']["x"], puntosFinal['start']["y"], (parseFloat(rangeSliderAdicional1.value) * 10) + 60)  );
+						points.push( new THREE.Vector3( puntosFinal['end']["x"], puntosFinal['end']["y"], puntosFinal['end']["z"] ) );
+						array[contarray] = points;
+						contarray++;
+						 
+					var arrayLine = [];
+					var contLine = 0;
+					for(let x = 0;x<2;x++){
+					 
+						var geometry = new THREE.BufferGeometry().setFromPoints( array[x] );
+						
+						var line = new THREE.LineLoop( geometry, material );
+						
+						var num = 0;
+						if(x == 0){
+							num = comienzoLinea;
+						}else{
+							num = finalLinea;
+						}
+						  let asset = {
+						    id: "polyline"+num,
+						    content: [
+						      {
+						        format: api.scene.FORMAT.THREE,
+						        data: {
+						          threeObject: line
+						        }
+						      },
+						      {
+						        format: "material",
+						        data: material1
+						      }
+						    ]
+						  };
+						  arrayLine[contLine] = asset;
+						  contLine++;
+					} 						
+					api.scene.updateAsync(arrayLine);		
+				  
+				/**  var objectLinea = api.scene.get({ id: "polyline"+finalLinea });
+				  var lineDistances = [];
+				  objectLinea.data[0].content[0].data.threeObject.geometry.attributes.position.array[5] = parseFloat(rangeSliderAdicional1.value) * 10;
+				  api.scene.updatePersistentAsync([objectLinea.data[0]], 'CommPlugin_1');**/
 
 						  api.scene.setLiveTransformation(
 								     [
@@ -8633,9 +8753,69 @@ function dragCallback(){
 
 	
 }
+function bajarRangoSlider(id,id1){
+	
+	if(id1 == 0){
+		var array0 = window.arrayHueco0DomInt;
+		var obj = window.obj["interiores"];
+		var hueco0 = [];
+		var contHueco0 = 0;
+		for(let k = 0;k<obj.length;k++){
+			if(obj[k]["interior"] == 0){
+				hueco0[contHueco0] = obj[k];
+				contHueco0++;
+			}
+		}
+		var puesto = 0;
+		var valor = parseFloat(hueco0[id - 1]["posicion"]);
+		for(let k = 0;k<hueco0.length;k++){
+			if(k != id - 1){
+				if(hueco0[k]["posicion"] <= valor && puesto == 0){
+					for(let w = 0;w<array0.length;w++){
+						if(hueco0[k]["tipo"].toUpperCase()+"_"+hueco0[k]["posicionShape"] == array0[w]["id"]){
+							var val = $("#rs-range-lineAdicional"+id+"0").val();
+							$("#rs-range-lineAdicional"+id+"0").attr("min",(parseFloat(val) - (parseFloat(array0[w]["bottom"]) / 10 )));
+							$("#rs-range-lineAdicional"+id+"0").attr("max",(parseFloat(val) + (parseFloat(array0[w]["top"]) / 10 )));
+							puesto = 1;
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	
+}
 function subirRangoSlider(id,id1){
-	alert(id);
-	alert(id1);
+	
+	if(id1 == 0){
+		var array0 = window.arrayHueco0DomInt;
+		var obj = window.obj["interiores"];
+		var hueco0 = [];
+		var contHueco0 = 0;
+		for(let k = 0;k<obj.length;k++){
+			if(obj[k]["interior"] == 0){
+				hueco0[contHueco0] = obj[k];
+				contHueco0++;
+			}
+		}
+		var puesto = 0;
+		var valor = parseFloat(hueco0[id - 1]["posicion"]);
+		for(let k = 0;k<hueco0.length;k++){
+				if(hueco0[k]["posicion"] >= valor && puesto == 0){
+					for(let w = 0;w<array0.length;w++){
+						if(hueco0[k]["tipo"].toUpperCase()+"_"+hueco0[k]["posicionShape"] == array0[w]["id"]){
+							var val = $("#rs-range-lineAdicional"+id+"0").val();
+							$("#rs-range-lineAdicional"+id+"0").attr("min",(parseFloat(val) - (parseFloat(array0[w]["bottom"]) / 10 )));
+							$("#rs-range-lineAdicional"+id+"0").attr("max",(parseFloat(val) + (parseFloat(array0[w]["top"]) / 10 )));
+							puesto = 1;
+						}
+					}
+				}
+		}
+		
+	}
+	
 }
 function interiorDefinidoMostrarArm(u,id){
 	

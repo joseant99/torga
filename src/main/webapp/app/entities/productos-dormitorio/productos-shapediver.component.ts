@@ -1515,6 +1515,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 contNuevoArrayObj++;
             }
         }
+        contIntArray = contNuevoArrayObj;
         objetoTodoArray = nuevoObjetoTodoArray;
         //}
         if (obj1['interior'] != undefined) {
@@ -3228,6 +3229,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
     public subirRangoSliderTs(id, u) {
         $('#subirrangosliderFunct').attr('onclick', 'subirRangoSlider(' + id + ',' + u + ')');
+        $('#subirrangosliderFunct')[0].click();
+    }
+    public bajarRangoSliderTs(id, u) {
+        $('#subirrangosliderFunct').attr('onclick', 'bajarRangoSlider(' + id + ',' + u + ')');
         $('#subirrangosliderFunct')[0].click();
     }
     public puertaDelArmarioPonerAcabado(id) {

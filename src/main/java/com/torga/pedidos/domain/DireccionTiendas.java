@@ -88,6 +88,9 @@ public class DireccionTiendas implements Serializable {
     @Column(name = "Importe")
     private Double importe;
     
+    @Column(name = "Oro")
+    private Integer oro;
+    
 
     @ManyToOne
     @JsonIgnoreProperties("")
@@ -230,6 +233,19 @@ public class DireccionTiendas implements Serializable {
 
     public void setActivo(Integer activo) {
         this.activo = activo;
+    }
+    
+    public Integer getOro() {
+        return oro;
+    }
+
+    public DireccionTiendas oro(Integer oro) {
+        this.oro = oro;
+        return this;
+    }
+
+    public void setOro(Integer oro) {
+        this.oro = oro;
     }
     
     public Double getImporte() {
