@@ -32,7 +32,7 @@
 	<script type="https://s3.amazonaws.com/shapediverviewer/v2/2.19.4/sdv.concat.min.js"></script>
 	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script>
     <script src="content/jquerysession.js"></script>
-    <script src="content/shapediverFunciones.js?n=5"></script>
+    <script src="content/shapediverFunciones.js?n=6"></script>
     
     	    <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
@@ -648,6 +648,215 @@ $("#divDentroCalcu").scroll(function() {
 					], "CommPlugin_1");
 					window.textura6 = url;
 					
+			}
+		}
+		
+		if(idProd == 213 || idProd == 215 || idProd == 218 || idProd == 219){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "CostadosGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "PatasGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "PatasGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+			}
+		}
+		if(idProd == 217){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CantosTapa", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "CascoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 3){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "CajonGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CantosCajon", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+			}
+		}
+		
+		if(idProd == 220 || idProd == 221){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "CascoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CantosCasco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "CuboGeo", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "CuboGeoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
 			}
 		}
 		
@@ -9355,6 +9564,1905 @@ $("#divDentroCalcu").scroll(function() {
 			}
 		}
 		
+		if(idProd == 280){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Casco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				
+			}
+			if(id == 2 || id == 3 || id == 4 || id == 5 || id == 6 || id == 7 || id == 8 || id == 9 || id == 10){
+				var arrayPuertas = window.puertasAca;
+				var arrayPuertasCantos = window.puertasAcaCantos;
+				if(id1 == 2){
+					arrayPuertas[0] = url;
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertas[1] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 4){
+					arrayPuertas[2] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 5){
+					arrayPuertas[3] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 6){
+					arrayPuertas[4] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 7){
+					arrayPuertas[5] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 8){
+					arrayPuertas[6] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 9){
+					arrayPuertas[7] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 10){
+					arrayPuertas[8] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 2){
+					arrayPuertasCantos[0] = urlCantos;
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertasCantos[1] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 4){
+					arrayPuertasCantos[2] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 5){
+					arrayPuertasCantos[3] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 6){
+					arrayPuertasCantos[4] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 7){
+					arrayPuertasCantos[5] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 8){
+					arrayPuertasCantos[6] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 9){
+					arrayPuertasCantos[7] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 10){
+					arrayPuertasCantos[8] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				window.puertasAca = arrayPuertas;
+				window.puertasAcaCantos = arrayPuertasCantos;
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Plafones", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[2]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[6]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[7]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[8]
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "PlafonesCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[2]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[6]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[7]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[8]
+						}
+					}
+					]
+				}], "CommPlugin_1");
+			}
+		}
+		
+		if(idProd == 279){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Casco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				
+			}
+			if(id == 2 || id == 3 || id == 4 || id == 5 || id == 6 || id == 7 || id == 8 || id == 9 || id == 10 || id == 11|| id == 12 || id == 13 || id == 14){
+				var arrayPuertas = window.puertasAca;
+				var arrayPuertasCantos = window.puertasAcaCantos;
+				if(id1 == 2){
+					arrayPuertas[0] = url;
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertas[1] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 4){
+					arrayPuertas[2] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 5){
+					arrayPuertas[3] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 6){
+					arrayPuertas[4] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 7){
+					arrayPuertas[5] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 8){
+					arrayPuertas[6] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 9){
+					arrayPuertas[7] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 10){
+					arrayPuertas[8] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 11){
+					arrayPuertas[9] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 12){
+					arrayPuertas[10] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 13){
+					arrayPuertas[11] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[12] == undefined){
+						arrayPuertas[12] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 14){
+					arrayPuertas[12] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[7] == undefined){
+						arrayPuertas[7] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[8] == undefined){
+						arrayPuertas[8] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[9] == undefined){
+						arrayPuertas[9] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[11] == undefined){
+						arrayPuertas[11] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[10] == undefined){
+						arrayPuertas[10] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 2){
+					arrayPuertasCantos[0] = urlCantos;
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertasCantos[1] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 4){
+					arrayPuertasCantos[2] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 5){
+					arrayPuertasCantos[3] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 6){
+					arrayPuertasCantos[4] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 7){
+					arrayPuertasCantos[5] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 8){
+					arrayPuertasCantos[6] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 9){
+					arrayPuertasCantos[7] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 10){
+					arrayPuertasCantos[8] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				
+				if(id1 == 11){
+					arrayPuertasCantos[9] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1';
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 12){
+					arrayPuertasCantos[10] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1';
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 13){
+					arrayPuertasCantos[11] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1';
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[12] == undefined){
+						arrayPuertasCantos[12] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				if(id1 == 14){
+					arrayPuertasCantos[12] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1';
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[7] == undefined){
+						arrayPuertasCantos[7] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[8] == undefined){
+						arrayPuertasCantos[8] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[10] == undefined){
+						arrayPuertasCantos[10] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[11] == undefined){
+						arrayPuertasCantos[11] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[9] == undefined){
+						arrayPuertasCantos[9] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+				}
+				window.puertasAca = arrayPuertas;
+				window.puertasAcaCantos = arrayPuertasCantos;
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Plafones", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[2]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[6]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[7]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[8]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[9]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[10]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[11]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[12]
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "PlafonesCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[2]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[6]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[7]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[8]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[9]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[10]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[11]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[12]
+						}
+					}
+					]
+				}], "CommPlugin_1");
+			}
+		}
+		
 		if(idProd == 277){
 			if(id == 1){
 				api.scene.updatePersistentAsync([{
@@ -10378,6 +12486,485 @@ $("#divDentroCalcu").scroll(function() {
 							version: "2.0",
 							roughness: 1,
 							bitmaptexture: arrayPuertasCantos[3]
+						}
+					}
+					]
+				}], "CommPlugin_1");
+			}
+		}
+		
+		if(idProd == 271){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Casco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "cascoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				
+			} 
+			if(id == 2 || id == 3 || id == 4){
+				var arrayPuertas = window.puertasAca;
+				var arrayPuertasCantos = window.puertasAcaCantos;
+				if(id1 == 4){
+					arrayPuertas[0] = url;
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertas[1] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				if(id1 == 2){
+					arrayPuertas[2] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				
+				if(id1 == 4){
+					arrayPuertasCantos[0] = urlCantos;
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+				}
+				if(id1 == 3){
+					arrayPuertasCantos[1] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					
+				}
+				if(id1 == 2){
+					arrayPuertasCantos[2] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					
+				}
+				
+				
+				window.puertasAca = arrayPuertas;
+				window.puertasAcaCantos = arrayPuertasCantos;
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Plafones", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[2]
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "PlafonesCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[2]
+						}
+					}
+					]
+				}], "CommPlugin_1");
+			}
+		}
+		
+		if(idProd == 272){
+			if(id == 3){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Casco", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "cascoCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: urlCantos
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				
+			}
+			if(id == 1 || id == 2 || id == 7 || id == 8){
+				var arrayPuertas = window.puertasAca;
+				var arrayPuertasCantos = window.puertasAcaCantos;
+				if(id1 == 1){
+					arrayPuertas[3] = url;
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 2){
+					arrayPuertas[4] = url;
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				if(id1 == 7){
+					arrayPuertas[5] = url;
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[6] == undefined){
+						arrayPuertas[6] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 8){
+					arrayPuertas[6] = url;
+					if(arrayPuertas[3] == undefined){
+						arrayPuertas[3] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[4] == undefined){
+						arrayPuertas[4] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[5] == undefined){
+						arrayPuertas[5] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				
+				if(id1 == 1){
+					arrayPuertasCantos[3] = urlCantos;
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+				}
+				if(id1 == 2){
+					arrayPuertasCantos[4] = urlCantos;
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+				}
+				if(id1 == 7){
+					arrayPuertasCantos[5] = urlCantos;
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[6] == undefined){
+						arrayPuertasCantos[6] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					
+				}
+				if(id1 == 8){
+					arrayPuertasCantos[6] = urlCantos;
+					if(arrayPuertasCantos[3] == undefined){
+						arrayPuertasCantos[3] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[4] == undefined){
+						arrayPuertasCantos[4] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[5] == undefined){
+						arrayPuertasCantos[5] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+				}
+				
+				
+				window.puertasAca = arrayPuertas;
+				window.puertasAcaCantos = arrayPuertasCantos;
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Alas", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[6]
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "AlasCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[3]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[4]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[5]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[6]
+						}
+					}
+					]
+				}], "CommPlugin_1");
+			}
+			if(id == 4 || id == 5 || id == 6){
+				var arrayPuertas = window.puertasAca;
+				var arrayPuertasCantos = window.puertasAcaCantos;
+				if(id1 == 4){
+					arrayPuertas[0] = url;
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+				}
+				if(id1 == 5){
+					arrayPuertas[1] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[2] == undefined){
+						arrayPuertas[2] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				if(id1 == 6){
+					arrayPuertas[2] = url;
+					if(arrayPuertas[0] == undefined){
+						arrayPuertas[0] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					if(arrayPuertas[1] == undefined){
+						arrayPuertas[1] = 'https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1' ;
+					}
+					
+				}
+				
+				if(id1 == 4){
+					arrayPuertasCantos[0] = urlCantos;
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+				}
+				if(id1 == 5){
+					arrayPuertasCantos[1] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[2] == undefined){
+						arrayPuertasCantos[2] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					
+				}
+				if(id1 == 6){
+					arrayPuertasCantos[2] = urlCantos;
+					if(arrayPuertasCantos[0] == undefined){
+						arrayPuertasCantos[0] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1' ;
+					}
+					if(arrayPuertasCantos[1] == undefined){
+						arrayPuertasCantos[1] = 'https://dl.dropboxusercontent.com/s/v3l96t4t90ftdqy/BEIGE_CANTO.png?dl=1'  ;
+					}
+					
+				}
+				
+				
+				window.puertasAca = arrayPuertas;
+				window.puertasAcaCantos = arrayPuertasCantos;
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "Plafones", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertas[2]
+						}
+					}
+					]
+				},{
+					id: api.scene.get({ name: "PlafonesCantos", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[0]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[1]
+						}
+					},{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: arrayPuertasCantos[2]
 						}
 					}
 					]

@@ -6,12 +6,12 @@ function imagenCarritoApi(){
 
 function imagenGirarParaCarro(){
 	var idProd = $('#nombreMesita').attr('class');
-	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65 && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68  && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337){
+	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65 && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68  && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337 && parseFloat(idProd) != 279 && parseFloat(idProd) != 280 && parseFloat(idProd) != 271 && parseFloat(idProd) != 272 && parseFloat(idProd) != 213 && parseFloat(idProd) != 215 && parseFloat(idProd) != 217 && parseFloat(idProd) != 218 && parseFloat(idProd) != 219 && parseFloat(idProd) != 220 && parseFloat(idProd) != 221){ 
 		$("#soloParaEnviarImagenGirada")[0].click();
 	}else{
 		$("#sdv-container").css({"width":"410px"});
 		$("#sdv-container").css({"height":"410px"});
-		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65  && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68 && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337){
+		if(parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65  && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68 && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337 && parseFloat(idProd) != 279 && parseFloat(idProd) != 280 && parseFloat(idProd) != 271 && parseFloat(idProd) != 272 && parseFloat(idProd) != 213 && parseFloat(idProd) != 215 && parseFloat(idProd) != 217 && parseFloat(idProd) != 218 && parseFloat(idProd) != 219 && parseFloat(idProd) != 220 && parseFloat(idProd) != 221){
 			api.scene.camera.updateAsync({'position': {x: -794.3905299322976, y: -989.9030901933802, z: 601.723605460861}, 'target': {x: 625, y: 175, z: 250} }).then(
 		            function(response) {
 		            	$("#soloParaEnviarImagenGirada")[0].click();
@@ -737,6 +737,279 @@ function apiShape3(id){
 	    	            seadadoclic = 0;
 	    	          }
 	    	      });**/
+	      
+
+	      var exports = api.exports.get();
+	      for (let i = 0; i < exports.data.length; i++) {
+	        let exportAsset = exports.data[i];
+	        let exportDiv = document.createElement("div");
+	        let exportInput = document.createElement("input");
+	        exportInput.setAttribute("id", exportAsset.id);
+	        exportInput.setAttribute("type", "button");
+	        exportInput.setAttribute("name", exportAsset.name);
+	        exportInput.setAttribute("value", exportAsset.name);
+	        exportInput.onclick = function() {
+	          api.exports.requestAsync({
+	            id: this.id
+	          }).then(
+	            function(response) {
+	              let link = response.data.content[0].href;
+	              window.location = link;
+	            }
+	          );
+	        };
+	        exportDiv.appendChild(exportInput);
+	        globalDiv.appendChild(exportDiv);
+	      }
+	      
+	      viewerInit = true;
+	      
+	    }
+
+	  });
+	
+	
+}
+
+function apiShape8(id){
+	
+	window.textura = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1';
+	window.puertasAca = [];
+	window.puertasAca1 = [];
+	window.puertasAcaCantos = [];
+	window.puertasAcaCantos1 = [];
+	$(".divBuscadorArticulos").css({"display":"block"});
+	$("#page-heading").css({"display":"none"});
+    $("#diviframeprueba").css({"display":"block"});
+    $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    var _container = document.getElementById('sdv-container');
+	// viewer settings
+	var _viewerSettings = {
+	  // container to use
+	  container: _container,
+	  // when creating the viewer, we want to get back an API v2 object
+	  api: {
+	    version: 2
+	  },
+	  // ticket for a ShapeDiver model
+	  ticket: id,
+	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+	  modelViewUrl: 'eu-central-1',
+	  showControlsInitial: true,
+	  runtimeId: 'CommPlugin_1',
+	  showSettingsInitial: false
+	};
+	
+	// create the viewer, get back an API v2 object
+	window.api = new SDVApp.ParametricViewer(_viewerSettings); 
+	
+	var viewerInit = false;
+	var parameters;
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "0ee55579a3c7ab70a54e0ee2e0b35cbd22e5d174fa6a5804ead6c1cce880de76719a258452512b219e14ec8b46a6f47164469b5c838a63db9d050704d0e49aec351cb11d5f7151eb05aad30c0053d59b57a72ab7c071155c06e36d578e06efcb20e6cfe4261eb4b2a3019a1a4668fb365ee484d3808dce189c752e22e7003413-0dd5d2e759b1bc3ebffc1fc3fbe25f61",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_2',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_2');
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "0ee55579a3c7ab70a54e0ee2e0b35cbd22e5d174fa6a5804ead6c1cce880de76719a258452512b219e14ec8b46a6f47164469b5c838a63db9d050704d0e49aec351cb11d5f7151eb05aad30c0053d59b57a72ab7c071155c06e36d578e06efcb20e6cfe4261eb4b2a3019a1a4668fb365ee484d3808dce189c752e22e7003413-0dd5d2e759b1bc3ebffc1fc3fbe25f61",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_3',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_3');
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "0ee55579a3c7ab70a54e0ee2e0b35cbd22e5d174fa6a5804ead6c1cce880de76719a258452512b219e14ec8b46a6f47164469b5c838a63db9d050704d0e49aec351cb11d5f7151eb05aad30c0053d59b57a72ab7c071155c06e36d578e06efcb20e6cfe4261eb4b2a3019a1a4668fb365ee484d3808dce189c752e22e7003413-0dd5d2e759b1bc3ebffc1fc3fbe25f61",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_4',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_4');
+	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+		
+	    if (!viewerInit) {
+	    	window.s = new THREE.Matrix4();
+	    	  var costadosObject = {};
+	    	  //var puertasObject = {};
+	    	  var array = [];
+	    	  array[0] = 0;
+	    	  array[1] = 300;
+	    	  array[2] = 800;
+	    	  costadosObject["costados"] = array;
+	    	  //puertasObject["puertas"] = arrayPuertas;
+	    	 
+	    	  setTimeout(function() {
+	            
+				        	 var parame = api.parameters.get({name :"CostadosJSON" , plugin: "CommPlugin_3"}).data[0];
+				        	 parame.value = JSON.stringify(costadosObject);
+					    	  api.parameters.updateAsync([parame]);
+					    	  setTimeout(function() {
+					    	  var url = 'https://dl.dropboxusercontent.com/s/qi8vt1fz66riltm/NATURE.png?dl=1';
+					    	  var urlCantos = 'https://dl.dropboxusercontent.com/s/yt0r62w1mr3um9u/NATURE_CANTO.png?dl=1';
+					    	  api.scene.updatePersistentAsync([{
+									id: api.scene.get({ name: "costado", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											roughness: 1,
+											bitmaptexture: url
+										}
+									}
+									]
+								}, {
+									id: api.scene.get({ name: "suelotapa", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											roughness: 1,
+											bitmaptexture: url
+										}
+									}
+									]
+								}, {
+									id: api.scene.get({ name: "suelotapa1", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											bitmaptexture: urlCantos
+										}
+									}
+									]
+								}, {
+									id: api.scene.get({ name: "CantosSuelo", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											bitmaptexture: urlCantos
+										}
+									}
+									]
+								}, {
+									id: api.scene.get({ name: "CantosTapa", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											bitmaptexture: urlCantos
+										}
+									}
+									]
+								}, {
+									id: api.scene.get({ name: "CantosCostados", format: "material" }, "CommPlugin_3").data[0].id,
+									content: [
+									{
+										format: "material",
+										data: {
+											version: "2.0",
+											bitmaptexture: urlCantos
+										}
+									}
+									]
+								}], "CommPlugin_3");
+					    	  				setTimeout(function() {
+					    	  					var armario1 = new THREE.Matrix4();
+					    	  					var armario2 = new THREE.Matrix4();
+					    	  					var armario3 = new THREE.Matrix4();
+					    	  					var war1 = api.scene.get({ name: "wardrobeOrientation" }).data[0].content[0].data["wardrobe"][0]["xform"];
+					    	  					var war2 = api.scene.get({ name: "wardrobeOrientation" }).data[0].content[0].data["wardrobe"][1]["xform"];
+					    	  					var war3 = api.scene.get({ name: "wardrobeOrientation" }).data[0].content[0].data["wardrobe"][2]["xform"];
+					    	  					armario1.set(war1[0],war1[1],war1[2],war1[3],war1[4],war1[5],war1[6],war1[7],war1[8],war1[9],war1[10],war1[11],war1[12],war1[13],war1[14],war1[15]);
+					    	  					armario2.set(war2[0],war2[1],war2[2],war2[3],war2[4],war2[5],war2[6],war2[7],war2[8],war2[9],war2[10],war2[11],war2[12],war2[13],war2[14],war2[15]);
+					    	  					armario3.set(war3[0],war3[1],war3[2],war3[3],war3[4],war3[5],war3[6],war3[7],war3[8],war3[9],war3[10],war3[11],war3[12],war3[13],war3[14],war3[15]);
+					    	  					armario1.transpose();
+					    	  					armario2.transpose();
+					    	  					armario3.transpose();
+					    	  					api.scene.applyTransformation("plugin","CommPlugin_2",armario1);
+					    	  					api.scene.applyTransformation("plugin","CommPlugin_3",armario2);
+					    	  					api.scene.applyTransformation("plugin","CommPlugin_4",armario3);
+					    	  				}, 5000);
+					    	  }, 5000);
+	    	  }, 5000);
+	    	 
+	    	//$('#clicWebNumeroCambio')[0].click();
+		  var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		  
+		 var ancho1 = $("#ancho1").text();
+		  var parame = api.parameters.get({name :"L"}).data[0];
+		 
+			api.parameters.updateAsync({
+		      id: parame.id,
+		      value: (parseFloat(ancho1)*10)
+		    }).then(function(response){
+		    	 var alto1 = $("#altoDatosDimen").text();
+		  	     var parame = api.parameters.get({name :"H"}).data[0];
+		  	     if(parame != undefined){
+		  	    	api.parameters.updateAsync({
+			  	          id: parame.id,
+			  	          value: (parseFloat(alto1)*10)
+			  	        }) 
+		  	     }
+		    });
+			var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		api.updateSettingsAsync(updatedSettings); 
+			 if(api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0] != undefined){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0].scenePath]);
+			}
+	      var globalDiv = document.getElementById("parameters");
+	      parameters = api.parameters.get();
+	      parameters.data.sort(function(a, b) {
+	        return a.order - b.order;
+	      });
+	      console.log(parameters.data);
+	      
+	      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object2 = api.scene.get({name: "SueloGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object3 = api.scene.get({name: "Tabica geo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object4 = api.scene.get({name: "MolduraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
+
+	    	      
 	      
 
 	      var exports = api.exports.get();
@@ -2527,7 +2800,7 @@ function niveladoresopcionesarm(id){
 
 //interiores JSON
 function interioresNuevoJson(obj){
-	window.obj = obj; 
+	window.obj = obj;  
 	var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
@@ -2544,7 +2817,7 @@ function interioresNuevoJson(obj){
 	    			  var contCaj = 0;
 	    			// var intervalo = setInterval(function(){
 
-	    				 api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+	    				/** api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
 	    				  // now it's safe to read the model parameters
 	    				  var dominios = api.scene.getData({
 	    					     name: "puntosDimensiones"
@@ -2556,22 +2829,44 @@ function interioresNuevoJson(obj){
 	    					const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
 	    					var array = [];
 	    					var contarray = 0;
+	    					var dominiosTamano = api.scene.getData({
+	    					     name: "dominios"
+	    					}).data[0].data;
+	    										bottom: 1660
+	    										id: "TUBO_0"
+	    										top: 50
+	    					
+	    					var tomaDominio = "";
 	    					for(let u = 0;u<dominios.length;u++){
-	    						
+	    						for(let b = 0;b<dominiosTamano;b++){
+	    							if(dominios[u]['start']['id'] == dominiosTamano[b]["id"]){
+	    								tomaDominio =  dominiosTamano[b];
+	    							}
+	    							if(dominios[u]['end']['id'] == dominiosTamano[b]["id"]){
+	    								tomaDominio =  dominiosTamano[b];
+	    							}
+	    						}
 	    						var  points = [];
 	    						points.push( new THREE.Vector3( dominios[u]['start']["x"], dominios[u]['start']["y"], dominios[u]['start']["z"] ) );
 	    						points.push( new THREE.Vector3( dominios[u]['end']["x"], dominios[u]['end']["y"], dominios[u]['end']["z"] ) );
 	    						array[contarray] = points;
+	    						array[""]
 	    						contarray++;
 	    						 
 	    					}
 	    					var arrayLine = [];
+	    					var arrayTag2d = [];
+	    					var datosOBJ = [];
 	    					var contLine = 0;
+	    					var contArrayTodo = 0;
 	    					for(let j = 0;j<array.length;j++){
 	    						var geometry = new THREE.BufferGeometry().setFromPoints( array[j] );
 	    						
 	    						var line = new THREE.LineLoop( geometry, material );
 	    						
+	    						var editCSS = document.createElement('style')
+	    						editCSS.innerHTML = ".shapediver-domElement { display: block!important; }";
+	    						document.body.appendChild(editCSS);
 	    						
 	    						  let asset = {
 	    						    id: "polyline"+contLine,
@@ -2588,17 +2883,46 @@ function interioresNuevoJson(obj){
 	    						      }
 	    						    ]
 	    						  };
-	    						  arrayLine[contLine] = asset;
+	    						  
+	    						  var dataOBJ = {};
+	    						  var objLoc = {};
+	    						  objLoc["x"] = array[j][1]["x"];
+	    						  objLoc["y"] = array[j][1]["y"];
+	    						  objLoc["z"] = (array[j][0]["z"]); 
+	    						   
+	    						  
+	    						  dataOBJ["version"] = 1.0;
+	    						  dataOBJ["color"] = "#000000";
+	    						  dataOBJ["text"] = array[j][0]["z"] / 10;
+	    						  dataOBJ["location"] = objLoc;
+	    						  datosOBJ[contArrayTodo] = dataOBJ;
+	    						  
+	    						  arrayLine[contArrayTodo] = asset;
+	    						  contArrayTodo++;
+	    						  
 	    						  contLine++;
 	    						
 	    					
 	    					}
+	    					let asset1 = {
+  	    						    id: "tag2D",
+  	    						  
+  	    						  content:[ 
+	    						      {
+	    						    	 format: api.scene.FORMAT.TAG2D,
+  	    						         data:datosOBJ
+	    						      }
+	    						  ]
+  	    						  };
+	    					arrayLine[contArrayTodo] = asset1;
+  						  	contArrayTodo++;
 	    					window.arrayline = arrayLine;
 	    					api.scene.updateAsync(arrayLine);
 	    				//	clearInterval(intervalo);
 	    				 }); 
 	    					 
 	    			  //}, 1000);
+	    			  **/
 	    			  var length = obj["interiores"].length;
 	    			  for(let h = 0;h<length;h++){
 	    				  if(obj["interiores"][h]["tipo"] == "estante"){
@@ -2809,12 +3133,19 @@ function interioresNuevoJson(obj){
 	    			  }
 	    		  
 	    			);
-	  api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+	  //dominios meter
+	/**  api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
 		  var dominios = api.scene.getData({
 			     name: "dominios"
 			}).data[0].data;
 		  var contInt = 0;
 		  var arrayHueco0DomInt = [];
+		  var contInt1 = 0;
+		  var arrayHueco1DomInt = [];
+		  var contInt2 = 0;
+		  var arrayHueco2DomInt = [];
+		  var contInt3 = 0;
+		  var arrayHueco3DomInt = [];
 		 
 		  	for(let h = 0;h<window.obj["interiores"].length;h++){
 		  		for(let d = 0;d<dominios.length;d++){
@@ -2828,12 +3159,45 @@ function interioresNuevoJson(obj){
 						  
 					  }
 				  }
+				  if(window.obj["interiores"][h]["interior"] == 1){
+					  if(window.obj["interiores"][h]["tipo"].toUpperCase()+"_"+window.obj["interiores"][h]["posicionShape"] == dominios[d]["id"]){
+						  arrayHueco1DomInt[contInt1] = dominios[d];
+						  contInt1++;
+						  var val = $("#rs-range-lineAdicional"+contInt+"1").val();
+						  $("#rs-range-lineAdicional"+contInt+"1").attr("min",(parseFloat(val) - (parseFloat(dominios[d]["bottom"]) / 10 )));
+						  $("#rs-range-lineAdicional"+contInt+"1").attr("max",(parseFloat(val) + (parseFloat(dominios[d]["top"]) / 10 )));
+						  
+					  }
+				  }
+				  if(window.obj["interiores"][h]["interior"] == 2){
+					  if(window.obj["interiores"][h]["tipo"].toUpperCase()+"_"+window.obj["interiores"][h]["posicionShape"] == dominios[d]["id"]){
+						  arrayHueco2DomInt[contInt2] = dominios[d];
+						  contInt2++;
+						  var val = $("#rs-range-lineAdicional"+contInt+"2").val();
+						  $("#rs-range-lineAdicional"+contInt+"2").attr("min",(parseFloat(val) - (parseFloat(dominios[d]["bottom"]) / 10 )));
+						  $("#rs-range-lineAdicional"+contInt+"2").attr("max",(parseFloat(val) + (parseFloat(dominios[d]["top"]) / 10 )));
+						  
+					  }
+				  }
+				  if(window.obj["interiores"][h]["interior"] == 3){
+					  if(window.obj["interiores"][h]["tipo"].toUpperCase()+"_"+window.obj["interiores"][h]["posicionShape"] == dominios[d]["id"]){
+						  arrayHueco3DomInt[contInt3] = dominios[d];
+						  contInt3++;
+						  var val = $("#rs-range-lineAdicional"+contInt+"3").val();
+						  $("#rs-range-lineAdicional"+contInt+"3").attr("min",(parseFloat(val) - (parseFloat(dominios[d]["bottom"]) / 10 )));
+						  $("#rs-range-lineAdicional"+contInt+"3").attr("max",(parseFloat(val) + (parseFloat(dominios[d]["top"]) / 10 )));
+						  
+					  }
+				  }
 			  }
 		  }
 		  	window.arrayHueco0DomInt = arrayHueco0DomInt;
+		  	window.arrayHueco1DomInt = arrayHueco1DomInt;
+		  	window.arrayHueco2DomInt = arrayHueco2DomInt;
+		  	window.arrayHueco3DomInt = arrayHueco3DomInt;
 
 	  });
-	  
+	  **/
  
 	  
 	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
@@ -2937,9 +3301,9 @@ function interioresNuevoJson(obj){
 					contArrayInt0++
 				}
 			}
-			var dominios = api.scene.getData({
-			     name: "puntosDimensiones"
-			}).data[0].data;
+			//var dominios = api.scene.getData({
+			  //   name: "puntosDimensiones"
+			//}).data[0].data;
 			
 			
 			var arr = window.arrayDeEstantesMet;
@@ -2951,9 +3315,9 @@ function interioresNuevoJson(obj){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-				  
-				  for(let u = 0;u<dominios.length;u++){
-						
+
+				  /**	for(let u = 0;u<dominios.length;u++){
+					
 						if(dominios[u]['start']["id"] == "ESTANTE_"+arrayInt0[0]['posicionShape']){
 							finalLinea = u;
 						}
@@ -2973,7 +3337,7 @@ function interioresNuevoJson(obj){
 			  		 var puntosFinal = dominioPuntos[finalLinea];
 			  		 
 			  		let material1 = {
-						    version: "2.0",
+						    version: "2.0", 
 						    color: "black"
 						  };
 					const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
@@ -3023,7 +3387,7 @@ function interioresNuevoJson(obj){
 						  arrayLine[contLine] = asset;
 						  contLine++;
 					} 						
-					api.scene.updateAsync(arrayLine);		
+					api.scene.updateAsync(arrayLine);**/		
 				  
 				/**  var objectLinea = api.scene.get({ id: "polyline"+finalLinea });
 				  var lineDistances = [];
@@ -3298,6 +3662,7 @@ function interioresNuevoJson(obj){
 			var etihtml = $("#etiquetaAdi20").text();
 			var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
+			
 			var contCaj = 0;
 			  var calcu = (parseFloat(rangeSliderAdicional2.value) * 10) - (parseFloat(etihtml)*10);
 			  if(window.obj["interiores"][0]["tipo"] == "cajones"){
@@ -3314,6 +3679,7 @@ function interioresNuevoJson(obj){
 			  if(hueco1[1]["tipo"] == "estante"){
 			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
+			  	
 						  api.scene.setLiveTransformation(
 								     [
 								       {
@@ -8753,10 +9119,21 @@ function dragCallback(){
 
 	
 }
-function bajarRangoSlider(id,id1){
-	
+function bajarRangoSlider(id,id1,intArm){
+	var obj = {};
+	obj["interiores"] = intArm;
+	var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
+	  api.parameters.updateAsync({
+	      id: parame.id,
+	      value: JSON.stringify(obj)
+	    })
+	    api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+	    	var dominios = api.scene.getData({
+			     name: "puntosDimensiones"
+			}).data[0].data;
 	if(id1 == 0){
 		var array0 = window.arrayHueco0DomInt;
+		
 		var obj = window.obj["interiores"];
 		var hueco0 = [];
 		var contHueco0 = 0;
@@ -8782,9 +9159,83 @@ function bajarRangoSlider(id,id1){
 				}
 			}
 		}
-		
 	}
+	if(id1 == 1){
+		var array0 = window.arrayHueco1DomInt;
+		var obj = window.obj["interiores"];
+		var hueco0 = [];
+		var contHueco0 = 0;
+		for(let k = 0;k<obj.length;k++){
+			if(obj[k]["interior"] == 1){
+				hueco0[contHueco0] = obj[k];
+				contHueco0++;
+			}
+		}
+		var puesto = 0;
+		var valor = parseFloat(hueco0[id - 1]["posicion"]);
+		for(let k = 0;k<hueco0.length;k++){
+			if(k != id - 1){
+				if(hueco0[k]["posicion"] <= valor && puesto == 0){
+					for(let w = 0;w<array0.length;w++){
+						if(hueco0[k]["tipo"].toUpperCase()+"_"+hueco0[k]["posicionShape"] == array0[w]["id"]){
+							var val = $("#rs-range-lineAdicional"+id+"1").val();
+							$("#rs-range-lineAdicional"+id+"1").attr("min",(parseFloat(val) - (parseFloat(array0[w]["bottom"]) / 10 )));
+							$("#rs-range-lineAdicional"+id+"1").attr("max",(parseFloat(val) + (parseFloat(array0[w]["top"]) / 10 )));
+							puesto = 1;
+						}
+					}
+				}
+			}
+		}
+	}
+		let material1 = {
+			    version: "2.0",
+			    color: "black"
+			  };
+		const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+		var array = [];
+		var contarray = 0;
+		
+		
+			for(let u = 0;u<dominios.length;u++){
+					var  points = [];
+					points.push( new THREE.Vector3( dominios[u]['start']["x"], dominios[u]['start']["y"], dominios[u]['start']["z"]) );
+					points.push( new THREE.Vector3( dominios[u]['end']["x"], dominios[u]['end']["y"], dominios[u]['end']["z"]) );
+					array[contarray] = points;
+					contarray++;
+			}
+			
+		var arrayLine = [];
+		var contLine = 0;
+		var contArrayTodo = 0;
+		for(let j = 0;j<array.length;j++){
+			var geometry = new THREE.BufferGeometry().setFromPoints( array[j] );
+			
+			var line = new THREE.LineLoop( geometry, material );
+			
+			
+			  let asset = {
+			    id: "polyline"+contLine,
+			    content: [
+			      {
+			        format: api.scene.FORMAT.THREE,
+			        data: {
+			          threeObject: line
+			        }
+			      },
+			      {
+			        format: "material",
+			        data: material1
+			      }
+			    ]
+			  };
+			  arrayLine[contArrayTodo] = asset;
+			  contArrayTodo++;
+			  contLine++;
+	}
+	api.scene.updateAsync(arrayLine);
 	
+	});
 }
 function subirRangoSlider(id,id1){
 	

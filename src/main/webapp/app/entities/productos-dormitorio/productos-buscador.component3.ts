@@ -4537,6 +4537,38 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             codigo != 'NT036' &&
             codigo != 'NT037' &&
             codigo != 'NT038' &&
+            codigo != 'NT039' &&
+            codigo != 'NT040' &&
+            codigo != 'NT041' &&
+            codigo != 'NT042' &&
+            codigo != 'NT043' &&
+            codigo != 'NT044' &&
+            codigo != 'NT045' &&
+            codigo != 'NT046' &&
+            codigo != 'NT047' &&
+            codigo != 'NT048' &&
+            codigo != 'NT049' &&
+            codigo != 'NT050' &&
+            codigo != 'NT051' &&
+            codigo != 'NT052' &&
+            codigo != 'NT053' &&
+            codigo != 'NT054' &&
+            codigo != 'NT055' &&
+            codigo != 'NT056' &&
+            codigo != 'NT057' &&
+            codigo != 'NT058' &&
+            codigo != 'NT059' &&
+            codigo != 'NT060' &&
+            codigo != 'NT061' &&
+            codigo != 'NT062' &&
+            codigo != 'NT063' &&
+            codigo != 'NT064' &&
+            codigo != 'NT065' &&
+            codigo != 'NT066' &&
+            codigo != 'NT067' &&
+            codigo != 'NT068' &&
+            codigo != 'NT069' &&
+            codigo != 'NT070' &&
             codigo != 'NT177' &&
             codigo != 'NT178' &&
             codigo != 'NT179' &&
@@ -4612,6 +4644,31 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             codigo != 'NT174' &&
             codigo != 'NT175' &&
             codigo != 'NT176' &&
+            codigo != 'NT246' &&
+            codigo != 'NT247' &&
+            codigo != 'NT248' &&
+            codigo != 'NT249' &&
+            codigo != 'NT250' &&
+            codigo != 'NT259' &&
+            codigo != 'NT260' &&
+            codigo != 'NT261' &&
+            codigo != 'NT262' &&
+            codigo != 'NT263' &&
+            codigo != 'NT264' &&
+            codigo != 'NT265' &&
+            codigo != 'NT266' &&
+            codigo != 'NT267' &&
+            codigo != 'NT268' &&
+            codigo != 'NT269' &&
+            codigo != 'NT270' &&
+            codigo != 'NT271' &&
+            codigo != 'NT272' &&
+            codigo != 'NT273' &&
+            codigo != 'NT274' &&
+            codigo != 'NT275' &&
+            codigo != 'NT276' &&
+            codigo != 'NT277' &&
+            codigo != 'NT278' &&
             codigo != 'NT297' &&
             codigo != 'NT298' &&
             codigo != 'NT299' &&
@@ -10845,6 +10902,48 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 codIdShape =
                     'a566b344759668f0283fc39dc99654aa351ddded5731278576e465499ea5db523f2d27c4255c161b6457e96357cd51b268b9e32655e9ef347ce380e271b3d197297f3902d0b9aa043a4f41a6eff5eded1c78b707da5bbffdbee07374978f388bec35e297da591523619d88b86171ea47179c3dfa3b793871434b762b99cf8285-328252135bce4c97f8f7ddeb521fae63';
             }
+            if (
+                codigo == 'NT039' ||
+                codigo == 'NT040' ||
+                codigo == 'NT041' ||
+                codigo == 'NT042' ||
+                codigo == 'NT043' ||
+                codigo == 'NT044' ||
+                codigo == 'NT045' ||
+                codigo == 'NT046' ||
+                codigo == 'NT047' ||
+                codigo == 'NT048' ||
+                codigo == 'NT049' ||
+                codigo == 'NT050' ||
+                codigo == 'NT051' ||
+                codigo == 'NT052' ||
+                codigo == 'NT053' ||
+                codigo == 'NT054'
+            ) {
+                codIdShape =
+                    '228d595ef0cd5e3d4c44092ca20610f266b97fa9b2cae514512c57b4f72594e90a8f878ed6a7713bbef7c245950d440684441dd676e72ba10fb082ba3810f01bb084500da08b9e34500ffad99f563313279590c4b61abada4cacc0be5a97736e147199d5d04a087766e89746d783a60ce6735fa19dc90b2532f8cf2933b35674-cf4a0a88fe70e853921724b2b4725688';
+            }
+            if (
+                codigo == 'NT055' ||
+                codigo == 'NT056' ||
+                codigo == 'NT057' ||
+                codigo == 'NT058' ||
+                codigo == 'NT059' ||
+                codigo == 'NT060' ||
+                codigo == 'NT061' ||
+                codigo == 'NT062' ||
+                codigo == 'NT063' ||
+                codigo == 'NT064' ||
+                codigo == 'NT065' ||
+                codigo == 'NT066' ||
+                codigo == 'NT067' ||
+                codigo == 'NT068' ||
+                codigo == 'NT069' ||
+                codigo == 'NT070'
+            ) {
+                codIdShape =
+                    'a0f250a4ca604ea2963cacedf5851c7d4f5c05cbaa8c134a22caab3c3102867bbb40c62414e8221758cb7389f0dd6fcc318e28b40852ce9991e6cb8424b0db1b78725d083623498870cb2e53e31951c4c0da706eb84d75c2a6c65db4bb61b6c503d3e9758a26cbb7b4f4198b585e8da1a009c5b7485d1c36b3cf7a9edb8d3f05-95d7b7c675dbceb85c31330b5efe60fa';
+            }
             if (codigo == 'NT111' || codigo == 'NT112' || codigo == 'NT113' || codigo == 'NT114' || codigo == 'NT115') {
                 codIdShape =
                     'b5fbde423eb9a7867d20836b17a77d957219d212f1709628f76f9ff2b1ecaf082f88b7457a27bb3359a067fb170006f58dec6baefc63e605bbd201df374e8679e2156443ae067492a686876d8100c30cf81da1d576fcbaa37485aed9d13925038497ca7aff81ff8f79e3f2e9b18d89e48690ef09725ab13a0d9e212814fb221f-e9af6ae3b562bdd353ddafeb287e39d4';
@@ -10932,6 +11031,35 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 codIdShape =
                     '5ab08204803697880dbf17bf41dc27b5666a6d65262e837067817bbfcd8f681e22a49cb38750f09139d0132a6257f39a9cae0cdd8b6f361332fafe4f280cfb25b746a044bdef81e5b3658d97aa09c57ed983d809530ba72d1190ecd12d15dded99174eef044c51a324347acde39ab4f1386298c83dd703fcea1209b37ad02e56-09c33db6116dc70324d97a04f673377d';
             }
+            if (codigo == 'NT246' || codigo == 'NT247' || codigo == 'NT248' || codigo == 'NT249' || codigo == 'NT250') {
+                codIdShape =
+                    'fed74298d996e9b2950e7446f1800e23562825fd41c5feaf710efbd5bec994eb6c245a8024f0a761401b52b28bd255fa5bfb870730edd460b26f388692321e01b9068e7abf41571130793fe5c44255cb6257e3e16d834b4df395a8b0040e2d710609a067d0783bb5550983594dcf3d2969f423c4215319b02424571c7e10cdde-e5b3f237b7b70cf9945f8a41aeecb8af';
+            }
+            if (
+                codigo == 'NT259' ||
+                codigo == 'NT260' ||
+                codigo == 'NT261' ||
+                codigo == 'NT262' ||
+                codigo == 'NT263' ||
+                codigo == 'NT264' ||
+                codigo == 'NT265' ||
+                codigo == 'NT266' ||
+                codigo == 'NT267' ||
+                codigo == 'NT268' ||
+                codigo == 'NT269' ||
+                codigo == 'NT270' ||
+                codigo == 'NT271' ||
+                codigo == 'NT272' ||
+                codigo == 'NT273' ||
+                codigo == 'NT274' ||
+                codigo == 'NT275' ||
+                codigo == 'NT276' ||
+                codigo == 'NT277' ||
+                codigo == 'NT278'
+            ) {
+                codIdShape =
+                    '43289a6e810931b179c78cdfe693700ed9c0c0b97c11949fde90ff3ce7de23007e5e321d1ace94c70733be5969673851d1e95a52feb5bfed96dd902073116bd929d69d3d246efbdc8dedd613f1f04e228973dbfef6f8f8ba5ee069a40a2fa028b2df962503702a4a3a8e02136bf2d084e759e01a94fc6a0ab36a89cb31ba27eb-57ff2f6442b6019d62f17de6eb2aa64a';
+            }
             if (
                 codigo == 'NT297' ||
                 codigo == 'NT298' ||
@@ -10981,6 +11109,12 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
 
             this.productosShapediverComponent.uid = this.uid;
             this.productosShapediverComponent.shapedivercargar(codIdShape, 3, codigo);
+
+            /** setTimeout(function() {
+            	if(this.usb == undefined){ 
+	            	this.usb = this.productosShapediverComponent.usb;
+	            }
+        	}, 3000); **/
         }
     }
     public cargarDimen12(codigo) {
@@ -31942,7 +32076,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             parseFloat(idProd) != 245 &&
             parseFloat(idProd) != 278 &&
             parseFloat(idProd) != 283 &&
-            parseFloat(idProd) != 284
+            parseFloat(idProd) != 284 &&
+            parseFloat(idProd) != 279 &&
+            parseFloat(idProd) != 280 &&
+            parseFloat(idProd) != 271 &&
+            parseFloat(idProd) != 272
         ) {
             var res = nombre;
 
@@ -34778,7 +34916,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 245 ||
             parseFloat(idProd1) == 278 ||
             parseFloat(idProd1) == 283 ||
-            parseFloat(idProd1) == 284
+            parseFloat(idProd1) == 284 ||
+            parseFloat(idProd1) == 279 ||
+            parseFloat(idProd1) == 280 ||
+            parseFloat(idProd1) == 271 ||
+            parseFloat(idProd1) == 272
         ) {
             var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
             if (cogerIdCesta == null || cogerIdCesta == undefined) {
@@ -35039,7 +35181,11 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 245 ||
                             parseFloat(idProd1) == 278 ||
                             parseFloat(idProd1) == 283 ||
-                            parseFloat(idProd1) == 284
+                            parseFloat(idProd1) == 284 ||
+                            parseFloat(idProd1) == 279 ||
+                            parseFloat(idProd1) == 280 ||
+                            parseFloat(idProd1) == 271 ||
+                            parseFloat(idProd1) == 272
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }

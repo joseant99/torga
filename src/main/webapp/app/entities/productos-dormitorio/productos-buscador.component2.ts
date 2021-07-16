@@ -21018,7 +21018,21 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             codigo != 'NH132' &&
             codigo != 'NH133' &&
             codigo != 'NH134' &&
-            codigo != 'NH135'
+            codigo != 'NH135' &&
+            codigo != 'NH493' &&
+            codigo != 'NH494' &&
+            codigo != 'NH495' &&
+            codigo != 'NH496' &&
+            codigo != 'NH497' &&
+            codigo != 'NH498' &&
+            codigo != 'NH499' &&
+            codigo != 'NH500' &&
+            codigo != 'NH501' &&
+            codigo != 'NH502' &&
+            codigo != 'NH503' &&
+            codigo != 'NH504' &&
+            codigo != 'NH505' &&
+            codigo != 'NH506'
         ) {
             if (uid == 0) {
                 this.uid = 1;
@@ -27250,6 +27264,34 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 codIdShape =
                     '1beefa34e897bcf08fa5b8dcb8708e902ac9a4e4e0211d760640eb18c8fb38b673beeb3dba1c5a0cdd5f24c9d1fffd4612e4338ed0245372c2c3c5bb9c16df49d4055736a9151b1e45c6f66079d3ba27316fbb8b0d007f26ef79e8dc5c7366250ff8580b45e14865a603f33cc1a17e1b93a2ea86d299860fcf425f711aaf6f59-5e671a1816bb8c75bdb3a3a73b289644';
             }
+            if (codigo == 'NH493' || codigo == 'NH494' || codigo == 'NH495' || codigo == 'NH496') {
+                codIdShape =
+                    'd12eb47f63fa83a9f4edc26202555f5209d7b64d2cda3ca6373887c1b4bafc9aacd04056e6dd7c1d40394eaae53e0850aa140f8f633fd2d5ddce59337b23732a6ec55a495d6c6962e0d22df88b2f0f5c65663d57ef5099d0ed6dc26bab60ba3c2b412075ab271c229f1909a1001ca142987363754607c2c0ef314acd46f185df-c0e7ea2112e73af62fb53b8aef9e57ef';
+            }
+            if (codigo == 'NH497' || codigo == 'NH498' || codigo == 'NH499' || codigo == 'NH500') {
+                codIdShape =
+                    'ef7876ef0a571cce5517edce194b85026b5e843cba0728b9207ce8b35c8c8362a9c188320ca3a4ffa3112c90bc66b493bb0708cf818d0d2f5afc84bce7e9727dcc74263dd90f4e5e267c48fbd1abb9da4dc5830e6542de6cc1f4f60735139e72b6ed8987980606e6ade97ba231b05711f4747f5889ca79d1c61e737c52f270fb-4e87ac1c24289e578229f1c5dcfa491d';
+            }
+            if (codigo == 'NH501' || codigo == 'NH502') {
+                codIdShape =
+                    'eedea7da4f3e98ec1f4bdf01223901fa411cda2af4e3fbbe132ee325af589ab0deff27969e213b9dbc20e878c8d686043348eb2575855b4302e2fb256e362f602655226a6fa244f7e5c765403bb67138f9ce05e2f7e770a63c8338878d3eb26e44f60cceecba030055b0cd60c15612fd8bc5c10e03c5f16ce9d6c6a3299a4d96-d89d738600195cd2f9734f1813049ab4';
+            }
+            if (codigo == 'NH503') {
+                codIdShape =
+                    'a5562708c249c960c3b0d9748f8d0dabb903019b79b84f23336d09e36c1b4c9001152aa1d5c3fd8f721c5016e64759643e780c5b60bfd0798d1169f946ce028aacb628546201a632eaf6fa707a85b1a9c399f3c0b074e20778ee3e84c20de61baf005c970040bda524704796ab6329f514c31fb34467913ef5ef31d4960806c9-907d3aac9147e8bbee837934846cc9c0';
+            }
+            if (codigo == 'NH504') {
+                codIdShape =
+                    '34d6fbf3f311dd067315baec1af65b291be100b68d8c5fb9d214f1f7d9da51163b97356c90c05ab4e7878f542b8dad8e8257fc7f7ea9d50d43aca4d8d066f46bce9015d6b472f55e0f9ea124580d30fe48f606a6443fd3e163ff78e1d07cb25633ac0895359d5529ecdcfca2cd56da88816e8d7d75fdf9deec5c3816f284f90f-a18fca877aa548dfa1ccb62a2c2d9324';
+            }
+            if (codigo == 'NH505') {
+                codIdShape =
+                    'ae87882b56566a29a315fca8c84b810bed7d283e6ea60ea3289838df02be9a76d6d489f4b7d47ea70f09067dcdcfdbf0bcd5d2a51f3e4c14269c572816a3c8976dc51cbbdc5a0a4d1a9473d815e5e04faa271a97538402e1142615e60b7fe5e6478fc2e1e0126ceee482f2c08aa5e52b9c34b2721da491361f81186ee15fe584-c8fd8bc2245d53de84182cc9665bc893';
+            }
+            if (codigo == 'NH506') {
+                codIdShape =
+                    '60c49ada249465efc75497cb69c8fd121b087a36cee358987ed9f4ecaec85f21bde0b877cd77f0152aea90f4d28ae1ce6c3a2eaed09e4caf0862e6454e947bc026c80bb655077ece9b0d05750410730c15eb5993e4349be1244e5848e1185388598dd333b997c34c610165e65d0495e6ff66d1fcad45a131b727c5f4a9bb315b-683867b25f188a5ee462652438ca0905';
+            }
             this.productosShapediverComponent.uid = this.uid;
             this.productosShapediverComponent.shapedivercargar(codIdShape, 3, codigo);
         }
@@ -29968,7 +30010,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) != 336 &&
             parseFloat(idProd) != 335 &&
             parseFloat(idProd) != 338 &&
-            parseFloat(idProd) != 337
+            parseFloat(idProd) != 337 &&
+            parseFloat(idProd) != 213 &&
+            parseFloat(idProd) != 215 &&
+            parseFloat(idProd) != 217 &&
+            parseFloat(idProd) != 218 &&
+            parseFloat(idProd) != 219 &&
+            parseFloat(idProd) != 220 &&
+            parseFloat(idProd) != 221
         ) {
             nombre = res;
             var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -34513,7 +34562,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 336 ||
             parseFloat(idProd1) == 335 ||
             parseFloat(idProd1) == 338 ||
-            parseFloat(idProd1) == 337
+            parseFloat(idProd1) == 337 ||
+            parseFloat(idProd1) == 213 ||
+            parseFloat(idProd1) == 215 ||
+            parseFloat(idProd1) == 217 ||
+            parseFloat(idProd1) == 218 ||
+            parseFloat(idProd1) == 219 ||
+            parseFloat(idProd1) == 220 ||
+            parseFloat(idProd1) == 221
         ) {
             var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
             if (cogerIdCesta == null || cogerIdCesta == undefined) {
@@ -34825,7 +34881,14 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 336 ||
                             parseFloat(idProd1) == 335 ||
                             parseFloat(idProd1) == 338 ||
-                            parseFloat(idProd1) == 337
+                            parseFloat(idProd1) == 337 ||
+                            parseFloat(idProd1) == 213 ||
+                            parseFloat(idProd1) == 215 ||
+                            parseFloat(idProd1) == 217 ||
+                            parseFloat(idProd1) == 218 ||
+                            parseFloat(idProd1) == 219 ||
+                            parseFloat(idProd1) == 220 ||
+                            parseFloat(idProd1) == 221
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }
