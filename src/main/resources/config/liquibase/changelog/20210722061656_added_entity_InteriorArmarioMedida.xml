@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity InteriorArmarioMedida.
+    -->
+    <changeSet id="20210722061656-1" author="jhipster">
+        <createTable tableName="interior_armario_medida">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="numero_hueco" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_4" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_5" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_6" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_7" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_8" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_9" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_10" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tubo_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tubo_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tubo_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caj_sue_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caj_sue_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caj_sue_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caj_sue_4" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caj_sue_5" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="hang" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="camisero" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_4" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_5" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_6" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_7" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_8" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_9" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="est_cris_10" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cajon_vol_1" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cajon_vol_2" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cajon_vol_3" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="presupuesto_armario_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

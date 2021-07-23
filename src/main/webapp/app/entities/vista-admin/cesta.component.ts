@@ -8209,43 +8209,45 @@ export class cestaComponent implements OnInit, AfterViewInit {
                             if (nombreArmario != 'Armario Rincon') {
                                 if (sesion[1]['interiores'] != undefined) {
                                     for (let w = 0; w < sesion[1]['interiores']['length']; w++) {
-                                        $('#textoCesta' + i).append(
-                                            '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Interior ' +
-                                                (w + 1) +
-                                                '</span>: ' +
-                                                sesion[1]['interiores'][w]['nombre'] +
-                                                '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
-                                        );
-                                        if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
-                                            var nombreAdicional = '';
-                                            for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
-                                                if (qw != 0) {
-                                                    nombreAdicional =
-                                                        nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
-                                                } else {
-                                                    nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                                        if (sesion[1]['interiores'][w] != undefined) {
+                                            $('#textoCesta' + i).append(
+                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Interior ' +
+                                                    (w + 1) +
+                                                    '</span>: ' +
+                                                    sesion[1]['interiores'][w]['nombre'] +
+                                                    '<i id="precioTdoLoOtro" style="float:right;margin-right:40%"></i></p>'
+                                            );
+                                            if (sesion[1]['interiores'][w]['adicionales'] != undefined) {
+                                                var nombreAdicional = '';
+                                                for (let qw = 0; qw < sesion[1]['interiores'][w]['adicionales']['length']; qw++) {
+                                                    if (qw != 0) {
+                                                        nombreAdicional =
+                                                            nombreAdicional + ' + ' + sesion[1]['interiores'][w]['adicionales'][qw];
+                                                    } else {
+                                                        nombreAdicional = sesion[1]['interiores'][w]['adicionales'][qw];
+                                                    }
                                                 }
+                                                $('#textoCesta' + i).append(
+                                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
+                                                        (w + 1) +
+                                                        '</span>: ' +
+                                                        nombreAdicional +
+                                                        ' </p>'
+                                                );
                                             }
-                                            $('#textoCesta' + i).append(
-                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Adicionales Interior ' +
-                                                    (w + 1) +
-                                                    '</span>: ' +
-                                                    nombreAdicional +
-                                                    ' </p>'
-                                            );
-                                        }
-                                        if (
-                                            sesion[1]['observacionesInteriores' + w] != undefined &&
-                                            sesion[1]['observacionesInteriores' + w] != null &&
-                                            sesion[1]['observacionesInteriores' + w] != ''
-                                        ) {
-                                            $('#textoCesta' + i).append(
-                                                '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Observaciones Interior ' +
-                                                    (w + 1) +
-                                                    '</span>: ' +
-                                                    sesion[1]['observacionesInteriores' + w] +
-                                                    '</p>'
-                                            );
+                                            if (
+                                                sesion[1]['observacionesInteriores' + w] != undefined &&
+                                                sesion[1]['observacionesInteriores' + w] != null &&
+                                                sesion[1]['observacionesInteriores' + w] != ''
+                                            ) {
+                                                $('#textoCesta' + i).append(
+                                                    '<p id="texto1Arm" style="letter-spacing: 1px;font-weight: 300;font-size: 12px;margin-left:28%;"><span style="font-weight:600">Observaciones Interior ' +
+                                                        (w + 1) +
+                                                        '</span>: ' +
+                                                        sesion[1]['observacionesInteriores' + w] +
+                                                        '</p>'
+                                                );
+                                            }
                                         }
                                     }
                                 }

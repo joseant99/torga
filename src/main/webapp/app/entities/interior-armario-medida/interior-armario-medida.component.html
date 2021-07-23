@@ -1,0 +1,134 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.home.title">Interior Armario Medidas</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-interior-armario-medida" [routerLink]="['/interior-armario-medida/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="torgaPedidosApp.interiorArmarioMedida.home.createLabel">
+            Create new Interior Armario Medida
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="interiorArmarioMedidas">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="numeroHueco"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.numeroHueco">Numero Hueco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est1"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est1">Est 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est2"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est2">Est 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est3"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est3">Est 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est4"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est4">Est 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est5"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est5">Est 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est6"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est6">Est 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est7"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est7">Est 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est8"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est8">Est 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est9"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est9">Est 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="est10"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est10">Est 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tubo1"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo1">Tubo 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tubo2"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo2">Tubo 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="tubo3"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo3">Tubo 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajSue1"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue1">Caj Sue 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajSue2"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue2">Caj Sue 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajSue3"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue3">Caj Sue 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajSue4"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue4">Caj Sue 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajSue5"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue5">Caj Sue 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="hang"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.hang">Hang</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="camisero"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.camisero">Camisero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris1"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris1">Est Cris 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris2"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris2">Est Cris 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris3"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris3">Est Cris 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris4"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris4">Est Cris 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris5"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris5">Est Cris 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris6"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris6">Est Cris 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris7"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris7">Est Cris 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris8"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris8">Est Cris 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris9"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris9">Est Cris 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estCris10"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris10">Est Cris 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajonVol1"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol1">Cajon Vol 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajonVol2"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol2">Cajon Vol 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cajonVol3"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol3">Cajon Vol 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="presupuestoArmario.id"><span jhiTranslate="torgaPedidosApp.interiorArmarioMedida.presupuestoArmario">Presupuesto Armario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let interiorArmarioMedida of interiorArmarioMedidas ;trackBy: trackId">
+                <td><a [routerLink]="['/interior-armario-medida', interiorArmarioMedida.id, 'view' ]">{{interiorArmarioMedida.id}}</a></td>
+                <td>{{interiorArmarioMedida.numeroHueco}}</td>
+                <td>{{interiorArmarioMedida.est1}}</td>
+                <td>{{interiorArmarioMedida.est2}}</td>
+                <td>{{interiorArmarioMedida.est3}}</td>
+                <td>{{interiorArmarioMedida.est4}}</td>
+                <td>{{interiorArmarioMedida.est5}}</td>
+                <td>{{interiorArmarioMedida.est6}}</td>
+                <td>{{interiorArmarioMedida.est7}}</td>
+                <td>{{interiorArmarioMedida.est8}}</td>
+                <td>{{interiorArmarioMedida.est9}}</td>
+                <td>{{interiorArmarioMedida.est10}}</td>
+                <td>{{interiorArmarioMedida.tubo1}}</td>
+                <td>{{interiorArmarioMedida.tubo2}}</td>
+                <td>{{interiorArmarioMedida.tubo3}}</td>
+                <td>{{interiorArmarioMedida.cajSue1}}</td>
+                <td>{{interiorArmarioMedida.cajSue2}}</td>
+                <td>{{interiorArmarioMedida.cajSue3}}</td>
+                <td>{{interiorArmarioMedida.cajSue4}}</td>
+                <td>{{interiorArmarioMedida.cajSue5}}</td>
+                <td>{{interiorArmarioMedida.hang}}</td>
+                <td>{{interiorArmarioMedida.camisero}}</td>
+                <td>{{interiorArmarioMedida.estCris1}}</td>
+                <td>{{interiorArmarioMedida.estCris2}}</td>
+                <td>{{interiorArmarioMedida.estCris3}}</td>
+                <td>{{interiorArmarioMedida.estCris4}}</td>
+                <td>{{interiorArmarioMedida.estCris5}}</td>
+                <td>{{interiorArmarioMedida.estCris6}}</td>
+                <td>{{interiorArmarioMedida.estCris7}}</td>
+                <td>{{interiorArmarioMedida.estCris8}}</td>
+                <td>{{interiorArmarioMedida.estCris9}}</td>
+                <td>{{interiorArmarioMedida.estCris10}}</td>
+                <td>{{interiorArmarioMedida.cajonVol1}}</td>
+                <td>{{interiorArmarioMedida.cajonVol2}}</td>
+                <td>{{interiorArmarioMedida.cajonVol3}}</td>
+                <td>
+                    <div *ngIf="interiorArmarioMedida.presupuestoArmario">
+                        <a [routerLink]="['../presupuesto-armario', interiorArmarioMedida.presupuestoArmario?.id, 'view' ]" >{{interiorArmarioMedida.presupuestoArmario?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/interior-armario-medida', interiorArmarioMedida.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/interior-armario-medida', interiorArmarioMedida.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'interior-armario-medida/'+ interiorArmarioMedida.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="interiorArmarioMedidas && interiorArmarioMedidas.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

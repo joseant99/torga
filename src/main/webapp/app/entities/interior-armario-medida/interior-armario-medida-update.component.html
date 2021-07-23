@@ -1,0 +1,201 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-interior-armario-medida-heading" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.home.createOrEditLabel">Create or edit a Interior Armario Medida</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!interiorArmarioMedida.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="interiorArmarioMedida.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.numeroHueco" for="field_numeroHueco">Numero Hueco</label>
+                    <input type="number" class="form-control" name="numeroHueco" id="field_numeroHueco"
+                        [(ngModel)]="interiorArmarioMedida.numeroHueco" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est1" for="field_est1">Est 1</label>
+                    <input type="number" class="form-control" name="est1" id="field_est1"
+                        [(ngModel)]="interiorArmarioMedida.est1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est2" for="field_est2">Est 2</label>
+                    <input type="number" class="form-control" name="est2" id="field_est2"
+                        [(ngModel)]="interiorArmarioMedida.est2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est3" for="field_est3">Est 3</label>
+                    <input type="number" class="form-control" name="est3" id="field_est3"
+                        [(ngModel)]="interiorArmarioMedida.est3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est4" for="field_est4">Est 4</label>
+                    <input type="number" class="form-control" name="est4" id="field_est4"
+                        [(ngModel)]="interiorArmarioMedida.est4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est5" for="field_est5">Est 5</label>
+                    <input type="number" class="form-control" name="est5" id="field_est5"
+                        [(ngModel)]="interiorArmarioMedida.est5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est6" for="field_est6">Est 6</label>
+                    <input type="number" class="form-control" name="est6" id="field_est6"
+                        [(ngModel)]="interiorArmarioMedida.est6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est7" for="field_est7">Est 7</label>
+                    <input type="number" class="form-control" name="est7" id="field_est7"
+                        [(ngModel)]="interiorArmarioMedida.est7" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est8" for="field_est8">Est 8</label>
+                    <input type="number" class="form-control" name="est8" id="field_est8"
+                        [(ngModel)]="interiorArmarioMedida.est8" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est9" for="field_est9">Est 9</label>
+                    <input type="number" class="form-control" name="est9" id="field_est9"
+                        [(ngModel)]="interiorArmarioMedida.est9" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.est10" for="field_est10">Est 10</label>
+                    <input type="number" class="form-control" name="est10" id="field_est10"
+                        [(ngModel)]="interiorArmarioMedida.est10" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo1" for="field_tubo1">Tubo 1</label>
+                    <input type="number" class="form-control" name="tubo1" id="field_tubo1"
+                        [(ngModel)]="interiorArmarioMedida.tubo1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo2" for="field_tubo2">Tubo 2</label>
+                    <input type="number" class="form-control" name="tubo2" id="field_tubo2"
+                        [(ngModel)]="interiorArmarioMedida.tubo2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.tubo3" for="field_tubo3">Tubo 3</label>
+                    <input type="number" class="form-control" name="tubo3" id="field_tubo3"
+                        [(ngModel)]="interiorArmarioMedida.tubo3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue1" for="field_cajSue1">Caj Sue 1</label>
+                    <input type="number" class="form-control" name="cajSue1" id="field_cajSue1"
+                        [(ngModel)]="interiorArmarioMedida.cajSue1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue2" for="field_cajSue2">Caj Sue 2</label>
+                    <input type="number" class="form-control" name="cajSue2" id="field_cajSue2"
+                        [(ngModel)]="interiorArmarioMedida.cajSue2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue3" for="field_cajSue3">Caj Sue 3</label>
+                    <input type="number" class="form-control" name="cajSue3" id="field_cajSue3"
+                        [(ngModel)]="interiorArmarioMedida.cajSue3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue4" for="field_cajSue4">Caj Sue 4</label>
+                    <input type="number" class="form-control" name="cajSue4" id="field_cajSue4"
+                        [(ngModel)]="interiorArmarioMedida.cajSue4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajSue5" for="field_cajSue5">Caj Sue 5</label>
+                    <input type="number" class="form-control" name="cajSue5" id="field_cajSue5"
+                        [(ngModel)]="interiorArmarioMedida.cajSue5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.hang" for="field_hang">Hang</label>
+                    <input type="number" class="form-control" name="hang" id="field_hang"
+                        [(ngModel)]="interiorArmarioMedida.hang" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.camisero" for="field_camisero">Camisero</label>
+                    <input type="number" class="form-control" name="camisero" id="field_camisero"
+                        [(ngModel)]="interiorArmarioMedida.camisero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris1" for="field_estCris1">Est Cris 1</label>
+                    <input type="number" class="form-control" name="estCris1" id="field_estCris1"
+                        [(ngModel)]="interiorArmarioMedida.estCris1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris2" for="field_estCris2">Est Cris 2</label>
+                    <input type="number" class="form-control" name="estCris2" id="field_estCris2"
+                        [(ngModel)]="interiorArmarioMedida.estCris2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris3" for="field_estCris3">Est Cris 3</label>
+                    <input type="number" class="form-control" name="estCris3" id="field_estCris3"
+                        [(ngModel)]="interiorArmarioMedida.estCris3" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris4" for="field_estCris4">Est Cris 4</label>
+                    <input type="number" class="form-control" name="estCris4" id="field_estCris4"
+                        [(ngModel)]="interiorArmarioMedida.estCris4" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris5" for="field_estCris5">Est Cris 5</label>
+                    <input type="number" class="form-control" name="estCris5" id="field_estCris5"
+                        [(ngModel)]="interiorArmarioMedida.estCris5" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris6" for="field_estCris6">Est Cris 6</label>
+                    <input type="number" class="form-control" name="estCris6" id="field_estCris6"
+                        [(ngModel)]="interiorArmarioMedida.estCris6" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris7" for="field_estCris7">Est Cris 7</label>
+                    <input type="number" class="form-control" name="estCris7" id="field_estCris7"
+                        [(ngModel)]="interiorArmarioMedida.estCris7" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris8" for="field_estCris8">Est Cris 8</label>
+                    <input type="number" class="form-control" name="estCris8" id="field_estCris8"
+                        [(ngModel)]="interiorArmarioMedida.estCris8" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris9" for="field_estCris9">Est Cris 9</label>
+                    <input type="number" class="form-control" name="estCris9" id="field_estCris9"
+                        [(ngModel)]="interiorArmarioMedida.estCris9" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.estCris10" for="field_estCris10">Est Cris 10</label>
+                    <input type="number" class="form-control" name="estCris10" id="field_estCris10"
+                        [(ngModel)]="interiorArmarioMedida.estCris10" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol1" for="field_cajonVol1">Cajon Vol 1</label>
+                    <input type="number" class="form-control" name="cajonVol1" id="field_cajonVol1"
+                        [(ngModel)]="interiorArmarioMedida.cajonVol1" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol2" for="field_cajonVol2">Cajon Vol 2</label>
+                    <input type="number" class="form-control" name="cajonVol2" id="field_cajonVol2"
+                        [(ngModel)]="interiorArmarioMedida.cajonVol2" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.cajonVol3" for="field_cajonVol3">Cajon Vol 3</label>
+                    <input type="number" class="form-control" name="cajonVol3" id="field_cajonVol3"
+                        [(ngModel)]="interiorArmarioMedida.cajonVol3" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="torgaPedidosApp.interiorArmarioMedida.presupuestoArmario" for="field_presupuestoArmario">Presupuesto Armario</label>
+                    <select class="form-control" id="field_presupuestoArmario" name="presupuestoArmario" [(ngModel)]="interiorArmarioMedida.presupuestoArmario" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="presupuestoArmarioOption.id === interiorArmarioMedida.presupuestoArmario?.id ? interiorArmarioMedida.presupuestoArmario : presupuestoArmarioOption" *ngFor="let presupuestoArmarioOption of presupuestoarmarios; trackBy: trackPresupuestoArmarioById">{{presupuestoArmarioOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

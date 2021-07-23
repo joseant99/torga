@@ -116,6 +116,7 @@
     <include file="config/liquibase/changelog/20210128064454_added_entity_Fecha_entrega.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210319073438_added_entity_Coordenadas.xml" relativeToChangelogFile="false"/> 
     <include file="config/liquibase/changelog/20210319082911_added_entity_Exposicion.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20210525101216_added_entity_ImagenDeCestaProd.xml" relativeToChangelogFile="false"/>  
+    <include file="config/liquibase/changelog/20210525101216_added_entity_ImagenDeCestaProd.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210722061656_added_entity_InteriorArmarioMedida.xml" relativeToChangelogFile="false"/> 
+    <include file="config/liquibase/changelog/20210722061656_added_entity_constraints_InteriorArmarioMedida.xml" relativeToChangelogFile="false"/>     
 </databaseChangeLog> 
-

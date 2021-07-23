@@ -184,6 +184,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     adicionalesArray4: any;
     precioAdicionalesInt: any;
     extraInterioresPorSi: any;
+    interioresNuevosJSON: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -282,32 +283,34 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         todo[1] = this.armarioCogido;
         $('#textprecioCalculadoraazul').css({ display: 'block' });
         for (let i = 0; i < todo[1]['interiores'].length; i++) {
-            var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
-            precio = precio.split(' ')[1];
-            todo[1]['interiores'][i]['precio'] = precio;
-            if (i == 0) {
-                if (this.adicionalesArray0 != undefined) {
-                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray0;
+            if (todo[1]['interiores'][i] != undefined) {
+                var precio = $('#calculadoraCarrito #productoCalculadora1 #precioInt' + i).text();
+                precio = precio.split(' ')[1];
+                todo[1]['interiores'][i]['precio'] = precio;
+                if (i == 0) {
+                    if (this.adicionalesArray0 != undefined) {
+                        todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray0;
+                    }
                 }
-            }
-            if (i == 1) {
-                if (this.adicionalesArray1 != undefined) {
-                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray1;
+                if (i == 1) {
+                    if (this.adicionalesArray1 != undefined) {
+                        todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray1;
+                    }
                 }
-            }
-            if (i == 2) {
-                if (this.adicionalesArray2 != undefined) {
-                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray2;
+                if (i == 2) {
+                    if (this.adicionalesArray2 != undefined) {
+                        todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray2;
+                    }
                 }
-            }
-            if (i == 3) {
-                if (this.adicionalesArray3 != undefined) {
-                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray3;
+                if (i == 3) {
+                    if (this.adicionalesArray3 != undefined) {
+                        todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray3;
+                    }
                 }
-            }
-            if (i == 4) {
-                if (this.adicionalesArray4 != undefined) {
-                    todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray4;
+                if (i == 4) {
+                    if (this.adicionalesArray4 != undefined) {
+                        todo[1]['interiores'][i]['adicionales'] = this.adicionalesArray4;
+                    }
                 }
             }
         }
@@ -317,6 +320,263 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             precio = precio.split(' ')[1];
             todo[1]['puertas'][i]['precio'] = precio;
         }
+        var interioresNuevosJSON = this.interioresNuevosJSON;
+        if (interioresNuevosJSON.length != 0) {
+            alert('1');
+            var objInt1 = {};
+            var objInt2 = {};
+            var objInt3 = {};
+            var objInt4 = {};
+            var hueco0 = [];
+            var contHueco0 = 0;
+            var hueco1 = [];
+            var contHueco1 = 0;
+            var hueco2 = [];
+            var contHueco2 = 0;
+            var hueco3 = [];
+            var contHueco3 = 0;
+            for (let w = 0; w < interioresNuevosJSON.length; w++) {
+                if (interioresNuevosJSON[w]['interior'] == 0) {
+                    hueco0[contHueco0] = interioresNuevosJSON[w];
+                    contHueco0++;
+                }
+                if (interioresNuevosJSON[w]['interior'] == 1) {
+                    hueco1[contHueco1] = interioresNuevosJSON[w];
+                    contHueco1++;
+                }
+                if (interioresNuevosJSON[w]['interior'] == 2) {
+                    hueco2[contHueco2] = interioresNuevosJSON[w];
+                    contHueco2++;
+                }
+                if (interioresNuevosJSON[w]['interior'] == 3) {
+                    hueco3[contHueco3] = interioresNuevosJSON[w];
+                    contHueco3++;
+                }
+            }
+            var numEst1 = 1;
+            var numTubo1 = 1;
+            var numCajonSuelo1 = 1;
+            var numCajonVol1 = 1;
+            var numEstCris1 = 1;
+            for (let k = 0; k < hueco0.length; k++) {
+                if (hueco0[k]['tipo'] == 'estante') {
+                    objInt1['est' + numEst1] = hueco0[k]['posicion'];
+                    numEst1++;
+                }
+                if (hueco0[k]['tipo'] == 'tubo') {
+                    objInt1['tubo' + numTubo1] = 1;
+                    numTubo1++;
+                }
+                if (hueco0[k]['tipo'] == 'cajones') {
+                    if (hueco0[k]['posicion'] == 0) {
+                        objInt1['cajSue' + hueco0[k]['cantidad']] = 1;
+                        numCajonSuelo1++;
+                    } else {
+                        objInt1['cajonVol' + hueco0[k]['cantidad']] = hueco0[k]['posicion'];
+                        numCajonVol1++;
+                    }
+                }
+                if (hueco0[k]['tipo'] == 'estantecristal') {
+                    objInt1['estCris' + numEstCris1] = hueco0[k]['posicion'];
+                    numEstCris1++;
+                }
+            }
+
+            var numEst2 = 1;
+            var numTubo2 = 1;
+            var numEstCris2 = 1;
+            var numCajonSuelo2 = 1;
+            var numCajonVol2 = 1;
+            for (let k = 0; k < hueco1.length; k++) {
+                if (hueco1[k]['tipo'] == 'estante') {
+                    objInt2['est' + numEst2] = hueco1[k]['posicion'];
+                    numEst2++;
+                }
+                if (hueco1[k]['tipo'] == 'tubo') {
+                    objInt2['tubo' + numTubo2] = 1;
+                    numTubo2++;
+                }
+                if (hueco1[k]['tipo'] == 'cajones') {
+                    if (hueco1[k]['posicion'] == 0) {
+                        objInt2['cajSue' + hueco1[k]['cantidad']] = 1;
+                        numCajonSuelo2++;
+                    } else {
+                        objInt2['cajonVol' + hueco1[k]['cantidad']] = hueco1[k]['posicion'];
+                        numCajonVol2++;
+                    }
+                }
+                if (hueco1[k]['tipo'] == 'estantecristal') {
+                    objInt2['estCris' + numEstCris2] = hueco1[k]['posicion'];
+                    numEstCris2++;
+                }
+            }
+
+            var numEst3 = 1;
+            var numTubo3 = 1;
+            var numEstCris3 = 1;
+            var numCajonSuelo3 = 1;
+            var numCajonVol3 = 1;
+            for (let k = 0; k < hueco2.length; k++) {
+                if (hueco2[k]['tipo'] == 'estante') {
+                    objInt3['est' + numEst3] = hueco2[k]['posicion'];
+                    numEst3++;
+                }
+                if (hueco2[k]['tipo'] == 'tubo') {
+                    objInt3['tubo' + numTubo3] = 1;
+                    numTubo3++;
+                }
+                if (hueco2[k]['tipo'] == 'cajones') {
+                    if (hueco2[k]['posicion'] == 0) {
+                        objInt3['cajSue' + hueco2[k]['cantidad']] = 1;
+                        numCajonSuelo3++;
+                    } else {
+                        objInt3['cajonVol' + hueco2[k]['cantidad']] = hueco2[k]['posicion'];
+                        numCajonVol3++;
+                    }
+                }
+                if (hueco2[k]['tipo'] == 'estantecristal') {
+                    objInt3['estCris' + numEstCris3] = hueco2[k]['posicion'];
+                    numEstCris3++;
+                }
+            }
+
+            var numEst4 = 1;
+            var numTubo4 = 1;
+            var numEstCris4 = 1;
+            var numCajonSuelo4 = 1;
+            var numCajonVol4 = 1;
+            for (let k = 0; k < hueco3.length; k++) {
+                if (hueco3[k]['tipo'] == 'estante') {
+                    objInt4['est' + numEst4] = hueco3[k]['posicion'];
+                    numEst4++;
+                }
+                if (hueco3[k]['tipo'] == 'tubo') {
+                    objInt4['tubo' + numTubo4] = 1;
+                    numTubo4++;
+                }
+                if (hueco3[k]['tipo'] == 'cajones') {
+                    if (hueco3[k]['posicion'] == 0) {
+                        objInt4['cajSue' + hueco3[k]['cantidad']] = 1;
+                        numCajonSuelo4++;
+                    } else {
+                        objInt4['cajonVol' + hueco3[k]['cantidad']] = hueco3[k]['posicion'];
+                        numCajonVol4++;
+                    }
+                }
+                if (hueco3[k]['tipo'] == 'estantecristal') {
+                    objInt4['estCris' + numEstCris4] = hueco3[k]['posicion'];
+                    numEstCris4++;
+                }
+            }
+
+            for (let y = 1; y < 11; y++) {
+                if (objInt1['est' + y] == undefined) {
+                    objInt1['est' + y] = 5000;
+                }
+                if (objInt1['estCris' + y] == undefined) {
+                    objInt1['estCris' + y] = 5000;
+                }
+                if (objInt2['est' + y] == undefined) {
+                    objInt2['est' + y] = 5000;
+                }
+                if (objInt2['estCris' + y] == undefined) {
+                    objInt2['estCris' + y] = 5000;
+                }
+                if (objInt3['est' + y] == undefined) {
+                    objInt3['est' + y] = 5000;
+                }
+                if (objInt3['estCris' + y] == undefined) {
+                    objInt3['estCris' + y] = 5000;
+                }
+                if (objInt4['est' + y] == undefined) {
+                    objInt4['est' + y] = 5000;
+                }
+                if (objInt4['estCris' + y] == undefined) {
+                    objInt4['estCris' + y] = 5000;
+                }
+                if (y < 4) {
+                    if (objInt1['tubo' + y] == undefined) {
+                        objInt1['tubo' + y] = 2;
+                    }
+                    if (objInt1['cajonVol' + y] == undefined) {
+                        objInt1['cajonVol' + y] = 5000;
+                    }
+                    if (objInt2['tubo' + y] == undefined) {
+                        objInt2['tubo' + y] = 2;
+                    }
+                    if (objInt2['cajonVol' + y] == undefined) {
+                        objInt2['cajonVol' + y] = 5000;
+                    }
+                    if (objInt3['tubo' + y] == undefined) {
+                        objInt3['tubo' + y] = 2;
+                    }
+                    if (objInt3['cajonVol' + y] == undefined) {
+                        objInt3['cajonVol' + y] = 5000;
+                    }
+                    if (objInt4['tubo' + y] == undefined) {
+                        objInt4['tubo' + y] = 2;
+                    }
+                    if (objInt4['cajonVol' + y] == undefined) {
+                        objInt4['cajonVol' + y] = 5000;
+                    }
+                }
+                if (y < 6) {
+                    if (objInt1['cajSue' + y] == undefined) {
+                        objInt1['cajSue' + y] = 2;
+                    }
+                    if (objInt2['cajSue' + y] == undefined) {
+                        objInt2['cajSue' + y] = 2;
+                    }
+                    if (objInt3['cajSue' + y] == undefined) {
+                        objInt3['cajSue' + y] = 2;
+                    }
+                    if (objInt4['cajSue' + y] == undefined) {
+                        objInt4['cajSue' + y] = 2;
+                    }
+                }
+                if (y == 1) {
+                    if (objInt1['hang'] == undefined) {
+                        objInt1['hang'] = 2;
+                    }
+                    if (objInt1['camisero'] == undefined) {
+                        objInt1['camisero'] = 1;
+                    }
+                    if (objInt2['hang'] == undefined) {
+                        objInt2['hang'] = 2;
+                    }
+                    if (objInt2['camisero'] == undefined) {
+                        objInt2['camisero'] = 1;
+                    }
+                    if (objInt3['hang'] == undefined) {
+                        objInt3['hang'] = 2;
+                    }
+                    if (objInt3['camisero'] == undefined) {
+                        objInt3['camisero'] = 1;
+                    }
+                    if (objInt4['hang'] == undefined) {
+                        objInt4['hang'] = 2;
+                    }
+                    if (objInt4['camisero'] == undefined) {
+                        objInt4['camisero'] = 1;
+                    }
+                }
+            }
+            if (hueco0.length != 0) {
+                todo[1]['hueco1'] = objInt1;
+            }
+            if (hueco1.length != 0) {
+                todo[1]['hueco2'] = objInt2;
+            }
+            if (hueco2.length != 0) {
+                todo[1]['hueco3'] = objInt3;
+            }
+            if (hueco3.length != 0) {
+                todo[1]['hueco4'] = objInt4;
+            }
+            todo[1]['id'] = todo[1]['armario']['id'];
+            todo[1]['productosDormitorio'] = todo[1]['armario']['productosDormitorio'];
+        }
+
         const todoSumadoPrecio = $('#precioDimension').text();
         console.log(todo[1]);
         $('#productoCalculadora1 #datos1').empty();
@@ -691,6 +951,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         this.precioInterior1 = 0;
         this.precioInterior2 = 0;
         this.precioInterior3 = 0;
+        this.interioresNuevosJSON = [];
         this.precioInterior4 = 0;
         this.gg = 0;
         this.luz1 = 0;
@@ -3611,8 +3872,11 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             $('#precioDimension').text(data.body[0].precio);
             var precioInicio = data.body[0].precio;
             this.armarioCogido = data.body[0];
+
             $('#ppCalculadora').css({ display: 'block' });
             var array = [];
+            array[0] = data.body[0].armario;
+            this.armarioService.todo = array;
             this.cascoService.dato = this.armarioCogido;
             this.textoArmario = data.body[0]['armario']['mensaje'];
             var arrayPuertas = [];

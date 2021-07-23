@@ -47,6 +47,7 @@ import { PresupuestoArmarioPuertasService } from '../../entities/presupuesto-arm
 import { IPrecioFinalPresu } from 'app/shared/model/precio-final-presu.model';
 import { AcabadosService } from 'app/entities/acabados';
 import { IFecha_entrega } from 'app/shared/model/fecha-entrega.model';
+import { InteriorArmarioMedidaService } from '../../entities/interior-armario-medida/interior-armario-medida.service';
 @Component({
     providers: [JhiMainComponent],
     selector: 'jhi-navbar',
@@ -132,6 +133,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         private modalService: NgbModal,
         public productosDormitorioService: ProductosDormitorioService,
         private eventManager: JhiEventManager,
+        protected interiorArmarioMedidaService: InteriorArmarioMedidaService,
         public imagenDeCestaProdService: ImagenDeCestaProdService,
         protected activatedRoute: ActivatedRoute
     ) {
@@ -13159,7 +13161,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
 
     protected subscribeToSaveResponse6(result: Observable<HttpResponse<IProductosPresupuestoPedidos>>) {
         result.subscribe(
-            (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess6(),
+            (res: HttpResponse<IProductosPresupuestoPedidos>) => this.onSaveSuccess6(res.body),
             (res: HttpErrorResponse) => this.onSaveError()
         );
     }
@@ -13197,7 +13199,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
         }, 1000);
     }
 
-    protected onSaveSuccess6() {
+    protected onSaveSuccess6(arm) {
         this.isSaving = false;
         var presupuestoArmario = this.presupuestoArmarioTodoLOL;
         var prodCarr = this.productoPresupuesto;
@@ -13210,95 +13212,39 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 estoyprobando++;
             }
         }
-        for (let ve = 0; ve <= 100005; ve++) {
-            if (ve == 100005) {
-                this.presupuestoArmarioService.query1234().subscribe(data => {
-                    for (let m = 0; m < prodCarr.length; m++) {
-                        if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
-                            var idArmario;
-                            for (let w = 0; w < data.body['length']; w++) {
-                                if (w < estoyprobando) {
-                                    if (prodCarr[m][1]['codigo'] == data.body[w]['codigo']) {
-                                        idArmario = data.body[w]['id'];
+
+        for (let m = 0; m < prodCarr.length; m++) {
+            if (prodCarr[m][1]['productosDormitorio']['categoriasDormi']['id'] == 9) {
+                var idArmario = arm.id;
+
+                presupuestoArmario['id'] = idArmario;
+                if (prodCarr[m][1]['interiores'] != undefined) {
+                    for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
+                        if (prodCarr[m][1]['interiores'][x] != undefined) {
+                            var interiores;
+                            var observaInt = null;
+                            if (
+                                prodCarr[m][1]['observacionesInteriores' + x] != undefined &&
+                                prodCarr[m][1]['observacionesInteriores' + x] != null &&
+                                prodCarr[m][1]['observacionesInteriores' + x] != ''
+                            ) {
+                                observaInt = prodCarr[m][1]['observacionesInteriores' + x];
+                            }
+                            var adicionales = null;
+                            if (prodCarr[m][1]['interiores'][x]['adicionales'] != undefined) {
+                                for (let me = 0; me < prodCarr[m][1]['interiores'][x]['adicionales'].length; me++) {
+                                    if (me != 0) {
+                                        adicionales = adicionales + ' + ' + prodCarr[m][1]['interiores'][x]['adicionales'][me];
+                                    } else {
+                                        adicionales = prodCarr[m][1]['interiores'][x]['adicionales'][me];
                                     }
                                 }
                             }
 
-                            presupuestoArmario['id'] = idArmario;
-                            if (prodCarr[m][1]['interiores'] != undefined) {
-                                for (let x = 0; x < prodCarr[m][1]['interiores'].length; x++) {
-                                    var interiores;
-                                    var observaInt = null;
-                                    if (
-                                        prodCarr[m][1]['observacionesInteriores' + x] != undefined &&
-                                        prodCarr[m][1]['observacionesInteriores' + x] != null &&
-                                        prodCarr[m][1]['observacionesInteriores' + x] != ''
-                                    ) {
-                                        observaInt = prodCarr[m][1]['observacionesInteriores' + x];
-                                    }
-                                    var adicionales = null;
-                                    if (prodCarr[m][1]['interiores'][x]['adicionales'] != undefined) {
-                                        for (let me = 0; me < prodCarr[m][1]['interiores'][x]['adicionales'].length; me++) {
-                                            if (me != 0) {
-                                                adicionales = adicionales + ' + ' + prodCarr[m][1]['interiores'][x]['adicionales'][me];
-                                            } else {
-                                                adicionales = prodCarr[m][1]['interiores'][x]['adicionales'][me];
-                                            }
-                                        }
-                                    }
-
-                                    if (screen.width >= 800) {
-                                        for (let ve = 0; ve <= 100005; ve++) {
-                                            if (ve == 100005) {
-                                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                                    var terminacioninterior;
-                                                    if (
-                                                        prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
-                                                        prodCarr[m][1]['interiores'][x]['nombre'] <= 9
-                                                    ) {
-                                                        terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
-                                                    } else {
-                                                        terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
-                                                    }
-                                                    interiores = {
-                                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                        orden: x,
-                                                        mensajeLuz: 'Sin luz',
-                                                        observacion: observaInt,
-                                                        adicionales: adicionales,
-                                                        terminacion: terminacioninterior
-                                                    };
-                                                } else {
-                                                    var terminacioninterior;
-                                                    if (
-                                                        prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
-                                                        prodCarr[m][1]['interiores'][x]['nombre'] <= 9
-                                                    ) {
-                                                        terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
-                                                    } else {
-                                                        terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
-                                                    }
-                                                    interiores = {
-                                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                        orden: x,
-                                                        terminacion: terminacioninterior,
-                                                        observacion: observaInt,
-                                                        adicionales: adicionales,
-                                                        posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
-                                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
-                                                    };
-                                                }
-                                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
-                                            }
-                                        }
-                                    }
-
-                                    if (screen.width < 800) {
-                                        for (let ve = 0; ve <= 100005; ve++) {
+                            if (screen.width >= 800) {
+                                for (let ve = 0; ve <= 100005; ve++) {
+                                    if (ve == 100005) {
+                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
                                             var terminacioninterior;
                                             if (
                                                 prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
@@ -13308,46 +13254,205 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                             } else {
                                                 terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
                                             }
-                                            if (ve == 100005) {
-                                                if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
-                                                    interiores = {
-                                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                        orden: x,
-                                                        mensajeLuz: 'Sin luz',
-                                                        observacion: observaInt,
-                                                        adicionales: adicionales,
-                                                        terminacion: terminacioninterior
-                                                    };
-                                                } else {
-                                                    interiores = {
-                                                        precio: prodCarr[m][1]['interiores'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['interiores'][x],
-                                                        orden: x,
-                                                        posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
-                                                        mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
-                                                        observacion: observaInt,
-                                                        adicionales: adicionales,
-                                                        terminacion: terminacioninterior
-                                                    };
-                                                }
-                                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                mensajeLuz: 'Sin luz',
+                                                observacion: observaInt,
+                                                adicionales: adicionales,
+                                                terminacion: terminacioninterior
+                                            };
+                                        } else {
+                                            var terminacioninterior;
+                                            if (
+                                                prodCarr[m][1]['interiores'][x]['nombre'] >= 1 &&
+                                                prodCarr[m][1]['interiores'][x]['nombre'] <= 9
+                                            ) {
+                                                terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                            } else {
+                                                terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
                                             }
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                terminacion: terminacioninterior,
+                                                observacion: observaInt,
+                                                adicionales: adicionales,
+                                                posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
+                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz']
+                                            };
                                         }
+                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
                                     }
                                 }
-                            } else {
-                                var interiores;
+                            }
+
+                            if (screen.width < 800) {
+                                for (let ve = 0; ve <= 100005; ve++) {
+                                    var terminacioninterior;
+                                    if (prodCarr[m][1]['interiores'][x]['nombre'] >= 1 && prodCarr[m][1]['interiores'][x]['nombre'] <= 9) {
+                                        terminacioninterior = '0' + prodCarr[m][1]['interiores'][x]['nombre'];
+                                    } else {
+                                        terminacioninterior = prodCarr[m][1]['interiores'][x]['nombre'];
+                                    }
+                                    if (ve == 100005) {
+                                        if (prodCarr[m][1]['interiores'][x]['luz'] == undefined) {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                mensajeLuz: 'Sin luz',
+                                                observacion: observaInt,
+                                                adicionales: adicionales,
+                                                terminacion: terminacioninterior
+                                            };
+                                        } else {
+                                            interiores = {
+                                                precio: prodCarr[m][1]['interiores'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['interiores'][x],
+                                                orden: x,
+                                                posicionLuz: prodCarr[m][1]['interiores'][x]['luzPosicion'],
+                                                mensajeLuz: prodCarr[m][1]['interiores'][x]['luz'],
+                                                observacion: observaInt,
+                                                adicionales: adicionales,
+                                                terminacion: terminacioninterior
+                                            };
+                                        }
+                                        this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    var interiores;
+                    if (screen.width >= 800) {
+                        for (let ve = 0; ve <= 100005; ve++) {
+                            if (ve == 100005) {
+                                interiores = {
+                                    presupuestoArmario: presupuestoArmario
+                                };
+
+                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                            }
+                        }
+                    }
+
+                    if (screen.width < 800) {
+                        for (let ve = 0; ve <= 100005; ve++) {
+                            if (ve == 100005) {
+                                interiores = {
+                                    presupuestoArmario: presupuestoArmario
+                                };
+
+                                this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                            }
+                        }
+                    }
+                }
+                for (let k = 1; k < 5; k++) {
+                    for (let ve = 0; ve <= 100005; ve++) {
+                        if (ve == 100005) {
+                            if (prodCarr[m][1]['hueco' + k] != undefined) {
+                                prodCarr[m][1]['hueco' + k]['numeroHueco'] = k;
+                                prodCarr[m][1]['hueco' + k]['presupuestoArmario'] = presupuestoArmario;
+                                this.subscribeToSaveResponse10(this.interiorArmarioMedidaService.create(prodCarr[m][1]['hueco' + k]));
+                            }
+                        }
+                    }
+                }
+
+                if (prodCarr[m][1]['puertas'] != undefined) {
+                    for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
+                        var puertas;
+                        if (
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales' &&
+                            prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales DER'
+                        ) {
+                            var terminacionpuerta = '';
+                            prodCarr[m][1]['acabadoTirador'];
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 381) {
+                                terminacionpuerta = 'A Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Transparente';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 382) {
+                                terminacionpuerta = 'B Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Gris';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 383) {
+                                terminacionpuerta = 'C Madera Sin Tirador';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 384) {
+                                terminacionpuerta = 'D Madera Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 385) {
+                                terminacionpuerta = 'E Madera Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 386) {
+                                terminacionpuerta = 'F Madera Draw ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 387) {
+                                terminacionpuerta = 'G Fuelle IZQ Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 388) {
+                                terminacionpuerta = 'H Fuelle DCH Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 389) {
+                                terminacionpuerta = 'I Fuelle IZQ Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 390) {
+                                terminacionpuerta = 'J Fuelle DCH Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 391) {
+                                terminacionpuerta = 'K Sin Puerta';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 392) {
+                                terminacionpuerta = 'A Lisa';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 396) {
+                                terminacionpuerta = 'E 2 pla. vert. izq';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 397) {
+                                terminacionpuerta = 'F 2 pla. vert. izq. luna estrecha';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 398) {
+                                terminacionpuerta = 'G 2 pla. vert. izq. luna ancha';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 399) {
+                                terminacionpuerta = 'H 2 pla. vert. dch.';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 400) {
+                                terminacionpuerta = 'I 2 pla. vert. dch. luna estrecha';
+                            }
+                            if (prodCarr[m][1]['puertas'][x]['id'] == 401) {
+                                terminacionpuerta = 'J 2 pla. vert. dch. luna ancha';
+                            }
+                            if (
+                                prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA VISTA' &&
+                                prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA VISTA' &&
+                                prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA' &&
+                                prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA'
+                            ) {
                                 if (screen.width >= 800) {
                                     for (let ve = 0; ve <= 100005; ve++) {
                                         if (ve == 100005) {
-                                            interiores = {
-                                                presupuestoArmario: presupuestoArmario
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
 
-                                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                                         }
                                     }
                                 }
@@ -13355,243 +13460,133 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 if (screen.width < 800) {
                                     for (let ve = 0; ve <= 100005; ve++) {
                                         if (ve == 100005) {
-                                            interiores = {
-                                                presupuestoArmario: presupuestoArmario
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
+                                                orden: x,
+                                                terminacion: terminacionpuerta
                                             };
 
-                                            this.subscribeToSaveResponse10(this.presupuestoArmarioInterioresService.create(interiores));
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (screen.width >= 800) {
+                                    for (let ve = 0; ve <= 100005; ve++) {
+                                        if (ve == 100005) {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                orden: x,
+                                                terminacion: terminacionpuerta
+                                            };
+
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
+                                        }
+                                    }
+                                }
+
+                                if (screen.width < 800) {
+                                    for (let ve = 0; ve <= 100005; ve++) {
+                                        if (ve == 100005) {
+                                            puertas = {
+                                                precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                                presupuestoArmario: presupuestoArmario,
+                                                productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                                acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                                orden: x,
+                                                terminacion: terminacionpuerta
+                                            };
+
+                                            this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                                         }
                                     }
                                 }
                             }
-                            if (prodCarr[m][1]['puertas'] != undefined) {
-                                for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
-                                    var puertas;
-                                    if (
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 5 Plafones' &&
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales' &&
-                                        prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones Verticales DER'
-                                    ) {
-                                        var terminacionpuerta = '';
-                                        prodCarr[m][1]['acabadoTirador'];
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 381) {
-                                            terminacionpuerta =
-                                                'A Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Transparente';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 382) {
-                                            terminacionpuerta = 'B Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Gris';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 383) {
-                                            terminacionpuerta = 'C Madera Sin Tirador';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 384) {
-                                            terminacionpuerta = 'D Madera Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 385) {
-                                            terminacionpuerta = 'E Madera Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 386) {
-                                            terminacionpuerta = 'F Madera Draw ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 387) {
-                                            terminacionpuerta = 'G Fuelle IZQ Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 388) {
-                                            terminacionpuerta = 'H Fuelle DCH Tim ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 389) {
-                                            terminacionpuerta = 'I Fuelle IZQ Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 390) {
-                                            terminacionpuerta = 'J Fuelle DCH Nye ' + prodCarr[m][1]['acabadoTirador']['nombre'];
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 391) {
-                                            terminacionpuerta = 'K Sin Puerta';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 392) {
-                                            terminacionpuerta = 'A Lisa';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 396) {
-                                            terminacionpuerta = 'E 2 pla. vert. izq';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 397) {
-                                            terminacionpuerta = 'F 2 pla. vert. izq. luna estrecha';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 398) {
-                                            terminacionpuerta = 'G 2 pla. vert. izq. luna ancha';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 399) {
-                                            terminacionpuerta = 'H 2 pla. vert. dch.';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 400) {
-                                            terminacionpuerta = 'I 2 pla. vert. dch. luna estrecha';
-                                        }
-                                        if (prodCarr[m][1]['puertas'][x]['id'] == 401) {
-                                            terminacionpuerta = 'J 2 pla. vert. dch. luna ancha';
-                                        }
-                                        if (
-                                            prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA VISTA' &&
-                                            prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA VISTA' &&
-                                            prodCarr[m][1]['mensaje'] != '2 PUERTAS CORREDERA' &&
-                                            prodCarr[m][1]['mensaje'] != '3 PUERTAS CORREDERA'
-                                        ) {
-                                            if (screen.width >= 800) {
-                                                for (let ve = 0; ve <= 100005; ve++) {
-                                                    if (ve == 100005) {
-                                                        puertas = {
-                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                            presupuestoArmario: presupuestoArmario,
-                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                            orden: x,
-                                                            terminacion: terminacionpuerta
-                                                        };
-
-                                                        this.subscribeToSaveResponse1(
-                                                            this.presupuestoArmarioPuertasService.create(puertas)
-                                                        );
-                                                    }
-                                                }
-                                            }
-
-                                            if (screen.width < 800) {
-                                                for (let ve = 0; ve <= 100005; ve++) {
-                                                    if (ve == 100005) {
-                                                        puertas = {
-                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                            presupuestoArmario: presupuestoArmario,
-                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                            acabados: prodCarr[m][1]['puertas'][x]['acabado0'],
-                                                            orden: x,
-                                                            terminacion: terminacionpuerta
-                                                        };
-
-                                                        this.subscribeToSaveResponse1(
-                                                            this.presupuestoArmarioPuertasService.create(puertas)
-                                                        );
-                                                    }
-                                                }
-                                            }
-                                        } else {
-                                            if (screen.width >= 800) {
-                                                for (let ve = 0; ve <= 100005; ve++) {
-                                                    if (ve == 100005) {
-                                                        puertas = {
-                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                            presupuestoArmario: presupuestoArmario,
-                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                            orden: x,
-                                                            terminacion: terminacionpuerta
-                                                        };
-
-                                                        this.subscribeToSaveResponse1(
-                                                            this.presupuestoArmarioPuertasService.create(puertas)
-                                                        );
-                                                    }
-                                                }
-                                            }
-
-                                            if (screen.width < 800) {
-                                                for (let ve = 0; ve <= 100005; ve++) {
-                                                    if (ve == 100005) {
-                                                        puertas = {
-                                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                            presupuestoArmario: presupuestoArmario,
-                                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                            orden: x,
-                                                            terminacion: terminacionpuerta
-                                                        };
-
-                                                        this.subscribeToSaveResponse1(
-                                                            this.presupuestoArmarioPuertasService.create(puertas)
-                                                        );
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    } else {
-                                        for (let ve = 0; ve <= 100005; ve++) {
-                                            if (ve == 100005) {
-                                                var terminacionpuerta = '';
-                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
-                                                    terminacionpuerta = 'B 2 plafones';
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-                                                }
-                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales') {
-                                                    terminacionpuerta = 'E 2 pla. vert. izq';
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-                                                }
-                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales DER') {
-                                                    terminacionpuerta = 'H 2 pla. vert. dch.';
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-                                                }
-
-                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
-                                                    terminacionpuerta = 'C 3 plafones';
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
-                                                        acabados2: prodCarr[m][1]['acabado2Puerta' + x],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-                                                }
-
-                                                if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
-                                                    terminacionpuerta = 'D 5 plafones';
-                                                    puertas = {
-                                                        precio: prodCarr[m][1]['puertas'][x]['precio'],
-                                                        presupuestoArmario: presupuestoArmario,
-                                                        productosDormitorio: prodCarr[m][1]['puertas'][x],
-                                                        acabados: prodCarr[m][1]['acabado0Puerta' + x],
-                                                        acabados1: prodCarr[m][1]['acabado1Puerta' + x],
-                                                        acabados2: prodCarr[m][1]['acabado2Puerta' + x],
-                                                        acabados3: prodCarr[m][1]['acabado3Puerta' + x],
-                                                        acabados4: prodCarr[m][1]['acabado4Puerta' + x],
-                                                        orden: x,
-                                                        terminacion: terminacionpuerta
-                                                    };
-                                                }
-
-                                                this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
-                                            }
-                                        }
+                        } else {
+                            for (let ve = 0; ve <= 100005; ve++) {
+                                if (ve == 100005) {
+                                    var terminacionpuerta = '';
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones') {
+                                        terminacionpuerta = 'B 2 plafones';
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                            acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                            orden: x,
+                                            terminacion: terminacionpuerta
+                                        };
                                     }
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales') {
+                                        terminacionpuerta = 'E 2 pla. vert. izq';
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                            acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                            orden: x,
+                                            terminacion: terminacionpuerta
+                                        };
+                                    }
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 2 Plafones Verticales DER') {
+                                        terminacionpuerta = 'H 2 pla. vert. dch.';
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                            acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                            orden: x,
+                                            terminacion: terminacionpuerta
+                                        };
+                                    }
+
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 3 Plafones') {
+                                        terminacionpuerta = 'C 3 plafones';
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                            acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                            acabados2: prodCarr[m][1]['acabado2Puerta' + x],
+                                            orden: x,
+                                            terminacion: terminacionpuerta
+                                        };
+                                    }
+
+                                    if (prodCarr[m][1]['puertas'][x]['nombre'] == 'Puerta 5 Plafones') {
+                                        terminacionpuerta = 'D 5 plafones';
+                                        puertas = {
+                                            precio: prodCarr[m][1]['puertas'][x]['precio'],
+                                            presupuestoArmario: presupuestoArmario,
+                                            productosDormitorio: prodCarr[m][1]['puertas'][x],
+                                            acabados: prodCarr[m][1]['acabado0Puerta' + x],
+                                            acabados1: prodCarr[m][1]['acabado1Puerta' + x],
+                                            acabados2: prodCarr[m][1]['acabado2Puerta' + x],
+                                            acabados3: prodCarr[m][1]['acabado3Puerta' + x],
+                                            acabados4: prodCarr[m][1]['acabado4Puerta' + x],
+                                            orden: x,
+                                            terminacion: terminacionpuerta
+                                        };
+                                    }
+
+                                    this.subscribeToSaveResponse1(this.presupuestoArmarioPuertasService.create(puertas));
                                 }
                             }
+                        }
+                    }
+                }
 
-                            for (let h = 0; h < data.body.length; h++) {
+                /**  for (let h = 0; h < data.body.length; h++) {
                                 if (h == 0) {
                                     var prod = data.body[h];
                                 }
@@ -13600,26 +13595,24 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     prod = data.body[h];
                                 }
                             }
-                        }
-                    }
-                    this.presupuestoPedidoService.query1().subscribe(data => {
-                        var id = data.body;
-                        sessionStorage.setItem('presupuesto', '' + id);
-                        sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
-                        $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
-                        $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
-                        $('#todometerFondo').css({ display: 'none' });
-                        $('#todometerMensajeEnviado').css({ display: 'block' });
-                        this.productosDormitorioService.numeroCesta = 0;
-                        for (let i = 1; i <= 100; i++) {
-                            sessionStorage.removeItem('prod' + i);
-                        }
-
-                        alert('enviado');
-                    });
-                });
+                            **/
             }
         }
+        this.presupuestoPedidoService.query1().subscribe(data => {
+            var id = data.body;
+            sessionStorage.setItem('presupuesto', '' + id);
+            sessionStorage.setItem('vengoDe', 'pruebaaaaaa');
+            $('.modal-backdrop').remove(); //eliminamos el backdrop del modal
+            $('body').removeClass('modal-open'); //eliminamos la clase del body para poder hacer scroll
+            $('#todometerFondo').css({ display: 'none' });
+            $('#todometerMensajeEnviado').css({ display: 'block' });
+            this.productosDormitorioService.numeroCesta = 0;
+            for (let i = 1; i <= 100; i++) {
+                sessionStorage.removeItem('prod' + i);
+            }
+
+            alert('enviado');
+        });
     }
 
     protected onSaveSuccess4() {
@@ -13705,12 +13698,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             if (qw == 5) {
                                 hueco = 'Hueco F: ';
                             }
-                            if (prodCarr[m][1]['interiores'][qw]['adicionales'] != undefined) {
-                                for (let me = 0; me < prodCarr[m][1]['interiores'][qw]['adicionales'].length; me++) {
-                                    if (me != 0) {
-                                        obserInt = obserInt + ' + ' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
-                                    } else {
-                                        obserInt = hueco + '' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
+                            if (prodCarr[m][1]['interiores'][qw] != undefined) {
+                                if (prodCarr[m][1]['interiores'][qw]['adicionales'] != undefined) {
+                                    for (let me = 0; me < prodCarr[m][1]['interiores'][qw]['adicionales'].length; me++) {
+                                        if (me != 0) {
+                                            obserInt = obserInt + ' + ' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
+                                        } else {
+                                            obserInt = hueco + '' + prodCarr[m][1]['interiores'][qw]['adicionales'][me];
+                                        }
                                     }
                                 }
                             }

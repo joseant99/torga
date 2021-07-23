@@ -121,6 +121,7 @@ public class CacheConfiguration {
             cm.createCache(com.torga.pedidos.domain.Coordenadas.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.Exposicion.class.getName() , jcacheConfiguration);
             cm.createCache(com.torga.pedidos.domain.ImagenDeCestaProd.class.getName() , jcacheConfiguration);
+            cm.createCache(com.torga.pedidos.domain.InteriorArmarioMedida.class.getName() , jcacheConfiguration);
         };
     } 
 }

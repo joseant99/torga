@@ -186,6 +186,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     objetoCamiseroArray4: any;
     objetoTodoArray: any;
     arrayhuecoEstantesCristal: any;
+    arrayHueco0Rango: any;
+    arrayHueco1Rango: any;
+    arrayHueco2Rango: any;
+    arrayHueco3Rango: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -276,6 +280,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         setTimeout(function() {
             $('#page-heading').css({ display: 'none' });
         }, 1000);
+    }
+
+    public enviarCarritoInterioresJSON() {
+        this.armariosDormitorioComponent.interioresNuevosJSON = this.objetoTodoArray;
+        this.armariosDormitorioComponent.enviarCarrito();
     }
 
     public acabadoInterioresArmarioApi(nombre) {
@@ -554,31 +563,39 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var tubos = this.arrayTubo1;
         var cajones = this.objetoCajonesArray1;
         var estantesCristal = this.arrayhuecoEstantesCristal;
-
+        var camisero = this.objetoCamiseroArray1;
         for (let i = 0; i < interiores.length; i++) {
             if (interiores[i]['nombre'] == id) {
                 if (id == 1) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 1710;
+                        obj1['altura'] = 1710 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
+                        obj1['array'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
+                        obj2['array'] = 1;
                         obj2['posicionShape'] = 0 + tubos.length;
                     } else {
                         obj1['posicion'] = 1950;
+                        obj1['altura'] = 1950 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
+                        obj1['array'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
+                        obj1['array'] = 1;
                         obj2['posicionShape'] = 0 + tubos.length;
                     }
                 }
@@ -586,11 +603,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 90) / 2;
                         obj1['interior'] = hueco - 1;
+                        obj1['altura'] = (alturaValor - 90) / 2 + 30;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj2['altura'] = (alturaValor - 90) / 2 - 50 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
@@ -600,11 +619,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     } else {
                         obj1['posicion'] = (alturaValor - 90) / 2;
                         obj1['interior'] = hueco - 1;
+                        obj1['altura'] = (alturaValor - 90) / 2 + 30;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj2['altura'] = (alturaValor - 90) / 2 - 50 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
@@ -616,35 +637,44 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 3) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
+                        obj1['array'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1710;
+                        obj2['altura'] = 1710 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
+                        obj2['array'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 1660;
+                        obj3['altura'] = 1660 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'tubo';
+                        obj3['array'] = 2;
                         obj3['posicionShape'] = 0 + tubos.length;
                     } else {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1750;
+                        obj2['altura'] = 1750 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
-                        obj3['posicion'] = 1900;
+                        obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'tubo';
                         obj3['posicionShape'] = 0 + tubos.length;
@@ -653,35 +683,48 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 4) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
+                        obj1['array'] = 0;
+                        obj1['tamano'] = 30;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1126;
+                        obj2['altura'] = 1126 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
+                        obj2['array'] = 1;
+                        obj2['tamano'] = 30;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['numero'] = 2;
+                        obj3['array'] = 2;
+                        obj3['tamano'] = 30;
                         obj3['posicionShape'] = 2 + estantes.length;
                     } else {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 1236;
+                        obj2['altura'] = 1236 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['posicionShape'] = 2 + estantes.length;
@@ -690,48 +733,56 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 5) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 918;
+                        obj2['altura'] = 918 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 1314;
+                        obj3['altura'] = 1314 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = 1710;
+                        obj4['altura'] = 1710 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
                         obj4['posicionShape'] = 3 + estantes.length;
                     } else {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = 998;
+                        obj2['altura'] = 988 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 1474;
+                        obj3['altura'] = 1474 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = 1950;
+                        obj4['altura'] = 1950 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
@@ -741,59 +792,69 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 6) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = alturaValor / 2 - 15;
+                        obj1['altura'] = alturaValor / 2 - 15 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (5 * alturaValor - 180) / 8;
+                        obj2['altura'] = (5 * alturaValor - 180) / 8 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 0.75 * (alturaValor - 30);
+                        obj3['altura'] = 0.75 * (alturaValor - 30) + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (7 * alturaValor - 210) / 8;
+                        obj4['altura'] = (7 * alturaValor - 210) / 8 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
                         obj4['posicionShape'] = 3 + estantes.length;
 
                         obj5['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj5['altura'] = (alturaValor - 90) / 2 - 50 + 30;
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'tubo';
                         obj5['posicionShape'] = 0 + tubos.length;
                     } else {
                         obj1['posicion'] = alturaValor / 2 - 15;
+                        obj1['altura'] = alturaValor / 2 - 15 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (5 * alturaValor - 180) / 8;
+                        obj2['altura'] = (5 * alturaValor - 180) / 8 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = 0.75 * (alturaValor - 30);
+                        obj3['altura'] = 0.75 * (alturaValor - 30) + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (7 * alturaValor - 210) / 8;
+                        obj4['altura'] = (7 * alturaValor - 210) / 8 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
                         obj4['posicionShape'] = 3 + estantes.length;
 
                         obj5['posicion'] = (alturaValor - 90) / 2 - 50;
+                        obj5['altura'] = (alturaValor - 90) / 2 - 50 + 30;
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'tubo';
                         obj5['posicionShape'] = 0 + tubos.length;
@@ -802,24 +863,28 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 7) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 30) / 8;
+                        obj1['altura'] = (alturaValor - 30) / 8 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 30) / 4;
+                        obj2['altura'] = (alturaValor - 30) / 4 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = (3 / 8) * (alturaValor - 30);
+                        obj3['altura'] = (3 / 8) * (alturaValor - 30) + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (alturaValor - 30) / 2;
+                        obj4['altura'] = (alturaValor - 30) / 2 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
@@ -829,24 +894,28 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj5['tipo'] = 'hang';
                     } else {
                         obj1['posicion'] = (alturaValor - 30) / 8;
+                        obj1['altura'] = (alturaValor - 30) / 8 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 30) / 4;
+                        obj2['altura'] = (alturaValor - 30) / 4 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = (3 / 8) * (alturaValor - 30);
+                        obj3['altura'] = (3 / 8) * (alturaValor - 30) + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (alturaValor - 30) / 2;
+                        obj4['altura'] = (alturaValor - 30) / 2 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
@@ -859,60 +928,70 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 8) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 30) / 6;
+                        obj1['altura'] = (alturaValor - 30) / 6 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 30) / 3;
+                        obj2['altura'] = (alturaValor - 30) / 3 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = (alturaValor - 30) / 2;
+                        obj3['altura'] = (alturaValor - 30) / 2 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (2 / 3) * (alturaValor - 30);
+                        obj4['altura'] = (2 / 3) * (alturaValor - 30) + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
                         obj4['posicionShape'] = 3 + estantes.length;
 
                         obj5['posicion'] = (5 / 6) * (alturaValor - 30);
+                        obj5['altura'] = (5 / 6) * (alturaValor - 30) + 30;
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'estante';
                         obj5['numero'] = 4;
                         obj5['posicionShape'] = 4 + estantes.length;
                     } else {
                         obj1['posicion'] = (alturaValor - 30) / 6;
+                        obj1['altura'] = (alturaValor - 30) / 6 + 30;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estante';
                         obj1['numero'] = 0;
                         obj1['posicionShape'] = 0 + estantes.length;
 
                         obj2['posicion'] = (alturaValor - 30) / 3;
+                        obj2['altura'] = (alturaValor - 30) / 3 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estante';
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
                         obj3['posicion'] = (alturaValor - 30) / 2;
+                        obj3['altura'] = (alturaValor - 30) / 2 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 2;
                         obj3['posicionShape'] = 2 + estantes.length;
 
                         obj4['posicion'] = (2 / 3) * (alturaValor - 30);
+                        obj4['altura'] = (2 / 3) * (alturaValor - 30) + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 3;
                         obj4['posicionShape'] = 3 + estantes.length;
 
                         obj5['posicion'] = (5 / 6) * (alturaValor - 30);
+                        obj5['altura'] = (5 / 6) * (alturaValor - 30) + 30;
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'estante';
                         obj5['numero'] = 4;
@@ -922,34 +1001,40 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 9) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 694;
+                        obj1['altura'] = 694 + 242;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 1;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
                     } else {
                         obj1['posicion'] = 694;
+                        obj1['altura'] = 694 + 242;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 1;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
@@ -959,34 +1044,40 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 10) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 410;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
                     } else {
                         obj1['posicion'] = 522;
+                        obj1['altura'] = 522 + 410;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1960;
+                        obj3['altura'] = 1960 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
@@ -996,34 +1087,40 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 11) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
                     } else {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1960;
+                        obj3['altura'] = 1960 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
@@ -1033,46 +1130,54 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 12) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 730;
+                        obj4['altura'] = 730 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 1;
                         obj4['posicionShape'] = 1 + estantes.length;
                     } else {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 730;
+                        obj4['altura'] = 730 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 1;
@@ -1082,46 +1187,54 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 13) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 556;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 3;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 932;
+                        obj4['altura'] = 932 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 1;
                         obj4['posicionShape'] = 1 + estantes.length;
                     } else {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 556;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 3;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 932;
+                        obj4['altura'] = 932 + 30;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estante';
                         obj4['numero'] = 1;
@@ -1131,34 +1244,40 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 14) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 724;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 4;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
                     } else {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 724;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 4;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
@@ -1170,51 +1289,63 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
+                        obj1['altura'] = 380;
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1710;
+                        obj3['altura'] = 1710 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
+                        obj3['altura'] = 1710 + 30;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 380;
+                        obj4['altura'] = 380 + 450;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'camisero';
                         obj4['cantidad'] = 3;
+                        obj4['posicionShape'] = 0 + camisero.length;
                     } else {
                         obj1['posicion'] = 0;
+                        obj1['altura'] = 380;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'cajones';
                         obj1['cantidad'] = 2;
                         obj1['posicionShape'] = 0 + cajones.length;
 
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
 
                         obj3['posicion'] = 1950;
+                        obj3['altura'] = 1950 + 30;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
                         obj4['posicion'] = 380;
+                        obj4['altura'] = 380 + 450;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'camisero';
                         obj4['cantidad'] = 3;
+                        obj4['posicionShape'] = 0 + camisero.length;
                     }
                 }
                 if (id == 16) {
                     if (alturaValor < 2250) {
                         obj2['posicion'] = 1660;
+                        obj2['altura'] = 1660 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
@@ -1222,15 +1353,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['posicion'] = 1710;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
+                        obj3['altura'] = 1710 + 30;
                         obj3['numero'] = 0;
                         obj3['posicionShape'] = 0 + estantes.length;
 
-                        obj1['posicion'] = 380;
+                        obj1['posicion'] = 0;
                         obj1['interior'] = hueco - 1;
+                        obj1['altura'] = 0 + 450;
                         obj1['tipo'] = 'camisero';
                         obj1['cantidad'] = 3;
+                        obj1['posicionShape'] = 0 + camisero.length;
                     } else {
                         obj2['posicion'] = 1900;
+                        obj2['altura'] = 1900 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'tubo';
                         obj2['posicionShape'] = 0 + tubos.length;
@@ -1239,48 +1374,57 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estante';
                         obj3['numero'] = 0;
+                        obj3['altura'] = 1950 + 30;
                         obj3['posicionShape'] = 0 + estantes.length;
 
-                        obj1['posicion'] = 380;
+                        obj1['posicion'] = 0;
+                        obj1['altura'] = 0 + 450;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'camisero';
                         obj1['cantidad'] = 3;
+                        obj1['posicionShape'] = 0 + camisero.length;
                     }
                 }
 
                 if (id == 22) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 4;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 4 + 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
                         obj3['posicionShape'] = 2 + estantesCristal.length;
                     } else {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 4;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 4 + 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
@@ -1291,18 +1435,21 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (id == 23) {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 5;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 5 + 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
@@ -1310,29 +1457,34 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
                         obj4['posicion'] = obj1['posicion'] * 4 + 6;
                         obj4['interior'] = hueco - 1;
+                        obj4['altura'] = obj1['posicion'] * 4 + 6 + 8;
                         obj4['tipo'] = 'estantecristal';
                         obj4['puesto'] = 3;
                         obj4['posicionShape'] = 3 + estantesCristal.length;
                     } else {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 5;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 5 + 8;
                         obj1['interior'] = hueco - 1;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['interior'] = hueco - 1;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['interior'] = hueco - 1;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
                         obj3['posicionShape'] = 2 + estantesCristal.length;
 
                         obj4['posicion'] = obj1['posicion'] * 4 + 6;
+                        obj4['altura'] = obj1['posicion'] * 4 + 6 + 8;
                         obj4['interior'] = hueco - 1;
                         obj4['tipo'] = 'estantecristal';
                         obj4['puesto'] = 3;
@@ -1344,24 +1496,28 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (alturaValor < 2250) {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 6;
                         obj1['interior'] = hueco - 1;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 6 + 8;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
                         obj2['interior'] = hueco - 1;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
                         obj3['interior'] = hueco - 1;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
                         obj3['posicionShape'] = 2 + estantesCristal.length;
 
                         obj4['posicion'] = obj1['posicion'] * 4 + 6;
                         obj4['interior'] = hueco - 1;
+                        obj4['altura'] = obj1['posicion'] * 4 + 6 + 8;
                         obj4['tipo'] = 'estantecristal';
                         obj4['puesto'] = 3;
                         obj4['posicionShape'] = 3 + estantesCristal.length;
@@ -1369,35 +1525,41 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj5['posicion'] = obj1['posicion'] * 5 + 6;
                         obj5['interior'] = hueco - 1;
                         obj5['tipo'] = 'estantecristal';
+                        obj5['altura'] = obj1['posicion'] * 5 + 6 + 8;
                         obj5['puesto'] = 4;
                         obj5['posicionShape'] = 4 + estantesCristal.length;
                     } else {
                         obj1['posicion'] = (alturaValor - 30 - 18) / 6;
                         obj1['interior'] = hueco - 1;
+                        obj1['altura'] = (alturaValor - 30 - 18) / 6 + 8;
                         obj1['tipo'] = 'estantecristal';
                         obj1['puesto'] = 0;
                         obj1['posicionShape'] = 0 + estantesCristal.length;
 
                         obj2['posicion'] = obj1['posicion'] * 2 + 6;
                         obj2['interior'] = hueco - 1;
+                        obj2['altura'] = obj1['posicion'] * 2 + 6 + 8;
                         obj2['tipo'] = 'estantecristal';
                         obj2['puesto'] = 1;
                         obj2['posicionShape'] = 1 + estantesCristal.length;
 
                         obj3['posicion'] = obj1['posicion'] * 3 + 6;
                         obj3['interior'] = hueco - 1;
+                        obj3['altura'] = obj1['posicion'] * 3 + 6 + 8;
                         obj3['tipo'] = 'estantecristal';
                         obj3['puesto'] = 2;
                         obj3['posicionShape'] = 2 + estantesCristal.length;
 
                         obj4['posicion'] = obj1['posicion'] * 4 + 6;
                         obj4['interior'] = hueco - 1;
+                        obj4['altura'] = obj1['posicion'] * 4 + 6 + 8;
                         obj4['tipo'] = 'estantecristal';
                         obj4['puesto'] = 3;
                         obj4['posicionShape'] = 3 + estantesCristal.length;
 
                         obj5['posicion'] = obj1['posicion'] * 5 + 6;
                         obj5['interior'] = hueco - 1;
+                        obj5['altura'] = obj1['posicion'] * 5 + 6 + 8;
                         obj5['tipo'] = 'estantecristal';
                         obj5['puesto'] = 4;
                         obj5['posicionShape'] = 4 + estantesCristal.length;
@@ -1434,6 +1596,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (obj1['tipo'] == 'estantecristal') {
                 estantesCristal[estantesCristal.length] = obj1;
             }
+            if (obj1['tipo'] == 'camisero') {
+                camisero[camisero.length] = obj1;
+            }
         }
         if (obj2['interior'] != undefined) {
             if (obj2['tipo'] == 'estante') {
@@ -1447,6 +1612,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             if (obj2['tipo'] == 'estantecristal') {
                 estantesCristal[estantesCristal.length] = obj2;
+            }
+            if (obj2['tipo'] == 'camisero') {
+                camisero[camisero.length] = obj2;
             }
         }
         if (obj3['interior'] != undefined) {
@@ -1462,6 +1630,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (obj3['tipo'] == 'estantecristal') {
                 estantesCristal[estantesCristal.length] = obj3;
             }
+            if (obj3['tipo'] == 'camisero') {
+                camisero[camisero.length] = obj3;
+            }
         }
         if (obj4['interior'] != undefined) {
             if (obj4['tipo'] == 'estante') {
@@ -1475,6 +1646,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             }
             if (obj4['tipo'] == 'estantecristal') {
                 estantesCristal[estantesCristal.length] = obj4;
+            }
+            if (obj4['tipo'] == 'camisero') {
+                camisero[camisero.length] = obj4;
             }
         }
         if (obj5['interior'] != undefined) {
@@ -1490,11 +1664,15 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (obj5['tipo'] == 'estantecristal') {
                 estantesCristal[estantesCristal.length] = obj5;
             }
+            if (obj5['tipo'] == 'camisero') {
+                camisero[camisero.length] = obj5;
+            }
         }
         this.arrayhuecoEstantes1 = estantes;
         this.arrayTubo1 = tubos;
         this.objetoCajonesArray1 = cajones;
         this.arrayhuecoEstantesCristal = estantesCristal;
+        this.objetoCamiseroArray1 = camisero;
         //if (hueco == 1) {
         if (objetoTodoArray.length > 0) {
             for (let k = 0; k < objetoTodoArray.length; k++) {
@@ -1617,26 +1795,26 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                                 '<input onclick="camiseroFuncionMover(' +
                                                     (hueco - 1) +
                                                     ',' +
-                                                    (contadorhueco1 + 1) +
+                                                    o +
+                                                    ',' +
+                                                    objetoTodoArray[o]['posicionShape'] +
                                                     ',' +
                                                     v +
                                                     ')" type="radio" id="inputradioCamisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorhueco1 + 1) +
+                                                    o +
                                                     '' +
                                                     v +
                                                     '" style="margin-left:50px" name="camisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorhueco1 + 1) +
+                                                    objetoTodoArray[v]['posicionShape'] +
                                                     '">'
                                             );
                                             if (v == 0) {
-                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorhueco1 + 1) + '' + v).prop(
-                                                    'checked',
-                                                    true
-                                                );
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).prop('checked', true);
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).attr('class', 'inputMarcado');
                                             }
                                             $(
                                                 '#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero'
@@ -1800,26 +1978,26 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                                 '<input onclick="camiseroFuncionMover(' +
                                                     (hueco - 1) +
                                                     ',' +
-                                                    (contadorEstWueToca + 1) +
+                                                    o +
+                                                    ',' +
+                                                    objetoTodoArray[o]['posicionShape'] +
                                                     ',' +
                                                     v +
                                                     ')" type="radio" id="inputradioCamisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    o +
                                                     '' +
                                                     v +
                                                     '" style="margin-left:50px" name="camisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    objetoTodoArray[v]['posicionShape'] +
                                                     '">'
                                             );
                                             if (v == 0) {
-                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
-                                                    'checked',
-                                                    true
-                                                );
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).prop('checked', true);
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).attr('class', 'inputMarcado');
                                             }
                                             $(
                                                 '#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .divButtonCamisero'
@@ -2003,26 +2181,26 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                                 '<input onclick="camiseroFuncionMover(' +
                                                     (hueco - 1) +
                                                     ',' +
-                                                    (contadorEstWueToca + 1) +
+                                                    o +
+                                                    ',' +
+                                                    objetoTodoArray[o]['posicionShape'] +
                                                     ',' +
                                                     v +
                                                     ')" type="radio" id="inputradioCamisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    o +
                                                     '' +
                                                     v +
                                                     '" style="margin-left:50px" name="camisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    objetoTodoArray[v]['posicionShape'] +
                                                     '">'
                                             );
                                             if (v == 0) {
-                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
-                                                    'checked',
-                                                    true
-                                                );
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).prop('checked', true);
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).attr('class', 'inputMarcado');
                                             }
                                             $(
                                                 '#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .divButtonCamisero'
@@ -2224,26 +2402,26 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                                 '<input onclick="camiseroFuncionMover(' +
                                                     (hueco - 1) +
                                                     ',' +
-                                                    (contadorEstWueToca + 1) +
+                                                    objetoTodoArray[v]['posicionShape'] +
+                                                    ',' +
+                                                    objetoTodoArray[o]['posicionShape'] +
                                                     ',' +
                                                     v +
                                                     ')" type="radio" id="inputradioCamisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    o +
                                                     '' +
                                                     v +
                                                     '" style="margin-left:50px" name="camisero' +
                                                     (hueco - 1) +
                                                     '' +
-                                                    (contadorEstWueToca + 1) +
+                                                    objetoTodoArray[v]['posicionShape'] +
                                                     '">'
                                             );
                                             if (v == 0) {
-                                                $('#inputradioCamisero' + (hueco - 1) + '' + (contadorEstWueToca + 1) + '' + v).prop(
-                                                    'checked',
-                                                    true
-                                                );
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).prop('checked', true);
+                                                $('#inputradioCamisero' + (hueco - 1) + '' + o + '' + v).attr('class', 'inputMarcado');
                                             }
                                             $(
                                                 '#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .divButtonCamisero'
@@ -2432,6 +2610,19 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     //interior medida
     public adcionaltipoFuncion(id) {
         var huecoPinta = this.armariosDormitorioComponent.huecoPinta;
+        var opciArr = [];
+        if (huecoPinta == 1) {
+            opciArr = this.arrayHueco0Rango;
+        }
+        if (huecoPinta == 2) {
+            opciArr = this.arrayHueco1Rango;
+        }
+        if (huecoPinta == 3) {
+            opciArr = this.arrayHueco2Rango;
+        }
+        if (huecoPinta == 4) {
+            opciArr = this.arrayHueco3Rango;
+        }
         var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
         var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
         var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
@@ -2455,22 +2646,26 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var tubos = this.arrayTubo1;
         var cajones = this.objetoCajonesArray1;
         var estantesCristal = this.arrayhuecoEstantesCristal;
+        var arrayIntMet = [];
+        var contArrayInt = 0;
 
         if (array.length > 0) {
             for (let i = 0; i < array.length; i++) {
+                if (array[i]['tipo'] == 'estante') {
+                    posicionEstante++;
+                }
+                if (array[i]['tipo'] == 'cajones') {
+                    posicionCajones++;
+                }
+                if (array[i]['tipo'] == 'estantecristal') {
+                    posicionEstanteCristal++;
+                }
                 if (huecoPinta == 1) {
                     if (array[i]['interior'] == 0) {
                         contDef++;
                     }
-                    if (array[i]['tipo'] == 'estante') {
-                        posicionEstante++;
-                    }
-                    if (array[i]['tipo'] == 'estantecristal') {
-                        posicionEstanteCristal++;
-                    }
-                    if (array[i]['tipo'] == 'cajones') {
-                        posicionCajones++;
-                    }
+                    arrayIntMet[contArrayInt] = array[i];
+                    contArrayInt++;
                 }
                 if (huecoPinta == 2) {
                     if (array[i]['interior'] == 1) {
@@ -2485,6 +2680,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (array[i]['tipo'] == 'cajones') {
                         posicionCajones++;
                     }
+                    arrayIntMet[contArrayInt] = array[i];
+                    contArrayInt++;
                 }
                 if (huecoPinta == 3) {
                     if (array[i]['interior'] == 2) {
@@ -2499,6 +2696,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (array[i]['tipo'] == 'cajones') {
                         posicionCajones++;
                     }
+                    arrayIntMet[contArrayInt] = array[i];
+                    contArrayInt++;
                 }
                 if (huecoPinta == 4) {
                     if (array[i]['interior'] == 3) {
@@ -2513,6 +2712,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (array[i]['tipo'] == 'cajones') {
                         posicionCajones++;
                     }
+                    arrayIntMet[contArrayInt] = array[i];
+                    contArrayInt++;
                 }
             }
 
@@ -2530,6 +2731,67 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
             }
         }
+        var tamano = 0;
+        if (id == 0) {
+            tamano = 30;
+        }
+        if (id == 1) {
+            tamano = 8;
+        }
+        if (id == 2) {
+            tamano = 30;
+        }
+        if (id == 3) {
+            tamano = 212;
+        }
+        if (id == 4) {
+            tamano = 242;
+        }
+        if (id == 5) {
+            tamano = 30;
+        }
+        if (id == 6) {
+            tamano = 30;
+        }
+        if (id == 7) {
+            tamano = 30;
+        }
+        if (id == 8) {
+            tamano = 30;
+        }
+        if (id == 9) {
+            tamano = 410;
+        }
+        if (id == 10) {
+            tamano = 586;
+        }
+
+        var alturaInt = 0;
+        var puestoEnArray = 0;
+        arrayIntMet.sort(function(a, b) {
+            return a.posicion - b.posicion;
+        });
+        if (arrayIntMet.length != 0) {
+            for (let q = 0; q < arrayIntMet.length; q++) {
+                if (arrayIntMet[0]['posicion'] > 0) {
+                    alturaInt = 0;
+                    puestoEnArray = 1;
+                } else {
+                    for (let y = 0; y < opciArr.length; y++) {
+                        if (q == y) {
+                            if (opciArr[y] >= tamano && puestoEnArray == 0) {
+                                alturaInt = arrayIntMet[q]['altura'];
+                                puestoEnArray = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            alturaInt = 0;
+            puestoEnArray = 1;
+        }
+
         if (id == 0) {
             precio = precio + 40;
             preciollamadogg = preciollamadogg + 40;
@@ -2548,12 +2810,39 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
                 'ESTANTE MADERA ADICIONAL'
             );
+
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
-            obj1['posicion'] = 1000;
+            obj1['posicion'] = alturaInt;
+            obj1['altura'] = alturaInt + 30;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'estante';
+            obj1['tamano'] = 30;
             obj1['numero'] = posicionEstante;
-            obj1['posicionShape'] = 0 + estantes.length;
+            obj1['posicionShape'] = posicionEstante;
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-bulletAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).text(obj1['posicion'] / 10);
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-range-lineAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).val(obj1['posicion'] / 10);
         }
         if (id == 1) {
             precio = precio + 50;
@@ -2574,8 +2863,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('50 PP');
 
-            obj1['posicion'] = 1000;
+            obj1['posicion'] = alturaInt;
             obj1['interior'] = huecoPinta - 1;
+            obj1['altura'] = alturaInt + 8;
+            obj1['tamano'] = 8;
             obj1['tipo'] = 'estantecristal';
             obj1['numero'] = posicionEstanteCristal;
             obj1['posicionShape'] = 0 + estantesCristal.length;
@@ -2598,7 +2889,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 'BARRA DE COLGAR ADICIONAL'
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
-            obj1['posicion'] = 1000;
+            obj1['posicion'] = alturaInt;
+            obj1['altura'] = alturaInt + 30;
+            obj1['tamano'] = 30;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'tubo';
             obj1['posicionShape'] = 0 + tubos.length;
@@ -2622,11 +2915,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             );
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
             obj1['posicion'] = 0;
+            obj1['altura'] = 212;
+            obj1['tamano'] = 212;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
             obj1['numero'] = posicionCajones;
-            obj1['posicionShape'] = 0 + cajones.length;
+            obj1['posicionShape'] = posicionCajones;
         }
         if (id == 4) {
             preciollamadogg = preciollamadogg + 90;
@@ -2644,12 +2939,38 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('1 CAJON SUSPENDIDO');
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('90 PP');
-            obj1['posicion'] = 1000;
+            obj1['posicion'] = alturaInt;
+            obj1['altura'] = alturaInt + 30 + 212;
+            obj1['tamano'] = 212 + 30;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
             obj1['numero'] = posicionCajones;
-            obj1['posicionShape'] = 0 + cajones.length;
+            obj1['posicionShape'] = posicionCajones;
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-bulletAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).text(obj1['posicion'] / 10);
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-range-lineAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).val(obj1['posicion'] / 10);
         }
         if (id == 5) {
             precio = precio + 48;
@@ -2792,9 +3113,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['tipo'] = 'hang';
         }
         if (id == 9) {
-            precio = precio + 80;
-            preciollamadogg = preciollamadogg + 80;
-            arraymeter = 'PANTALONERO EXTRAIBLE';
+            preciollamadogg = preciollamadogg + 180;
+            precio = precio + 180;
+            arraymeter = '2 CAJON SUSPENDIDO';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
                 display: 'block'
             });
@@ -2805,13 +3126,45 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 display: 'block'
             });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('PANTALONERO EXTRAIBLE');
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('80 PP');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('2 CAJON SUSPENDIDO');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('180 PP');
+            obj1['posicion'] = alturaInt;
+            obj1['altura'] = alturaInt + 30 + 380;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'cajones';
+            obj1['tamano'] = 380 + 30;
+            obj1['cantidad'] = 2;
+            obj1['numero'] = posicionCajones;
+            obj1['posicionShape'] = posicionCajones;
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-bulletAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).text(obj1['posicion'] / 10);
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-range-lineAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).val(obj1['posicion'] / 10);
         }
         if (id == 10) {
-            precio = precio + 80;
-            preciollamadogg = preciollamadogg + 80;
-            arraymeter = 'CORBATERO LATERAL EXTRAIBLE';
+            preciollamadogg = preciollamadogg + 270;
+            precio = precio + 270;
+            arraymeter = '3 CAJON SUSPENDIDO';
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' .divSliderAdi' + (cont + 1) + '' + (huecoPinta - 1)).css({
                 display: 'block'
             });
@@ -2822,10 +3175,40 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 display: 'block'
             });
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1)).css({ display: 'block' });
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text(
-                'CORBATERO LATERAL EXTRAIBLE'
-            );
-            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #' + (cont + 1) + ' #preciosolo').text('80 PP');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #textosolo').text('3 CAJON SUSPENDIDO');
+            $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('270 PP');
+            obj1['posicion'] = alturaInt;
+            obj1['altura'] = alturaInt + 30 + 556;
+            obj1['tamano'] = 556 + 30;
+            obj1['interior'] = huecoPinta - 1;
+            obj1['tipo'] = 'cajones';
+            obj1['cantidad'] = 3;
+            obj1['numero'] = posicionCajones;
+            obj1['posicionShape'] = posicionCajones;
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-bulletAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).text(obj1['posicion'] / 10);
+            $(
+                '#divAdicionalesInterior' +
+                    (huecoPinta - 1) +
+                    ' .divSliderAdi' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1) +
+                    ' #rs-range-lineAdicional' +
+                    (cont + 1) +
+                    '' +
+                    (huecoPinta - 1)
+            ).val(obj1['posicion'] / 10);
         }
         var cont = array.length;
         if (contCamiMet != 100) {
@@ -2860,6 +3243,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
         $('#precioDimension').text(precio);
         this.objetoTodoArray = array;
+        var arrayEsta = array;
         console.log(array);
         var objetoTODO = {};
         objetoTODO['interiores'] = array;
@@ -2868,6 +3252,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         $('#cliccambiarinteriores')[0].click();
 
         //antiguo adicional
+    }
+
+    public limitarModalAdicionales(id) {
+        this.cogerIDHueco(id);
+        $('#funcionLimAdicionales').attr('onclick', 'funcionParaLimitarAdi(' + id + ',' + JSON.stringify(this.objetoTodoArray) + ')');
+        $('#funcionLimAdicionales')[0].click();
     }
 
     public enviarInterioresArmarioCambioAltura() {
@@ -3271,10 +3661,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 1) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 2) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
                 }
             }
 
@@ -3303,10 +3699,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 0) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 1) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 2) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
@@ -3341,18 +3743,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 0) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 1) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 2) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 3) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
                 }
             }
         }
@@ -3387,10 +3801,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 1) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 2) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 3) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
@@ -3425,10 +3845,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 0) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 1) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 2) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
@@ -3437,10 +3863,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 if (idPuerta == 3) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
                 }
                 if (idPuerta == 4) {
                     $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                     $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
                 }
             }
 
@@ -3474,18 +3906,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                 }
             }
@@ -3516,18 +3960,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 0) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
@@ -3562,26 +4018,44 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 0) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                 }
             }
@@ -3616,18 +4090,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
@@ -3662,10 +4148,16 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 0) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
@@ -3674,18 +4166,30 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 6) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                        }
                     }
                 }
             }
@@ -3719,26 +4223,44 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 6) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                        }
                     }
                 }
             }
@@ -3769,26 +4291,44 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 0) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 6) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
@@ -3823,34 +4363,58 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     if (idPuerta == 0) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 1) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 2) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 3) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 4) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 5) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 6) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta7').css({ border: '3px solid #47D54E' });
+                        }
                     }
                     if (idPuerta == 7) {
                         $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
                         $('#estoParaLaPuertaArmario')[0].click();
+                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                        }
                     }
                 }
             }
@@ -5265,6 +5829,22 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 this.estantModu = yes;
             }
         });
+    }
+
+    public enviarTamanoArraySec() {
+        var clase = JSON.parse($('#paradevolveryguardartam').attr('class'));
+        if (this.huecoPinta == 1) {
+            this.arrayHueco0Rango = clase;
+        }
+        if (this.huecoPinta == 2) {
+            this.arrayHueco1Rango = clase;
+        }
+        if (this.huecoPinta == 3) {
+            this.arrayHueco2Rango = clase;
+        }
+        if (this.huecoPinta == 4) {
+            this.arrayHueco3Rango = clase;
+        }
     }
 
     public elegirBusqueda(id) {
@@ -39295,7 +39875,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         this.objetoCajonesSueloArray2 = {};
         this.objetoCajonesSueloArray3 = {};
         this.objetoCajonesSueloArray4 = {};
-        this.objetoCamiseroArray1 = {};
+        this.objetoCamiseroArray1 = [];
         this.objetoCamiseroArray2 = {};
         this.objetoCamiseroArray3 = {};
         this.objetoCamiseroArray4 = {};

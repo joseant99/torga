@@ -1,0 +1,55 @@
+{
+    "torgaPedidosApp": {
+        "interiorArmarioMedida": {
+            "home": {
+                "title": "Interior Armario Medidas",
+                "createLabel": "Crear nuevo Interior Armario Medida",
+                "createOrEditLabel": "Crear o editar Interior Armario Medida"
+            },
+            "created": "Un nuevo Interior Armario Medida ha sido creado con el identificador {{ param }}",
+            "updated": "Un Interior Armario Medida ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Interior Armario Medida ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Interior Armario Medida {{ id }}?"
+            },
+            "detail": {
+                "title": "Interior Armario Medida"
+            },
+            "numeroHueco": "Numero Hueco",
+            "est1": "Est 1",
+            "est2": "Est 2",
+            "est3": "Est 3",
+            "est4": "Est 4",
+            "est5": "Est 5",
+            "est6": "Est 6",
+            "est7": "Est 7",
+            "est8": "Est 8",
+            "est9": "Est 9",
+            "est10": "Est 10",
+            "tubo1": "Tubo 1",
+            "tubo2": "Tubo 2",
+            "tubo3": "Tubo 3",
+            "cajSue1": "Caj Sue 1",
+            "cajSue2": "Caj Sue 2",
+            "cajSue3": "Caj Sue 3",
+            "cajSue4": "Caj Sue 4",
+            "cajSue5": "Caj Sue 5",
+            "hang": "Hang",
+            "camisero": "Camisero",
+            "estCris1": "Est Cris 1",
+            "estCris2": "Est Cris 2",
+            "estCris3": "Est Cris 3",
+            "estCris4": "Est Cris 4",
+            "estCris5": "Est Cris 5",
+            "estCris6": "Est Cris 6",
+            "estCris7": "Est Cris 7",
+            "estCris8": "Est Cris 8",
+            "estCris9": "Est Cris 9",
+            "estCris10": "Est Cris 10",
+            "cajonVol1": "Cajon Vol 1",
+            "cajonVol2": "Cajon Vol 2",
+            "cajonVol3": "Cajon Vol 3",
+            "presupuestoArmario": "Presupuesto Armario"
+        }
+    }
+}

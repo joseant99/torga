@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity InteriorArmarioMedida.
+    -->
+    <changeSet id="20210722061656-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="presupuesto_armario_id"
+                                 baseTableName="interior_armario_medida"
+                                 constraintName="fk_interior_armario_medida_presupuesto_armario_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="presupuesto_armario"/>
+
+    </changeSet>
+</databaseChangeLog>

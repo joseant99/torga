@@ -78,6 +78,7 @@
                 "coordenadas": "Coordenadas",
                 "exposicion": "Exposicion",
                 "imagenDeCestaProd": "Imagen De Cesta Prod",
+                "interiorArmarioMedida": "Interior Armario Medida",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

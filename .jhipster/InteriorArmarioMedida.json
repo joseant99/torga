@@ -1,0 +1,157 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "presupuestoArmario",
+            "otherEntityName": "presupuestoArmario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "numeroHueco",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est6",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est7",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est8",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est9",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "est10",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tubo1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tubo2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tubo3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajSue1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajSue2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajSue3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajSue4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajSue5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "hang",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "camisero",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris3",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris4",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris5",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris6",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris7",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris8",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris9",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estCris10",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajonVol1",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajonVol2",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "cajonVol3",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20210722061656",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "interior_armario_medida",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}
