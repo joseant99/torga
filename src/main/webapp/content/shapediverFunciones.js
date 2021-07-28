@@ -33,6 +33,7 @@ function imagenGirarParaCarro(){
 function funcionParaLimitarAdi(id,interiores){
 	
 	var arrayEsta = interiores;
+	var hayCamisero = 0;
 	if(arrayEsta.length != 0){
     	var int = [];
     	var contInt = 0;
@@ -40,6 +41,9 @@ function funcionParaLimitarAdi(id,interiores){
     		if( (id - 1) == arrayEsta[i]["interior"]){
     			int[contInt] = arrayEsta[i];
     			contInt++;
+    			if(arrayEsta[i]["tipo"] == "camisero"){
+    				hayCamisero = 1;
+    			}
     		}
     	}
     	var minArm = 0;
@@ -94,8 +98,13 @@ function funcionParaLimitarAdi(id,interiores){
 		$(".adicionalEstanteMadera").css({"display":"none"});
 		$(".adicionalTubo").css({"display":"none"});
 		$(".adicional1CajonSuelo").css({"display":"none"});
+		$(".adicional2CajonSuelo").css({"display":"none"});
+		$(".adicional3CajonSuelo").css({"display":"none"});
+		$(".adicional4CajonSuelo").css({"display":"none"});
+		$(".adicional5CajonSuelo").css({"display":"none"});
 		$(".adicional1CajonVol").css({"display":"none"});
 		$(".adicionalCamisero2").css({"display":"none"});
+		$(".adicionalCamisero4").css({"display":"none"});
 		$(".adicional2CajonVol").css({"display":"none"});
 		$(".adicionalCamisero3").css({"display":"none"});
 		$(".adicional3CajonVol").css({"display":"none"});
@@ -106,19 +115,68 @@ function funcionParaLimitarAdi(id,interiores){
 					$(".adicionalEstanteMadera").css({"display":"block"});
 					$(".adicionalTubo").css({"display":"block"});
 					if(arrayTamanos[k] >= 212){
-						$(".adicional1CajonSuelo").css({"display":"block"});
+						if(int.length > 0){
+							if(int[0]["posicion"] != 0){
+								$(".adicional1CajonSuelo").css({"display":"block"});
+							}
+						}else{
+							$(".adicional1CajonSuelo").css({"display":"block"});
+						}
+						
 						if(arrayTamanos[k] >= 242){
 							$(".adicional1CajonVol").css({"display":"block"});
 							if(arrayTamanos[k] >= 300){
-								$(".adicionalCamisero2").css({"display":"block"});
+								if(hayCamisero == 0){
+									$(".adicionalCamisero2").css({"display":"block"});
+								}
 								if(arrayTamanos[k] >= 380){
+									if(int.length > 0){
+										if(int[0]["posicion"] != 0){
+											$(".adicional2CajonSuelo").css({"display":"block"});
+										}
+									}else{
+										$(".adicional2CajonSuelo").css({"display":"block"});
+									}
 									if(arrayTamanos[k] >= 410){
 										$(".adicional2CajonVol").css({"display":"block"});
 										if(arrayTamanos[k] >= 450){
-											$(".adicionalCamisero3").css({"display":"block"});
+											if(hayCamisero == 0){
+												$(".adicionalCamisero3").css({"display":"block"});
+											}
 											if(arrayTamanos[k] >= 556){
+												if(int.length > 0){
+													if(int[0]["posicion"] != 0){
+														$(".adicional3CajonSuelo").css({"display":"block"});
+													}
+												}else{
+													$(".adicional3CajonSuelo").css({"display":"block"});
+												}
 												if(arrayTamanos[k] >= 586){
 													$(".adicional3CajonVol").css({"display":"block"});
+													if(arrayTamanos[k] >= 600){
+														if(hayCamisero == 0){
+															$(".adicionalCamisero4").css({"display":"block"});
+														}
+														if(arrayTamanos[k] >= 724){
+															if(int.length > 0){
+																if(int[0]["posicion"] != 0){
+																	$(".adicional4CajonSuelo").css({"display":"block"});
+																}
+															}else{
+																$(".adicional4CajonSuelo").css({"display":"block"});
+															}
+															if(arrayTamanos[k] >= 900){
+																if(int.length > 0){
+																	if(int[0]["posicion"] != 0){
+																		$(".adicional5CajonSuelo").css({"display":"block"});
+																	}
+																}else{
+																	$(".adicional5CajonSuelo").css({"display":"block"});
+																}
+															}
+														}
+													}
+													
 												}
 											}
 										}
@@ -3457,7 +3515,7 @@ function interioresNuevoJson(obj){
 	    			  var dominios = [];
 	    			  var contDom = 0;
 	    			  var alturaFin = 0;
-	    			  for(let x = 0;x<hueco0.length;x++){
+	    			 /** for(let x = 0;x<hueco0.length;x++){
 	    				  dominios[contDom] = [];
 	    				  dominios[contDom]["inicio"] = alturaFin;
 	    				  if(x != (hueco0.length - 1)){
@@ -3477,6 +3535,7 @@ function interioresNuevoJson(obj){
 	    				  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("min",Math.round(dominios[w]["inicio"] / 10));
 						  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("max",Math.round(dominios[w]["final"] / 10));
 	    			  }
+	    			  **/
 	    			  window.dominios0 = dominios;
 	    			  window.numeroDominioPuesto0 = numeroDominioPuesto;
 	    			// var intervalo = setInterval(function(){
@@ -3886,73 +3945,14 @@ function interioresNuevoJson(obj){
 		etiqueta.innerHTML = (rangeSliderAdicional1.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional1.value >= 190){
-			etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional1.value >= 180){
-				etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional1.value >= 170){
-					etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional1.value >= 160){
-						etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional1.value >= 150){
-							etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional1.value >= 140){
-								etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional1.value >= 130){
-									etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional1.value >= 120){
-										etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional1.value >= 110){
-											etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional1.value >= 100){
-												etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional1.value >= 90){
-													etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional1.value >= 80){
-														etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional1.value >= 70){
-															etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional1.value >= 60){
-																etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional1.value >= 50){
-																	etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional1.value >= 40){
-																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (30))+"px";
-																	}else{
-																		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional1.max)
+		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value) * cuenta) - 10 )+"px";
 
 		rangeSliderAdicional1.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi10").text();
@@ -3969,12 +3969,12 @@ function interioresNuevoJson(obj){
 			  //   name: "puntosDimensiones"
 			//}).data[0].data;
 			
-			
-			var arr = window.arrayDeEstantesMet;
+			var calcu = (parseFloat(rangeSliderAdicional1.value) * 10) - (parseFloat(etihtml)*10);
+			/**var arr = window.arrayDeEstantesMet;
 			var arr1 = window.arrayDeEstantesMet;
 			var comienzoLinea = 0;
 			var finalLinea = 0;
-			  var calcu = (parseFloat(rangeSliderAdicional1.value) * 10) - (parseFloat(etihtml)*10);
+			  
 			  var dominios = window.dominios0;
 			  for(let t = 0;t<dominios.length;t++){
 				  if(dominios.length == 2){
@@ -3991,13 +3991,25 @@ function interioresNuevoJson(obj){
 			  for(let w = 0;w<dominios.length;w++){
 				  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("min",Math.round(dominios[w]["inicio"] / 10));
 				  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("max",Math.round(dominios[w]["final"] / 10));
-			  }
-			  window.dominios0 = dominios;
+			  } 
+			  window.dominios0 = dominios; **/
 			  if(arrayInt0[0]["tipo"] == "estante"){
 				  		
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-
+				  
+				  //HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<arrayInt0.length;a++){
+					  if(arrayInt0[a]["tipo"] == "camisero"){
+						  if(arrayInt0[0]["altura"] == arrayInt0[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = arrayInt0[a]["posicionShape"];
+						  }
+					  }
+				  }
+				  
 				  /**	for(let u = 0;u<dominios.length;u++){
 					
 						if(dominios[u]['start']["id"] == "ESTANTE_"+arrayInt0[0]['posicionShape']){
@@ -4075,11 +4087,24 @@ function interioresNuevoJson(obj){
 				  var lineDistances = [];
 				  objectLinea.data[0].content[0].data.threeObject.geometry.attributes.position.array[5] = parseFloat(rangeSliderAdicional1.value) * 10;
 				  api.scene.updatePersistentAsync([objectLinea.data[0]], 'CommPlugin_1');**/
-
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
+				  	if(hayCamisero == 0){
+				  		api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
 								         transformations: [
 								           {
 								             delay: 0,
@@ -4090,20 +4115,54 @@ function interioresNuevoJson(obj){
 								             repeat: 0
 								           }
 								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
-									         transformations: [
-									           {
-									             delay: 0,
-									             duration: 500,
-									             type: 'translation',
-									             easing: "Quartic.InOut",
-									             translationVector: { x: 0, y: 0, z: calcu },
-									             repeat: 0
-									           }
-									         ],reset:false
-									       }]);
+								       }]);
+				  	}
+				  	
+				  	if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+				  	}
+						  
 				  
 			  }
 			  
@@ -4126,25 +4185,24 @@ function interioresNuevoJson(obj){
 						       }]);
 			  }
 			  if(arrayInt0[0]["tipo"] == "cajones"){
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<arrayInt0.length;a++){
+					  if(arrayInt0[a]["tipo"] == "camisero"){
+						  if(arrayInt0[0]["altura"] == arrayInt0[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = arrayInt0[a]["posicionShape"];
+						  }
+					  }
+				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -4155,7 +4213,66 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+					  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+arrayInt0[0]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+arrayInt0[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+				  		
+				  }
+				  
 			  }
 			  
 			  if(arrayInt0[0]["tipo"] == "estantecristal"){
@@ -4184,7 +4301,16 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta.innerHTML =(rangeSliderAdicional1.value); 
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional1.value >= 190){
+		
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional1.max)
+		etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value) * cuenta) - 10 )+"px";
+		/*if(rangeSliderAdicional1.value >= 190){
 			etiqueta.style.left =  ((parseFloat(rangeSliderAdicional1.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional1.value >= 180){
@@ -4248,7 +4374,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -4272,6 +4398,16 @@ function interioresNuevoJson(obj){
 		etiqueta2.innerHTML = (rangeSliderAdicional2.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional2.max)
+		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value) * cuenta) - 10 )+"px";
+		
+		/**
 		if(rangeSliderAdicional2.value >= 190){
 			etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (90))+"px";
 		}else{
@@ -4338,7 +4474,7 @@ function interioresNuevoJson(obj){
 			}
 		}
 
-
+		 **/
 
 		rangeSliderAdicional2.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi20").text();
@@ -4347,7 +4483,7 @@ function interioresNuevoJson(obj){
 			
 			var contCaj = 0;
 			  var calcu = (parseFloat(rangeSliderAdicional2.value) * 10) - (parseFloat(etihtml)*10);
-			  var dominios = window.dominios0;
+			  /**var dominios = window.dominios0;
 			  for(let t = 0;t<dominios.length;t++){
 				  
 					  if(dominios[t]["array"] != 1){
@@ -4367,7 +4503,7 @@ function interioresNuevoJson(obj){
 				  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("min",Math.round(dominios[w]["inicio"] / 10));
 				  $("#rs-range-lineAdicional"+(dominios[w]["array"] + 1)+""+dominios[w]["interior"]).attr("max",Math.round(dominios[w]["final"] / 10));
 			  }
-			  window.dominios0 = dominios;
+			  window.dominios0 = dominios; **/
 			  if(window.obj["interiores"][0]["tipo"] == "cajones"){
 				  contCaj++;
 			  }
@@ -4379,10 +4515,21 @@ function interioresNuevoJson(obj){
 						cont1Hueco++;
 					}
 				}
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco1.length;a++){
+					  if(hueco1[a]["tipo"] == "camisero"){
+						  if(hueco1[1]["altura"] == hueco1[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco1[a]["posicionShape"];
+						  }
+					  }
+				  }
 			  if(hueco1[1]["tipo"] == "estante"){
 			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-			  	
+			  	if(hayCamisero == 0){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
@@ -4411,7 +4558,51 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
-					  
+			  	}
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco1[1]["tipo"] == "tubo"){
@@ -4435,7 +4626,8 @@ function interioresNuevoJson(obj){
 			  if(hueco1[1]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
+			  if(hayCamisero == 0){
+				  	api.scene.setLiveTransformation(
 						     [
 						       {
 						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
@@ -4463,6 +4655,51 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  		}
+			  	if(hayCamisero == 1){
+				  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[1]['posicionShape']],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[1]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       }]);
+			  		
+			  		}
 			  }
 			  if(hueco1[1]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -4488,8 +4725,16 @@ function interioresNuevoJson(obj){
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta2.innerHTML =(rangeSliderAdicional2.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional2.max)
+		etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value) * cuenta) - 10 )+"px";
+		
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional2.value >= 190){
+		/**if(rangeSliderAdicional2.value >= 190){
 			etiqueta2.style.left =  ((parseFloat(rangeSliderAdicional2.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional2.value >= 180){
@@ -4553,7 +4798,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -4575,9 +4820,16 @@ function interioresNuevoJson(obj){
 		var k = 260/(inputMax - inputMin);
 		/* el valor de la etiqueta (el tooltip) */
 		etiqueta3.innerHTML = (rangeSliderAdicional3.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional3.max)
+		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value) * cuenta) - 10 )+"px";
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional3.value >= 190){
+		/**if(rangeSliderAdicional3.value >= 190){
 			etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional3.value >= 180){
@@ -4641,7 +4893,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 
 
 
@@ -4659,11 +4911,20 @@ function interioresNuevoJson(obj){
 						cont1Hueco++;
 					}
 				}
-
+				var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco1.length;a++){
+					  if(hueco1[a]["tipo"] == "camisero"){
+						  if(hueco1[2]["altura"] == hueco1[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco1[a]["posicionShape"];
+						  }
+					  }
+				  }
 			  if(hueco1[2]["tipo"] == "estante"){
 			  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-
+			  		if(hayCamisero == 0){
 					  api.scene.setLiveTransformation(
 							     [
 							       {
@@ -4692,6 +4953,51 @@ function interioresNuevoJson(obj){
 								           }
 								         ],reset:false
 								       }]);
+			  				}
+					  if(hayCamisero == 1){
+					  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+					  		api.scene.setLiveTransformation(
+								     [
+								       {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+							  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+					  	}
 
 		  }
 		  if(hueco1[2]["tipo"] == "tubo"){
@@ -4716,7 +5022,8 @@ function interioresNuevoJson(obj){
 			  var contCaj = 0;
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-			  api.scene.setLiveTransformation(
+		  	if(hayCamisero == 0){
+			  	api.scene.setLiveTransformation(
 					     [
 					       {
 					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
@@ -4744,6 +5051,51 @@ function interioresNuevoJson(obj){
 						           }
 						         ],reset:false
 						       }]);
+		  		}
+		  		if(hayCamisero == 1){
+				  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[2]['posicionShape']],
+						         transformations: [
+						           {
+						             delay: 0,
+						             duration: 500,
+						             type: 'translation',
+						             easing: "Quartic.InOut",
+						             translationVector: { x: 0, y: 0, z: calcu },
+						             repeat: 0
+						           }
+						         ],reset:false
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[2]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       }]);
+			  		
+			  		}
 		  } 
 		  
 		  if(hueco1[2]["tipo"] == "estantecristal"){
@@ -4768,8 +5120,16 @@ function interioresNuevoJson(obj){
 		  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta3.innerHTML =(rangeSliderAdicional3.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional3.max)
+		etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value) * cuenta) - 10 )+"px";
+		
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional3.value >= 190){
+		/**if(rangeSliderAdicional3.value >= 190){
 			etiqueta3.style.left =  ((parseFloat(rangeSliderAdicional3.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional3.value >= 180){
@@ -4833,7 +5193,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -4857,7 +5217,7 @@ function interioresNuevoJson(obj){
 		etiqueta4.innerHTML = (rangeSliderAdicional4.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional4.value >= 190){
+		/**if(rangeSliderAdicional4.value >= 190){
 			etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional4.value >= 180){
@@ -4921,9 +5281,15 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 
- 
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional4.max)
+		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value) * cuenta) - 10 )+"px";
 
 		rangeSliderAdicional4.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi40").text();
@@ -4938,11 +5304,21 @@ function interioresNuevoJson(obj){
 						cont1Hueco++;
 					}
 				}
-
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco1.length;a++){
+					  if(hueco1[a]["tipo"] == "camisero"){
+						  if(hueco1[3]["altura"] == hueco1[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco1[a]["posicionShape"];
+						  }
+					  }
+				  }
 			  if(hueco1[3]["tipo"] == "estante"){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-
+				  		if(hayCamisero == 0){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
@@ -4971,6 +5347,51 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
+				  			}
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       }]);
+						  	}
 
 			  }
 			  if(hueco1[3]["tipo"] == "tubo"){
@@ -4995,7 +5416,8 @@ function interioresNuevoJson(obj){
 				  var contCaj = 0;
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
+			  	if(hayCamisero == 0){
+				  	api.scene.setLiveTransformation(
 						     [
 						       {
 						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
@@ -5023,6 +5445,51 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  		}
+			  		if(hayCamisero == 1){
+					  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[3]['posicionShape']],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[3]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+				  		
+				  		}
 			  }
 			  if(hueco1[3]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -5047,8 +5514,15 @@ function interioresNuevoJson(obj){
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta4.innerHTML =(rangeSliderAdicional4.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional4.max)
+		etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value) * cuenta) - 10 )+"px";
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional4.value >= 190){
+		/**if(rangeSliderAdicional4.value >= 190){
 			etiqueta4.style.left =  ((parseFloat(rangeSliderAdicional4.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional4.value >= 180){
@@ -5112,7 +5586,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -5134,9 +5608,16 @@ function interioresNuevoJson(obj){
 		var k = 260/(inputMax - inputMin);
 		/* el valor de la etiqueta (el tooltip) */
 		etiqueta5.innerHTML = (rangeSliderAdicional5.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional5.max)
+		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value) * cuenta) - 10 )+"px";
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional5.value >= 190){
+		/**if(rangeSliderAdicional5.value >= 190){
 			etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional5.value >= 180){
@@ -5200,7 +5681,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 
 
 
@@ -5217,11 +5698,21 @@ function interioresNuevoJson(obj){
 						cont1Hueco++;
 					}
 			}
-
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco1.length;a++){
+				  if(hueco1[a]["tipo"] == "camisero"){
+					  if(hueco1[4]["altura"] == hueco1[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco1[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  if(hueco1[4]["tipo"] == "estante"){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
-
+				  		if(hayCamisero == 0){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
@@ -5250,6 +5741,51 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
+			  				}
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       }]);
+						  	}
 
 			  }
 			  if(hueco1[4]["tipo"] == "tubo"){
@@ -5274,7 +5810,8 @@ function interioresNuevoJson(obj){
 				  var contCaj = 0;
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
+			  		if(hayCamisero == 0){
+			  			api.scene.setLiveTransformation(
 						     [
 						       {
 						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
@@ -5302,6 +5839,51 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  			}
+			  		if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco1[4]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco1[4]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+				  	}
 			  }
 			  if(hueco1[4]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -5326,8 +5908,15 @@ function interioresNuevoJson(obj){
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 		etiqueta5.innerHTML =(rangeSliderAdicional5.value);
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional5.max)
+		etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value) * cuenta) - 10 )+"px";
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional5.value >= 190){
+		/**if(rangeSliderAdicional5.value >= 190){
 			etiqueta5.style.left =  ((parseFloat(rangeSliderAdicional5.value)) + (90))+"px";
 		}else{
 			if(rangeSliderAdicional5.value >= 180){
@@ -5391,7 +5980,7 @@ function interioresNuevoJson(obj){
 					}
 				}
 			}
-		}
+		}**/
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -5416,73 +6005,14 @@ function interioresNuevoJson(obj){
 		etiqueta6.innerHTML = (rangeSliderAdicional6.value);
 		/* calcula la posición inicial de la etiqueta6 (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional6.value >= 190){
-			etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional6.value >= 180){
-				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional6.value >= 170){
-					etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional6.value >= 160){
-						etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional6.value >= 150){
-							etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional6.value >= 140){
-								etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional6.value >= 130){
-									etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional6.value >= 120){
-										etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional6.value >= 110){
-											etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional6.value >= 100){
-												etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional6.value >= 90){
-													etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional6.value >= 80){
-														etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional6.value >= 70){
-															etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional6.value >= 60){
-																etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional6.value >= 50){
-																	etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional6.value >= 40){
-																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (30))+"px";
-																	}else{
-																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
 		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional6.max)
+		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value) * cuenta) - 10 )+"px";
 
 		rangeSliderAdicional6.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi11").text();
@@ -5502,6 +6032,17 @@ function interioresNuevoJson(obj){
 					cont2Hueco++;
 				}
 			} 
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco2.length;a++){
+				  if(hueco2[a]["tipo"] == "camisero"){
+					  if(hueco2[0]["altura"] == hueco2[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco2[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional6.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[0]["tipo"] == "estante"){
 				  		
@@ -5510,7 +6051,8 @@ function interioresNuevoJson(obj){
 				  for(let i = 0;i<arr.length;i++){
 					  if(arr[i]["interior"] == 1 && yaPuesto == 0){
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
 								     [
 								       {
 								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
@@ -5538,6 +6080,51 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[0]['posicionShape']],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       }]);
+						  	}
 					  }
 				  }
 				  
@@ -5564,7 +6151,8 @@ function interioresNuevoJson(obj){
 			  if(hueco2[0]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
+			  	 if(hayCamisero == 0){
+				  	api.scene.setLiveTransformation(
 						     [
 						       {
 						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
@@ -5592,6 +6180,51 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  	 }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[0]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+				  	}
 			  }
 			  
 			  if(hueco2[0]["tipo"] == "estantecristal"){
@@ -5617,72 +6250,15 @@ function interioresNuevoJson(obj){
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 				etiqueta6.innerHTML =(rangeSliderAdicional6.value);
+				var tamPX = 0;
+				 if (screen.width > 800) {
+					 tamPX = 307;
+				 }
+				var cuenta = 0;
+				cuenta = tamPX / parseFloat(rangeSliderAdicional6.max)
+				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value) * cuenta) - 10 )+"px";
 				/* cambia la posición de la etiqueta6 (el tooltip) */
-				if(rangeSliderAdicional6.value >= 190){
-					etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (90))+"px";
-				}else{
-					if(rangeSliderAdicional6.value >= 180){
-						etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (80))+"px";
-					}else{
-						if(rangeSliderAdicional6.value >= 170){
-							etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (70))+"px";
-						}else{
-							if(rangeSliderAdicional6.value >= 160){
-								etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (65))+"px";
-							}else{
-								if(rangeSliderAdicional6.value >= 150){
-									etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (60))+"px";
-								}else{
-									if(rangeSliderAdicional6.value >= 140){
-										etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (55))+"px";
-									}else{
-										if(rangeSliderAdicional6.value >= 130){
-											etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (48))+"px";
-										}else{
-											if(rangeSliderAdicional6.value >= 120){
-												etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (40))+"px";
-											}else{
-												if(rangeSliderAdicional6.value >= 110){
-													etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (32))+"px";
-												}else{
-													if(rangeSliderAdicional6.value >= 100){
-														etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (24))+"px";
-													}else{
-														if(rangeSliderAdicional6.value >= 90){
-															etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (16))+"px";
-														}else{
-															if(rangeSliderAdicional6.value >= 80){
-																etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) + (8))+"px";
-															}else{
-																if(rangeSliderAdicional6.value >= 70){
-																	etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (2))+"px";
-																}else{
-																	if(rangeSliderAdicional6.value >= 60){
-																		etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (12))+"px";
-																	}else{
-																		if(rangeSliderAdicional6.value >= 50){
-																			etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (22))+"px";
-																		}else{
-																			if(rangeSliderAdicional6.value >= 40){
-																				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (30))+"px";
-																			}else{
-																				etiqueta6.style.left =  ((parseFloat(rangeSliderAdicional6.value)) - (40))+"px";
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -5706,73 +6282,15 @@ function interioresNuevoJson(obj){
 		etiqueta7.innerHTML = (rangeSliderAdicional7.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional7.value >= 190){
-			etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional7.value >= 180){
-				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional7.value >= 170){
-					etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional7.value >= 160){
-						etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional7.value >= 150){
-							etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional7.value >= 140){
-								etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional7.value >= 130){
-									etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional7.value >= 120){
-										etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional7.value >= 110){
-											etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional7.value >= 100){
-												etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional7.value >= 90){
-													etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional7.value >= 80){
-														etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional7.value >= 70){
-															etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional7.value >= 60){
-																etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional7.value >= 50){
-																	etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional7.value >= 40){
-																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (30))+"px";
-																	}else{
-																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional7.max)
+		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value) * cuenta) - 10 )+"px";
+		
 
 		rangeSliderAdicional7.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi21").text();
@@ -5791,7 +6309,18 @@ function interioresNuevoJson(obj){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco2.length;a++){
+				  if(hueco2[a]["tipo"] == "camisero"){
+					  if(hueco2[1]["altura"] == hueco2[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco2[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional7.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[1]["tipo"] == "estante"){
 				  		
@@ -5910,72 +6439,13 @@ function interioresNuevoJson(obj){
 			  }
 		/* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta7.innerHTML =(rangeSliderAdicional7.value);
-				/* cambia la posición de la etiqueta (el tooltip) */
-				if(rangeSliderAdicional7.value >= 190){
-					etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (90))+"px";
-				}else{
-					if(rangeSliderAdicional7.value >= 180){
-						etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (80))+"px";
-					}else{
-						if(rangeSliderAdicional7.value >= 170){
-							etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (70))+"px";
-						}else{
-							if(rangeSliderAdicional7.value >= 160){
-								etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (65))+"px";
-							}else{
-								if(rangeSliderAdicional7.value >= 150){
-									etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (60))+"px";
-								}else{
-									if(rangeSliderAdicional7.value >= 140){
-										etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (55))+"px";
-									}else{
-										if(rangeSliderAdicional7.value >= 130){
-											etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (48))+"px";
-										}else{
-											if(rangeSliderAdicional7.value >= 120){
-												etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (40))+"px";
-											}else{
-												if(rangeSliderAdicional7.value >= 110){
-													etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (32))+"px";
-												}else{
-													if(rangeSliderAdicional7.value >= 100){
-														etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (24))+"px";
-													}else{
-														if(rangeSliderAdicional7.value >= 90){
-															etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (16))+"px";
-														}else{
-															if(rangeSliderAdicional7.value >= 80){
-																etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) + (8))+"px";
-															}else{
-																if(rangeSliderAdicional7.value >= 70){
-																	etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (2))+"px";
-																}else{
-																	if(rangeSliderAdicional7.value >= 60){
-																		etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (12))+"px";
-																	}else{
-																		if(rangeSliderAdicional7.value >= 50){
-																			etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (22))+"px";
-																		}else{
-																			if(rangeSliderAdicional7.value >= 40){
-																				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (30))+"px";
-																			}else{
-																				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value)) - (40))+"px";
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+			  var tamPX = 0;
+				 if (screen.width > 800) {
+					 tamPX = 307;
+				 }
+				var cuenta = 0;
+				cuenta = tamPX / parseFloat(rangeSliderAdicional7.max)
+				etiqueta7.style.left =  ((parseFloat(rangeSliderAdicional7.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -5999,72 +6469,14 @@ function interioresNuevoJson(obj){
 		etiqueta8.innerHTML = (rangeSliderAdicional8.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional8.value >= 190){
-			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional8.value >= 180){
-				etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional8.value >= 170){
-					etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional8.value >= 160){
-						etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional8.value >= 150){
-							etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional8.value >= 140){
-								etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional8.value >= 130){
-									etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional8.value >= 120){
-										etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional8.value >= 110){
-											etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional8.value >= 100){
-												etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional8.value >= 90){
-													etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional8.value >= 80){
-														etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional8.value >= 70){
-															etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional8.value >= 60){
-																etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional8.value >= 50){
-																	etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional8.value >= 40){
-																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (30))+"px";
-																	}else{
-																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional8.max)
+		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional8.addEventListener('input',function(){
@@ -6084,7 +6496,18 @@ function interioresNuevoJson(obj){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco2.length;a++){
+				  if(hueco2[a]["tipo"] == "camisero"){
+					  if(hueco2[2]["altura"] == hueco2[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco2[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional8.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[2]["tipo"] == "estante"){
 				  		
@@ -6231,71 +6654,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 		  etiqueta8.innerHTML =(rangeSliderAdicional8.value);
 			/* cambia la posición de la etiqueta (el tooltip) */
-			if(rangeSliderAdicional8.value >= 190){
-				etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (90))+"px";
-			}else{
-				if(rangeSliderAdicional8.value >= 180){
-					etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (80))+"px";
-				}else{
-					if(rangeSliderAdicional8.value >= 170){
-						etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (70))+"px";
-					}else{
-						if(rangeSliderAdicional8.value >= 160){
-							etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (65))+"px";
-						}else{
-							if(rangeSliderAdicional8.value >= 150){
-								etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (60))+"px";
-							}else{
-								if(rangeSliderAdicional8.value >= 140){
-									etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (55))+"px";
-								}else{
-									if(rangeSliderAdicional8.value >= 130){
-										etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (48))+"px";
-									}else{
-										if(rangeSliderAdicional8.value >= 120){
-											etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (40))+"px";
-										}else{
-											if(rangeSliderAdicional8.value >= 110){
-												etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (32))+"px";
-											}else{
-												if(rangeSliderAdicional8.value >= 100){
-													etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (24))+"px";
-												}else{
-													if(rangeSliderAdicional8.value >= 90){
-														etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (16))+"px";
-													}else{
-														if(rangeSliderAdicional8.value >= 80){
-															etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) + (8))+"px";
-														}else{
-															if(rangeSliderAdicional8.value >= 70){
-																etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (2))+"px";
-															}else{
-																if(rangeSliderAdicional8.value >= 60){
-																	etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (12))+"px";
-																}else{
-																	if(rangeSliderAdicional8.value >= 50){
-																		etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (22))+"px";
-																	}else{
-																		if(rangeSliderAdicional8.value >= 40){
-																			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (30))+"px";
-																		}else{
-																			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value)) - (40))+"px";
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
+			
+		  var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional8.max)
+			etiqueta8.style.left =  ((parseFloat(rangeSliderAdicional8.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -6319,73 +6685,14 @@ function interioresNuevoJson(obj){
 		etiqueta9.innerHTML = (rangeSliderAdicional9.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional9.value >= 190){
-			etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional9.value >= 180){
-				etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional9.value >= 170){
-					etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional9.value >= 160){
-						etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional9.value >= 150){
-							etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional9.value >= 140){
-								etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional9.value >= 130){
-									etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional9.value >= 120){
-										etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional9.value >= 110){
-											etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional9.value >= 100){
-												etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional9.value >= 90){
-													etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional9.value >= 80){
-														etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional9.value >= 70){
-															etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional9.value >= 60){
-																etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional9.value >= 50){
-																	etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional9.value >= 40){
-																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (30))+"px";
-																	}else{
-																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
- 
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional9.max)
+		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value) * cuenta) - 10 )+"px";
 
 		rangeSliderAdicional9.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi41").text();
@@ -6404,7 +6711,18 @@ function interioresNuevoJson(obj){
 						hueco2[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
 					}
-				} 
+				}
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco2.length;a++){
+					  if(hueco2[a]["tipo"] == "camisero"){
+						  if(hueco2[3]["altura"] == hueco2[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco2[a]["posicionShape"];
+						  }
+					  }
+				  }
 				  var calcu = (parseFloat(rangeSliderAdicional9.value) * 10) - (parseFloat(etihtml)*10);
 				  if(hueco2[3]["tipo"] == "estante"){
 					  		
@@ -6526,72 +6844,13 @@ function interioresNuevoJson(obj){
 			  }
 			  /* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta9.innerHTML =(rangeSliderAdicional9.value);
-		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional9.value >= 190){
-			etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional9.value >= 180){
-				etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional9.value >= 170){
-					etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional9.value >= 160){
-						etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional9.value >= 150){
-							etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional9.value >= 140){
-								etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional9.value >= 130){
-									etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional9.value >= 120){
-										etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional9.value >= 110){
-											etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional9.value >= 100){
-												etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional9.value >= 90){
-													etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional9.value >= 80){
-														etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional9.value >= 70){
-															etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional9.value >= 60){
-																etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional9.value >= 50){
-																	etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional9.value >= 40){
-																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (30))+"px";
-																	}else{
-																		etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}		
+			  var tamPX = 0;
+				 if (screen.width > 800) {
+					 tamPX = 307;
+				 }
+				var cuenta = 0;
+				cuenta = tamPX / parseFloat(rangeSliderAdicional9.max)
+				etiqueta9.style.left =  ((parseFloat(rangeSliderAdicional9.value) * cuenta) - 10 )+"px";
 		/* cambia el estilo del TRACK */
 		}, false);
 		 
@@ -6614,73 +6873,14 @@ function interioresNuevoJson(obj){
 		etiqueta10.innerHTML = (rangeSliderAdicional10.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional10.value >= 190){
-			etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional10.value >= 180){
-				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional10.value >= 170){
-					etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional10.value >= 160){
-						etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional10.value >= 150){
-							etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional10.value >= 140){
-								etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional10.value >= 130){
-									etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional10.value >= 120){
-										etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional10.value >= 110){
-											etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional10.value >= 100){
-												etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional10.value >= 90){
-													etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional10.value >= 80){
-														etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional10.value >= 70){
-															etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional10.value >= 60){
-																etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional10.value >= 50){
-																	etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional10.value >= 40){
-																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (30))+"px";
-																	}else{
-																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional10.max)
+		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value) * cuenta) - 10 )+"px";
 
 		rangeSliderAdicional10.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi51").text();
@@ -6699,7 +6899,18 @@ function interioresNuevoJson(obj){
 					hueco2[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco2.length;a++){
+				  if(hueco2[a]["tipo"] == "camisero"){
+					  if(hueco2[4]["altura"] == hueco2[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco2[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional10.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco2[4]["tipo"] == "estante"){
 				  		
@@ -6824,71 +7035,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			  etiqueta10.innerHTML =(rangeSliderAdicional10.value);
 				/* cambia la posición de la etiqueta (el tooltip) */
-				if(rangeSliderAdicional10.value >= 190){
-					etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (90))+"px";
-				}else{
-					if(rangeSliderAdicional10.value >= 180){
-						etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (80))+"px";
-					}else{
-						if(rangeSliderAdicional10.value >= 170){
-							etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (70))+"px";
-						}else{
-							if(rangeSliderAdicional10.value >= 160){
-								etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (65))+"px";
-							}else{
-								if(rangeSliderAdicional10.value >= 150){
-									etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (60))+"px";
-								}else{
-									if(rangeSliderAdicional10.value >= 140){
-										etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (55))+"px";
-									}else{
-										if(rangeSliderAdicional10.value >= 130){
-											etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (48))+"px";
-										}else{
-											if(rangeSliderAdicional10.value >= 120){
-												etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (40))+"px";
-											}else{
-												if(rangeSliderAdicional10.value >= 110){
-													etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (32))+"px";
-												}else{
-													if(rangeSliderAdicional10.value >= 100){
-														etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (24))+"px";
-													}else{
-														if(rangeSliderAdicional10.value >= 90){
-															etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (16))+"px";
-														}else{
-															if(rangeSliderAdicional10.value >= 80){
-																etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) + (8))+"px";
-															}else{
-																if(rangeSliderAdicional10.value >= 70){
-																	etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (2))+"px";
-																}else{
-																	if(rangeSliderAdicional10.value >= 60){
-																		etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (12))+"px";
-																	}else{
-																		if(rangeSliderAdicional10.value >= 50){
-																			etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (22))+"px";
-																		}else{
-																			if(rangeSliderAdicional10.value >= 40){
-																				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (30))+"px";
-																			}else{
-																				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value)) - (40))+"px";
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				
+			  var tamPX = 0;
+				 if (screen.width > 800) {
+					 tamPX = 307;
+				 }
+				var cuenta = 0;
+				cuenta = tamPX / parseFloat(rangeSliderAdicional10.max)
+				etiqueta10.style.left =  ((parseFloat(rangeSliderAdicional10.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -6913,72 +7067,14 @@ function interioresNuevoJson(obj){
 		etiqueta11.innerHTML = (rangeSliderAdicional11.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional11.value >= 190){
-			etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional11.value >= 180){
-				etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional11.value >= 170){
-					etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional11.value >= 160){
-						etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional11.value >= 150){
-							etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional11.value >= 140){
-								etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional11.value >= 130){
-									etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional11.value >= 120){
-										etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional11.value >= 110){
-											etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional11.value >= 100){
-												etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional11.value >= 90){
-													etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional11.value >= 80){
-														etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional11.value >= 70){
-															etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional11.value >= 60){
-																etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional11.value >= 50){
-																	etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional11.value >= 40){
-																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (30))+"px";
-																	}else{
-																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional11.max)
+		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value) * cuenta) - 10 )+"px";
 
  
 		rangeSliderAdicional11.addEventListener('input',function(){
@@ -6998,7 +7094,18 @@ function interioresNuevoJson(obj){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco3.length;a++){
+				  if(hueco3[a]["tipo"] == "camisero"){
+					  if(hueco3[0]["altura"] == hueco3[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco3[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional11.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco3[0]["tipo"] == "estante"){
 				  		
@@ -7111,71 +7218,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta11.innerHTML =(rangeSliderAdicional11.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional11.value >= 190){
-			etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional11.value >= 180){
-				etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional11.value >= 170){
-					etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional11.value >= 160){
-						etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional11.value >= 150){
-							etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional11.value >= 140){
-								etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional11.value >= 130){
-									etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional11.value >= 120){
-										etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional11.value >= 110){
-											etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional11.value >= 100){
-												etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional11.value >= 90){
-													etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional11.value >= 80){
-														etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional11.value >= 70){
-															etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional11.value >= 60){
-																etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional11.value >= 50){
-																	etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional11.value >= 40){
-																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (30))+"px";
-																	}else{
-																		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional11.max)
+			etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -7199,71 +7249,13 @@ function interioresNuevoJson(obj){
 		etiqueta12.innerHTML = (rangeSliderAdicional12.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional12.value >= 190){
-			etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional12.value >= 180){
-				etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional12.value >= 170){
-					etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional12.value >= 160){
-						etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional12.value >= 150){
-							etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional12.value >= 140){
-								etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional12.value >= 130){
-									etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional12.value >= 120){
-										etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional12.value >= 110){
-											etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional12.value >= 100){
-												etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional12.value >= 90){
-													etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional12.value >= 80){
-														etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional12.value >= 70){
-															etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional12.value >= 60){
-																etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional12.value >= 50){
-																	etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional12.value >= 40){
-																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (30))+"px";
-																	}else{
-																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional12.max)
+		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value) * cuenta) - 10 )+"px";
 
 
 
@@ -7285,7 +7277,18 @@ function interioresNuevoJson(obj){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco3.length;a++){
+				  if(hueco3[a]["tipo"] == "camisero"){
+					  if(hueco3[1]["altura"] == hueco3[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco3[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional12.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco3[1]["tipo"] == "estante"){
 				  		
@@ -7401,71 +7404,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta12.innerHTML =(rangeSliderAdicional12.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional12.value >= 190){
-			etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional12.value >= 180){
-				etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional12.value >= 170){
-					etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional12.value >= 160){
-						etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional12.value >= 150){
-							etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional12.value >= 140){
-								etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional12.value >= 130){
-									etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional12.value >= 120){
-										etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional12.value >= 110){
-											etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional12.value >= 100){
-												etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional12.value >= 90){
-													etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional12.value >= 80){
-														etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional12.value >= 70){
-															etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional12.value >= 60){
-																etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional12.value >= 50){
-																	etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional12.value >= 40){
-																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (30))+"px";
-																	}else{
-																		etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional12.max)
+			etiqueta12.style.left =  ((parseFloat(rangeSliderAdicional12.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -7489,72 +7435,14 @@ function interioresNuevoJson(obj){
 		etiqueta13.innerHTML = (rangeSliderAdicional13.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional13.value >= 190){
-			etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional13.value >= 180){
-				etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional13.value >= 170){
-					etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional13.value >= 160){
-						etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional13.value >= 150){
-							etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional13.value >= 140){
-								etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional13.value >= 130){
-									etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional13.value >= 120){
-										etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional13.value >= 110){
-											etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional13.value >= 100){
-												etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional13.value >= 90){
-													etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional13.value >= 80){
-														etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional13.value >= 70){
-															etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional13.value >= 60){
-																etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional13.value >= 50){
-																	etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional13.value >= 40){
-																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (30))+"px";
-																	}else{
-																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional13.max)
+		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional13.addEventListener('input',function(){
@@ -7574,7 +7462,18 @@ function interioresNuevoJson(obj){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco3.length;a++){
+				  if(hueco3[a]["tipo"] == "camisero"){
+					  if(hueco3[2]["altura"] == hueco3[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco3[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional13.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco3[2]["tipo"] == "estante"){
 				  		
@@ -7687,71 +7586,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta13.innerHTML =(rangeSliderAdicional13.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional13.value >= 190){
-			etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional13.value >= 180){
-				etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional13.value >= 170){
-					etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional13.value >= 160){
-						etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional13.value >= 150){
-							etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional13.value >= 140){
-								etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional13.value >= 130){
-									etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional13.value >= 120){
-										etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional13.value >= 110){
-											etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional13.value >= 100){
-												etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional13.value >= 90){
-													etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional13.value >= 80){
-														etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional13.value >= 70){
-															etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional13.value >= 60){
-																etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional13.value >= 50){
-																	etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional13.value >= 40){
-																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (30))+"px";
-																	}else{
-																		etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional13.max)
+			etiqueta13.style.left =  ((parseFloat(rangeSliderAdicional13.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -7775,72 +7617,13 @@ function interioresNuevoJson(obj){
 		etiqueta14.innerHTML = (rangeSliderAdicional14.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional14.value >= 190){
-			etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional14.value >= 180){
-				etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional14.value >= 170){
-					etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional14.value >= 160){
-						etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional14.value >= 150){
-							etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional14.value >= 140){
-								etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional14.value >= 130){
-									etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional14.value >= 120){
-										etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional14.value >= 110){
-											etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional14.value >= 100){
-												etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional14.value >= 90){
-													etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional14.value >= 80){
-														etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional14.value >= 70){
-															etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional14.value >= 60){
-																etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional14.value >= 50){
-																	etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional14.value >= 40){
-																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (30))+"px";
-																	}else{
-																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional14.max)
+		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional14.addEventListener('input',function(){ 			
@@ -7860,7 +7643,18 @@ function interioresNuevoJson(obj){
 						hueco3[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
 					}
-				} 
+				}
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco3.length;a++){
+					  if(hueco3[a]["tipo"] == "camisero"){
+						  if(hueco3[3]["altura"] == hueco3[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco3[a]["posicionShape"];
+						  }
+					  }
+				  }
 				  var calcu = (parseFloat(rangeSliderAdicional14.value) * 10) - (parseFloat(etihtml)*10);
 				  if(hueco3[3]["tipo"] == "estante"){
 					  		
@@ -7975,71 +7769,13 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta14.innerHTML =(rangeSliderAdicional14.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional14.value >= 190){
-			etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional14.value >= 180){
-				etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional14.value >= 170){
-					etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional14.value >= 160){
-						etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional14.value >= 150){
-							etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional14.value >= 140){
-								etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional14.value >= 130){
-									etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional14.value >= 120){
-										etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional14.value >= 110){
-											etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional14.value >= 100){
-												etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional14.value >= 90){
-													etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional14.value >= 80){
-														etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional14.value >= 70){
-															etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional14.value >= 60){
-																etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional14.value >= 50){
-																	etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional14.value >= 40){
-																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (30))+"px";
-																	}else{
-																		etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional14.max)
+			etiqueta14.style.left =  ((parseFloat(rangeSliderAdicional14.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -8063,71 +7799,13 @@ function interioresNuevoJson(obj){
 		etiqueta15.innerHTML = (rangeSliderAdicional15.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional15.value >= 190){
-			etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional15.value >= 180){
-				etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional15.value >= 170){
-					etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional15.value >= 160){
-						etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional15.value >= 150){
-							etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional15.value >= 140){
-								etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional15.value >= 130){
-									etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional15.value >= 120){
-										etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional15.value >= 110){
-											etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional15.value >= 100){
-												etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional15.value >= 90){
-													etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional15.value >= 80){
-														etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional15.value >= 70){
-															etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional15.value >= 60){
-																etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional15.value >= 50){
-																	etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional15.value >= 40){
-																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (30))+"px";
-																	}else{
-																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional15.max)
+		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value) * cuenta) - 10 )+"px";
 
 
 
@@ -8148,7 +7826,18 @@ function interioresNuevoJson(obj){
 					hueco3[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco3.length;a++){
+				  if(hueco3[a]["tipo"] == "camisero"){
+					  if(hueco3[4]["altura"] == hueco3[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco3[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional15.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco3[4]["tipo"] == "estante"){
 				  		
@@ -8262,71 +7951,13 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta15.innerHTML =(rangeSliderAdicional15.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional15.value >= 190){
-			etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional15.value >= 180){
-				etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional15.value >= 170){
-					etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional15.value >= 160){
-						etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional15.value >= 150){
-							etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional15.value >= 140){
-								etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional15.value >= 130){
-									etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional15.value >= 120){
-										etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional15.value >= 110){
-											etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional15.value >= 100){
-												etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional15.value >= 90){
-													etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional15.value >= 80){
-														etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional15.value >= 70){
-															etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional15.value >= 60){
-																etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional15.value >= 50){
-																	etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional15.value >= 40){
-																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (30))+"px";
-																	}else{
-																		etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional15.max)
+			etiqueta15.style.left =  ((parseFloat(rangeSliderAdicional15.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -8350,71 +7981,13 @@ function interioresNuevoJson(obj){
 		etiqueta16.innerHTML = (rangeSliderAdicional16.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional16.value >= 190){
-			etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional16.value >= 180){
-				etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional16.value >= 170){
-					etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional16.value >= 160){
-						etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional16.value >= 150){
-							etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional16.value >= 140){
-								etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional16.value >= 130){
-									etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional16.value >= 120){
-										etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional16.value >= 110){
-											etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional16.value >= 100){
-												etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional16.value >= 90){
-													etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional16.value >= 80){
-														etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional16.value >= 70){
-															etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional16.value >= 60){
-																etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional16.value >= 50){
-																	etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional16.value >= 40){
-																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (30))+"px";
-																	}else{
-																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional16.max)
+		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value) * cuenta) - 10 )+"px";
 
 
 
@@ -8437,6 +8010,17 @@ function interioresNuevoJson(obj){
 					cont2Hueco++;
 				}
 			} 
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco4.length;a++){
+				  if(hueco4[a]["tipo"] == "camisero"){
+					  if(hueco4[0]["altura"] == hueco4[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco4[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional16.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco4[0]["tipo"] == "estante"){
 				  		
@@ -8552,71 +8136,13 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta16.innerHTML =(rangeSliderAdicional16.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional16.value >= 190){
-			etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional16.value >= 180){
-				etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional16.value >= 170){
-					etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional16.value >= 160){
-						etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional16.value >= 150){
-							etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional16.value >= 140){
-								etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional16.value >= 130){
-									etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional16.value >= 120){
-										etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional16.value >= 110){
-											etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional16.value >= 100){
-												etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional16.value >= 90){
-													etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional16.value >= 80){
-														etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional16.value >= 70){
-															etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional16.value >= 60){
-																etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional16.value >= 50){
-																	etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional16.value >= 40){
-																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (30))+"px";
-																	}else{
-																		etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional16.max)
+			etiqueta16.style.left =  ((parseFloat(rangeSliderAdicional16.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -8640,71 +8166,13 @@ function interioresNuevoJson(obj){
 		etiqueta17.innerHTML = (rangeSliderAdicional17.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional17.value >= 190){
-			etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional17.value >= 180){
-				etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional17.value >= 170){
-					etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional17.value >= 160){
-						etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional17.value >= 150){
-							etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional17.value >= 140){
-								etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional17.value >= 130){
-									etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional17.value >= 120){
-										etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional17.value >= 110){
-											etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional17.value >= 100){
-												etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional17.value >= 90){
-													etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional17.value >= 80){
-														etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional17.value >= 70){
-															etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional17.value >= 60){
-																etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional17.value >= 50){
-																	etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional17.value >= 40){
-																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (30))+"px";
-																	}else{
-																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional17.max)
+		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value) * cuenta) - 10 )+"px";
 
 
 
@@ -8726,7 +8194,18 @@ function interioresNuevoJson(obj){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco4.length;a++){
+				  if(hueco4[a]["tipo"] == "camisero"){
+					  if(hueco4[1]["altura"] == hueco4[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco4[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional17.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco4[1]["tipo"] == "estante"){
 				  		
@@ -8840,71 +8319,13 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta17.innerHTML =(rangeSliderAdicional17.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional17.value >= 190){
-			etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional17.value >= 180){
-				etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional17.value >= 170){
-					etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional17.value >= 160){
-						etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional17.value >= 150){
-							etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional17.value >= 140){
-								etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional17.value >= 130){
-									etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional17.value >= 120){
-										etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional17.value >= 110){
-											etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional17.value >= 100){
-												etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional17.value >= 90){
-													etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional17.value >= 80){
-														etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional17.value >= 70){
-															etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional17.value >= 60){
-																etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional17.value >= 50){
-																	etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional17.value >= 40){
-																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (30))+"px";
-																	}else{
-																		etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional17.max)
+			etiqueta17.style.left =  ((parseFloat(rangeSliderAdicional17.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -8928,72 +8349,14 @@ function interioresNuevoJson(obj){
 		etiqueta18.innerHTML = (rangeSliderAdicional18.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional18.value >= 190){
-			etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional18.value >= 180){
-				etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional18.value >= 170){
-					etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional18.value >= 160){
-						etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional18.value >= 150){
-							etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional18.value >= 140){
-								etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional18.value >= 130){
-									etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional18.value >= 120){
-										etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional18.value >= 110){
-											etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional18.value >= 100){
-												etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional18.value >= 90){
-													etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional18.value >= 80){
-														etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional18.value >= 70){
-															etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional18.value >= 60){
-																etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional18.value >= 50){
-																	etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional18.value >= 40){
-																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (30))+"px";
-																	}else{
-																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional18.max)
+		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional18.addEventListener('input',function(){
@@ -9014,7 +8377,18 @@ function interioresNuevoJson(obj){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco4.length;a++){
+				  if(hueco4[a]["tipo"] == "camisero"){
+					  if(hueco4[2]["altura"] == hueco4[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco4[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional18.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco4[2]["tipo"] == "estante"){
 				  		
@@ -9129,71 +8503,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta18.innerHTML =(rangeSliderAdicional18.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional18.value >= 190){
-			etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional18.value >= 180){
-				etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional18.value >= 170){
-					etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional18.value >= 160){
-						etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional18.value >= 150){
-							etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional18.value >= 140){
-								etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional18.value >= 130){
-									etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional18.value >= 120){
-										etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional18.value >= 110){
-											etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional18.value >= 100){
-												etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional18.value >= 90){
-													etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional18.value >= 80){
-														etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional18.value >= 70){
-															etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional18.value >= 60){
-																etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional18.value >= 50){
-																	etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional18.value >= 40){
-																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (30))+"px";
-																	}else{
-																		etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional18.max)
+			etiqueta18.style.left =  ((parseFloat(rangeSliderAdicional18.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -9217,72 +8534,14 @@ function interioresNuevoJson(obj){
 		etiqueta19.innerHTML = (rangeSliderAdicional19.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional19.value >= 190){
-			etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional19.value >= 180){
-				etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional19.value >= 170){
-					etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional19.value >= 160){
-						etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional19.value >= 150){
-							etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional19.value >= 140){
-								etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional19.value >= 130){
-									etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional19.value >= 120){
-										etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional19.value >= 110){
-											etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional19.value >= 100){
-												etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional19.value >= 90){
-													etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional19.value >= 80){
-														etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional19.value >= 70){
-															etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional19.value >= 60){
-																etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional19.value >= 50){
-																	etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional19.value >= 40){
-																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (30))+"px";
-																	}else{
-																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional19.max)
+		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional19.addEventListener('input',function(){
@@ -9303,7 +8562,18 @@ function interioresNuevoJson(obj){
 						hueco4[cont2Hueco] = window.obj["interiores"][o];
 						cont2Hueco++;
 					}
-				} 
+				}
+				//HAY CAMISERO
+				  var hayCamisero = 0;
+				  var posicionCamisero = 0;
+				  for(let a = 0;a<hueco4.length;a++){
+					  if(hueco4[a]["tipo"] == "camisero"){
+						  if(hueco4[3]["altura"] == hueco4[a]["posicion"]){
+							  hayCamisero = 1;
+							  posicionCamisero = hueco4[a]["posicionShape"];
+						  }
+					  }
+				  }
 				  var calcu = (parseFloat(rangeSliderAdicional19.value) * 10) - (parseFloat(etihtml)*10);
 				  if(hueco4[3]["tipo"] == "estante"){
 					  		
@@ -9418,71 +8688,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta19.innerHTML =(rangeSliderAdicional19.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional19.value >= 190){
-			etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional19.value >= 180){
-				etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional19.value >= 170){
-					etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional19.value >= 160){
-						etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional19.value >= 150){
-							etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional19.value >= 140){
-								etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional19.value >= 130){
-									etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional19.value >= 120){
-										etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional19.value >= 110){
-											etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional19.value >= 100){
-												etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional19.value >= 90){
-													etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional19.value >= 80){
-														etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional19.value >= 70){
-															etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional19.value >= 60){
-																etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional19.value >= 50){
-																	etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional19.value >= 40){
-																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (30))+"px";
-																	}else{
-																		etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional19.max)
+			etiqueta19.style.left =  ((parseFloat(rangeSliderAdicional19.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -9506,72 +8719,14 @@ function interioresNuevoJson(obj){
 		etiqueta20.innerHTML = (rangeSliderAdicional20.value);
 		/* calcula la posición inicial de la etiqueta (el tooltip) */
 		/* establece el estilo inicial del TRACK */
-		if(rangeSliderAdicional20.value >= 190){
-			etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional20.value >= 180){
-				etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional20.value >= 170){
-					etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional20.value >= 160){
-						etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional20.value >= 150){
-							etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional20.value >= 140){
-								etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional20.value >= 130){
-									etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional20.value >= 120){
-										etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional20.value >= 110){
-											etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional20.value >= 100){
-												etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional20.value >= 90){
-													etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional20.value >= 80){
-														etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional20.value >= 70){
-															etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional20.value >= 60){
-																etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional20.value >= 50){
-																	etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional20.value >= 40){
-																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (30))+"px";
-																	}else{
-																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
+		
+		var tamPX = 0;
+		 if (screen.width > 800) {
+			 tamPX = 307;
+		 }
+		var cuenta = 0;
+		cuenta = tamPX / parseFloat(rangeSliderAdicional20.max)
+		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value) * cuenta) - 10 )+"px";
 
 
 		rangeSliderAdicional20.addEventListener('input',function(){
@@ -9592,7 +8747,18 @@ function interioresNuevoJson(obj){
 					hueco4[cont2Hueco] = window.obj["interiores"][o];
 					cont2Hueco++;
 				}
-			} 
+			}
+			//HAY CAMISERO
+			  var hayCamisero = 0;
+			  var posicionCamisero = 0;
+			  for(let a = 0;a<hueco4.length;a++){
+				  if(hueco4[a]["tipo"] == "camisero"){
+					  if(hueco4[4]["altura"] == hueco4[a]["posicion"]){
+						  hayCamisero = 1;
+						  posicionCamisero = hueco4[a]["posicionShape"];
+					  }
+				  }
+			  }
 			  var calcu = (parseFloat(rangeSliderAdicional20.value) * 10) - (parseFloat(etihtml)*10);
 			  if(hueco4[4]["tipo"] == "estante"){
 				  		
@@ -9707,71 +8873,14 @@ function interioresNuevoJson(obj){
 		/* cambia el valor de la etiqueta (el tooltip) */
 			etiqueta20.innerHTML =(rangeSliderAdicional20.value);
 		/* cambia la posición de la etiqueta (el tooltip) */
-		if(rangeSliderAdicional20.value >= 190){
-			etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (90))+"px";
-		}else{
-			if(rangeSliderAdicional20.value >= 180){
-				etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (80))+"px";
-			}else{
-				if(rangeSliderAdicional20.value >= 170){
-					etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (70))+"px";
-				}else{
-					if(rangeSliderAdicional20.value >= 160){
-						etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (65))+"px";
-					}else{
-						if(rangeSliderAdicional20.value >= 150){
-							etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (60))+"px";
-						}else{
-							if(rangeSliderAdicional20.value >= 140){
-								etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (55))+"px";
-							}else{
-								if(rangeSliderAdicional20.value >= 130){
-									etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (48))+"px";
-								}else{
-									if(rangeSliderAdicional20.value >= 120){
-										etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (40))+"px";
-									}else{
-										if(rangeSliderAdicional20.value >= 110){
-											etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (32))+"px";
-										}else{
-											if(rangeSliderAdicional20.value >= 100){
-												etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (24))+"px";
-											}else{
-												if(rangeSliderAdicional20.value >= 90){
-													etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (16))+"px";
-												}else{
-													if(rangeSliderAdicional20.value >= 80){
-														etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) + (8))+"px";
-													}else{
-														if(rangeSliderAdicional20.value >= 70){
-															etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (2))+"px";
-														}else{
-															if(rangeSliderAdicional20.value >= 60){
-																etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (12))+"px";
-															}else{
-																if(rangeSliderAdicional20.value >= 50){
-																	etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (22))+"px";
-																}else{
-																	if(rangeSliderAdicional20.value >= 40){
-																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (30))+"px";
-																	}else{
-																		etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value)) - (40))+"px";
-																	}
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		
+			var tamPX = 0;
+			 if (screen.width > 800) {
+				 tamPX = 307;
+			 }
+			var cuenta = 0;
+			cuenta = tamPX / parseFloat(rangeSliderAdicional20.max)
+			etiqueta20.style.left =  ((parseFloat(rangeSliderAdicional20.value) * cuenta) - 10 )+"px";
 		
 		/* cambia el estilo del TRACK */
 		}, false);
@@ -22617,9 +21726,22 @@ function cambiarArmarioEstantes(id,id1,posicion,num){
 		}
 		
 	}
+		var pos = 100;
+		for(let e = 0;e < array.length;e++){
+			if(array[e]["tipo"] == "camisero"){
+				if(array[id1]["altura"] == array[e]["posicion"]){
+					pos = e;
+				}
+			}
+		}
 		array[id1]["posicion"] = parseFloat(rangeSlider.value) * 10; 
-		array[id1]["altura"] = ( parseFloat(rangeSlider.value) * 10 ) + (array[id1]["tamano"]); 
+		array[id1]["altura"] = ( parseFloat(rangeSlider.value) * 10 ) + (array[id1]["tamano"]);
+		if(pos != 100){
+			array[pos]["posicion"] = ( parseFloat(rangeSlider.value) * 10 ) + (array[id1]["tamano"]);
+			obj["interiores"][arrayDef[pos]] = array[pos];
+		}
 		obj["interiores"][arrayDef[id1]] = array[id1];
+		
 	
 	window.obj = obj;
 	$("#clicparaConfirmarMoverInteriores").attr("class",""+JSON.stringify(obj)+"");
