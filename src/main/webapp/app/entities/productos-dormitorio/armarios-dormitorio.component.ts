@@ -48,6 +48,7 @@ import { IInterioresArmarioNuevos } from 'app/shared/model/interiores-armario-nu
 import { InterioresArmarioNuevosService } from '../interiores-armario-nuevos/interiores-armario-nuevos.service';
 import { NiveladoresService } from '../niveladores/niveladores.service';
 import { CajeadoService } from '../cajeado/cajeado.service';
+import { ImagenDeCestaProdService } from '../imagen-de-cesta-prod/imagen-de-cesta-prod.service';
 import { EnmarcadosService } from '../enmarcados/enmarcados.service';
 
 @Component({
@@ -185,6 +186,8 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
     precioAdicionalesInt: any;
     extraInterioresPorSi: any;
     interioresNuevosJSON: any;
+    todo1perfect: any;
+    armNuevoWeb: any;
     constructor(
         protected tiposApoyoService: TiposApoyoService,
         protected medidasEspecialesService: MedidasEspecialesService,
@@ -220,6 +223,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         protected cajeadoService: CajeadoService,
         protected eventManager: JhiEventManager,
         private loginService: LoginService,
+        protected imagenDeCestaProdService: ImagenDeCestaProdService,
         private http: HttpClient
     ) {
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -322,7 +326,6 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         }
         var interioresNuevosJSON = this.interioresNuevosJSON;
         if (interioresNuevosJSON.length != 0) {
-            alert('1');
             var objInt1 = {};
             var objInt2 = {};
             var objInt3 = {};
@@ -367,6 +370,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     objInt1['tubo' + numTubo1] = 1;
                     numTubo1++;
                 }
+                if (hueco0[k]['tipo'] == 'camisero') {
+                    if (hueco0[k]['cantidad'] == 2) {
+                        objInt1['camisero'] = 2;
+                    }
+                    if (hueco0[k]['cantidad'] == 3) {
+                        objInt1['camisero'] = 3;
+                    }
+                    if (hueco0[k]['cantidad'] == 4) {
+                        objInt1['camisero'] = 4;
+                    }
+                }
                 if (hueco0[k]['tipo'] == 'cajones') {
                     if (hueco0[k]['posicion'] == 0) {
                         objInt1['cajSue' + hueco0[k]['cantidad']] = 1;
@@ -405,6 +419,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         numCajonVol2++;
                     }
                 }
+                if (hueco1[k]['tipo'] == 'camisero') {
+                    if (hueco1[k]['cantidad'] == 2) {
+                        objInt2['camisero'] = 2;
+                    }
+                    if (hueco1[k]['cantidad'] == 3) {
+                        objInt2['camisero'] = 3;
+                    }
+                    if (hueco1[k]['cantidad'] == 4) {
+                        objInt2['camisero'] = 4;
+                    }
+                }
                 if (hueco1[k]['tipo'] == 'estantecristal') {
                     objInt2['estCris' + numEstCris2] = hueco1[k]['posicion'];
                     numEstCris2++;
@@ -434,6 +459,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         numCajonVol3++;
                     }
                 }
+                if (hueco2[k]['tipo'] == 'camisero') {
+                    if (hueco2[k]['cantidad'] == 2) {
+                        objInt3['camisero'] = 2;
+                    }
+                    if (hueco2[k]['cantidad'] == 3) {
+                        objInt3['camisero'] = 3;
+                    }
+                    if (hueco2[k]['cantidad'] == 4) {
+                        objInt3['camisero'] = 4;
+                    }
+                }
                 if (hueco2[k]['tipo'] == 'estantecristal') {
                     objInt3['estCris' + numEstCris3] = hueco2[k]['posicion'];
                     numEstCris3++;
@@ -461,6 +497,17 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     } else {
                         objInt4['cajonVol' + hueco3[k]['cantidad']] = hueco3[k]['posicion'];
                         numCajonVol4++;
+                    }
+                }
+                if (hueco3[k]['tipo'] == 'camisero') {
+                    if (hueco3[k]['cantidad'] == 2) {
+                        objInt4['camisero'] = 2;
+                    }
+                    if (hueco3[k]['cantidad'] == 3) {
+                        objInt4['camisero'] = 3;
+                    }
+                    if (hueco3[k]['cantidad'] == 4) {
+                        objInt4['camisero'] = 4;
                     }
                 }
                 if (hueco3[k]['tipo'] == 'estantecristal') {
@@ -575,6 +622,35 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             }
             todo[1]['id'] = todo[1]['armario']['id'];
             todo[1]['productosDormitorio'] = todo[1]['armario']['productosDormitorio'];
+            todo[1]['codigoNuevo'] = this.armNuevoWeb['codigoNuevo'];
+            todo[1]['huecos'] = this.armNuevoWeb['huecos'];
+            todo[1]['web'] = this.armNuevoWeb['web'];
+            todo[1]['codigoNuevo'] = this.armNuevoWeb['codigoNuevo'];
+            var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+            if (cogerIdCesta == null || cogerIdCesta == undefined) {
+                var nombreCesta = '';
+                var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+                for (var q = 0; q < 5; q++) {
+                    nombreCesta += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+                sessionStorage.setItem('cestaIdMod', nombreCesta);
+                cogerIdCesta = nombreCesta;
+            }
+            var contNumArtCarr = 1;
+            $('#clicparaEnviarAbbdd')[0].click();
+            var imagenApi = $('#imagen1BBDD').attr('class');
+            var nombreEspecialggez = Math.random();
+            todo[1]['nombreParaCargarCesta'] = nombreEspecialggez;
+            var obj = {
+                imagen: imagenApi,
+                nombre: nombreEspecialggez,
+                nombreCesta: cogerIdCesta
+            };
+            todo[1]['mensaje'] = todo[1]['armario']['mensaje'];
+            this.todo1perfect = todo;
+            this.subscribeToSaveResponse10(this.imagenDeCestaProdService.create(obj));
+            todo = this.todo1perfect;
         }
 
         const todoSumadoPrecio = $('#precioDimension').text();
@@ -695,6 +771,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         $('#page-heading').css({ display: 'block' });
         $('#calculadoraCarrito').css({ display: 'none' });
         $('body').removeAttr('style');
+        this.router.navigate(['/inicio']);
         setTimeout(function() {
             $('.armariosDivTodo').css({ display: 'none' });
             $('.armariosDivTodo').removeAttr('id');
@@ -30590,6 +30667,31 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         return result;
     }
     protected subscribeToSaveResponse(result: Observable<HttpResponse<ICategoriasDormi>>) {
+        result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+    protected subscribeToSaveResponse10(result: Observable<HttpResponse<ICategoriasDormi>>) {
+        result.subscribe(
+            (res: HttpResponse<ICategoriasDormi>) => {
+                console.log(1);
+                $('#clicparaEnviarAbbddSinPuertas')[0].click();
+                var imagenApi = $('#imagen1BBDD').attr('class');
+                var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+                var nombreEspecialggez = Math.random();
+                var todo = this.todo1perfect;
+
+                todo[1]['nombreParaCargarCestaInterior'] = nombreEspecialggez;
+                var obj = {
+                    imagen: imagenApi,
+                    nombre: nombreEspecialggez,
+                    nombreCesta: cogerIdCesta
+                };
+                this.subscribeToSaveResponse11(this.imagenDeCestaProdService.create(obj));
+            },
+            (res: HttpErrorResponse) => this.onSaveError()
+        );
+        this.todo1perfect = todo;
+    }
+    protected subscribeToSaveResponse11(result: Observable<HttpResponse<ICategoriasDormi>>) {
         result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
     }
     protected onSaveError() {

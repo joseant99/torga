@@ -769,8 +769,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj1['textoBueno'] = 'Estante de Madera';
                         obj1['posicionShape'] = 0 + estantes.length;
 
-                        obj2['posicion'] = 1750;
-                        obj2['altura'] = 1750 + 30;
+                        obj2['posicion'] = 1950;
+                        obj2['altura'] = 1950 + 30;
                         obj2['interior'] = hueco - 1;
                         obj2['tamano'] = 30;
                         obj2['tipo'] = 'estante';
@@ -778,8 +778,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                         obj2['numero'] = 1;
                         obj2['posicionShape'] = 1 + estantes.length;
 
-                        obj3['posicion'] = 1710;
-                        obj3['altura'] = 1710 + 30;
+                        obj3['posicion'] = 1900;
+                        obj3['altura'] = 1900 + 30;
                         obj3['textoBueno'] = 'Tubo';
                         obj3['tamano'] = 30;
                         obj3['interior'] = hueco - 1;
@@ -2050,7 +2050,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                             $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .divButtonCamisero').css({
                                 display: 'none'
                             });
-
+                            if (objetoTodoArray[o]['tipo'] != 'hang') {
+                                $('#divAdicionalesInterior0 .divSliderAdi' + (contadorhueco1 + 1) + '0 .range-slider').css({
+                                    display: 'none'
+                                });
+                            }
                             $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').css({ display: 'block' });
                             $('#divAdicionalesInterior0 #divContenidoMeter' + (contadorhueco1 + 1) + '0').attr(
                                 'onclick',
@@ -2278,6 +2282,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 'onclick',
                                 'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',1)'
                             );
+                            if (objetoTodoArray[o]['tipo'] != 'hang') {
+                                $('#divAdicionalesInterior1 .divSliderAdi' + (contadorEstWueToca + 1) + '1 .range-slider').css({
+                                    display: 'none'
+                                });
+                            }
                             $(
                                 '#divAdicionalesInterior1 .divSliderAdi' +
                                     (contadorEstWueToca + 1) +
@@ -2518,6 +2527,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 'onclick',
                                 'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',2)'
                             );
+                            if (objetoTodoArray[o]['tipo'] != 'hang') {
+                                $('#divAdicionalesInterior2 .divSliderAdi' + (contadorEstWueToca + 1) + '2 .range-slider').css({
+                                    display: 'none'
+                                });
+                            }
                             $(
                                 '#divAdicionalesInterior2 .divSliderAdi' +
                                     (contadorEstWueToca + 1) +
@@ -2776,6 +2790,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 'onclick',
                                 'divcontenidometerfuncion(' + (contadorEstWueToca + 1) + ',3)'
                             );
+                            if (objetoTodoArray[o]['tipo'] != 'hang') {
+                                $('#divAdicionalesInterior3 .divSliderAdi' + (contadorEstWueToca + 1) + '3 .range-slider').css({
+                                    display: 'none'
+                                });
+                            }
                             $(
                                 '#divAdicionalesInterior3 .divSliderAdi' +
                                     (contadorEstWueToca + 1) +
@@ -3052,6 +3071,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         $('#cliccambiarinteriores')[0].click();
         this.armariosDormitorioComponent.pintarInteriores(id);
     }
+
+    public paraGuardarCodNuevo() {
+        var json = JSON.parse($('#clicParaGuardarCodNuevo').attr('class'));
+        this.armariosDormitorioComponent.armNuevoWeb = json;
+    }
+
     public paraCuandoMuevesIntFunction() {
         var todo = $('#clicparaConfirmarMoverInteriores').attr('class');
         var def = JSON.parse(todo);
@@ -3080,6 +3105,12 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         if (huecoPinta == 4) {
             opciArr = this.arrayHueco3Rango;
         }
+        var mejorArmario = this.armariosDormitorioComponent.armarioCogido;
+        if (mejorArmario['interiores'][huecoPinta - 1] == undefined) {
+            mejorArmario['interiores'][huecoPinta - 1] = [];
+            mejorArmario['interiores'][huecoPinta - 1]['id'] = 20;
+        }
+        this.armariosDormitorioComponent.armarioCogido = mejorArmario;
         var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
         var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
         var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
@@ -3251,6 +3282,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('40 PP');
             obj1['posicion'] = alturaInt;
             obj1['altura'] = alturaInt + 30;
+            obj1['precio'] = 40;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'estante';
             obj1['tamano'] = 30;
@@ -3301,6 +3333,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = alturaInt;
             obj1['interior'] = huecoPinta - 1;
             obj1['altura'] = alturaInt + 8;
+            obj1['precio'] = 50;
             obj1['tamano'] = 8;
             obj1['tipo'] = 'estantecristal';
             obj1['numero'] = posicionEstanteCristal;
@@ -3324,6 +3357,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('15 PP');
             obj1['posicion'] = alturaInt;
             obj1['altura'] = alturaInt + 30;
+            obj1['precio'] = 15;
             obj1['tamano'] = 30;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'tubo';
@@ -3356,6 +3390,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = 0;
             obj1['altura'] = 212;
             obj1['tamano'] = 212;
+            obj1['precio'] = 90;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
@@ -3389,6 +3424,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = 0;
             obj1['altura'] = 380;
             obj1['tamano'] = 380;
+            obj1['precio'] = 180;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 2;
@@ -3422,6 +3458,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = 0;
             obj1['altura'] = 556;
             obj1['tamano'] = 556;
+            obj1['precio'] = 270;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 3;
@@ -3455,6 +3492,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = 0;
             obj1['altura'] = 724;
             obj1['tamano'] = 724;
+            obj1['precio'] = 360;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 4;
@@ -3487,6 +3525,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#divAdicionalesInterior' + (huecoPinta - 1) + ' #textoadicional' + (cont + 1) + ' #preciosolo').text('450 PP');
             obj1['posicion'] = 0;
             obj1['altura'] = 900;
+            obj1['precio'] = 450;
             obj1['tamano'] = 900;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
@@ -3522,6 +3561,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['posicion'] = alturaInt;
             obj1['altura'] = alturaInt + 30 + 212;
             obj1['tamano'] = 212 + 30;
+            obj1['precio'] = 90;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 1;
@@ -3599,6 +3639,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['posicionShape'] = posicionCamisero;
             obj1['tipo'] = 'camisero';
+            obj1['precio'] = 96;
             obj1['cantidad'] = 2;
             var rango;
             if (huecoPinta - 1 == 0) {
@@ -3730,6 +3771,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['posicionShape'] = posicionCamisero;
             obj1['tipo'] = 'camisero';
+            obj1['precio'] = 144;
             obj1['cantidad'] = 3;
             var rango;
             if (huecoPinta - 1 == 0) {
@@ -3861,8 +3903,20 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['posicionShape'] = posicionCamisero;
             obj1['tipo'] = 'camisero';
+            obj1['precio'] = 192;
             obj1['cantidad'] = 4;
-            var rango = this.arrayHueco0Rango;
+            if (huecoPinta - 1 == 0) {
+                rango = this.arrayHueco0Rango;
+            }
+            if (huecoPinta - 1 == 1) {
+                rango = this.arrayHueco1Rango;
+            }
+            if (huecoPinta - 1 == 2) {
+                rango = this.arrayHueco2Rango;
+            }
+            if (huecoPinta - 1 == 3) {
+                rango = this.arrayHueco3Rango;
+            }
             var contInput = 0;
             var alturaPosCam = 0;
             var puestoYa = 0;
@@ -3947,6 +4001,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
 
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'hang';
+            obj1['precio'] = 205;
         }
         if (id == 9) {
             for (let k = 0; k < arrayIntMet.length; k++) {
@@ -3977,6 +4032,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['altura'] = alturaInt + 30 + 380;
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
+            obj1['precio'] = 180;
             obj1['tamano'] = 380 + 30;
             obj1['cantidad'] = 2;
             obj1['numero'] = posicionCajones;
@@ -4037,6 +4093,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             obj1['interior'] = huecoPinta - 1;
             obj1['tipo'] = 'cajones';
             obj1['cantidad'] = 3;
+            obj1['precio'] = 270;
             obj1['numero'] = posicionCajones;
             obj1['posicionShape'] = posicionCajones;
             $(
@@ -4065,25 +4122,81 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             ).val(obj1['posicion'] / 10);
         }
         var existeCajon = 0;
+        var existeVolao = 0;
         for (let y = 0; y < array.length; y++) {
             if (array[y]['interior'] == huecoPinta - 1) {
-                if (array[y]['tipo'] == 'cajones') {
+                if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] == 0) {
                     existeCajon = 1;
+                }
+                if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
+                    existeVolao = 1;
                 }
             }
         }
         var cont = array.length;
         if (contCamiMet != 100) {
-            if (id == 3) {
-                for (let y = 0; y < array.length; y++) {
-                    if (array[y]['interior'] == huecoPinta - 1) {
-                        if (array[y]['tipo']['cajones'] && array[y]['posicion'] == 0) {
-                            array[y] = obj1;
+            for (let i = 0; i <= cont; i++) {
+                if (array[i] == undefined) {
+                    if (array.length != 0) {
+                        if (id == 3) {
+                            if (existeCajon == 1) {
+                                for (let y = 0; y < array.length; y++) {
+                                    if (array[y]['interior'] == huecoPinta - 1) {
+                                        if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] == 0) {
+                                            array[y] = obj1;
+                                        }
+                                    }
+                                }
+                            } else {
+                                array[i] = obj1;
+                            }
+                        } else {
+                            if (id == 10) {
+                                if (existeVolao == 1) {
+                                    for (let y = 0; y < array.length; y++) {
+                                        if (array[y]['interior'] == huecoPinta - 1) {
+                                            if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
+                                                array[y] = obj1;
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    array[i] = obj1;
+                                }
+                            } else {
+                                if (id == 4) {
+                                    if (existeVolao == 1) {
+                                        for (let y = 0; y < array.length; y++) {
+                                            if (array[y]['interior'] == huecoPinta - 1) {
+                                                if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
+                                                    array[y] = obj1;
+                                                }
+                                            }
+                                        }
+                                    } else {
+                                        array[i] = obj1;
+                                    }
+                                } else {
+                                    if (id == 9) {
+                                        if (existeVolao == 1) {
+                                            for (let y = 0; y < array.length; y++) {
+                                                if (array[y]['interior'] == huecoPinta - 1) {
+                                                    if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
+                                                        array[y] = obj1;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            array[i] = obj1;
+                                        }
+                                    } else {
+                                        array[i] = obj1;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
-            } else {
-                array[contCamiMet] = obj1;
             }
         } else {
             for (let i = 0; i <= cont; i++) {
@@ -4103,7 +4216,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                             }
                         } else {
                             if (id == 10) {
-                                if (existeCajon == 1) {
+                                if (existeVolao == 1) {
                                     for (let y = 0; y < array.length; y++) {
                                         if (array[y]['interior'] == huecoPinta - 1) {
                                             if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
@@ -4116,7 +4229,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                 }
                             } else {
                                 if (id == 4) {
-                                    if (existeCajon == 1) {
+                                    if (existeVolao == 1) {
                                         for (let y = 0; y < array.length; y++) {
                                             if (array[y]['interior'] == huecoPinta - 1) {
                                                 if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
@@ -4129,7 +4242,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                                     }
                                 } else {
                                     if (id == 9) {
-                                        if (existeCajon == 1) {
+                                        if (existeVolao == 1) {
                                             for (let y = 0; y < array.length; y++) {
                                                 if (array[y]['interior'] == huecoPinta - 1) {
                                                     if (array[y]['tipo'] == 'cajones' && array[y]['posicion'] > 0) {
@@ -4814,554 +4927,554 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                     }
                 }
             }
+        }
 
-            if (armario['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
-                if (
-                    armario['codigo'] == 'NB101' ||
-                    armario['codigo'] == 'NB102' ||
-                    armario['codigo'] == 'NB103' ||
-                    armario['codigo'] == 'NB104' ||
-                    armario['codigo'] == 'NB113' ||
-                    armario['codigo'] == 'NB114' ||
-                    armario['codigo'] == 'NB115' ||
-                    armario['codigo'] == 'NB116' ||
-                    armario['codigo'] == 'NB125' ||
-                    armario['codigo'] == 'NB126' ||
-                    armario['codigo'] == 'NB127' ||
-                    armario['codigo'] == 'NB128' ||
-                    armario['codigo'] == 'NB137' ||
-                    armario['codigo'] == 'NB138' ||
-                    armario['codigo'] == 'NB139' ||
-                    armario['codigo'] == 'NB140' ||
-                    armario['codigo'] == 'NB149' ||
-                    armario['codigo'] == 'NB150' ||
-                    armario['codigo'] == 'NB151' ||
-                    armario['codigo'] == 'NB152'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
+        if (armario['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB101' ||
+                armario['codigo'] == 'NB102' ||
+                armario['codigo'] == 'NB103' ||
+                armario['codigo'] == 'NB104' ||
+                armario['codigo'] == 'NB113' ||
+                armario['codigo'] == 'NB114' ||
+                armario['codigo'] == 'NB115' ||
+                armario['codigo'] == 'NB116' ||
+                armario['codigo'] == 'NB125' ||
+                armario['codigo'] == 'NB126' ||
+                armario['codigo'] == 'NB127' ||
+                armario['codigo'] == 'NB128' ||
+                armario['codigo'] == 'NB137' ||
+                armario['codigo'] == 'NB138' ||
+                armario['codigo'] == 'NB139' ||
+                armario['codigo'] == 'NB140' ||
+                armario['codigo'] == 'NB149' ||
+                armario['codigo'] == 'NB150' ||
+                armario['codigo'] == 'NB151' ||
+                armario['codigo'] == 'NB152'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
                     }
                 }
             }
+        }
 
-            if (armario['armario']['mensaje'] == '5 PUERTAS DERECHA') {
-                if (
-                    armario['codigo'] == 'NB105' ||
-                    armario['codigo'] == 'NB106' ||
-                    armario['codigo'] == 'NB107' ||
-                    armario['codigo'] == 'NB108' ||
-                    armario['codigo'] == 'NB117' ||
-                    armario['codigo'] == 'NB118' ||
-                    armario['codigo'] == 'NB119' ||
-                    armario['codigo'] == 'NB120' ||
-                    armario['codigo'] == 'NB129' ||
-                    armario['codigo'] == 'NB130' ||
-                    armario['codigo'] == 'NB131' ||
-                    armario['codigo'] == 'NB132' ||
-                    armario['codigo'] == 'NB141' ||
-                    armario['codigo'] == 'NB142' ||
-                    armario['codigo'] == 'NB143' ||
-                    armario['codigo'] == 'NB144' ||
-                    armario['codigo'] == 'NB153' ||
-                    armario['codigo'] == 'NB154' ||
-                    armario['codigo'] == 'NB155' ||
-                    armario['codigo'] == 'NB156'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
+        if (armario['armario']['mensaje'] == '5 PUERTAS DERECHA') {
+            if (
+                armario['codigo'] == 'NB105' ||
+                armario['codigo'] == 'NB106' ||
+                armario['codigo'] == 'NB107' ||
+                armario['codigo'] == 'NB108' ||
+                armario['codigo'] == 'NB117' ||
+                armario['codigo'] == 'NB118' ||
+                armario['codigo'] == 'NB119' ||
+                armario['codigo'] == 'NB120' ||
+                armario['codigo'] == 'NB129' ||
+                armario['codigo'] == 'NB130' ||
+                armario['codigo'] == 'NB131' ||
+                armario['codigo'] == 'NB132' ||
+                armario['codigo'] == 'NB141' ||
+                armario['codigo'] == 'NB142' ||
+                armario['codigo'] == 'NB143' ||
+                armario['codigo'] == 'NB144' ||
+                armario['codigo'] == 'NB153' ||
+                armario['codigo'] == 'NB154' ||
+                armario['codigo'] == 'NB155' ||
+                armario['codigo'] == 'NB156'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
+            if (
+                armario['codigo'] == 'NB157' ||
+                armario['codigo'] == 'NB158' ||
+                armario['codigo'] == 'NB159' ||
+                armario['codigo'] == 'NB160' ||
+                armario['codigo'] == 'NB165' ||
+                armario['codigo'] == 'NB166' ||
+                armario['codigo'] == 'NB167' ||
+                armario['codigo'] == 'NB168' ||
+                armario['codigo'] == 'NB173' ||
+                armario['codigo'] == 'NB174' ||
+                armario['codigo'] == 'NB175' ||
+                armario['codigo'] == 'NB176' ||
+                armario['codigo'] == 'NB181' ||
+                armario['codigo'] == 'NB182' ||
+                armario['codigo'] == 'NB183' ||
+                armario['codigo'] == 'NB184' ||
+                armario['codigo'] == 'NB189' ||
+                armario['codigo'] == 'NB190' ||
+                armario['codigo'] == 'NB191' ||
+                armario['codigo'] == 'NB192'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
                     }
                 }
             }
+        }
 
-            if (armario['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
-                if (
-                    armario['codigo'] == 'NB157' ||
-                    armario['codigo'] == 'NB158' ||
-                    armario['codigo'] == 'NB159' ||
-                    armario['codigo'] == 'NB160' ||
-                    armario['codigo'] == 'NB165' ||
-                    armario['codigo'] == 'NB166' ||
-                    armario['codigo'] == 'NB167' ||
-                    armario['codigo'] == 'NB168' ||
-                    armario['codigo'] == 'NB173' ||
-                    armario['codigo'] == 'NB174' ||
-                    armario['codigo'] == 'NB175' ||
-                    armario['codigo'] == 'NB176' ||
-                    armario['codigo'] == 'NB181' ||
-                    armario['codigo'] == 'NB182' ||
-                    armario['codigo'] == 'NB183' ||
-                    armario['codigo'] == 'NB184' ||
-                    armario['codigo'] == 'NB189' ||
-                    armario['codigo'] == 'NB190' ||
-                    armario['codigo'] == 'NB191' ||
-                    armario['codigo'] == 'NB192'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
+        if (armario['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB161' ||
+                armario['codigo'] == 'NB162' ||
+                armario['codigo'] == 'NB163' ||
+                armario['codigo'] == 'NB164' ||
+                armario['codigo'] == 'NB169' ||
+                armario['codigo'] == 'NB170' ||
+                armario['codigo'] == 'NB171' ||
+                armario['codigo'] == 'NB172' ||
+                armario['codigo'] == 'NB177' ||
+                armario['codigo'] == 'NB178' ||
+                armario['codigo'] == 'NB179' ||
+                armario['codigo'] == 'NB180' ||
+                armario['codigo'] == 'NB185' ||
+                armario['codigo'] == 'NB186' ||
+                armario['codigo'] == 'NB187' ||
+                armario['codigo'] == 'NB188' ||
+                armario['codigo'] == 'NB193' ||
+                armario['codigo'] == 'NB194' ||
+                armario['codigo'] == 'NB195' ||
+                armario['codigo'] == 'NB196'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB197' ||
+                armario['codigo'] == 'NB198' ||
+                armario['codigo'] == 'NB199' ||
+                armario['codigo'] == 'NB200' ||
+                armario['codigo'] == 'NB209' ||
+                armario['codigo'] == 'NB210' ||
+                armario['codigo'] == 'NB211' ||
+                armario['codigo'] == 'NB212' ||
+                armario['codigo'] == 'NB221' ||
+                armario['codigo'] == 'NB222' ||
+                armario['codigo'] == 'NB223' ||
+                armario['codigo'] == 'NB224' ||
+                armario['codigo'] == 'NB233' ||
+                armario['codigo'] == 'NB234' ||
+                armario['codigo'] == 'NB235' ||
+                armario['codigo'] == 'NB236' ||
+                armario['codigo'] == 'NB245' ||
+                armario['codigo'] == 'NB246' ||
+                armario['codigo'] == 'NB247' ||
+                armario['codigo'] == 'NB248'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
                     }
                 }
             }
-
-            if (armario['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
-                if (
-                    armario['codigo'] == 'NB161' ||
-                    armario['codigo'] == 'NB162' ||
-                    armario['codigo'] == 'NB163' ||
-                    armario['codigo'] == 'NB164' ||
-                    armario['codigo'] == 'NB169' ||
-                    armario['codigo'] == 'NB170' ||
-                    armario['codigo'] == 'NB171' ||
-                    armario['codigo'] == 'NB172' ||
-                    armario['codigo'] == 'NB177' ||
-                    armario['codigo'] == 'NB178' ||
-                    armario['codigo'] == 'NB179' ||
-                    armario['codigo'] == 'NB180' ||
-                    armario['codigo'] == 'NB185' ||
-                    armario['codigo'] == 'NB186' ||
-                    armario['codigo'] == 'NB187' ||
-                    armario['codigo'] == 'NB188' ||
-                    armario['codigo'] == 'NB193' ||
-                    armario['codigo'] == 'NB194' ||
-                    armario['codigo'] == 'NB195' ||
-                    armario['codigo'] == 'NB196'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
+        }
+        if (armario['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB201' ||
+                armario['codigo'] == 'NB202' ||
+                armario['codigo'] == 'NB203' ||
+                armario['codigo'] == 'NB204' ||
+                armario['codigo'] == 'NB213' ||
+                armario['codigo'] == 'NB214' ||
+                armario['codigo'] == 'NB215' ||
+                armario['codigo'] == 'NB216' ||
+                armario['codigo'] == 'NB225' ||
+                armario['codigo'] == 'NB226' ||
+                armario['codigo'] == 'NB227' ||
+                armario['codigo'] == 'NB228' ||
+                armario['codigo'] == 'NB237' ||
+                armario['codigo'] == 'NB238' ||
+                armario['codigo'] == 'NB239' ||
+                armario['codigo'] == 'NB240' ||
+                armario['codigo'] == 'NB249' ||
+                armario['codigo'] == 'NB250' ||
+                armario['codigo'] == 'NB251' ||
+                armario['codigo'] == 'NB252'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
                     }
                 }
             }
+        }
 
-            if (armario['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
-                if (
-                    armario['codigo'] == 'NB197' ||
-                    armario['codigo'] == 'NB198' ||
-                    armario['codigo'] == 'NB199' ||
-                    armario['codigo'] == 'NB200' ||
-                    armario['codigo'] == 'NB209' ||
-                    armario['codigo'] == 'NB210' ||
-                    armario['codigo'] == 'NB211' ||
-                    armario['codigo'] == 'NB212' ||
-                    armario['codigo'] == 'NB221' ||
-                    armario['codigo'] == 'NB222' ||
-                    armario['codigo'] == 'NB223' ||
-                    armario['codigo'] == 'NB224' ||
-                    armario['codigo'] == 'NB233' ||
-                    armario['codigo'] == 'NB234' ||
-                    armario['codigo'] == 'NB235' ||
-                    armario['codigo'] == 'NB236' ||
-                    armario['codigo'] == 'NB245' ||
-                    armario['codigo'] == 'NB246' ||
-                    armario['codigo'] == 'NB247' ||
-                    armario['codigo'] == 'NB248'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
+        if (armario['armario']['mensaje'] == '7 PUERTAS DERECHA') {
+            if (
+                armario['codigo'] == 'NB205' ||
+                armario['codigo'] == 'NB206' ||
+                armario['codigo'] == 'NB207' ||
+                armario['codigo'] == 'NB208' ||
+                armario['codigo'] == 'NB217' ||
+                armario['codigo'] == 'NB218' ||
+                armario['codigo'] == 'NB219' ||
+                armario['codigo'] == 'NB220' ||
+                armario['codigo'] == 'NB229' ||
+                armario['codigo'] == 'NB230' ||
+                armario['codigo'] == 'NB231' ||
+                armario['codigo'] == 'NB232' ||
+                armario['codigo'] == 'NB241' ||
+                armario['codigo'] == 'NB242' ||
+                armario['codigo'] == 'NB243' ||
+                armario['codigo'] == 'NB244' ||
+                armario['codigo'] == 'NB253' ||
+                armario['codigo'] == 'NB254' ||
+                armario['codigo'] == 'NB255' ||
+                armario['codigo'] == 'NB256'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
                     }
-                    if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
-                        }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB257' ||
+                armario['codigo'] == 'NB258' ||
+                armario['codigo'] == 'NB259' ||
+                armario['codigo'] == 'NB260' ||
+                armario['codigo'] == 'NB261' ||
+                armario['codigo'] == 'NB262' ||
+                armario['codigo'] == 'NB263' ||
+                armario['codigo'] == 'NB264' ||
+                armario['codigo'] == 'NB265' ||
+                armario['codigo'] == 'NB266' ||
+                armario['codigo'] == 'NB267' ||
+                armario['codigo'] == 'NB268' ||
+                armario['codigo'] == 'NB269' ||
+                armario['codigo'] == 'NB270' ||
+                armario['codigo'] == 'NB271' ||
+                armario['codigo'] == 'NB272' ||
+                armario['codigo'] == 'NB273' ||
+                armario['codigo'] == 'NB274' ||
+                armario['codigo'] == 'NB275' ||
+                armario['codigo'] == 'NB276'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta7').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 7) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
                     }
                 }
             }
-            if (armario['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
-                if (
-                    armario['codigo'] == 'NB201' ||
-                    armario['codigo'] == 'NB202' ||
-                    armario['codigo'] == 'NB203' ||
-                    armario['codigo'] == 'NB204' ||
-                    armario['codigo'] == 'NB213' ||
-                    armario['codigo'] == 'NB214' ||
-                    armario['codigo'] == 'NB215' ||
-                    armario['codigo'] == 'NB216' ||
-                    armario['codigo'] == 'NB225' ||
-                    armario['codigo'] == 'NB226' ||
-                    armario['codigo'] == 'NB227' ||
-                    armario['codigo'] == 'NB228' ||
-                    armario['codigo'] == 'NB237' ||
-                    armario['codigo'] == 'NB238' ||
-                    armario['codigo'] == 'NB239' ||
-                    armario['codigo'] == 'NB240' ||
-                    armario['codigo'] == 'NB249' ||
-                    armario['codigo'] == 'NB250' ||
-                    armario['codigo'] == 'NB251' ||
-                    armario['codigo'] == 'NB252'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                    }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                }
-            }
+        }
 
-            if (armario['armario']['mensaje'] == '7 PUERTAS DERECHA') {
-                if (
-                    armario['codigo'] == 'NB205' ||
-                    armario['codigo'] == 'NB206' ||
-                    armario['codigo'] == 'NB207' ||
-                    armario['codigo'] == 'NB208' ||
-                    armario['codigo'] == 'NB217' ||
-                    armario['codigo'] == 'NB218' ||
-                    armario['codigo'] == 'NB219' ||
-                    armario['codigo'] == 'NB220' ||
-                    armario['codigo'] == 'NB229' ||
-                    armario['codigo'] == 'NB230' ||
-                    armario['codigo'] == 'NB231' ||
-                    armario['codigo'] == 'NB232' ||
-                    armario['codigo'] == 'NB241' ||
-                    armario['codigo'] == 'NB242' ||
-                    armario['codigo'] == 'NB243' ||
-                    armario['codigo'] == 'NB244' ||
-                    armario['codigo'] == 'NB253' ||
-                    armario['codigo'] == 'NB254' ||
-                    armario['codigo'] == 'NB255' ||
-                    armario['codigo'] == 'NB256'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                    }
-                }
-            }
-
-            if (armario['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
-                if (
-                    armario['codigo'] == 'NB257' ||
-                    armario['codigo'] == 'NB258' ||
-                    armario['codigo'] == 'NB259' ||
-                    armario['codigo'] == 'NB260' ||
-                    armario['codigo'] == 'NB261' ||
-                    armario['codigo'] == 'NB262' ||
-                    armario['codigo'] == 'NB263' ||
-                    armario['codigo'] == 'NB264' ||
-                    armario['codigo'] == 'NB265' ||
-                    armario['codigo'] == 'NB266' ||
-                    armario['codigo'] == 'NB267' ||
-                    armario['codigo'] == 'NB268' ||
-                    armario['codigo'] == 'NB269' ||
-                    armario['codigo'] == 'NB270' ||
-                    armario['codigo'] == 'NB271' ||
-                    armario['codigo'] == 'NB272' ||
-                    armario['codigo'] == 'NB273' ||
-                    armario['codigo'] == 'NB274' ||
-                    armario['codigo'] == 'NB275' ||
-                    armario['codigo'] == 'NB276'
-                ) {
-                    if (idPuerta == 0) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta1').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 1) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta0').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 2) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta3').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 3) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta2').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 4) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta5').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 5) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta4').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 6) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta7').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                    if (idPuerta == 7) {
-                        $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
-                        $('#estoParaLaPuertaArmario')[0].click();
-                        if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
-                            $('#divPuerta6').css({ border: '3px solid #47D54E' });
-                        }
-                    }
-                }
-            }
-
-            if (armario['armario']['mensaje'] == '2 PUERTAS' || armario['armario']['mensaje'] == '1 PUERTA') {
-                $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
-                $('#estoParaLaPuertaArmario')[0].click();
-            }
+        if (armario['armario']['mensaje'] == '2 PUERTAS' || armario['armario']['mensaje'] == '1 PUERTA') {
+            $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
+            $('#estoParaLaPuertaArmario')[0].click();
         }
     }
 
@@ -5374,6 +5487,8 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         var contEnv = 0;
         var huecoPinta = id + 1;
         var preciollamadogg = this.precioAdicionalesInt;
+        var precio = 0;
+        precio = parseFloat($('#precioDimension').text());
         var cont = 0;
         var contDef = 0;
         array = this.objetoTodoArray;
@@ -5387,6 +5502,11 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             if (i != u - 1) {
                 arrayDef[contDef] = nuevoarray[i];
                 contDef++;
+            } else {
+                precio = precio - nuevoarray[i]['precio'];
+                $('#precioDimension').text(precio);
+                preciollamadogg = preciollamadogg - nuevoarray[i]['precio'];
+                this.precioAdicionalesInt = preciollamadogg;
             }
         }
         if (huecoPinta == 1) {
@@ -40947,6 +41067,10 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        var account = this.accountService.userIdentity;
+        if (account.authorities.indexOf('ROLE_ADMIN') < 0) {
+            $('.claseEnviarClicado')[0].click();
+        }
         var todasDimensiones = [];
         this.uid = 0;
         var contDimenTipo = 0;

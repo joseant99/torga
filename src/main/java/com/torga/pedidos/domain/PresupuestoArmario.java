@@ -26,8 +26,20 @@ public class PresupuestoArmario implements Serializable {
     @Column(name = "ancho")
     private Float ancho;
     
+    @Column(name = "armario_web")
+    private Float armarioWeb;
+    
+    @Column(name = "numero_huecos")
+    private Float numeroHuecos;
+    
     @Column(name = "codigo")
     private String codigo;
+    
+    @Column(name = "nombre_para_cargar_cesta")
+    private String nombreParaCargarCesta;
+    
+    @Column(name = "nombre_para_cargar_cesta_interior")
+    private String nombreParaCargarCestaInterior;
     
     @Column(name = "enmarcados")
     private String enmarcadosTexto;
@@ -126,6 +138,33 @@ public class PresupuestoArmario implements Serializable {
         this.ancho = ancho;
     }
     
+    public Float getArmarioWeb() {
+        return ancho;
+    }
+
+    public PresupuestoArmario armarioWeb(Float armarioWeb) {
+        this.armarioWeb = armarioWeb;
+        return this;
+    }
+
+    public void setArmarioWeb(Float armarioWeb) {
+        this.armarioWeb = armarioWeb;
+    }
+    
+    public Float getNumeroHuecos() {
+        return numeroHuecos;
+    }
+
+    public PresupuestoArmario numeroHuecos(Float numeroHuecos) {
+        this.numeroHuecos = numeroHuecos;
+        return this;
+    }
+
+    public void setNumeroHuecos(Float numeroHuecos) {
+        this.numeroHuecos = numeroHuecos;
+    }
+    
+    
     public String getCodigo() {
         return codigo;
     }
@@ -137,6 +176,32 @@ public class PresupuestoArmario implements Serializable {
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
+    }
+    
+    public String getNombreParaCargarCesta() {
+        return nombreParaCargarCesta;
+    }
+
+    public PresupuestoArmario nombreParaCargarCesta(String nombreParaCargarCesta) {
+        this.nombreParaCargarCesta = nombreParaCargarCesta;
+        return this;
+    }
+
+    public void setNombreParaCargarCesta(String nombreParaCargarCesta) {
+        this.nombreParaCargarCesta = nombreParaCargarCesta;
+    }
+    
+    public String getNombreParaCargarCestaInterior() {
+        return nombreParaCargarCestaInterior;
+    }
+
+    public PresupuestoArmario nombreParaCargarCestaInterior(String nombreParaCargarCestaInterior) {
+        this.nombreParaCargarCestaInterior = nombreParaCargarCestaInterior;
+        return this;
+    }
+
+    public void setNombreParaCargarCestaInterior(String nombreParaCargarCestaInterior) {
+        this.nombreParaCargarCestaInterior = nombreParaCargarCestaInterior;
     }
     
     public String getEnmarcadosTexto() {

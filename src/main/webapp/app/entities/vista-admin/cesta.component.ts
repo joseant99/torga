@@ -393,6 +393,20 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         interior1['nombre'] +
                                         '.png">'
                                 );
+                                if (sesion[1]['nombreParaCargarCesta'] != undefined) {
+                                    var todosImagenesShape = this.navbarComponent.imagenDeCestaProdService.todos;
+                                    for (var t = 0; t < todosImagenesShape.length; t++) {
+                                        if (todosImagenesShape[t]['nombre'] == sesion[1]['nombreParaCargarCesta']) {
+                                            $('#cuerpo' + i + ' #izquierda').append(
+                                                '<img id="imagenPresupues" style="z-index:' +
+                                                    (100 - i) +
+                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="' +
+                                                    todosImagenesShape[t]['imagen'] +
+                                                    '">'
+                                            );
+                                        }
+                                    }
+                                }
                                 if (screen.width < 800) {
                                     const elem = $('#cuerpo' + i + ' .armarioIzquierda');
                                     elem[0].style.setProperty('margin-left', '30px', 'important');
@@ -474,17 +488,6 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                     '<div id="derecha" class="armarioDerecha" style="float:left;margin-top:515px;"></div>'
                                 );
 
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2;margin-left:0px !important;margin-top:0px !important;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-A-' +
-                                        interior1['nombre'] +
-                                        '.png">'
-                                );
-
-                                $('#cuerpo' + i + ' #derecha').append(
-                                    '<img class="puertas3Izquierda1"  style="width:400px !important;height:400px !important;position:absolute;margin-left:0px !important;margin-top:0px !important;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-B-' +
-                                        interior2['nombre'] +
-                                        '.png">'
-                                );
                                 if (screen.width < 800) {
                                     const elem = $('#cuerpo' + i + ' .armarioIzquierda');
                                     elem[0].style.setProperty('margin-left', '30px', 'important');
@@ -500,6 +503,18 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                 console.log(puerta1);
                                 console.log(puerta2);
                                 console.log(puerta3);
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2;margin-left:0px !important;margin-top:0px !important;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-A-' +
+                                        interior1['nombre'] +
+                                        '.png">'
+                                );
+
+                                $('#cuerpo' + i + ' #derecha').append(
+                                    '<img class="puertas3Izquierda1"  style="width:400px !important;height:400px !important;position:absolute;margin-left:0px !important;margin-top:0px !important;" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-B-' +
+                                        interior2['nombre'] +
+                                        '.png">'
+                                );
                                 if (puerta1 != undefined) {
                                     if (puerta1['nombre'] == 'Puerta Aluminio Transparente') {
                                         var src = '../../../content/images/pruebaarmarios/ARMARIOS/3-1 PTAS PNG/1-A.png';
@@ -777,7 +792,6 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         );
                                     }
                                 }
-
                                 $('#cuerpo' + i + ' #izquierda').append(
                                     '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2" src="../../../content/images/pruebaarmarios/ARMARIOS/3-1 PNG/3-1-A-' +
                                         interior1['nombre'] +
@@ -1911,6 +1925,20 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         interior1['nombre'] +
                                         '.png">'
                                 );
+                                if (sesion[1]['nombreParaCargarCesta'] != undefined) {
+                                    var todosImagenesShape = this.navbarComponent.imagenDeCestaProdService.todos;
+                                    for (var t = 0; t < todosImagenesShape.length; t++) {
+                                        if (todosImagenesShape[t]['nombre'] == sesion[1]['nombreParaCargarCesta']) {
+                                            $('#cuerpo' + i + ' #izquierda').append(
+                                                '<img id="imagenPresupues" style="z-index:' +
+                                                    (100 - i) +
+                                                    ';max-width:400px;max-height:400px;;max-width:410px;max-height:410px;position:absolute;top:-10px" width="1000px" height="1000px" src="' +
+                                                    todosImagenesShape[t]['imagen'] +
+                                                    '">'
+                                            );
+                                        }
+                                    }
+                                }
                                 if (screen.width < 800) {
                                     const elem = $('#cuerpo' + i + ' .armarioIzquierda');
                                     elem[0].style.setProperty('margin-left', '30px', 'important');
@@ -8205,6 +8233,28 @@ export class cestaComponent implements OnInit, AfterViewInit {
                                         sesion[1]['acabadoTirador']['nombre'] +
                                         '</p>'
                                 );
+                            }
+                            if (sesion[1]['nombreParaCargarCesta'] != undefined) {
+                                $('#cuerpo' + i + ' #izquierda').empty();
+                                $('#cuerpo' + i + ' #izquierda').css({ 'margin-left': '720px' });
+                                $('#cuerpo' + i + ' #derecha').empty();
+                                var todosImagenesShape = this.navbarComponent.imagenDeCestaProdService.todos;
+                                for (var t = 0; t < todosImagenesShape.length; t++) {
+                                    if (todosImagenesShape[t]['nombre'] == sesion[1]['nombreParaCargarCesta']) {
+                                        $('#cuerpo' + i + ' #izquierda').append(
+                                            '<img class="armarioCalculadora" style="width:400px !important;height:400px !important;position:absolute;z-index:2;margin-left:0px !important;margin-top:0px !important;" width="1000px" height="1000px" src="' +
+                                                todosImagenesShape[t]['imagen'] +
+                                                '">'
+                                        );
+                                    }
+                                    if (todosImagenesShape[t]['nombre'] == sesion[1]['nombreParaCargarCestaInterior']) {
+                                        $('#cuerpo' + i + ' #derecha').append(
+                                            '<img class="puertas3Izquierda1"  style="width:400px !important;height:400px !important;position:absolute;margin-left:0px !important;margin-top:0px !important;" src="' +
+                                                todosImagenesShape[t]['imagen'] +
+                                                '">'
+                                        );
+                                    }
+                                }
                             }
                             if (nombreArmario != 'Armario Rincon') {
                                 if (sesion[1]['interiores'] != undefined) {

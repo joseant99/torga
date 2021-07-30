@@ -214,7 +214,11 @@ export class HomeComponent implements OnInit {
             })
             .then(() => {
                 this.authenticationError = false;
-
+                if (screen.width < 800) {
+                    $('#nuevosArmariosNoMostrar').css({ display: 'none' });
+                } else {
+                    $('#nuevosArmariosNoMostrar').css({ display: 'block' });
+                }
                 if (this.router.url === '/register' || /^\/activate\//.test(this.router.url) || /^\/reset\//.test(this.router.url)) {
                     this.router.navigate(['']);
                 }

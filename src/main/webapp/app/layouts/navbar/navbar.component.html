@@ -660,6 +660,13 @@
 				</li>
 			</ul>
 			-->
+			<ul style="list-style:none;margin-left:-40px;margin-top:30px" id="nuevosArmariosNoMostrar">
+		       		 	<li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;" >
+		                      <a (click)="open('productos-shapediver',false,myModel)">
+				                                <span style="color:red;font-size:20px;margin-top: -20px;font-weight: 400;">NUEVOS ARMARIOS </span>
+				              </a>
+						</li>
+					</ul>
 			 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
        		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                       <a (click)="open('pedidos-usuario',false,myModel)">
@@ -838,8 +845,10 @@
 							</li>
 					
 					</div>
-			</ul>
-			 -->	<ul style="list-style:none;margin-left:-40px;margin-top:30px">
+			</ul>	
+			 -->	
+			 	
+			 <ul style="list-style:none;margin-left:-40px;margin-top:30px">
 		       		 <li style="margin-top: -31px;border-top: 1px solid #D9D9D9;border-bottom: 1px solid #D9D9D9;padding-top: 27.5px;padding-left: 20px;letter-spacing: 2px;height: 80px;   " *jhiHasAnyAuthority="['ROLE_REPRESENTATE','ROLE_USER','ROLE_ADMIN','ROLE_CLIENTE']"  ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 		                      <a (click)="open('descargasvideos',false,myModel)">
 				                                <span style="color:black;font-size:20px;margin-top: -20px;font-weight: 400;">DESCARGAS Y VIDEOS </span>

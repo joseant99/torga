@@ -4,6 +4,151 @@ function imagenCarritoApi(){
 			$("#soloParaMeterEnlacesYmostrar").append('<p id="imagen1BBDD" class="'+imagen+'"></p>');
 }
 
+function imagenCarritoApiInterior(){
+	
+			/**var armario = window.armario;
+			if(armario == 1){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "material" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  }
+			  }
+			  if(armario == 2){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  }
+				  
+			  }
+			  if(armario == 3){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  }
+		
+			  }
+			  if(armario == 4){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  }
+		
+			  }
+			  if(armario == 5){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  
+				  }
+		
+			  }
+			  if(armario == 6){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  
+				  }
+				  
+			  }
+			  if(armario == 7){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+					  
+				  }
+				  
+			  }
+			  if(armario == 8){
+		
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+				  }
+				  
+			  }**/
+	 var intervalo = setInterval(function(){
+
+			 api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+		api.scene.removeAsync({name: "puertas"}, "CommPlugin_1");
+		api.scene.removeAsync({name: "Tiradores"}, "CommPlugin_1");
+			  $("#soloParaMeterEnlacesYmostrar").empty();
+			  var imagen = api.scene.getScreenshot();
+			  $("#soloParaMeterEnlacesYmostrar").append('<p id="imagen1BBDD" class="'+imagen+'"></p>');
+			  clearInterval(intervalo);
+			 }); 
+				 
+		 }, 1000);
+		
+} 
+
 function imagenGirarParaCarro(){
 	var idProd = $('#nombreMesita').attr('class');
 	if(parseFloat(idProd) != 110 && parseFloat(idProd) != 107 && parseFloat(idProd) != 108 && parseFloat(idProd) != 295 && parseFloat(idProd) != 296 && parseFloat(idProd) != 112 && parseFloat(idProd) != 114 && parseFloat(idProd) != 114 && parseFloat(idProd) != 109 && parseFloat(idProd) != 410 && parseFloat(idProd) != 111 && parseFloat(idProd) != 113 && parseFloat(idProd) != 116 && parseFloat(idProd) != 115 && parseFloat(idProd) != 298 && parseFloat(idProd) != 297 && parseFloat(idProd) != 118 && parseFloat(idProd) != 117 && parseFloat(idProd) != 299 && parseFloat(idProd) != 301 && parseFloat(idProd) != 112 && parseFloat(idProd) != 300 && parseFloat(idProd) != 275 && parseFloat(idProd) != 255 && parseFloat(idProd) != 256 && parseFloat(idProd) != 251 && parseFloat(idProd) != 247 && parseFloat(idProd) != 252 && parseFloat(idProd) != 248 && parseFloat(idProd) != 1 && parseFloat(idProd) != 2 && parseFloat(idProd) != 3 && parseFloat(idProd) != 4 && parseFloat(idProd) != 5 && parseFloat(idProd) != 6 && parseFloat(idProd) != 7 && parseFloat(idProd) != 8 && parseFloat(idProd) != 9 && parseFloat(idProd) != 10 && parseFloat(idProd) != 11 && parseFloat(idProd) != 12 && parseFloat(idProd) != 13 && parseFloat(idProd) != 238 && parseFloat(idProd) != 239 && parseFloat(idProd) != 240 && parseFloat(idProd) != 241 && parseFloat(idProd) != 242 && parseFloat(idProd) != 243 && parseFloat(idProd) != 244 && parseFloat(idProd) != 245 && parseFloat(idProd) != 277 && parseFloat(idProd) != 278 && parseFloat(idProd) != 283 && parseFloat(idProd) != 284 && parseFloat(idProd) != 334 && parseFloat(idProd) != 303 && parseFloat(idProd) != 14 && parseFloat(idProd) != 304 && parseFloat(idProd) != 53 && parseFloat(idProd) != 305 && parseFloat(idProd) != 62 && parseFloat(idProd) != 306 && parseFloat(idProd) != 63 && parseFloat(idProd) != 307 && parseFloat(idProd) != 64 && parseFloat(idProd) != 308 && parseFloat(idProd) != 65 && parseFloat(idProd) != 309 && parseFloat(idProd) != 66 && parseFloat(idProd) != 311 && parseFloat(idProd) != 68  && parseFloat(idProd) != 312 && parseFloat(idProd) != 69 && parseFloat(idProd) != 336 && parseFloat(idProd) != 335 && parseFloat(idProd) != 338 && parseFloat(idProd) != 337 && parseFloat(idProd) != 279 && parseFloat(idProd) != 280 && parseFloat(idProd) != 271 && parseFloat(idProd) != 272 && parseFloat(idProd) != 213 && parseFloat(idProd) != 215 && parseFloat(idProd) != 217 && parseFloat(idProd) != 218 && parseFloat(idProd) != 219 && parseFloat(idProd) != 220 && parseFloat(idProd) != 221){ 
@@ -27,6 +172,20 @@ function imagenGirarParaCarro(){
 		}
 		
 	}
+
+}
+
+function imagenGirarParaCarro1(){
+
+		$("#sdv-container").css({"width":"410px"});
+		$("#sdv-container").css({"height":"410px"});
+		
+			api.scene.camera.updateAsync({'position': {x: -657.883398040687, y: -1721.5418300011615, z: 1227.8223071618345}, 'target': {x: 758.5643606351833, y:  127.50578991868758, z: 631.7026621119127} }).then(
+		            function(response) {
+		            	api.scene.camera.zoomAsync().then(function(response){
+		            		$("#soloParaEnviarImagenGirada")[0].click();
+		            	})
+		            });
 
 }
 
@@ -2597,7 +2756,7 @@ function apiShape1(id){
 	var rangeSlider = document.getElementById("rs-range-line");
 	var rangeSlider1 = document.getElementById("rs-range-line1");
 	var rangeSlider2 = document.getElementById("rs-range-line2");
-	
+	window.tieneTiradores = 0;
 	var rangeBullet = document.getElementById("rs-bullet");
 	window.todounarmario = {};
 	window.armario = 1;
@@ -4120,7 +4279,7 @@ function interioresNuevoJson(obj){
 				  	
 				  	if(hayCamisero == 1){
 				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
-
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 				  		api.scene.setLiveTransformation(
 							     [
 							       {
@@ -4160,7 +4319,19 @@ function interioresNuevoJson(obj){
 						  			             repeat: 0
 						  			           }
 						  			         ],reset:false
-						  			       }]);
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
 				  	}
 						  
 				  
@@ -4230,6 +4401,7 @@ function interioresNuevoJson(obj){
 				  }
 				  if(hayCamisero == 1){
 					  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+					  var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 					  api.scene.setLiveTransformation(
 							     [
 							       {
@@ -4269,7 +4441,19 @@ function interioresNuevoJson(obj){
 						  			             repeat: 0
 						  			           }
 						  			         ],reset:false
-						  			       }]);
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
 				  		
 				  }
 				  
@@ -4561,6 +4745,7 @@ function interioresNuevoJson(obj){
 			  	}
 						  if(hayCamisero == 1){
 						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 						  		api.scene.setLiveTransformation(
 									     [
@@ -4601,7 +4786,19 @@ function interioresNuevoJson(obj){
 								  			             repeat: 0
 								  			           }
 								  			         ],reset:false
-								  			       }]);
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
 						  	}
 				  
 			  }
@@ -4658,6 +4855,7 @@ function interioresNuevoJson(obj){
 			  		}
 			  	if(hayCamisero == 1){
 				  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
@@ -4697,7 +4895,19 @@ function interioresNuevoJson(obj){
 					  			             repeat: 0
 					  			           }
 					  			         ],reset:false
-					  			       }]);
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
 			  		
 			  		}
 			  }
@@ -4956,6 +5166,7 @@ function interioresNuevoJson(obj){
 			  				}
 					  if(hayCamisero == 1){
 					  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+					  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 					  		api.scene.setLiveTransformation(
 								     [
@@ -4996,7 +5207,19 @@ function interioresNuevoJson(obj){
 							  			             repeat: 0
 							  			           }
 							  			         ],reset:false
-							  			       }]);
+							  			       },{
+								  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       }]);
 					  	}
 
 		  }
@@ -5054,6 +5277,7 @@ function interioresNuevoJson(obj){
 		  		}
 		  		if(hayCamisero == 1){
 				  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 				  api.scene.setLiveTransformation(
 						     [
 						       {
@@ -5093,7 +5317,19 @@ function interioresNuevoJson(obj){
 					  			             repeat: 0
 					  			           }
 					  			         ],reset:false
-					  			       }]);
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
 			  		
 			  		}
 		  } 
@@ -5350,6 +5586,7 @@ function interioresNuevoJson(obj){
 				  			}
 						  if(hayCamisero == 1){
 						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 						  		api.scene.setLiveTransformation(
 									     [
@@ -5390,7 +5627,19 @@ function interioresNuevoJson(obj){
 								  			             repeat: 0
 								  			           }
 								  			         ],reset:false
-								  			       }]);
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
 						  	}
 
 			  }
@@ -5448,6 +5697,7 @@ function interioresNuevoJson(obj){
 			  		}
 			  		if(hayCamisero == 1){
 					  var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+					  var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 					  api.scene.setLiveTransformation(
 							     [
 							       {
@@ -5487,7 +5737,19 @@ function interioresNuevoJson(obj){
 						  			             repeat: 0
 						  			           }
 						  			         ],reset:false
-						  			       }]);
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
 				  		
 				  		}
 			  }
@@ -5744,6 +6006,7 @@ function interioresNuevoJson(obj){
 			  				}
 						  if(hayCamisero == 1){
 						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 						  		api.scene.setLiveTransformation(
 									     [
@@ -5784,7 +6047,19 @@ function interioresNuevoJson(obj){
 								  			             repeat: 0
 								  			           }
 								  			         ],reset:false
-								  			       }]);
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
 						  	}
 
 			  }
@@ -5842,6 +6117,7 @@ function interioresNuevoJson(obj){
 			  			}
 			  		if(hayCamisero == 1){
 				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 				  		api.scene.setLiveTransformation(
 							     [
@@ -5882,7 +6158,19 @@ function interioresNuevoJson(obj){
 						  			             repeat: 0
 						  			           }
 						  			         ],reset:false
-						  			       }]);
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
 				  	}
 			  }
 			  if(hueco1[4]["tipo"] == "estantecristal"){
@@ -6083,6 +6371,7 @@ function interioresNuevoJson(obj){
 						  }
 						  if(hayCamisero == 1){
 						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 						  		api.scene.setLiveTransformation(
 									     [
@@ -6123,7 +6412,19 @@ function interioresNuevoJson(obj){
 								  			             repeat: 0
 								  			           }
 								  			         ],reset:false
-								  			       }]);
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
 						  	}
 					  }
 				  }
@@ -6183,6 +6484,7 @@ function interioresNuevoJson(obj){
 			  	 }
 				  if(hayCamisero == 1){
 				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 
 				  		api.scene.setLiveTransformation(
 							     [
@@ -6223,7 +6525,19 @@ function interioresNuevoJson(obj){
 						  			             repeat: 0
 						  			           }
 						  			         ],reset:false
-						  			       }]);
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
 				  	}
 			  }
 			  
@@ -6327,6 +6641,7 @@ function interioresNuevoJson(obj){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  yaPuesto = 1;
+					if(hayCamisero == 0){
 						  api.scene.setLiveTransformation(
 								     [
 								       {
@@ -6355,6 +6670,65 @@ function interioresNuevoJson(obj){
 									           }
 									         ],reset:false
 									       }]);
+					}
+					
+					if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco2[1]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco2[1]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 				  
 			  }
 			  if(hueco2[1]["tipo"] == "tubo"){
@@ -6382,23 +6756,11 @@ function interioresNuevoJson(obj){
 				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[1]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[1]['posicionShape'])],
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -6409,7 +6771,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[1]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco2[1]["tipo"] == "estantecristal"){
 				  if(hueco2[0]["tipo"] == 'estantecristal'){
@@ -6528,23 +6961,11 @@ function interioresNuevoJson(obj){
 							  
 						  }
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -6555,7 +6976,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 		  if(hueco2[2]["tipo"] == "tubo"){
@@ -6586,23 +7078,11 @@ function interioresNuevoJson(obj){
 			  }
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-			  api.scene.setLiveTransformation(
-					     [
-					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
-					         transformations: [
-					           {
-					             delay: 0,
-					             duration: 500,
-					             type: 'translation',
-					             easing: "Quartic.InOut",
-					             translationVector: { x: 0, y: 0, z: calcu },
-					             repeat: 0
-					           }
-					         ],reset:false
-					       },
-					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+				if(hayCamisero == 0){ 
+		  		api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -6613,7 +7093,78 @@ function interioresNuevoJson(obj){
 						             repeat: 0
 						           }
 						         ],reset:false
-						       }]);
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+		  		}
+			  if(hayCamisero == 1){
+			  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+			  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+			  		api.scene.setLiveTransformation(
+						     [
+						    	 {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[2]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+			  	}
 		  }
 		  if(hueco2[2]["tipo"] == "estantecristal"){
 			  if(hueco2[0]["tipo"] == 'estantecristal'){
@@ -6730,23 +7281,11 @@ function interioresNuevoJson(obj){
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 							  
 							  yaPuesto = 1;
-							  api.scene.setLiveTransformation(
-									     [
-									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
-									         transformations: [
-									           {
-									             delay: 0,
-									             duration: 500,
-									             type: 'translation',
-									             easing: "Quartic.InOut",
-									             translationVector: { x: 0, y: 0, z: calcu },
-									             repeat: 0
-									           }
-									         ],reset:false
-									       },
-									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
+							  if(hayCamisero == 0){
+								  api.scene.setLiveTransformation(
+										     [
+										       {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -6757,7 +7296,78 @@ function interioresNuevoJson(obj){
 										             repeat: 0
 										           }
 										         ],reset:false
-										       }]);
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       }]);
+							  }
+							  if(hayCamisero == 1){
+							  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+							  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+							  		api.scene.setLiveTransformation(
+										     [
+										    	 {
+											         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },
+											       {
+												         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
+												         transformations: [
+												           {
+												             delay: 0,
+												             duration: 500,
+												             type: 'translation',
+												             easing: "Quartic.InOut",
+												             translationVector: { x: 0, y: 0, z: calcu },
+												             repeat: 0
+												           }
+												         ],reset:false
+												       },{
+									  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       },{
+										  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+										  			         transformations: [
+										  			           {
+										  			             delay: 0,
+										  			             duration: 500,
+										  			             type: 'translation',
+										  			             easing: "Quartic.InOut",
+										  			             translationVector: { x: 0, y: 0, z: calcu },
+										  			             repeat: 0
+										  			           }
+										  			         ],reset:false
+										  			       }]);
+							  	}
 					  
 				  }
 			  if(hueco2[3]["tipo"] == "tubo"){
@@ -6791,6 +7401,7 @@ function interioresNuevoJson(obj){
 				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
+			  if(hayCamisero == 0){
 				  api.scene.setLiveTransformation(
 						     [
 						       {
@@ -6819,6 +7430,65 @@ function interioresNuevoJson(obj){
 							           }
 							         ],reset:false
 							       }]);
+			  }
+			  if(hayCamisero == 1){
+			  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+			  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+			  		api.scene.setLiveTransformation(
+						     [
+						    	 {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[3]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[3]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+			  	}
+				  
 			  }
 			  if(hueco2[3]["tipo"] == "estantecristal"){
 				 
@@ -6917,23 +7587,12 @@ function interioresNuevoJson(obj){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -6944,7 +7603,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco2[4]["tipo"] == "tubo"){
@@ -6981,23 +7711,12 @@ function interioresNuevoJson(obj){
 				  }
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7008,7 +7727,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco2[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco2[4]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco2[4]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -7113,23 +7903,12 @@ function interioresNuevoJson(obj){
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 				  
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7140,7 +7919,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  
@@ -7165,23 +8015,12 @@ function interioresNuevoJson(obj){
 			  if(hueco3[0]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7192,7 +8031,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco3[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco3[0]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco3[0]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -7295,23 +8205,12 @@ function interioresNuevoJson(obj){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7322,7 +8221,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco3[1]["tipo"] == "tubo"){
@@ -7351,23 +8321,12 @@ function interioresNuevoJson(obj){
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7378,7 +8337,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[1]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco3[1]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -7480,23 +8510,12 @@ function interioresNuevoJson(obj){
 				  window.object0 = api.scene.get({name: "EstantesGeo", format: "glb"},"CommPlugin_1").data[0];
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7507,7 +8526,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 		  if(hueco3[2]["tipo"] == "tubo"){
@@ -7532,23 +8622,12 @@ function interioresNuevoJson(obj){
 			  var contCaj = 0;
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-			  api.scene.setLiveTransformation(
-					     [
-					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
-					         transformations: [
-					           {
-					             delay: 0,
-					             duration: 500,
-					             type: 'translation',
-					             easing: "Quartic.InOut",
-					             translationVector: { x: 0, y: 0, z: calcu },
-					             repeat: 0
-					           }
-					         ],reset:false
-					       },
-					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+			  
+			  if(hayCamisero == 0){
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -7559,7 +8638,78 @@ function interioresNuevoJson(obj){
 						             repeat: 0
 						           }
 						         ],reset:false
-						       }]);
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+			  if(hayCamisero == 1){
+			  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+			  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+			  		api.scene.setLiveTransformation(
+						     [
+						    	 {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[2]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+			  	}
 		  }
 		  if(hueco3[2]["tipo"] == "estantecristal"){
 		  		var arr = window.arrayDeEstantesMetCristal;
@@ -7662,23 +8812,12 @@ function interioresNuevoJson(obj){
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 							  
 							  yaPuesto = 1;
-							  api.scene.setLiveTransformation(
-									     [
-									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
-									         transformations: [
-									           {
-									             delay: 0,
-									             duration: 500,
-									             type: 'translation',
-									             easing: "Quartic.InOut",
-									             translationVector: { x: 0, y: 0, z: calcu },
-									             repeat: 0
-									           }
-									         ],reset:false
-									       },
-									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+							  
+							  if(hayCamisero == 0){
+								  api.scene.setLiveTransformation(
+										     [
+										       {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -7689,7 +8828,78 @@ function interioresNuevoJson(obj){
 										             repeat: 0
 										           }
 										         ],reset:false
-										       }]);
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       }]);
+							  }
+							  if(hayCamisero == 1){
+							  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+							  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+							  		api.scene.setLiveTransformation(
+										     [
+										    	 {
+											         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },
+											       {
+												         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+												         transformations: [
+												           {
+												             delay: 0,
+												             duration: 500,
+												             type: 'translation',
+												             easing: "Quartic.InOut",
+												             translationVector: { x: 0, y: 0, z: calcu },
+												             repeat: 0
+												           }
+												         ],reset:false
+												       },{
+									  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       },{
+										  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+										  			         transformations: [
+										  			           {
+										  			             delay: 0,
+										  			             duration: 500,
+										  			             type: 'translation',
+										  			             easing: "Quartic.InOut",
+										  			             translationVector: { x: 0, y: 0, z: calcu },
+										  			             repeat: 0
+										  			           }
+										  			         ],reset:false
+										  			       }]);
+							  	}
 					  
 				  }
 			  if(hueco3[3]["tipo"] == "tubo"){
@@ -7715,23 +8925,12 @@ function interioresNuevoJson(obj){
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7742,7 +8941,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[3]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[3]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco3[3]["tipo"] == "estantecristal"){
 				  
@@ -7845,23 +9115,12 @@ function interioresNuevoJson(obj){
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -7872,7 +9131,77 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco3[4]["tipo"] == "tubo"){
@@ -7897,23 +9226,12 @@ function interioresNuevoJson(obj){
 				  var contCaj = 0;
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -7924,7 +9242,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco3[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco3[4]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco3[4]["tipo"] == "estantecristal"){
 				  
@@ -8029,23 +9418,12 @@ function interioresNuevoJson(obj){
 				  for(let i = 0;i<arr.length;i++){
 					  if(arr[i]["interior"] == 3 && yaPuesto == 0){
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8056,7 +9434,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 					  }
 				  }
 				  
@@ -8083,23 +9532,12 @@ function interioresNuevoJson(obj){
 			  if(hueco4[0]["tipo"] == "cajones"){
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8110,7 +9548,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+hueco4[0]['posicionShape']],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+hueco4[0]['posicionShape']],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco4[0]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -8213,23 +9722,12 @@ function interioresNuevoJson(obj){
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8240,7 +9738,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco4[1]["tipo"] == "tubo"){
@@ -8266,23 +9835,12 @@ function interioresNuevoJson(obj){
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8293,7 +9851,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[1]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[1]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco4[1]["tipo"] == "estantecristal"){
 			  		var arr = window.arrayDeEstantesMetCristal;
@@ -8396,23 +10025,12 @@ function interioresNuevoJson(obj){
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+						 
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8423,7 +10041,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 		  if(hueco4[2]["tipo"] == "tubo"){
@@ -8449,23 +10138,12 @@ function interioresNuevoJson(obj){
 
 			  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 		  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-			  api.scene.setLiveTransformation(
-					     [
-					       {
-					         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
-					         transformations: [
-					           {
-					             delay: 0,
-					             duration: 500,
-					             type: 'translation',
-					             easing: "Quartic.InOut",
-					             translationVector: { x: 0, y: 0, z: calcu },
-					             repeat: 0
-					           }
-					         ],reset:false
-					       },
-					       {
-						         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+			  
+			  if(hayCamisero == 0){
+				  api.scene.setLiveTransformation(
+						     [
+						       {
+						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
 						         transformations: [
 						           {
 						             delay: 0,
@@ -8476,7 +10154,78 @@ function interioresNuevoJson(obj){
 						             repeat: 0
 						           }
 						         ],reset:false
-						       }]);
+						       },
+						       {
+							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       }]);
+			  }
+			  if(hayCamisero == 1){
+			  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+			  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+			  		api.scene.setLiveTransformation(
+						     [
+						    	 {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[2]['posicionShape'])],
+							         transformations: [
+							           {
+							             delay: 0,
+							             duration: 500,
+							             type: 'translation',
+							             easing: "Quartic.InOut",
+							             translationVector: { x: 0, y: 0, z: calcu },
+							             repeat: 0
+							           }
+							         ],reset:false
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[2]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },{
+					  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+					  			         transformations: [
+					  			           {
+					  			             delay: 0,
+					  			             duration: 500,
+					  			             type: 'translation',
+					  			             easing: "Quartic.InOut",
+					  			             translationVector: { x: 0, y: 0, z: calcu },
+					  			             repeat: 0
+					  			           }
+					  			         ],reset:false
+					  			       },{
+						  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       }]);
+			  	}
 		  }
 		  if(hueco4[2]["tipo"] == "estantecristal"){
 		  		var arr = window.arrayDeEstantesMetCristal;
@@ -8581,23 +10330,12 @@ function interioresNuevoJson(obj){
 					  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 							  
 							  yaPuesto = 1;
-							  api.scene.setLiveTransformation(
-									     [
-									       {
-									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
-									         transformations: [
-									           {
-									             delay: 0,
-									             duration: 500,
-									             type: 'translation',
-									             easing: "Quartic.InOut",
-									             translationVector: { x: 0, y: 0, z: calcu },
-									             repeat: 0
-									           }
-									         ],reset:false
-									       },
-									       {
-										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+							  
+							  if(hayCamisero == 0){
+								  api.scene.setLiveTransformation(
+										     [
+										       {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
 										         transformations: [
 										           {
 										             delay: 0,
@@ -8608,7 +10346,78 @@ function interioresNuevoJson(obj){
 										             repeat: 0
 										           }
 										         ],reset:false
-										       }]);
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       }]);
+							  }
+							  if(hayCamisero == 1){
+							  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+							  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+							  		api.scene.setLiveTransformation(
+										     [
+										    	 {
+											         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },
+											       {
+												         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+												         transformations: [
+												           {
+												             delay: 0,
+												             duration: 500,
+												             type: 'translation',
+												             easing: "Quartic.InOut",
+												             translationVector: { x: 0, y: 0, z: calcu },
+												             repeat: 0
+												           }
+												         ],reset:false
+												       },{
+									  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       },{
+										  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+										  			         transformations: [
+										  			           {
+										  			             delay: 0,
+										  			             duration: 500,
+										  			             type: 'translation',
+										  			             easing: "Quartic.InOut",
+										  			             translationVector: { x: 0, y: 0, z: calcu },
+										  			             repeat: 0
+										  			           }
+										  			         ],reset:false
+										  			       }]);
+							  	}
 					  
 				  }
 			  if(hueco4[3]["tipo"] == "tubo"){
@@ -8634,23 +10443,12 @@ function interioresNuevoJson(obj){
 
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8661,7 +10459,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[3]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[3]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco4[3]["tipo"] == "estantecristal"){
 				 
@@ -8766,23 +10635,12 @@ function interioresNuevoJson(obj){
 				  window.object1 = api.scene.get({name: "EstantesCantosGeo", format: "glb"},"CommPlugin_1").data[0];
 						  
 						  yaPuesto = 1;
-						  api.scene.setLiveTransformation(
-								     [
-								       {
-								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
-								         transformations: [
-								           {
-								             delay: 0,
-								             duration: 500,
-								             type: 'translation',
-								             easing: "Quartic.InOut",
-								             translationVector: { x: 0, y: 0, z: calcu },
-								             repeat: 0
-								           }
-								         ],reset:false
-								       },
-								       {
-									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+						  
+						  if(hayCamisero == 0){
+							  api.scene.setLiveTransformation(
+									     [
+									       {
+									         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
 									         transformations: [
 									           {
 									             delay: 0,
@@ -8793,7 +10651,78 @@ function interioresNuevoJson(obj){
 									             repeat: 0
 									           }
 									         ],reset:false
-									       }]);
+									       },
+									       {
+										         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       }]);
+						  }
+						  if(hayCamisero == 1){
+						  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+						  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+						  		api.scene.setLiveTransformation(
+									     [
+									    	 {
+										         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
+										         transformations: [
+										           {
+										             delay: 0,
+										             duration: 500,
+										             type: 'translation',
+										             easing: "Quartic.InOut",
+										             translationVector: { x: 0, y: 0, z: calcu },
+										             repeat: 0
+										           }
+										         ],reset:false
+										       },
+										       {
+											         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+											         transformations: [
+											           {
+											             delay: 0,
+											             duration: 500,
+											             type: 'translation',
+											             easing: "Quartic.InOut",
+											             translationVector: { x: 0, y: 0, z: calcu },
+											             repeat: 0
+											           }
+											         ],reset:false
+											       },{
+								  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+								  			         transformations: [
+								  			           {
+								  			             delay: 0,
+								  			             duration: 500,
+								  			             type: 'translation',
+								  			             easing: "Quartic.InOut",
+								  			             translationVector: { x: 0, y: 0, z: calcu },
+								  			             repeat: 0
+								  			           }
+								  			         ],reset:false
+								  			       },{
+									  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+									  			         transformations: [
+									  			           {
+									  			             delay: 0,
+									  			             duration: 500,
+									  			             type: 'translation',
+									  			             easing: "Quartic.InOut",
+									  			             translationVector: { x: 0, y: 0, z: calcu },
+									  			             repeat: 0
+									  			           }
+									  			         ],reset:false
+									  			       }]);
+						  	}
 				  
 			  }
 			  if(hueco4[4]["tipo"] == "tubo"){
@@ -8818,23 +10747,12 @@ function interioresNuevoJson(obj){
 				  var contCaj = 0;
 				  window.object0 = api.scene.get({name: "Cajones", format: "glb"},"CommPlugin_1").data[0];
 			  window.object1 = api.scene.get({name: "CantosCajones", format: "glb"},"CommPlugin_1").data[0];
-				  api.scene.setLiveTransformation(
-						     [
-						       {
-						         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
-						         transformations: [
-						           {
-						             delay: 0,
-						             duration: 500,
-						             type: 'translation',
-						             easing: "Quartic.InOut",
-						             translationVector: { x: 0, y: 0, z: calcu },
-						             repeat: 0
-						           }
-						         ],reset:false
-						       },
-						       {
-							         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+				  
+				  if(hayCamisero == 0){
+					  api.scene.setLiveTransformation(
+							     [
+							       {
+							         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
 							         transformations: [
 							           {
 							             delay: 0,
@@ -8845,7 +10763,78 @@ function interioresNuevoJson(obj){
 							             repeat: 0
 							           }
 							         ],reset:false
-							       }]);
+							       },
+							       {
+								         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       }]);
+				  }
+				  if(hayCamisero == 1){
+				  		var object5 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+				  		var object6 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
+
+				  		api.scene.setLiveTransformation(
+							     [
+							    	 {
+								         scenePaths: ["CommPlugin_1."+object0.id +".content_"+(hueco4[4]['posicionShape'])],
+								         transformations: [
+								           {
+								             delay: 0,
+								             duration: 500,
+								             type: 'translation',
+								             easing: "Quartic.InOut",
+								             translationVector: { x: 0, y: 0, z: calcu },
+								             repeat: 0
+								           }
+								         ],reset:false
+								       },
+								       {
+									         scenePaths: ["CommPlugin_1."+object1.id +".content_"+(hueco4[4]['posicionShape'])],
+									         transformations: [
+									           {
+									             delay: 0,
+									             duration: 500,
+									             type: 'translation',
+									             easing: "Quartic.InOut",
+									             translationVector: { x: 0, y: 0, z: calcu },
+									             repeat: 0
+									           }
+									         ],reset:false
+									       },{
+						  			         scenePaths: ["CommPlugin_1."+object5.id +".content_"+posicionCamisero+".transformation_0"],
+						  			         transformations: [
+						  			           {
+						  			             delay: 0,
+						  			             duration: 500,
+						  			             type: 'translation',
+						  			             easing: "Quartic.InOut",
+						  			             translationVector: { x: 0, y: 0, z: calcu },
+						  			             repeat: 0
+						  			           }
+						  			         ],reset:false
+						  			       },{
+							  			         scenePaths: ["CommPlugin_1."+object6.id +".content_"+posicionCamisero+".transformation_0"],
+							  			         transformations: [
+							  			           {
+							  			             delay: 0,
+							  			             duration: 500,
+							  			             type: 'translation',
+							  			             easing: "Quartic.InOut",
+							  			             translationVector: { x: 0, y: 0, z: calcu },
+							  			             repeat: 0
+							  			           }
+							  			         ],reset:false
+							  			       }]);
+				  	}
 			  }
 			  if(hueco4[4]["tipo"] == "estantecristal"){
 				  
@@ -9113,7 +11102,7 @@ function interiorDefinidoMostrarArm(u,id){
 }
 var timeOutAncho;
 function cambiarVistaArmario(tipo){
-
+	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario("+tipo+")");
 	//ya1vez = false;
 	var rangeSlider = document.getElementById("rs-range-line");
 	var rangeSlider1 = document.getElementById("rs-range-line1");
@@ -9126,6 +11115,7 @@ function cambiarVistaArmario(tipo){
   var fondo = (rangeSlider2.value);
   //var tipo = 1;
   var codigo;
+  var codigoNuevo;
   var costado;
   var costado1;
   var costado2;
@@ -9148,15 +11138,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB001";
+				  cogidoNuevo = "AB1P";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB002";
+					  cogidoNuevo = "AB1P";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB003";
+						  cogidoNuevo = "AB1P";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB004";
+							  cogidoNuevo = "AB1P";
 						  }   
 					  }
 				  }
@@ -9168,7 +11162,7 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 
@@ -9180,15 +11174,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB005";
+				  cogidoNuevo = "AB1P";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB006";
+					  cogidoNuevo = "AB1P";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB007";
+						  cogidoNuevo = "AB1P";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB008";
+							  cogidoNuevo = "AB1P";
 						  }   
 					  }
 				  }
@@ -9200,7 +11198,7 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 
@@ -9215,15 +11213,19 @@ function cambiarVistaArmario(tipo){
 		  armario = 2;
 		  if(alto <= 230){
 			  codigo = "NB009";
+			  cogidoNuevo = "AB2P";
 		  }else{
 			  if(alto <= 240){
 				  codigo = "NB010";
+				  cogidoNuevo = "AB2P";
 			  }else{
 				  if(alto <= 250){
 					  codigo = "NB011";
+					  cogidoNuevo = "AB2P";
 				  }else{
 					  if(alto <= 260){
 						  codigo = "NB012";
+						  cogidoNuevo = "AB2P";
 					  }   
 				  }
 			  }
@@ -9235,7 +11237,7 @@ function cambiarVistaArmario(tipo){
 		  var objPuer1 = {
 				  "interior": 0,
 			      "tipo": "doble",
-			      "material": "madera1",
+			      "material": ["blanco","blanco"],
 			      "tirador":["none","none"]
 		  }
 		  arrayPuertas[0] = objPuer1;
@@ -9247,15 +11249,19 @@ function cambiarVistaArmario(tipo){
 		  armario = 2;
 		  if(alto <= 230){
 			  codigo = "NB013";
+			  cogidoNuevo = "AB2P";
 		  }else{
 			  if(alto <= 240){
 				  codigo = "NB014";
+				  cogidoNuevo = "AB2P";
 			  }else{
 				  if(alto <= 250){
 					  codigo = "NB015";
+					  cogidoNuevo = "AB2P";
 				  }else{
 					  if(alto <= 260){
 						  codigo = "NB016";
+						  cogidoNuevo = "AB2P";
 					  }   
 				  }
 			  }
@@ -9267,7 +11273,7 @@ function cambiarVistaArmario(tipo){
 		  var objPuer1 = {
 				  "interior": 0,
 			      "tipo": "doble",
-			      "material": "madera1",
+			      "material": ["blanco","blanco"],
 			      "tirador":["none","none"]
 		  }
 		  arrayPuertas[0] = objPuer1;
@@ -9280,15 +11286,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB017";
+				  cogidoNuevo = "AB3PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB018";
+					  cogidoNuevo = "AB3PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB019";
+						  cogidoNuevo = "AB3PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB020";
+							  cogidoNuevo = "AB3PA";
 						  }   
 					  }
 				  }
@@ -9302,13 +11312,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "tabak",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "tabak",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9320,15 +11330,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB021";
+				  cogidoNuevo = "AB3PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB022";
+					  cogidoNuevo = "AB3PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB023";
+						  cogidoNuevo = "AB3PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB024";
+							  cogidoNuevo = "AB3PB";
 						  }   
 					  }
 				  }
@@ -9340,13 +11354,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "simple",
-				      "material": "tabak",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "tabak",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9363,15 +11377,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB025";
+				  cogidoNuevo = "AB3PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB026";
+					  cogidoNuevo = "AB3PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB027";
+						  cogidoNuevo = "AB3PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB028";
+							  cogidoNuevo = "AB3PA";
 						  }   
 					  }
 				  }
@@ -9385,13 +11403,13 @@ function cambiarVistaArmario(tipo){
 	          var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "tabak",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "tabak",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9402,15 +11420,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB029";
+				  cogidoNuevo = "AB3PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB030";
+					  cogidoNuevo = "AB3PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB031";
+						  cogidoNuevo = "AB3PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB032";
+							  cogidoNuevo = "AB3PB";
 						  }   
 					  }
 				  }
@@ -9424,13 +11446,13 @@ function cambiarVistaArmario(tipo){
 	          var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9445,15 +11467,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB033";
+				  cogidoNuevo = "AB3PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB034";
+					  cogidoNuevo = "AB3PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB035";
+						  cogidoNuevo = "AB3PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB036";
+							  cogidoNuevo = "AB3PA";
 						  }   
 					  }
 				  }
@@ -9467,13 +11493,13 @@ function cambiarVistaArmario(tipo){
 	          var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9484,15 +11510,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB037";
+				  cogidoNuevo = "AB3PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB038";
+					  cogidoNuevo = "AB3PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB039";
+						  cogidoNuevo = "AB3PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB040";
+							  cogidoNuevo = "AB3PB";
 						  }   
 					  }
 				  }
@@ -9506,13 +11536,13 @@ function cambiarVistaArmario(tipo){
 	          var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9527,15 +11557,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB041";
+				  cogidoNuevo = "AB3PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB042";
+					  cogidoNuevo = "AB3PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB043";
+						  cogidoNuevo = "AB3PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB044";
+							  cogidoNuevo = "AB3PA";
 						  }   
 					  }
 				  }
@@ -9549,13 +11583,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9566,15 +11600,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB045";
+				  cogidoNuevo = "AB3PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB046";
+					  cogidoNuevo = "AB3PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB047";
+						  cogidoNuevo = "AB3PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB048";
+							  cogidoNuevo = "AB3PB";
 						  }   
 					  }
 				  }
@@ -9588,13 +11626,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9609,15 +11647,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB049";
+				  cogidoNuevo = "AB3PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB050";
+					  cogidoNuevo = "AB3PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB051";
+						  cogidoNuevo = "AB3PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB052";
+							  cogidoNuevo = "AB3PA";
 						  }   
 					  }
 				  }
@@ -9631,13 +11673,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9648,15 +11690,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB053";
+				  cogidoNuevo = "AB3PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB054";
+					  cogidoNuevo = "AB3PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB055";
+						  cogidoNuevo = "AB3PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB056";
+							  cogidoNuevo = "AB3PB";
 						  }   
 					  }
 				  }
@@ -9670,31 +11716,31 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9710,15 +11756,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB057";
+				  cogidoNuevo = "AB4PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB058";
+					  cogidoNuevo = "AB4PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB059";
+						  cogidoNuevo = "AB4PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB060";
+							  cogidoNuevo = "AB4PA";
 						  }   
 					  }
 				  }
@@ -9732,13 +11782,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9749,15 +11799,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB061";
+				  cogidoNuevo = "AB4PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB062";
+					  cogidoNuevo = "AB4PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB063";
+						  cogidoNuevo = "AB4PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB064";
+							  cogidoNuevo = "AB4PB";
 						  }   
 					  }
 				  }
@@ -9771,19 +11825,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9799,15 +11853,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB065";
+				  cogidoNuevo = "AB4PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB066";
+					  cogidoNuevo = "AB4PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB067";
+						  cogidoNuevo = "AB4PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB068";
+							  cogidoNuevo = "AB4PA";
 						  }   
 					  }
 				  }
@@ -9821,13 +11879,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9838,15 +11896,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB069";
+				  cogidoNuevo = "AB4PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB070";
+					  cogidoNuevo = "AB4PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB071";
+						  cogidoNuevo = "AB4PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB072";
+							  cogidoNuevo = "AB4PB";
 						  }   
 					  }
 				  }
@@ -9860,19 +11922,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9888,15 +11950,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB073";
+				  cogidoNuevo = "AB4PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB074";
+					  cogidoNuevo = "AB4PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB075";
+						  cogidoNuevo = "AB4PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB076";
+							  cogidoNuevo = "AB4PA";
 						  }   
 					  }
 				  }
@@ -9910,13 +11976,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9927,15 +11993,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB077";
+				  cogidoNuevo = "AB4PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB078";
+					  cogidoNuevo = "AB4PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB079";
+						  cogidoNuevo = "AB4PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB080";
+							  cogidoNuevo = "AB4PB";
 						  }   
 					  }
 				  }
@@ -9949,19 +12019,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -9977,15 +12047,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB081";
+				  cogidoNuevo = "AB4PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB082";
+					  cogidoNuevo = "AB4PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB083";
+						  cogidoNuevo = "AB4PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB084";
+							  cogidoNuevo = "AB4PA";
 						  }   
 					  }
 				  }
@@ -9999,13 +12073,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10017,15 +12091,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB085";
+				  cogidoNuevo = "AB4PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB086";
+					  cogidoNuevo = "AB4PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB087";
+						  cogidoNuevo = "AB4PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB088";
+							  cogidoNuevo = "AB4PB";
 						  }   
 					  }
 				  }
@@ -10039,19 +12117,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10067,15 +12145,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB089";
+				  cogidoNuevo = "AB4PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB090";
+					  cogidoNuevo = "AB4PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB091";
+						  cogidoNuevo = "AB4PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB092";
+							  cogidoNuevo = "AB4PA";
 						  }   
 					  }
 				  }
@@ -10089,13 +12171,13 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10106,15 +12188,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB093";
+				  cogidoNuevo = "AB4PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB094";
+					  cogidoNuevo = "AB4PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB095";
+						  cogidoNuevo = "AB4PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB096";
+							  cogidoNuevo = "AB4PB";
 						  }   
 					  }
 				  }
@@ -10130,19 +12216,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 				      "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10158,15 +12244,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB097";
+				  cogidoNuevo = "AB5PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB098";
+					  cogidoNuevo = "AB5PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB099";
+						  cogidoNuevo = "AB5PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB100";
+							  cogidoNuevo = "AB5PA";
 						  }   
 					  }
 				  }
@@ -10180,19 +12270,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10205,15 +12295,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB101";
+					  cogidoNuevo = "AB5PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB102";
+						  cogidoNuevo = "AB5PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB103";
+							  cogidoNuevo = "AB5PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB104";
+								  cogidoNuevo = "AB5PB";
 							  }   
 						  }
 					  }
@@ -10227,19 +12321,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10252,15 +12346,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB105";
+					  cogidoNuevo = "AB5PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB106";
+						  cogidoNuevo = "AB5PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB107";
+							  cogidoNuevo = "AB5PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB108";
+								  cogidoNuevo = "AB5PC";
 							  }   
 						  }
 					  }
@@ -10274,19 +12372,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10303,15 +12401,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB109";
+				  cogidoNuevo = "AB5PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB110";
+					  cogidoNuevo = "AB5PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB111";
+						  cogidoNuevo = "AB5PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB112";
+							  cogidoNuevo = "AB5PA";
 						  }   
 					  }
 				  }
@@ -10325,19 +12427,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10350,15 +12452,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB113";
+					  cogidoNuevo = "AB5PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB114";
+						  cogidoNuevo = "AB5PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB115";
+							  cogidoNuevo = "AB5PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB116";
+								  cogidoNuevo = "AB5PB";
 							  }   
 						  }
 					  }
@@ -10372,19 +12478,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10397,15 +12503,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB117";
+					  cogidoNuevo = "AB5PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB118";
+						  cogidoNuevo = "AB5PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB119";
+							  cogidoNuevo = "AB5PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB120";
+								  cogidoNuevo = "AB5PC";
 							  }   
 						  }
 					  }
@@ -10419,19 +12529,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10448,15 +12558,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB121";
+				  cogidoNuevo = "AB5PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB122";
+					  cogidoNuevo = "AB5PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB123";
+						  cogidoNuevo = "AB5PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB124";
+							  cogidoNuevo = "AB5PA";
 						  }   
 					  }
 				  }
@@ -10470,19 +12584,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10495,15 +12609,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB125";
+					  cogidoNuevo = "AB5PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB126";
+						  cogidoNuevo = "AB5PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB127";
+							  cogidoNuevo = "AB5PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB128";
+								  cogidoNuevo = "AB5PB";
 							  }   
 						  }
 					  }
@@ -10517,19 +12635,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10542,15 +12660,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB129";
+					  cogidoNuevo = "AB5PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB130";
+						  cogidoNuevo = "AB5PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB131";
+							  cogidoNuevo = "AB5PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB132";
+								  cogidoNuevo = "AB5PC";
 							  }   
 						  }
 					  }
@@ -10564,19 +12686,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10593,15 +12715,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB133";
+				  cogidoNuevo = "AB5PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB134";
+					  cogidoNuevo = "AB5PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB135";
+						  cogidoNuevo = "AB5PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB136";
+							  cogidoNuevo = "AB5PA";
 						  }   
 					  }
 				  }
@@ -10615,19 +12741,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10640,15 +12766,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB137";
+					  cogidoNuevo = "AB5PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB138";
+						  cogidoNuevo = "AB5PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB139";
+							  cogidoNuevo = "AB5PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB140";
+								  cogidoNuevo = "AB5PB";
 							  }   
 						  }
 					  }
@@ -10662,19 +12792,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10687,15 +12817,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB141";
+					  cogidoNuevo = "AB5PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB142";
+						  cogidoNuevo = "AB5PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB143";
+							  cogidoNuevo = "AB5PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB144";
+								  cogidoNuevo = "AB5PC";
 							  }   
 						  }
 					  }
@@ -10709,19 +12843,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10738,15 +12872,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB145";
+				  cogidoNuevo = "AB5PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB146";
+					  cogidoNuevo = "AB5PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB147";
+						  cogidoNuevo = "AB5PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB148";
+							  cogidoNuevo = "AB5PA";
 						  }   
 					  }
 				  }
@@ -10760,19 +12898,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador": "none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10785,15 +12923,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB149";
+					  cogidoNuevo = "AB5PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB150";
+						  cogidoNuevo = "AB5PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB151";
+							  cogidoNuevo = "AB5PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB152";
+								  cogidoNuevo = "AB5PB";
 							  }   
 						  }
 					  }
@@ -10807,19 +12949,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10832,15 +12974,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB153";
+					  cogidoNuevo = "AB5PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB154";
+						  cogidoNuevo = "AB5PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB155";
+							  cogidoNuevo = "AB5PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB156";
+								  cogidoNuevo = "AB5PC";
 							  }   
 						  }
 					  }
@@ -10854,19 +13000,19 @@ function cambiarVistaArmario(tipo){
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador": "none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -10883,15 +13029,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB157";
+				  cogidoNuevo = "AB6PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB158";
+					  cogidoNuevo = "AB6PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB159";
+						  cogidoNuevo = "AB6PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB160";
+							  cogidoNuevo = "AB6PA";
 						  }   
 					  }
 				  }
@@ -10905,19 +13055,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10929,15 +13079,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB161";
+				  cogidoNuevo = "AB6PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB162";
+					  cogidoNuevo = "AB6PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB163";
+						  cogidoNuevo = "AB6PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB164";
+							  cogidoNuevo = "AB6PB";
 						  }   
 					  }
 				  }
@@ -10952,25 +13106,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -10987,15 +13141,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB165";
+				  cogidoNuevo = "AB6PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB166";
+					  cogidoNuevo = "AB6PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB167";
+						  cogidoNuevo = "AB6PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB168";
+							  cogidoNuevo = "AB6PA";
 						  }   
 					  }
 				  }
@@ -11009,19 +13167,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11033,15 +13191,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB169";
+				  cogidoNuevo = "AB6PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB170";
+					  cogidoNuevo = "AB6PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB171";
+						  cogidoNuevo = "AB6PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB172";
+							  cogidoNuevo = "AB6PB";
 						  }   
 					  }
 				  }
@@ -11056,25 +13218,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11091,15 +13253,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB173";
+				  cogidoNuevo = "AB6PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB174";
+					  cogidoNuevo = "AB6PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB175";
+						  cogidoNuevo = "AB6PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB176";
+							  cogidoNuevo = "AB6PA";
 						  }   
 					  }
 				  }
@@ -11113,19 +13279,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11137,15 +13303,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB177";
+				  cogidoNuevo = "AB6PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB178";
+					  cogidoNuevo = "AB6PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB179";
+						  cogidoNuevo = "AB6PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB180";
+							  cogidoNuevo = "AB6PB";
 						  }   
 					  }
 				  }
@@ -11160,25 +13330,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11195,15 +13365,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB181";
+				  cogidoNuevo = "AB6PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB182";
+					  cogidoNuevo = "AB6PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB183";
+						  cogidoNuevo = "AB6PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB184";
+							  cogidoNuevo = "AB6PA";
 						  }   
 					  }
 				  }
@@ -11217,19 +13391,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11241,15 +13415,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB185";
+				  cogidoNuevo = "AB6PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB186";
+					  cogidoNuevo = "AB6PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB187";
+						  cogidoNuevo = "AB6PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB188";
+							  cogidoNuevo = "AB6PB";
 						  }   
 					  }
 				  }
@@ -11264,25 +13442,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11299,15 +13477,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB189";
+				  cogidoNuevo = "AB6PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB190";
+					  cogidoNuevo = "AB6PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB191";
+						  cogidoNuevo = "AB6PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB192";
+							  cogidoNuevo = "AB6PA";
 						  }   
 					  }
 				  }
@@ -11321,19 +13503,19 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11345,15 +13527,19 @@ function cambiarVistaArmario(tipo){
 		  }else{
 			  if(alto <= 230){
 				  codigo = "NB193";
+				  cogidoNuevo = "AB6PB";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB194";
+					  cogidoNuevo = "AB6PB";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB195";
+						  cogidoNuevo = "AB6PB";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB196";
+							  cogidoNuevo = "AB6PB";
 						  }   
 					  }
 				  }
@@ -11368,25 +13554,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "simple",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":"none"
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11404,15 +13590,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB197";
+				  cogidoNuevo = "AB7PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB198";
+					  cogidoNuevo = "AB7PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB199";
+						  cogidoNuevo = "AB7PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB200";
+							  cogidoNuevo = "AB7PA";
 						  }   
 					  }
 				  }
@@ -11427,25 +13617,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11459,15 +13649,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB201";
+					  cogidoNuevo = "AB7PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB202";
+						  cogidoNuevo = "AB7PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB203";
+							  cogidoNuevo = "AB7PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB204";
+								  cogidoNuevo = "AB7PB";
 							  }   
 						  }
 					  }
@@ -11482,25 +13676,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11514,15 +13708,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB205";
+					  cogidoNuevo = "AB7PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB206";
+						  cogidoNuevo = "AB7PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB207";
+							  cogidoNuevo = "AB7PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB208";
+								  cogidoNuevo = "AB7PC";
 							  }   
 						  }
 					  }
@@ -11537,25 +13735,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11573,15 +13771,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB209";
+				  cogidoNuevo = "AB7PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB210";
+					  cogidoNuevo = "AB7PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB211";
+						  cogidoNuevo = "AB7PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB212";
+							  cogidoNuevo = "AB7PA";
 						  }   
 					  }
 				  }
@@ -11596,25 +13798,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11628,15 +13830,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB213";
+					  cogidoNuevo = "AB7PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB214";
+						  cogidoNuevo = "AB7PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB215";
+							  cogidoNuevo = "AB7PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB216";
+								  cogidoNuevo = "AB7PB";
 							  }   
 						  }
 					  }
@@ -11651,25 +13857,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11683,15 +13889,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB217";
+					  cogidoNuevo = "AB7PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB218";
+						  cogidoNuevo = "AB7PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB219";
+							  cogidoNuevo = "AB7PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB220";
+								  cogidoNuevo = "AB7PC";
 							  }   
 						  }
 					  }
@@ -11706,25 +13916,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11742,15 +13952,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB221";
+				  cogidoNuevo = "AB7PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB222";
+					  cogidoNuevo = "AB7PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB223";
+						  cogidoNuevo = "AB7PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB224";
+							  cogidoNuevo = "AB7PA";
 						  }   
 					  }
 				  }
@@ -11765,25 +13979,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11797,15 +14011,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB225";
+					  cogidoNuevo = "AB7PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB226";
+						  cogidoNuevo = "AB7PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB227";
+							  cogidoNuevo = "AB7PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB228";
+								  cogidoNuevo = "AB7PB";
 							  }   
 						  }
 					  }
@@ -11820,25 +14038,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11852,15 +14070,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB229";
+					  cogidoNuevo = "AB7PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB230";
+						  cogidoNuevo = "AB7PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB231";
+							  cogidoNuevo = "AB7PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB232";
+								  cogidoNuevo = "AB7PC";
 							  }   
 						  }
 					  }
@@ -11875,25 +14097,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -11911,15 +14133,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB233";
+				  cogidoNuevo = "AB7PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB234";
+					  cogidoNuevo = "AB7PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB235";
+						  cogidoNuevo = "AB7PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB236";
+							  cogidoNuevo = "AB7PA";
 						  }   
 					  }
 				  }
@@ -11934,25 +14160,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -11966,15 +14192,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB237";
+					  cogidoNuevo = "AB7PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB238";
+						  cogidoNuevo = "AB7PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB239";
+							  cogidoNuevo = "AB7PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB240";
+								  cogidoNuevo = "AB7PB";
 							  }   
 						  }
 					  }
@@ -11989,25 +14219,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -12021,15 +14251,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB241";
+					  cogidoNuevo = "AB7PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB242";
+						  cogidoNuevo = "AB7PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB243";
+							  cogidoNuevo = "AB7PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB244";
+								  cogidoNuevo = "AB7PC";
 							  }   
 						  }
 					  }
@@ -12044,25 +14278,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -12080,15 +14314,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB245";
+				  cogidoNuevo = "AB7PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB246";
+					  cogidoNuevo = "AB7PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB247";
+						  cogidoNuevo = "AB7PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB248";
+							  cogidoNuevo = "AB7PA";
 						  }   
 					  }
 				  }
@@ -12103,25 +14341,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer2 = {
 					  "interior": 1,
 					  "tipo": "simple",
-				      "material": "madera1",
+				      "material": "blanco",
 				      "tirador":"none"
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12135,15 +14373,19 @@ function cambiarVistaArmario(tipo){
 			  if(tipo == 2){
 				  if(alto <= 230){
 					  codigo = "NB249";
+					  cogidoNuevo = "AB7PB";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB250";
+						  cogidoNuevo = "AB7PB";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB251";
+							  cogidoNuevo = "AB7PB";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB252";
+								  cogidoNuevo = "AB7PB";
 							  }   
 						  }
 					  }
@@ -12158,25 +14400,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -12189,15 +14431,19 @@ function cambiarVistaArmario(tipo){
 			  }else{
 				  if(alto <= 230){
 					  codigo = "NB253";
+					  cogidoNuevo = "AB7PC";
 				  }else{
 					  if(alto <= 240){
 						  codigo = "NB254";
+						  cogidoNuevo = "AB7PC";
 					  }else{
 						  if(alto <= 250){
 							  codigo = "NB255";
+							  cogidoNuevo = "AB7PC";
 						  }else{
 							  if(alto <= 260){
 								  codigo = "NB256";
+								  cogidoNuevo = "AB7PC";
 							  }   
 						  }
 					  }
@@ -12212,25 +14458,25 @@ function cambiarVistaArmario(tipo){
 				  var objPuer4 = {
 						  "interior": 3,
 						  "tipo": "simple",
-					      "material": "madera1",
+					      "material": "blanco",
 					      "tirador":"none"
 				  }
 				  var objPuer2 = {
 						  "interior": 1,
 					      "tipo": "doble",
-					      "material": "madera1",
+					      "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer3 = {
 						  "interior": 2,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  var objPuer1 = {
 						  "interior": 0,
 						  "tipo": "doble",
-					      "material": "madera1",
+						  "material": ["blanco","blanco"],
 					      "tirador":["none","none"]
 				  }
 				  arrayPuertas[0] = objPuer1;
@@ -12248,15 +14494,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB257";
+				  cogidoNuevo = "AB8PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB258";
+					  cogidoNuevo = "AB8PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB259";
+						  cogidoNuevo = "AB8PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB260";
+							  cogidoNuevo = "AB8PA";
 						  }   
 					  }
 				  }
@@ -12271,25 +14521,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12306,15 +14556,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB261";
+				  cogidoNuevo = "AB8PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB262";
+					  cogidoNuevo = "AB8PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB263";
+						  cogidoNuevo = "AB8PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB264";
+							  cogidoNuevo = "AB8PA";
 						  }   
 					  }
 				  }
@@ -12329,25 +14583,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12364,15 +14618,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB265";
+				  cogidoNuevo = "AB8PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB266";
+					  cogidoNuevo = "AB8PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB267";
+						  cogidoNuevo = "AB8PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB268";
+							  cogidoNuevo = "AB8PA";
 						  }   
 					  }
 				  }
@@ -12387,25 +14645,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12422,15 +14680,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB269";
+				  cogidoNuevo = "AB8PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB270";
+					  cogidoNuevo = "AB8PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB271";
+						  cogidoNuevo = "AB8PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB272";
+							  cogidoNuevo = "AB8PA";
 						  }   
 					  }
 				  }
@@ -12445,25 +14707,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12480,15 +14742,19 @@ function cambiarVistaArmario(tipo){
 		  if(tipo == 1){
 			  if(alto <= 230){
 				  codigo = "NB273";
+				  cogidoNuevo = "AB8PA";
 			  }else{
 				  if(alto <= 240){
 					  codigo = "NB274";
+					  cogidoNuevo = "AB8PA";
 				  }else{
 					  if(alto <= 250){
 						  codigo = "NB275";
+						  cogidoNuevo = "AB8PA";
 					  }else{
 						  if(alto <= 260){
 							  codigo = "NB276";
+							  cogidoNuevo = "AB8PA";
 						  }   
 					  }
 				  }
@@ -12503,25 +14769,25 @@ function cambiarVistaArmario(tipo){
 			  var objPuer4 = {
 					  "interior": 3,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer2 = {
 					  "interior": 1,
 				      "tipo": "doble",
-				      "material": "madera1",
+				      "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer3 = {
 					  "interior": 2,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
 					  "tipo": "doble",
-				      "material": "madera1",
+					  "material": ["blanco","blanco"],
 				      "tirador":["none","none"]
 			  }
 			  arrayPuertas[0] = objPuer1;
@@ -12908,6 +15174,9 @@ function cambiarVistaArmario(tipo){
   window.armario = armario;
   window.tipo = tipo;
   object["altura"] = alto * 10;
+  object["codigoNuevo"] = cogidoNuevo;
+  object["huecos"] = h;
+  object["web"] = 1;
   object["fondo"] = fondo * 10;
   object["puertas"] = arrayPuertas;
   window.todounarmario = object;
@@ -12926,6 +15195,9 @@ function cambiarVistaArmario(tipo){
   $("#codigodepsArm"+ codigo)[0].click();
   console.log(JSON.stringify(object));
   
+  $("#clicParaGuardarCodNuevo").attr("class",JSON.stringify(object));
+  $("#clicParaGuardarCodNuevo")[0].click();
+   
 }
 
 
@@ -21639,6 +23911,7 @@ function showSliderValue() {
 		}
 }
 function masgrandebotonancho(){
+	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
 	if(window.obj != undefined){
 		window.obj = undefined;
 		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
@@ -21680,6 +23953,7 @@ function masgrandebotonancho(){
 	$("#valorMaxDeAncho").text("400");
 }
 function maschicobotonancho(){
+	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
 	if(window.obj != undefined){
 		window.obj = undefined;
 		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
@@ -22233,16 +24507,32 @@ function estaMarcadoDivArm(div){
 		if(div == "#divPuerta0" || div == "#divPuerta1" || div == "#divPuerta2" || div == "#divPuerta3" || div == "#divPuerta4" || div == "#divPuerta5" || div == "#divPuerta6" || div == "#divPuerta7"){
 			if(armario == 1){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+				  }
+				  
+
 			  }
 			  if(armario == 2){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+				  }
+				  
 			  }
 			  if(armario == 3){
 
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+				  }
+				  
 			  }
 			  if(armario == 4){
 
@@ -22250,6 +24540,14 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+				  }
+				 
 			  }
 			  if(armario == 5){
 
@@ -22258,6 +24556,15 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+				  }
+				  
 			  }
 			  if(armario == 6){
 
@@ -22267,6 +24574,16 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+				  }
+				  
 			  }
 			  if(armario == 7){
 
@@ -22277,6 +24594,17 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
+				  }
+				  
 			  }
 			  if(armario == 8){
 
@@ -22288,21 +24616,49 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
 				  api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"],[]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"],[]);
+					  api.scene.toggleGeometry([api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_7"],[]);
+				  }
+				  
 			  }
 			
 		}else{
 			if(armario == 1){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "material" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+				  }
 			  }
 			  if(armario == 2){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+				  }
+				  
 			  }
 			  if(armario == 3){
 
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+				  }
+
 			  }
 			  if(armario == 4){
 
@@ -22310,6 +24666,14 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+				  }
+
 			  }
 			  if(armario == 5){
 
@@ -22318,6 +24682,16 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  
+				  }
+
 			  }
 			  if(armario == 6){
 
@@ -22327,6 +24701,17 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  
+				  }
+				  
 			  }
 			  if(armario == 7){
 
@@ -22337,6 +24722,18 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+					  
+				  }
+				  
 			  }
 			  if(armario == 8){
 
@@ -22348,6 +24745,18 @@ function estaMarcadoDivArm(div){
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
 				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+				  
+				  if(window.tieneTiradores == 1){
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+				  }
+				  
 			  }
 			
 		}
@@ -22503,14 +24912,17 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 		if(idTipo == "384"){
 			armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
 			armario["puertas"][idPuerta]["tirador"] = "tim";
+			window.tieneTiradores = 1;
 		}
 		if(idTipo == "385"){
 			armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
 			armario["puertas"][idPuerta]["tirador"] = "nye";
+			window.tieneTiradores = 1;
 		}
 		if(idTipo == "386"){
 			armario["puertas"][idPuerta]["material"] = acabado.toLowerCase();
 			armario["puertas"][idPuerta]["tirador"] = "draw";
+			window.tieneTiradores = 1;
 		}
 		if(idTipo == "391"){
 			armario["puertas"][idPuerta]["material"] = "";
@@ -22530,40 +24942,50 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 				if(idTipo == "383"){
 					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
+					
 				}
 				if(idTipo == "384"){
 					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "tim";
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "385"){
 					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "nye";
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "386"){
 					armario["puertas"][idPuerta]["material"][num] = acabado.toLowerCase();
 					armario["puertas"][idPuerta]["tirador"][num] = "draw";
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "387"){
 					armario["puertas"][idPuerta]["material"] = [acabado.toLowerCase(),acabado.toLowerCase()];
 					armario["puertas"][idPuerta]["tirador"] = ["tim","tim"];
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "388"){
 					armario["puertas"][idPuerta]["material"] = [acabado.toLowerCase(),acabado.toLowerCase()];
 					armario["puertas"][idPuerta]["tirador"] = ["tim","tim"];
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "389"){
 					armario["puertas"][idPuerta]["material"] = [acabado.toLowerCase(),acabado.toLowerCase()];
 					armario["puertas"][idPuerta]["tirador"] = ["nye","none"];
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "390"){
 					armario["puertas"][idPuerta]["material"] = [acabado.toLowerCase(),acabado.toLowerCase()];
 					armario["puertas"][idPuerta]["tirador"] = ["none","nye"];
+					window.tieneTiradores = 1;
 				}
 				if(idTipo == "391"){
 					armario["puertas"][idPuerta]["material"][num] = "";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 		}
+	
+	
 		
 	
 	window.puertas = armario;
@@ -22571,14 +24993,40 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
-	    }).then(
-	            function(response) {
-	            	var arrayPuertaTirador1 = window.arrayPuertaTirador;
-		           	 arrayPuertaTirador1[idPuerta + num] = idTipo;
-		           	 window.arrayPuertaTirador = arrayPuertaTirador1;
-	            	 api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath + ".content_"+(idPuerta+num)],[]);
-	            }
-		          );
+	    });
+	  var intervalo = setInterval(function(){
+
+			 api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+				 var arrayPuertaTirador1 = window.arrayPuertaTirador;
+	           	 arrayPuertaTirador1[idPuerta + num] = idTipo;
+	           	 window.arrayPuertaTirador = arrayPuertaTirador1;
+	           	var color = $("#inputAcabadoTirador").text();
+	        	var url = "";
+	        	if(color == "Blanco"){
+	        		url = "https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1";
+	        	}else{
+	        		
+	        		url = "https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1"
+	        	}
+            	// api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath + ".content_"+(idPuerta+num)],[]);
+            	 api.scene.updatePersistentAsync([{
+            			id: api.scene.get({ name: "Tiradores", format: "material" }, "CommPlugin_1").data[0].id,
+            			content: [
+            			{
+            				format: "material",
+            				data: {
+            					version: "2.0",
+            					roughness: 1,
+            					bitmaptexture: url
+            				}
+            			}
+            			]
+            		}], "CommPlugin_1");
+				 clearInterval(intervalo);
+			 }); 
+				 
+		  }, 1000);
+			 
 }
 
 window.arrayPuertaTirador = [];
@@ -22684,6 +25132,7 @@ function camiseroFuncionMover(hueco,id,input,tipo){
 	var calcu = med1 - medCami;
 	window.obj["interiores"][pos]["posicion"] = arrayHueco[tipo]["altura"];
 	window.object0 = api.scene.get({name: "Camiseros", format: "glb"},"CommPlugin_1").data[0];
+	window.object1 = api.scene.get({name: "CamiserosCantos", format: "glb"},"CommPlugin_1").data[0];
 	  api.scene.setLiveTransformation(
 			     [
 			       {
@@ -22698,7 +25147,19 @@ function camiseroFuncionMover(hueco,id,input,tipo){
 			             repeat: 0
 			           }
 			         ],reset:false
-			       }]);
+			       },{
+				         scenePaths: ["CommPlugin_1."+object1.id +".content_"+input+".transformation_0"],
+				         transformations: [
+				           {
+				             delay: 0,
+				             duration: 500,
+				             type: 'translation',
+				             easing: "Quartic.InOut",
+				             translationVector: { x: 0, y: 0, z: calcu },
+				             repeat: 0
+				           }
+				         ],reset:false
+				       }]);
 	  $("#clicparaConfirmarMoverInteriores").attr("class",""+JSON.stringify(window.obj)+"");
 		$("#clicparaConfirmarMoverInteriores")[0].click();
 }

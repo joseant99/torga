@@ -12737,6 +12737,11 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 contCesta++;
             }
         }
+        if (screen.width < 800) {
+            $('#nuevosArmariosNoMostrar').css({ display: 'none' });
+        } else {
+            $('#nuevosArmariosNoMostrar').css({ display: 'block' });
+        }
 
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];
@@ -13887,6 +13892,14 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 presupuestoArmario['medBCaj'] = parseFloat(prodCarr[m][1]['cajeado']['medB']);
                                 presupuestoArmario['cajeadoTexto'] = 'Tipo D';
                             }
+                        }
+
+                        if (prodCarr[m][1]['codigoNuevo'] != undefined) {
+                            presupuestoArmario['codigo'] = prodCarr[m][1]['codigoNuevo'];
+                            presupuestoArmario['numeroHuecos'] = prodCarr[m][1]['huecos'];
+                            presupuestoArmario['armarioWeb'] = prodCarr[m][1]['web'];
+                            presupuestoArmario['nombreParaCargarCesta'] = prodCarr[m][1]['nombreParaCargarCesta'];
+                            presupuestoArmario['nombreParaCargarCestaInterior'] = prodCarr[m][1]['nombreParaCargarCestaInterior'];
                         }
 
                         this.presupuestoArmarioTodoLOL = presupuestoArmario;

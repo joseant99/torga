@@ -32,7 +32,7 @@
 	<script type="https://s3.amazonaws.com/shapediverviewer/v2/2.19.4/sdv.concat.min.js"></script>
 	<script src="https://viewer.shapediver.com/v2/2.14.0/sdv.concat.min.js"></script>
     <script src="content/jquerysession.js"></script>
-    <script src="content/shapediverFunciones.js?n=7"></script>
+    <script src="content/shapediverFunciones.js?n=9"></script>
     
     	    <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
@@ -260,7 +260,7 @@ $("#divDentroCalcu").scroll(function() {
 					format: "material",
 					data: {
 						version: "2.0",
-						bitmaptexture: urlCantos
+						bitmaptexture: url
 					}
 				}
 				]
@@ -378,14 +378,14 @@ $("#divDentroCalcu").scroll(function() {
 			}
 			]
 		}, {
-			id: api.scene.get({ name: "Hang", format: "material" }, "CommPlugin_1").data[0].id,
+			id: api.scene.get({ name: "CamiserosCantos", format: "material" }, "CommPlugin_1").data[0].id,
 			content: [
 			{
 				format: "material",
 				data: {
 					version: "2.0",
 					roughness: 1,
-					bitmaptexture: url
+					bitmaptexture: urlCantos
 				}
 			}
 			]

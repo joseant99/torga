@@ -851,6 +851,52 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                         productosPresupuesto[cont] = todo;
                                         this.productosPresupuestoPedidos = productosPresupuesto;
                                         cont++;
+                                        var imagenes = this.imagenDeCestaProdService.todos1;
+                                        setTimeout(function() {
+                                            var casco = data.body[0]['acabadosCasco']['nombre'].toLowerCase();
+                                            if (data.body[0]['acabados'] != undefined) {
+                                                var trasera = data.body[0]['acabados']['nombre'].toLowerCase();
+                                            }
+                                            var interiorAca = data.body[0]['acabadosInterior']['nombre'].toLowerCase();
+
+                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                    casco +
+                                                    '</p>'
+                                            );
+                                            if (data.body[0]['acabados'] != undefined) {
+                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                    '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado trasera</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                        trasera +
+                                                        '</p>'
+                                                );
+                                            }
+                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
+                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Interiores</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                                    interiorAca +
+                                                    '</p>'
+                                            );
+                                            $('#imagen' + (cont - 1)).empty();
+
+                                            for (let z = 0; z < imagenes.length; z++) {
+                                                if (imagenes[z]['nombre'] == data.body[0]['nombreParaCargarCestaInterior']) {
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 400px;position: absolute;z-index:50" src="' +
+                                                            imagenes[z]['imagen'] +
+                                                            '">'
+                                                    );
+                                                }
+                                                if (imagenes[z]['nombre'] == data.body[0]['nombreParaCargarCesta']) {
+                                                    $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).append(
+                                                        '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:315px" src="' +
+                                                            imagenes[z]['imagen'] +
+                                                            '">'
+                                                    );
+                                                }
+                                            }
+                                        }, 1000);
                                         this.presupuestoArmarioInterioresService.busqueda(data.body[i]['id']).subscribe(data => {
                                             var cont = 0;
                                             var secogeparaprobar = this.productosPresupuestoPedidos;
@@ -872,24 +918,6 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                             var interiorAca = data.body[0]['presupuestoArmario']['acabadosInterior'][
                                                 'nombre'
                                             ].toLowerCase();
-
-                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Casco</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                    casco +
-                                                    '</p>'
-                                            );
-                                            if (data.body[0]['presupuestoArmario']['acabados'] != undefined) {
-                                                $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                    '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado trasera</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                        trasera +
-                                                        '</p>'
-                                                );
-                                            }
-                                            $('#datosMeter' + (cont - 1) + ' #primeroint').append(
-                                                '<p  id="pimprimirdatostexto"><span style="font-weight:600">Acabado Interiores</span>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                                                    interiorAca +
-                                                    '</p>'
-                                            );
 
                                             if (
                                                 data.body[0]['presupuestoArmario']['acabadosTirador'] != null &&
