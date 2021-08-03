@@ -3107,8 +3107,17 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         }
         var mejorArmario = this.armariosDormitorioComponent.armarioCogido;
         if (mejorArmario['interiores'][huecoPinta - 1] == undefined) {
-            mejorArmario['interiores'][huecoPinta - 1] = [];
-            mejorArmario['interiores'][huecoPinta - 1]['id'] = 20;
+            var objInte = {};
+            var objCat = {};
+            objInte['id'] = 135;
+            objInte['nombre'] = 'A medida';
+            objInte['imagen'] = '';
+            objInte['precio'] = '10';
+            objInte['imagenContentType'] = '';
+            objCat['id'] = 24;
+            objCat['nombre'] = 'Interiores';
+            objInte['categoriasDormi'] = objCat;
+            mejorArmario['interiores'][huecoPinta - 1] = objInte;
         }
         this.armariosDormitorioComponent.armarioCogido = mejorArmario;
         var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
@@ -4677,6 +4686,809 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         $('#subirrangosliderFunct').attr('onclick', 'bajarRangoSlider(' + id + ',' + u + ',' + JSON.stringify(this.objetoTodoArray) + ')');
         $('#subirrangosliderFunct')[0].click();
     }
+
+    public puertaDeCristal(id) {
+        this.armariosDormitorioComponent.puertasArmarioModal(id);
+        var armario = this.armariosDormitorioComponent.armarioCogido;
+        var idPuerta = this.armariosDormitorioComponent.idPuertaInput;
+        var cogidoId = armario['puertas'][idPuerta]['id'];
+        $('#divPuerta' + idPuerta).css({ border: '3px solid #47D54E' });
+
+        if (armario['armario']['mensaje'] == '3 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB017' ||
+                armario['codigo'] == 'NB018' ||
+                armario['codigo'] == 'NB019' ||
+                armario['codigo'] == 'NB020' ||
+                armario['codigo'] == 'NB025' ||
+                armario['codigo'] == 'NB026' ||
+                armario['codigo'] == 'NB027' ||
+                armario['codigo'] == 'NB028' ||
+                armario['codigo'] == 'NB033' ||
+                armario['codigo'] == 'NB034' ||
+                armario['codigo'] == 'NB035' ||
+                armario['codigo'] == 'NB036' ||
+                armario['codigo'] == 'NB041' ||
+                armario['codigo'] == 'NB042' ||
+                armario['codigo'] == 'NB043' ||
+                armario['codigo'] == 'NB044' ||
+                armario['codigo'] == 'NB049' ||
+                armario['codigo'] == 'NB050' ||
+                armario['codigo'] == 'NB051' ||
+                armario['codigo'] == 'NB052'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+
+            if (
+                armario['codigo'] == 'NB021' ||
+                armario['codigo'] == 'NB022' ||
+                armario['codigo'] == 'NB023' ||
+                armario['codigo'] == 'NB024' ||
+                armario['codigo'] == 'NB029' ||
+                armario['codigo'] == 'NB030' ||
+                armario['codigo'] == 'NB031' ||
+                armario['codigo'] == 'NB032' ||
+                armario['codigo'] == 'NB037' ||
+                armario['codigo'] == 'NB038' ||
+                armario['codigo'] == 'NB039' ||
+                armario['codigo'] == 'NB040' ||
+                armario['codigo'] == 'NB045' ||
+                armario['codigo'] == 'NB046' ||
+                armario['codigo'] == 'NB047' ||
+                armario['codigo'] == 'NB048' ||
+                armario['codigo'] == 'NB053' ||
+                armario['codigo'] == 'NB054' ||
+                armario['codigo'] == 'NB055' ||
+                armario['codigo'] == 'NB056'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '4 PUERTAS - 2 HUECOS GRANDES') {
+            if (
+                armario['codigo'] == 'NB057' ||
+                armario['codigo'] == 'NB058' ||
+                armario['codigo'] == 'NB059' ||
+                armario['codigo'] == 'NB060' ||
+                armario['codigo'] == 'NB065' ||
+                armario['codigo'] == 'NB066' ||
+                armario['codigo'] == 'NB067' ||
+                armario['codigo'] == 'NB068' ||
+                armario['codigo'] == 'NB073' ||
+                armario['codigo'] == 'NB074' ||
+                armario['codigo'] == 'NB075' ||
+                armario['codigo'] == 'NB076' ||
+                armario['codigo'] == 'NB081' ||
+                armario['codigo'] == 'NB082' ||
+                armario['codigo'] == 'NB083' ||
+                armario['codigo'] == 'NB084' ||
+                armario['codigo'] == 'NB089' ||
+                armario['codigo'] == 'NB090' ||
+                armario['codigo'] == 'NB091' ||
+                armario['codigo'] == 'NB092'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '4 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB061' ||
+                armario['codigo'] == 'NB062' ||
+                armario['codigo'] == 'NB063' ||
+                armario['codigo'] == 'NB064' ||
+                armario['codigo'] == 'NB069' ||
+                armario['codigo'] == 'NB070' ||
+                armario['codigo'] == 'NB071' ||
+                armario['codigo'] == 'NB072' ||
+                armario['codigo'] == 'NB077' ||
+                armario['codigo'] == 'NB078' ||
+                armario['codigo'] == 'NB079' ||
+                armario['codigo'] == 'NB080' ||
+                armario['codigo'] == 'NB085' ||
+                armario['codigo'] == 'NB086' ||
+                armario['codigo'] == 'NB087' ||
+                armario['codigo'] == 'NB088' ||
+                armario['codigo'] == 'NB093' ||
+                armario['codigo'] == 'NB094' ||
+                armario['codigo'] == 'NB095' ||
+                armario['codigo'] == 'NB096'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '5 PUERTAS CENTRAL') {
+            if (
+                armario['codigo'] == 'NB097' ||
+                armario['codigo'] == 'NB098' ||
+                armario['codigo'] == 'NB099' ||
+                armario['codigo'] == 'NB100' ||
+                armario['codigo'] == 'NB109' ||
+                armario['codigo'] == 'NB110' ||
+                armario['codigo'] == 'NB111' ||
+                armario['codigo'] == 'NB112' ||
+                armario['codigo'] == 'NB121' ||
+                armario['codigo'] == 'NB122' ||
+                armario['codigo'] == 'NB123' ||
+                armario['codigo'] == 'NB124' ||
+                armario['codigo'] == 'NB133' ||
+                armario['codigo'] == 'NB134' ||
+                armario['codigo'] == 'NB135' ||
+                armario['codigo'] == 'NB136' ||
+                armario['codigo'] == 'NB145' ||
+                armario['codigo'] == 'NB146' ||
+                armario['codigo'] == 'NB147' ||
+                armario['codigo'] == 'NB148'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '5 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB101' ||
+                armario['codigo'] == 'NB102' ||
+                armario['codigo'] == 'NB103' ||
+                armario['codigo'] == 'NB104' ||
+                armario['codigo'] == 'NB113' ||
+                armario['codigo'] == 'NB114' ||
+                armario['codigo'] == 'NB115' ||
+                armario['codigo'] == 'NB116' ||
+                armario['codigo'] == 'NB125' ||
+                armario['codigo'] == 'NB126' ||
+                armario['codigo'] == 'NB127' ||
+                armario['codigo'] == 'NB128' ||
+                armario['codigo'] == 'NB137' ||
+                armario['codigo'] == 'NB138' ||
+                armario['codigo'] == 'NB139' ||
+                armario['codigo'] == 'NB140' ||
+                armario['codigo'] == 'NB149' ||
+                armario['codigo'] == 'NB150' ||
+                armario['codigo'] == 'NB151' ||
+                armario['codigo'] == 'NB152'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '5 PUERTAS DERECHA') {
+            if (
+                armario['codigo'] == 'NB105' ||
+                armario['codigo'] == 'NB106' ||
+                armario['codigo'] == 'NB107' ||
+                armario['codigo'] == 'NB108' ||
+                armario['codigo'] == 'NB117' ||
+                armario['codigo'] == 'NB118' ||
+                armario['codigo'] == 'NB119' ||
+                armario['codigo'] == 'NB120' ||
+                armario['codigo'] == 'NB129' ||
+                armario['codigo'] == 'NB130' ||
+                armario['codigo'] == 'NB131' ||
+                armario['codigo'] == 'NB132' ||
+                armario['codigo'] == 'NB141' ||
+                armario['codigo'] == 'NB142' ||
+                armario['codigo'] == 'NB143' ||
+                armario['codigo'] == 'NB144' ||
+                armario['codigo'] == 'NB153' ||
+                armario['codigo'] == 'NB154' ||
+                armario['codigo'] == 'NB155' ||
+                armario['codigo'] == 'NB156'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '6 PUERTAS -3 HUECOS GRANDES') {
+            if (
+                armario['codigo'] == 'NB157' ||
+                armario['codigo'] == 'NB158' ||
+                armario['codigo'] == 'NB159' ||
+                armario['codigo'] == 'NB160' ||
+                armario['codigo'] == 'NB165' ||
+                armario['codigo'] == 'NB166' ||
+                armario['codigo'] == 'NB167' ||
+                armario['codigo'] == 'NB168' ||
+                armario['codigo'] == 'NB173' ||
+                armario['codigo'] == 'NB174' ||
+                armario['codigo'] == 'NB175' ||
+                armario['codigo'] == 'NB176' ||
+                armario['codigo'] == 'NB181' ||
+                armario['codigo'] == 'NB182' ||
+                armario['codigo'] == 'NB183' ||
+                armario['codigo'] == 'NB184' ||
+                armario['codigo'] == 'NB189' ||
+                armario['codigo'] == 'NB190' ||
+                armario['codigo'] == 'NB191' ||
+                armario['codigo'] == 'NB192'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '6 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB161' ||
+                armario['codigo'] == 'NB162' ||
+                armario['codigo'] == 'NB163' ||
+                armario['codigo'] == 'NB164' ||
+                armario['codigo'] == 'NB169' ||
+                armario['codigo'] == 'NB170' ||
+                armario['codigo'] == 'NB171' ||
+                armario['codigo'] == 'NB172' ||
+                armario['codigo'] == 'NB177' ||
+                armario['codigo'] == 'NB178' ||
+                armario['codigo'] == 'NB179' ||
+                armario['codigo'] == 'NB180' ||
+                armario['codigo'] == 'NB185' ||
+                armario['codigo'] == 'NB186' ||
+                armario['codigo'] == 'NB187' ||
+                armario['codigo'] == 'NB188' ||
+                armario['codigo'] == 'NB193' ||
+                armario['codigo'] == 'NB194' ||
+                armario['codigo'] == 'NB195' ||
+                armario['codigo'] == 'NB196'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '7 PUERTA ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB197' ||
+                armario['codigo'] == 'NB198' ||
+                armario['codigo'] == 'NB199' ||
+                armario['codigo'] == 'NB200' ||
+                armario['codigo'] == 'NB209' ||
+                armario['codigo'] == 'NB210' ||
+                armario['codigo'] == 'NB211' ||
+                armario['codigo'] == 'NB212' ||
+                armario['codigo'] == 'NB221' ||
+                armario['codigo'] == 'NB222' ||
+                armario['codigo'] == 'NB223' ||
+                armario['codigo'] == 'NB224' ||
+                armario['codigo'] == 'NB233' ||
+                armario['codigo'] == 'NB234' ||
+                armario['codigo'] == 'NB235' ||
+                armario['codigo'] == 'NB236' ||
+                armario['codigo'] == 'NB245' ||
+                armario['codigo'] == 'NB246' ||
+                armario['codigo'] == 'NB247' ||
+                armario['codigo'] == 'NB248'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+        if (armario['armario']['mensaje'] == '7 PUERTAS IZQUIERDA') {
+            if (
+                armario['codigo'] == 'NB201' ||
+                armario['codigo'] == 'NB202' ||
+                armario['codigo'] == 'NB203' ||
+                armario['codigo'] == 'NB204' ||
+                armario['codigo'] == 'NB213' ||
+                armario['codigo'] == 'NB214' ||
+                armario['codigo'] == 'NB215' ||
+                armario['codigo'] == 'NB216' ||
+                armario['codigo'] == 'NB225' ||
+                armario['codigo'] == 'NB226' ||
+                armario['codigo'] == 'NB227' ||
+                armario['codigo'] == 'NB228' ||
+                armario['codigo'] == 'NB237' ||
+                armario['codigo'] == 'NB238' ||
+                armario['codigo'] == 'NB239' ||
+                armario['codigo'] == 'NB240' ||
+                armario['codigo'] == 'NB249' ||
+                armario['codigo'] == 'NB250' ||
+                armario['codigo'] == 'NB251' ||
+                armario['codigo'] == 'NB252'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '7 PUERTAS DERECHA') {
+            if (
+                armario['codigo'] == 'NB205' ||
+                armario['codigo'] == 'NB206' ||
+                armario['codigo'] == 'NB207' ||
+                armario['codigo'] == 'NB208' ||
+                armario['codigo'] == 'NB217' ||
+                armario['codigo'] == 'NB218' ||
+                armario['codigo'] == 'NB219' ||
+                armario['codigo'] == 'NB220' ||
+                armario['codigo'] == 'NB229' ||
+                armario['codigo'] == 'NB230' ||
+                armario['codigo'] == 'NB231' ||
+                armario['codigo'] == 'NB232' ||
+                armario['codigo'] == 'NB241' ||
+                armario['codigo'] == 'NB242' ||
+                armario['codigo'] == 'NB243' ||
+                armario['codigo'] == 'NB244' ||
+                armario['codigo'] == 'NB253' ||
+                armario['codigo'] == 'NB254' ||
+                armario['codigo'] == 'NB255' ||
+                armario['codigo'] == 'NB256'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '8 PUERTAS ASIMETRICAS') {
+            if (
+                armario['codigo'] == 'NB257' ||
+                armario['codigo'] == 'NB258' ||
+                armario['codigo'] == 'NB259' ||
+                armario['codigo'] == 'NB260' ||
+                armario['codigo'] == 'NB261' ||
+                armario['codigo'] == 'NB262' ||
+                armario['codigo'] == 'NB263' ||
+                armario['codigo'] == 'NB264' ||
+                armario['codigo'] == 'NB265' ||
+                armario['codigo'] == 'NB266' ||
+                armario['codigo'] == 'NB267' ||
+                armario['codigo'] == 'NB268' ||
+                armario['codigo'] == 'NB269' ||
+                armario['codigo'] == 'NB270' ||
+                armario['codigo'] == 'NB271' ||
+                armario['codigo'] == 'NB272' ||
+                armario['codigo'] == 'NB273' ||
+                armario['codigo'] == 'NB274' ||
+                armario['codigo'] == 'NB275' ||
+                armario['codigo'] == 'NB276'
+            ) {
+                if (idPuerta == 0) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta1').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 1) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(0,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta0').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 2) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta3').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 3) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(1,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta2').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 4) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta5').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 5) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(2,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta4').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 6) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',0,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta7').css({ border: '3px solid #47D54E' });
+                    }
+                }
+                if (idPuerta == 7) {
+                    $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(3,' + cogidoId + ',1,"' + id + '")');
+                    $('#estoParaLaPuertaArmario')[0].click();
+                    if (cogidoId == 387 || cogidoId == 388 || cogidoId == 389 || cogidoId == 390) {
+                        $('#divPuerta6').css({ border: '3px solid #47D54E' });
+                    }
+                }
+            }
+        }
+
+        if (armario['armario']['mensaje'] == '2 PUERTAS' || armario['armario']['mensaje'] == '1 PUERTA') {
+            $('#estoParaLaPuertaArmario').attr('onclick', 'armarioPuertaCambiar(' + idPuerta + ',' + cogidoId + ',0,"' + id + '")');
+            $('#estoParaLaPuertaArmario')[0].click();
+        }
+    }
+
     public puertaDelArmarioPonerAcabado(id) {
         this.armariosDormitorioComponent.cambioAcabadoImagenPue(id);
         var armario = this.armariosDormitorioComponent.armarioCogido;
@@ -36398,14 +37210,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#calculadoraCarrito').css({ display: 'block' });
             $('#cargarApiShape1').attr('onclick', "apiShape1('" + id + "')");
             $('#cargarApiShape1')[0].click();
-            $('.cuerpoImagenPuertas').css({ display: 'block' });
+            //$('.cuerpoImagenPuertas').css({ display: 'block' });
             $('.armariosDivTodo').css({ position: 'absolute' });
             $('#observacionesArticulo').css({ display: 'none' });
             $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
             if (screen.width < 800) {
                 $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
             }
-            $('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+            //$('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
             $('#inputFondoBatientes').val(61);
             this.acaProdService.findAca(42).subscribe(data => {
                 this.todos = data.body[0]['acabados'];
@@ -36482,14 +37294,14 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#calculadoraCarrito').css({ display: 'block' });
             $('#cargarApiShape1').attr('onclick', "apiShape8('" + id + "')");
             $('#cargarApiShape1')[0].click();
-            $('.cuerpoImagenPuertas').css({ display: 'block' });
+            //$('.cuerpoImagenPuertas').css({ display: 'block' });
             $('.armariosDivTodo').css({ position: 'absolute' });
             $('#observacionesArticulo').css({ display: 'none' });
             $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
             if (screen.width < 800) {
                 $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
             }
-            $('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+            //$('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
             $('#inputFondoBatientes').val(61);
             setTimeout(function() {
                 $('#calculadoraCarrito').removeAttr('style');

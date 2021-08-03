@@ -864,8 +864,8 @@
 		          <button type="button" class="close" data-dismiss="modal">&times;</button>
 		        </div>
 		        <div class="modal-body">	           
-		         	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(381)" src="../../../content/images/puertas/1.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO A</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA ALUMINIO TRANSPA</p></div>  
-		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(382)" src="../../../content/images/puertas/2.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO B</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA ALUMINIO GRIS</p></div>  
+		         	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="puertaDeCristal(381)" src="../../../content/images/puertas/1.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO A</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA ALUMINIO TRANSPA</p></div>  
+		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="puertaDeCristal(382)" src="../../../content/images/puertas/2.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO B</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA ALUMINIO GRIS</p></div>  
 		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id=tirador013 data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(383)" src="../../../content/images/puertas/3.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO C</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA BATIENTE SIN TIRADOR</p></div>  
 		       		<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(384)" src="../../../content/images/puertas/4.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO D</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR TIM</p></div>  
 		       	  	<div style="float:left; width:180px; height:300px ;margin-left:80px;margin-top: 30px;margin-bottom:50px;" id="tirador013" data-dismiss="modal"><img title="Foto de linea de codigo"" class="tirador" (click)="this.armariosDormitorioComponent.puertasArmarioModal(385)" src="../../../content/images/puertas/6.png" style="max-height: 100%;max-width: 100%;    opacity: 0.7;" height="800px" width="100%" alt="productosDormitorio image"/><span style="float:left;width:100%;text-align:center">TIPO E</span><p id="textoPuertaModal" style="text-align:center;font-size:25px">PUERTA BATIENTE TIRADOR NYE</p></div>  
@@ -2644,6 +2644,17 @@
     		</div>
     </div>
     -->
+    <div class="cuerpoImagenPuertas" style="display:none !important;">
+    		<div id="divprincipalhuecomenmen" style="z-index:2;margin-bottom: 60px;border-bottom: 1px solid;padding-bottom: 35px;position: fixed;width: 100%;background-color: white;padding-top: 75px;top: 0;TEXT-ALIGN:CENTER;z-index:1000"><span style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: left;border: 1px red solid;color: red;padding-top: 13px;margin-left: 10%;" id="volveratrasconfiguracionarmarios" (click)="volveratras(9)"><span id="paraQuitarPaTras">VOLVER ATRAS</span><img src="../../../content/images/comedores/flecharoja.jpg" style="width:10px;display:none" id="imagenAtarmen"></span><span style="font-size: 38px;letter-spacing: 15px;padding-bottom: 15px;margin-rigth:15%"  id="textodivsuperiorquenosecambia4">CONFIGURACION</span><span id="divvolveriniciomen" style="font-size: 18px;letter-spacing: 3px;padding-bottom: 15px;float: right;border: 1px red solid;color: red;padding-top: 13px;margin-right: 10%;" (click)="volveratras(3)"><span id="paraQuitarPaTras">VOLVER AL INICIO</span><img src="../../../content/images/comedores/cajaroja.png" style="width:10px;display:none" id="imagenAtarmen1"></span></div>
+    		
+	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario1" class="estanpuestolosinteriores">
+	    		
+	    	</div>
+	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
+	    		
+	    	</div>
+	    	<button id="botonmencambiarvista" (click)="cambiarvistaBat()" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
+    	</div>
 	<div id="dimensiones"style="width:90%;float:left;">
 
 		<h2 id="medidas" style='margin-left:46%;float:left;display:none;margin-bottom:5%;'><strong>Medidas</strong></h2>
@@ -2724,6 +2735,7 @@
 				</div>
 			
 					<div id="productoCalculadora1" style="float:left;letter-spacing: 0.5px;width:100%">
+						
 						<a id="clicparacambiardecolor" onclick="cambiardecolor(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
 						<a id="clicparacambiardecolor123" onclick="cambiardecolor123(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
 						<a id="clicparacambiardecolor1234" onclick="cambiardecolor1234(0,'https://i.imgur.com/tUkyzJD.png')" style="display:none">prueba</a>
@@ -3235,7 +3247,7 @@
 				    		</div>
 				    		<!-- <button style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;color:white;left: auto;display:none"  data-toggle="modal" id="botonCalculadoraBatientes" data-target="#modalEnviadoCarrito" (click)="enviarCarritoInterioresJSON()">Mandar al carro</button> -->
 				    		<button  id="botonCalculadoraBatientes" class="displayBoton" onclick="imagenGirarParaCarro1()"  style="right: 0px;width: 50%;height: 7%;bottom: 40px;position: absolute;font-size: 16px;background-color: black;    left: auto;"><a style="padding-top: 25px;padding-bottom: 25px;color:white" href="#divarribatodo">Mandar al carro</a></button>
-							<a (click)="enviarCarritoInterioresJSON()" id="soloParaEnviarImagenGirada" style="display:none"></a>
+							<a (click)="enviarCarritoInterioresJSON()" id="soloParaEnviarImagenGirada11" style="display:none"></a>
 						</div>
 						
 						

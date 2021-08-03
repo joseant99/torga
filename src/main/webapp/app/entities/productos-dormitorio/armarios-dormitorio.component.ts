@@ -649,8 +649,18 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
             };
             todo[1]['mensaje'] = todo[1]['armario']['mensaje'];
             this.todo1perfect = todo;
-            this.subscribeToSaveResponse10(this.imagenDeCestaProdService.create(obj));
-            todo = this.todo1perfect;
+            this.subscribeToSaveResponse11(this.imagenDeCestaProdService.create(obj));
+            var imagenApi = $('#imagen2BBDD').attr('class');
+            var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
+            var nombreEspecialggez = Math.random();
+
+            todo[1]['nombreParaCargarCestaInterior'] = nombreEspecialggez;
+            var obj1 = {
+                imagen: imagenApi,
+                nombre: nombreEspecialggez,
+                nombreCesta: cogerIdCesta
+            };
+            this.subscribeToSaveResponse11(this.imagenDeCestaProdService.create(obj1));
         }
 
         const todoSumadoPrecio = $('#precioDimension').text();
@@ -30673,23 +30683,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         result.subscribe(
             (res: HttpResponse<ICategoriasDormi>) => {
                 console.log(1);
-                $('#clicparaEnviarAbbddSinPuertas')[0].click();
-                var imagenApi = $('#imagen1BBDD').attr('class');
-                var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
-                var nombreEspecialggez = Math.random();
-                var todo = this.todo1perfect;
-
-                todo[1]['nombreParaCargarCestaInterior'] = nombreEspecialggez;
-                var obj = {
-                    imagen: imagenApi,
-                    nombre: nombreEspecialggez,
-                    nombreCesta: cogerIdCesta
-                };
-                this.subscribeToSaveResponse11(this.imagenDeCestaProdService.create(obj));
             },
             (res: HttpErrorResponse) => this.onSaveError()
         );
-        this.todo1perfect = todo;
     }
     protected subscribeToSaveResponse11(result: Observable<HttpResponse<ICategoriasDormi>>) {
         result.subscribe((res: HttpResponse<ICategoriasDormi>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());

@@ -96,13 +96,6 @@ export class inicioComponent implements OnInit, AfterViewInit {
         var contacto = [];
         var mensajes = [];
 
-        if (screen.width < 800) {
-            $('.claseQueNoSeMuestre').css({ display: 'none' });
-            $('.claseQueNoSeMuestre1').css({ display: 'none' });
-        } else {
-            $('.claseQueNoSeMuestre').css({ display: 'block' });
-            $('.claseQueNoSeMuestre1').css({ display: 'block' });
-        }
         this.contactoFabricaService
             .query({
                 size: 1000000
@@ -315,11 +308,6 @@ export class inicioComponent implements OnInit, AfterViewInit {
                     name: 'authenticationSuccess',
                     content: 'Sending Authentication Success'
                 });
-                if (screen.width < 800) {
-                    $('#nuevosArmariosNoMostrar').css({ display: 'none' });
-                } else {
-                    $('#nuevosArmariosNoMostrar').css({ display: 'block' });
-                }
                 // previousState was set in the authExpiredInterceptor before being redirected to login modal.
                 // since login is successful, go to stored previousState and clear previousState
                 const redirect = this.stateStorageService.getUrl();

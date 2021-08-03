@@ -880,6 +880,7 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
 
                                             for (let z = 0; z < imagenes.length; z++) {
                                                 if (imagenes[z]['nombre'] == data.body[0]['nombreParaCargarCestaInterior']) {
+                                                    $('#imagen' + (cont - 1)).css({ height: '730px' });
                                                     $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
                                                     $('#imagen' + (cont - 1)).append(
                                                         '<img style="max-width: 400px;position: absolute;z-index:50" src="' +
@@ -889,8 +890,9 @@ export class PedidosProductosComponent implements OnInit, OnDestroy, AfterViewIn
                                                 }
                                                 if (imagenes[z]['nombre'] == data.body[0]['nombreParaCargarCesta']) {
                                                     $('#imagen' + (cont - 1)).css({ 'margin-left': '0px' });
+                                                    $('#imagen' + (cont - 1)).css({ height: '730px' });
                                                     $('#imagen' + (cont - 1)).append(
-                                                        '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:315px" src="' +
+                                                        '<img style="max-width: 400px;position: absolute;z-index:50;margin-top:415px" src="' +
                                                             imagenes[z]['imagen'] +
                                                             '">'
                                                     );

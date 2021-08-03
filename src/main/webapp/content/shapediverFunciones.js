@@ -183,7 +183,145 @@ function imagenGirarParaCarro1(){
 			api.scene.camera.updateAsync({'position': {x: -657.883398040687, y: -1721.5418300011615, z: 1227.8223071618345}, 'target': {x: 758.5643606351833, y:  127.50578991868758, z: 631.7026621119127} }).then(
 		            function(response) {
 		            	api.scene.camera.zoomAsync().then(function(response){
-		            		$("#soloParaEnviarImagenGirada")[0].click();
+		            		var imagen = api.scene.getScreenshot();
+		        			$("#soloParaMeterEnlacesYmostrar").append('<p id="imagen1BBDD" class="'+imagen+'"></p>');
+		            		
+		        			var armario = window.armario;
+		        			if(armario == 1){
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "material" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  }
+		        			  }
+		        			  if(armario == 2){
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  }
+		        				  
+		        			  }
+		        			  if(armario == 3){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  }
+		        		
+		        			  }
+		        			  if(armario == 4){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  }
+		        		
+		        			  }
+		        			  if(armario == 5){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        					  
+		        				  }
+		        		
+		        			  }
+		        			  if(armario == 6){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        					  
+		        				  }
+		        				  
+		        			  }
+		        			  if(armario == 7){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+		        					  
+		        				  }
+		        				  
+		        			  }
+		        			  if(armario == 8){
+		        		
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+		        				  api.scene.toggleGeometry([],[api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+		        				  
+		        				  if(window.tieneTiradores == 1){
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_0"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_1"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_2"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_3"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_4"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_5"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_6"]);
+		        					  api.scene.toggleGeometry([],[api.scene.get({ name: "Tiradores" , format: "glb" }, "CommPlugin_1").data[0].scenePath+".content_7"]);
+		        				  }
+		        				  
+		        			  }
+		        			  
+		        			  
+		        			  
+			        			setTimeout(function() {
+			        				var imagen1 = api.scene.getScreenshot();
+				        			$("#soloParaMeterEnlacesYmostrar").append('<p id="imagen2BBDD" class="'+imagen1+'"></p>');
+			        				$("#soloParaEnviarImagenGirada11")[0].click();
+			        			}, 1000);
 		            	})
 		            });
 
@@ -2608,147 +2746,16 @@ function apiShape1(id){
 		}
 	etiqueta.innerHTML =elInput.value;
 	/* cambia la posición de la etiqueta (el tooltip) */
-	if(elInput.value >= 390){
-		etiqueta.style.left =  ((parseFloat(elInput.value)) - (112))+"px";
-	}else{
-		if(elInput.value >= 380){
-			etiqueta.style.left =  ((parseFloat(elInput.value)) - (117))+"px";
-		}else{
-			if(elInput.value >= 370){
-				etiqueta.style.left =  ((parseFloat(elInput.value)) - (122))+"px";
-			}else{
-				if(elInput.value >= 360){
-					etiqueta.style.left =  ((parseFloat(elInput.value)) - (127))+"px";
-				}else{
-					if(elInput.value >= 350){
-						etiqueta.style.left =  ((parseFloat(elInput.value)) - (132))+"px";
-					}else{
-						if(elInput.value >= 340){
-							etiqueta.style.left =  ((parseFloat(elInput.value)) - (137))+"px";
-						}else{
-							if(elInput.value >= 330){
-								etiqueta.style.left =  ((parseFloat(elInput.value)) - (142))+"px";
-							}else{
-								if(elInput.value >= 320){
-									etiqueta.style.left =  ((parseFloat(elInput.value)) - (147))+"px";
-								}else{
-									if(elInput.value >= 310){
-										etiqueta.style.left =  ((parseFloat(elInput.value)) - (152))+"px";
-									}else{
-										if(elInput.value >= 300){
-											etiqueta.style.left =  ((parseFloat(elInput.value)) - (157))+"px";
-										}else{
-											if(elInput.value >= 290){
-												etiqueta.style.left =  ((parseFloat(elInput.value)) - (162))+"px";
-											}else{
-												if(elInput.value >= 280){
-													etiqueta.style.left =  ((parseFloat(elInput.value)) - (167))+"px";
-												}else{
-													if(elInput.value >= 260){
-														etiqueta.style.left =  ((parseFloat(elInput.value)) - (175))+"px";
-													}else{
-														if(elInput.value >= 250){
-															etiqueta.style.left =  ((parseFloat(elInput.value)) - (182))+"px";
-														}else{
-														if(elInput.value >= 240){
-															etiqueta.style.left =  ((parseFloat(elInput.value)) - (187))+"px";
-														}else{
-															if(elInput.value >= 220){
-																etiqueta.style.left =  ((parseFloat(elInput.value)) - (195))+"px";
-															}else{
-																if(elInput.value >= 210){
-																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (200))+"px";
-																}
-																else{
-																if(elInput.value > 200){
-																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (205))+"px";
-																}else{
-																	if(elInput.value >= 190 && elInput.value < 200){
-																		etiqueta.style.left =  ((parseFloat(elInput.value)) + (80))+"px";
-																	}else{
-																		if(elInput.value >= 180 && elInput.value != 200){
-																			etiqueta.style.left =  ((parseFloat(elInput.value)) + (70))+"px";
-																		}else{
-																			if(elInput.value >= 170 && elInput.value != 200){
-																				etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
-																			}else{
-																				if(elInput.value >= 160 && elInput.value != 200){
-																					etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
-																				}else{
-																					if(elInput.value >= 150 && elInput.value != 200){
-																						etiqueta.style.left =  ((parseFloat(elInput.value)) + (55))+"px";
-																					}else{
-																						if(elInput.value >= 140 && elInput.value != 200){
-																							etiqueta.style.left =  ((parseFloat(elInput.value)) + (48))+"px";
-																						}else{
-																							if(elInput.value >= 130 && elInput.value != 200){
-																								etiqueta.style.left =  ((parseFloat(elInput.value)) + (40))+"px";
-																							}else{
-																								if(elInput.value >= 120 && elInput.value != 200){
-																									etiqueta.style.left =  ((parseFloat(elInput.value)) + (32))+"px";
-																								}else{
-																									if(elInput.value >= 110 && elInput.value != 200){
-																										etiqueta.style.left =  ((parseFloat(elInput.value)) + (24))+"px";
-																									}else{
-																										if(elInput.value >= 100 && elInput.value != 200){
-																											etiqueta.style.left =  ((parseFloat(elInput.value)) + (16))+"px";
-																										}else{
-																											if(elInput.value >= 90 && elInput.value != 200){
-																												etiqueta.style.left =  ((parseFloat(elInput.value)) + (8))+"px";
-																											}else{
-																												if(elInput.value >= 80 && elInput.value != 200){
-																													etiqueta.style.left =  ((parseFloat(elInput.value)) - (2))+"px";
-																												}else{
-																													if(elInput.value >= 70 && elInput.value != 200){
-																														etiqueta.style.left =  ((parseFloat(elInput.value)) - (12))+"px";
-																													}else{
-																														if(elInput.value >= 60 && elInput.value != 200){
-																															etiqueta.style.left =  ((parseFloat(elInput.value)) - (22))+"px";
-																														}else{
-																															if(elInput.value >= 50 && elInput.value != 200){
-																																etiqueta.style.left =  ((parseFloat(elInput.value)) - (30))+"px";
-																															}else{
-																																if(elInput.value >= 40 && elInput.value != 200){
-																																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (40))+"px";
-																																}else{
-																																	if(elInput.value != 200){
-																																		etiqueta.style.left =  ((parseFloat(elInput.value)) - (50))+"px";
-																																	}
-																																}
-																															}
-																														}
-																													}
-																												}
-																											}
-																										}
-																									}
-																								}
-																							}
-																						}
-																					}
-																				}
-																			}
-																		}
-																	}
-																}
-																}
-															}
-														}
-													}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	
+	var rangeSlider = document.getElementById("rs-range-line");
+	var tamPX = 0;
+	 if (screen.width > 800) {
+		 tamPX = 290;
+	 }else{
+		 tamPX = 300;
+	 }
+	var cuenta = 0;
+	cuenta = tamPX / parseFloat(rangeSlider.max);
+	etiqueta.style.left =  ((parseFloat(rangeSlider.value) * cuenta) - 10 )+"px";
 	/* cambia el estilo del TRACK */
 	
 
@@ -2763,9 +2770,17 @@ function apiShape1(id){
 	rangeSlider.addEventListener("input", showSliderValue, false);
 	rangeSlider1.addEventListener("input", showSliderValue1, false);
 	rangeSlider2.addEventListener("input", showSliderValue2, false);
-	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
-	$("#rs-range-line1").attr("onmouseup","cambiarVistaArmarioAltura()");
-	$("#rs-range-line2").attr("onmouseup","cambiarVistaArmarioFondo()");
+	
+	window.funcClic = "";
+	if(screen.width < 800){
+		window.funcClic = "ontouchend";
+		$("#sdv-container").css({"position":"fixed"});
+	}else{
+		window.funcClic = "onmouseup";
+	}
+	$("#rs-range-line").attr(window.funcClic,"cambiarVistaArmario(1)");
+	$("#rs-range-line1").attr(window.funcClic,"cambiarVistaArmarioAltura()");
+	$("#rs-range-line2").attr(window.funcClic,"cambiarVistaArmarioFondo()");
 	$(".divBuscadorArticulos").css({"display":"block"});
 	$("#page-heading").css({"display":"none"});
     $("#diviframeprueba").css({"display":"block"});
@@ -3003,13 +3018,13 @@ function apiShape1(id){
 			    };
 		    materialesArray[10] = {
 			    	"id" : "cristal1",
-			    	"opacidad" : 1,
+			    	"opacidad" : 0.1,
 			    	"color":[255,255,255],
 			    	"brillo" : "1"
 			    };
 		    materialesArray[11] = {
 			    	"id" : "cristal2",
-			    	"opacidad" : 1,
+			    	"opacidad" : 0.2,
 			    	"color":[0,0,0],
 			    	"brillo" : "1"
 			    };
@@ -4083,7 +4098,7 @@ function interioresNuevoJson(obj){
  
 	  
 	  var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
-		$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
+		$("#rs-range-lineAdicional10").attr(window.funcClic,"cambiarArmarioEstantes(1,0,1,0)");
 		var inputDiv = document.querySelector('#inputDivAdi10');
 		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -4108,6 +4123,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional1.max)
@@ -4490,6 +4507,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional1.max)
@@ -4564,7 +4583,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional2 = document.getElementById("rs-range-lineAdicional20");
-		$("#rs-range-lineAdicional20").attr("onmouseup","cambiarArmarioEstantes(1,1,2,0)");
+		$("#rs-range-lineAdicional20").attr(window.funcClic,"cambiarArmarioEstantes(1,1,2,0)");
 		var inputDiv2 = document.querySelector('#inputDivAdi20');
 		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -4586,6 +4605,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional2.max)
@@ -4938,6 +4959,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional2.max)
@@ -5014,7 +5037,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional3 = document.getElementById("rs-range-lineAdicional30");
-		$("#rs-range-lineAdicional30").attr("onmouseup","cambiarArmarioEstantes(1,2,3,0)");
+		$("#rs-range-lineAdicional30").attr(window.funcClic,"cambiarArmarioEstantes(1,2,3,0)");
 		var inputDiv3 = document.querySelector('#inputDivAdi30');
 		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -5033,6 +5056,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional3.max)
@@ -5359,6 +5384,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional3.max)
@@ -5435,7 +5462,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional4 = document.getElementById("rs-range-lineAdicional40");
-		$("#rs-range-lineAdicional40").attr("onmouseup","cambiarArmarioEstantes(1,3,4,0)");
+		$("#rs-range-lineAdicional40").attr(window.funcClic,"cambiarArmarioEstantes(1,3,4,0)");
 		var inputDiv4 = document.querySelector('#inputDivAdi40');
 		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -5522,6 +5549,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional4.max)
@@ -5779,6 +5808,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional4.max)
@@ -5854,7 +5885,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional5 = document.getElementById("rs-range-lineAdicional50");
-		$("#rs-range-lineAdicional50").attr("onmouseup","cambiarArmarioEstantes(1,4,5,0)");
+		$("#rs-range-lineAdicional50").attr(window.funcClic,"cambiarArmarioEstantes(1,4,5,0)");
 		var inputDiv5 = document.querySelector('#inputDivAdi50');
 		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -5873,6 +5904,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional5.max)
@@ -6199,6 +6232,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional5.max)
@@ -6275,7 +6310,7 @@ function interioresNuevoJson(obj){
 		
 		//empieza 2 hueco
 		var rangeSliderAdicional6 = document.getElementById("rs-range-lineAdicional11");
-		$("#rs-range-lineAdicional11").attr("onmouseup","cambiarArmarioEstantes(2,0,1,1)");
+		$("#rs-range-lineAdicional11").attr(window.funcClic,"cambiarArmarioEstantes(2,0,1,1)");
 		var inputDiv = document.querySelector('#inputDivAdi11');
 		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -6297,6 +6332,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional6.max)
@@ -6567,6 +6604,8 @@ function interioresNuevoJson(obj){
 				var tamPX = 0;
 				 if (screen.width > 800) {
 					 tamPX = 307;
+				 }else{
+					 tamPX = 252;
 				 }
 				var cuenta = 0;
 				cuenta = tamPX / parseFloat(rangeSliderAdicional6.max)
@@ -6578,7 +6617,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional7 = document.getElementById("rs-range-lineAdicional21");
-		$("#rs-range-lineAdicional21").attr("onmouseup","cambiarArmarioEstantes(2,1,2,1)");
+		$("#rs-range-lineAdicional21").attr(window.funcClic,"cambiarArmarioEstantes(2,1,2,1)");
 		var inputDiv2 = document.querySelector('#inputDivAdi21');
 		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -6600,6 +6639,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional7.max)
@@ -6875,6 +6916,8 @@ function interioresNuevoJson(obj){
 			  var tamPX = 0;
 				 if (screen.width > 800) {
 					 tamPX = 307;
+				 }else{
+					 tamPX = 252;
 				 }
 				var cuenta = 0;
 				cuenta = tamPX / parseFloat(rangeSliderAdicional7.max)
@@ -6884,7 +6927,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		 
 		var rangeSliderAdicional8 = document.getElementById("rs-range-lineAdicional31");
-		$("#rs-range-lineAdicional31").attr("onmouseup","cambiarArmarioEstantes(2,2,3,1)");
+		$("#rs-range-lineAdicional31").attr(window.funcClic,"cambiarArmarioEstantes(2,2,3,1)");
 		var inputDiv3 = document.querySelector('#inputDivAdi31');
 		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -6906,6 +6949,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional8.max)
@@ -7209,6 +7254,8 @@ function interioresNuevoJson(obj){
 		  var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional8.max)
@@ -7218,7 +7265,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional9 = document.getElementById("rs-range-lineAdicional41");
-		$("#rs-range-lineAdicional41").attr("onmouseup","cambiarArmarioEstantes(2,3,4,1)");
+		$("#rs-range-lineAdicional41").attr(window.funcClic,"cambiarArmarioEstantes(2,3,4,1)");
 		var inputDiv4 = document.querySelector('#inputDivAdi41');
 		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -7240,6 +7287,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional9.max)
@@ -7517,6 +7566,8 @@ function interioresNuevoJson(obj){
 			  var tamPX = 0;
 				 if (screen.width > 800) {
 					 tamPX = 307;
+				 }else{
+					 tamPX = 252;
 				 }
 				var cuenta = 0;
 				cuenta = tamPX / parseFloat(rangeSliderAdicional9.max)
@@ -7525,7 +7576,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		 
 		var rangeSliderAdicional10 = document.getElementById("rs-range-lineAdicional51");
-		$("#rs-range-lineAdicional51").attr("onmouseup","cambiarArmarioEstantes(2,4,5,1)");
+		$("#rs-range-lineAdicional51").attr(window.funcClic,"cambiarArmarioEstantes(2,4,5,1)");
 		var inputDiv5 = document.querySelector('#inputDivAdi51');
 		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -7547,6 +7598,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional10.max)
@@ -7829,6 +7882,8 @@ function interioresNuevoJson(obj){
 			  var tamPX = 0;
 				 if (screen.width > 800) {
 					 tamPX = 307;
+				 }else{
+					 tamPX = 252;
 				 }
 				var cuenta = 0;
 				cuenta = tamPX / parseFloat(rangeSliderAdicional10.max)
@@ -7839,7 +7894,7 @@ function interioresNuevoJson(obj){
 		
 		
 		var rangeSliderAdicional11 = document.getElementById("rs-range-lineAdicional12");
-		$("#rs-range-lineAdicional12").attr("onmouseup","cambiarArmarioEstantes(3,0,1,2)");
+		$("#rs-range-lineAdicional12").attr(window.funcClic,"cambiarArmarioEstantes(3,0,1,2)");
 		var inputDiv = document.querySelector('#inputDivAdi12');
 		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -7861,6 +7916,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional11.max)
@@ -8132,6 +8189,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional11.max)
@@ -8141,7 +8200,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional12 = document.getElementById("rs-range-lineAdicional22");
-		$("#rs-range-lineAdicional22").attr("onmouseup","cambiarArmarioEstantes(3,1,2,2)");
+		$("#rs-range-lineAdicional22").attr(window.funcClic,"cambiarArmarioEstantes(3,1,2,2)");
 		var inputDiv2 = document.querySelector('#inputDivAdi22');
 		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -8162,6 +8221,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional12.max)
@@ -8438,6 +8499,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional12.max)
@@ -8447,7 +8510,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional13 = document.getElementById("rs-range-lineAdicional32");
-		$("#rs-range-lineAdicional32").attr("onmouseup","cambiarArmarioEstantes(3,2,3,2)");
+		$("#rs-range-lineAdicional32").attr(window.funcClic,"cambiarArmarioEstantes(3,2,3,2)");
 		var inputDiv3 = document.querySelector('#inputDivAdi32');
 		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -8469,6 +8532,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional13.max)
@@ -8740,6 +8805,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional13.max)
@@ -8749,7 +8816,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional14 = document.getElementById("rs-range-lineAdicional42");
-		$("#rs-range-lineAdicional42").attr("onmouseup","cambiarArmarioEstantes(3,3,4,2)");
+		$("#rs-range-lineAdicional42").attr(window.funcClic,"cambiarArmarioEstantes(3,3,4,2)");
 		var inputDiv4 = document.querySelector('#inputDivAdi42');
 		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -8770,6 +8837,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional14.max)
@@ -9042,6 +9111,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional14.max)
@@ -9051,7 +9122,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional15 = document.getElementById("rs-range-lineAdicional52");
-		$("#rs-range-lineAdicional52").attr("onmouseup","cambiarArmarioEstantes(3,4,5,2)");
+		$("#rs-range-lineAdicional52").attr(window.funcClic,"cambiarArmarioEstantes(3,4,5,2)");
 		var inputDiv5 = document.querySelector('#inputDivAdi52');
 		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -9072,6 +9143,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional15.max)
@@ -9343,6 +9416,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional15.max)
@@ -9352,7 +9427,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		  
 	    var rangeSliderAdicional16 = document.getElementById("rs-range-lineAdicional13");
-		$("#rs-range-lineAdicional13").attr("onmouseup","cambiarArmarioEstantes(4,0,1,3)");
+		$("#rs-range-lineAdicional13").attr(window.funcClic,"cambiarArmarioEstantes(4,0,1,3)");
 		var inputDiv = document.querySelector('#inputDivAdi13');
 		var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -9373,6 +9448,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional16.max)
@@ -9648,6 +9725,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional16.max)
@@ -9657,7 +9736,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional17 = document.getElementById("rs-range-lineAdicional23");
-		$("#rs-range-lineAdicional23").attr("onmouseup","cambiarArmarioEstantes(4,1,2,3)");
+		$("#rs-range-lineAdicional23").attr(window.funcClic,"cambiarArmarioEstantes(4,1,2,3)");
 		var inputDiv2 = document.querySelector('#inputDivAdi23');
 		var w = parseInt(window.getComputedStyle(inputDiv2, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -9678,6 +9757,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional17.max)
@@ -9951,6 +10032,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional17.max)
@@ -9960,7 +10043,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional18 = document.getElementById("rs-range-lineAdicional33");
-		$("#rs-range-lineAdicional33").attr("onmouseup","cambiarArmarioEstantes(4,2,3,3)");
+		$("#rs-range-lineAdicional33").attr(window.funcClic,"cambiarArmarioEstantes(4,2,3,3)");
 		var inputDiv3 = document.querySelector('#inputDivAdi33');
 		var w = parseInt(window.getComputedStyle(inputDiv3, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -9982,6 +10065,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional18.max)
@@ -10256,6 +10341,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional18.max)
@@ -10265,7 +10352,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional19 = document.getElementById("rs-range-lineAdicional43");
-		$("#rs-range-lineAdicional43").attr("onmouseup","cambiarArmarioEstantes(4,3,4,3)");
+		$("#rs-range-lineAdicional43").attr(window.funcClic,"cambiarArmarioEstantes(4,3,4,3)");
 		var inputDiv4 = document.querySelector('#inputDivAdi43');
 		var w = parseInt(window.getComputedStyle(inputDiv4, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -10287,6 +10374,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional19.max)
@@ -10561,6 +10650,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional19.max)
@@ -10570,7 +10661,7 @@ function interioresNuevoJson(obj){
 		}, false);
 		
 		var rangeSliderAdicional20 = document.getElementById("rs-range-lineAdicional53");
-		$("#rs-range-lineAdicional53").attr("onmouseup","cambiarArmarioEstantes(4,4,5,3)");
+		$("#rs-range-lineAdicional53").attr(window.funcClic,"cambiarArmarioEstantes(4,4,5,3)");
 		var inputDiv5 = document.querySelector('#inputDivAdi53');
 		var w = parseInt(window.getComputedStyle(inputDiv5, null).getPropertyValue("width"));
 		/* EL INPUT */
@@ -10592,6 +10683,8 @@ function interioresNuevoJson(obj){
 		var tamPX = 0;
 		 if (screen.width > 800) {
 			 tamPX = 307;
+		 }else{
+			 tamPX = 252;
 		 }
 		var cuenta = 0;
 		cuenta = tamPX / parseFloat(rangeSliderAdicional20.max)
@@ -10866,6 +10959,8 @@ function interioresNuevoJson(obj){
 			var tamPX = 0;
 			 if (screen.width > 800) {
 				 tamPX = 307;
+			 }else{
+				 tamPX = 252;
 			 }
 			var cuenta = 0;
 			cuenta = tamPX / parseFloat(rangeSliderAdicional20.max)
@@ -11102,7 +11197,7 @@ function interiorDefinidoMostrarArm(u,id){
 }
 var timeOutAncho;
 function cambiarVistaArmario(tipo){
-	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario("+tipo+")");
+	$("#rs-range-line").attr(window.funcClic,"cambiarVistaArmario("+tipo+")");
 	//ya1vez = false;
 	var rangeSlider = document.getElementById("rs-range-line");
 	var rangeSlider1 = document.getElementById("rs-range-line1");
@@ -11355,7 +11450,7 @@ function cambiarVistaArmario(tipo){
 					  "interior": 1,
 				      "tipo": "simple",
 				      "material": "blanco",
-				      "tirador":"none"
+				      "tirador":"none"				      
 			  }
 			  var objPuer1 = {
 					  "interior": 0,
@@ -15308,7 +15403,7 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	  console.log(JSON.stringify(armario));
 	  if(arrayCajones[0]["posicion"] != undefined){
 		    var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
-			$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
+			$("#rs-range-lineAdicional10").attr(window.funcClic,"cambiarArmarioEstantes(1,0,1,0)");
 			var inputDiv = document.querySelector('#inputDivAdi10');
 			var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 			/* EL INPUT */
@@ -15395,7 +15490,7 @@ function pintarinterioresArmarioShape(array1,array2,array3,array4,cajones1,cajon
 	  if(estantes[0].length != 0){
 		  
 		    var rangeSliderAdicional1 = document.getElementById("rs-range-lineAdicional10");
-			$("#rs-range-lineAdicional10").attr("onmouseup","cambiarArmarioEstantes(1,0,1,0)");
+			$("#rs-range-lineAdicional10").attr(window.funcClic,"cambiarArmarioEstantes(1,0,1,0)");
 			var inputDiv = document.querySelector('#inputDivAdi10');
 			var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
 			/* EL INPUT */
@@ -23911,7 +24006,7 @@ function showSliderValue() {
 		}
 }
 function masgrandebotonancho(){
-	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
+	$("#rs-range-line").attr(window.funcClic,"cambiarVistaArmario(1)");
 	if(window.obj != undefined){
 		window.obj = undefined;
 		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
@@ -23953,7 +24048,7 @@ function masgrandebotonancho(){
 	$("#valorMaxDeAncho").text("400");
 }
 function maschicobotonancho(){
-	$("#rs-range-line").attr("onmouseup","cambiarVistaArmario(1)");
+	$("#rs-range-line").attr(window.funcClic,"cambiarVistaArmario(1)");
 	if(window.obj != undefined){
 		window.obj = undefined;
 		var parame = api.parameters.get({'name':'InterioresJSON'},"CommPlugin_1").data[0];
@@ -24898,11 +24993,11 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	 
 	if(armario["puertas"][idPuerta]["tipo"] == "simple"){
 		if(idTipo == "381"){
-			armario["puertas"][idPuerta]["material"] = "cristal";
+			armario["puertas"][idPuerta]["material"] = "cristal1";
 			armario["puertas"][idPuerta]["tirador"] = "none";
 		}
 		if(idTipo == "382"){
-			armario["puertas"][idPuerta]["material"] = "cristal";
+			armario["puertas"][idPuerta]["material"] = "cristal2";
 			armario["puertas"][idPuerta]["tirador"] = "none";
 		}
 		if(idTipo == "383"){
@@ -24932,11 +25027,11 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 	if(armario["puertas"][idPuerta]["tipo"] == "doble"){
 		
 				if(idTipo == "381"){
-					armario["puertas"][idPuerta]["material"][num] = "cristal";
+					armario["puertas"][idPuerta]["material"][num] = "cristal1";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "382"){
-					armario["puertas"][idPuerta]["material"][num] = "cristal";
+					armario["puertas"][idPuerta]["material"][num] = "cristal2";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 				if(idTipo == "383"){
@@ -24989,27 +25084,34 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 		
 	
 	window.puertas = armario;
+	var color = $("#inputAcabadoTirador").text();
+	var url = "";
+	if(color == "Blanco"){
+		url = "https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1";
+	}else{
+		
+		url = "https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1";
+	}
+	
+	
 	var parame = api.parameters.get({name :"PuertasJSON"}).data[0];
+	var parame1 = api.parameters.get({name :"texturaTiradores"}).data[0];
 	  api.parameters.updateAsync({
 	      id: parame.id,
 	      value: JSON.stringify(armario)
-	    });
+	    },{
+		      id: parame1.id,
+		      value: url
+		});
 	  var intervalo = setInterval(function(){
 
 			 api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
 				 var arrayPuertaTirador1 = window.arrayPuertaTirador;
 	           	 arrayPuertaTirador1[idPuerta + num] = idTipo;
 	           	 window.arrayPuertaTirador = arrayPuertaTirador1;
-	           	var color = $("#inputAcabadoTirador").text();
-	        	var url = "";
-	        	if(color == "Blanco"){
-	        		url = "https://dl.dropboxusercontent.com/s/f3ybq7sb89mgqzi/BLANCO.png?dl=1";
-	        	}else{
-	        		
-	        		url = "https://dl.dropboxusercontent.com/s/gg2ue7mxcnmotb0/GRAFENO.png?dl=1"
-	        	}
+	           	
             	// api.scene.toggleGeometry([api.scene.get({ name: "puertas" }, "CommPlugin_1").data[0].scenePath + ".content_"+(idPuerta+num)],[]);
-            	 api.scene.updatePersistentAsync([{
+            	 /*api.scene.updatePersistentAsync([{
             			id: api.scene.get({ name: "Tiradores", format: "material" }, "CommPlugin_1").data[0].id,
             			content: [
             			{
@@ -25021,7 +25123,7 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
             				}
             			}
             			]
-            		}], "CommPlugin_1");
+            		}], "CommPlugin_1");*/
 				 clearInterval(intervalo);
 			 }); 
 				 
