@@ -16079,6 +16079,9 @@ ui bootstrap tweaks
         margin-left: 12px;
         float: left;
     }
+    #aSoloPaMovil {
+        padding-left: 12% !important;
+    }
     #sdv-container {
         width: 100% !important;
         height: 265px !important;

@@ -2020,6 +2020,172 @@ function apiShape8(id){
 	
 }
 
+function apiShape9(id){
+	
+	window.textura = 'https://dl.dropboxusercontent.com/s/w62eqw9qyciq4lz/TABAK.png?dl=1';
+	window.puertasAca = [];
+	window.puertasAca1 = [];
+	window.puertasAcaCantos = [];
+	window.puertasAcaCantos1 = [];
+	$(".divBuscadorArticulos").css({"display":"block"});
+	$("#page-heading").css({"display":"none"});
+    $("#diviframeprueba").css({"display":"block"});
+    $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    var _container = document.getElementById('sdv-container');
+	// viewer settings
+	var _viewerSettings = {
+	  // container to use
+	  container: _container,
+	  // when creating the viewer, we want to get back an API v2 object
+	  api: {
+	    version: 2
+	  },
+	  // ticket for a ShapeDiver model
+	  ticket: '784cdc61239ec332ab0fd0e173a700fa97a62e65fba722e7827b0c14d14ddc0880bc9ece63c8e2c5861c52f4e22fc5c48f8a71d0e742c885470cef9352842bba420c0557eb7c5a53b0f5ebe6238914f4d76c21b4be2ba3c120e38aa494279e0a6590259ede7e33d739ca4c8bb18728fbef037c75ed4274d4228bce34fce17d7a-16b722c51edc64fb8d7afb88274aea74',
+	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+	  modelViewUrl: 'eu-central-1',
+	  showControlsInitial: true,
+	  runtimeId: 'CommPlugin_1',
+	  showSettingsInitial: false
+	};
+	
+	// create the viewer, get back an API v2 object
+	window.api = new SDVApp.ParametricViewer(_viewerSettings); 
+	
+	var viewerInit = false;
+	var parameters;
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "2f6f8ffb73f5957fc97c7d30430bff5d55bef43d0cfc390aedb91385f9acbd08bb96b44dd0bca653c5b68df70389e07228c042979f2f6c6472819d6e4357558e0e5adaf5a9c995da80b1e5a0c0847cc3d0acbb1d20e42ff2828dd6492544ff356ab4361fbbd7d104eac9c7ca9b6a7cb24d9942dbfec4afd16ec1848100a0c55a-e9eb388a0bb4584433b7b731bbb5ff16",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_2',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_2');
+	
+	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+		
+	    if (!viewerInit) {
+	    	setTimeout(function() {
+	    		var armario1 = new THREE.Matrix4();
+				
+				armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,api.parameters.get({name : "L", plugin: "CommPlugin_1"},"CommPlugin_1").data[0].value,0,0,1);
+				
+				armario1.transpose();
+				
+				api.scene.applyTransformation("plugin","CommPlugin_2",armario1);
+            }, 2500);
+	    		
+				
+	    	window.s = new THREE.Matrix4();
+	    	var arrayGlobal = [];
+	    	
+	    	 
+	    	//$('#clicWebNumeroCambio')[0].click();
+		  var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		  
+		 var ancho1 = $("#ancho1").text();
+		  var parame = api.parameters.get({name :"L"}).data[0];
+		 
+			api.parameters.updateAsync({
+		      id: parame.id,
+		      value: (parseFloat(ancho1)*10)
+		    }).then(function(response){
+		    	 var alto1 = $("#altoDatosDimen").text();
+		  	     var parame = api.parameters.get({name :"H"}).data[0];
+		  	     if(parame != undefined){
+		  	    	api.parameters.updateAsync({
+			  	          id: parame.id,
+			  	          value: (parseFloat(alto1)*10)
+			  	        }) 
+		  	     }
+		    });
+			var updatedSettings = {
+				  scene : {
+					  camera : {
+						  rotationSpeed : 0.1,
+						  autoAdjust: true,
+						  restrictions :{
+							  rotation : {
+								  minAzimuthAngle: -75,
+								  minPolarAngle: 45,
+								  maxPolarAngle: 90,
+								  maxAzimuthAngle: 75
+								  }
+		  					}
+		  				}
+		  			}
+		  }
+		api.updateSettingsAsync(updatedSettings); 
+			 if(api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0] != undefined){
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_1").data[0].scenePath , api.scene.get({ name: "Dimensiones", format: "glb" }, "CommPlugin_2").data[0].scenePath]);
+			}
+	      var globalDiv = document.getElementById("parameters");
+	      parameters = api.parameters.get();
+	      parameters.data.sort(function(a, b) {
+	        return a.order - b.order;
+	      });
+	      console.log(parameters.data);
+	      
+	      	window.object0 = api.scene.get({name: "TapaGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object1 = api.scene.get({name: "CostadosGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object2 = api.scene.get({name: "SueloGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object3 = api.scene.get({name: "Tabica geo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object4 = api.scene.get({name: "MolduraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object5 = api.scene.get({name: "TraseraGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object6 = api.scene.get({name: "FrenteGeo", format: "glb"},"CommPlugin_1").data[0];
+	      	window.object7 = api.scene.get({name: "CostadoIntGeo", format: "glb"},"CommPlugin_1").data[0];
+
+	    	      
+	      
+
+	      var exports = api.exports.get();
+	      for (let i = 0; i < exports.data.length; i++) {
+	        let exportAsset = exports.data[i];
+	        let exportDiv = document.createElement("div");
+	        let exportInput = document.createElement("input");
+	        exportInput.setAttribute("id", exportAsset.id);
+	        exportInput.setAttribute("type", "button");
+	        exportInput.setAttribute("name", exportAsset.name);
+	        exportInput.setAttribute("value", exportAsset.name);
+	        exportInput.onclick = function() {
+	          api.exports.requestAsync({
+	            id: this.id
+	          }).then(
+	            function(response) {
+	              let link = response.data.content[0].href;
+	              window.location = link;
+	            }
+	          );
+	        };
+	        exportDiv.appendChild(exportInput);
+	        globalDiv.appendChild(exportDiv);
+	      }
+	      
+	      viewerInit = true;
+	      
+	    }
+
+	  });
+	
+	
+}
+
 
 function apiShape2(id){
 	var rangeSlider = document.getElementById("rs-range-line");
@@ -2736,27 +2902,148 @@ function apiShape1(id){
 	elInput.addEventListener('input',function(){
 		
 	/* cambia el valor de la etiqueta (el tooltip) */
-		var max = $("#rs-range-line").attr("max");
-		if(elInput.value == 200){
-			if(max == 200){
-				etiqueta.style.left =  ((parseFloat(elInput.value)) + (80))+"px";
+		etiqueta.innerHTML =elInput.value;
+		/* cambia la posición de la etiqueta (el tooltip) */
+		if(elInput.value >= 390){
+			etiqueta.style.left =  ((parseFloat(elInput.value)) - (112))+"px";
+		}else{
+			if(elInput.value >= 380){
+				etiqueta.style.left =  ((parseFloat(elInput.value)) - (117))+"px";
 			}else{
-				etiqueta.style.left =  ((parseFloat(elInput.value)) - (205))+"px";
+				if(elInput.value >= 370){
+					etiqueta.style.left =  ((parseFloat(elInput.value)) - (122))+"px";
+				}else{
+					if(elInput.value >= 360){
+						etiqueta.style.left =  ((parseFloat(elInput.value)) - (127))+"px";
+					}else{
+						if(elInput.value >= 350){
+							etiqueta.style.left =  ((parseFloat(elInput.value)) - (132))+"px";
+						}else{
+							if(elInput.value >= 340){
+								etiqueta.style.left =  ((parseFloat(elInput.value)) - (137))+"px";
+							}else{
+								if(elInput.value >= 330){
+									etiqueta.style.left =  ((parseFloat(elInput.value)) - (142))+"px";
+								}else{
+									if(elInput.value >= 320){
+										etiqueta.style.left =  ((parseFloat(elInput.value)) - (147))+"px";
+									}else{
+										if(elInput.value >= 310){
+											etiqueta.style.left =  ((parseFloat(elInput.value)) - (152))+"px";
+										}else{
+											if(elInput.value >= 300){
+												etiqueta.style.left =  ((parseFloat(elInput.value)) - (157))+"px";
+											}else{
+												if(elInput.value >= 290){
+													etiqueta.style.left =  ((parseFloat(elInput.value)) - (162))+"px";
+												}else{
+													if(elInput.value >= 280){
+														etiqueta.style.left =  ((parseFloat(elInput.value)) - (167))+"px";
+													}else{
+														if(elInput.value >= 260){
+															etiqueta.style.left =  ((parseFloat(elInput.value)) - (175))+"px";
+														}else{
+															if(elInput.value >= 250){
+																etiqueta.style.left =  ((parseFloat(elInput.value)) - (182))+"px";
+															}else{
+															if(elInput.value >= 240){
+																etiqueta.style.left =  ((parseFloat(elInput.value)) - (187))+"px";
+															}else{
+																if(elInput.value >= 220){
+																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (195))+"px";
+																}else{
+																	if(elInput.value >= 210){
+																		etiqueta.style.left =  ((parseFloat(elInput.value)) - (200))+"px";
+																	}
+																	else{
+																	if(elInput.value > 200){
+																		etiqueta.style.left =  ((parseFloat(elInput.value)) - (205))+"px";
+																	}else{
+																		if(elInput.value >= 190 && elInput.value < 200){
+																			etiqueta.style.left =  ((parseFloat(elInput.value)) + (80))+"px";
+																		}else{
+																			if(elInput.value >= 180 && elInput.value != 200){
+																				etiqueta.style.left =  ((parseFloat(elInput.value)) + (70))+"px";
+																			}else{
+																				if(elInput.value >= 170 && elInput.value != 200){
+																					etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
+																				}else{
+																					if(elInput.value >= 160 && elInput.value != 200){
+																						etiqueta.style.left =  ((parseFloat(elInput.value)) + (60))+"px";
+																					}else{
+																						if(elInput.value >= 150 && elInput.value != 200){
+																							etiqueta.style.left =  ((parseFloat(elInput.value)) + (55))+"px";
+																						}else{
+																							if(elInput.value >= 140 && elInput.value != 200){
+																								etiqueta.style.left =  ((parseFloat(elInput.value)) + (48))+"px";
+																							}else{
+																								if(elInput.value >= 130 && elInput.value != 200){
+																									etiqueta.style.left =  ((parseFloat(elInput.value)) + (40))+"px";
+																								}else{
+																									if(elInput.value >= 120 && elInput.value != 200){
+																										etiqueta.style.left =  ((parseFloat(elInput.value)) + (32))+"px";
+																									}else{
+																										if(elInput.value >= 110 && elInput.value != 200){
+																											etiqueta.style.left =  ((parseFloat(elInput.value)) + (24))+"px";
+																										}else{
+																											if(elInput.value >= 100 && elInput.value != 200){
+																												etiqueta.style.left =  ((parseFloat(elInput.value)) + (16))+"px";
+																											}else{
+																												if(elInput.value >= 90 && elInput.value != 200){
+																													etiqueta.style.left =  ((parseFloat(elInput.value)) + (8))+"px";
+																												}else{
+																													if(elInput.value >= 80 && elInput.value != 200){
+																														etiqueta.style.left =  ((parseFloat(elInput.value)) - (2))+"px";
+																													}else{
+																														if(elInput.value >= 70 && elInput.value != 200){
+																															etiqueta.style.left =  ((parseFloat(elInput.value)) - (12))+"px";
+																														}else{
+																															if(elInput.value >= 60 && elInput.value != 200){
+																																etiqueta.style.left =  ((parseFloat(elInput.value)) - (22))+"px";
+																															}else{
+																																if(elInput.value >= 50 && elInput.value != 200){
+																																	etiqueta.style.left =  ((parseFloat(elInput.value)) - (30))+"px";
+																																}else{
+																																	if(elInput.value >= 40 && elInput.value != 200){
+																																		etiqueta.style.left =  ((parseFloat(elInput.value)) - (40))+"px";
+																																	}else{
+																																		if(elInput.value != 200){
+																																			etiqueta.style.left =  ((parseFloat(elInput.value)) - (50))+"px";
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																	}
+																}
+															}
+														}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
-	etiqueta.innerHTML =elInput.value;
-	/* cambia la posición de la etiqueta (el tooltip) */
-	var rangeSlider = document.getElementById("rs-range-line");
-	var tamPX = 0;
-	 if (screen.width > 800) {
-		 tamPX = 290;
-	 }else{
-		 tamPX = 300;
-	 }
-	var cuenta = 0;
-	cuenta = tamPX / parseFloat(rangeSlider.max);
-	etiqueta.style.left =  ((parseFloat(rangeSlider.value) * cuenta) - 10 )+"px";
-	/* cambia el estilo del TRACK */
 	
 
 	}, false);
@@ -3028,6 +3315,12 @@ function apiShape1(id){
 			    	"color":[0,0,0],
 			    	"brillo" : "1"
 			    };
+		    materialesArray[12] = {
+		    		"id" : "sinpuerta",
+		    		"opacidad" : 0,
+		    		"color":[255,255,255],
+		    		"brillo" : 1
+		    	};
 	    	var materialesObject = {
 	    			"materiales" : materialesArray
 	    	}
@@ -7923,7 +8216,7 @@ function interioresNuevoJson(obj){
 		cuenta = tamPX / parseFloat(rangeSliderAdicional11.max)
 		etiqueta11.style.left =  ((parseFloat(rangeSliderAdicional11.value) * cuenta) - 10 )+"px";
 
- 
+  
 		rangeSliderAdicional11.addEventListener('input',function(){
 			var etihtml = $("#etiquetaAdi12").text();
 			var arr = window.arrayDeEstantesMet;
@@ -25020,7 +25313,7 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 			window.tieneTiradores = 1;
 		}
 		if(idTipo == "391"){
-			armario["puertas"][idPuerta]["material"] = "";
+			armario["puertas"][idPuerta]["material"] = "sinpuerta";
 			armario["puertas"][idPuerta]["tirador"] = "none";
 		}
 	}
@@ -25075,7 +25368,7 @@ function armarioPuertaCambiar(idPuerta,idTipo,num,acabado){
 					window.tieneTiradores = 1;
 				}
 				if(idTipo == "391"){
-					armario["puertas"][idPuerta]["material"][num] = "";
+					armario["puertas"][idPuerta]["material"][num] = "sinpuerta";
 					armario["puertas"][idPuerta]["tirador"][num] = "none";
 				}
 		}

@@ -3950,6 +3950,7 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
         console.log(this.extraInterioresPorSi);
         var extraInteriores = this.extraInterioresPorSi;
         var dato = this.cascoService.dato;
+        dato['id'] = dato['armario']['id'];
         console.log(extraInteriores);
 
         this.cascoService.findBus1(id).subscribe(data => {

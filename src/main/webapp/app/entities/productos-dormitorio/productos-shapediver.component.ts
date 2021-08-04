@@ -209,7 +209,7 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
         protected presupuestoPedidoService: PresupuestoPedidoService,
         protected userService: UserService,
         protected dimensionesProductoService: DimensionesProductoService,
-        protected mainComponent: JhiMainComponent,
+        public mainComponent: JhiMainComponent,
         public productosDormitorioService: ProductosDormitorioService,
         protected parseLinks: JhiParseLinks,
         protected usbService: UsbService,
@@ -4322,361 +4322,13 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     }
 
     public enviarInterioresArmarioCambioAltura() {
-        var alturaValor = 2200;
-        var objetoCajonesSuelo1 = this.objetoCajonesSueloArray1;
-        var objetoCajonesSuelo2 = this.objetoCajonesSueloArray2;
-        var objetoCajonesSuelo3 = this.objetoCajonesSueloArray3;
-        var objetoCajonesSuelo4 = this.objetoCajonesSueloArray4;
-        var arrayHuecoInt = this.arrayHuecoInterioresubida;
-        for (var hueco = 0; hueco <= arrayHuecoInt.length; hueco++) {
-            if (arrayHuecoInt[hueco] != undefined) {
-                var arrayEstantes = [];
-                var arrayCajones = [];
-                var tubo = [];
-                var objetoCajones1 = this.objetoCajonesArray1;
-                var objetoCajones2 = this.objetoCajonesArray2;
-                var objetoCajones3 = this.objetoCajonesArray3;
-                var objetoCajones4 = this.objetoCajonesArray4;
-                var cont = 0;
-                var id = arrayHuecoInt[hueco];
-                var interiores = this.productosDormitorioModal;
-                for (let i = 0; i < interiores.length; i++) {
-                    if (interiores[i]['nombre'] == id) {
-                        if (id == 1) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 1740;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            } else {
-                                arrayEstantes[0] = 1980;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            }
-                        }
-                        if (id == 2) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = (alturaValor - 90) / 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            } else {
-                                arrayEstantes[0] = (alturaValor - 90) / 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            }
-                        }
-                        if (id == 3) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 1740;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            } else {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 1980;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            }
-                        }
-                        if (id == 4) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 1146;
-                                arrayEstantes[2] = 1740;
-                            } else {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 1266;
-                                arrayEstantes[2] = 1980;
-                            }
-                        }
-                        if (id == 5) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 948;
-                                arrayEstantes[2] = 1344;
-                                arrayEstantes[3] = 1740;
-                            } else {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 1028;
-                                arrayEstantes[2] = 1504;
-                                arrayEstantes[3] = 1980;
-                            }
-                        }
-                        if (id == 6) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = alturaValor / 2 - 15;
-                                arrayEstantes[1] = (5 * alturaValor - 180) / 8;
-                                arrayEstantes[2] = 0.75 * (alturaValor - 30);
-                                arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            } else {
-                                arrayEstantes[0] = alturaValor / 2 - 15;
-                                arrayEstantes[1] = (5 * alturaValor - 180) / 8;
-                                arrayEstantes[2] = 0.75 * (alturaValor - 30);
-                                arrayEstantes[3] = (7 * alturaValor - 210) / 8;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 0;
-                            }
-                        }
-                        if (id == 7) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = (alturaValor - 30) / 8;
-                                arrayEstantes[1] = (alturaValor - 30) / 4;
-                                arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
-                                arrayEstantes[3] = (alturaValor - 30) / 2;
-                            } else {
-                                arrayEstantes[0] = (alturaValor - 30) / 8;
-                                arrayEstantes[1] = (alturaValor - 30) / 4;
-                                arrayEstantes[2] = (3 / 8) * (alturaValor - 30);
-                                arrayEstantes[3] = (alturaValor - 30) / 2;
-                            }
-                        }
-                        if (id == 8) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = (alturaValor - 30) / 6;
-                                arrayEstantes[1] = (alturaValor - 30) / 3;
-                                arrayEstantes[2] = (alturaValor - 30) / 2;
-                                arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
-                                arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
-                            } else {
-                                arrayEstantes[0] = (alturaValor - 30) / 6;
-                                arrayEstantes[1] = (alturaValor - 30) / 3;
-                                arrayEstantes[2] = (alturaValor - 30) / 2;
-                                arrayEstantes[3] = (2 / 3) * (alturaValor - 30);
-                                arrayEstantes[4] = (5 / 6) * (alturaValor - 30);
-                            }
-                        }
-                        if (id == 9) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[2] = 1710;
-                                objetoCajones1['posicion'] = 694;
-                                objetoCajones1['cantidad'] = 1;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            } else {
-                                arrayEstantes[2] = 1710;
-                                objetoCajones1['posicion'] = 694;
-                                objetoCajones1['cantidad'] = 1;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            }
-                        }
-                        if (id == 10) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1740;
-                                objetoCajones1['posicion'] = 522;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            } else {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1980;
-                                objetoCajones1['posicion'] = 522;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            }
-                        }
-                        if (id == 11) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 380;
-                                arrayEstantes[1] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            } else {
-                                arrayEstantes[0] = 380;
-                                arrayEstantes[1] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            }
-                        }
-                        if (id == 12) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 380;
-                                arrayEstantes[1] = 760;
-                                arrayEstantes[2] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            } else {
-                                arrayEstantes[0] = 380;
-                                arrayEstantes[1] = 760;
-                                arrayEstantes[2] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 2;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            }
-                        }
-                        if (id == 13) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 3;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            } else {
-                                arrayEstantes[0] = 552;
-                                arrayEstantes[1] = 932;
-                                arrayEstantes[2] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 3;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 2;
-                            }
-                        }
-                        if (id == 14) {
-                            if (alturaValor < 2250) {
-                                arrayEstantes[0] = 724;
-                                arrayEstantes[1] = 1740;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 4;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            } else {
-                                arrayEstantes[0] = 724;
-                                arrayEstantes[1] = 1980;
-                                var arrayspp = [];
-                                arrayspp[0] = hueco - 1;
-                                arrayspp[1] = 0;
-                                objetoCajones1['posicion'] = arrayspp;
-                                objetoCajones1['cantidad'] = 4;
-                                tubo[0] = hueco - 1;
-                                tubo[1] = 1;
-                            }
-                        }
-                    }
-                }
-                var arrayHueco1 = this.arrayhuecoEstantes1;
-                var arrayHueco2 = this.arrayhuecoEstantes2;
-                var arrayHueco3 = this.arrayhuecoEstantes3;
-                var arrayHueco4 = this.arrayhuecoEstantes4;
-                var tubo1 = this.arrayTubo1;
-                var tubo2 = this.arrayTubo2;
-                var tubo3 = this.arrayTubo3;
-                var tubo4 = this.arrayTubo4;
-                var arrayInterior = [];
-                arrayInterior[hueco - 1] = id;
-                if (hueco == 1) {
-                    arrayHueco1 = arrayEstantes;
-                    tubo1 = tubo;
-                    if (objetoCajones1['posicion'] != undefined) {
-                        objetoCajones1 = objetoCajones1;
-                        this.objetoCajonesArray1 = objetoCajones1;
-                    }
-                    this.arrayhuecoEstantes1 = arrayHueco1;
-                    this.arrayTubo1 = tubo1;
-                }
-                if (hueco == 2) {
-                    arrayHueco2 = arrayEstantes;
-                    tubo2 = tubo;
-                    if (objetoCajones1['posicion'] != undefined) {
-                        objetoCajones2 = objetoCajones1;
-                        this.objetoCajonesArray2 = objetoCajones2;
-                    }
-                    this.arrayhuecoEstantes2 = arrayHueco2;
-                    this.arrayTubo2 = tubo2;
-                }
-                if (hueco == 3) {
-                    arrayHueco3 = arrayEstantes;
-                    tubo3 = tubo;
-                    if (objetoCajones1['posicion'] != undefined) {
-                        objetoCajones3 = objetoCajones1;
-                        this.objetoCajonesArray3 = objetoCajones3;
-                    }
-                    this.arrayhuecoEstantes3 = arrayHueco3;
-                    this.arrayTubo3 = tubo3;
-                }
-                if (hueco == 4) {
-                    arrayHueco4 = arrayEstantes;
-                    tubo4 = tubo;
-                    if (objetoCajones1['posicion'] != undefined) {
-                        objetoCajones4 = objetoCajones1;
-                        this.objetoCajonesArray4 = objetoCajones4;
-                    }
-                    this.arrayhuecoEstantes4 = arrayHueco4;
-                    this.arrayTubo4 = tubo4;
-                }
-            }
-        }
-        $('#cliccambiarinteriores').attr(
-            'onclick',
-            "pintarinterioresArmarioShape('" +
-                arrayHueco1 +
-                "','" +
-                arrayHueco2 +
-                "','" +
-                arrayHueco3 +
-                "','" +
-                arrayHueco4 +
-                "','" +
-                JSON.stringify(objetoCajones1) +
-                "','" +
-                JSON.stringify(objetoCajones2) +
-                "','" +
-                JSON.stringify(objetoCajones3) +
-                "','" +
-                JSON.stringify(objetoCajones4) +
-                "','" +
-                tubo1 +
-                "','" +
-                tubo2 +
-                "','" +
-                tubo3 +
-                "','" +
-                tubo4 +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo1) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo2) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo3) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo4) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo1) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo2) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo3) +
-                "','" +
-                JSON.stringify(objetoCajonesSuelo4) +
-                "','" +
-                arrayInterior +
-                "')"
-        );
-        $('#cliccambiarinteriores')[0].click();
+        var alturaPrueba = $('#rs-range-line1').val();
+        var alturaValor: number = +alturaPrueba;
+        alturaValor = alturaValor * 10;
+        //var alturaValor = 2200;
+        //$("#codigodepsArm"+ codigo)[0].click();
+        $('#estoParaLaPuertaArmario').attr('onclick', 'cambiarVistaArmario(1)');
+        $('#estoParaLaPuertaArmario')[0].click();
     }
     public subirRangoSliderTs(id, u) {
         $('#subirrangosliderFunct').attr('onclick', 'subirRangoSlider(' + id + ',' + u + ')');
@@ -7428,58 +7080,38 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
     public volveratras(id) {
         this.uid = 0;
         if (id == 1) {
-            if (this.tipoProductos != 28 && this.tipoProductos != 19 && this.tipoProductos != 22 && this.tipoProductos != 55) {
-                $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
-                $('.divseleccionarcodigoRutaNueva').css({ display: 'block' });
-                $('body').removeAttr('style');
-                setTimeout(function() {
-                    $('.divseleccionarcodigo').css({ display: 'none' });
-                    $('html, body').animate({ scrollTop: 0 });
-                }, 1200);
+            var ruta = sessionStorage.getItem('ruta');
+            if (ruta == 'productos-shapediver') {
+                this.router.navigate(['/inicio']);
             } else {
-                $('.divseleccionarcodigo').attr('id', 'simplepruebaani2');
-                $('#page-heading').css({ display: 'block' });
-                $('body').removeAttr('style');
-                setTimeout(function() {
-                    $('.divseleccionarcodigo').css({ display: 'none' });
-                    $('html, body').animate({ scrollTop: 0 });
-                }, 1200);
+                this.router.navigate(['/nativ-dormitorios']);
             }
         }
 
         if (id == 2) {
-            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigo').removeAttr('id');
-            $('#calculadoraCarrito').css({ display: 'none' });
-            $('body').removeAttr('style');
-            setTimeout(function() {
-                $('.divBuscadorArticulos').css({ display: 'none' });
-                $('html, body').animate({ scrollTop: 0 });
-            }, 1200);
+            var ruta = sessionStorage.getItem('ruta');
+            if (ruta == 'productos-shapediver') {
+                this.router.navigate(['/inicio']);
+            } else {
+                this.router.navigate(['/nativ-dormitorios']);
+            }
         }
 
         if (id == 125) {
-            $('.divdentrodelosAlto').css({ display: 'block' });
-            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
-            $('.divseleccionarcodigo').css({ display: 'block' });
-            $('.divseleccionarcodigo').removeAttr('id');
-            $('#calculadoraCarrito').css({ display: 'none' });
-            $('body').removeAttr('style');
-            setTimeout(function() {
-                $('.divBuscadorArticulos').css({ display: 'none' });
-                $('html, body').animate({ scrollTop: 0 });
-            }, 1200);
+            var ruta = sessionStorage.getItem('ruta');
+            if (ruta == 'productos-shapediver') {
+                this.router.navigate(['/inicio']);
+            } else {
+                this.router.navigate(['/nativ-dormitorios']);
+            }
         }
         if (id == 3) {
-            $('.divBuscadorArticulos').attr('id', 'simplepruebaani2');
-            $('#page-heading').css({ display: 'block' });
-            $('#calculadoraCarrito').css({ display: 'none' });
-            $('body').removeAttr('style');
-            setTimeout(function() {
-                $('.divBuscadorArticulos').css({ display: 'none' });
-                $('html, body').animate({ scrollTop: 0 });
-            }, 1200);
+            var ruta = sessionStorage.getItem('ruta');
+            if (ruta == 'productos-shapediver') {
+                this.router.navigate(['/inicio']);
+            } else {
+                this.router.navigate(['/nativ-dormitorios']);
+            }
         }
         if (id == 120) {
             $('#page-heading').css({ display: 'block' });
@@ -37293,6 +36925,80 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             $('#datos1').append('<div id="parameters"></div>');
             $('#calculadoraCarrito').css({ display: 'block' });
             $('#cargarApiShape1').attr('onclick', "apiShape8('" + id + "')");
+            $('#cargarApiShape1')[0].click();
+            //$('.cuerpoImagenPuertas').css({ display: 'block' });
+            $('.armariosDivTodo').css({ position: 'absolute' });
+            $('#observacionesArticulo').css({ display: 'none' });
+            $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '75px' });
+            if (screen.width < 800) {
+                $('.cuerpoImagenPuertas #divprincipalhuecomenmen').css({ 'padding-top': '53px' });
+            }
+            //$('.cuerpoImagenPuertas').attr('id', 'simplepruebaani');
+            $('#inputFondoBatientes').val(61);
+            setTimeout(function() {
+                $('#calculadoraCarrito').removeAttr('style');
+                $('#calculadoraCarrito').attr('style');
+                $('#calculadoraCarrito').css({ 'padding-top': '7%' });
+                $('#calculadoraCarrito').css({ 'background-color': 'white' });
+                $('.divBuscadorArticulos').css({ height: '100%' });
+                $('#calculadoraCarrito').css({ width: '25%' });
+                $('.divfondoSaber').css({ display: 'none' });
+                $('.divfondoocogidomen').css({ display: 'none' });
+                $('#imagenesArmario2').css({ display: 'none' });
+                $('#datos1').css({ display: 'none' });
+                $('#cajeadoCalcu').css({ display: 'none' });
+                $('#enmarcadoCalcu').css({ display: 'none' });
+                if (screen.width < 800) {
+                    $('#calculadoraCarrito').css({ width: '100%' });
+                    $('#calculadoraCarrito').css({ height: '40%' });
+                    $('#calculadoraCarrito').css({ 'padding-top': '0%' });
+                    $('.imagenAcabadoPrincipalImg').css({ 'margin-top': '0px' });
+                    const elem = $('#textprecioCalculadoraazul');
+                    elem[0].style.setProperty('bottom', '0px', 'important');
+                    elem[0].style.setProperty('height', '55px', 'important');
+                    const elem1 = $('#botonCalculadora');
+                    elem1[0].style.setProperty('bottom', '0px', 'important');
+                    elem1[0].style.setProperty('height', '55px', 'important');
+                }
+            }, 1000);
+        }
+
+        if (es == 9) {
+            var arrayCodigosArmario = [];
+            for (let o = 0; o < 277; o++) {
+                var numero = o + 1;
+                var numero1;
+                if (numero < 10) {
+                    numero1 = '00' + numero;
+                } else {
+                    if (numero < 100) {
+                        numero1 = '0' + numero;
+                    } else {
+                        numero1 = o;
+                    }
+                }
+                arrayCodigosArmario[o] = 'NB' + numero1;
+            }
+            this.arrayTodosLosCodigosArmarios = arrayCodigosArmario;
+            var array = [];
+            var arrya1 = [];
+            arrya1['imagen'] = 3;
+            arrya1['imagenContentType'] = 'image/png';
+            arrya1['id'] = '';
+            array[0] = arrya1;
+            $('.divSlider').css({ display: 'block' });
+            $('#rangoArmarios').css({ display: 'block' });
+            $('#inputCodigoArmario').val('NB001');
+            $('#textoMensajeArmario').text('1 PUERTA');
+            $('#calcuBatientes').css({ display: 'block' });
+
+            $('.divBuscadorArticulos #dimensiones').css({ display: 'none' });
+            $('.divBuscadorArticulos #especiales').css({ display: 'none' });
+            $('.divBuscadorArticulos #medidasEspeciales').css({ display: 'none' });
+            $('.divBuscadorArticulos #acabados').css({ display: 'none' });
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape1').attr('onclick', "apiShape9('" + id + "')");
             $('#cargarApiShape1')[0].click();
             //$('.cuerpoImagenPuertas').css({ display: 'block' });
             $('.armariosDivTodo').css({ position: 'absolute' });

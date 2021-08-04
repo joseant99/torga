@@ -234,7 +234,9 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         });
         this.estanteria = [];
     }
-
+    public funcionNuevosArmariosRuta() {
+        this.router.navigate(['/productos-shapediver']);
+    }
     selectedFilesFacturas(event) {
         this.selectedFilesFactura = event.target.files;
     }
