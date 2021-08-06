@@ -37036,6 +37036,21 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
                 }
             }, 1000);
         }
+
+        if (es == 10) {
+            $('#datos1').append('<div id="parameters"></div>');
+            $('#calculadoraCarrito').css({ display: 'block' });
+            $('#cargarApiShape').attr('onclick', "apiShape10('" + id + "')");
+            //$('#datos1').css({ display: 'block' });
+            //$('#observacionesArticulo').css({ display: 'block' });
+            $('#cargarApiShape')[0].click();
+            //this.cargarDimen(codigo);
+            $('#rangoArmarios').css({ display: 'none' });
+            $('.divElegirOpcionSlider').css({ display: 'none' });
+            $('.divSlider').css({ display: 'none' });
+            $('.divSliderPared').css({ display: 'block' });
+            this.cargarDimen('NH007');
+        }
     }
 
     public funcionEstaMarcadaDivArm(div, id) {

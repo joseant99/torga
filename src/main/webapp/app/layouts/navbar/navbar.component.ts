@@ -12737,11 +12737,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 contCesta++;
             }
         }
-        if (screen.width < 800) {
-            $('#nuevosArmariosNoMostrar').css({ display: 'none' });
-        } else {
-            $('#nuevosArmariosNoMostrar').css({ display: 'block' });
-        }
 
         this.productosDormitorioService.numeroCesta = contCesta;
         var bottomModulos = [];

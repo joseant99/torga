@@ -1993,6 +1993,11 @@
         	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('cc7d80aeba3f6200e1d67cf29bbcaf72f48c1a21aee6da1b63eb805ca8a00c134052719b2fc6f85a55a1734984632daed5d370f6afa1180adc70070b782393ae67e54b6cf9bb74cce912c234cdc4ce7c9df6698c8d41854eb77a9fe78419abaf1f2d7553ecc33762e4709fcea345af4bd801282e761680ecaa67538f6c37c08a-ae82e967e66c3d7af0c8a5f8c8037872',9,'')" id="pruebahoverdiv">
         		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/dormitorio-8.jpeg">
         	</div>
+        	
+        	<div style="float: left;border:1px solid;margin-right:5px;margin-top:10px;margin-bottom:10px;" (click)="shapedivercargar('cc7d80aeba3f6200e1d67cf29bbcaf72f48c1a21aee6da1b63eb805ca8a00c134052719b2fc6f85a55a1734984632daed5d370f6afa1180adc70070b782393ae67e54b6cf9bb74cce912c234cdc4ce7c9df6698c8d41854eb77a9fe78419abaf1f2d7553ecc33762e4709fcea345af4bd801282e761680ecaa67538f6c37c08a-ae82e967e66c3d7af0c8a5f8c8037872',10,'')" id="pruebahoverdiv">
+        		<img id="imagenDeCadaTipoNativ" style="padding-right: 5px;" src="../../../content/images/comedores/paredequipada.PNG">
+        	</div>
+        	
         	<a id="cargarApiShape" style="display:none">prueba</a>
         	<a id="cargarApiShape1" style="display:none">prueba</a>
         	<a id="apoyoestaCogidoApi" style="display:none"></a>
@@ -2656,7 +2661,7 @@
 	    	<div style="width:100%;float:left;margin-left: -15%;" id="imagenesArmario2">
 	    		
 	    	</div>
-	    	<button id="botonmencambiarvista" (click)="cambiarvistaBat()" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
+	    	<button id="botonmencambiarvista" style="position: absolute;right: 50px;top: 520px;z-index: 120;width: 180px;height: 70px;font-size: 24px;background-color: #6CCE47;">Cambiar Vista</button>
     	</div>
 	<div id="dimensiones"style="width:90%;float:left;">
 
@@ -2749,6 +2754,7 @@
 						<a id="clicparaEnviarAbbddSinPuertas" style="diplay:none" onclick="imagenCarritoApiInterior()"></a>
 						<a id="cliccambiarAdici1" onclick="anadirAddEventAdi1(id)" style="display:none">prueba</a>
 						<a id="urldebrilloacabado" style="display:none"></a>
+						<a id="paraMoverVistaDiv" style="display:none"></a>
 						<a id="funcionLimAdicionales" style="display:none"></a>
 						<a id="paradevolveryguardartam" (click)="enviarTamanoArraySec()" style="display:none"></a>
 						<a id="cambioDeAlturaSitieneInteriores" (click)="enviarInterioresArmarioCambioAltura()" style="display:none">prueba</a>
@@ -2795,6 +2801,38 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class="divSliderPared" style="display:none;position:relative;background-color: #e4e4e4;width: 100%;height: 565px;border: 3px solid #B3B2B2;">
+							<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>MEDIDAS</strong></p>
+							<div id="divEscondidodivSlider" style="display:block">
+								<div class="range-slider" style="float: left;margin-top: -25px !important;width: 100%;margin-bottom: 60px;">
+									<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ANCHO PARED</span>
+									 <div id="inputDiv" style="margin-top:110px !important">
+										<div id="etiqueta"></div>
+										
+										<input id="rs-range-line" type="range" value='104' min="104" style="width:100%" max="908" step="1">
+										<input id="rs-range-lineRaya" style="display:none" type="range" value='104' min="104" max="600" step="1" list="custom-list">
+										<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
+										<label style="margin-left:-7px" id="valorMinDeAncho">104</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">600</label>
+										</div>
+	
+									<!-- <input type="range" style="margin-top: 29px;width: 75%;position:absolute;-webkit-appearance: media-volume-slider;margin-left: 80px;">
+								    <span id="rs-bullet" class="rs-label">40</span>
+								    <input id="rs-range-line" class="rs-range" type="range" value="40" min="40" max="400"> -->
+								</div>
+								<div class="range-slider" style="float: left;margin-top: 110px !important;width: 100%;margin-bottom: 60px;">
+									<span style="position:absolute;margin-top:10px;width:100%;text-align:center;" >ALTO PARED</span>
+									<div id="inputDivAltura" style="margin-top:110px !important">
+										<div id="etiquetaAltura"></div>
+										<input id="rs-range-line1" type="range" value="220" min="220" max="260" style="width:100%">
+										<!-- autocomplete="off" pare que Firefox no "recuerde" el valor del input "on refresh" -->
+										<label style="margin-left:-7px" id="valorMinDeAncho">220</label><label style="left: 290px; position: absolute;" id="valorMaxDeAncho">260</label>
+										</div>
+								    
+								</div>
+							</div>
+						</div>
+						
 						<div class="divElegirOpcionSlider" style="float:left;width:100%;background-color: #e4e4e4;border: 3px solid #B3B2B2;margin-top: 35px;position:relative" onclick="estaMarcadoDivArm('.divElegirOpcionSlider')">
 								<p id="textoParaMeterCss" style="float: left;width: 100%;FONT-SIZE: 20px;text-align: center;margin-top: 10px;"><strong>OPCI&Oacute;N INTERIOR</strong></p>
 								<div id="divEscondidodivElegirOpcionSlider" style="display:none">

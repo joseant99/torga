@@ -179,8 +179,9 @@ function imagenGirarParaCarro1(){
 
 		$("#sdv-container").css({"width":"410px"});
 		$("#sdv-container").css({"height":"410px"});
-		
-			api.scene.camera.updateAsync({'position': {x: -657.883398040687, y: -1721.5418300011615, z: 1227.8223071618345}, 'target': {x: 758.5643606351833, y:  127.50578991868758, z: 631.7026621119127} }).then(
+
+
+			api.scene.camera.updateAsync({'position': {x: -894.5236469835795, y: -5622.929066299166, z: 2196.223016755683}, 'target':{x: 209.5, y: -304.5, z: 1098} }).then(
 		            function(response) {
 		            	api.scene.camera.zoomAsync().then(function(response){
 		            		var imagen = api.scene.getScreenshot();
@@ -3675,6 +3676,341 @@ function apiShape1(id){
 	        globalDiv.appendChild(exportDiv);
 	      }
 	      
+	      viewerInit = true;
+	      
+	    }
+	  });
+	
+	
+}
+
+function tamanoDeColgantesAUM(){
+	var val = $(".divSliderPared #rs-range-line").val();
+	val = val * 10;
+	var nc = 0;
+	var cuenta = 0;
+	var cuenta1 = 0;
+	var cuenta2 = 0;
+	var yaPuesto = 0;
+	var yaPuesto1 = 0;
+	if(val >= 1040 && val <= 2060){
+		nc = 0;
+		cuenta = ((val - 66) -( 2 * nc) )/ 4 + (2 * nc);
+		cuenta1 = (cuenta * 2) + 33;
+		var valorAnchoIzq = api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value;
+		var parame = api.parameters.get({'name':'L'},"ColganteIZQ").data[0];
+		var parame1 = api.parameters.get({'name':'L'},"ColganteDER").data[0];
+		api.parameters.updateAsync([{
+		      id: parame.id,
+		      value: cuenta1,
+		      plugin: "ColganteIZQ" 
+		    },{
+			  id: parame1.id,
+			  value: cuenta1,
+			  plugin: "ColganteDER"
+			}]);
+		var intervalo = setInterval(function(){
+
+			api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+				if(yaPuesto == 0){
+					var armario1 = new THREE.Matrix4();
+					
+					armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,(api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value - valorAnchoIzq),0,0,1);
+					
+					armario1.transpose();
+					
+					api.scene.applyTransformation("plugin","ColganteDER",armario1);
+					
+					yaPuesto = 1;
+					
+				}else{
+					clearInterval(intervalo);
+				}
+			 }); 
+				 
+		  }, 1000);
+			
+	}
+	
+	
+	if(val >= 2061 && val <= 3070){
+		nc = 1;
+		var centrales = window.numeroCentrales;
+		if(centrales[0] == undefined){
+			centrales[0] = 1;
+			window.numeroCentrales = centrales;
+			
+			api.plugins.registerCommPluginAsync({
+			    deferGeometryLoading: false,
+			    ticket: "6ee9a8224bb338173c6644f870bcccbda2b296529f4f74b593e24645ef1e5939c05cb1f9d43e0797d392d70310e6cc9cc45599eb0fb7a965e60a17dcc81fb4b99990f999982674720e02d16e3dbc44bb0e6c8e9fc3e71b12d48ecfd0f17c8c1f8123b4983c1aa0dd82df919b4d46de53770e4e9a3f8bb2ef81aeae4727a8ffbc-90d1d53133ee5f3619a82cb9ef083e0e",
+			    modelViewUrl: "eu-central-1",
+			    runtimeId: 'ColganteCentral0',
+			    brandedMode: 'false'
+			  });
+			api.plugins.refreshPluginAsync('ColganteCentral0');
+			var intervalo1 = setInterval(function(){
+
+				api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+					if(yaPuesto1 == 0){
+						cuenta = ((val - 66) -( 2 * nc) )/ 4 + (2 * nc);
+						cuenta1 = (cuenta * 2) + 33;
+						cuenta2 = (cuenta * 2) + 3;
+						var valorAnchoIzq = api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value;
+						var parame = api.parameters.get({'name':'L'},"ColganteIZQ").data[0];
+						var parame1 = api.parameters.get({'name':'L'},"ColganteDER").data[0];
+						var parame2 = api.parameters.get({'name':'L'},"ColganteCentral0").data[0];
+						api.parameters.updateAsync([{
+						      id: parame.id,
+						      value: cuenta1,
+						      plugin: "ColganteIZQ" 
+						    },{
+							  id: parame1.id,
+							  value: cuenta1,
+							  plugin: "ColganteDER"
+							},{
+								  id: parame2.id,
+								  value: cuenta2,
+								  plugin: "ColganteCentral0"
+								}]);
+						var intervalo2 = setInterval(function(){
+
+							api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+								if(yaPuesto == 0){
+									var armario1 = new THREE.Matrix4();
+									
+									armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,((api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value + api.parameters.get({name : "L", plugin: "ColganteCentral0"},"ColganteCentral0").data[0].value) - valorAnchoIzq),0,0,1);
+									
+									armario1.transpose();
+									
+									api.scene.applyTransformation("plugin","ColganteDER",armario1);
+									
+									var armario2 = new THREE.Matrix4();
+									
+									armario2.set(1,0,0,0,0,1,0,0,0,0,1,0,(api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value) - valorAnchoIzq,0,0,1);
+									
+									armario2.transpose();
+									
+									api.scene.applyTransformation("plugin","ColganteCentral0",armario2);
+									
+									yaPuesto = 1;
+									clearInterval(intervalo2);
+									
+								}else{
+									clearInterval(intervalo2);
+								}
+							 }); 
+								 
+						  }, 1000);
+						
+						yaPuesto1 = 1;
+						clearInterval(intervalo1);
+						
+						
+					}else{
+						clearInterval(intervalo1);
+					}
+				 }); 
+					 
+			  }, 1000);
+				
+		}else{
+			cuenta = ((val - 66) -( 2 * nc) )/ 4 + (2 * nc);
+			cuenta1 = (cuenta * 2) + 33;
+			cuenta2 = (cuenta * 2) + 3;
+			var valorAnchoIzq = api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value;
+			var parame = api.parameters.get({'name':'L'},"ColganteIZQ").data[0];
+			var parame1 = api.parameters.get({'name':'L'},"ColganteDER").data[0];
+			api.parameters.updateAsync([{
+			      id: parame.id,
+			      value: cuenta1,
+			      plugin: "ColganteIZQ" 
+			    },{
+				  id: parame1.id,
+				  value: cuenta1,
+				  plugin: "ColganteDER"
+				}]);
+			var intervalo = setInterval(function(){
+
+				api.state.addEventListener(api.state.EVENTTYPE.IDLE, function() {
+					if(yaPuesto == 0){
+						var armario1 = new THREE.Matrix4();
+						
+						armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,(api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value - valorAnchoIzq),0,0,1);
+						
+						armario1.transpose();
+						
+						api.scene.applyTransformation("plugin","ColganteDER",armario1);
+						
+						yaPuesto = 1;
+						
+					}else{
+						clearInterval(intervalo);
+					}
+				 }); 
+					 
+			  }, 1000);
+			
+		}
+		
+		
+	}
+	
+	
+	
+	if(val >= 3071 && val <= 4070){
+		nc = 2;
+		
+	}
+	if(val >= 4071 && val <= 5070){
+		nc = 3;
+		
+	}
+	if(val >= 5071 && val <= 6070){
+		nc = 4;
+		
+	}
+	if(val >= 6071 && val <= 7070){
+		nc = 5;
+		
+	}
+	if(val >= 7071 && val <= 8080){
+		nc = 6;
+		
+	}
+	if(val >= 8081 && val <= 9080){
+		nc = 7;
+		
+	}
+}
+
+function apiShape10(id){
+	window.numeroCentrales = [];
+	$(".divBuscadorArticulos #acabados").css({"display":"none"});
+	$(".divBuscadorArticulos #medidasEspeciales").css({"display":"none"});
+	
+	/* para añadir reglas CSS  de manera dinámica*/
+	var s = document.createElement('style');
+	document.head.appendChild(s);
+	window.ya1vez = false;
+	var inputDiv = document.querySelector('.divSliderPared #inputDiv');
+	var w = parseInt(window.getComputedStyle(inputDiv, null).getPropertyValue("width"));
+	/* EL INPUT */
+	var elInput = document.querySelector(".divSliderPared input[type='range']");
+	elInput.style.width = "100%";
+	var inputMin = elInput.getAttribute('min');
+	var inputMax = elInput.getAttribute('max');
+	
+
+	/* LA ETIQUETA */
+	var etiqueta = document.querySelector('.divSliderPared #etiqueta');
+	var ew = parseInt(window.getComputedStyle(etiqueta, null).getPropertyValue("width"));
+	w = 300;
+	var k = 260/(600 - 104);
+	/* el valor de la etiqueta (el tooltip) */
+	etiqueta.innerHTML = elInput.value;
+	/* calcula la posición inicial de la etiqueta (el tooltip) */
+	etiqueta.style.left =  "130px";
+	/* establece el estilo inicial del TRACK */
+	
+	elInput.addEventListener('input',function(){
+		
+	/* cambia el valor de la etiqueta (el tooltip) */
+		etiqueta.innerHTML =elInput.value;
+	
+
+	}, false);
+	var rangeSlider = document.getElementById("rs-range-line");
+	
+	window.tieneTiradores = 0;
+	var rangeBullet = document.getElementById("rs-bullet");
+	window.todounarmario = {};
+	window.armario = 1;
+
+	window.funcClic = "";
+	if(screen.width < 800){
+		window.funcClic = "ontouchend";
+		$("#sdv-container").css({"position":"fixed"});
+	}else{
+		window.funcClic = "onmouseup";
+	}
+	$(".divSliderPared #rs-range-line").attr(window.funcClic,"tamanoDeColgantesAUM()");
+	$(".divBuscadorArticulos").css({"display":"block"});
+	$("#page-heading").css({"display":"none"});
+    $("#diviframeprueba").css({"display":"block"});
+    $('.divseleccionarcodigoRutaNueva').css({ display: 'none' });
+    var _container = document.getElementById('sdv-container');
+	// viewer settings
+	var _viewerSettings = {
+	  // container to use
+	  container: _container,
+	  // when creating the viewer, we want to get back an API v2 object
+	  api: {
+	    version: 2
+	  },
+	  // ticket for a ShapeDiver model
+	  ticket: '',
+	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
+	  modelViewUrl: 'eu-central-1',
+	  showControlsInitial: true,
+	  showSettingsInitial: false
+	};
+	
+	
+	
+	// create the viewer, get back an API v2 object
+	window.api = new SDVApp.ParametricViewer(_viewerSettings);
+	window.ultimoDivPuesto = '.divSlider';
+	var viewerInit = false;
+	var parameters;
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "47178a914c7f1b19195c1cf919e6428b1b553b31b3681371432b79ca0f3d0404697fc92a5a6b0a1fdea686ec0e1560d2180a9b847d94056199152daee4676cea37a2c2646219be10e2c4f36ac458325114a2c724a17c2a9554535e8c62367dc6ceefb44936dea2a44754baa08b57e677334ace7047b9a14af04f210f421c7bdf-6e1f18ac374f0659b5a6611f2dbd75cb",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'ColganteIZQ',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('ColganteIZQ');
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "290a5f459636c162646d0368bf501c01d513e0ae9b9e63264b4ea9229a57da3d26dc8a7f3a05aa100ed097327dd8fe1d5e32c1d4968435f7e653f626316f8c569d4fb78e5069fd528914a97186950e51fdbe55680cf34429c81cab9c0542cc226ebf2ea7d7f0942380e8546c8e12a3d0780a3cac27b9612f403452b9dc528ff7-02682792529018f87d46d12801f4bc50",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'ColganteDER',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('ColganteDER');
+	
+	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+	    if (!viewerInit) {
+	    	var updatedSettings = {
+					  scene : {
+						  camera : {
+							  rotationSpeed : 0.1,
+							  autoAdjust: true,
+							  restrictions :{
+								  rotation : {
+									  minAzimuthAngle: -75,
+									  minPolarAngle: 45,
+									  maxPolarAngle: 90,
+									  maxAzimuthAngle: 75
+									  }
+			  					}
+			  				}
+			  			}
+			  }
+			api.updateSettingsAsync(updatedSettings); 
+				  api.scene.toggleGeometry([],[api.scene.get({ name: "Dimensiones", format: "glb" }, "ColganteIZQ").data[0].scenePath , api.scene.get({ name: "Dimensiones", format: "glb" }, "ColganteDER").data[0].scenePath]);
+			
+				 	setTimeout(function() {
+						 var armario1 = new THREE.Matrix4();
+							
+							armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,api.parameters.get({name : "L", plugin: "ColganteIZQ"},"ColganteIZQ").data[0].value,0,0,1);
+							
+							armario1.transpose();
+							
+							api.scene.applyTransformation("plugin","ColganteDER",armario1);
+	
+			          }, 2500);
+				 	
 	      viewerInit = true;
 	      
 	    }
@@ -25250,6 +25586,7 @@ function estaMarcadoDivArm(div){
 		var parts1 = [];
 		if(window.ultimoDivPuesto != ".divElegirOpcionSlider" && window.ultimoDivPuesto != ".divSlider"){
 			parts1 = window.ultimoDivPuesto.split("#");
+			
 		}else{
 			parts1 = window.ultimoDivPuesto.split(".");
 		}
@@ -25275,6 +25612,15 @@ function estaMarcadoDivArm(div){
 			$("#divAdicionalesInterior2 #divContenidoMeter"+o+"2").append('<div id="divOscuroOpOpcionesSlider" style="width:88%;height:165px;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>');
 			$("#divAdicionalesInterior3 #divContenidoMeter"+o+"3").attr("onclick","divcontenidometerfuncion("+o+",3)");
 			$("#divAdicionalesInterior3 #divContenidoMeter"+o+"3").append('<div id="divOscuroOpOpcionesSlider" style="width:88%;height:165px;position:absolute;opacity: 0.6;background-color: white;z-index: 20;"></div>');
+		}
+		
+		if(div != ".divElegirOpcionSlider" && div != ".divSlider"){
+			$("#paraMoverVistaDiv").attr("href",div);
+			$("#paraMoverVistaDiv")[0].click();
+		}
+		if(div != ".divSlider"){
+			$("#paraMoverVistaDiv").attr("href","#divEscondidodivElegirOpcionSlider");
+			$("#paraMoverVistaDiv")[0].click();
 		}
 		
 	//}
