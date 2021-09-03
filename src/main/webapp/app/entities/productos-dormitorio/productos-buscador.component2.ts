@@ -21032,7 +21032,123 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             codigo != 'NH503' &&
             codigo != 'NH504' &&
             codigo != 'NH505' &&
-            codigo != 'NH506'
+            codigo != 'NH506' &&
+            codigo != 'NH139' &&
+            codigo != 'NH140' &&
+            codigo != 'NH158' &&
+            codigo != 'NH159' &&
+            codigo != 'NH141' &&
+            codigo != 'NH142' &&
+            codigo != 'NH160' &&
+            codigo != 'NH161' &&
+            codigo != 'NH143' &&
+            codigo != 'NH144' &&
+            codigo != 'NH162' &&
+            codigo != 'NH163' &&
+            codigo != 'NH145' &&
+            codigo != 'NH146' &&
+            codigo != 'NH164' &&
+            codigo != 'NH165' &&
+            codigo != 'NH147' &&
+            codigo != 'NH148' &&
+            codigo != 'NH149' &&
+            codigo != 'NH150' &&
+            codigo != 'NH151' &&
+            codigo != 'NH152' &&
+            codigo != 'NH153' &&
+            codigo != 'NH178' &&
+            codigo != 'NH154' &&
+            codigo != 'NH155' &&
+            codigo != 'NH156' &&
+            codigo != 'NH157' &&
+            codigo != 'NH166' &&
+            codigo != 'NH167' &&
+            codigo != 'NH168' &&
+            codigo != 'NH169' &&
+            codigo != 'NH170' &&
+            codigo != 'NH171' &&
+            codigo != 'NH172' &&
+            codigo != 'NH173' &&
+            codigo != 'NH174' &&
+            codigo != 'NH175' &&
+            codigo != 'NH176' &&
+            codigo != 'NH177' &&
+            codigo != 'NH178' &&
+            codigo != 'NH179' &&
+            codigo != 'NH180' &&
+            codigo != 'NH181' &&
+            codigo != 'NH182' &&
+            codigo != 'NH183' &&
+            codigo != 'NH184' &&
+            codigo != 'NH185' &&
+            codigo != 'NH186' &&
+            codigo != 'NH187' &&
+            codigo != 'NH188' &&
+            codigo != 'NH189' &&
+            codigo != 'NH190' &&
+            codigo != 'NH191' &&
+            codigo != 'NH192' &&
+            codigo != 'NH193' &&
+            codigo != 'NH194' &&
+            codigo != 'NH195' &&
+            codigo != 'NH196' &&
+            codigo != 'NH198' &&
+            codigo != 'NH199' &&
+            codigo != 'NH234' &&
+            codigo != 'NH235' &&
+            codigo != 'NH236' &&
+            codigo != 'NH237' &&
+            codigo != 'NH238' &&
+            codigo != 'NH239' &&
+            codigo != 'NH240' &&
+            codigo != 'NH241' &&
+            codigo != 'NH242' &&
+            codigo != 'NH243' &&
+            codigo != 'NH244' &&
+            codigo != 'NH245' &&
+            codigo != 'NH246' &&
+            codigo != 'NH247' &&
+            codigo != 'NH248' &&
+            codigo != 'NH249' &&
+            codigo != 'NH250' &&
+            codigo != 'NH251' &&
+            codigo != 'NH252' &&
+            codigo != 'NH253' &&
+            codigo != 'NH256' &&
+            codigo != 'NH257' &&
+            codigo != 'NH260' &&
+            codigo != 'NH261' &&
+            codigo != 'NH262' &&
+            codigo != 'NH263' &&
+            codigo != 'NH264' &&
+            codigo != 'NH265' &&
+            codigo != 'NH275' &&
+            codigo != 'NH276' &&
+            codigo != 'NH254' &&
+            codigo != 'NH255' &&
+            codigo != 'NH266' &&
+            codigo != 'NH267' &&
+            codigo != 'NH277' &&
+            codigo != 'NH278' &&
+            codigo != 'NH258' &&
+            codigo != 'NH259' &&
+            codigo != 'NH268' &&
+            codigo != 'NH269' &&
+            codigo != 'NH273' &&
+            codigo != 'NH274' &&
+            codigo != 'NH270' &&
+            codigo != 'NH271' &&
+            codigo != 'NH272' &&
+            codigo != 'NH279' &&
+            codigo != 'NH280' &&
+            codigo != 'NH281' &&
+            codigo != 'NH282' &&
+            codigo != 'NH283' &&
+            codigo != 'NH284' &&
+            codigo != 'NH285' &&
+            codigo != 'NH286' &&
+            codigo != 'NH287' &&
+            codigo != 'NH288'
         ) {
             if (uid == 0) {
                 this.uid = 1;
@@ -27264,6 +27380,270 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 codIdShape =
                     '1beefa34e897bcf08fa5b8dcb8708e902ac9a4e4e0211d760640eb18c8fb38b673beeb3dba1c5a0cdd5f24c9d1fffd4612e4338ed0245372c2c3c5bb9c16df49d4055736a9151b1e45c6f66079d3ba27316fbb8b0d007f26ef79e8dc5c7366250ff8580b45e14865a603f33cc1a17e1b93a2ea86d299860fcf425f711aaf6f59-5e671a1816bb8c75bdb3a3a73b289644';
             }
+            if (codigo == 'NH139' || codigo == 'NH140' || codigo == 'NH158' || codigo == 'NH159' || codigo == 'NH185') {
+                codIdShape =
+                    'd03bc4672992c1d24f66924fa42f3c6fa362ad2f6bbe020d81521ad92a4369fd23351aa66a6c895cc50dafe4a937f2e3e52059be1ad4a20eaab55706a0fce77b67066d4e21cfd89055fdc560e6a110b3465d719bda79a9f9fee5186c01d48042ee3ff122c96429a3f95d2540ee68aaac3e60a257f0246dafab22e1467c20f220-e60b352e58b53a461a6be1ae449d8b3a';
+            }
+            if (codigo == 'NH141' || codigo == 'NH142' || codigo == 'NH160' || codigo == 'NH161' || codigo == 'NH186') {
+                codIdShape =
+                    'cd18c06d32c8d344b8b30901a93c4ae65b19557eaa82901c6c5f181f8049c3628fe1cb6805b40e966ace411c6e0d95f6a6f131df68ec3ec4d6ea86e7deb5a3a5c0aeacf8492dad3dcef9c1ba08434ed73e60ae6754c818eca73051ffc37eb4f112909b887ddd3fd69e6d52cb0cb026edf3414232a8304ca988c75b8cd0ffb5ff-5992165f081efac4a76832809c0b60e2';
+            }
+            if (codigo == 'NH143' || codigo == 'NH162') {
+                codIdShape =
+                    '292bbe12eb453a46819ff4d75900e72d79ed27099a1296eb2290a07c811dd424d37bbbbbef8d9e9c208b8d9f40c8d4e2355606c975cd98e7f4e96ed6066b1c683718d82a53268f4ebc92f37cfb2d59f0ce385a2139a030765fe0898525f795f78a30cb29554f7ba8badf0a41cc8c2e891ad81de2ecc8842abc846ba43439ad0e-71a97778ed8f9b501036100503ba9ca1';
+            }
+            if (codigo == 'NH144' || codigo == 'NH163') {
+                codIdShape =
+                    '13e326caacb36a5a1c77066646190e61031cb30a7e980eaef13f65cdeaa4055afeffe2e0b97fd0e6489d524a23392c4d079c13ef390967f379139e8f647bb11a8b1b8c735593e639aa7397d19b27f6f3985077692cd176672677c926fbd1de2a17c5a0c702a5c182de26b302e4ec1743e618fe660ae42f41e4b89d450759671a-ec1d2ceed0b1c00d29b61125cfd1eb08';
+            }
+            if (codigo == 'NH145' || codigo == 'NH164') {
+                codIdShape =
+                    'b8e91158d6973c9e674949b3b88775d4f2f60b3b45188a9b503e1ae359f19f0b5944afd6a2ff3e574434aed79166dd948d99f00927fdadd1fd1d1b08c8805618c4338d4950ede404fc88343730e609eb27a467a55339d71a6153477c0557646475c893276d6ee4642a3fd07dbaec9a254734bc98973ccf1c98614a8bcc32b069-b2fc5e3624f5df1ebd0b0a4c5380edcb';
+            }
+            if (codigo == 'NH146' || codigo == 'NH165') {
+                codIdShape =
+                    'f18a3bd1368de433c00801c60d4e86412a3c4d0c46a0cb990bc2e542e49a173fc2403d99e698de754e6aaebaebd147e098780884d50c52aead1b835df4ebf2f3ba631e9e4a163b710549a1501cf6685009a125120933e39b2b682245fce9303ea1cf352fa77e8bcc2f26f61f0c2e42c9c0a3bfcc2c580636edec2cffb1bd9562-baf2950d6cddbc1edfc0e44a461f2b65';
+            }
+            if (codigo == 'NH147' || codigo == 'NH148') {
+                codIdShape =
+                    '1d68303c3b76c39cc8cb0aa544133f4ab5d1057d660cdb0a03f578a124d6b89bd316a1ada8e40ffdca94b4153bd4dd80e32dee288a83574c383571f07e908a83ce4f1890f748697a4b5f0b4c633b7706f1b9719359635e1f6af2fc9e302ee47426576d63c6d7b3c333c90fca866a5a3b68587241fa0b2d77d86f4ddc96e3d61e-74cd73cedadf51900e7431f22d9dd87b';
+            }
+            if (codigo == 'NH149') {
+                codIdShape =
+                    '6c2fc6f7c4b09e58619248ebe753677bb6d8368cddf265176bf7f7b164440c20804989f5fb3280d9d2eb79fe2af5a4b1b89eb58550cca7987cb4ca6db6cecaa984bd3b2549705673d30ae75b1139d4ba6c41c16e4f7781070fa2801ee96cf095e5ef11813d53a1d4359e031eda695f4a0635c3c7cfd9bccb5d7cd2e8c5bda64d-7d9ed10d0da2cbaede314f58dc6aa053';
+            }
+            if (codigo == 'NH150') {
+                codIdShape =
+                    '0d45f069c3cd1c1ec1d389e88fc0cc7e02f6a3cdcef0c3adb163676758ef3912866db3fa924294334415d2e03acaac20eb44392aee713347ff11fa9e91778566f8b2328ab1ef4ce15080e766a36c7391b7b23b49c06ebf8ebf8ddd34a96084bad80e32701deb78ba54e5b7f086830766624859aa700e579b7629d2559a503029-0915be5886be2e55636e069c1b0f3ca4';
+            }
+            if (codigo == 'NH151') {
+                codIdShape =
+                    'c51f991ab310352f20e71ab04e81bac3e57b4550d0776cc09a3d4edd9f26fafcf1b5c91b7c94265eb0dda2572585ea2e2fa634678c1670f81c4c751649791a0b1af5fad7b423febea6c822533e9dfbb2a2e77c9b09554fec235642a5fb73621fc48de6ea824e736e17448c3319eb59a46d5e26d7e19e091e8f08d98bb4f2ba18-c23b219b50cf0b6b6e06821631e0636a';
+            }
+            if (codigo == 'NH152') {
+                codIdShape =
+                    'ccdbc2d5e45a0ec7231d6c257e76be5da935108e15d2dc38d168a0639219496247485860e054582e887afc8c29bb0025e26b167027b985bb365d7cf15ae0b4647371e6a7b2fca59bb6528a03abd81023963bc23bd8c5731c6169e677e854c2f9f635d1d8e15155f31823a4ab23a3770efb55ea8f4b0f7fda5ddf8e25ca6e4c85-2617b8521aa142eceeb1484525e31ebf';
+            }
+            if (codigo == 'NH153' || codigo == 'NH178') {
+                codIdShape =
+                    '4c512726d1edfb2c9404b5e4bea8929d3f58b27eb9e4571456f7268210e5e5e4c75ea1ca91101075799c95f247107e310bc64d324f8d409d85680d0cf626d6d81d4f7cbf4cefdcb6e0c23eff94a0620a8772e77c8fd87f1c9e6acd1d5702c5613109e1bd9627861d87a309b1d7ec36785362af2a242dc7f5d54ae9397a98ec26-3a6459de45fabdeab28575098e646265';
+            }
+            if (codigo == 'NH154') {
+                codIdShape =
+                    '99dcb47ff34f25545714d742c667e701e0da8e4008aa4f558fdd8f6e0800bc101a0557dbd302d6f4e6bc9778deaff89f8c010cb3c6acebf3879fb574cde54a8ce8c0bd156aebcb52226769cbdda2f65a71b2bbe3aba720c4d5f340c425ec77344155a6b76207ba1487defbe97cef4491162c79c3286a28f0d1673afb8737cb1f-766d152ce9dcb37d89169d0bec73acae';
+            }
+
+            if (codigo == 'NH155') {
+                codIdShape =
+                    '8d6de308d29725c45ee36813755bf4991fed2fa924e67373fda76532e56bc9a3b787bff34ff6cb31790f1ac35bc3882e3ef6b98ce36861b448361e2359ef8ee6f440983353596d9b570f99eba66676962a6e02e93affcd41a26f610b0e9e15a14809f0dfad6d875da3b1441098f46bae4db3bd5319315f8991294b64fd662c05-bb9cb4418d8c844042c9e344cb03a5c9';
+            }
+            if (codigo == 'NH156' || codigo == 'NH179') {
+                codIdShape =
+                    '93eb1b0ceaacd4fa71b45e207388b64713f1553ee75093f33c04807a5f092e53c9d03edd809a183ffc538d551ce8c7168ffed1ec2951a99f712c7a3c9bbd7ee3f3ef73473050fdb050204cb9b6be4ae92907d203f4947f22fd4aa3fda94b87a917ed78d5ca452e74750db0a206a0255854942f00d76bc2bd6de2b3548b83bffb-69493431328f39eceeea3a277af739fc';
+            }
+            if (codigo == 'NH157' || codigo == 'NH180') {
+                codIdShape =
+                    'd63c80996893feb6f1d9e61e16b01274cd13bbebdc70a031dc273c6de962bcc38f67d05ee80d5815aba1e9d96ce08ef0a69dd0c97f4263c90518057de06de6af330f01591314bab77042a4da3548d1ccff79605f990fcb41cf2d5c21c207649fe85cdbb7479d5225ed38772f1bcc6daaa5aff413c30b8c09fabc40fec17c4dbd-300eff0e71ad817a55abdbae0ab6b023';
+            }
+            if (codigo == 'NH166' || codigo == 'NH167' || codigo == 'NH187' || codigo == 'NH188') {
+                codIdShape =
+                    'e266b21b17a559ba83204842b27cf116baf9defc946879a8b5f8476ba830a24c4aea102fc6b7ebbafacd784d7eba8b0518522aa755941079252571bb0dc92862f474ad3a10b6ccf58c2bad5d9e5eaf9cf28789306af0909bf0ca950395af8bcc98feae0da958573fb03664f05cf14b50ba2b5505f7f0e2f78a482d3084da05dd-d8316ed0c0e67983527ad8f61083386a';
+            }
+            if (codigo == 'NH168') {
+                codIdShape =
+                    '7c1fc93e244d21bc0dad2723229291a5c93ac7aa266f4ce2bcc9725e436f3de91ccd9024a05f8f249cb2e94a55330c2316f2d3e8d901668e41e27a55325e6dd6aaaf948d8699b641f842e235bbc0c2fe092047c56278c768fae96618b6637eb2709d09057ec16275098d436784852f0aa9cb3c1ad30c0b713e36c3119f1282cc-8ad72b82c9777d78affc7b56fd04dc38';
+            }
+            if (codigo == 'NH169') {
+                codIdShape =
+                    '27b6ba35029d33429a301b93abcd8d242ced6d912530ca48c802fa4cb3c54630c13fec9c86cf381df053298f8e4e2c150b99a65fd43cc54da3c432ed83bed36d67626c34ff24433e0eee68b29e953eee00e72993ce579e8ab1560c2a39c73a77658b13ac57e4c659cce272ad1a28dc1706421fddd0f98c0baa5c6066f268201a-caad2213fa1ee19e0c30ccf6f830fa55';
+            }
+            if (codigo == 'NH170') {
+                codIdShape =
+                    '86cbfd5edfaf6cc15fc9087196884b0a2bbfbcf4cd176edc1cc99b0989c2911bcd9ea7fe0f9d4cbb4a917e3d1828a6ddae89418981143f01f5167d910b30c5d29c5d344674e004e7f013c9abeb570de982dfb19b0d1721091eee176ff354766c84e2c917e8a2cbf34c19d905f82b1607cd69361f7233ac6f500d2a00cc81de8d-33ef8a40bb8e18587e4cf43869fa6f0a';
+            }
+            if (codigo == 'NH171') {
+                codIdShape =
+                    'e3459f5768b96585d8d9700c5d8138171191c8f56ad34b01fac4b855d71e4b8aa79611b874b08d1c076f98e12e68f09b64faa36d97ffb5ecf98e282f74c39fb5508f61fd752da2709118a0b9782b389d8eaf4256b8d5127f345deae5b86711da3af92d7f48c2df946fa874bdd024d6f66e011939d1657dcdce050ee4e5013a08-5f40f7597fb88b919778626a5dc562e7';
+            }
+            if (codigo == 'NH172') {
+                codIdShape =
+                    '9c80b09ed5c7af1a4ee9b0a0effc759e2f83b8d4bb1e464af7f9832823b5702b38107d1b6395f7b5f912c78e334b1ca97254a74b4b8b9aa8b8ee28317b1f81c998b4b5b712944a35d09ee7abdacabe8ee12c5fb0f8a9b1bc5c0f3669f7f0ab2a04898193502bb7d7f004a12731fd421ff573e67b17aecc3d804dc3a51c8ab318-238d2b6a3a0344f4fac11be830e96806';
+            }
+            if (codigo == 'NH173') {
+                codIdShape =
+                    '7c059c900219084bfcc3cc125ee182a3c010b0b71378c332b3fbc4a940c480646c44b91e8be8d3f8a0799b2ebec7523d25d0d2b6dca9e939ee36ec6155f34903c1db2744f385ce5c88d0e63b9a84e65685d77198b7d3a712adb1a31d928dd347034a9908d2295425e2ea9046ea1cba84323d8134d27da991aa89d5544b445e30-e42bfd9720f711d8d4cb5a94b600ec6a';
+            }
+            if (codigo == 'NH174') {
+                codIdShape =
+                    '694a819509a2f26231298dac1ee441843c004e309d4a9137379030e2ed811bdf5776ba6a26ee80afbc274fe372127dd2bd1d1d0c6b4dc573c17356df17d824d1a11aeb5da495e7b1e028db088b242716f98a1250e427c6cd5e7080aee0c2aa20ddbc87ba822c71883d556c74f0d1bf04d3f7ed9e017a0567180702c468e9e5e1-0fa4f7062ccba28727fa2f91bffe4906';
+            }
+            if (codigo == 'NH175') {
+                codIdShape =
+                    '694a819509a2f26231298dac1ee441843c004e309d4a9137379030e2ed811bdf5776ba6a26ee80afbc274fe372127dd2bd1d1d0c6b4dc573c17356df17d824d1a11aeb5da495e7b1e028db088b242716f98a1250e427c6cd5e7080aee0c2aa20ddbc87ba822c71883d556c74f0d1bf04d3f7ed9e017a0567180702c468e9e5e1-0fa4f7062ccba28727fa2f91bffe4906';
+            }
+            if (codigo == 'NH176') {
+                codIdShape =
+                    '7e6e06e1d7b87fcbf376b7c119b96be262234050901b730bf946393331e93456f59efb76a4394978e8adf2ae25c375b8a261e64211723aefa7388d92dbf4cebc0f48eae150c5e4748a3af8f00a472f953f2866aafe17cfc49257cd88a6cef05fb4fdccb26ee3cc8797e64a9b94d4732a5c08561fc5e43eda472aa9f3d259e58b-7d0fd545e03ef9c179e36f8d7fd67df2';
+            }
+            if (codigo == 'NH177') {
+                codIdShape =
+                    '1d701b2a18d98dc94263bc6f031273964a0b18d9a32becdf649167281c5aa5422b276044af75277c4ab935a7d31edf50ec8392961bfd8e30680dcbe034d80ed890697184b90ca0990c14ba4c8dd95ae91d1a3eb4eb5922a991565c52d58e7fcaca7e0e3a455da64acbb76c926e349a047f84ce0b218d9f9479464ea4a6df7de3-713d42e83b218a831c2793c203f0493a';
+            }
+            if (codigo == 'NH181') {
+                codIdShape =
+                    '2e709174aea65cdf3ce96907756ce8a61f621e3c4769b0ca067a1928ddad17ef8ac3f956bf4be75d994690d5db1fb16596943bc1cc68f00fcb02074991d824851d3f0338d6d92caf872542aaae0f5cdcef4f999f4876f31efdca9077c94c89f085a42e1b417c0d0fbfb037284ec03cb6306e66437119926fe3acba193dcb1cfd-a2f790e8b6befb4d588abb6c591bda03';
+            }
+            if (codigo == 'NH182') {
+                codIdShape =
+                    'f9120f47baf604d82044325b03d03db87c6b3f6ae18936c1a90cdebfece166c1ec36e3f62776e8c8247e18622410ca3a81478ba89d273e1214acf6c6e78069d1215b1dea991afcb869df6b73cd0ef069e453f7be9c227cc3195dad4d1076c9bed1d62e6b78e1e08a14a3a3c629c3a5a218d1ce50a6fd57dc201e6649ec920917-0be2c87a34e3efedc1dad593096852f5';
+            }
+            if (codigo == 'NH183') {
+                codIdShape =
+                    'b7ee40c78aa738b3dfb34b1c669ee19720e3c3f37a0904dbf32e458c75f1c0021b1dfe7f14c9726ae6f1dc10b40a2159072ea5075bd9643c0a6532ce2065569a5bf958907cca2be5c03085aec196b5b6ef5d52b0309c203b18fecd309a248e05641250d047a8cb0802f975e3f30f7959a7a548321a0e012b388745e6186b0dcc-00e8f9ed6a17283d2e4b69e50c214cce';
+            }
+            if (codigo == 'NH184') {
+                codIdShape =
+                    '32aa7c79ed407ec2197865e4485fc6199855410a0b172b03e369eb36f0c3ac78f2315c4e32f774c86574a69213ac9898177860dd750ddbb75a1f964b9aadbddf3ec1894ed027636bde1bdbe467626e30a644e4648079f97238b702532dcf644da278a18a2c6b30f3dc02caf833acf2c8a5a301380c314a8ad5d2fbb27a65334a-674c640cf00a894d1ae61f12a58140ab';
+            }
+            if (codigo == 'NH189' || codigo == 'NH190') {
+                codIdShape =
+                    'ca1ef7bfa5cbb897678183f3ffe2170b7ed777cd5e91626a6e21646e58941e7121e232d972651bd99b6b5b0399974d010960095ce05bae46779192c295f0d7ab591924488cc418987d212cd7188b9b5015bee32346b141c1fee16ba9e10dd4848dcf407a432d3886f18a3ed6c790b74474ef9d965ae2ac08bf03ec69714f963e-2a432274fb1afc5bfe27f41a15cbde86';
+            }
+            if (codigo == 'NH191') {
+                codIdShape =
+                    'a424769cb6f17eac1c5cadd0adad01d157cda1785eca2b057866be514cea6ea49c8a7e414d7b223ada3f4be626a56b4b47592879253dceba437160916569a186ed1ff3ce6f86b257f3cb6009678a1e0226de964525cc8b63389d309129e69b95c12097d12d8f322a572d4e7171985ae2d9a8381bf0fff0f14d59fabf351600b5-638cc1129ee066d30cf793c622bd82b3';
+            }
+            if (codigo == 'NH192') {
+                codIdShape =
+                    '5f1885c641d0f6afa87f6252d31bb750cf5963f7904b051283f321546d3ea15596289c5b5d0a7dcedcf37952850a6c5410eacb0bf8f89980fbc9413b869f88d31e57c4a13c04df4976d62de8cc152b25c8ccf88b51dfaa95d0838bcd2e6dcbd701ab4bbd33ac507d31a6098afbf45a782740f28889f699fa8262119752a2f891-c01e6e5d2d5f91c3fbf87a442abf5cea';
+            }
+            if (codigo == 'NH193') {
+                codIdShape =
+                    'f0e3eca6cf4d7ca71db7200da8b4d3a364b847f3a3b202a2ed58c4c77ee36b9d2eb02a5f56bd29a5dea5c7975a3fcaaa64a5eadf1307898eebd6f8ef9e52e610bf4bedac439e0d418ecb5b32fba5e8db26e7004c641f8cd41a6e8a5252186a2f7bd559682e2409788950b2730ccf467f0faf70c6a54a96b1535b28a148344366-28bdc42b7284dc8e12723ee06dc15eb6';
+            }
+            if (codigo == 'NH194') {
+                codIdShape =
+                    'b96657d0e251d6ca4043f567dd25b15b1101568a20283656722c88ca158827a81135df190a2ba060d3303e7673c08def3eae58bedee1c672563aaea0e8b813f7e67a089ad015fb79a00af2b30d82f7faba8797585dbfa69bc4e51b80b59a31640ca3754ac58d79c3e5912ae6951e45e97b1c00832c266af084e04c0534f6bc62-9701ad4f972c2c1cf2e5deff862aa212';
+            }
+            if (codigo == 'NH195') {
+                codIdShape =
+                    '4417e1d4074a00c48f26a5c001ec5351049776a92e4a4f7760587edbb3a943665985abe956b7b3bde6d5b6fc82f4fb49211a6daf33c69d795fd9d00144349734170d8de819d47c91d6fae40a5bfc95fd6dbe6a15cf0ed0592f39fa543cb86e47ed3a1c8af4663b4783eb6dcf84fa81ca7fcb98df90d1fd24a948395ba6ab2f56-63fe087895d78b3b09362b760ef6ee3a';
+            }
+            if (codigo == 'NH196') {
+                codIdShape =
+                    '83d84a5884ecedb6f9e5fc2625289121272f9ace67675c135be56e207c6acf501e6cfec5aa6f609b185928523f1ebe4fdcaab612fbf9a95579ba42dcb705c8b0495144b307a86a430b4c8bf3cb63a001ad6a163dae014217fcb3c1311e07495daac7cb12fc8998a4fbaf4dbc57af4d8a23abef7b3feea42d3eaeba14344c9aaf-73f04ea5d58a0af53f6bc775c4134df2';
+            }
+            if (codigo == 'NH198') {
+                codIdShape =
+                    '5245970898b6c8aff6d3245755c13f6b7a5076072eda6e357c2f3f2b295312f6d0559e57b60f7472c93b2a235b2fdbfdee6d93dfa87eb8e4be5bf5d72854a1605bc57340e2a72c92a414be5691810d39f78d24a6d7a97cbc0d2aa5d6e3303fcdd69eb57c8dce27-79d8e3944d263d2fbdfbe2414ca28216';
+            }
+            if (codigo == 'NH199') {
+                codIdShape =
+                    '2d003c612b9b4d78f4c517b9b80831903bc952fbd81111a4bdac9e72eac9c0515a70cc86c189af9c8287ebc22461bc9f2dad3a466f87c7e3d6d5e89338ac74f1c500ff2ef1638ccc678f5082dc48760430cdc7eaa75cf81050dcdb3d59c9631724274759620788-15d5774db575cea9495a627be160b08b';
+            }
+            if (codigo == 'NH234' || codigo == 'NH235') {
+                codIdShape =
+                    'e8af3ffd1e2458b322598df1124322f30407ff06975164f116ec46906f2e72e46e7ef59b8ec69b233558eed717bf70b6778c0838a1ff38c03e55466abaf6089b8d8fdb46c74017d2053df539b755b063c10aa87780ce737e7f4b778dd7f7cb44260907f7706866-eca0cbf12128c4c7765811d80e7583fe';
+            }
+            if (
+                codigo == 'NH236' ||
+                codigo == 'NH237' ||
+                codigo == 'NH238' ||
+                codigo == 'NH239' ||
+                codigo == 'NH240' ||
+                codigo == 'NH241' ||
+                codigo == 'NH242' ||
+                codigo == 'NH243' ||
+                codigo == 'NH244' ||
+                codigo == 'NH245'
+            ) {
+                codIdShape =
+                    'bfbc96deeff63e25005b73bd75ab6fd1ac1afb85020eb63394681b7d02272009e1c3a4cad2e0d399d3bd71291fa3cd0667ed1390941ce7c3e51422a02ff8a2f4b336076cf89174fbfbeecec99b2957ccd01115b9a9e3437a22924dfbd77dea6377735707f92e83-767853176eb1207f31860022778bc6e7';
+            }
+            if (
+                codigo == 'NH246' ||
+                codigo == 'NH247' ||
+                codigo == 'NH252' ||
+                codigo == 'NH253' ||
+                codigo == 'NH260' ||
+                codigo == 'NH261' ||
+                codigo == 'NH262' ||
+                codigo == 'NH263' ||
+                codigo == 'NH264' ||
+                codigo == 'NH265' ||
+                codigo == 'NH275' ||
+                codigo == 'NH276'
+            ) {
+                codIdShape =
+                    '5d7d2e931a6ad8dba99cbd8f7955a935319aecdf60fd8f33034cab2b2efb19ea4cbfb96bd9a8876dbf79450abac3f0dc05dbd297218c04264c1727efd88137599f69c946e39ed905d09415169f7b793e2bcdc6db644ee34683a21eedff4e47d83a8a3aaa48b580-a41f6fa15141e1e61f227894a724a248';
+            }
+            if (codigo == 'NH248' || codigo == 'NH256') {
+                codIdShape =
+                    '321cbd3ecb92a5de7c40c21192d9e5f91387476c1644347572f701fc247f90a9fb69953d5bcf7cbdeb996afcce8d88b4671d0ffe187226e0600e77ec3cc2a9b214a1754aca433076a381267a8a41667b44d033ff079b77e4128cb28e0b2c9ae4ea7639eda33073-186ee99cee82ffd9394eabb33f5e8ed7';
+            }
+            if (codigo == 'NH249' || codigo == 'NH257') {
+                codIdShape =
+                    '5054e0278ca6ce7cf73ae12c139cdea50bc276a9e6ca341d61a75882cc067d2b5c147a4d72fa8d6fe37a18eb72a3e9d734f458843af9075e3062a90fff330b2058cb86ee98ed409a9f703528980b64a8508d2b5a7329484f4b5e96d28cd96250f0f80265e618c5-35f40666ca1822b5f73415523e997d54';
+            }
+            if (codigo == 'NH250' || codigo == 'NH251') {
+                codIdShape =
+                    '4c6bf43b3c756e1117eda95e96b31a3e439c878c1a400ae16ea1a0e0d6a11af5c84e505cb497ccd1cfba5bf1889583db715d180da5143809075a133437c4e1e92e00c4f23bbd455edea273c450ecc98098dea390b977a604c46654879231522498292557630d83-7134549d8fa1294ec1231ba6a977a11b';
+            }
+            if (codigo == 'NH258') {
+                codIdShape =
+                    'fc427194ea0c4bf2dedfc04fb87077c94f558e81e9eacd1953a4e03a360bd5155442ead123a89d69b52f5eaae0212384c26c386f9856c1bb3618aace3df2d8611747fe4869a926dfa80e1737ccf6b40540498090fda08921d9fb604c5c6d6765dc20cf69af40ae-fcddd701885b7c6b77b027d9bbc81c60';
+            }
+            if (codigo == 'NH259') {
+                codIdShape =
+                    '9d9895527461da9399e4e78624152a8652d89e7ea20c3d1e548f8025c3020d8028559a84fa8da0f795cc33e46be78ac6538ad525f07e3cdef38fd9b4c8e477c8758de78bcb3364961c463767f99476e4818a7e4c0167d3c755390f65da12d9f50e97f47a42f20f-d6dcca0d5de13b6816a8892b1efdbec1';
+            }
+            if (
+                codigo == 'NH254' ||
+                codigo == 'NH255' ||
+                codigo == 'NH266' ||
+                codigo == 'NH267' ||
+                codigo == 'NH277' ||
+                codigo == 'NH278'
+            ) {
+                codIdShape =
+                    '3fd97a4f8d8daaee2581595080cb322a5c35e252d2f092e1e97df867c16acac9e011a97246c2125ca7af7194eaaf49d8d0f268fa89efda2161a22c78e5cc6703f9fa38ffc82640409bf390c9ab7b22115a153657e9aabe55e340014ea3d62b24493ca134f12fba-3fda7122205a8e39bb32ec1140b6462a';
+            }
+            if (codigo == 'NH268' || codigo == 'NH269' || codigo == 'NH273' || codigo == 'NH274') {
+                codIdShape =
+                    '0b46137eb11062b5e2f0a1b21a2b66481d9e4beda49d26b4858a5bfa59989bc6abb24646f187213af1ad17df0814ed95fb0dd63b5141a78cb5839f43e10c41e391641491d1ca200d164d64c2446db210eb6ac9bfdbea0ac8fb7c33f00116414cf721d3d9ee19c6-eb00c1e11fe4606bf76a7ff0e760f221';
+            }
+            if (codigo == 'NH270') {
+                codIdShape =
+                    '3813fe4473c1d0a42a3cfc0116d665ea5b8c114a164c12087fec83553a87a84e7f886a568816467a7be5213393e6c80b8d35e05eb6ab6978d669d633c3ae8759b8de75db9e55dd381188939ee0394d02c5324f8da204e7d69a922687e3447703d02e2d4d074f65c282da3f08f0ac6a27ece814c767121cd8ec41be7e58c091fc-a7c41aa8dd088038f63a7d52817953a8';
+            }
+            if (codigo == 'NH271') {
+                codIdShape =
+                    '0fe243e96e7d7b92a104bb0d24f89eabd8f872404b60ce9e64a2f203a2de201e108dd8d708f39d4fe0972bc8b3ceb827d421645337bfab4504f2ce1a4a80f70e632ad8d4b6035ef8a7315a0776a68c394e1170710a7d88c12f5d89da0f8c8d8a9696a7fe479eba297be3911f714057648ec7902d7da2412aea9ff24200ce3c89-b143672842764e7e5c18b2c8bc94ef93';
+            }
+            if (codigo == 'NH272') {
+                codIdShape =
+                    '319365a872ee90639b61c344de8af42142efe1d6f4e885a5dc09954aa1bd9c5d0f9626fe94ea0996e2b10010238699f6bf2a32bbc827a4311edf77eb75c4fc02156f5e3a4eaea73abbab839df32d016f03edb76d4d8e32afa07dc3de919c9b73b12897ca3e319a648ee7beb96a6b649860a0e3a44826e9fa238d1cf3dde64269-856d450bfe30a9a8a8b87622ce54c2d0';
+            }
+            if (codigo == 'NH279' || codigo == 'NH280') {
+                codIdShape =
+                    '5b66b3157bcf6c9b4258dbbf702b82a9e35f947e684b4f2554d6eeaa866b7b5fc9d007a7840bf0713416d3c1b53ab9b108817cacb6ff29654fb97c5bd7a8c9d220bc49646db822bd9fc96bc42511e1c1ef5fd8c2177ffdf2918b0491f74a78f3301281013a5ad47abc5bfce7f124912901467f665c4c305260bcd8df67bbabbf-a056ea8ca2a0a7aa59729b546dc3cd75';
+            }
+            if (codigo == 'NH281' || codigo == 'NH282') {
+                codIdShape =
+                    '5739042014f898911c5a1d39c5561d91c0ad6dd6f80c09000f5187b84d778d81a8ad7c2cf9a92877d4bb41867f0411bd3ed3b77467681acc1b5c31b3e2c15e607bf0f009d8b85a55ac448d99c065b9630a864d13df50fc730d7fb9131039bb0a6bd374aa807e8b00c551c051766693b162a0db82ce6809370f327b9beaa911d7-c05f97ed084663f1e721a9c4da559db7';
+            }
+            if (codigo == 'NH283' || codigo == 'NH284') {
+                codIdShape =
+                    'f0c5a07fd51d18ff9bae142ecaabc8d29abf09bdd3a0b2450617a051960d161eb3790308806460d4ec6681ad667db52439c86f6f36c8c00fde1bcc9a83d1c9f7c1fa047d627d629b58bc1afa32f0524d7644b42ee767c108101b0d036f1052786f9cbfafc9ea6c78b20f1b841b2e4c255dddea3883b08dac2626042d4605fbc5-0871285e082c9a740c313ff590437e11';
+            }
+            if (codigo == 'NH285' || codigo == 'NH286') {
+                codIdShape =
+                    '2945b5e0c78f091adbb1a9dd6b69df78e9957461e48ae163589126bf4f3e66551b2212376597ffc54fb4a758f508c361c4dfa3b4d581e2e40581c5e8501ba3eb72ea26fbceef29712d02d90ff1bb3f4d6eeba10bcb689fb700f9f5f84f33d8df85d74715ca7ec80747ccfe2bd4bf81d46e1f85557dd7b665248ae0a1ad510122-330ef456d7d8377dcad046b04718877f';
+            }
+            if (codigo == 'NH287' || codigo == 'NH288') {
+                codIdShape =
+                    'bd431dc82e6bd901c3b15ecbf61966ebfa3e8744a400eb8479c5b80c737482df75aa7cc083567a2549626c0c6b97355e1b2886682e86deb3f07a945d462f6f55af8c18ed63e917b5e1799fc225da8864e4e124d189e7f68ba38610268675da334f3dde519e622f561d44774f073fe9eb8fcbce06fdd711522fc19e6a91d4d549-14676e6b0be87f1b5dd0c518e436c12b';
+            }
             if (codigo == 'NH493' || codigo == 'NH494' || codigo == 'NH495' || codigo == 'NH496') {
                 codIdShape =
                     'd12eb47f63fa83a9f4edc26202555f5209d7b64d2cda3ca6373887c1b4bafc9aacd04056e6dd7c1d40394eaae53e0850aa140f8f633fd2d5ddce59337b23732a6ec55a495d6c6962e0d22df88b2f0f5c65663d57ef5099d0ed6dc26bab60ba3c2b412075ab271c229f1909a1001ca142987363754607c2c0ef314acd46f185df-c0e7ea2112e73af62fb53b8aef9e57ef';
@@ -30017,7 +30397,70 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) != 218 &&
             parseFloat(idProd) != 219 &&
             parseFloat(idProd) != 220 &&
-            parseFloat(idProd) != 221
+            parseFloat(idProd) != 221 &&
+            parseFloat(idProd) != 73 &&
+            parseFloat(idProd) != 72 &&
+            parseFloat(idProd) != 75 &&
+            parseFloat(idProd) != 74 &&
+            parseFloat(idProd) != 87 &&
+            parseFloat(idProd) != 86 &&
+            parseFloat(idProd) != 77 &&
+            parseFloat(idProd) != 76 &&
+            parseFloat(idProd) != 313 &&
+            parseFloat(idProd) != 78 &&
+            parseFloat(idProd) != 314 &&
+            parseFloat(idProd) != 79 &&
+            parseFloat(idProd) != 92 &&
+            parseFloat(idProd) != 319 &&
+            parseFloat(idProd) != 84 &&
+            parseFloat(idProd) != 320 &&
+            parseFloat(idProd) != 85 &&
+            parseFloat(idProd) != 325 &&
+            parseFloat(idProd) != 324 &&
+            parseFloat(idProd) != 327 &&
+            parseFloat(idProd) != 326 &&
+            parseFloat(idProd) != 317 &&
+            parseFloat(idProd) != 82 &&
+            parseFloat(idProd) != 318 &&
+            parseFloat(idProd) != 83 &&
+            parseFloat(idProd) != 321 &&
+            parseFloat(idProd) != 90 &&
+            parseFloat(idProd) != 329 &&
+            parseFloat(idProd) != 328 &&
+            parseFloat(idProd) != 340 &&
+            parseFloat(idProd) != 339 &&
+            parseFloat(idProd) != 89 &&
+            parseFloat(idProd) != 88 &&
+            parseFloat(idProd) != 322 &&
+            parseFloat(idProd) != 91 &&
+            parseFloat(idProd) != 315 &&
+            parseFloat(idProd) != 80 &&
+            parseFloat(idProd) != 316 &&
+            parseFloat(idProd) != 81 &&
+            parseFloat(idProd) != 175 &&
+            parseFloat(idProd) != 176 &&
+            parseFloat(idProd) != 177 &&
+            parseFloat(idProd) != 178 &&
+            parseFloat(idProd) != 179 &&
+            parseFloat(idProd) != 158 &&
+            parseFloat(idProd) != 159 &&
+            parseFloat(idProd) != 161 &&
+            parseFloat(idProd) != 160 &&
+            parseFloat(idProd) != 163 &&
+            parseFloat(idProd) != 162 &&
+            parseFloat(idProd) != 331 &&
+            parseFloat(idProd) != 330 &&
+            parseFloat(idProd) != 165 &&
+            parseFloat(idProd) != 164 &&
+            parseFloat(idProd) != 167 &&
+            parseFloat(idProd) != 166 &&
+            parseFloat(idProd) != 169 &&
+            parseFloat(idProd) != 168 &&
+            parseFloat(idProd) != 170 &&
+            parseFloat(idProd) != 180 &&
+            parseFloat(idProd) != 181 &&
+            parseFloat(idProd) != 182 &&
+            parseFloat(idProd) != 183
         ) {
             nombre = res;
             var idAca = $('#myModalColores' + id1 + ' #acabadoImagen' + idImagen + ' #imagenAcabado' + idImagen).attr('class');
@@ -30873,7 +31316,70 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd) == 336 ||
             parseFloat(idProd) == 335 ||
             parseFloat(idProd) == 338 ||
-            parseFloat(idProd) == 337
+            parseFloat(idProd) == 337 ||
+            parseFloat(idProd) == 73 ||
+            parseFloat(idProd) == 72 ||
+            parseFloat(idProd) == 75 ||
+            parseFloat(idProd) == 74 ||
+            parseFloat(idProd) == 87 ||
+            parseFloat(idProd) == 86 ||
+            parseFloat(idProd) == 77 ||
+            parseFloat(idProd) == 76 ||
+            parseFloat(idProd) == 313 ||
+            parseFloat(idProd) == 78 ||
+            parseFloat(idProd) == 314 ||
+            parseFloat(idProd) == 79 ||
+            parseFloat(idProd) == 92 ||
+            parseFloat(idProd) == 319 ||
+            parseFloat(idProd) == 84 ||
+            parseFloat(idProd) == 320 ||
+            parseFloat(idProd) == 85 ||
+            parseFloat(idProd) == 325 ||
+            parseFloat(idProd) == 324 ||
+            parseFloat(idProd) == 327 ||
+            parseFloat(idProd) == 326 ||
+            parseFloat(idProd) == 317 ||
+            parseFloat(idProd) == 82 ||
+            parseFloat(idProd) == 318 ||
+            parseFloat(idProd) == 83 ||
+            parseFloat(idProd) == 321 ||
+            parseFloat(idProd) == 90 ||
+            parseFloat(idProd) == 329 ||
+            parseFloat(idProd) == 328 ||
+            parseFloat(idProd) == 340 ||
+            parseFloat(idProd) == 339 ||
+            parseFloat(idProd) == 89 ||
+            parseFloat(idProd) == 88 ||
+            parseFloat(idProd) == 322 ||
+            parseFloat(idProd) == 91 ||
+            parseFloat(idProd) == 315 ||
+            parseFloat(idProd) == 80 ||
+            parseFloat(idProd) == 316 ||
+            parseFloat(idProd) == 81 ||
+            parseFloat(idProd) == 175 ||
+            parseFloat(idProd) == 176 ||
+            parseFloat(idProd) == 177 ||
+            parseFloat(idProd) == 178 ||
+            parseFloat(idProd) == 179 ||
+            parseFloat(idProd) == 158 ||
+            parseFloat(idProd) == 159 ||
+            parseFloat(idProd) == 161 ||
+            parseFloat(idProd) == 160 ||
+            parseFloat(idProd) == 163 ||
+            parseFloat(idProd) == 162 ||
+            parseFloat(idProd) == 331 ||
+            parseFloat(idProd) == 330 ||
+            parseFloat(idProd) == 165 ||
+            parseFloat(idProd) == 164 ||
+            parseFloat(idProd) == 167 ||
+            parseFloat(idProd) == 166 ||
+            parseFloat(idProd) == 169 ||
+            parseFloat(idProd) == 168 ||
+            parseFloat(idProd) == 170 ||
+            parseFloat(idProd) == 180 ||
+            parseFloat(idProd) == 181 ||
+            parseFloat(idProd) == 182 ||
+            parseFloat(idProd) == 183
         ) {
             $('#apoyoestaCogidoApi').attr('onclick', 'apoyoDeLosModulos(' + idApoyo + ')');
             $('#apoyoestaCogidoApi')[0].click();
@@ -34569,7 +35075,70 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             parseFloat(idProd1) == 218 ||
             parseFloat(idProd1) == 219 ||
             parseFloat(idProd1) == 220 ||
-            parseFloat(idProd1) == 221
+            parseFloat(idProd1) == 221 ||
+            parseFloat(idProd1) == 73 ||
+            parseFloat(idProd1) == 72 ||
+            parseFloat(idProd1) == 75 ||
+            parseFloat(idProd1) == 74 ||
+            parseFloat(idProd1) == 87 ||
+            parseFloat(idProd1) == 86 ||
+            parseFloat(idProd1) == 77 ||
+            parseFloat(idProd1) == 76 ||
+            parseFloat(idProd1) == 313 ||
+            parseFloat(idProd1) == 78 ||
+            parseFloat(idProd1) == 314 ||
+            parseFloat(idProd1) == 79 ||
+            parseFloat(idProd1) == 92 ||
+            parseFloat(idProd1) == 319 ||
+            parseFloat(idProd1) == 84 ||
+            parseFloat(idProd1) == 320 ||
+            parseFloat(idProd1) == 85 ||
+            parseFloat(idProd1) == 325 ||
+            parseFloat(idProd1) == 324 ||
+            parseFloat(idProd1) == 327 ||
+            parseFloat(idProd1) == 326 ||
+            parseFloat(idProd1) == 317 ||
+            parseFloat(idProd1) == 82 ||
+            parseFloat(idProd1) == 318 ||
+            parseFloat(idProd1) == 83 ||
+            parseFloat(idProd1) == 321 ||
+            parseFloat(idProd1) == 90 ||
+            parseFloat(idProd1) == 329 ||
+            parseFloat(idProd1) == 328 ||
+            parseFloat(idProd1) == 340 ||
+            parseFloat(idProd1) == 339 ||
+            parseFloat(idProd1) == 89 ||
+            parseFloat(idProd1) == 88 ||
+            parseFloat(idProd1) == 322 ||
+            parseFloat(idProd1) == 91 ||
+            parseFloat(idProd1) == 315 ||
+            parseFloat(idProd1) == 80 ||
+            parseFloat(idProd1) == 316 ||
+            parseFloat(idProd1) == 81 ||
+            parseFloat(idProd1) == 175 ||
+            parseFloat(idProd1) == 176 ||
+            parseFloat(idProd1) == 177 ||
+            parseFloat(idProd1) == 178 ||
+            parseFloat(idProd1) == 179 ||
+            parseFloat(idProd1) == 158 ||
+            parseFloat(idProd1) == 159 ||
+            parseFloat(idProd1) == 160 ||
+            parseFloat(idProd1) == 161 ||
+            parseFloat(idProd1) == 163 ||
+            parseFloat(idProd1) == 162 ||
+            parseFloat(idProd1) == 331 ||
+            parseFloat(idProd1) == 330 ||
+            parseFloat(idProd1) == 165 ||
+            parseFloat(idProd1) == 164 ||
+            parseFloat(idProd1) == 167 ||
+            parseFloat(idProd1) == 166 ||
+            parseFloat(idProd1) == 169 ||
+            parseFloat(idProd1) == 168 ||
+            parseFloat(idProd1) == 170 ||
+            parseFloat(idProd1) == 180 ||
+            parseFloat(idProd1) == 181 ||
+            parseFloat(idProd1) == 182 ||
+            parseFloat(idProd1) == 183
         ) {
             var cogerIdCesta = sessionStorage.getItem('cestaIdMod');
             if (cogerIdCesta == null || cogerIdCesta == undefined) {
@@ -34888,7 +35457,70 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                             parseFloat(idProd1) == 218 ||
                             parseFloat(idProd1) == 219 ||
                             parseFloat(idProd1) == 220 ||
-                            parseFloat(idProd1) == 221
+                            parseFloat(idProd1) == 221 ||
+                            parseFloat(idProd1) == 73 ||
+                            parseFloat(idProd1) == 72 ||
+                            parseFloat(idProd1) == 75 ||
+                            parseFloat(idProd1) == 74 ||
+                            parseFloat(idProd1) == 87 ||
+                            parseFloat(idProd1) == 86 ||
+                            parseFloat(idProd1) == 77 ||
+                            parseFloat(idProd1) == 76 ||
+                            parseFloat(idProd1) == 313 ||
+                            parseFloat(idProd1) == 78 ||
+                            parseFloat(idProd1) == 314 ||
+                            parseFloat(idProd1) == 79 ||
+                            parseFloat(idProd1) == 92 ||
+                            parseFloat(idProd1) == 319 ||
+                            parseFloat(idProd1) == 84 ||
+                            parseFloat(idProd1) == 320 ||
+                            parseFloat(idProd1) == 85 ||
+                            parseFloat(idProd1) == 325 ||
+                            parseFloat(idProd1) == 324 ||
+                            parseFloat(idProd1) == 327 ||
+                            parseFloat(idProd1) == 326 ||
+                            parseFloat(idProd1) == 317 ||
+                            parseFloat(idProd1) == 82 ||
+                            parseFloat(idProd1) == 318 ||
+                            parseFloat(idProd1) == 83 ||
+                            parseFloat(idProd1) == 321 ||
+                            parseFloat(idProd1) == 90 ||
+                            parseFloat(idProd1) == 329 ||
+                            parseFloat(idProd1) == 328 ||
+                            parseFloat(idProd1) == 340 ||
+                            parseFloat(idProd1) == 339 ||
+                            parseFloat(idProd1) == 89 ||
+                            parseFloat(idProd1) == 88 ||
+                            parseFloat(idProd1) == 322 ||
+                            parseFloat(idProd1) == 91 ||
+                            parseFloat(idProd1) == 315 ||
+                            parseFloat(idProd1) == 80 ||
+                            parseFloat(idProd1) == 316 ||
+                            parseFloat(idProd1) == 81 ||
+                            parseFloat(idProd1) == 175 ||
+                            parseFloat(idProd1) == 176 ||
+                            parseFloat(idProd1) == 177 ||
+                            parseFloat(idProd1) == 178 ||
+                            parseFloat(idProd1) == 179 ||
+                            parseFloat(idProd1) == 158 ||
+                            parseFloat(idProd1) == 159 ||
+                            parseFloat(idProd1) == 160 ||
+                            parseFloat(idProd1) == 161 ||
+                            parseFloat(idProd1) == 163 ||
+                            parseFloat(idProd1) == 162 ||
+                            parseFloat(idProd1) == 331 ||
+                            parseFloat(idProd1) == 330 ||
+                            parseFloat(idProd1) == 165 ||
+                            parseFloat(idProd1) == 164 ||
+                            parseFloat(idProd1) == 167 ||
+                            parseFloat(idProd1) == 166 ||
+                            parseFloat(idProd1) == 169 ||
+                            parseFloat(idProd1) == 168 ||
+                            parseFloat(idProd1) == 170 ||
+                            parseFloat(idProd1) == 180 ||
+                            parseFloat(idProd1) == 181 ||
+                            parseFloat(idProd1) == 182 ||
+                            parseFloat(idProd1) == 183
                         ) {
                             prod[1]['nombreEspecialggez'] = nombreEspecialggez;
                         }

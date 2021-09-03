@@ -36717,7 +36717,9 @@ export class ProductosShapediverComponent implements OnInit, OnDestroy {
             idProd != '332' &&
             idProd != '409' &&
             idProd != '330' &&
-            idProd != '418'
+            idProd != '418' &&
+            idProd != '331' &&
+            idProd != '333'
         ) {
             if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                 var iluminacion = this.iluminacion;

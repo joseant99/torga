@@ -13371,6 +13371,7 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                 if (prodCarr[m][1]['puertas'] != undefined) {
                     for (let x = 0; x < prodCarr[m][1]['puertas'].length; x++) {
                         var puertas;
+                        var objAlum = {};
                         if (
                             prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 2 Plafones' &&
                             prodCarr[m][1]['puertas'][x]['nombre'] != 'Puerta 3 Plafones' &&
@@ -13382,9 +13383,23 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                             prodCarr[m][1]['acabadoTirador'];
                             if (prodCarr[m][1]['puertas'][x]['id'] == 381) {
                                 terminacionpuerta = 'A Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Transparente';
+                                objAlum['id'] = 23;
+                                objAlum['nombre'] = 'Cristal Transparente';
+                                objAlum['precio'] = 0;
+                                objAlum['imagenFondo'] = '';
+                                objAlum['imagenFondoContentType'] = '';
+
+                                prodCarr[m][1]['puertas'][x]['acabado0'] = objAlum;
                             }
                             if (prodCarr[m][1]['puertas'][x]['id'] == 382) {
                                 terminacionpuerta = 'B Aluminio ' + prodCarr[m][1]['acabadoTirador']['nombre'] + ' Gris';
+                                objAlum['id'] = 24;
+                                objAlum['nombre'] = 'Cristal Bronce';
+                                objAlum['precio'] = 0;
+                                objAlum['imagenFondo'] = '';
+                                objAlum['imagenFondoContentType'] = '';
+
+                                prodCarr[m][1]['puertas'][x]['acabado0'] = objAlum;
                             }
                             if (prodCarr[m][1]['puertas'][x]['id'] == 383) {
                                 terminacionpuerta = 'C Madera Sin Tirador';

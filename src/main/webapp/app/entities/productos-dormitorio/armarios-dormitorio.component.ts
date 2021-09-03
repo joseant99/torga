@@ -381,6 +381,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                         objInt1['camisero'] = 4;
                     }
                 }
+                if (hueco0[k]['tipo'] == 'hang') {
+                    objInt1['hang'] = 1;
+                }
                 if (hueco0[k]['tipo'] == 'cajones') {
                     if (hueco0[k]['posicion'] == 0) {
                         objInt1['cajSue' + hueco0[k]['cantidad']] = 1;
@@ -409,6 +412,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (hueco1[k]['tipo'] == 'tubo') {
                     objInt2['tubo' + numTubo2] = 1;
                     numTubo2++;
+                }
+                if (hueco1[k]['tipo'] == 'hang') {
+                    objInt2['hang'] = 1;
                 }
                 if (hueco1[k]['tipo'] == 'cajones') {
                     if (hueco1[k]['posicion'] == 0) {
@@ -450,6 +456,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                     objInt3['tubo' + numTubo3] = 1;
                     numTubo3++;
                 }
+                if (hueco2[k]['tipo'] == 'hang') {
+                    objInt3['hang'] = 1;
+                }
                 if (hueco2[k]['tipo'] == 'cajones') {
                     if (hueco2[k]['posicion'] == 0) {
                         objInt3['cajSue' + hueco2[k]['cantidad']] = 1;
@@ -489,6 +498,9 @@ export class ArmariosDormitorioComponent implements OnInit, OnDestroy, AfterView
                 if (hueco3[k]['tipo'] == 'tubo') {
                     objInt4['tubo' + numTubo4] = 1;
                     numTubo4++;
+                }
+                if (hueco3[k]['tipo'] == 'hang') {
+                    objInt4['hang'] = 1;
                 }
                 if (hueco3[k]['tipo'] == 'cajones') {
                     if (hueco3[k]['posicion'] == 0) {
