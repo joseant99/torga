@@ -412,7 +412,7 @@ $("#divDentroCalcu").scroll(function() {
 	 api.updateSettingsAsync(updatedSettings);
 		
 		var parameters = api.parameters.get();
-		if(idProd == 107 || idProd == 410){
+		 if(idProd == 410){
 			if(id == 1){
 				api.scene.updatePersistentAsync([{
 					id: api.scene.get({ name: "TapaGeo", format: "material" }, "CommPlugin_1").data[0].id,
@@ -650,6 +650,89 @@ $("#divDentroCalcu").scroll(function() {
 					
 			}
 		}
+		 
+		 if(idProd == 107){
+				if(id == 1){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "Usuario_TAPA", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}
+					], "CommPlugin_1");
+						window.textura2 = url;
+				}
+				if(id == 2){
+					if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+						api.scene.updatePersistentAsync([{
+							id: api.scene.get({ name: "Usuario_CASCO", format: "material" }, "CommPlugin_1").data[0].id,
+							content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									roughness: 1,
+									bitmaptexture: url
+								}
+							}
+							]
+						},{
+							id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+							content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									roughness: 1,
+									bitmaptexture: url
+								}
+							}
+							]
+						}], "CommPlugin_1");
+					}else{
+						api.scene.updatePersistentAsync([{
+							id: api.scene.get({ name: "Usuario_CASCO", format: "material" }, "CommPlugin_1").data[0].id,
+							content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									roughness: 1,
+									bitmaptexture: url
+								}
+							}
+							]
+						}], "CommPlugin_1");
+					}
+						
+						window.textura = url;
+				}
+				if(id == 3){
+						api.scene.updatePersistentAsync([{
+							id: api.scene.get({ name: "Usuario_FRENTE", format: "material" }, "CommPlugin_1").data[0].id,
+							content: [
+							{
+								format: "material",
+								data: {
+									version: "2.0",
+									roughness: 1,
+									bitmaptexture: url
+								}
+							}
+							]
+						}
+						], "CommPlugin_1");
+						window.textura6 = url;
+						
+				}
+			}
 		
 		if(idProd == 72 || idProd == 73){
 			if(id == 1){
@@ -28491,6 +28574,402 @@ $("#divDentroCalcu").scroll(function() {
 				
 				window.textura6 = url;
 				
+				
+			}
+			
+		}
+		
+		if(idProd == 81){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Tapa", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Casco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Casco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}
+					
+					window.textura = url;
+			}
+			if(id == 3){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Puerta SUP IZQ", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}
+					], "CommPlugin_1");
+					window.textura6 = url;
+					
+			}
+			if(id == 4){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Puerta SUP DCH", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				window.textura6 = url;
+				
+			}
+			if(id == 6){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Puerta CEN DCH", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				window.textura6 = url;
+				
+			}
+			if(id == 5){
+				if(url != 'https://dl.dropboxusercontent.com/s/dtaqd965xhev6y7/marron-oscuro.jpg?dl=1'){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "puertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								transparency: 0.9,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "marcoPuertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "puertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								transparency: 0.65,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "marcoPuertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}], "CommPlugin_1");
+					
+				}
+				
+				window.textura6 = url;
+				
+				
+			}
+			
+			if(id == 7){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Cajon", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}], "CommPlugin_1");
+				window.textura6 = url;
+				
+			}
+			
+		}
+		
+		if(idProd == 316){
+			if(id == 1){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Tapa", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+					window.textura2 = url;
+			}
+			if(id == 2){
+				if(window.apoyoIdGrass != 15 && window.apoyoIdGrass != 16 && window.apoyoIdGrass != 403){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Casco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "apoyoGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Casco", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}
+					
+					window.textura = url;
+			}
+			if(id == 3){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "usuario_Puerta SUP IZQ", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: url
+							}
+						}
+						]
+					}
+					], "CommPlugin_1");
+					window.textura6 = url;
+					
+			}
+			if(id == 4){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Puerta SUP DCH", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				window.textura6 = url;
+				
+			}
+			if(id == 5){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Puerta CEN IZQ", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}
+				], "CommPlugin_1");
+				window.textura6 = url;
+				
+			}
+			if(id == 6){
+				if(url != 'https://dl.dropboxusercontent.com/s/dtaqd965xhev6y7/marron-oscuro.jpg?dl=1'){
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "puertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								transparency: 0.9,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "marcoPuertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}], "CommPlugin_1");
+				}else{
+					api.scene.updatePersistentAsync([{
+						id: api.scene.get({ name: "puertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								transparency: 0.65,
+								bitmaptexture: url
+							}
+						}
+						]
+					}, {
+						id: api.scene.get({ name: "marcoPuertaCristalGeo", format: "material" }, "CommPlugin_1").data[0].id,
+						content: [
+						{
+							format: "material",
+							data: {
+								version: "2.0",
+								roughness: 1,
+								bitmaptexture: urlCantos
+							}
+						}
+						]
+					}], "CommPlugin_1");
+					
+				}
+				
+				window.textura6 = url;
+				
+				
+			}
+			
+			if(id == 7){
+				api.scene.updatePersistentAsync([{
+					id: api.scene.get({ name: "usuario_Cajon", format: "material" }, "CommPlugin_1").data[0].id,
+					content: [
+					{
+						format: "material",
+						data: {
+							version: "2.0",
+							roughness: 1,
+							bitmaptexture: url
+						}
+					}
+					]
+				}], "CommPlugin_1");
+				window.textura6 = url;
 				
 			}
 			

@@ -17358,6 +17358,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 todasCuenta = todasCuenta + 83;
                 preciocajon = '83 pp';
             }
+            if (this.idDelProducto == 419) {
+                todasCuenta = todasCuenta + 83;
+                preciocajon = '83 pp';
+            }
             if (this.idDelProducto == 281) {
                 todasCuenta = todasCuenta + 137;
                 preciocajon = '137 pp';
@@ -23509,6 +23513,10 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 preciocajon = '96PP';
             }
             if (this.idDelProducto == 246) {
+                todasCuenta = todasCuenta + 83;
+                preciocajon = '83PP';
+            }
+            if (this.idDelProducto == 419) {
                 todasCuenta = todasCuenta + 83;
                 preciocajon = '83PP';
             }
@@ -32681,7 +32689,8 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                 idProd != '234' &&
                 idProd != '235' &&
                 idProd != '413' &&
-                idProd != '414'
+                idProd != '414' &&
+                idProd != '419'
             ) {
                 if (contadorApoyo == this.acaProdService.todos.length && apoyoBueno != '') {
                     var iluminacion = this.iluminacion;
@@ -35066,6 +35075,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     if (
                         value['productosDormitorio']['id'] == '281' ||
                         value['productosDormitorio']['id'] == '246' ||
+                        value['productosDormitorio']['id'] == '419' ||
                         value['productosDormitorio']['id'] == '282' ||
                         value['productosDormitorio']['id'] == '413' ||
                         value['productosDormitorio']['id'] == '414'
@@ -35126,6 +35136,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
                     if (
                         value['productosDormitorio']['id'] == '281' ||
                         value['productosDormitorio']['id'] == '246' ||
+                        value['productosDormitorio']['id'] == '419' ||
                         value['productosDormitorio']['id'] == '282' ||
                         value['productosDormitorio']['id'] == '413' ||
                         value['productosDormitorio']['id'] == '414'

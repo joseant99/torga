@@ -14116,7 +14116,6 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['productosDormitorio']['id'] == 117 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 118 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 64 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 65 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 67 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 313 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 171 ||
@@ -14236,6 +14235,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodPrePed['ancho'] = prodCarr[m][1]['ancho'];
                                 prodPrePed['alto'] = prodCarr[m][1]['alto'];
                                 prodPrePed['fondo'] = prodCarr[m][1]['fondo'];
+                            }
+                            if (prodCarr[m][1]['nombreEspecialggez'] != undefined) {
+                                prodPrePed['nombreImagenShape'] = prodCarr[m][1]['nombreEspecialggez'];
                             }
                             numeroAcaProd[m]['prod'] = prodPrePed;
                             prodAca[m] = prodPrePed;

@@ -16401,7 +16401,6 @@ export class JhiMainComponent implements OnInit {
                 );
             }
         }
-
         if (idProd == 282) {
             if (k == 1) {
                 $('.' + productos[i]['id'] + 'Datos').append(

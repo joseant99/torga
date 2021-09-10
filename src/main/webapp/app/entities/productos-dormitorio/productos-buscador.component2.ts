@@ -27197,6 +27197,21 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
         } else {
             var codIdShape = '';
+            // if (
+            //   codigo == 'NH001' ||
+            // codigo == 'NH002' ||
+            // codigo == 'NH003' ||
+            //codigo == 'NH004' ||
+            //codigo == 'NH005' ||
+            //codigo == 'NH006' ||
+            //codigo == 'NH007' ||
+            //codigo == 'NH008' ||
+            //codigo == 'NH009' ||
+            //codigo == 'NH010'
+            //) {
+            //  codIdShape =
+            //    '1a032a3cadfdfa10caf1e81f6ce2e5fef8086bd7cc246c4cbdb68aab0aa52782ad397820966ed6c8ca0584828bd40b92f61dae4abb0334e91fc32f136667e43c2f40cc699413b099c9b029614e1bb4ae60b6d0642035cf9b3a470d3b7c1fda6cdc2632812b1a34299373b6798b4e2177d6f9ea9fec34b08f5d4fd97e10221213-b60b5d54e051e67b7ac94bda13ed34cf';
+            //}
             if (
                 codigo == 'NH001' ||
                 codigo == 'NH002' ||
@@ -27210,7 +27225,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                 codigo == 'NH010'
             ) {
                 codIdShape =
-                    '1a032a3cadfdfa10caf1e81f6ce2e5fef8086bd7cc246c4cbdb68aab0aa52782ad397820966ed6c8ca0584828bd40b92f61dae4abb0334e91fc32f136667e43c2f40cc699413b099c9b029614e1bb4ae60b6d0642035cf9b3a470d3b7c1fda6cdc2632812b1a34299373b6798b4e2177d6f9ea9fec34b08f5d4fd97e10221213-b60b5d54e051e67b7ac94bda13ed34cf';
+                    '38f6f3eb946ba01703e1188e1cb0d33932220043c0c7046d72499bdb9f1dd96f2ea6c5ccd4fdc3f5824d7d14d8aa3e35f700ce4ef8fc88ec5c65d11322df1a7ffc4989b8d65e8f7c02b7eb43cdfecb0f733bc8351a81aab575805a04ea3ddf2aff9f4e6121669a99bb0b96b6b758afd8c2f3396779f23f0c296d6683baab1a23-b0f7b9fdb2c0038f048effb480bfbe7f';
             }
             if (codigo == 'NH011' || codigo == 'NH012' || codigo == 'NH013' || codigo == 'NH014') {
                 codIdShape =
@@ -27451,7 +27466,7 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             if (codigo == 'NH168') {
                 codIdShape =
-                    '7c1fc93e244d21bc0dad2723229291a5c93ac7aa266f4ce2bcc9725e436f3de91ccd9024a05f8f249cb2e94a55330c2316f2d3e8d901668e41e27a55325e6dd6aaaf948d8699b641f842e235bbc0c2fe092047c56278c768fae96618b6637eb2709d09057ec16275098d436784852f0aa9cb3c1ad30c0b713e36c3119f1282cc-8ad72b82c9777d78affc7b56fd04dc38';
+                    '731aa0c1558907d9dfad5fc953555a7d3735756128f8e48a95555fc443f290ebf6572804ec1d5c542c424af035287a658d76ced0e3b5e24fb351f5082a44b121be832c8f767dee02dc6d41c17fb33575c8b0fb3169a2de297d45ed5c66d8277b03a83921fb250cb7a9c25c1d4d627ffde15f657d01af2876d19e631df8bc71c2-02dd873e769aba1f738da04ba2d8c685';
             }
             if (codigo == 'NH169') {
                 codIdShape =
@@ -27527,11 +27542,11 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
             }
             if (codigo == 'NH195') {
                 codIdShape =
-                    '2375d012028afdf25a6949a2804ffc03b28248eeb3ed03c8c3c707a164e5f8dcd938be9fc1de08d8e70b6fe3950aeeeaee8109f7d30dad7613774fc436e2e737c419ed797f1ed46941a57d36bbf22a8055c11a5f5333e0b77f83eccd8866cac5c20784c886a9480ee8eb10b1cb1a17935598a93338d50c4bca070989e164cdee-b245e19d3230b5dbd61fd5b8b5917d5f';
+                    'ba3183090a10d1e054f02ff12b19a6369eeb54b21858dccfc3fd1f47369c967cc7326096745d230befce71cbb21ff9ccf59375b7d50708a53faab510d2c469fac9846bfc4d07801376a0d36718c6b055957906587498a4730dcb1479bd9426e65e6f5ae6575d859d1c982ca08da5da44a89f4845fab2a8ff9379950ab862e19c-a7105eec42434f33276ee9e221f53c0f';
             }
             if (codigo == 'NH196') {
                 codIdShape =
-                    'a1f8cdf5e7c11b08f0743b10862510b3b60854f56e4f8883fd339007e1c6bcc47811833d0b8dac02d3d62f4ff92d73149b513eba69574eb3592b325c4486607987c960339a67a66f04d41fd2fca473ff37e37c09c9ce304765126c6710ea8defe71424e818496412750b3053459d2c69e8ab8ae4b742e088ed2f864d48067990-870c0439f4a20c9bcd209650302acf71';
+                    'c8923ba7861f9419953e606622a6bdf8c57c3ec8eb6987feff4a48fe1b5d41242f3fc4c4ea1345bc1b7d3902b2e80ad21041c342fcc4b0d30f77a74337de17c4f0e368e15af756a97e08fd1c194af8cc44e9dcb1335be84e6913770d10ebac8e2b24a82397d143e31d7c31d6987ee621e35266d218c861a696541f96a6df8fe0-52824d1d843a82f3b45d9bda6f52da96';
             }
             if (codigo == 'NH198') {
                 codIdShape =
