@@ -29947,7 +29947,7 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         var precioPunto = parseFloat(this.precioPunto);
         var iva = this.iva;
         if (id == 'Si') {
-            var idProd = this.idDelProducto;
+            var idProd = this.acaProdService['todos'][0]['productosDormitorio']['id'];
             $('#precioDeLaLuz').css({ display: 'block' });
             var luz = this.estaEsLaLUZ;
             if (luz != undefined) {

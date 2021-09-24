@@ -2072,7 +2072,7 @@ function apiShape9(id){
 	    version: 2
 	  },
 	  // ticket for a ShapeDiver model
-	  ticket: '784cdc61239ec332ab0fd0e173a700fa97a62e65fba722e7827b0c14d14ddc0880bc9ece63c8e2c5861c52f4e22fc5c48f8a71d0e742c885470cef9352842bba420c0557eb7c5a53b0f5ebe6238914f4d76c21b4be2ba3c120e38aa494279e0a6590259ede7e33d739ca4c8bb18728fbef037c75ed4274d4228bce34fce17d7a-16b722c51edc64fb8d7afb88274aea74',
+	  ticket: '674c615418f4e2a4f1120917642f8dffc5afb596b9a0bb349adf0524ef938ccc3ab6918315b71829c6ad45b51fe739d87c89d71aba62fc3bc3d464af1ef590b489e6fa8fce511c772c1797cc34430142dc505948c12c3eb995157cc588fc644f725a9dc34b500db761669a38160d693905e8829f845a576026aa491f81b6afdc-7ac08c20cea7827fb15d45b52853250f',
 	  //'589fd5f0b47d32a4c0c9f51178e2547d3921c0e137f6f31417ac666ef0456ff50aeab735a16ffd696e90158f0f5d25deec11d207532baa49e0b71f9066037ef12216bba84850e072c837de602f921a62ab50a3de25206525a8fdaf74ca4337e8a71ba5f26622d5950551425af9297df908b8a57ce908-c4735fa91c66bf76053b2e0432c8158e',
 	  modelViewUrl: 'eu-central-1',
 	  showControlsInitial: true,
@@ -2087,24 +2087,65 @@ function apiShape9(id){
 	var parameters;
 	api.plugins.registerCommPluginAsync({
 	    deferGeometryLoading: false,
-	    ticket: "2f6f8ffb73f5957fc97c7d30430bff5d55bef43d0cfc390aedb91385f9acbd08bb96b44dd0bca653c5b68df70389e07228c042979f2f6c6472819d6e4357558e0e5adaf5a9c995da80b1e5a0c0847cc3d0acbb1d20e42ff2828dd6492544ff356ab4361fbbd7d104eac9c7ca9b6a7cb24d9942dbfec4afd16ec1848100a0c55a-e9eb388a0bb4584433b7b731bbb5ff16",
+	    ticket: "674c615418f4e2a4f1120917642f8dffc5afb596b9a0bb349adf0524ef938ccc3ab6918315b71829c6ad45b51fe739d87c89d71aba62fc3bc3d464af1ef590b489e6fa8fce511c772c1797cc34430142dc505948c12c3eb995157cc588fc644f725a9dc34b500db761669a38160d693905e8829f845a576026aa491f81b6afdc-7ac08c20cea7827fb15d45b52853250f",
 	    modelViewUrl: "eu-central-1",
 	    runtimeId: 'CommPlugin_2',
 	    brandedMode: 'false'
 	  });
 	api.plugins.refreshPluginAsync('CommPlugin_2');
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "80afc3c7685c4364fdb9c61cad324fa633806fd9a70a093a4886ccf64f94f055969ce95ff60fcb18a143bd5586729ac84ae758bf67db91c7e84c8a375ed5b553cd39d92d457f0a873c3ce59c3420ccc3572a205f53639315cd72706a01ab95234e087e0a77e0a0376d33c6a76e4e88d9e7bc691aa8f8d24ee71ca7c4c175d5db-42bf916669f0da1cee255a23a38e8cc7",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_3',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_3');
+	api.plugins.registerCommPluginAsync({
+	    deferGeometryLoading: false,
+	    ticket: "80afc3c7685c4364fdb9c61cad324fa633806fd9a70a093a4886ccf64f94f055969ce95ff60fcb18a143bd5586729ac84ae758bf67db91c7e84c8a375ed5b553cd39d92d457f0a873c3ce59c3420ccc3572a205f53639315cd72706a01ab95234e087e0a77e0a0376d33c6a76e4e88d9e7bc691aa8f8d24ee71ca7c4c175d5db-42bf916669f0da1cee255a23a38e8cc7",
+	    modelViewUrl: "eu-central-1",
+	    runtimeId: 'CommPlugin_4',
+	    brandedMode: 'false'
+	  });
+	api.plugins.refreshPluginAsync('CommPlugin_4');
 	
 	api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 		
 	    if (!viewerInit) {
 	    	setTimeout(function() {
 	    		var armario1 = new THREE.Matrix4();
-				
-				armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,api.parameters.get({name : "L", plugin: "CommPlugin_1"},"CommPlugin_1").data[0].value,0,0,1);
+				var cuenta1 = (api.parameters.get({name : "usuario_largo_slider", plugin: "CommPlugin_1"},"CommPlugin_1").data[0].value - 450);
+				armario1.set(1,0,0,0,0,1,0,0,0,0,1,0,cuenta1,0,0,1);
 				
 				armario1.transpose();
 				
 				api.scene.applyTransformation("plugin","CommPlugin_2",armario1);
+				
+				var armario2 = new THREE.Matrix4();
+				
+				armario2.set(1,0,0,0,0,1,0,0,0,0,1,0,0,0,275,1);
+				
+				armario2.transpose();
+				
+				api.scene.applyTransformation("plugin","CommPlugin_1",armario2);
+				
+				var armario3 = new THREE.Matrix4();
+				
+				armario3.set(1,0,0,0,0,1,0,0,0,0,1,0,cuenta1,0,1375,1);
+				
+				armario3.transpose();
+				
+				api.scene.applyTransformation("plugin","CommPlugin_3",armario3);
+				
+				var armario4 = new THREE.Matrix4();
+				
+				armario4.set(1,0,0,0,0,1,0,0,0,0,1,0,(cuenta1 + (api.parameters.get({name : "usuario_largo_slider", plugin: "CommPlugin_2"},"CommPlugin_2").data[0].value) ) - (api.parameters.get({name : "L", plugin: "CommPlugin_4"},"CommPlugin_4").data[0].value),0,850,1);
+				
+				armario4.transpose();
+				
+				api.scene.applyTransformation("plugin","CommPlugin_4",armario4);
+				
             }, 2500);
 	    		
 				
@@ -2131,11 +2172,11 @@ function apiShape9(id){
 		  }
 		  
 		 var ancho1 = $("#ancho1").text();
-		  var parame = api.parameters.get({name :"L"}).data[0];
+		  var parame = api.parameters.get({name : "L", plugin: "CommPlugin_4"},"CommPlugin_4").data[0];
 		 
 			api.parameters.updateAsync({
 		      id: parame.id,
-		      value: (parseFloat(ancho1)*10)
+		      value: 750
 		    }).then(function(response){
 		    	 var alto1 = $("#altoDatosDimen").text();
 		  	     var parame = api.parameters.get({name :"H"}).data[0];
