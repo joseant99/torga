@@ -76,6 +76,8 @@ export class inicioComponent implements OnInit, AfterViewInit {
             .subscribe(data => {
                 this.navbarComponent.presupuestoPedidoService.fechaBarraAzul = data.body[0]['fecha'];
                 $('#inputParaCambiarFecha').val(data.body[0]['fecha']);
+                this.navbarComponent.presupuestoPedidoService.fechaTexto = data.body[0]['texto'];
+                $('#inputParaCambiarTextoInicio').val(data.body[0]['texto']);
             });
         $('#modalCambiar1A').css({ 'background-color': 'black' });
         $('#modalCambiar1B').css({ 'background-color': 'black' });

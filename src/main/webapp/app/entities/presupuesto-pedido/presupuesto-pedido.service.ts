@@ -17,6 +17,7 @@ export class PresupuestoPedidoService {
     public resourceUrl3 = SERVER_API_URL + 'api/presupuesto-pedidos4';
     constructor(protected http: HttpClient) {}
     public fechaBarraAzul;
+    public fechaTexto;
     create(presupuestoPedido: IPresupuestoPedido): Observable<EntityResponseType> {
         return this.http.post<IPresupuestoPedido>(this.resourceUrl, presupuestoPedido, { observe: 'response' });
     }

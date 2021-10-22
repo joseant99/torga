@@ -161,17 +161,33 @@ export class NavbarComponent implements AfterViewInit, OnInit {
             })
             .subscribe(data => {
                 this.presupuestoPedidoService.fechaBarraAzul = data.body[0]['fecha'];
+                this.presupuestoPedidoService.fechaTexto = data.body[0]['texto'];
                 $('#inputParaCambiarFecha').val(data.body[0]['fecha']);
+                $('#inputParaCambiarTextoInicio').val(data.body[0]['texto']);
             });
     }
 
     public cambiarFechaEntregaBase() {
         var val = $('#inputParaCambiarFecha').val();
+        var val1 = $('#inputParaCambiarTextoInicio').val();
         var hola = {
             id: 1,
-            fecha: val.toString()
+            fecha: val.toString(),
+            texto: val1.toString()
         };
         this.presupuestoPedidoService.fechaBarraAzul = val;
+        this.subscribeToSaveResponse1000(this.fecha_entregaService.update(hola));
+    }
+
+    public cambiarFechaEntregaTexto() {
+        var val = $('#inputParaCambiarTextoInicio').val();
+        var val1 = $('#inputParaCambiarFecha').val();
+        var hola = {
+            id: 1,
+            fecha: val1.toString(),
+            texto: val.toString()
+        };
+        this.presupuestoPedidoService.fechaTexto = val;
         this.subscribeToSaveResponse1000(this.fecha_entregaService.update(hola));
     }
 

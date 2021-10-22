@@ -46,6 +46,8 @@ a {
     text-align: center;
     letter-spacing: 5px;
     font-weight: 300;
+    margin: auto;
+    width: 50%;
 }
 
 .shapediver-domElements {

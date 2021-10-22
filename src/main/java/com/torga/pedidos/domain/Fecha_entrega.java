@@ -24,6 +24,9 @@ public class Fecha_entrega implements Serializable {
 
     @Column(name = "fecha")
     private String fecha;
+    
+    @Column(name = "texto")
+    private String texto;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -45,6 +48,19 @@ public class Fecha_entrega implements Serializable {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    
+    public String getTexto() {
+        return texto;
+    }
+
+    public Fecha_entrega texto(String texto) {
+        this.texto = texto;
+        return this;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
