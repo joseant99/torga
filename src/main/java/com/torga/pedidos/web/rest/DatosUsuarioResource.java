@@ -108,6 +108,19 @@ public class DatosUsuarioResource {
         Collection<DatosUsuario> page = datosUsuarioRepository.busquing1(id);
         return ResponseEntity.ok().body(page);
     }
+    
+    /**
+     * GET  /datos-usuarios : get all the datosUsuarios.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of datosUsuarios in body
+     */
+    @GetMapping("/datos-usuarios-busqueda-codigo/{id}")
+    @Timed
+    public ResponseEntity<Collection<DatosUsuario>> getAllDatosUsuarioCodigo(@PathVariable String id) {
+        Collection<DatosUsuario> page = datosUsuarioRepository.busquedaCodigo(id);
+        return ResponseEntity.ok().body(page);
+    }
 
     /**
      * GET  /datos-usuarios/:id : get the "id" datosUsuario.

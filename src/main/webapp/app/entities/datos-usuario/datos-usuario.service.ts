@@ -65,6 +65,10 @@ export class DatosUsuarioService {
         return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-reprebus12/${id}`, { observe: 'response' });
     }
 
+    busquedaCodigo(id: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IDatosUsuario[]>(`${this.resourceUrl}-busqueda-codigo/${id}`, { observe: 'response' });
+    }
+
     findCogerTodos(): Observable<EntityResponseType> {
         return this.http.get<IDatosUsuario>(`${this.resourceUrl}-todos`, { observe: 'response' });
     }

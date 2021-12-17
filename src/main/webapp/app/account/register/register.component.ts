@@ -1,11 +1,14 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService } from 'ng-jhipster';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared';
-import { LoginModalService } from 'app/core';
+import { LoginModalService, UserService } from 'app/core';
+import { Observable } from 'rxjs';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Register } from './register.service';
+import { DatosUsuarioService } from '../../entities/datos-usuario/datos-usuario.service';
+import { IDatosUsuario } from 'app/shared/model/datos-usuario.model';
 import * as $ from 'jquery';
 @Component({
     selector: 'jhi-register',
@@ -18,6 +21,7 @@ export class RegisterComponent implements OnInit, AfterViewInit {
     errorEmailExists: string;
     errorUserExists: string;
     registerAccount: any;
+    isSaving: boolean;
     success: boolean;
     modalRef: NgbModalRef;
 
@@ -25,7 +29,9 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         private languageService: JhiLanguageService,
         private loginModalService: LoginModalService,
         private registerService: Register,
+        private userService: UserService,
         private elementRef: ElementRef,
+        public datosUsuarioService: DatosUsuarioService,
         private renderer: Renderer
     ) {}
 
@@ -51,6 +57,16 @@ export class RegisterComponent implements OnInit, AfterViewInit {
                 this.registerService.save(this.registerAccount).subscribe(
                     () => {
                         this.success = true;
+                        this.userService.find(this.registerAccount.login).subscribe(data => {
+                            var usuario = data.body;
+                            this.datosUsuarioService.busquedaCodigo(this.registerAccount.login).subscribe(data => {
+                                var tienda = data.body;
+                                tienda[0]['user'] = usuario;
+                                usuario['firstName'] = tienda[0]['nombreFiscal'];
+                                this.subscribeToSaveResponse(this.datosUsuarioService.update(tienda[0]));
+                                this.subscribeToSaveResponse(this.userService.update(usuario));
+                            });
+                        });
                     },
                     response => this.processError(response)
                 );
@@ -71,5 +87,25 @@ export class RegisterComponent implements OnInit, AfterViewInit {
         } else {
             this.error = 'ERROR';
         }
+    }
+
+    public refrescar() {
+        location.reload();
+    }
+
+    protected subscribeToSaveResponse(result: Observable<HttpResponse<IDatosUsuario>>) {
+        result.subscribe((res: HttpResponse<IDatosUsuario>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
+    protected subscribeToSaveResponse1(result: Observable<HttpResponse<IDatosUsuario>>) {
+        result.subscribe((res: HttpResponse<IDatosUsuario>) => this.onSaveSuccess(), (res: HttpErrorResponse) => this.onSaveError());
+    }
+
+    protected onSaveSuccess() {
+        this.isSaving = false;
+    }
+
+    protected onSaveError() {
+        this.isSaving = false;
     }
 }

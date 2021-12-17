@@ -80,6 +80,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_key", length = 20)
     @JsonIgnore
     private String resetKey;
+    
+    @Column(name = "password")
+    private String contra;
 
     @Column(name = "reset_date")
     private Instant resetDate = null;
@@ -125,6 +128,14 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+    
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
     }
 
     public String getLastName() {

@@ -61,7 +61,7 @@ public class DatosUsuario implements Serializable {
     private String nombreFiscal;
 
     @Column(name = "codigo")
-    private Float codigo;
+    private String codigo;
 
     @Column(name = "estado")
     private String estado;
@@ -346,16 +346,16 @@ public class DatosUsuario implements Serializable {
         this.nombreFiscal = nombreFiscal;
     }
 
-    public Float getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public DatosUsuario codigo(Float codigo) {
+    public DatosUsuario codigo(String codigo) {
         this.codigo = codigo;
         return this;
     }
 
-    public void setCodigo(Float codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
