@@ -14091,6 +14091,9 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                     if (prodCarr[m][1]['usb']['mensaje'] == 'Con DOS USB') {
                                         pilotousvar = '1';
                                     }
+                                    if (prodCarr[m][1]['usb']['mensaje'] == 'Con USB') {
+                                        pilotousvar = '1';
+                                    }
 
                                     prodPrePed = {
                                         productosDormitorio: prodCarr[m][1]['productosDormitorio'],
@@ -14195,7 +14198,19 @@ export class NavbarComponent implements AfterViewInit, OnInit {
                                 prodCarr[m][1]['productosDormitorio']['id'] == 255 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 256 ||
                                 prodCarr[m][1]['productosDormitorio']['id'] == 413 ||
-                                prodCarr[m][1]['productosDormitorio']['id'] == 414
+                                prodCarr[m][1]['productosDormitorio']['id'] == 414 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 249 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 250 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 253 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 254 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 257 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 258 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 261 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 262 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 265 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 266 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 269 ||
+                                prodCarr[m][1]['productosDormitorio']['id'] == 270
                             ) {
                                 if (prodCarr[m][1]['iluminacion'] != undefined) {
                                     prodPrePed['iluminacion'] = prodCarr[m][1]['iluminacion'];

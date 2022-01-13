@@ -32940,6 +32940,16 @@ export class ProductosBuscadorComponent3 implements OnInit, OnDestroy {
         } else {
             var precioDimension = this.precioDimension;
         }
+        if (idApoyo == 411) {
+            idApoyo = 17;
+            idApoyoPorSi = 411;
+            this.idApoyoSecundario = 411;
+        }
+        if (idApoyo == 412) {
+            idApoyo = 18;
+            idApoyoPorSi = 412;
+            this.idApoyoSecundario = 412;
+        }
         var h;
         h = $('#productoCalculadora1  #datos1 #ancho1').text();
         var precioPunto = this.precioPunto;
