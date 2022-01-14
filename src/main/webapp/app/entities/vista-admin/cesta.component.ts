@@ -345,6 +345,7 @@ export class cestaComponent implements OnInit, AfterViewInit {
 
             if (sesion != null) {
                 if (sesion[1]['productosDormitorio'] != undefined) {
+                    $('#botonFinalizarPedidoProductos').removeAttr('disabled');
                     var nombre = productosArrayNombres[sesion[1]['productosDormitorio']['id']];
                     console.log(nombre);
 
