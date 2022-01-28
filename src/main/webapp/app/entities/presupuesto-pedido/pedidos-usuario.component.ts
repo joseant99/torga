@@ -294,15 +294,65 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         }
     }
     public cargarSelectTexto() {
+        var arrayBueno = [];
+        arrayBueno[83] = 3;
+        arrayBueno[84] = 4;
+        this.ordenarFecha = 0;
+        this.ordenarFecha = 1;
+        arrayBueno[85] = 42;
+        arrayBueno[310] = 22;
+        arrayBueno[386] = 15;
+        arrayBueno[541] = 47;
+        arrayBueno[873] = 45;
+        arrayBueno[934] = 29;
+        arrayBueno[1073] = 25;
+        arrayBueno[1187] = 18;
+        arrayBueno[1188] = 34;
+        arrayBueno[1410] = 5;
+        arrayBueno[1694] = 32;
+        arrayBueno[3239] = 6;
+        arrayBueno[3240] = 7;
+        arrayBueno[3241] = 8;
+        arrayBueno[3242] = 10;
+        arrayBueno[3243] = 16;
+        arrayBueno[3244] = 17;
+        arrayBueno[3245] = 19;
+        arrayBueno[3246] = 20;
+        arrayBueno[3247] = 24;
+        arrayBueno[3248] = 27;
+        arrayBueno[3249] = 28;
+        arrayBueno[3250] = 31;
+        arrayBueno[3251] = 33;
+        arrayBueno[3252] = 35;
+        arrayBueno[3253] = 37;
+        arrayBueno[3254] = 40;
+        arrayBueno[3255] = 41;
+        arrayBueno[3256] = 44;
+        arrayBueno[3257] = 46;
+        arrayBueno[3259] = 73;
         var nombreFiscal = $('#nombreFiscalInput').val();
-        this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
-            $('#nombreFiscalSelect').empty();
-            for (let i = 0; i < data.body['length']; i++) {
-                $('#nombreFiscalSelect').append(
-                    '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
-                );
-            }
-        });
+        var account = this.accountService.userIdentity;
+        if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+            this.datosUsuarioService.query12(arrayBueno[account.id]).subscribe(data => {
+                $('#nombreFiscalSelect').empty();
+                for (let i = 0; i < data.body['length']; i++) {
+                    if (data.body[i]['nombreFiscal'].indexOf(nombreFiscal.toString().toUpperCase()) !== -1) {
+                        $('#nombreFiscalSelect').append(
+                            '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
+                        );
+                    }
+                }
+            });
+        } else {
+            this.datosUsuarioService.query13(nombreFiscal).subscribe(data => {
+                $('#nombreFiscalSelect').empty();
+                for (let i = 0; i < data.body['length']; i++) {
+                    $('#nombreFiscalSelect').append(
+                        '<option value="' + data.body[i]['nombreFiscal'] + '">' + data.body[i]['nombreFiscal'] + '</option>'
+                    );
+                }
+            });
+        }
     }
     public buscarPresu() {
         var filtro = $('#filtroos').val();
