@@ -18,6 +18,7 @@ import { RepresentanteTiendaService } from '../entities/representante-tienda/rep
 import { IRepresentanteTienda } from 'app/shared/model/representante-tienda.model';
 import { IPrecioTienda } from 'app/shared/model/precio-tienda.model';
 import { PrecioTiendaService } from '../entities/precio-tienda/precio-tienda.service';
+import { DatosUsuarioService } from '../entities/datos-usuario/datos-usuario.service';
 
 @Component({
     selector: 'jhi-home',
@@ -45,6 +46,7 @@ export class HomeComponent implements OnInit {
         private eventManager: JhiEventManager,
         private loginService: LoginService,
         private router: Router,
+        private datosUsuarioService: DatosUsuarioService,
         private stateStorageService: StateStorageService
     ) {}
 
@@ -66,51 +68,106 @@ export class HomeComponent implements OnInit {
     registerAuthenticationSuccess() {
         this.eventManager.subscribe('authenticationSuccess', message => {
             this.accountService.identity().then(account => {
-                $('body').removeAttr('id');
-                $('#cestaImagen').removeAttr('style');
-                $('#cestaImagen').attr('style');
-                $('#cestaImagen').css({ 'max-width': '100%' });
-                $('#cestaImagen').css({ right: '50px' });
-                $('#botonEsconder').removeAttr('style');
-                $('#botonEsconder').attr('style');
-                $('#botonEsconder').css({ 'max-width': '100%' });
-                $('#menuFijoArriba').removeAttr('style');
-                $('.menuFijoArriba1').css({ display: 'block' });
-                var cont = 0;
-                for (let i = 1; i < 20; i++) {
-                    if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
-                        cont++;
+                if (account.authorities.indexOf('ROLE_ADMIN') >= 0 || account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                    $('body').removeAttr('id');
+                    $('#cestaImagen').removeAttr('style');
+                    $('#cestaImagen').attr('style');
+                    $('#cestaImagen').css({ 'max-width': '100%' });
+                    $('#cestaImagen').css({ right: '50px' });
+                    $('#botonEsconder').removeAttr('style');
+                    $('#botonEsconder').attr('style');
+                    $('#botonEsconder').css({ 'max-width': '100%' });
+                    $('#menuFijoArriba').removeAttr('style');
+                    $('.menuFijoArriba1').css({ display: 'block' });
+                    var cont = 0;
+                    for (let i = 1; i < 20; i++) {
+                        if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
+                            cont++;
+                        }
                     }
-                }
 
-                if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
-                    $('#menuPrincipal').css({ display: 'block' });
-                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
-                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
-                    this.router.navigate(['/inicio']);
-                } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
-                    $('#menuPrincipal').css({ display: 'block' });
-                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
-                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
-                    this.router.navigate(['/inicio']);
-                } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
-                    this.represenTorgaService.findUsu(account.id).subscribe(data => {
-                        this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
-                            this.representanteTiendaService.todos = data.body;
-                            this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                    if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                        $('#menuPrincipal').css({ display: 'block' });
+                        $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                        $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                        this.router.navigate(['/inicio']);
+                    } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                        $('#menuPrincipal').css({ display: 'block' });
+                        $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                        $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                        this.router.navigate(['/inicio']);
+                    } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                        this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                            this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                                this.representanteTiendaService.todos = data.body;
+                                this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                            });
                         });
-                    });
-                    $('#menuPrincipal').css({ display: 'block' });
-                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
-                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
-                    this.router.navigate(['/inicio']);
-                } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
-                    $('#menuPrincipal').css({ display: 'block' });
-                    $('#botonEsconder').attr('onClick', 'esconderMenu()');
-                    $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
-                    this.router.navigate(['/inicio']);
+                        $('#menuPrincipal').css({ display: 'block' });
+                        $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                        $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                        this.router.navigate(['/inicio']);
+                    } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
+                        $('#menuPrincipal').css({ display: 'block' });
+                        $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                        $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                        this.router.navigate(['/inicio']);
+                    } else {
+                        this.account = account;
+                    }
                 } else {
-                    this.account = account;
+                    this.datosUsuarioService.busquedaCodigo(account.login).subscribe(data => {
+                        if (data.body[0]['estado'] == 'Activo') {
+                            $('body').removeAttr('id');
+                            $('#cestaImagen').removeAttr('style');
+                            $('#cestaImagen').attr('style');
+                            $('#cestaImagen').css({ 'max-width': '100%' });
+                            $('#cestaImagen').css({ right: '50px' });
+                            $('#botonEsconder').removeAttr('style');
+                            $('#botonEsconder').attr('style');
+                            $('#botonEsconder').css({ 'max-width': '100%' });
+                            $('#menuFijoArriba').removeAttr('style');
+                            $('.menuFijoArriba1').css({ display: 'block' });
+                            var cont = 0;
+                            for (let i = 1; i < 20; i++) {
+                                if (JSON.parse(sessionStorage.getItem('prod' + i)) != null) {
+                                    cont++;
+                                }
+                            }
+
+                            if (account.authorities.indexOf('ROLE_CLIENTE') >= 0) {
+                                $('#menuPrincipal').css({ display: 'block' });
+                                $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                                $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                                this.router.navigate(['/inicio']);
+                            } else if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
+                                $('#menuPrincipal').css({ display: 'block' });
+                                $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                                $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                                this.router.navigate(['/inicio']);
+                            } else if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
+                                this.represenTorgaService.findUsu(account.id).subscribe(data => {
+                                    this.representanteTiendaService.findUsu(data.body[0]['id']).subscribe(data => {
+                                        this.representanteTiendaService.todos = data.body;
+                                        this.representanteTiendaService.representante = data.body[0]['represenTorga'];
+                                    });
+                                });
+                                $('#menuPrincipal').css({ display: 'block' });
+                                $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                                $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                                this.router.navigate(['/inicio']);
+                            } else if (account.authorities.indexOf('ROLE_USER') >= 0) {
+                                $('#menuPrincipal').css({ display: 'block' });
+                                $('#botonEsconder').attr('onClick', 'esconderMenu()');
+                                $('#rayasNavegador').attr('src', '../../../content/images/cerrarMenu.png');
+                                this.router.navigate(['/inicio']);
+                            } else {
+                                this.account = account;
+                            }
+                        } else {
+                            this.authenticationError = true;
+                        }
+                    });
                 }
             });
         });
