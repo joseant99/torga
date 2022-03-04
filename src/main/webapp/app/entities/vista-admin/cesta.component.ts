@@ -12573,9 +12573,17 @@ export class cestaComponent implements OnInit, AfterViewInit {
         arrayBueno[3259] = 73;
         var nombreFiscal = $('#nombrefiscalinputcesta1').val();
         this.datosUsuarioService.query139(nombreFiscal, arrayBueno[account.id]).subscribe(data => {
-            this.todasLasTiendas = data.body;
+            var contDatos = 0;
+            var datosUsuVer = [];
+            for (var i = 0; i < data.body.length; i++) {
+                if (data.body[i]['estado'] == 'Activo') {
+                    datosUsuVer[contDatos] = data.body[i];
+                    contDatos++;
+                }
+            }
+            this.todasLasTiendas = datosUsuVer;
             if (data.body.length <= 5) {
-                this.arrayNombreFiscal = data.body;
+                this.arrayNombreFiscal = datosUsuVer;
             } else {
                 alert('introduce un nombre mas concreto');
             }
@@ -12694,17 +12702,25 @@ export class cestaComponent implements OnInit, AfterViewInit {
         }
         if (account.authorities[0] == 'ROLE_REPRESENTATE') {
             this.datosUsuarioService.reprebuscar(arrayBueno[account.id]).subscribe(data => {
-                this.todasLasTiendas = data.body;
-                for (let o = 0; o < data.body['length']; o++) {
+                var contDatos = 0;
+                var datosUsuVer = [];
+                for (var i = 0; i < data.body.length; i++) {
+                    if (data.body[i]['estado'] == 'Activo') {
+                        datosUsuVer[contDatos] = data.body[i];
+                        contDatos++;
+                    }
+                }
+                this.todasLasTiendas = datosUsuVer;
+                for (let o = 0; o < datosUsuVer['length']; o++) {
                     $('#modalConfirmarCreacionPresu').append('<datalist id="listaTiendas"></datalist>');
 
                     $('#selectTiendaDelNav').append(
                         '<option class="' +
-                            data.body[o]['id'] +
+                            datosUsuVer[o]['id'] +
                             '" id="' +
-                            data.body[o]['nombreFiscal'] +
+                            datosUsuVer[o]['nombreFiscal'] +
                             '">' +
-                            data.body[o]['nombreFiscal'] +
+                            datosUsuVer[o]['nombreFiscal'] +
                             '</option>'
                     );
                     $('#estoelrepresentantenolove').css({ display: 'none' });
