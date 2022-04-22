@@ -12571,6 +12571,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
         arrayBueno[3259] = 73;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         var nombreFiscal = $('#nombrefiscalinputcesta1').val();
         this.datosUsuarioService.query139(nombreFiscal, arrayBueno[account.id]).subscribe(data => {
             var contDatos = 0;
@@ -12665,6 +12668,9 @@ export class cestaComponent implements OnInit, AfterViewInit {
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
         arrayBueno[3259] = 73;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         var arrayNombreFiscal = [];
         if (account.authorities.indexOf('ROLE_ADMIN') >= 0) {
             this.datosUsuarioService

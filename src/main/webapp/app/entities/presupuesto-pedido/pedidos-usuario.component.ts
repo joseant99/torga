@@ -198,6 +198,10 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
         arrayBueno[3259] = 73;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
+
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         $('#nombreFiscalTextFiltros').css({ display: 'none' });
@@ -330,6 +334,9 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
         arrayBueno[3259] = 73;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         var nombreFiscal = $('#nombreFiscalInput').val();
         var account = this.accountService.userIdentity;
         if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
@@ -885,6 +892,9 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
         arrayBueno[3259] = 73;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         this.numeroPagina = 1;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;

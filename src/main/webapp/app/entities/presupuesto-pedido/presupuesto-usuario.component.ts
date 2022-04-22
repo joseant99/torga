@@ -141,6 +141,9 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[3255] = 41;
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         $('#textoDemasFiltros').css({ display: 'none' });
         $('#nombreFiscalSelectFiltros').css({ display: 'none' });
         if (filtro == 'TODOS') {
@@ -473,6 +476,9 @@ export class PresupuestoUsuarioComponent implements OnInit, OnDestroy {
         arrayBueno[3255] = 41;
         arrayBueno[3256] = 44;
         arrayBueno[3257] = 46;
+        arrayBueno[3379] = 98;
+        arrayBueno[3380] = 99;
+        arrayBueno[3381] = 100;
         if (this.representanteTiendaService.todos == undefined) {
             var account = this.accountService.userIdentity;
             if (account.authorities.indexOf('ROLE_REPRESENTATE') >= 0) {
