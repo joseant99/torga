@@ -32,6 +32,9 @@ public interface PresupuestoPedidoRepository extends JpaRepository<PresupuestoPe
     @Query("Select u from PresupuestoPedido u where u.pedido = 1 order by u.id asc")
 	Collection<PresupuestoPedido> busquing9999();
     
+    @Query("Select u from PresupuestoPedido u where u.pedido = 1 and STR_TO_DATE(u.fecha_pedido, '%d/%m/%Y') > str_to_date(?1, '%d/%m/%Y') order by u.id asc")
+	Collection<PresupuestoPedido> busquing9999Fecha(String fecha);
+    
     @Query("Select u.fecha_prevista from PresupuestoPedido u where u.pedido = 1 and u.id = (Select max(o.id) from PresupuestoPedido o where o.fecha_prevista is not null)")
 	Collection<PresupuestoPedido> sacarUltimaFecha();
     

@@ -54,6 +54,11 @@ export class PresupuestoPedidoService {
     busquing(): Observable<EntityArrayResponseType> {
         return this.http.get<IPresupuestoPedido[]>(`${this.resourceUrl}-buscar`, { observe: 'response' });
     }
+
+    busquingFecha(fecha: any): Observable<EntityArrayResponseType> {
+        return this.http.get<IPresupuestoPedido[]>(`${this.resourceUrl}-buscar4meses/${fecha}`, { observe: 'response' });
+    }
+
     fecha(): Observable<EntityArrayResponseType> {
         return this.http.get<IPresupuestoPedido[]>(`${this.resourceUrl}-buscar1`, { observe: 'response' });
     }

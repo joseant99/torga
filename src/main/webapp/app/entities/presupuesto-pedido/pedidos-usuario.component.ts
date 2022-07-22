@@ -454,7 +454,12 @@ export class PedidosUsuarioComponent implements OnInit, OnDestroy, AfterViewInit
         var contador = 0;
         var todos = this.representanteTiendaService.todos;
         console.log(this.numeroPagina);
-        this.presupuestoPedidoService.busquing().subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
+        var d = new Date();
+        d.setMonth(d.getMonth() - 4);
+        var month = d.getMonth();
+        var day = d.getDate();
+        var output = '01-' + (month < 10 ? '0' : '') + month + '-' + d.getFullYear();
+        this.presupuestoPedidoService.busquingFecha(output).subscribe((res: HttpResponse<IPresupuestoPedido[]>) => {
             $.each(res['body'], function(index, value) {
                 if (auto == 'ROLE_ADMIN') {
                     if (value['pedido'] == 1) {

@@ -134,6 +134,22 @@ public class PresupuestoPedidoResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
      */
+    @GetMapping("/presupuesto-pedidos-buscar4meses/{fecha}")
+    @Timed
+    public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidosbuscar4meses(@PathVariable String fecha) {
+        log.debug("REST request to get a page of PresupuestoPedidos");
+        fecha = fecha.replace("-", "/");
+        Collection<PresupuestoPedido> page = presupuestoPedidoRepository.busquing9999Fecha(fecha);
+        return ResponseEntity.ok().body(page);
+    }
+    
+    
+    /**
+     * GET  /presupuesto-pedidos : get all the presupuestoPedidos.
+     *
+     * @param pageable the pagination information
+     * @return the ResponseEntity with status 200 (OK) and the list of presupuestoPedidos in body
+     */
     @GetMapping("/presupuesto-pedidos-sumado")
     @Timed
     public ResponseEntity<Collection<PresupuestoPedido>> getAllPresupuestoPedidossumado() {
