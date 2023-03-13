@@ -21703,45 +21703,18 @@ export class ProductosBuscadorComponent2 implements OnInit, OnDestroy {
                                 }
 
                                 if (idProd == 107) {
-                                    if (u == 1) {
-                                        $('#datos1').append(
-                                            '<p style="width:100%" id="acabado' +
-                                                u +
-                                                '"><span style="font-weight:600">' +
-                                                u +
-                                                ' Tapa</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                                u +
-                                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                                u +
-                                                '" style="margin-left:10px"></span></p>'
-                                        );
-                                    }
-                                    if (u == 2) {
-                                        $('#datos1').append(
-                                            '<p style="width:100%" id="acabado' +
-                                                u +
-                                                '"><span style="font-weight:600">' +
-                                                u +
-                                                ' Casco</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                                u +
-                                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                                u +
-                                                '" style="margin-left:10px"></span></p>'
-                                        );
-                                    }
-                                    if (u == 3) {
-                                        $('#datos1').append(
-                                            '<p style="width:100%" id="acabado' +
-                                                u +
-                                                '"><span style="font-weight:600">' +
-                                                u +
-                                                ' Cajon</span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
-                                                u +
-                                                '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
-                                                u +
-                                                '" style="margin-left:10px"></span></p>'
-                                        );
-                                    }
+                                    $('#datos1').append(
+                                        '<p style="width:100%" id="acabado' +
+                                            u +
+                                            '"><span style="font-weight:600">' +
+                                            u +
+                                            value.geometria +
+                                            ' </span><img id="imagenAcabadoPrincipal1" data-toggle="modal" data-target="#myModalColores' +
+                                            u +
+                                            '" src="../../../content/images/blanco.jpg" height="60px" border="0" width="100px" style=";margin-left:20px;"/><span id="nombreAcaCalcu' +
+                                            u +
+                                            '" style="margin-left:10px"></span></p>'
+                                    );
                                 }
                                 if (idProd == 410) {
                                     if (u == 1) {

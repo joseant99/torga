@@ -33,6 +33,9 @@ public class AcaProd implements Serializable {
 
     @Column(name = "imagen_content_type")
     private String imagenContentType;
+    
+    @Column(name = "geometria")
+    private String geometria;
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -83,6 +86,19 @@ public class AcaProd implements Serializable {
 
     public void setImagenContentType(String imagenContentType) {
         this.imagenContentType = imagenContentType;
+    }
+    
+    public String getGeometria() {
+        return geometria;
+    }
+
+    public AcaProd geometria(String geometria) {
+        this.geometria = geometria;
+        return this;
+    }
+
+    public void setGeometria(String geometria) {
+        this.geometria = geometria;
     }
 
     public Set<Acabados> getAcabados() {
@@ -163,6 +179,7 @@ public class AcaProd implements Serializable {
             "id=" + getId() +
             ", imagen='" + getImagen() + "'" +
             ", imagenContentType='" + getImagenContentType() + "'" +
+            ", geometria='" + getGeometria() + "'" +
             "}";
     }
 }

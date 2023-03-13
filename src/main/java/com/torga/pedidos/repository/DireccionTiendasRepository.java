@@ -19,6 +19,6 @@ public interface DireccionTiendasRepository extends JpaRepository<DireccionTiend
 	@Query("Select u from DireccionTiendas u where u.datosUsuario.id = ?1 and u.tipoDir != 'COMERCIAL' order by u.id")
 	Collection<DireccionTiendas> findByCategoriaDormi(Long id);
 	
-	@Query("Select u from DireccionTiendas u where u.tipoDir = 'COMERCIAL' and u.activo == 0")
+	@Query("Select u from DireccionTiendas u where u.tipoDir = 'COMERCIAL' and u.activo = 0")
 	Collection<DireccionTiendas> soloComerciales();
 }
